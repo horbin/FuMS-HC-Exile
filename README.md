@@ -105,15 +105,20 @@ class Item1
 
 2) FuMS Installation 
 	a.   Copy the HC folder in the distribution to your mpmissions/Exile.Altis.pbo
+	
 	b.  Copy the @FuMS folder to your base server directory (C:\Arma\Server)
 		Do this on your SERVER. No need to put this folder on your HC!
 	c. Modify your server start parameters to include -servermods=@FuMS;
+	
 	d. Don't forget to repack your mpmissions pbo!
 
 3) Start your HC, feel free to leave it running.
+
 4) Start your Server.  You should see the HC connect as soon as the server unlocks. 
 Default FuMS distribution has some theme sets starting with no players. All others are defaulted to start when at least one player is logged in.
+
 5) Go read the \Docs\ Folder to learn how to customize the themes and missions to meet your server's needs!
+
 6) Still can't figure it out. Send me a PM, or post on the thread!
 
 ************************************************
