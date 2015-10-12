@@ -10,26 +10,40 @@ v0.1 Initial Port
 
 Installation: (see file in this distro, or read below)
 1. Headless Client Installation:
+
 2. See Exile Dedicated server installation here:
+
 3. https://www.dropbox.com/sh/8artg1h8q2b72h1/AABbP1LP6ybL9ovs8EB7Oqbla?dl=0
-a. Download the .pdf file
-b. Perform Step 03: Steam/Arma Install on the machine you are going to have your HC running on.
-i. If you will be running your HC on the same machine as your server, skip step 'b' above.
-c. Place a copy of your @Exile (Client folder) into the main server folder created in step 'b'.
-i. C:\Arma\Server\ if you are following the installation .pdf
-d. Locate the arma3server.exe file in the main server folder (C:\Arma\Server\)
-i. Create a short cut to this executable
-ii. add the following to the 'Target:' section of the shortcut's properties
+
+	a. Download the .pdf file
+	
+	b. Perform Step 03: Steam/Arma Install on the machine you are going to have your HC running on.
+	
+		i. If you will be running your HC on the same machine as your server, skip step 'b' above.
+		
+	c. Place a copy of your @Exile (Client folder) into the main server folder created in step 'b'.
+	
+		i. C:\Arma\Server\ if you are following the installation .pdf
+		
+	d. Locate the arma3server.exe file in the main server folder (C:\Arma\Server\)
+	
+		i. Create a short cut to this executable
+		
+		ii. add the following to the 'Target:' section of the shortcut's properties
 
 arma3server.exe -client -nosound -connect=192.168.0.27 -port=2302 -mod="@Exile;" -profiles=HCLogs
 
 		iii. Change -connect=   to the ip address of your SERVER.
+		
 		iv. Change -port= to the port of your SERVER.
+		
 		v.  Click OK.
+		
 NOTE: Logs created by the HC will be located in the C:\Arma\Server\HCLogs folder.
 
 	e. See \Docs\Install Examples\mission.sqm
 	Modify your mpmissions\Exile.Altis.pbo 's  mission.sqm file
+	
 		i. Locate:
 		
 			Class Groups
