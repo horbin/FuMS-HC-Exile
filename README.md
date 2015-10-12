@@ -9,9 +9,9 @@ v0.1 Initial Port
 
 
 Installation: (see file in this distro, or read below)
-1) Headless Client Installation:
-See Exile Dedicated server installation here:
- https://www.dropbox.com/sh/8artg1h8q2b72h1/AABbP1LP6ybL9ovs8EB7Oqbla?dl=0
+1. Headless Client Installation:
+2. See Exile Dedicated server installation here:
+3. https://www.dropbox.com/sh/8artg1h8q2b72h1/AABbP1LP6ybL9ovs8EB7Oqbla?dl=0
 	a. Download the .pdf file
 	b. Perform Step 03: Steam/Arma Install on the machine you are going to have your HC running on.
 		i. If you will be running your HC on the same machine as your server, skip step 'b' above.
