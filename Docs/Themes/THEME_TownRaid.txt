@@ -1,0 +1,20 @@
+Theme Town Raid
+This theme creates an encounter in a randomly selected city or capital. No special configuration required. Theme does the work of locating the towns.
+
+Upon start, 4 vehicles with a group of 6 AI are spawned on roads .5km on the outskirts on the town.  Upon arrival in town, the vehicles unload the AI and exit town, despawning when they reach their starting point.
+AI in town will begin a search of all buildings throughout the town. Operating independently as they search, but working as one of 4 groups when/if engaged.
+40 minutes into the mission, another 4 vehicles will spawn on the outskirts of town (~.5km away). These 4 vehicles will drive into town and evacuate the AI.
+As the vehicles fill up, they will exit down and despawn when reaching their starting location.
+
+Win State:
+Players Kill at least 20 AI
+
+Lose State:
+50 minute time out.
+
+Loot: Large box spawns in the center of town.
+Recycle Time: 60 seconds
+RadioChatter: ALL - players hear comms even without radio.
+
+See \Themes\TownRaid folder to modify.
+

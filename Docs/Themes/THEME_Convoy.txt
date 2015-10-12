@@ -1,0 +1,17 @@
+Theme Convoy
+Mission starts by a convoy spawning 200m outside a random town.  The Convoy then travels to another 'random' town. Upon arrival it despawns and another convoy will spawn.
+The destination town is not marked on the map, but the convoy's position is always shown on the map.
+Theme starts and maintains 2 convoys operational on the map.
+
+Win State:
+Players Kill at least 9 AI in the convoy
+
+Lose State:
+Convoy reaches its destination town
+
+Loot: Contained in the 3 vehicles. No other loot spawns
+Recycle Time: 60 seconds
+RadioChatter: 0 - only players with a radio hear the chatter.
+
+See \Themes\Convoy folder to modify.
+

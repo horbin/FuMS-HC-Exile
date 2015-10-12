@@ -1,0 +1,27 @@
+Theme Aquatic
+Introductory theme to the capability of FuMS to create water based missions.
+
+Aquatic theme contains 3 missions
+WaterMission
+WaterBoat
+WaterSub
+
+Each encounter spawns 9 divers.
+WaterBoat includes an assualt boat and standard rib.
+WaterSub contains a small crew sub (SDV).
+
+All three missions create a ship wreck on the bottom, to assist players in locating where the 'victory' loot will spawn.
+
+This theme takes advantage of the "marine locations" defined by a map, and wil be spawned in 3 random marine locations on the map at server start. As each encounter is completed, another new location will be selected. This will provide a continual 3 water missions during server operation.
+
+
+Win State:
+At least 7 AI associated with the encounter must be killed by the players.
+
+Lose State: 
+None: mission will persist until it is completed.
+
+Loot: box spawns upon reaching Win state.
+Recycle Time: 60 seconds
+RadioChatter: Enabled "ALL" so all players will here radio chatter.
+Reinforcements: None.

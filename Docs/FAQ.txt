@@ -1,0 +1,16 @@
+ FAQ:
+What is FuMS?
+Fulcrum Mission System is a mission framework designed to run on a headless client.  The framework supports easy development and modification of missions/encounters.   The principle behind FuMS is to provide a framework under which a server administrator can easily manage and modify missions.
+
+What is a Theme?
+A theme is a collection of missions that share a common mission loop, meaning only one of the missions in the theme are active at a time. Sort of like treasure hunt or simple epoch missions.  FuMS supports an unlimited number of Themes, each able to have its own unique AI, Loot tables, and missions.
+
+What is a Phased mission?
+A phased mission is a mission which branches depending on the logic provided in the mission's configuration.  A mission can be set up to summon in reinforcements if a player is detected, or access a particular building. A mission can be set up to start in another region if a player completes, or fails a current mission.  All of this logic is controlled by 'logic triggers', which are all customizable by mission.
+
+What are FuMS triggers?
+FuMS triggers are the decision tool used to determine mission completion. Triggers are used to define what is considered a Win, a Lose, or what will cause a Phase change in the mission. Each mission is able to contain selectable trigger events to enable the mission author to set parameters for mission success and failure. Each mission is able to launch up to 3 other separate missions. Each of these mission children can in turn spawn up to 3 others, with no limit to the mission chaining!
+
+Where can I learn more?
+All core server configuration is done in the 3 files located in the 'GlobalConfig' folder
+Each Theme's missions and theme specific configuration is located in files in the 'Theme' folder. See the 'Basic' theme for details.  Also included is a port of the SEM missions as an operational example.

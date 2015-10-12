@@ -1,0 +1,17 @@
+Theme Admin
+It is recommended that any mission/event you intend to spawn with the Admin tools be located here. This theme has a long 'respawn' timer attached to it (~5hrs).  Without the long respawn timer, missions spawned with the admin tool will respawn according to the delay in their owning theme's configuration.  This could result in some undesired effects.
+
+
+Win State:
+by mission
+
+Lose State:
+by mission
+
+Loot: by mission - global file
+Soldier: global file
+Recycle Time: 5 hours
+RadioChatter: "ALL" radios
+
+See \Themes\Admin folder to modify.
+

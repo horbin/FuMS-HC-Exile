@@ -1,0 +1,187 @@
+Variables:
+FuMS_Server_Operational	bool set when server 1st starts HC intialization
+FuMS_isStable	bool set to false if errors detected in 'base' files within Themes folder. When this is set FuMS will go OFFLINE.
+FuMS_ServerInitData	bool	set when server complete with reading configuration files for FuMS
+FuMS_ServerData	[]
+FuMS_THEMEDATA	[]
+FuMS_LOOTDATA	[]
+FuMS_SOLDIERDATA []
+FuMS_MapCenter	array
+FuMS_MapRange scalar
+FuMS_BlackList	[]
+FuMS_Defaultpos	[]
+FuMS_ActiveThemes	[]	List of active themes loaded - based upon data in BaseServer.sqf. Consists of ["Test",-1] type pairs.
+
+FuMS_ActiveThemesHC [] HC id the theme should run on: 0=server, -1= all HC's and Not server, 1=just 1st HC, 2=just 2nd HC.
+
+FuMS_GlobalDataIndex	scalar	Always equals count FuMS_ActiveThemes+1-index of globalloot and globalsoldier data
+ FuMS_RC_EnableRadioChatterSystem	bool
+ FuMS_RC_EnableRadioAudio	bool	publicVariable "FuMS_RC_EnableRadioAudio";
+ FuMS_RadioMsgQue	[]
+ FuMS_RC_RadioRequired	[]
+ FuMS_RC_RadioFollowTheme	[]
+ FuMS_RC_EnableAIChatter	[]
+ FuMS_RC_AIRadioRange	[]
+ FuMS_RC_REINFORCEMENTS	[]
+ FuMS_VillageList	[]
+ FuMS_CityList	[]
+ FuMS_CapitalList	[]
+ FuMS_MarineList	[] -list of marine locations on the map.
+ 
+ 
+ FuMS_OkToGetData	BOOL
+FuMS_DataValidation	text string -- attached to a PVEH on server.
+FuMS_AIONLYVEHICLE	pveh variable for 'getin'
+FuMS_TEMPVEHICLE	pveh variable for 'getin'
+
+
+All defaults initialized in FuMSInit.sqf
+HCTEMP	set to "PLAYER" when a player gets into a FuMS vehicle.
+// Soldier Defaults
+FuMS_SoldierMagCount_Rifle = 0;
+FuMS_SoldierMagCount_Pistol = 0;
+FuMS_SoldierVCOM_Driving = false; 
+FuMS_SoldierSkillsOverride	ARRAY	of 8 SCALAR
+FuMS_SoldierOnlyItems	ARRAY of strings, each an item that will be deleted when the AI dies.
+// Loot Defaults
+FuMS_LootBoxTime = 5;
+FuMS_LootSmoke = false;
+FuMS_LootSaveVehicle = false;
+FuMS_STORAGE	[]
+FuMS_AIONLYVehicles	[]  serverdata 6-4
+FuMS_VehicleZeroAmmo	bool	true = ammo zeroized 1st time player gets into vehicle.
+
+FuMS_Mods_EPOCH = false; - epoch mod not detected
+FuMS_Mods_RupDinosaurs = false; - dino mod not detected
+
+********************************************************************
+AI Global 'setvariable' values:
+FuMS_LINEAGE - string - variable prefix of mission that owns asset (FuMS_0_0_0)
+FuMS_AILOGIC [patrolType, msnCenter, spawnLoc, patrolLoc, patrolpatternoptions]
+FuMS_XFILL [themeIndex, side, "xfillstatus"]
+FuMS_MSNTAG [theme, mission]
+FuMS_PERSIST	bool	set on buildings created by FuMS.
+FuMS_DETECTOR 	bool	set on units and vehicles that are being watched by the 'Detect' trigger
+FuMS_ObjectDamage	array	[_threshold, _beencounted]
+FuMS_Loot	array [0, numItems]  // num items placed into the container at creation.
+FuMS_CaptiveAction ["action", player]
+FuMS_HCTemp "AI" or "PLAYER" depending on if a player has entered a FuMS created vehicle.
+FuMS_Krypto array [amount, payment type]
+     payment types -Krypto KryptoGroup FactionX FactionY FactionZ
+	 (uses PVEH FuMS_PayPlayer to pass data amoung clients, server, and HC)
+Notes:
+********************************************************************
+Mission Variables:
+_msnTag = "FuMS_'themeIndex'_'generation'_'offspringID'"
+FuMS_0_0_0_Lineage = [themeIndex, generation, relation, offspringID, parentName]
+_buildings
+_vehicles
+_groups
+_boxes	
+_closetriggers	bool
+_Children	Array
+_MsnStatus	Array
+_4FuMS_KillMe - trigger variable
+_BodyCount
+_CaptiveCount
+
+HCTEMP	string	vehicles, set to "PLAYER" 1st time a player gets into vehicle.
+
+FuMS_Message = ["Type",Sender, [receiver], [Message]]
+
+
+
+FuMS_RunningMissionList	list of currently running missions in following format
+	[ "[position]", HCID running on, _eCenter, _radius]
+
+FuMS_ListofHCs	array of numbers that contain the _hcID's for each HC connected.
+
+FuMS_MissionTerritory []	used to deconflict mission spawning [eCenter,radius,"mission:Theme"]
+
+
+FuMS Admin Controls
+*FuMS_AdminControlsEnabled	bool
+*public broadcasted:
+FuMS_AdminUsers[] 
+*FuMS_ActiveThemes[]  - defined above, string array list of active themes. Active theme is defined as a theme specified
+in the ServerData.sqf AND that passes FuMS data integrity checking. This list will be different from the list in
+ServerDtaa.sqf if a format error is found in one of a theme's files!
+*FuMS_AdminThemeSpawnLoc[] - if null or empty uses normal selection methods. If a value is here, this location will
+  override any random generated location. This will NOT override a static location for a mission (ie ["testmission",[x,y]]
+  that is defined in for the mission in the ThemeData.sqf.
+*FuMS_AdminThemeOn[] - turns theme loop on, if it was off.
+
+*FuMS_ActiveMissions - list of missions currently running on the HC.
+   [index, "mission:Theme"]   setting "mission:Theme" to "KILL" will terminate the mission.
+   modified in LogicBomb.sqf - ONLY used for Admin Menu.
+   
+   
+*FuMS_ListofMissions[] - list of all FuMS missions.
+   [themeIndex] [missionIndex]  goes to array that is ["MissionName","MissionCode"]
+FuMS_Anchor = object a player currently has set as his anchor. all missions spawned by this player will occur at the 'anchor's location.
+FuMS_AnchorLoc = location of the 'anchor'. This is updated every 5 seconds once an anchor is set.
+FuMS_MissionSet	      - mission to be spawned.
+FuMS_MissionResource 	- HC id that mission will be spawned with
+FuMS_PlayerList = list of players used to ref in Anchor code.
+FuMS_AdminSpawnMission - PVEH, data sent from Admin client, to server. Server then retransmits to 1st HC (in multi-HC setup)
+
+
+FuMS_HCID's	array that holds the ID for each HC.  [0] is the server.
+  value of -1 implies this 'slot' not used.
+FuMS_HCNames 'player shortname' for each HC.
+FuMS_HCThemeControlID = slot reference used to determine order in which an HC connects to the server.
+	this value is used by ThemeData.sqf in control of themes on specific HC's.
+FuMS_ThemeControlID = slot number being used by the HC. slot=0 for the server.	
+FuMS_HC_SlotNumber = variable used by HC to know its own ID.
+FuMS_FPSMinimum	scalar	minimum FPS below witch FuMS will not spawn missions/initialize connecting HC's.
+FuMS_AdminIDs
+FuMS_AdminNames
+
+FuMS_AdminUpdateData - set and called by HC to push data from server to Admins
+      data: [HC's slot, "VarName", data]
+	  where "VarName" is one of :[,"AdminThemeSpawnLoc","AdminListofMissions"];
+	  "AdminActiveThemes","AdminThemeOn","AdminActiveMissionList"
+FuMS_AdminThemeOnServer :Admin->Server  ServerName, ThemeName
+FuMS_AdminThemeOn   : 
+FuMS_AdminMenuOpen	PVEH to server to request updated variables when menu is opened - set to 'player' on pass to server.
+FuMS_AdminActiveMissionList	
+FuMS_AdminActiveThemes
+FuMS_AdminThemeOn
+FuMS_AdminThemeSpawnLoc
+FuMS_AdminListofMissions
+
+FuMS_Anchor, FuMS_AnchorLoc, FuMS_MissionSet (index,themename,missionname), FuMS_MissionResource - used in spawning missions!
+FuMS_anchorNameTxt, FuMS_anchorLocTxt, FuMS_missionTxt, FuMS_resourceTxt
+				   
+FuMS_ZombieNoise = GVEH used to pass zombie sounds data from HC to server, then server to clients that can hear the noise.
+				   
+
+BaseData:
+  FuMS_THEMEDATA
+  FuMS_LOOTDATA
+  FuMS_SOLDIERDATA
+  FuMS_ListofMissions
+  
+  FuMS_BaseListofMissions
+
+****NEW TO EXILE *****
+Global Loot References
+FuMS_BackPacks_BlackList
+FuMS_BackPacks_ALL
+FuMS_BackPacks_Lv0
+FuMS_BackPacks_Lv1
+FuMS_BackPacks_Lv2
+FuMS_BackPacks_Lv3
+
+FuMS_Food_BlackList
+FuMS_Drink_BlackList
+FuMS_Food
+FuMS_Drink
+
+FuMS_HeadGear_BlackList
+FuMS_HeadGear_All
+
+
+
+   
+   

@@ -1,0 +1,56 @@
+1) Take building array from your M3Editor file.
+    starting at:
+
+_objs = [ ......... ];
+
+2) copy the outer most brackets and everything inbetween
+
+       [ .........]
+
+
+3) paste what you copied into the array below.
+
+
+
+
+["M3Editor", [-1,-1], 777, 0,
+
+
+   // paste your array of building objects here
+
+
+
+
+
+
+]
+
+
+
+
+
+4) Place a copy of the array in step 3 into the 'Buildings' section of your mission.  This array you are pasting is treated just like a previous
+FuMS building definition. Just ensure you place this data as the 1st element in the buildings section.  The mission can still contain other
+vehicle and building definitions.
+
+5) If you desire placement to use an 'offset' specify it in the paramater after "M3Editor".
+   (EX: ["M3Editor", [0,0], ......
+
+   If you desire placement based upon the locations in your M3Editor file, set the offset to [-1,-1]
+   (EX: ["M3Editor", [-1,-1], ......
+
+Note: The 1st component listed in your building objects array will be used as the 'anchor point' when offset is used.
+Note: setting '0' to '1' in the last paramater will cause the structures to remain after mission completion.
+    (Ex: ["M3Editor, [0,0], 777, 1, ......
+Note: If you are pulling a building complex/file that was built for another map, make sure you use the [0,0] offset metioned in step 5. And if
+you need to place this building complex/file in a specific location, specify this location by statically defining the mission in the ThemeData.sqf.
+Ex: ["testMission01",[12300,45600]]  will spawn this mission at [12300,45600], with the 1st building in your list being located at [12300,45600].
+
+
+
+
+
+
+
+
+

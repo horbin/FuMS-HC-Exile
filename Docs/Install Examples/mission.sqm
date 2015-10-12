@@ -1,0 +1,1277 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 4.85
+//Tue Oct 06 12:00:38 2015 : Source 'file' date Tue Oct 06 12:00:38 2015
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class E:/mpmissions/Exile.Altis/mission.sqm{
+version = 12;
+class Mission
+{
+	addOns[] = {"exile_client","a3_map_altis"};
+	addOnsAuto[] = {"exile_client","a3_map_altis"};
+	randomSeed = 8080942;
+	class Intel
+	{
+		timeOfChanges = 1800.0002;
+		startWeather = 0.3;
+		startWind = 0.1;
+		startWaves = 0.1;
+		forecastWeather = 0.3;
+		forecastWind = 0.1;
+		forecastWaves = 0.1;
+		forecastLightnings = 0.1;
+		year = 2039;
+		month = 6;
+		day = 24;
+		hour = 12;
+		minute = 0;
+		startFogDecay = 0.013;
+		forecastFogDecay = 0.013;
+	};
+	class Sensors
+	{
+		items = 3;
+		class Item0
+		{
+			position[] = {14599.966,22.349989,16797.193};
+			a = 175;
+			b = 175;
+			rectangular = 1;
+			activationBy = "ANY";
+			repeating = 1;
+			interruptable = 1;
+			age = "UNKNOWN";
+			name = "ExileTrader";
+			expCond = "(vehicle player) in thisList";
+			expActiv = "call ExileClient_object_player_event_onEnterSafezone";
+			expDesactiv = "call ExileClient_object_player_event_onLeaveSafezone";
+			class Effects{};
+		};
+		class Item1
+		{
+			position[] = {2998.0603,3.775602,18175.479};
+			a = 175;
+			b = 175;
+			rectangular = 1;
+			activationBy = "ANY";
+			repeating = 1;
+			interruptable = 1;
+			age = "UNKNOWN";
+			name = "ExileTrader";
+			expCond = "(vehicle player) in thisList";
+			expActiv = "call ExileClient_object_player_event_onEnterSafezone";
+			expDesactiv = "call ExileClient_object_player_event_onLeaveSafezone";
+			class Effects{};
+		};
+		class Item2
+		{
+			position[] = {23334.605,4.009558,24188.938};
+			a = 175;
+			b = 175;
+			rectangular = 1;
+			activationBy = "ANY";
+			repeating = 1;
+			interruptable = 1;
+			age = "UNKNOWN";
+			name = "ExileTrader";
+			expCond = "(vehicle player) in thisList";
+			expActiv = "call ExileClient_object_player_event_onEnterSafezone";
+			expDesactiv = "call ExileClient_object_player_event_onLeaveSafezone";
+			class Effects{};
+		};
+	};
+	class Groups
+	{
+		items = 2;
+		class Item0
+		{
+			side = "GUER";
+			class Vehicles
+			{
+				items = 100;
+				class Item0
+				{
+					position[] = {13237.161,20.660374,11705.338};
+					special = "NONE";
+					id = 0;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					leader = 1;
+					skill = 0.6;
+				};
+				class Item1
+				{
+					position[] = {13234.718,19.578526,11705.455};
+					special = "NONE";
+					id = 1;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item2
+				{
+					position[] = {13232.741,18.706799,11705.57};
+					special = "NONE";
+					id = 2;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item3
+				{
+					position[] = {13230.821,17.984247,11705.514};
+					special = "NONE";
+					id = 3;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item4
+				{
+					position[] = {13228.785,17.41203,11705.281};
+					special = "NONE";
+					id = 4;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item5
+				{
+					position[] = {13226.924,16.956467,11705.455};
+					special = "NONE";
+					id = 5;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item6
+				{
+					position[] = {13225.296,16.538645,11705.048};
+					special = "NONE";
+					id = 6;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item7
+				{
+					position[] = {13223.492,16.13907,11705.514};
+					special = "NONE";
+					id = 7;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item8
+				{
+					position[] = {13221.398,15.754031,11705.338};
+					special = "NONE";
+					id = 8;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item9
+				{
+					position[] = {13219.652,15.484016,11705.398};
+					special = "NONE";
+					id = 9;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item10
+				{
+					position[] = {13237.393,20.350965,11702.838};
+					special = "NONE";
+					id = 10;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item11
+				{
+					position[] = {13235.357,19.481894,11703.129};
+					special = "NONE";
+					id = 11;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item12
+				{
+					position[] = {13233.264,18.675148,11702.896};
+					special = "NONE";
+					id = 12;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item13
+				{
+					position[] = {13231.229,18.033972,11703.188};
+					special = "NONE";
+					id = 13;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item14
+				{
+					position[] = {13229.25,17.450659,11703.068};
+					special = "NONE";
+					id = 14;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item15
+				{
+					position[] = {13227.622,17.04477,11703.012};
+					special = "NONE";
+					id = 15;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item16
+				{
+					position[] = {13225.411,16.547203,11703.129};
+					special = "NONE";
+					id = 16;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item17
+				{
+					position[] = {13223.608,16.157663,11703.068};
+					special = "NONE";
+					id = 17;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item18
+				{
+					position[] = {13221.864,15.82023,11703.188};
+					special = "NONE";
+					id = 18;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item19
+				{
+					position[] = {13219.537,15.460279,11703.188};
+					special = "NONE";
+					id = 19;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item20
+				{
+					position[] = {13237.684,20.122702,11700.919};
+					special = "NONE";
+					id = 20;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item21
+				{
+					position[] = {13235.242,19.243696,11701.034};
+					special = "NONE";
+					id = 21;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item22
+				{
+					position[] = {13233.03,18.533854,11700.976};
+					special = "NONE";
+					id = 22;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item23
+				{
+					position[] = {13230.764,17.812525,11701.093};
+					special = "NONE";
+					id = 23;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item24
+				{
+					position[] = {13229.134,17.34927,11700.976};
+					special = "NONE";
+					id = 24;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item25
+				{
+					position[] = {13227.389,16.968922,11701.093};
+					special = "NONE";
+					id = 25;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item26
+				{
+					position[] = {13225.296,16.517365,11701.209};
+					special = "NONE";
+					id = 26;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item27
+				{
+					position[] = {13223.435,16.115486,11701.268};
+					special = "NONE";
+					id = 27;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item28
+				{
+					position[] = {13221.456,15.7518,11701.209};
+					special = "NONE";
+					id = 28;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item29
+				{
+					position[] = {13219.304,15.384468,11701.326};
+					special = "NONE";
+					id = 29;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item30
+				{
+					position[] = {13237.858,19.79587,11699.057};
+					special = "NONE";
+					id = 30;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item31
+				{
+					position[] = {13235.066,18.972578,11698.881};
+					special = "NONE";
+					id = 31;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item32
+				{
+					position[] = {13232.799,18.265938,11699};
+					special = "NONE";
+					id = 32;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item33
+				{
+					position[] = {13230.473,17.599703,11699.115};
+					special = "NONE";
+					id = 33;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item34
+				{
+					position[] = {13228.785,17.253115,11699};
+					special = "NONE";
+					id = 34;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item35
+				{
+					position[] = {13227.272,16.92468,11698.881};
+					special = "NONE";
+					id = 35;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item36
+				{
+					position[] = {13225.063,16.448162,11698.939};
+					special = "NONE";
+					id = 36;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item37
+				{
+					position[] = {13223.201,16.043352,11699.057};
+					special = "NONE";
+					id = 37;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item38
+				{
+					position[] = {13221.805,15.756227,11699};
+					special = "NONE";
+					id = 38;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item39
+				{
+					position[] = {13219.421,15.350844,11699.23};
+					special = "NONE";
+					id = 39;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item40
+				{
+					position[] = {13237.918,19.454409,11696.905};
+					special = "NONE";
+					id = 40;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item41
+				{
+					position[] = {13236.288,19.065742,11697.021};
+					special = "NONE";
+					id = 41;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item42
+				{
+					position[] = {13234.486,18.498407,11697.078};
+					special = "NONE";
+					id = 42;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item43
+				{
+					position[] = {13232.334,17.895802,11697.138};
+					special = "NONE";
+					id = 43;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item44
+				{
+					position[] = {13230.064,17.49938,11697.138};
+					special = "NONE";
+					id = 44;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item45
+				{
+					position[] = {13227.68,16.987776,11697.196};
+					special = "NONE";
+					id = 45;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item46
+				{
+					position[] = {13225.645,16.549015,11697.254};
+					special = "NONE";
+					id = 46;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item47
+				{
+					position[] = {13224.074,16.186087,11697.196};
+					special = "NONE";
+					id = 47;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item48
+				{
+					position[] = {13221.864,15.70447,11697.138};
+					special = "NONE";
+					id = 48;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item49
+				{
+					position[] = {13220.003,15.385726,11697.254};
+					special = "NONE";
+					id = 49;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item50
+				{
+					position[] = {13237.918,19.109877,11694.752};
+					special = "NONE";
+					id = 50;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item51
+				{
+					position[] = {13236.639,18.824335,11694.811};
+					special = "NONE";
+					id = 51;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item52
+				{
+					position[] = {13234.602,18.260323,11694.984};
+					special = "NONE";
+					id = 52;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item53
+				{
+					position[] = {13232.508,17.89632,11695.102};
+					special = "NONE";
+					id = 53;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item54
+				{
+					position[] = {13230.473,17.539976,11695.043};
+					special = "NONE";
+					id = 54;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item55
+				{
+					position[] = {13227.797,16.982367,11695.102};
+					special = "NONE";
+					id = 55;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item56
+				{
+					position[] = {13225.936,16.558838,11695.275};
+					special = "NONE";
+					id = 56;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item57
+				{
+					position[] = {13223.666,16.02624,11695.275};
+					special = "NONE";
+					id = 57;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item58
+				{
+					position[] = {13221.805,15.632082,11695.275};
+					special = "NONE";
+					id = 58;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item59
+				{
+					position[] = {13219.246,15.186598,11695.567};
+					special = "NONE";
+					id = 59;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item60
+				{
+					position[] = {13237.801,18.862562,11693.24};
+					special = "NONE";
+					id = 60;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item61
+				{
+					position[] = {13235.242,18.339025,11692.718};
+					special = "NONE";
+					id = 61;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item62
+				{
+					position[] = {13233.09,17.966444,11692.948};
+					special = "NONE";
+					id = 62;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item63
+				{
+					position[] = {13230.995,17.602283,11693.065};
+					special = "NONE";
+					id = 63;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item64
+				{
+					position[] = {13228.843,17.171389,11693.182};
+					special = "NONE";
+					id = 64;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item65
+				{
+					position[] = {13227.506,16.857502,11693.182};
+					special = "NONE";
+					id = 65;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item66
+				{
+					position[] = {13225.47,16.389393,11693.473};
+					special = "NONE";
+					id = 66;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item67
+				{
+					position[] = {13224.074,16.061972,11693.473};
+					special = "NONE";
+					id = 67;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item68
+				{
+					position[] = {13221.864,15.586153,11693.588};
+					special = "NONE";
+					id = 68;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item69
+				{
+					position[] = {13219.421,15.041322,11693.648};
+					special = "NONE";
+					id = 69;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item70
+				{
+					position[] = {13238.44,17.573044,11689.811};
+					special = "NONE";
+					id = 70;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item71
+				{
+					position[] = {13236.696,17.677006,11689.926};
+					special = "NONE";
+					id = 71;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item72
+				{
+					position[] = {13234.66,17.280449,11689.811};
+					special = "NONE";
+					id = 72;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item73
+				{
+					position[] = {13232.043,16.925327,11689.982};
+					special = "NONE";
+					id = 73;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item74
+				{
+					position[] = {13230.646,16.802464,11689.982};
+					special = "NONE";
+					id = 74;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item75
+				{
+					position[] = {13228.437,16.41066,11690.102};
+					special = "NONE";
+					id = 75;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item76
+				{
+					position[] = {13226.575,15.941986,11689.982};
+					special = "NONE";
+					id = 76;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item77
+				{
+					position[] = {13224.48,15.510009,11690.041};
+					special = "NONE";
+					id = 77;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item78
+				{
+					position[] = {13222.91,15.286004,11690.041};
+					special = "NONE";
+					id = 78;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item79
+				{
+					position[] = {13220.991,14.880125,11690.102};
+					special = "NONE";
+					id = 79;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item80
+				{
+					position[] = {13237.743,17.021715,11687.831};
+					special = "NONE";
+					id = 80;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item81
+				{
+					position[] = {13235.531,16.812983,11688.063};
+					special = "NONE";
+					id = 81;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item82
+				{
+					position[] = {13233.555,16.559767,11688.122};
+					special = "NONE";
+					id = 82;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item83
+				{
+					position[] = {13230.764,16.298496,11688.063};
+					special = "NONE";
+					id = 83;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item84
+				{
+					position[] = {13228.959,15.987162,11688.063};
+					special = "NONE";
+					id = 84;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item85
+				{
+					position[] = {13227.04,15.567765,11688.179};
+					special = "NONE";
+					id = 85;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item86
+				{
+					position[] = {13225.236,15.280163,11688.122};
+					special = "NONE";
+					id = 86;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item87
+				{
+					position[] = {13223.608,15.037487,11688.063};
+					special = "NONE";
+					id = 87;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item88
+				{
+					position[] = {13221.107,14.579975,11688.239};
+					special = "NONE";
+					id = 88;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item89
+				{
+					position[] = {13219.77,14.262304,11688.239};
+					special = "NONE";
+					id = 89;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item90
+				{
+					position[] = {13237.393,16.354242,11685.854};
+					special = "NONE";
+					id = 90;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item91
+				{
+					position[] = {13235.416,16.09985,11685.795};
+					special = "NONE";
+					id = 91;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item92
+				{
+					position[] = {13233.381,15.905619,11685.738};
+					special = "NONE";
+					id = 92;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item93
+				{
+					position[] = {13230.938,15.690587,11685.738};
+					special = "NONE";
+					id = 93;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item94
+				{
+					position[] = {13228.611,15.362325,11685.854};
+					special = "NONE";
+					id = 94;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item95
+				{
+					position[] = {13226.518,15.063607,11685.854};
+					special = "NONE";
+					id = 95;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item96
+				{
+					position[] = {13224.249,14.750255,11685.912};
+					special = "NONE";
+					id = 96;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item97
+				{
+					position[] = {13221.456,14.273185,11686.029};
+					special = "NONE";
+					id = 97;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item98
+				{
+					position[] = {13218.781,13.587149,11686.145};
+					special = "NONE";
+					id = 98;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+				class Item99
+				{
+					position[] = {13239.08,16.01065,11685.795};
+					special = "NONE";
+					id = 99;
+					side = "GUER";
+					vehicle = "Exile_Unit_GhostPlayer";
+					player = "PLAY CDG";
+					skill = 0.6;
+				};
+			};
+		};
+		class Item1
+		{
+ 			side="LOGIC";
+		                class Vehicles
+		                {
+			                items=1;
+		                	class Item0
+			                {
+				                    position[]={10720.502,12.714643,11356.243};
+				                    id=100;
+				                    side="LOGIC";
+				                    vehicle="HeadlessClient_F";
+				                    player="PLAY CDG";
+				                    init="this enableSimulation false; this allowDamage false";
+				                    leader=1;
+				                    skill=0.60000002;
+				                    text="HC_HAL";
+			                };
+		            };
+		};
+	};
+	class Markers
+	{
+		items = 9;
+		class Item0
+		{
+			position[] = {3874.3633,18.12563,13280.79};
+			name = "SpawnKavala";
+			text = "Kavala";
+			type = "ExileSpawnZone";
+		};
+		class Item1
+		{
+			position[] = {9926.529,12.364729,12083.253};
+			name = "SpawnZaros";
+			text = "Zaros";
+			type = "ExileSpawnZone";
+		};
+		class Item2
+		{
+			position[] = {20978.37,27.78056,7045.6055};
+			name = "SpawnSelekano";
+			text = "Selekano";
+			type = "ExileSpawnZone";
+		};
+		class Item3
+		{
+			position[] = {17137.752,15.032475,12719.362};
+			name = "SpawnPrygos";
+			text = "Pyrgos";
+			type = "ExileSpawnZone";
+		};
+		class Item4
+		{
+			position[] = {25713.313,20.344301,21329.576};
+			name = "SpawnSofia";
+			text = "Sofia";
+			type = "ExileSpawnZone";
+		};
+		class Item5
+		{
+			position[] = {8612.528,180.58038,18272.271};
+			name = "SpawnSyrta";
+			text = "Syrta";
+			type = "ExileSpawnZone";
+		};
+		class Item6
+		{
+			position[] = {14599.966,22.349989,16797.193};
+			name = "TraderCityMarker";
+			text = "Mafia Trader City";
+			markerType = "ELLIPSE";
+			type = "ExileTraderZone";
+			colorName = "ColorBlue";
+			fillName = "SolidBorder";
+			a = 175;
+			b = 175;
+			drawBorder = 1;
+		};
+		class Item7
+		{
+			position[] = {23334.605,4.009558,24188.938};
+			name = "TraderZoneSilderas";
+			text = "Silderas Trader City";
+			markerType = "ELLIPSE";
+			type = "ExileTraderZone";
+			colorName = "ColorBlue";
+			fillName = "SolidBorder";
+			a = 175;
+			b = 175;
+			drawBorder = 1;
+		};
+		class Item8
+		{
+			position[] = {2998.0603,3.775602,18175.479};
+			name = "TraderZoneFolia";
+			text = "Folia Trader City";
+			markerType = "ELLIPSE";
+			type = "ExileTraderZone";
+			colorName = "ColorBlue";
+			fillName = "SolidBorder";
+			a = 175;
+			b = 175;
+			drawBorder = 1;
+		};
+	};
+};
+class Intro
+{
+	addOns[] = {"a3_map_altis"};
+	addOnsAuto[] = {"a3_map_altis"};
+	randomSeed = 3611332;
+	class Intel
+	{
+		timeOfChanges = 1800.0002;
+		startWeather = 0.3;
+		startWind = 0.1;
+		startWaves = 0.1;
+		forecastWeather = 0.3;
+		forecastWind = 0.1;
+		forecastWaves = 0.1;
+		forecastLightnings = 0.1;
+		year = 2035;
+		month = 6;
+		day = 24;
+		hour = 12;
+		minute = 0;
+		startFogDecay = 0.013;
+		forecastFogDecay = 0.013;
+	};
+};
+class OutroWin
+{
+	addOns[] = {"a3_map_altis"};
+	addOnsAuto[] = {"a3_map_altis"};
+	randomSeed = 15572598;
+	class Intel
+	{
+		timeOfChanges = 1800.0002;
+		startWeather = 0.3;
+		startWind = 0.1;
+		startWaves = 0.1;
+		forecastWeather = 0.3;
+		forecastWind = 0.1;
+		forecastWaves = 0.1;
+		forecastLightnings = 0.1;
+		year = 2035;
+		month = 6;
+		day = 24;
+		hour = 12;
+		minute = 0;
+		startFogDecay = 0.013;
+		forecastFogDecay = 0.013;
+	};
+};
+class OutroLoose
+{
+	addOns[] = {"a3_map_altis"};
+	addOnsAuto[] = {"a3_map_altis"};
+	randomSeed = 13194853;
+	class Intel
+	{
+		timeOfChanges = 1800.0002;
+		startWeather = 0.3;
+		startWind = 0.1;
+		startWaves = 0.1;
+		forecastWeather = 0.3;
+		forecastWind = 0.1;
+		forecastWaves = 0.1;
+		forecastLightnings = 0.1;
+		year = 2035;
+		month = 6;
+		day = 24;
+		hour = 12;
+		minute = 0;
+		startFogDecay = 0.013;
+		forecastFogDecay = 0.013;
+	};
+};
+//};

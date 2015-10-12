@@ -1,0 +1,27 @@
+Theme Simple Missions
+As a proof of concept some background info was taken from a couple missions already used in the old Epoch 2, and applied to FuMS.
+
+Simple Missions contains 5 missions, all very similiar that are set up to spawn in random locations throughout the map.
+
+BanditCamp
+PlaneCrash
+NukeDevice
+HeloCrash
+VanCrash
+
+Each encounter spawns 3 groups of AI. Each group patrols the mission area on its own pattern.
+
+Win State:
+No units in the area, and 1 player within 100m of the mission center
+
+Lose State: 
+Mission ends after 25 minutes
+
+Loot: box spawns upon reaching Win state.
+Recycle Time: 60 seconds
+RadioChatter: Enabled on channel 1 (Emerald)
+Reinforcements: Random, 25% chance of arriving via foot, vehicle, or paradrop.
+
+This theme currently set up to demonstrate option 4 in the theme configuration for spawning all missions in a theme at one time. This ability may be useful for populating a server at restart.
+
+See \Themes\SEM folder to modify.
