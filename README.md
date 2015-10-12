@@ -47,33 +47,56 @@ NOTE: Logs created by the HC will be located in the C:\Arma\Server\HCLogs folder
 		i. Locate:
 		
 			Class Groups
+			
 			{
 				items = 1;
+				
 				class Item 0
+				
 				{
 				
 		ii. Change items =1; to items=2;
+		
 		iii. Add the following AFTER the closing }; for the 'class Item 0' definition
 		
 class Item1
+
 {
+
 	 side="LOGIC";
+	 
 	class Vehicles
+	
             	{
+            	
                 	items=1;
+                	
 	                class Item0
+	                
 	                {
+	                
 	                    position[]={10720.502,12.714643,11356.243};
+	                    
                 	    id=100;
+                	    
 	                    side="LOGIC";
+	                    
 	                    vehicle="HeadlessClient_F";
+	                    
 	                    player="PLAY CDG";
+	                    
                 	    init="this enableSimulation false; this allowDamage false";
+                	    
 	                    leader=1;
+	                    
 	                    skill=0.60000002;
+	                    
 	                    text="HC_HAL";
+	                    
                 	};
+                	
 	};
+	
  };
 
 	f. Save the mission.sqm file.
