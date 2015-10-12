@@ -21,23 +21,26 @@ See Exile Dedicated server installation here:
 		i. Create a short cut to this executable
 		ii. add the following to the 'Target:' section of the shortcut's properties
 
-		arma3server.exe -client -nosound -connect=192.168.0.27 -port=2302 -mod="@Exile;" -profiles=HCLogs
+arma3server.exe -client -nosound -connect=192.168.0.27 -port=2302 -mod="@Exile;" -profiles=HCLogs
 
 		iii. Change -connect=   to the ip address of your SERVER.
 		iv. Change -port= to the port of your SERVER.
 		v.  Click OK.
-	NOTE: Logs created by the HC will be located in the C:\Arma\Server\HCLogs folder.
+NOTE: Logs created by the HC will be located in the C:\Arma\Server\HCLogs folder.
 
 	e. See \Docs\Install Examples\mission.sqm
-	     Modify your mpmissions\Exile.Altis.pbo 's  mission.sqm file
+	Modify your mpmissions\Exile.Altis.pbo 's  mission.sqm file
 		i. Locate:
+		
 			Class Groups
 			{
 				items = 1;
 				class Item 0
 				{
+				
 		ii. Change items =1; to items=2;
 		iii. Add the following AFTER the closing }; for the 'class Item 0' definition
+		
 class Item1
 {
 	 side="LOGIC";
@@ -76,11 +79,10 @@ Default FuMS distribution has some theme sets starting with no players. All othe
 5) Go read the \Docs\ Folder to learn how to customize the themes and missions to meet your server's needs!
 6) Still can't figure it out. Send me a PM, or post on the thread!
 
+************************************************
 Optional
-
 ************************************************
 ****Jurassic Raptor Addon Support **************
-************************************************
 http://makearmanotwar.com/entry/ec2EDrOCkM#.VT0zFfnF9EK
 1) Download the addon.
 2) Place the '@Jurassic Arma - Raptor Pack' folder in the base folder of your server. At the same folder level as the @Exile folder.
