@@ -4,6 +4,21 @@
 // Init file run by all players, HC's, and the server.
 diag_log format ["FuMS initializing for player:%1",player];
 
+"FuMS_ThrowIt" addPublicVariableEventHandler
+{
+		_data = _this select 1;
+		_object = _data select 0;
+		_airpos = _data select 1;
+		_vel = _data select 2;
+  
+	_object setpos _airpos;
+	_object setvelocity _vel;
+	_object setVectorUp [0,0,-1];
+};
+
+
+
+
 "FuMS_PayPlayer" addPublicVariableEventHandler
 {
     _data =    _this select 1;

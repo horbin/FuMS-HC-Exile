@@ -3,6 +3,59 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.2 Ryan's Zombies and Demons Support!
+   Happy Halloween!!!
+   
+ADMIN NOTE: ENSURE mpmission.pbo HC folder is updated with this distro, not just the @FuMS folder!
+
+- AI vehicles will maintain fuel level as long as original driver is alive.
+- Old Mod dependency:
+   Fixed AI cleanup
+   Fixed ProxPlayer trigger
+
++ Ryan Zombie and Demons support:
+1) Install it per the mod's instructions
+2) Players WILL need to install/use this mod also, but trust me, its worth it.
+3) Zombie Theme
+  Background: Out of the list of Villages, Cities, and Captials of the land, Nine are infected by an evil presense. 
+  It is up to the Exiled to located the source of this presense and destroy it before the area becomes totally overrun!
+  
+  What to expect:
+  Civilian zombies = not too smart, but quick on their feet
+  Soldier zombies = a little stronger, able to move vehicles around, and perform other feats of strength.
+  Spider zombies = acute senses, hard to lose once they have you trail. Able to leap most obsticles in pursuit of their prey.
+  Rumored to be able to take down low flying helocopers when attacking in mass.
+  Zombie Boss = zombie on steroids, best bet, Run!
+  
+  Smoking obelisk in the center of town is guarded by a Horde. Use the explosives that are nearby to destroy the obelisk, 
+  stop the infection and claim your reward!
+  
+  Note: For initial install, the infected towns are indicated on the map. Change the 'Show encounter' setting in the Zombies\SpawnTrigger.sqf
+  mission to 'false' for your production servers if you do not want your players knowing where the infected are hiding.
+  
+1.	syntax: ["ZOMBIE", [spawnloc], [actionloc],[Detection_range, FlagCanThrow, WonderRange]]
+2.	-spawnloc: offset or specific map location group will spawn
+3.	-actionloc: --no functionality-- leave as [0,0]
+4.	-options 
+	a.	Detection_range = distance in meters beyond which zombies will not identify/engage AI and players.
+		1.	Zombies have an accute sense of vehicles and will detect players in vehicles if they come within this range regardless of Line of sight.
+	b.	FlagCanThrow: true = zombies have a chance to move vehicles out of their way when pursing players.
+	c.	Wonder_range = distance a target must get away from the zombie to lose it. 
+		1.	Players can lose the zombie in a range shorter than this, but it depends on their ability to block LOS/detection of the zombie to cause it to forget about the player(zombie types have different memories!)
+5.	Behavior: Full implementation of Ryan's Zombie and Demons AI.
+	a.	Zombies will wonder around until they locate a player or non-side "WEST" AI.
+	b.	Zombies will pursue until dead or distracted by a closer target, or player can 'shake' them.
+	c.	Zombies will attack cars, boats, helicopters, and static weapons when they are occupied by players/AI.
+	d.	Zombies will not attack unoccupied vehicles, but will throw them!
+	e.  It is rumored that spiderzombies will attack flying helo's and are even able to board them in search of their prey!
+6.	Type Zombies:
+	a.	Zombie  Jump 0%/10m ThrowCar 0% Memory 2sec
+	b.	ZombieSoldier Jump 5%/20m ThrowCar 60% Memory 4sec
+	c.	ZombieSpider Jump 50%/40m ThrowCar 5% Memory 8sec
+	d.	ZombieBoss Jump 80%/35m ThrowCar 80% Memory 12sec
+
+
+
 v0.1 Initial Port
    See : https://github.com/horbin/FuMS-HC-Server/blob/master/README.md
    for original development path under EPOCH mod.

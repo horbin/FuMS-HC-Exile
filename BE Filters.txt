@@ -1,0 +1,10 @@
+Thank you NedFox, for the BE Filters!
+
+FuMS:
+scripts.txt
+line#50 execVM !="nit.sqf";\ndiag_log format ["Starting FuMS via %1",_path];\n[] ExecVM _path;\n};\nif (!isServer) then{waitUntil {!isNull player};wai" !="(_this select 0) execVM \"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""
+line#25 AddAction !="this select 0;    \n_options = _this select 1;\n{\n\n_id =  _unit addAction [format [\"%1\",_x],{call FuMS_fnc_DirectCaptive}, [_x],6,tru"
+
+
+publicvariable.txt
+!="FuMS_CaptiveAction"  !="FOLLOW"  !="STAY"  !="FLEE"  !="BOARD"  !="EVAC POINTS"

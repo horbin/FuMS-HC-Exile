@@ -15,16 +15,16 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <o:Author>rohan</o:Author>
   <o:Template>Normal</o:Template>
   <o:LastAuthor>sirhc</o:LastAuthor>
-  <o:Revision>5</o:Revision>
-  <o:TotalTime>440</o:TotalTime>
+  <o:Revision>9</o:Revision>
+  <o:TotalTime>638</o:TotalTime>
   <o:Created>2015-05-15T15:06:00Z</o:Created>
-  <o:LastSaved>2015-10-12T22:50:00Z</o:LastSaved>
+  <o:LastSaved>2015-10-16T02:27:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>375</o:Words>
-  <o:Characters>2142</o:Characters>
-  <o:Lines>17</o:Lines>
-  <o:Paragraphs>5</o:Paragraphs>
-  <o:CharactersWithSpaces>2512</o:CharactersWithSpaces>
+  <o:Words>521</o:Words>
+  <o:Characters>2975</o:Characters>
+  <o:Lines>24</o:Lines>
+  <o:Paragraphs>6</o:Paragraphs>
+  <o:CharactersWithSpaces>3490</o:CharactersWithSpaces>
   <o:Version>12.00</o:Version>
  </o:DocumentProperties>
 </xml><![endif]-->
@@ -334,10 +334,11 @@ xmlns="http://www.w3.org/TR/REC-html40">
  @font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
+	mso-font-charset:1;
 	mso-generic-font-family:roman;
+	mso-font-format:other;
 	mso-font-pitch:variable;
-	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+	mso-font-signature:0 0 0 0 0 0;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;
@@ -514,7 +515,7 @@ ul
 	mso-bidi-theme-font:minor-bidi;}
 </style>
 <![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="3074"/>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <o:shapelayout v:ext="edit">
   <o:idmap v:ext="edit" data="1"/>
@@ -539,6 +540,81 @@ style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 <p class=MsoPlainText><span style='font-size:16.0pt;font-family:"Arial","sans-serif"'><span
 style='mso-tab-count:1'>        </span><span class=SpellE>FuMS</span>\Themes\GlobalLootData.sqf<o:p></o:p></span></p>
 
+<p class=MsoPlainText><span style='font-size:16.0pt;font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:16.0pt;font-family:"Arial","sans-serif"'>Example:<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'>[&quot;Name&quot;,
+&quot;Box Type&quot;, &quot;RANDOM&quot;],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>[// All weapons and quantity <o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_LightMGs</span>,
+2],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_AssaultRifles</span>,
+2]<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>[// All magazines and quantity<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_AmmoForEach</span>,
+4]<span style='mso-spacerun:yes'>    </span>// 4 clips for each weapon Line
+defined above.<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>// This will provide 4 clips for the <span
+class=SpellE>LightMG's</span> and 4 for the rifles for a total of 8 clips (not
+16 clips)<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>[// All items and quantity<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_B_Navigation</span>,
+2],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_Crafting_Tools</span>,
+3],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[FuMS_W_Opticslv1, 2],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_Food_Raw</span>,
+2],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[<span class=SpellE>FuMS_Drink</span>,
+2],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>      </span>[&quot;G_Diving&quot;,2]<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>],<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>[// All backpacks and quantity<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>    </span>[<span class=SpellE>FuMS_Packs_ALL</span>,
+1]<o:p></o:p></span></p>
+
+<p class=MsoPlainText><span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><span
+style='mso-spacerun:yes'>  </span>]<o:p></o:p></span></p>
+
 <p class=MsoPlainText><span style='font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoPlainText><span style='font-size:18.0pt;font-family:"Arial","sans-serif"'>Description:<o:p></o:p></span></p>
@@ -559,34 +635,104 @@ simply append them to the end of the file.<o:p></o:p></span></p>
 l0 level1 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
 "Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>1)<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><u><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Name</span></u><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif"'> : STRING<o:p></o:p></span></p>
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Configuration:</span></u><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'><o:p></o:p></span></p>
 
 <p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
 Arial'><span style='mso-list:Ignore'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Not
-case sensitive<o:p></o:p></span></p>
+</span></span></span><![endif]><u><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif"'>Name</span></u><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif"'> : STRING<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>i)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Not case sensitive<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>ii)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>This string is how
+the loot types are referenced in Missions when looking up how to create and
+fill a loot container.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>iii)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If the name is
+&quot;SCATTER&quot; an algorithm will be used to scatter the loot around the <span
+class=SpellE>loot's</span> spawn location.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>iv)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>&quot;SCATTER&quot;
+is a reserved loot name for this effect.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
+font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
 Arial'><span style='mso-list:Ignore'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>This
-string is how the loot types are referenced in Missions when looking up how to
-create and fill a loot container.<o:p></o:p></span></p>
+</span></span></span><![endif]><u><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif"'>Box Type</span></u><span style='font-size:11.0pt;
+font-family:"Arial","sans-serif"'>: STRING<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>i)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Needs to be a valid
+container class name<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>ii)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If the type is
+&quot;RANDOM&quot; one of the box types specified in BaseServer.sqf will be
+used.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>iii)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If the type is
+&quot;SCATTER&quot; then <span class=SpellE>FuMS</span> loot scatter routine
+will distribute the items on the ground randomly around the loot location.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in'><span style='font-size:11.0pt;
+font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
 Arial'><span style='mso-list:Ignore'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If
-the name is &quot;SCATTER&quot; an algorithm will be used to scatter the loot
-around the <span class=SpellE>loot's</span> spawn location.<o:p></o:p></span></p>
+</span></span></span><![endif]><u><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif"'>Randomizer: </span></u><span style='font-size:11.0pt;
+font-family:"Arial","sans-serif"'>STRING<o:p></o:p></span></p>
 
-<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
-Arial'><span style='mso-list:Ignore'>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>&quot;SCATTER&quot;
-is a reserved loot name for this effect.<o:p></o:p></span></p>
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>i)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If any value other
+than &quot;RANDOM&quot; is in this value, the loot will be ignored when a
+mission is configured to select loot randomly.<o:p></o:p></span></p>
+
+<p class=MsoPlainText style='margin-left:.75in;text-indent:-.25in;mso-list:
+l0 level3 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>ii)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Setting
+&quot;RANDOM&quot; will add the loot description to the pool of 'randomly'
+generated loot that certain missions are configured to use. (See Loot section
+of the MissionFile.htm).<o:p></o:p></span></p>
 
 <p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
 font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
@@ -594,29 +740,6 @@ font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
 <p class=MsoPlainText style='margin-left:.25in;text-indent:-.25in;mso-list:
 l0 level1 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
 "Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>2)<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><u><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Box Type</span></u><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif"'>: STRING<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
-Arial'><span style='mso-list:Ignore'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Needs
-to be a valid container class name<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
-Arial'><span style='mso-list:Ignore'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:11.0pt;font-family:"Arial","sans-serif"'>If
-the type is &quot;RANDOM&quot; one of the box types specified in BaseServer.sqf
-will be used.<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:.5in'><span style='font-size:11.0pt;
-font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:.25in;text-indent:-.25in;mso-list:
-l0 level1 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
-"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3)<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><u><span
 style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Loot Sections<o:p></o:p></span></u></p>
 
@@ -744,23 +867,14 @@ font-family:"Arial","sans-serif"'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoPlainText style='margin-left:.25in;text-indent:-.25in;mso-list:
 l0 level1 lfo2'><![if !supportLists]><span style='font-size:11.0pt;font-family:
-"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>4)<span
+"Arial","sans-serif";mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>3)<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
 style='font-size:11.0pt;font-family:"Arial","sans-serif"'>Notes<o:p></o:p></span></p>
-
-<p class=MsoPlainText style='margin-left:.5in;text-indent:-.25in;mso-list:l0 level2 lfo2'><![if !supportLists]><span
-style='font-size:11.0pt;font-family:"Arial","sans-serif";mso-fareast-font-family:
-Arial'><span style='mso-list:Ignore'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span class=SpellE><span style='font-size:11.0pt;
-font-family:"Arial","sans-serif"'>FuMS</span></span><span style='font-size:
-11.0pt;font-family:"Arial","sans-serif"'> will eventually implement SCATTER
-functionality through the 'Box Type'<span style='mso-spacerun:yes'>  </span>to
-provide better flexibility.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
 margin-left:.5in;text-indent:-.25in;line-height:19.2pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 style='font-family:"Arial","sans-serif";mso-fareast-font-family:Arial'><span
-style='mso-list:Ignore'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-family:"Arial","sans-serif"'>Loot
 Options: &quot;SCATTER&quot; may be used in place of a Loot option name or
 &quot;RANDOM&quot; in the 'Loot Configuration' section of all missions. When
@@ -776,7 +890,7 @@ created when &quot;SCATTER&quot; is used.<o:p></o:p></span></p>
 <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
 margin-left:.5in;text-indent:-.25in;line-height:19.2pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 style='font-family:"Arial","sans-serif";mso-fareast-font-family:Arial'><span
-style='mso-list:Ignore'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-family:"Arial","sans-serif"'>For
 magazines the value of <span class=SpellE><b style='mso-bidi-font-weight:normal'>FuMS_AmmoForEach</b></span>
 may be defined.<span style='mso-spacerun:yes'>  </span>When this is defined,
