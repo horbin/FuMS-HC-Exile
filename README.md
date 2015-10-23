@@ -3,6 +3,13 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.2a
+- corrected code to properly monitor server FPS is above the specified threshold before spawning a new mission.
+
+- corrected mission configuration error with Zombie theme that was spawning multiple structures and excessive zombies.
+
+  Sorry guys...but I did say happy halloween ;) Trick or Treat!
+
 v0.2 Ryan's Zombies and Demons Support!
    Happy Halloween!!!
    
