@@ -4,6 +4,44 @@
 // Init file run by all players, HC's, and the server.
 diag_log format ["FuMS initializing for player:%1",player];
 
+// Player watch routine.
+[] spawn
+{	
+	while {true} do
+	{
+		if (!isNil "FuMS_PlayerWatch_CheckTime") then
+		{
+			uisleep FuMS_PlayerWatch_CheckTime;
+			if (floor (random 100) < FuMS_PlayerWatch_CheckChance) then
+			{
+                if (FuMS_PlayerWatch_NotifyPlayer) then
+                {
+                    systemchat format ["You hear abnormal radio noise."];
+                   // player sideChat "We have visitors";
+                   // playsound "radioAmbient6";
+                  
+                  //  playsound "radioAmbient8";
+                  
+                   // playsound "radio_track_01";
+                   // playsound "faction_independent_x05_i_nonsense_EXI_0";
+                
+                    // NEED TO FIND A GOOD SHORT SOUND HERE!
+                    
+                    //"\ryanzombies\sounds\ryanzombiesscream1.ogg"                    
+                };
+				FuMS_StartPlayerEncounter = player;
+				publicVariableServer "FuMS_StartPlayerEncounter";
+			};
+		}else
+		{
+			uisleep 5; // HC has not initialized and passed the global var, so rest for 5 seconds and check again.
+		};
+	};
+};
+
+
+
+// Part of Ryan's Zombie and Demons support
 "FuMS_ThrowIt" addPublicVariableEventHandler
 {
 		_data = _this select 1;
@@ -15,9 +53,6 @@ diag_log format ["FuMS initializing for player:%1",player];
 	_object setvelocity _vel;
 	_object setVectorUp [0,0,-1];
 };
-
-
-
 
 "FuMS_PayPlayer" addPublicVariableEventHandler
 {
@@ -41,6 +76,7 @@ diag_log format ["FuMS initializing for player:%1",player];
     };
 	}foreach _factionPairs;
 };
+
 FuMS_fnc_DirectCaptive =
 {
 	private ["_unit","_player","_actionID","_directive"];
@@ -200,8 +236,8 @@ FuMS_RadioMsgQue = [];
 waitUntil {!isNil "FuMS_AdminControlsEnabled"};
 if (FuMS_AdminControlsEnabled) then
 {  
-	waitUntil{!isNull (uiNameSpace getVariable ["EPOCH_loadingScreen", displayNull])};
-	waitUntil{isNull (uiNameSpace getVariable "EPOCH_loadingScreen")};
+//	waitUntil{!isNull (uiNameSpace getVariable ["EPOCH_loadingScreen", displayNull])};
+//	waitUntil{isNull (uiNameSpace getVariable "EPOCH_loadingScreen")};
 	sleep 10; // something odd with Khalili or no player name, but valid 'player' function return. Pause to allow final initialization.
 	while { isNil "FuMS_PlayerAuthenticated"} do
 	{
@@ -214,7 +250,7 @@ if (FuMS_AdminControlsEnabled) then
 	diag_log format ["<FuMS:%2> PlayerInit: FuMS Admin Menu = %1",(!isNil "FuMS_fnc_Menu_StartMenu"),FuMS_Version];
 };
 // Push controls for Zombie sounds to the player.
-waitUntil {!isNil "FuMS_str_HC_Zombies_INF_fnc_nextSound"};
-diag_log format ["<FuMS:%1> StartMenu: Initializing Zombie Sounds for %2",FuMS_Version,player];
-FuMS_INF_nextSound = compile FuMS_str_HC_Zombies_INF_fnc_nextSound;
-[] call FuMS_INF_nextSound;
+//waitUntil {!isNil "FuMS_str_HC_Zombies_INF_fnc_nextSound"};
+//diag_log format ["<FuMS:%1> StartMenu: Initializing Zombie Sounds for %2",FuMS_Version,player];
+//FuMS_INF_nextSound = compile FuMS_str_HC_Zombies_INF_fnc_nextSound;
+//[] call FuMS_INF_nextSound;

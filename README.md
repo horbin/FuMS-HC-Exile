@@ -3,6 +3,53 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.3
+-fixed typo in @FuMS config.cpp
+-removed legacy startup code for FuMS on server
+    Thank you Terd Fergasen
+-fixed 'multiple building' bug in the Zombies theme.
+-fixed a bug with the server FPS monitor was not properly capturing server FPS
+-tweaked Heartbeat values to reduce excessive server logging of non-HC error conditions
+-added code to prevent zombies from doing damage witin 200m of exile designated trader zones.
+-fixed 'safe mission position spawn' code to recognize Exile Territories (only when players are near them). This should prevent
+a mission from randomly spawning on top of a player's base while he is at the base.
+- fixed a bug with the ProxPlayer trigger that was causing some missions to not behave correctly (specifically zombie missions ending)
+
++ Roadblock theme
+Based upon the concept and building layout of Pato!
+1. Specific to ALTIS
+2. Can be modified to other maps or other locations in altis by changing the mission spawn locations in ThemeData.sqf
+3. See "RoadBlock" loot in GlobalLootData.sqf for customization of loot left by the occupying soldiers.
+
++ Player Watch
+New Theme process model called 'player watch'.
+This monitors a player's location and based upon configurable options from the admin will launch missions.
+Config file \FuMS\Themes\PlayerWatch\PlayerWatchConfig.sqf
+
+Player watch performs a check every few minutes (configurable). If the check passes, information
+about the players location is gathered and a mission is spawned near the player.
+See PlayerWatchConfig.sqf for what mission will be launched.
+
+List of locations and default mission type:
+In trader zone - NONE
+In own territory - small band of friendly armed civilians
+In another territory - helo drop of 1-3 AI
+In air vehicle - armed helo
+In vehicle on land - armed Unmanned Vehicle
+In vehicle in water - armed attack boat
+In water - 3 man hostile dive squad
+In spawn zone - zombies
+In a town - squad of AI w/ a UAV
+near a road - zombies
+default (wilderness) - 2 squads of AI fighting each other
+
+See Docs folder and comments in PlayerWatchConfig.sqf file to customize!
+
+
+
+
+
+
 v0.2a
 - corrected code to properly monitor server FPS is above the specified threshold before spawning a new mission.
 
@@ -165,6 +212,7 @@ class Item1
 
 2) FuMS Installation 
 	a.   Copy the HC folder in the distribution to your mpmissions/Exile.Altis.pbo
+		Add []execVM "HC\init.sqf" to the TOP of the initPlayerLocal.sqf file.
 	
 	b.  Copy the @FuMS folder to your base server directory (C:\Arma\Server)
 		Do this on your SERVER. No need to put this folder on your HC!

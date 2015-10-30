@@ -8,10 +8,10 @@ if (hasInterface or isServer) exitWith{};
 //waitUntil{isNull (uiNameSpace getVariable "EPOCH_loadingScreen")};
 
 _HCname = profileName;
-for [{_i=0}, {_i < 50}, { _i = _i +1}] do
+for [{_i=0}, {_i < 9}, { _i = _i +1}] do
 {
     diag_log format ["##############################################"];   
-    if (_i == 26) then {diag_log format ["<FuMS> Headless Client %1 connected with profile name %2",player,_HCname];};
+    if (_i == 5) then {diag_log format ["<FuMS> Headless Client %1 connected with profile name %2",player,_HCname];};
 };
 //waitUntil {time >0};
 waitUntil {!isNil "FuMS_Server_Operational"};
@@ -47,8 +47,8 @@ diag_log format ["<FuMS> HC_Init %1 connected using owner id:%2",player,FuMS_HC_
 
 waitUntil 
 {
-    sleep 5;
     diag_log format ["<FuMS> HC_INIT: Receiving Common Data from Server."]; 
+    sleep 65;    
     (!isNil "FuMS_ServerInitData" or !isNil "FuMS_HC_ScriptList")
 };
 //waitUntil {FuMS_ServerInitData}; // Server has completed loading all configuration data, and has passed it via PVClient calls.
@@ -64,7 +64,7 @@ diag_log format ["<FuMS> HC_INIT: Script List size = %1",count FuMS_HC_ScriptLis
 	_ary = toArray _x;
 	_string = "FuMS_fnc_";
 	for [{_i=9},{_i< count _ary},{_i=_i+1}]do {_string = format ["%1%2",_string,toString [_ary select _i]];};	
-	diag_log format ["<FuMS> HC_Init: Compiling %1  into %2",_x,_string];
+	//diag_log format ["<FuMS> HC_Init: Compiling %1  into %2",_x,_string];
 	missionNamespace setVariable [_string, _code];
 	//if (!isServer) then {_x=[];}; // free up memmory by removing code 'strings' if this is not the server.
 }foreach FuMS_HC_ScriptList;
