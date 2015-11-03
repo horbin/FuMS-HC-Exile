@@ -3,6 +3,30 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.3a (bug fixes and tweaks)
+****
+NOTE TO ADMINS: Save your \FuMS\Themes folder! Unless specifically indicated after updating to any newer version of FUMS you will be able to copy over the \FuMS\Themes
+folder with your current folder. This should prevent any rework on your part and permit you to immediately use any new functionality added while keeping
+your server configured as it was prior to the update.
+****
+
++ changed zombie missions the the 'Zombies' theme to not require bombs. Missions now complete when all zombies are dead.
+  towns infected will 'repopulate' 1 hour after the town is cleared of zombies.
+
++ coded added to force zombies to die if they attack a player within 150m of a safe zone.
+
++ verified code to prevent zombies from damaging players when within 200m of a safe zone. No code changes made. If players still experiencing
+death by zombie in safe zones, they are lying to you :) or some other mod is being used for your safe zones. (or I still have not found the bug?)
+
++ corrected bug in Playerwatch that was using spawn zone locations for 'safezone' position logic.
+   Safe zones are now properly identified by PlayerWatch.
+   
++ changed failure condition of captive missions from a 'timeout' to 'lowcaptive' count of zero. Captive missions will now
+  remain active until either completed, or no captives remain alive.  
+  
++ added "CAPTIVE" as an option to LowUnitCount and HighUnitCount triggers. 
+
+
 v0.3
 -fixed typo in @FuMS config.cpp
 -removed legacy startup code for FuMS on server
