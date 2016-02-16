@@ -88,7 +88,7 @@ _typeFound = false;
             default
             {
                 // NOTE if I_Soldier_EPOCH type is changed, AllDeadorGone.sqf will need to be modified
-                _unit = _group createUnit["Exile_Unit_Player", _pos, [], 0, "FORM"];
+                _unit = _group createUnit["O_G_Soldier_F", _pos, [], 0, "FORM"];
                 removeUniform _unit;
                 removeHeadgear _unit;
                 removeVest _unit;
