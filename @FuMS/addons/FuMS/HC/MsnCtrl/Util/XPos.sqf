@@ -10,7 +10,7 @@ _offset = _this select 1;
 //diag_log format ["##Xpos: _origion:%1  _offset:%2",_origin, _offset];
 if (!isNil "_offset") then
 {
-    if (count _offset == 3) exitWith { _offset }; // If 3D simply return it.
+    if (count _offset == 3) exitWith { _newloc = _offset; }; // If 3D simply return it.
     if (count _offset == 1) then {_offset = _offset select 0;};  // string location embedded in an array ["Stavros"]
     if (typeName _offset == "STRING") then { _newloc = [_offset] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
     else
