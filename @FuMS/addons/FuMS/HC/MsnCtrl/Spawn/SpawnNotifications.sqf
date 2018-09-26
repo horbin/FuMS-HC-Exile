@@ -77,11 +77,19 @@ if (_notify) then
         FuMS_GlobalHint = _ogjstr;
         publicVariable "FuMS_GlobalHint";  
         */
-    
-    FuMS_ExileToast = [(_msnText select 0),(_msnText select 1)];
-	publicVariable "FuMS_ExileToast"; 
+    	
+	// Exile Toasts (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		FuMS_ExileToast = [(_msnText select 0),(_msnText select 1)];
+		publicVariable "FuMS_ExileToast"; 
+	};
 	
-	format["%1: %2",toUpper (_msnText select 0),(_msnText select 1)] 
+	// System Chat notification (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		format["%1: %2",toUpper (_msnText select 0),(_msnText select 1)] remoteExecCall ["systemChat",-2];
+	};
 
     };
 };  
