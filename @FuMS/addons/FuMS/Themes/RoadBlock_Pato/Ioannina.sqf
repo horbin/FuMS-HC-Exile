@@ -38,18 +38,15 @@
 // These two delays will also affect how much time will elapse from mission completion until living AI cleanup.
 ],[
    // Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
-     "Road Block",  // title line
-     "", 
+     "Road Block",  // title line 
      "A station has been occupied by soldiers" //description/radio message.
 ],[  
     // Mission Success Message
     "Mission Success",  // title line
-     "",
      "Notifying High Command that the FOB has been captured."
 ],[
    // Mission Failure Message
     "Mission Failure!",
-    "",
     ""
 ]],[
 //---------------------------------------------------------------------------------
