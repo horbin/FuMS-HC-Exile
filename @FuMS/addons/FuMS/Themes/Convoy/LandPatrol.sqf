@@ -16,18 +16,16 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message 
-    ["",  // title line
-     "", // title line, do not remove these!
-     "A convoy of clone hunters have entered the area." //description/radio message.
+    [
+     "",						// title line, do not remove these!
+     "A convoy of clone hunters has entered the area." 	//description/radio message.
 	],  
     // Mission Success Message
     ["Mission Success",
-     "",
      "The convoy is destroyed!"
 	], 
     // Mission Failure Message
     ["Mission Failure!",
-    "",
     "The convoy has reached its destination and escaped!"
 	] 
 ],
