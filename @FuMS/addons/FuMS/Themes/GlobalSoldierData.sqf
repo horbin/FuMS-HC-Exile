@@ -1,17 +1,26 @@
-//SoldierData.sqf
+// GlobalSoldierData.sqf
 // Horbin
-// 1/10/15
+// Updated by TheOneWhoKnocks
+// 9/26/18
+// Skill levels now reflect "moderate" AI skills from similiar mission systems
+// Change these numbers to better reflect your play style and group of players
 // Inputs: Theme Index
 // Default AI Skill Array
-// [.05, .9, .1, .1, .5, .5, .1, .1]
-// AimAccuracy= .05 : target lead, bullet drop, recoil, how certain ai must be before opening fire
-// AimShake = .9 : how steady AI can hold a weapon.
-// AimSpeed = .1 : how quick AI can rotate and stablize its aim.
-// SpotDistance = .5 : affects ability to spot visually and audibly and the accuracy of the information.
-// Spottime = .5 : affects how quick AI reacts to death, damage or observing an enemy.
-// Courge = .1 : affects unit's subordinates' morale.
-// ReloadSpeed = .1: affects delay between weapon switching and reloading
-// Commanding = .5 : how quickly recognized targets are shared with the AI's group.
+// [.2, .6, .6, .6, .6, 1, .8, 1,.7]
+// AimAccuracy= 	.2 : target lead, bullet drop, recoil, how certain ai must be before opening fire
+// 			*** This was set low to let them shoot at you a lot, but be more fun than deadly.  Make sure they have unlimited ammo to compensate
+// AimShake = 		0.6 : how steady AI can hold a weapon.
+// AimSpeed = 		0.6 : how quick AI can rotate and stablize its aim.
+// SpotDistance = 	0.6 : affects ability to spot visually and audibly and the accuracy of the information.
+// Spottime = 		0.6 : affects how quick AI reacts to death, damage or observing an enemy.
+// Courage = 		1 : affects unit's subordinates' morale. (100% baby! These guys dont run)
+// ReloadSpeed = 	0.8: affects delay between weapon switching and reloading 
+// Commanding = 	0.8 : how quickly recognized targets are shared with the AI's group. 
+// General = 		0.7 : This is an overall modifier to all other settings.  Let's you scale the skills up and down without 
+//			modifying all the other values.  
+
+// NOTE: Civilian and Zombie skill levels were not modified except to add the "general" skill setting.
+// Civilian roles have a general setting of "0.5" and Zombies have "1"
 
 // NOTE: AI FLAGS
 // FlagWater = true: spawning over water will default to a "Diver" configuration (Frog suit and Rebreather!)
@@ -21,7 +30,7 @@ _soldierData =
 [
     [
         "Sniper",
-		[.08, .9, .1, .5, .5, .1, .1, .5], // Soldier skill levels
+	[.2, .6, .6, .6, .6, 1, .8, 1, .7], // Soldier skill levels
         [FuMS_U_Ghillie,1], // Uniform
         [FuMS_V_Vests,.5], // Vest.
         [FuMS_H_MilitaryCaps,.5], // Helmet.
@@ -50,7 +59,7 @@ _soldierData =
         ]
     ],[
         "Rifleman",
-        [.05, .9, .1, .5, .5, .1, .1, .5],
+        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Harness,.5], // Vest.
         [FuMS_H_Military,.5], // Helmet
@@ -69,7 +78,7 @@ _soldierData =
         ]
     ],[
         "LMG",
-        [.05, .9, .1, .5, .5, .1, .1, .5],
+        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Harness,.5], // Vest.
         [FuMS_H_Military,.5], // Helmet.
@@ -88,7 +97,7 @@ _soldierData =
         ]
     ],[
         "Hunter",
-        [.03, .9, .1, .5, .5, .1, .1, .5],
+        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Guerilla,1], // Uniform
         [FuMS_V_Bandolliers,.2], // Vest.
         [FuMS_H_Hunter,.8], // Helmet.
@@ -107,7 +116,7 @@ _soldierData =
         ]
     ],[
         "Diver",
-        [.05, .9, .1, .5, .5, .1, .1, .5],
+        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Wetsuit,1], // Uniform
         [FuMS_V_Rebreather,1], // Vest.
         [FuMS_H_Bandannas,.2], // Helmet
@@ -124,7 +133,7 @@ _soldierData =
             ["RESPECT", 10]
         ]
     ],[
-        "Driver",[.05, .9, .1, .5, .5, .1, .1, .5],
+        "Driver",[.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Chestrig,.1], // Vest.
         [FuMS_H_Military,.8], // Helmet
@@ -141,7 +150,7 @@ _soldierData =
             ["RESPECT", 10]
         ]
     ],[
-        "Pilot",[.05, .9, .1, .5, .5, .1, .1, .5],
+        "Pilot",[.2, .6, .6, .6, .6, 1, .8, 1, .7],
         [FuMS_U_Aviation,1], // Uniform
         [FuMS_V_Chestrig,.8], // Vest.
         [FuMS_H_Aviation,1], // Helmet
@@ -158,7 +167,7 @@ _soldierData =
             ["RESPECT", 10]
         ]
     ],[
-        "CivCombat",[.02, .7, .1, .5, .5, .08, .1, .5],
+        "CivCombat",[.02, .7, .1, .5, .5, .08, .1, .5, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,.5], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -175,7 +184,7 @@ _soldierData =
             ["RESPECT", 5]
         ]
     ],[
-        "CivNonCombat",[.02, .7, .1, .3, .5, .08, .1, .1],
+        "CivNonCombat",[.02, .7, .1, .3, .5, .08, .1, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,.1], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -192,7 +201,7 @@ _soldierData =
             ["RESPECT", 5]
         ]
     ],[
-        "CivNoGun",[.02, .7, .1, .3, .5, .1, .05, .1],
+        "CivNoGun",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -210,7 +219,7 @@ _soldierData =
         ]
         
     ],[        
-		"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1],
+		"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Vests,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -230,7 +239,7 @@ _soldierData =
         ]
 	],
     [
-        "Zombie",[1,1,1,.5,.5,1,1,.6],
+        "Zombie",[1,1,1,.5,.5,1,1,.6,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -248,7 +257,7 @@ _soldierData =
         ]
     ],
      [
-        "ZombieSoldier",[1,1,1,1,1,1,1,1],
+        "ZombieSoldier",[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -266,7 +275,7 @@ _soldierData =
         ]
     ],
      [
-        "ZombieSpider",[1,1,1,1,1,1,1,1],
+        "ZombieSpider",[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -284,7 +293,7 @@ _soldierData =
         ]
     ],
      [
-        "ZombieBoss",[1,1,1,1,1,1,1,1],
+        "ZombieBoss",[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -309,7 +318,7 @@ _soldierData =
         //**********
         // **NOTE** Only Helmet, and General Inventory items are valid for Raptors.
         //**********
-        "RaptorM",[1,1,1,1,1,1,1,1],
+        "RaptorM",[1,1,1,1,1,1,1,1,1],
 		// Raptor_Uniform_Base  RaptorM_Uniform_Base
         ["",0], // Uniform<<-- place holder, does nothing, skins randomized.
         ["",0], // Vest.
@@ -331,7 +340,7 @@ _soldierData =
 	 [
          // requires installation of 'Raptor' Addon
         // http://makearmanotwar.com/entry/ec2EDrOCkM#.VT0zFfnF9EK
-        "RaptorF",[1,1,1,1,1,1,1,1],
+        "RaptorF",[1,1,1,1,1,1,1,1,1],
 		// Raptor_Uniform_Base  RaptorM_Uniform_Base
         ["",0], // Uniform
         ["",0], // Vest.
