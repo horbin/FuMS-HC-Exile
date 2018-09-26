@@ -260,8 +260,8 @@ _typeFound = false;
                     };
                     // Set skills
                     _skills = _x select 1;
-                    _types = ["aimingAccuracy","aimingShake","aimingSpeed","spotDistance","spotTime","courage","reloadSpeed","commanding"];
-                    for [ {_i=0},{_i<8},{_i=_i+1}] do
+                    _types = ["aimingAccuracy","aimingShake","aimingSpeed","spotDistance","spotTime","courage","reloadSpeed","commanding","general"];
+                    for [ {_i=0},{_i<9},{_i=_i+1}] do
                     { 
                         if (FuMS_SoldierSkillsOverride select _i == 0) then
                         {
@@ -271,6 +271,12 @@ _typeFound = false;
                             _unit setSkill [ (_types select _i), (FuMS_SoldierSkillsOverride select _i)];
                         };
                     };
+		    
+		    _unit setVariable ["ExileMoney",(floor(random 500)),true];  //Adds up 500 poptabs to each soldier spawned
+		    
+		    _unit allowFleeing 0;  //Not one step backwards...
+
+		    
                     // Set FuMS specific AI Logic
                     [_unit] spawn FuMS_fnc_HC_AI_Logic_VehStuck;
                 };  
