@@ -17,20 +17,18 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
+    // All missions were modified to reduce notifications from 3 lines to 2
 ["Ship Wreck",
-    "a vessel has sunk!",
-    "Soldiers have crashed a boat near the shore!"
+    "Soldiers have crashed and sunk a boat near the shore!"
 ],
     
     // Mission Success Message
 ["Mission Success",
-    "",
     "The wreck has been salvaged."
 ],
   
     // Mission Failure Message
 ["Mission Failure!",
-    "",
     "The wreck has vanished into the depths."
 ] 
 ],
