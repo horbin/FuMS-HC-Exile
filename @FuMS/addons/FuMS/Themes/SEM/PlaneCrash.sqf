@@ -9,7 +9,7 @@
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.
-	true, 1, 0,
+    true, 1, 0,
     true, // Notify players via global message
     true,// Show encounter area on the map
     30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Aircraft Crash!",
-    "",
     "A supply plane has crashed with surviving bandits!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "The bandits have escaped."
 ] 
 ],
