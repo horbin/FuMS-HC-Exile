@@ -19,7 +19,7 @@
     // Spawn Mission Message
     // All missions were modified to reduce notifications from 3 lines to 2
 ["Ship Wreck",
-    "Soldiers have crashed and sunk a boat near the shore!"
+    "Soldiers have crashed a boat near the shore!"
 ],
     
     // Mission Success Message
