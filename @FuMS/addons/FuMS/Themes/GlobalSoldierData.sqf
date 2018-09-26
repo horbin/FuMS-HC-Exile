@@ -6,7 +6,7 @@
 // Change these numbers to better reflect your play style and group of players
 // Inputs: Theme Index
 // Default AI Skill Array
-// [.2, .6, .6, .6, .6, 1, .8, 1,.7]
+// [.2, .6, .6, .6, .6, 1, .8, 1, .7]
 // AimAccuracy= 	.2 : target lead, bullet drop, recoil, how certain ai must be before opening fire
 // 			*** This was set low to let them shoot at you a lot, but be more fun than deadly.  Make sure they have unlimited ammo to compensate
 // AimShake = 		0.6 : how steady AI can hold a weapon.
@@ -219,7 +219,7 @@ _soldierData =
         ]
         
     ],[        
-		"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+	"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Vests,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
