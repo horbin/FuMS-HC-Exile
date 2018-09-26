@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
-v0.4 
+v0.4 (The ReLaunch)
 ****
 NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had
 three lines, but the new system only has two, a title and a message body.  This is the only change needed to update your missions
