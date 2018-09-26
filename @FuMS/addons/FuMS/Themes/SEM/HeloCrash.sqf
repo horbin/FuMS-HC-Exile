@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Helo Crash!",
-    "",
     "A heli with supplies and bandit troops has crashed."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "The bandits have escaped."
 ] 
 ],
