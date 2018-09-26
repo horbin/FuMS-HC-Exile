@@ -16,20 +16,21 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message 
-    ["",  // title line
-     "", // title line, do not remove these!
-     "" //description/radio message.
-	],  
+    [
+     	"", // title line, do not remove these!
+     	"" //description/radio message.
+    ],  
     // Mission Success Message
-    ["Mission Success",
-     "",
-     ""
-	], 
+    [
+        "Mission Success",
+        ""
+    ], 
+    
     // Mission Failure Message
-    ["Mission Failure!",
-    "",
-    ""
-	] 
+    [
+        "Mission Failure!",
+        ""
+    ] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifics
 // Loot for this mission is contained in the Vehicles!
