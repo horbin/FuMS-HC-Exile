@@ -44,17 +44,14 @@
 ],[
    // Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
      "CORE Directive",  // title line
-     "Defense Alert!", 
      "High Command has directed us to establish a Forward Operating Base!" //description/radio message.
 ],[  
     // Mission Success Message
     "Mission Success",  // title line
-     "",
      "Notifying High Command that the FOB has been destroyed!"
 ],[
    // Mission Failure Message
     "Mission Failure!",
-    "",
     "Reconnaissance complete. All forces are to RTB."
 ]],[
 //---------------------------------------------------------------------------------
