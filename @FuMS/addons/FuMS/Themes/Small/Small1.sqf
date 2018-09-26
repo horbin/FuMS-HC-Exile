@@ -9,7 +9,7 @@
    
 [  
     [// NOTIFICATION Messages and Map display Control.
-	true, 1, 0,
+    true, 1, 0,
     true, // Notify players via global message
     true,// Show encounter area on the map
     300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Sniper's Have Been Spotted!",
-    "A Small Patrol Was Spotted",
     "You have our permission to confiscate any property you find as payment for eliminating the threat!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "SniperAlley",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "SniperAlley",
+[
+    "Mission Failure!",
     "The Sniper's have escaped."
 ] 
 ],
