@@ -11,7 +11,7 @@ to display properly using Exile Toasts.  Please see updated Themes in the downlo
 ***
 
 + Added Exile Toasts and replaced current FuMS_Global Message system (code will be deprecated in next version and removed)
-+ Updated AI difficulty engine to include setting the "general" setting which seemed to be prevetning AI from doing anything at times
++ Updated AI difficulty engine to include setting the "general" setting which seemed to be preventing AI from doing anything at times
 + Updated AI difficulty settings to "MODERATE" level simliar to other AI systems (will be variable int he future)
 + Added poptabs to mission crates (Preset values of 500 + up to 1000 more per create, will be customizable in the future)
 + Added poptabs to soldiers (Preset value of up to 500 poptabs per soldier, will be customizable in the future)
