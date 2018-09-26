@@ -19,20 +19,19 @@
     // Spawn Mission Message
 [
     "A Strange Device",
-    "",
     "A nuclear device has been discovered"
 	
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The Device has been disabled."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "Fortunately the device failed to activate, but the Bandits have escaped."
 ] 
 ],
