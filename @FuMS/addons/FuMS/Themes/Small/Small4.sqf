@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "A Bandit Posee Has Been Spotted!",
-    "A Small Gang Was Spotted",
     "You have our permission to confiscate any property you find as payment for eliminating the threat!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "BanditPosee",
+[
+    "Mission Success",
     "The Bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "BanditPosee",
+[
+    "Mission Failure!",
     "The Bandits have escaped."
 ] 
 ],
