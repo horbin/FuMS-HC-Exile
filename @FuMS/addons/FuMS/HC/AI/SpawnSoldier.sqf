@@ -272,12 +272,11 @@ _typeFound = false;
                         };
                     };
 		    
-		    _unit setVariable ["ExileMoney",(floor(random 500)),true];  //Adds up 500 poptabs to each soldier spawned
+					_unit setVariable ["ExileMoney",(floor(random 500)),true];  //Adds up 500 poptabs to each soldier spawned
 		    
-		    _unit allowFleeing 0;  //Not one step backwards...
-
-		    
-                    // Set FuMS specific AI Logic
+					_unit allowFleeing 0;  //Not one step backwards...
+                    
+					// Set FuMS specific AI Logic
                     [_unit] spawn FuMS_fnc_HC_AI_Logic_VehStuck;
                 };  
             }
