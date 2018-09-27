@@ -219,7 +219,7 @@ _soldierData =
         ]
         
     ],[        
-	"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+		"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Vests,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
