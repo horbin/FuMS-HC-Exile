@@ -18,19 +18,16 @@
     ],
     // Spawn Mission Message
 ["Mission",
-    "",
     ""
 ],
     
     // Mission Success Message
 ["Mission Success",
-    "",
     ""
 ],
   
     // Mission Failure Message
 ["Mission Failure!",
-    "",
     ""
 ] 
 ],

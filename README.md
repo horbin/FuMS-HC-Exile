@@ -3,6 +3,20 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.4 (The ReLaunch)
+****
+NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had
+three lines, but the new system only has two, a title and a message body.  This is the only change needed to update your missions
+to display properly using Exile Toasts.  Please see updated Themes in the download to see what changes you need to make.
+***
+
++ Added Exile Toasts and replaced current FuMS_Global Message system (code will be deprecated in next version and removed)
++ Updated AI difficulty engine to include setting the "general" setting which seemed to be preventing AI from doing anything at times
++ Updated AI difficulty settings to "MODERATE" level simliar to other AI systems (will be variable int the future)
++ Added poptabs to mission crates (Preset values of 500 + up to 1000 more per create, will be customizable in the future)
++ Added poptabs to soldiers (Preset value of up to 500 poptabs per soldier, will be customizable in the future)
++ Added Tanoa based versions of base locations for Roadblock Pato (Currently supports Altis and Tanoa)
+
 v0.3a (bug fixes and tweaks)
 ****
 NOTE TO ADMINS: Save your \FuMS\Themes folder! Unless specifically indicated after updating to any newer version of FUMS you will be able to copy over the \FuMS\Themes

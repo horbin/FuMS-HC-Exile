@@ -19,18 +19,16 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
-    ["",  // title line
+    [
      "", // title line, do not remove these!
      "High Command is sending help!" //description/radio message.
 	],  
     // Mission Success Message
     ["",
-     "",
      ""
 	], 
     // Mission Failure Message
     ["",
-    "",
     ""
 	] 
 ],

@@ -19,10 +19,16 @@ _themeData =
     [  
         
         // The below missions MUST be in the same folder as this file! 
-        //see Test Theme ThemeData.sqf for other options
-        ["Dump",[5786.56,20082.1]],
-		["168154",[16894.9,15475.3]],
-		["Ioannina",[23337.7,19770.1]]
+        // see Test Theme ThemeData.sqf for other options
+	// Currently, these are map specific becuase of spawned in base configurations, so you have to comment out the ones you dont want
+	// Future state will have additonal map specific locations as info is contributed, as well as random locations
+	
+	//["WestIsland",[8444.573,9860.862]],	// Used for Tanoa
+	//["SEIsland",[11056.534,3734.269]],	// Used for Tanoa
+	
+        ["Dump",[5786.56,20082.1]],		// Used for Altis
+	["168154",[16894.9,15475.3]],		// Used for Altis
+	["Ioannina",[23337.7,19770.1]]		// Used for Altis
 		
     ],
     [   

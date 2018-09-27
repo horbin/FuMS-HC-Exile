@@ -16,21 +16,22 @@
     0       // Lose delay: Time in seconds after a lose before mission cleanup is performed
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
-    // Spawn Mission Message
-["XFILL assets inbound!",
-    "Evac on its way!",
+    
+// Spawn Mission Message
+[
+    "XFILL assets inbound!",
     "XFILL assets are inbound, be ready!"
 ],
     
-    // Mission Success Message
-["Mission Success",
-    "",
+// Mission Success Message
+[
+    "Mission Success",
     ""
 ],
   
-    // Mission Failure Message
-["Mission Failure!",
-    "",
+// Mission Failure Message
+[
+    "Mission Failure!",
     ""
 ] 
 ],

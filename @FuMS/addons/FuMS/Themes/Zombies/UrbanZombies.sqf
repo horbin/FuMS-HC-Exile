@@ -21,19 +21,19 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message 
-    ["Zombie Horde",  // title line
-     "A town has become infected!", // title line, do not remove these!
-     "The source of the infection must be destroyed." //description/radio message.
-	],  
+    [
+     	"A town has become infected!", // title line, do not remove these!
+     	"The source of the infection must be destroyed." //description/radio message.
+    ],  
     // Mission Success Message
-    ["Mission Success",
-     "",
-     "The source of the horde has been destroyed."
+    [
+    	"Mission Success",
+     	"The source of the horde has been destroyed."
 	], 
     // Mission Failure Message
-    ["Mission Failure!",
-    "",
-    ""
+    [
+    	"Mission Failure!",
+    	""
 	] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifics

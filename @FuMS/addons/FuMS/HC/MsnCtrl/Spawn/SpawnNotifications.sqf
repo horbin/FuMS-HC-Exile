@@ -67,14 +67,30 @@ switch (_msnStatus_status) do
 if (_notify) then
 {
     if (!isnil "_msnText") then
-    {      
+    {   
+        /*    //////////////////////// Old notification code, will be deprecated in future versions
         _ogjstr = "";
         if (count _msnText >0) then {_ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];};
         if (count _msnText >1) then {_ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];};
         _ogjstr =  format ["%1<br />__________", _ogjstr];
         if (count _msnText >2) then {_ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];};
-    FuMS_GlobalHint = _ogjstr;
-    publicVariable "FuMS_GlobalHint";  
+        FuMS_GlobalHint = _ogjstr;
+        publicVariable "FuMS_GlobalHint";  
+        */
+    	
+	// Exile Toasts (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		FuMS_ExileToast = [(_msnText select 0),(_msnText select 1)];
+		publicVariable "FuMS_ExileToast"; 
+	};
+	
+	// System Chat notification (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		format["%1: %2",toUpper (_msnText select 0),(_msnText select 1)] remoteExecCall ["systemChat",-2];
+	};
+
     };
 };  
 if (_showMap) then 

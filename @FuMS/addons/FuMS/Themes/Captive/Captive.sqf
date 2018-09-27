@@ -43,18 +43,15 @@
 // These two delays will also affect how much time will elapse from mission completion until living AI cleanup.
 ],[
    // Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
-     "Captives",  // title line
-     "Locals have been Captured.", 
+     "Locals have been Captured", 
      "The Authority has captured convicts for testing. Go free them!" //description/radio message.
 ],[  
     // Mission Success Message
     "Mission Success",  // title line
-     "",
      "Captives have been rescued."
 ],[
    // Mission Failure Message
     "Mission Failure!",
-    "",
     "The Authority has escaped with its captives."
 ]],[
 //---------------------------------------------------------------------------------

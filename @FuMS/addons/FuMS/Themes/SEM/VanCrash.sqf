@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Supply Van Crash!",
-    "",
     "A supply van has crashed with surviving bandits!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "The bandits have escaped."
 ] 
 ],

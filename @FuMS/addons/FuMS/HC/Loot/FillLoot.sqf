@@ -260,6 +260,18 @@ if (_lootOption != "NONE") then
                 };
                 _numItems = _numItems + _number;
             }foreach _backpacks;
+            
+           // Add Poptabs to mission create (Minimum 500 + up to another 1000.  Adjust to your liking)
+			   if (_typeLoot == "SCATTER" or _boxtype=="SCATTER") then
+			   {
+			   }else
+			   {   
+				   private "_amount";
+				   _amount = 500 + floor random (1000); //Adds 500 poptabs + up to 1000 more to the box/container/crate referred to as "_box" 
+		         //diag_log format ["<FuMS> FillLoot: Adding %1 poptabs %3",_amount, _box];
+				   _box setVariable ["ExileMoney", _amount, true]; 
+			   };
+            
             //initialize FuMSLoot variable
            if (!(TypeName _box == "ARRAY")) then { _box setVariable ["FuMS_Loot", [0, _numItems], true];            };
       //    diag_log format ["<FuMS> FillLoot: %1 items added to %2",_numItems, _box];

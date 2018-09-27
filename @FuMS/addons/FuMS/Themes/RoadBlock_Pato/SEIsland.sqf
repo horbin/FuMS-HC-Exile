@@ -1,7 +1,9 @@
-//TestMission01.sqf
-// Horbin
-// 12/31/14
-// Be cautious when editing data.
+// SEIsland.sqf
+// TheOneWhoKnocks
+// Originally created as "Ioannina.sqf" from Horbin
+// New locations specific to Tanoa, and solder spawns have been moved to prevent them dogpiling each other (funny, but slows them down)
+// Also, these snipers are not setting up on towers properly. This will be fixed in future versions 
+// 9/26/18
 
 // NOTE: For all Offset values, if three dimensions are used, the point will be treated as an absolute point on the game map.
 // Ex: [15,20] is an offset 15m east, 20m north of the encounter center
@@ -12,7 +14,7 @@
 [[
 //------------------------------------------------------------------------------------
 //-----Mission Area Setup-----
-    "Ioannina",  // Mission Title NOSPACES!
+    "SEIslandRoadblock",  // Mission Title NOSPACES!
     200   , "LAND"             // encounter radius
 ],[ 
 //------------------------------------------------------------------------------------

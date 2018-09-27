@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "A Gang Of Looter's Has Been Spotted!",
-    "A Small Gang Was Spotted",
     "You have our permission to confiscate any property you find as payment for eliminating the threat!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "HostilePatrol",
+[
+    "Mission Success",
     "The Hostile's have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "HostilePatrol",
+[
+    "Mission Failure!",
     "The Hostile's have escaped."
 ] 
 ],

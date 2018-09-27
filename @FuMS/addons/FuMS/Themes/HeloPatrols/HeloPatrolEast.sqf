@@ -39,17 +39,14 @@
 ],[
    // Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
      "CORE Directive",  // title line
-     "Defense Alert!", 
      "High Command has dispatched a squadron of helicopters to patrol the skys!" //description/radio message.
 ],[  
     // Mission Success Message
     "Mission Success",  // title line
-     "",
      "Notifying High Command that the squadron has been lost!"
 ],[
    // Mission Failure Message
     "Mission Failure!",
-    "",
     "Reconnaissance complete. All forces are to RTB."
 ]],[
 //---------------------------------------------------------------------------------

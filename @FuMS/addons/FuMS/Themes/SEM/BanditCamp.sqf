@@ -18,19 +18,16 @@
     ],
     // Spawn Mission Message
     [   "Bandit Base Camp",
-         "",
          "A bandit camp has been located!"
      ],
     
     // Mission Success Message
     [   "Mission Success",
-         "",
          "The Bandits have been terminated."
     ],
   
     // Mission Failure Message
     [  "Mission Failure!",
-        "",
         "The Bandits have escaped!"
     ] 
 ],

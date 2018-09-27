@@ -17,21 +17,21 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
-["Town Raid",
-    "A city is being looted by humans",
-    "A city is being invaded by humans!"
+[
+	"Town Raid",
+	"A city is being invaded by humans!"
 ],
     
     // Mission Success Message
-["Mission Success",
-    "Look for their loot in the center of town!",
-    "The loot collected has been captured by clones!"
+[
+	"Mission Success",
+	"The loot collected has been captured by clones!"
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
-    "We have escaped with the resources."
+[   
+	"Mission Failure!",
+	"We have escaped with the resources."
 ] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifcs
