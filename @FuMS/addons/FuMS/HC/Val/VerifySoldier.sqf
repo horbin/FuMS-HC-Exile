@@ -30,7 +30,7 @@ while {true} do
 		_dat3 = _dat2 select 1;
 		if (TypeName _dat3 !="ARRAY")exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
 		_name=_dat2 select 0;
-		if (count _dat3 != 8 ) exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
+		if (count _dat3 != 9 ) exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
 		{
 			if (TypeName _x != "SCALAR") exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
 		}foreach _dat3;
