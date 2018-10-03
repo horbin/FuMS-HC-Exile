@@ -166,10 +166,10 @@ if ((_killer == vehicle _killer)) then
     {
         private ["_themeIndex"];
         _themeIndex = _var select 0;
-       //FuMS_BodyCount set [_themeIndex, ((FuMS_BodyCount select _themeIndex) + 1)];
-       // diag_log format ["<FuMS> AI_Killed: BodyCount for Theme#%1 is:%2",_themeIndex, (FuMS_BodyCount select _themeIndex)];
-     //   [_victim] spawn FuMS_fnc_HC_MsnCtrl_LogicBomb_CheckforBodyCount;
-      //  diag_log format ["<FuMS> AI_Killed: Killer:%2  side=%1", side _killer, _killer];
+		FuMS_BodyCount set [_themeIndex, ((FuMS_BodyCount select _themeIndex) + 1)];
+		//diag_log format ["<FuMS> AI_Killed: BodyCount for Theme#%1 is:%2",_themeIndex, (FuMS_BodyCount select _themeIndex)];
+		[_victim] spawn FuMS_fnc_HC_MsnCtrl_LogicBomb_CheckforBodyCount;
+		//diag_log format ["<FuMS> AI_Killed: Killer:%2  side=%1", side _killer, _killer];
         _var = _victim getVariable "FuMS_CaptiveAction";
         if (!isNil "_var") then
         {

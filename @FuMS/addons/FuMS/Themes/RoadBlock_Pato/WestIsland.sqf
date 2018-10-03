@@ -77,8 +77,8 @@
 
 	//Dump Fuel Station Road Block
 	
-	["Land_Cargo_Patrol_V2_F",[5786.56,20082.1,0.00038147],272.787,[[-0.998817,0.048623,0],[0,0,1]],false],
-	["Land_Cargo_Patrol_V2_F",[5746.12,20086.1,0.00202942],94.7575,[[0.996555,-0.0829388,0],[0,-0,1]],false],
+	["Land_Cargo_Patrol_V3_F",[5786.56,20082.1,0.00038147],272.787,[[-0.998817,0.048623,0],[0,0,1]],false],
+	["Land_Cargo_Patrol_V3_F",[5746.12,20086.1,0.00202942],94.7575,[[0.996555,-0.0829388,0],[0,-0,1]],false],
 	["Land_Mil_WallBig_4m_F",[5742.42,20084.9,-3.05176e-005],93.3219,[[0.99832,-0.0579457,0],[0,-0,1]],false],
 	["Land_Mil_WallBig_4m_F",[5742.65,20088.9,-3.05176e-005],93.3219,[[0.99832,-0.0579457,0],[0,-0,1]],false],
 	["Land_Mil_WallBig_4m_F",[5743.85,20083.2,-0.00285339],4.30716,[[0.0751033,0.997176,0],[0,0,1]],false],
@@ -134,12 +134,12 @@
 // **Start 'copy'****Spawn a Group of AI Config Data *********
 // 3 rifleman that will spawn NW of encounter center and patrol all buildings within 70m
 // Example below shows how town names can be used in place of spawn locations and offsets!
-[["EAST","COMBAT","RED","LINE"],[[3,"Rifleman"]],["Buildings",[0,0],[0,0],[70] ]], // 3 rifleman that will patrol all buildings within 70m for unlimited duration
+[["EAST","COMBAT","RED","LINE"],[[4,"Rifleman"]],["Buildings",[-20,0],[-20,0],[50] ]], // 3 rifleman that will patrol all buildings within 70m for unlimited duration
 // **End 'copy'******(see Patrol Options below for other AI behaviour)
 // Example of a 3D map location. This loc is specific to ALTIS
-[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,0],[0,0],[70] ]],
-[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,0],[0,0],[70] ]],
-[["EAST","COMBAT","RED","LINE"],[[3,"Sniper"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]]
+[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,25],[0,25],[50] ]],
+[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[-40,0],[-40,0],[70] ]],
+[["EAST","COMBAT","RED","LINE"],[[3,"Sniper"]],[  "TowerGuard",[0,0], [0,0],[150,"Land_Cargo_Patrol_V3_F"] ]]
     // 5 rifleman that spawn at [21520,11491.9,0] and march to encounter centr to set up a box patrol!    
 // Expanded group example:
 // 1 sniper, 2 rifleman, 2 hunters wil spawn east of encounter center and perform a box shaped patrol.

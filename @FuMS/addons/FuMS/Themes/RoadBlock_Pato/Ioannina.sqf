@@ -159,12 +159,12 @@
 // **Start 'copy'****Spawn a Group of AI Config Data *********
 // 3 rifleman that will spawn NW of encounter center and patrol all buildings within 70m
 // Example below shows how town names can be used in place of spawn locations and offsets!
-[["EAST","COMBAT","RED","LINE"],[[3,"Rifleman"]],["Buildings",[0,0],[0,0],[70] ]], // 3 rifleman that will patrol all buildings within 70m for unlimited duration
+[["EAST","COMBAT","RED","LINE"],[[3,"Rifleman"]],["Buildings",[15,5],[15,5],[70] ]], // 3 rifleman that will patrol all buildings within 70m for unlimited duration
 // **End 'copy'******(see Patrol Options below for other AI behaviour)
 // Example of a 3D map location. This loc is specific to ALTIS
-[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,0],[0,0],[70] ]],
-[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,0],[0,0],[70] ]],
-[["EAST","COMBAT","RED","LINE"],[[3,"Sniper"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]]
+[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[5,40],[5,40],[50] ]],
+[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[40,-20],[40,-20],[50] ]],
+[["EAST","COMBAT","RED","LINE"],[[3,"Sniper"]],[  "TowerGuard",[20,0], [20,0],[150,"Land_Cargo_Patrol_V1_F"] ]]
     // 5 rifleman that spawn at [21520,11491.9,0] and march to encounter centr to set up a box patrol!    
 // Expanded group example:
 // 1 sniper, 2 rifleman, 2 hunters wil spawn east of encounter center and perform a box shaped patrol.

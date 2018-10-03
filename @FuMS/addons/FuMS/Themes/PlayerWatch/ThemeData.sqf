@@ -16,14 +16,16 @@ _themeData =
 		true,  // Global Loot Data
 		true,  // Global Soldier Data
 		false,   // AutoStart (do not set this to true, or all sorts of crazy stuff will occur)
-        100,  // Player minimum to launch missions from this theme.
+        1,  // Player minimum to launch missions from this theme.
         100   // Player maximum above which missions will not launch
     ],
     [  
        //All missions defined in PlayerWatchConfig.sqf MUST be declared here in order
 	   //  for the server to properly compile and push the mission to the HC!
-		["neutrals"],["helodrop"],["chaseHelo"],["chasecar"],["attackboat"],["divers"],["zombies"],["smallband"],
+		["neutrals"],["helodrop"],["chaseHelo"],["chasecar"],["attackboat"],["divers"],["smallband"],//["zombies"],   // Enable random zombie spawn here by removing first set of //
 		["gunfight"]
+		
+	
 		
 		
     ],
