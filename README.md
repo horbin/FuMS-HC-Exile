@@ -3,19 +3,19 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
-v0.41 (Bug Squashin') 
-**** 
-- Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly  
-- Modified Convoy to spawn in Cities or Capitols as opposed to randomly, which ended up leaving trucks in the middle of forests on small or dense maps  
-- Modified convoy to use Cities as waypoints instead of villages which are often in densely forested areas  
-- Updated all mission themes to make them easier to read and customize  
-- Added announcements to missions spawned on players to give hints of trouble. (Might spawn on all players???) 
-- Corrected spawn points of Roadblock_pato theme so AI doesn’t get stuck  
-- Minor adjustments to several default themes  
-- Disabled zombie missions on default load (still supported,  but not ON by default)  
-- Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add)  
-- Removed specific weapons and rounds from some missions, trying to use FuMS groups for all missions 
- 
+v0.41 (Bug Squashin')
+****
+- Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly 
+- Modified Convoy to spawn in Cities or Capitols as opposed to randomly, which ended up leaving trucks in the middle of forests on small or dense maps 
+- Modified convoy to use Cities as waypoints instead of villages which are often in densely forested areas 
+- Updated all mission themes to make them easier to read and customize 
+- Added announcements to missions spawned on players to give hints of trouble. (Might spawn on all players???)
+- Corrected spawn points of Roadblock_pato theme so AI doesn’t get stuck 
+- Minor adjustments to several default themes 
+- Disabled zombie missions on default load (still supported,  but not ON by default) 
+- Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add) 
+- Removed specific weapons and rounds form some missions, trying to use FuMS groups for all missions
+
 v0.4 (The ReLaunch)
 ****
 NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had
