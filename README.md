@@ -16,7 +16,6 @@ v0.41 (Bug Squashin')
 - Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add) 
 - Removed specific weapons and rounds form some missions, trying to use FuMS groups for all missions
 
-
 v0.4 (The ReLaunch)
 ****
 NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had

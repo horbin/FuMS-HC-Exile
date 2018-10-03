@@ -1,4 +1,5 @@
 // GlobalSoldierData.sqf
+
 // Horbin
 // Updated by TheOneWhoKnocks
 // 9/26/18
@@ -7,7 +8,7 @@
 // Inputs: Theme Index
 // Default AI Skill Array
 // [.2, .6, .6, .6, .6, 1, .8, 1, .7]
-// AimAccuracy= 	.2 : target lead, bullet drop, recoil, how certain ai must be before opening fire
+// AimAccuracy= 	.4 : target lead, bullet drop, recoil, how certain ai must be before opening fire
 // 			*** This was set low to let them shoot at you a lot, but be more fun than deadly.  Make sure they have unlimited ammo to compensate
 // AimShake = 		0.6 : how steady AI can hold a weapon.
 // AimSpeed = 		0.6 : how quick AI can rotate and stablize its aim.
@@ -16,12 +17,11 @@
 // Courage = 		1 : affects unit's subordinates' morale. (100% baby! These guys dont run)
 // ReloadSpeed = 	0.8: affects delay between weapon switching and reloading 
 // Commanding = 	0.8 : how quickly recognized targets are shared with the AI's group. 
-// General = 		0.7 : This is an overall modifier to all other settings.  Let's you scale the skills up and down without 
+// General = 		0.6 : This is an overall modifier to all other settings.  Let's you scale the skills up and down without 
 //			modifying all the other values.  
 
 // NOTE: Civilian and Zombie skill levels were not modified except to add the "general" skill setting.
 // Civilian roles have a general setting of "0.5" and Zombies have "1"
-
 // NOTE: AI FLAGS
 // FlagWater = true: spawning over water will default to a "Diver" configuration (Frog suit and Rebreather!)
 // FlagAmmo = true: ai will never run out of ammo.
@@ -30,7 +30,7 @@ _soldierData =
 [
     [
         "Sniper",
-	[.2, .6, .6, .6, .6, 1, .8, 1, .7], // Soldier skill levels
+		[.4, .6, .6, .6, .6, 1, .8, 1, .6], // Soldier skill levels
         [FuMS_U_Ghillie,1], // Uniform
         [FuMS_V_Vests,.5], // Vest.
         [FuMS_H_MilitaryCaps,.5], // Helmet.
@@ -54,12 +54,12 @@ _soldierData =
 		  [[FuMS_E_Grenade,.05],[1,1]]                    ], // Personal Gear [ "item", chance] [min, max]     
         // Crypto and Faction Rewards
         [
-            ["RESPECT", 10],
+            ["RESPECT", 100],
 			["RESPECTGROUP",1]
         ]
     ],[
         "Rifleman",
-        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Harness,.5], // Vest.
         [FuMS_H_Military,.5], // Helmet
@@ -73,12 +73,12 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]    ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10],
+            ["RESPECT", 100],
 			["RESPECTGROUP",1]
         ]
     ],[
         "LMG",
-        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Harness,.5], // Vest.
         [FuMS_H_Military,.5], // Helmet.
@@ -92,12 +92,12 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10],
+            ["RESPECT", 100],
 			["RESPECTGROUP",1]
         ]
     ],[
         "Hunter",
-        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Guerilla,1], // Uniform
         [FuMS_V_Bandolliers,.2], // Vest.
         [FuMS_H_Hunter,.8], // Helmet.
@@ -111,12 +111,12 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]            ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10],
+            ["RESPECT", 100],
 			["RESPECTGROUP",1]
         ]
     ],[
         "Diver",
-        [.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Wetsuit,1], // Uniform
         [FuMS_V_Rebreather,1], // Vest.
         [FuMS_H_Bandannas,.2], // Helmet
@@ -130,10 +130,11 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["20Rnd_556x45_UW_mag",2],[2,3]]             ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10]
+            ["RESPECT", 100]
         ]
     ],[
-        "Driver",[.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        "Driver",
+		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Soldier,1], // Uniform
         [FuMS_V_Chestrig,.1], // Vest.
         [FuMS_H_Military,.8], // Helmet
@@ -147,10 +148,11 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10]
+            ["RESPECT", 100]
         ]
     ],[
-        "Pilot",[.2, .6, .6, .6, .6, 1, .8, 1, .7],
+        "Pilot",
+		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Aviation,1], // Uniform
         [FuMS_V_Chestrig,.8], // Vest.
         [FuMS_H_Aviation,1], // Helmet
@@ -164,10 +166,11 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 10]
+            ["RESPECT", 100]
         ]
     ],[
-        "CivCombat",[.02, .7, .1, .5, .5, .08, .1, .5, .5],
+        "CivCombat",
+		[.02, .7, .1, .5, .5, .08, .1, .5, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,.5], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -184,7 +187,8 @@ _soldierData =
             ["RESPECT", 5]
         ]
     ],[
-        "CivNonCombat",[.02, .7, .1, .3, .5, .08, .1, .1, .5],
+        "CivNonCombat",
+		[.02, .7, .1, .3, .5, .08, .1, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,.1], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -201,7 +205,8 @@ _soldierData =
             ["RESPECT", 5]
         ]
     ],[
-        "CivNoGun",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+        "CivNoGun",
+		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Bandolliers,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -219,7 +224,8 @@ _soldierData =
         ]
         
     ],[        
-		"Civ01",[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+		"Civ01",
+		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [FuMS_U_Civ,1], // Uniform
         [FuMS_V_Vests,0], // Vest.
         [FuMS_H_Civ,.8], // Helmet
@@ -239,7 +245,8 @@ _soldierData =
         ]
 	],
     [
-        "Zombie",[1,1,1,.5,.5,1,1,.6,1],
+        "Zombie",
+		[1,1,1,.5,.5,1,1,.6,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -257,7 +264,8 @@ _soldierData =
         ]
     ],
      [
-        "ZombieSoldier",[1,1,1,1,1,1,1,1,1],
+        "ZombieSoldier",
+		[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -275,7 +283,8 @@ _soldierData =
         ]
     ],
      [
-        "ZombieSpider",[1,1,1,1,1,1,1,1,1],
+        "ZombieSpider",
+		[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -293,7 +302,8 @@ _soldierData =
         ]
     ],
      [
-        "ZombieBoss",[1,1,1,1,1,1,1,1,1],
+        "ZombieBoss",
+		[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet
@@ -318,7 +328,8 @@ _soldierData =
         //**********
         // **NOTE** Only Helmet, and General Inventory items are valid for Raptors.
         //**********
-        "RaptorM",[1,1,1,1,1,1,1,1,1],
+        "RaptorM",
+		[1,1,1,1,1,1,1,1,1],
 		// Raptor_Uniform_Base  RaptorM_Uniform_Base
         ["",0], // Uniform<<-- place holder, does nothing, skins randomized.
         ["",0], // Vest.
@@ -340,7 +351,8 @@ _soldierData =
 	 [
          // requires installation of 'Raptor' Addon
         // http://makearmanotwar.com/entry/ec2EDrOCkM#.VT0zFfnF9EK
-        "RaptorF",[1,1,1,1,1,1,1,1,1],
+        "RaptorF",
+		[1,1,1,1,1,1,1,1,1],
 		// Raptor_Uniform_Base  RaptorM_Uniform_Base
         ["",0], // Uniform
         ["",0], // Vest.

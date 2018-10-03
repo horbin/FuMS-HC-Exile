@@ -19,7 +19,7 @@
     // Spawn Mission Message
 [
     "A Strange Device",
-    "A nuclear device has been discovered"
+    "A nuclear device has been discovered and some psychos are trying to light that candle"
 	
 ],
     
@@ -46,7 +46,7 @@
 [ // AI GROUPS. Only options marked 'Def:' implemented.
 
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[7,7],[0,0],[0]     ]],
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 ],
 

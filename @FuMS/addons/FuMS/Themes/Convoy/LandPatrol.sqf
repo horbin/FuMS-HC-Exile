@@ -78,7 +78,7 @@
       [  
           // "Convoy": spawn at -500,-500, drop off cargo at -50,-50, then return to base. (ie 'Convoy' logic behaviour)
            // Drivers                                                          # and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
-          [["EAST","COMBAT","RED","COLUMN"],   [  [3, "Driver"]  ],   ["TrackRoute",[0,0],[0,0],["SAFE","LIMITED",["Villages","Villages"],true,true,false,0]   ]]
+          [["EAST","COMBAT","RED","COLUMN"],   [  [3, "Driver"]  ],   ["TrackRoute",[0,0],[0,0],["SAFE","LIMITED",["Cities","Cities"],true,true,false,0]   ]]
          // proceed to 0,-15, drop off troops, then return to spawn location and despawn!
       ],
       // Troops : These are distributed across all vehicles in this convoy.                                                         

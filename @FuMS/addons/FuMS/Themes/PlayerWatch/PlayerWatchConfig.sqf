@@ -38,7 +38,7 @@ FuMS_PlayerWatch_Configuration =
 			SmallBand - spawns a squad of 3 AI (with rocket launchers)
 			AttackBoat - spawns an armed attack boat
 			Divers - spawns a squad of 3 divers
-			Zombies - spawns a troop of zombies
+			Zombies - spawns a troop of zombies (Commented out, but easy to add by removing // in front of the mission name
 			Gunfight - spawns two squads of AI that are against each other (and the players!)
 		*/
 		
@@ -61,7 +61,7 @@ FuMS_PlayerWatch_Configuration =
 	],	
 		// Player in Land vehicle
 	[
-		"chaseCar","smallband","zombies"
+		"chaseCar","smallband"//,"zombies"
 	],
 		// Player in Water vehicle
 	[
@@ -73,19 +73,19 @@ FuMS_PlayerWatch_Configuration =
 	],
 		// Player is in spawn zone (hard coded to 325m from all exile defined spawning locations)
 	[
-		"zombies"
+		//"zombies"
 	],
 		// Player near a town (more than 7 buildings within 50m of the player)
 	[
-		"smallband","zombies","gunfight"
+		"smallband","gunfight"//,"zombies"
 	],
 		// Player near roads (at least 1 road within 10m of the player)
 	[
-		"zombies","smallband"		
+		"smallband"//,	"zombies",	
 	],
 		//Player doesn't meet any of the above requirements
 	[
-		"gunfight","zombies"
+		"gunfight"//,"zombies"
 	]
 ];
 

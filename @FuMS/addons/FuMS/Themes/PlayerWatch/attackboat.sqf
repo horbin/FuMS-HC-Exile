@@ -1,6 +1,8 @@
-//attackboat.sqf
+// attackboat.sqf
 // Horbin
 // 10/28/2015
+// Updated 9/29/18 by TheOneWhoKnocks	Fixed layout, added message notices
+
 
 
 [
@@ -10,31 +12,34 @@
 [  
     [// NOTIFICATION Messages and Map display Control.
 	false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-    false, // Notify players via global message
+    true, // Notify players via global message
     false,// Show encounter area on the map
     0,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
     0       // Lose delay: Time in seconds after a lose before mission cleanup is performed
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
-["Ship Wreck",
-    "Soldiers have crashed a boat near the shore!"
+[
+	"Patrol Boat",
+    "Wait, is that boat following me...."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "The wreck has been salvaged."
+[
+	"Mission Success",
+    "The patrol boat was destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "The wreck has vanished into the depths."
+[
+	"Mission Failure!",
+    "This should never fail."
 ] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifcs
-["None" , [18,-9] ], //[static loot, offset location] - spawns with the mission
-["None" , [0,0] ], // Win loot, offset location - spawns after mission success
-["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
+	["None" , [18,-9] ], //[static loot, offset location] - spawns with the mission
+	["None" , [0,0] ], // Win loot, offset location - spawns after mission success
+	["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
 ],
 [//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
   //  ["Land_UWreck_FishingBoat_F",[0,0],0,0]   //type, offset, rotation, presist flag

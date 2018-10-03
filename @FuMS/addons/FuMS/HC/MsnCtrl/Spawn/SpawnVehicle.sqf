@@ -126,6 +126,8 @@ if (!_abort) then
          //   diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data];
             _veh = [ _vehType select _i, _data select 0, [], 0 , _data select 1] call FuMS_fnc_HC_Util_HC_CreateVehicle;	
             _veh setVariable ["FuMS_LINEAGE",_msnTag, false];
+			{_veh deleteVehicleCrew _x} forEach crew _veh;
+			_veh setUnloadInCombat [true, true];
             
             if (_veh iskindof "StaticWeapon") then
             {

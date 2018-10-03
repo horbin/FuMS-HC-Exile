@@ -7,7 +7,7 @@ FuMS_BuildThemeMissionList = compile preprocessFileLineNumbers "\FuMS\Functions\
 
 private ["_themeNumber","_hold","_abort"];
 
-FuMS_Version = "vExile.1";
+FuMS_Version = "vExile.41";
 publicVariable "FuMS_Version";
 FuMS_HCIDs = [];
 FuMS_HCNames = [];

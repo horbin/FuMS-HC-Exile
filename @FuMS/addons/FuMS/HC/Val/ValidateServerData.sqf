@@ -84,8 +84,8 @@ while {true} do
     if (TypeName (_dat2 select 0) != "SCALAR" ) exitWith {_abort = true;_msg = format ["%1 exepecting numeric value, found %2",_sec,_dat2 select 0];};   
     if (TypeName (_dat2 select 1) != "SCALAR" ) exitWith {_abort = true;_msg = format ["%1 exepecting numeric value, found %2",_sec,_dat2 select 1];};   
     if (TypeName (_dat2 select 2) != "BOOL" ) exitWith {_abort = true;_msg = format ["%1 exepecting bool value of true or false, found %2",_sec,_dat2 select 2];};   
-    if (TypeName (_dat2 select 3) != "ARRAY" ) exitWith {_abort = true;_msg = format ["%1 exepecting array of 8 values, found %2",_sec,_dat2 select 3];};    
-    if (count (_dat2 select 3) != 8 ) exitWith {_abort = true;_msg = format ["%1 exepecting array of 8 values, found %2",_sec,_dat2 select 3];};    
+    if (TypeName (_dat2 select 3) != "ARRAY" ) exitWith {_abort = true;_msg = format ["%1 exepecting array of 9 values, found %2",_sec,_dat2 select 3];};    
+    if (count (_dat2 select 3) != 9 ) exitWith {_abort = true;_msg = format ["%1 exepecting array of 9 values, found %2",_sec,_dat2 select 3];};    
     {
         if (TypeName (_x) != "SCALAR" ) exitWith {_abort = true;_msg = format ["%1 exepecting numeric value in skills array, found %2",_sec,_x];};      
     }foreach (_dat2 select 3);
