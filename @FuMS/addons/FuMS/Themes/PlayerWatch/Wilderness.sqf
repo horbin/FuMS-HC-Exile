@@ -10,27 +10,24 @@
 [  
     [// NOTIFICATION Messages and Map display Control.
 	false, 1,0,
-    false, // Notify players via global message
-    false,// Show encounter area on the map
+    true, // Notify players via global message
+    true// Show encounter area on the map
     30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
     30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
     [   "",
-         "",
          ""
      ],
     
     // Mission Success Message
     [   "",
-         "",
          ""
     ],
   
     // Mission Failure Message
     [  "",
-        "",
         ""
     ] 
 ],

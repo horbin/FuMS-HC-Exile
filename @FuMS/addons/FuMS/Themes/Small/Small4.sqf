@@ -5,7 +5,7 @@
 
 [
 ["BanditPosee", 75], // Mission Title NOSPACES!, and encounter radius
-["Bandit Posee","mil_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
+["Bandit Posee","hd_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
    
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "A Bandit Posee Has Been Spotted!",
-    "A Small Gang Was Spotted",
     "You have our permission to confiscate any property you find as payment for eliminating the threat!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "BanditPosee",
+[
+    "Mission Success",
     "The Bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "BanditPosee",
+[
+    "Mission Failure!",
     "The Bandits have escaped."
 ] 
 ],
@@ -69,7 +68,7 @@
 //	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 //	  ["Detect",["Detected","ALL","ALL"] ],
 //	  ["BodyCount",["BodyCount",9] ]
-	  ["Timer",["TIMER", 3000] ]
+	  ["Timer",["TimerNoPlayers", 3000] ]
 	  //                            offset      radius    time(s)  Name
 //	  ["Zuppa", ["ZuppaCapture",[ [ [-100,-100], 50,         90,  "Point 1" ],
  //                               [ [100,100],   50,         90,  "Point 2" ]   ]]  ],

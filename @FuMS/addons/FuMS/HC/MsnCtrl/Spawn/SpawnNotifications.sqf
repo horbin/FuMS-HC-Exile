@@ -67,14 +67,30 @@ switch (_msnStatus_status) do
 if (_notify) then
 {
     if (!isnil "_msnText") then
-    {      
+    {   
+        /*    //////////////////////// Old notification code, will be deprecated in future versions
         _ogjstr = "";
         if (count _msnText >0) then {_ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];};
         if (count _msnText >1) then {_ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];};
         _ogjstr =  format ["%1<br />__________", _ogjstr];
         if (count _msnText >2) then {_ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];};
-    FuMS_GlobalHint = _ogjstr;
-    publicVariable "FuMS_GlobalHint";  
+        FuMS_GlobalHint = _ogjstr;
+        publicVariable "FuMS_GlobalHint";  
+        */
+    	
+	// Exile Toasts (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		FuMS_ExileToast = [(_msnText select 0),(_msnText select 1)];
+		publicVariable "FuMS_ExileToast"; 
+	};
+	
+	// System Chat notification (Current logic is always true, this will be optional in future releases)
+	if (true) then
+	{
+		format["%1: %2",toUpper (_msnText select 0),(_msnText select 1)] remoteExecCall ["systemChat",-2];
+	};
+
     };
 };  
 if (_showMap) then 
@@ -83,6 +99,7 @@ if (_showMap) then
     {  
         if (_msnStatus_status == "WIN") then {_mkr1 setMarkerColor "ColorGreen";}
         else {_mkr1 setMarkerColor "ColorBlack";};
+		_mkr1 setMarkerBrush "Solid";		
             //publicVariable _mkr1;  
             //leave green circle up for 'delay' secs, then remove markers       
         //diag_log format ["##Spawn Notification: _msnStatus:%1  _delay:%2", _msnStatus, _delay];
@@ -106,13 +123,13 @@ if (_showMap) then
         _mkr1 setMarkerShape (_markers select 2);
         _mkr1 setMarkerSize [_markers select 5, _markers select 5];
         _mkr1 setMarkerColor (_markers select 3);
-        _mkr1 setMarkerAlpha 1;
+        _mkr1 setMarkerAlpha 0.8;
         _mkr1 setMarkerBrush (_markers select 4);
         //_mkr1 setMarkerText (_markers select 0);
         publicVariable _mkr1;
         
         _mkr2 setMarkerPos _eCenter;
-        _mkr2 setMarkerAlpha 1;
+        _mkr2 setMarkerAlpha 0.5;
         _mkr2 setMarkerType (_markers select 1);
         
         if ( count _missionNameOverride > 0) then
@@ -121,7 +138,10 @@ if (_showMap) then
             _mkr2 setMarkerText format[" %1",_missionNameOverride];   
         }
         else { _mkr2 setMarkerText format[" %1",(_markers select 0)];};
-        _mkr2 setMarkerColor (_markers select 3);
+        //_mkr2 setMarkerColor (_markers select 3);
+        _mkr2 setMarkerColor "ColorBlack";
+	
+		
         publicVariable _mkr2;
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_AddObject;
         ["Markers",_mkr2] call FuMS_fnc_HC_Util_HC_AddObject;

@@ -3,6 +3,106 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.420
+****
+- Added ability to import mission building info from ASL type missions (Old school missions that used Above Sea Level rules when exporting their data)
+- Added "LOITER" AI logic to make AI stand guard in one spot until combat starts
+- Added "TimerNoPlayers" trigger so that you can have a timer end a mission unless there are players withen 300 m
+- Added ability to randomize loot drop locations by providing array in loot location
+- Corrected issue where AI would start shooting at each other, especially crews and drivers
+- Did some preliminary work on adding in Raptors and Destroyer static vehicle
+- Added ability to add in more popcaps per mission loot box (default is 500 + up to 1000 more but you can specify random amount in loot file)
+- Corrected issue when mission buildings are spawned in but didn't match terrain.  Now buildings will reset properly even on hillsides
+- Corrected issue with mission buildings spawning in without simluation enabled.  They also cannot be destroyed
+- Modified ZUPA code to use Exile Toasts to annouce status of mission capture points
+- Corrected issue with Admin Menu that displayed error on menu
+- Created mission template to fully document the mission system (WIP, this will be corrected soon)
+- Ported over missions from these several great authors who were graciious enough to let me include in the base FuMS system
+	
+	STATIC ALTIS MISSIONS
+	- Abandoned Village 		([CiC]red_ned)
+	- AI Island					([CiC]red_ned)
+	- Bosmos					([CiC]red_ned)
+	- Castle-183				([CiC]red_ned)
+	- Chelonisi					([CiC]red_ned)
+	- Destroyer 				(=CF=Dragunov) (STILL WIP, DO NOT USE)
+	- GraveRobbers				(Mythbuster)
+	- Military Junkyard			([CiC]red_ned)
+	- Kastro Castle				([CiC]red_ned)
+	- Kavala Hospital			(=CF=Dragunov)
+	- KoreFactory				(=CF=Dragunov)
+	- Labrinthe					(Kimi_Hunters)
+	- Marsh Battle				(Mythbuster)
+	- Kill the Mayor			([CiC]red_ned)
+	- Military Raid				(HeadlessRocket)
+	- Open Harbor				(Mythbuster)
+	- PowerPlant				(=CF=Dragunov)
+	- Proteus					(=CF=Dragunov)
+	- Radioactive				(=CF=Dragunov)
+	- Storage Invasion			([CiC]red_ned)
+	
+	DYNAMIC AI TYPE MISSIONS
+	
+	- ned Bandit				([CiC]red_ned)
+	- ned Reserach Mission		([CiC]red_ned)
+	- ned Sniper Camp			([CiC]red_ned)
+	- Pauls Bambi Slide			(GolovaRaoul)
+	
+	DYNAMIC LOOT TYPE MISSIONS
+	
+	- ned Building Materials	([CiC]red_ned)
+	- ned Cash Bandits			([CiC]red_ned)
+	- ned Drinks Transport		([CiC]red_ned)
+	- ned Guns Guns Guns		([CiC]red_ned)
+	- ned Medical Mission		([CiC]red_ned)
+	- Pauls Beert Transport 	(GolovaRaoul)
+	- Pauls IKEA loot			(GolovaRaoul)
+	
+	DYNAMIC VEHICLE MISSIONS
+	
+	- ned Civilian Car			([CiC]red_ned)
+	- ned Hatch Back			([CiC]red_ned)
+	- ned Huey 					([CiC]red_ned)
+	- ned Hunter				([CiC]red_ned)
+	- net Ifrit					([CiC]red_ned)
+	- ned Offroad				([CiC]red_ned)
+	- ned Strider				([CiC]red_ned)
+	- ned Ural					([CiC]red_ned)
+	- Paul Anti-Air				(GolovaRaoul)
+	- Pauls Little Bird			(GolovaRaoul)
+	
+These missions help document the new features and options for mission spawning so pleaes look through them to see if answers your questions.
+
+
+
+
+v0.41 (Bug Squashin') 
+**** 
+- Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly  
+- Modified Convoy to spawn in Cities or Capitols as opposed to randomly, which ended up leaving trucks in the middle of forests on small or dense maps  
+- Modified convoy to use Cities as waypoints instead of villages which are often in densely forested areas  
+- Updated all mission themes to make them easier to read and customize  
+- Added announcements to missions spawned on players to give hints of trouble. (Might spawn on all players???) 
+- Corrected spawn points of Roadblock_pato theme so AI doesn’t get stuck  
+- Minor adjustments to several default themes  
+- Disabled zombie missions on default load (still supported,  but not ON by default)  
+- Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add)  
+- Removed specific weapons and rounds from some missions, trying to use FuMS groups for all missions 
+ 
+v0.4 (The ReLaunch)
+****
+NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had
+three lines, but the new system only has two, a title and a message body.  This is the only change needed to update your missions
+to display properly using Exile Toasts.  Please see updated Themes in the download to see what changes you need to make.
+***
+
++ Added Exile Toasts and replaced current FuMS_Global Message system (code will be deprecated in next version and removed)
++ Updated AI difficulty engine to include setting the "general" setting which seemed to be preventing AI from doing anything at times
++ Updated AI difficulty settings to "MODERATE" level simliar to other AI systems (will be variable int the future)
++ Added poptabs to mission crates (Preset values of 500 + up to 1000 more per create, will be customizable in the future)
++ Added poptabs to soldiers (Preset value of up to 500 poptabs per soldier, will be customizable in the future)
++ Added Tanoa based versions of base locations for Roadblock Pato (Currently supports Altis and Tanoa)
+
 v0.3a (bug fixes and tweaks)
 ****
 NOTE TO ADMINS: Save your \FuMS\Themes folder! Unless specifically indicated after updating to any newer version of FUMS you will be able to copy over the \FuMS\Themes

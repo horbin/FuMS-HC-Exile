@@ -5,7 +5,7 @@
 
 [
 ["BanditCamp", 200, "LAND"], // Mission Title NOSPACES!, and encounter radius
-["Bandit Camp","mil_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Bandit Camp","hd_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -18,19 +18,16 @@
     ],
     // Spawn Mission Message
     [   "Bandit Base Camp",
-         "",
          "A bandit camp has been located!"
      ],
     
     // Mission Success Message
     [   "Mission Success",
-         "",
          "The Bandits have been terminated."
     ],
   
     // Mission Failure Message
     [  "Mission Failure!",
-        "",
         "The Bandits have escaped!"
     ] 
 ],
@@ -45,7 +42,7 @@
 [ // AI GROUPS. Only options marked 'Def:' implemented.
 
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[7,5],[0,0],[0]     ]],
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 ],
 

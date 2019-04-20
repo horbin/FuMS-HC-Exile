@@ -184,6 +184,15 @@ FuMS_fnc_AddCaptiveMenu =
     hint parseText format["%1", _GHint];
 };
 
+"FuMS_ExileToast" addPublicVariableEventHandler
+{
+    private ["_message","_toastTitle", "_toastMessage"];
+	_message = _this select 1;
+    _toastTitle = _message select 0;
+	_toastMessage = _message select 1;
+	["ErrorTitleAndText", [_toastTitle, _toastMessage]] call ExileClient_gui_toaster_addTemplateToast;
+};
+
 "FuMS_GlobalSound" addPublicVariableEventHandler
 {
 	private ["_sound"];

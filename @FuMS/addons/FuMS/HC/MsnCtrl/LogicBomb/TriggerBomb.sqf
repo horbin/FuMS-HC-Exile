@@ -129,6 +129,15 @@ _triggerList = _triggerList + [ ["OK", ["squirrel!"]]         ];
             _params = [_msnTag, _duration, time];
             [_params, _msnTag,"TIMER",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;              
         };
+		case "TIMERNOPLAYERS":
+        {
+            private ["_duration","_params"];
+            _duration = _trigType select 1;
+            _pos = [_positionOffset, [0,0]] call FuMS_fnc_HC_MsnCtrl_Util_XPos;            
+            _params = [_msnTag, _duration, time, _pos];
+            [_params, _msnTag,"TIMERNOPLAYERS",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;              
+        };
+
         case "ZUPPACAPTURE":
         {
             private ["_locationList","_params"];

@@ -97,7 +97,8 @@ if (!_abort) then
         //**************************
         //attempt to create drivers before vehicles to see if this fixes issue!
         _silentCheckIn = (((FuMS_THEMEDATA select _themeIndex) select 3) select 0) select 1;
-        _driverGroup = [_driverdat, _eCenter, _encounterSize, [_themeIndex,_generation,_offspringID],_silentCheckIn, _missionName] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnGroup;    
+        _driverGroup = [_driverdat, _eCenter, _encounterSize, [_themeIndex,_generation,_offspringID],_silentCheckIn, _missionName] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnGroup;   
+		//diag_log format ["<FuMS:%1 SpawnVehicle: _driverGroup:%2",FuMS_Version,_driverGroup];		
         
         
         for [{_i=0},{_i < _numDriverGroups},{_i=_i+1}] do
@@ -126,6 +127,8 @@ if (!_abort) then
          //   diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data];
             _veh = [ _vehType select _i, _data select 0, [], 0 , _data select 1] call FuMS_fnc_HC_Util_HC_CreateVehicle;	
             _veh setVariable ["FuMS_LINEAGE",_msnTag, false];
+			{_veh deleteVehicleCrew _x} forEach crew _veh;
+			_veh setUnloadInCombat [true, true];
             
             if (_veh iskindof "StaticWeapon") then
             {
@@ -248,7 +251,8 @@ if (!_abort) then
                         {    
                             private ["_type","_crew","_boarded"];
                             _boarded=true;
-                            _type = _crewData select 1;					
+                            _type = _crewData select 1;		
+							//diag_log format ["##SPAWN Vehicles : group:%1 | _type:%2 | pos:%3 | theme:%4", (group _leader),_type, (getPos _crewVeh), _themeIndex]; 							
                             _crew = [group _leader,_type, getPos _crewVeh, _themeIndex] call FuMS_fnc_HC_AI_SpawnSoldier;                   
                             _crew setVariable ["FuMS_AILOGIC", _leader getVariable "FuMS_AILOGIC", false];
                             _crew setVariable [ "FuMS_XFILL", _leader getVariable "FuMS_XFILL", false];   

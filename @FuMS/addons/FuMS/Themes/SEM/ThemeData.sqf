@@ -13,7 +13,7 @@ _themeData =
 		true, // global loot
 		true, // global soldier data
 		true,  // autostart
-                0,  // Player minimum to launch missions from this theme.
+        0,  // Player minimum to launch missions from this theme.
         100   // Player maximum above which missions will not launch
     ],
     [  

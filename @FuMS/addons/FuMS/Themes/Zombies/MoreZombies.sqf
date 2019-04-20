@@ -21,20 +21,20 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message 
-    ["",  // title line
-     "", // title line, do not remove these!
-     "A horde of zombies has entered the area." //description/radio message.
-	],  
+    [
+     	"", // title line, do not remove these!
+     	"A horde of zombies has entered the area." //description/radio message.
+    ],  
     // Mission Success Message
-    ["Mission Success",
-     "",
-     "The source of the infection has been destroyed!"
+    [
+    	"Mission Success",
+	"The source of the infection has been destroyed!"
 	], 
     // Mission Failure Message
-    ["Mission Failure!",
-    "",
-    ""
-	] 
+    [
+    	"Mission Failure!",
+	""
+    ] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifics
 ["None" , [0,0] ], //[static loot, offset location] - spawns with the mission

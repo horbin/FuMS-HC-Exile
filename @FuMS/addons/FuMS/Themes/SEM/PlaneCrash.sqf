@@ -5,11 +5,11 @@
 
 [
 ["PlaneCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Aircraft Crash","mil_objective","ELLIPSE","Colorgreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Aircraft Crash","hd_objective","ELLIPSE","Colorgreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.
-	true, 1, 0,
+    true, 1, 0,
     true, // Notify players via global message
     true,// Show encounter area on the map
     30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Aircraft Crash!",
-    "",
     "A supply plane has crashed with surviving bandits!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "The bandits have escaped."
 ] 
 ],
@@ -46,7 +45,7 @@
 [ // AI GROUPS. Only options marked 'Def:' implemented.
 
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[8,8],[0,0],[0]     ]],
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 ],
 

@@ -1,44 +1,54 @@
-//BaseServer.sqf
+// BaseServer.sqf
 // Horbin
-// 1/10/25
+// Updated by TheOneWhoKnocks
+// 4/20/19
+// Added in Altis missions and dynamic missions
 // Data specifc to your server's map.
 // ALTIS
 FuMS_ServerData =
 [
-    [ // Map Definition and FuMS configuration
-       false, // Enable FuMS missions to run on the main server.
-           // NOTE: setting to 'true' may drasticly impact server performance.
-       "testpath",                 // MySQL support testing
-		true,				//Enable AdminControls! See Docs\AdminControls.txt
-         15   //minimum Server FPS. Below this FPS FuMS will not load new missions. 
+    [ 								// Map Definition and FuMS configuration
+        false, 						// Enable FuMS missions to run on the main server.
+									// NOTE: setting to 'true' may drasticly impact server performance.
+        "testpath",                 // MySQL support testing
+		true,						//Enable AdminControls! See Docs\AdminControls.txt
+        5   						//minimum Server FPS. Below this FPS FuMS will not load new missions. 
+									// NOTE: This was lowered until I can fix the FPS monitor which currently reads too low.
     ],
-    [  // Exclusion Areas
-    // See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+    [  								// Exclusion Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
     ],
-    [ // Default Areas
-    // See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+    [ 								// Default Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
     ],
     [	 
-		["PlayerWatch",-1], // DO NOT REMOVE OR COMMENT OUT THIS THEME!
-        // ActiveThemes
-        // A folder matching the names below needs to exist in the ..\Themes folder.
-        // use this block to easily turn off/on your various mission sets.
-        // -1 = all HC's.  0= Server only,  1=1st HC to connect, 2=2nd, etc.
-        //  Note: Server option not currenty operational.
-    //   ["Admin",-1],
-      // ["Test",-1], //Remove this theme if on a production server.
-	  ["Zombies",-1],
-      ["HeloPatrols",-1], // 2 sets of 3 armed helo's patrol the skys!!!      
-      ["SEM",-1], // basic old school Arma2 Epoch encounters
-   ["TownRaid",-1], // random town is raided by 4 truck loads of humans!
-    ["Small",-1],  // 6 man groups invade a random village
-   ["Aquatic",-1], // 3 coastal areas w/ boats and ai   
-     ["Convoy",-1], // 2 random convoys of 3 vehicles move across the map.
-  ["StaticSpawns",-1], // creates 10 Dayz style Helo crashes at random locations.
-    //    ["Jurassic",-1], // creates 3 encounters with wondering Raptors and some scattered loot.
-   ["Captive", -1], // Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
-	["RoadBlock_Pato",-1] // Concept based upon missions from Pato!
-
+		["PlayerWatch",-1], 		// DO NOT REMOVE OR COMMENT OUT THIS THEME!
+									// ActiveThemes
+									// A folder matching the names below needs to exist in the ..\Themes folder.
+									// use this block to easily turn off/on your various mission sets.
+									// -1 = all HC's.  0= Server only,  1=1st HC to connect, 2=2nd, etc.
+									//  Note: Server option not currenty operational.
+									// NOTE: If you run mutiple HC's, static missions will spawn on top of and potentially kill each other.
+									// Static missions run on the FIRST HC only, so plan accordingly. 
+		
+		//["Admin",-1],
+		//["Test",-1], 				//Remove this theme if on a production server.
+		//["Zombies",-1], 			// Uncomment this if you have the Zombies add on installed  (NOT TESTED)
+		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
+		["SEM",-1], 				// basic old school Arma2 Epoch encounters
+		["TownRaid",-1], 		// random town is raided by 4 truck loads of humans!
+		["Small",-1],  			// 6 man groups invade a random village
+		["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
+		["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
+		["StaticSpawns",-1], 	// creates 10 Dayz style Helo crashes at random locations.
+		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT WORKING)
+		["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
+		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
+		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
+		["DynamicAISpawns", -1],		// Missions that spawn AI groups with guards for any map
+		["Altis", 1], 				// Missions specific to Altis ported from Exile.Com  (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
+		["RoadBlock_Pato",1] 		// Concept based upon missions from Pato! (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
+		
     ],
     [  // Event and AI Radio messsage behavior
 	   // system no longer supported. Will be removed in follow on versions.
@@ -51,26 +61,27 @@ FuMS_ServerData =
     ],
 	[ // Soldier Defaults
 
-		3, // default number of rifle magazines for each AI
-		3, // default number of pistol magazines
+		6, // default number of rifle magazines for each AI
+		4, // default number of pistol magazines
 		false, // Turns ON VCOM_Driving V1.01 = Genesis92x for all land/boat vehicle drivers
 		      //http://forums.bistudio.com/showthread.php?187450-VCOM-AI-Driving-Mod
           //NOTE::**UNDER EXILE this is generating alot of 'string' errors in the HC's .rpt. May drastically impact performance!
 		  //Skill Override options:
 		  // Values here will override values for individual units defined in SoldierData.
 		  // values ranges 1.0 -0.0      0= uses GlobalSoldierData.sqf setting for each soldier.
-		  // defaults 'stock' ai based around values indicated below.
+		  // Currently set to use the GlobalSoliderData.sqf file
 		  // if unique AI are desired, modify these numbers in GlobalSoldierData.sqf or SoldierData.sqf as applicable.
 		  // values here OVERRIDE any value set in the other files! (value of zero = use other files values).
 		[
-		.8, // aimingAccuracy .05 : target lead, bullet drop, recoil
-		.9,	// aimingShake .9 : how steady AI can hold a weapon
-		.5,	// aimingSpeed .1 : how quick AI can rotate and stabilize its aim and shoot.
-		.9,	// spotDistance .5 : affects ability to spot visually and audibly and the accuracy of the information
-		.8,	// spotTime .5 : affects how quick AI reacts to death, damage or observing an enemy.
-		.9,	// courage .1 : affects unit's subordinates morale
-		.5,	// reloadSpeed .5 :affects delay between weapon switching and reloading
-		.8	// commanding .5 : how quickly recognized targets are shared with the AI's group.
+		0, // aimingAccuracy : target lead, bullet drop, recoil
+		0,	// aimingShake : how steady AI can hold a weapon
+		0,	// aimingSpeed : how quick AI can rotate and stabilize its aim and shoot.
+		0,	// spotDistance : affects ability to spot visually and audibly and the accuracy of the information
+		0,	// spotTime : affects how quick AI reacts to death, damage or observing an enemy.
+		0,	// courage : affects unit's subordinates morale
+		0,	// reloadSpeed :affects delay between weapon switching and reloading
+		0,	// commanding : how quickly recognized targets are shared with the AI's group.
+		0	// general 		: Overall multiplier for all other settings
 		],
         // soldier only equipment. Items in this list are only available to AI.
         //  when an AI dies, gear on this list is deleted from the AI's inventory.
@@ -99,31 +110,35 @@ FuMS_ServerData =
             "B_UAV_02_CAS_F",
             "B_UGV_01_F",
             // side East
-             "O_UGV_01_rcws_F",
+            "O_UGV_01_rcws_F",
             "O_UAV_01_F",
             "O_UAV_02_F",
             "O_UAV_02_CAS_F",
             "O_UGV_01_F"     
+			
         ]
             
 	],
 	[ // Loot Defaults
 
-		20, // number of minutes after mission completion before deleting a loot box.
+		30, // number of minutes after mission completion before deleting a loot box.
 		// NOTE: This is not based on when the box is spawned, but WHEN the mission completes!
 		[  // SMOKE BOX Options
-            true, // true= smoke created with box for ease of location.
-            100,  // proximity character has to get to box before smokes start. 0=unlimited
-           ["Red","Blue"],  //["Red","Blue","White"]// colors of smoke
-             1     // Duration, in minutes, smoke lasts once triggered.
-          ],
-		true,  // vehicles occupied by players persist through server reset and are sellable!
+            true, 				// true= smoke created with box for ease of location.
+            100,  				// proximity character has to get to box before smokes start. 0=unlimited
+            ["Red","Blue"],  	//["Red","Blue","White"]// colors of smoke
+            3     				// Duration, in minutes, smoke lasts once triggered.
+        ],
+		true,  					// vehicles occupied by players persist through server reset and are sellable!
+		
 		// List of box types used by "Random" in LootData and GlobalLootData files.
 		["B_supplyCrate_F","O_supplyCrate_F","I_supplyCrate_F","CargoNet_01_box_F"],
+		
 		// List of vehicles prohibited to use by players. This list allows them to be on the map for AI use
 		// but will prevent players from entering the vehicle.
 		["I_UGV_01_rcws_F","B_G_Offroad_01_armed_F"],
-          true  //VehicleAmmoFlag true= sets vehicle ammo to zero when an AI vehicle is 1st occupied by a player.         
+		
+        true  //VehicleAmmoFlag true= sets vehicle ammo to zero when an AI vehicle is 1st occupied by a player.         
 	]
 
 ];

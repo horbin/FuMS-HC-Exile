@@ -5,7 +5,7 @@
 
 [
 ["VanCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Van Crash","mil_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
+["Van Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
    
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Supply Van Crash!",
-    "",
     "A supply van has crashed with surviving bandits!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "The bandits have escaped."
 ] 
 ],
@@ -47,8 +46,8 @@
 [ // AI GROUPS. Only options marked 'Def:' implemented.
 //   [["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1,"Sniper"],[2,"Rifleman"],[2,"Hunter"]  ],   ["BoxPatrol",[0,75],[0,0],[0]   ]],
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[7,7],[0,0],[0]     ]],
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-5,-5],[0,0],[0]     ]]
 ],
 
 // Vehicles

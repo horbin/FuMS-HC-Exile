@@ -5,7 +5,7 @@
 
 [
 ["NukeDevice", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Nuclear Device","mil_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Nuclear Device","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -19,20 +19,19 @@
     // Spawn Mission Message
 [
     "A Strange Device",
-    "",
-    "A nuclear device has been discovered"
+    "A nuclear device has been discovered and some psychos are trying to light that candle"
 	
 ],
     
     // Mission Success Message
-["Mission Success",
-    "",
+[
+    "Mission Success",
     "The Device has been disabled."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "",
+[
+    "Mission Failure!",
     "Fortunately the device failed to activate, but the Bandits have escaped."
 ] 
 ],
@@ -47,7 +46,7 @@
 [ // AI GROUPS. Only options marked 'Def:' implemented.
 
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[7,7],[0,0],[0]     ]],
 [["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 ],
 

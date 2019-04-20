@@ -111,6 +111,9 @@ while {true} do
         {
           //  if (count _aiOptions != 0 ) exitwith {_abort=true;FuMS_FileError = format ["Zombie logic should have no options. Found %1",_aiOptions];};            
         };
+        case "LOITER":
+        {
+        };		
         case "TRACKROUTE":
         {
             if (count _aiOptions != 7 and count _aiOptions != 6) exitWith {_abort=true;FuMS_FileError = format ["'TrackRoute' expects 6 or 7 options. Found %1",_aiOptions ];};			

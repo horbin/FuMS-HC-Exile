@@ -5,11 +5,11 @@
 
 [
 ["SniperAlley", 75], // Mission Title NOSPACES!, and encounter radius
-["Sniper Alley","mil_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
+["Sniper Alley","hd_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
    
 [  
     [// NOTIFICATION Messages and Map display Control.
-	true, 1, 0,
+    true, 1, 0,
     true, // Notify players via global message
     true,// Show encounter area on the map
     300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -19,19 +19,18 @@
     // Spawn Mission Message
 [
     "Sniper's Have Been Spotted!",
-    "A Small Patrol Was Spotted",
     "You have our permission to confiscate any property you find as payment for eliminating the threat!."
 ],
     
     // Mission Success Message
-["Mission Success",
-    "SniperAlley",
+[
+    "Mission Success",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
-["Mission Failure!",
-    "SniperAlley",
+[
+    "Mission Failure!",
     "The Sniper's have escaped."
 ] 
 ],
@@ -69,7 +68,7 @@
 //	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 //	  ["Detect",["Detected","ALL","ALL"] ],
 //	  ["BodyCount",["BodyCount",9] ]
-	  ["Timer",["TIMER", 3000] ]
+	  ["Timer",["TimerNoPlayers", 3000] ]
 	  //                            offset      radius    time(s)  Name
 //	  ["Zuppa", ["ZuppaCapture",[ [ [-100,-100], 50,         90,  "Point 1" ],
  //                               [ [100,100],   50,         90,  "Point 2" ]   ]]  ],

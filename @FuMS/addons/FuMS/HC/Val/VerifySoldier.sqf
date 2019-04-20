@@ -28,11 +28,11 @@ while {true} do
 		if (count _dat2 != 14)exitWith {_abort=true; _msg=format ["Soldier definition requires 14 properties (array elements), found %1", count _dat2];};
         if (TypeName (_dat2 select 0 )!= "STRING")exitWith {_abort=true; _msg=format ["Soldier definition name needs to be a text string, found %1", _dat2 select 0];};
 		_dat3 = _dat2 select 1;
-		if (TypeName _dat3 !="ARRAY")exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
+		if (TypeName _dat3 !="ARRAY")exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 9 numbers, found %1",_dat3];};
 		_name=_dat2 select 0;
-		if (count _dat3 != 8 ) exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
+		if (count _dat3 != 9 ) exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 9 numbers, found %1",_dat3];};
 		{
-			if (TypeName _x != "SCALAR") exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 8 numbers, found %1",_dat3];};
+			if (TypeName _x != "SCALAR") exitWith {_abort=true; _msg=format ["Soldier 'Skills Levels' should be an array of 9 numbers, found %1",_dat3];};
 		}foreach _dat3;
 		if (_abort) exitwith {};
 		

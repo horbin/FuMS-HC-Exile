@@ -21,18 +21,16 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message 
-    ["",  // title line
+    [
      "", // title line, do not remove these!
      "A roving band of clone hunters have entered the area." //description/radio message.
 	],  
     // Mission Success Message
     ["Mission Success",
-     "",
      "The bikers been destroyed!"
 	], 
     // Mission Failure Message
     ["Mission Failure!",
-    "",
     "The bikers have escaped to harass another region!"
 	] 
 ],
