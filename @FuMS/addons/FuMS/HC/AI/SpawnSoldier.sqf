@@ -46,7 +46,7 @@ _typeFound = false;
                 {
                     // All combat related AI logic is handled by the Raptors Addon.
                     // Waypoint movement is controlled by FuMS, as though the raptor was a normal soldier
-                    if (_type=="RAPTORM") then {_unit = _group createUnit["RaptorAIM1_W", _pos, [], 25, "FORM"]; };
+                    if (_type=="RAPTORM") then {_unit = _group createUnit["RaptorAIM1_E", _pos, [], 25, "FORM"]; };
                     if (_type=="RAPTORF") then {_unit = _group createUnit["RaptorAIF2_E", _pos, [], 25, "FORM"]; };
                     // _unit addEventHandler ["killed",{[(_this select 0), (_this select 1)] spawn FuMS_fnc_HC_AI_AIKilled;}];
                 }
@@ -89,6 +89,8 @@ _typeFound = false;
             {
                 // NOTE if I_Soldier_EPOCH type is changed, AllDeadorGone.sqf will need to be modified
                 _unit = _group createUnit["O_G_Soldier_F", _pos, [], 0, "FORM"];
+				[_unit] join _group;
+				//diag_log format ["<FuMS> SpawnSoldier: group: %1 | group side:%2 | unit side:%3",_group,(side _group),(side _unit)];
                 removeUniform _unit;
                 removeHeadgear _unit;
                 removeVest _unit;
@@ -303,7 +305,7 @@ _typeFound = false;
         
         _faction = _x select 13;
         _unit setVariable ["FumS_Krypto", _faction];
-      //  diag_log format ["<FuMS> SpawnSoldier: %1 Crypto/Faction data %2",_unit, _faction];
+        //diag_log format ["<FuMS> SpawnSoldier: %1 Crypto/Faction data %2",_unit, _faction];
     };
 }foreach _soldierData;
 

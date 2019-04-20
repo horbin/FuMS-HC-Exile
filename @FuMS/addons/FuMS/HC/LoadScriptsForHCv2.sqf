@@ -150,6 +150,8 @@ _scripts =
                 "Detect.sqf",
                 "ProxPlayer.sqf",
                 "Timer.sqf",
+				"TimerNoPlayers.sqf",
+
              //   "UnitCount.sqf",
                 "LowUnitCount.sqf",
                 "HighUnitCount.sqf",

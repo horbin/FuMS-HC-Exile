@@ -30,12 +30,16 @@ else
     _msnText = [_missionName,"Fresh Cap Points", format ["%1 has established %2 capture points!",_missionName, count _arrayOfData] ];
 };
 
-_ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-_ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
-_ogjstr =  format ["%1<br />__________", _ogjstr];
-_ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-FuMS_GlobalHint = _ogjstr;
-publicVariable "FuMS_GlobalHint";  	  
+_ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+_ogjstr = format ["%1<br /><t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+_ogjstr = format ["%1<br />__________", _ogjstr];
+_ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+//FuMS_GlobalHint = _ogjstr;
+//publicVariable "FuMS_GlobalHint"; 
+
+FuMS_ExileToast = ["Capture points established",_ogjstr];
+publicVariable "FuMS_ExileToast";					
+ 	  
 
 // create variable that will be used to track the state of each flag.
 // this will be an array of bool's, one for each cap point specified in the Trigger.
@@ -56,7 +60,7 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
     _marker setMarkerColor "ColorIndependent"; // Free
     _marker 		setMarkerShape "ELLIPSE";
     _marker 		setMarkerBrush "Solid";
-    _marker 		setMarkerSize [_ZCP_CapRadius*3,_ZCP_CapRadius*3];
+    _marker 		setMarkerSize [_ZCP_CapRadius,_ZCP_CapRadius];
     //_marker 		setMarkerText _name;
     _dotName = format ["%1DOT",_mkrName];
     _dot 			= createMarker [_dotName, _capturePosition];
@@ -134,12 +138,14 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
                 {
                  //   diag_log format ["<FuMS:%1> ZupaCapture: No players near. Reseting cap point %2",FuMS_Version, _capturePosition];
                     _msnText = [_capPointName,"Vacant",format["%1 is no longer under player influence.",_capPointName]];
-                    _ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-                    _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+                    _ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+                    _ogjstr = format ["%1<br /><t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
                     _ogjstr =  format ["%1<br />__________", _ogjstr];
-                    _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-                    FuMS_GlobalHint = _ogjstr;
-                    publicVariable "FuMS_GlobalHint";  	
+                    _ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+                    //FuMS_GlobalHint = _ogjstr;
+                    //publicVariable "FuMS_GlobalHint"; 
+					FuMS_ExileToast = ["Point no longer under control",_ogjstr];
+					publicVariable "FuMS_ExileToast";					
                     _mkrName setMarkerColor "ColorIndependent";
                     publicVariable _mkrName;
                     _dotName 			setMarkerText _capPointName;
@@ -177,12 +183,16 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
 
                     // announce new 'capping' of the point.
                     _msnText = [_capPointName,"Contested",format["%1 is being captured by %2. You have %3 minutes to prevent this.",_capPointName,name _ZCP_currentCapper,round(_ZCP_TimeRemaining/ 60)]];
-                    _ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-                    _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+                    _ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+                    _ogjstr = format ["%1<br /><t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
                     _ogjstr =  format ["%1<br />__________", _ogjstr];
-                    _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-                    FuMS_GlobalHint = _ogjstr;
-                    publicVariable "FuMS_GlobalHint";  	
+                    _ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+                    //FuMS_GlobalHint = _ogjstr;
+                    //publicVariable "FuMS_GlobalHint";  	
+					
+					FuMS_ExileToast = ["Point being captured",_ogjstr];
+					publicVariable "FuMS_ExileToast";
+					
                     _mkrName setMarkerColor "ColorOPFOR";
                     publicVariable _mkrName;
                     _dotName setMarkerText format ["%1(Contested)",_capPointName];
@@ -214,12 +224,16 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
                     _ZCP_startContested = 0;
                     _ZCP_wasContested = false;	
                       _msnText = [_capPointName,"CAPTURED",format["%1 has been Captured by %2.",_capPointName,name _ZCP_currentCapper]];
-                    _ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-                    _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+                    _ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+                    _ogjstr = format ["%1<br /><t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
                     _ogjstr =  format ["%1<br />__________", _ogjstr];
-                    _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-                    FuMS_GlobalHint = _ogjstr;
-                    publicVariable "FuMS_GlobalHint";  
+                    _ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+                    //FuMS_GlobalHint = _ogjstr;
+                    //publicVariable "FuMS_GlobalHint";  
+					
+					FuMS_ExileToast = ["Capture Point",_ogjstr];
+					publicVariable "FuMS_ExileToast";
+					
                     _mkrName setMarkerColor "ColorGrey";
                     publicVariable _mkrName;                    
                     _dotName setMarkerText format ["%1(Captured)",_capPointName];
@@ -232,12 +246,14 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
                 {				
                  
                     _msnText = [_capPointName,"Being Secured",format["%1 is 50%4 secured by %2. You still have %3 minutes to prevent this.",_capPointName,name _ZCP_currentCapper,round(_ZCP_CapTime / 2 / 60),"%"]];
-                    _ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-                    _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+                    _ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+                    _ogjstr = format ["%1<br /><t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
                     _ogjstr =  format ["%1<br />__________", _ogjstr];
-                    _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-                    FuMS_GlobalHint = _ogjstr;
-                    publicVariable "FuMS_GlobalHint";  
+                    _ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+                    //FuMS_GlobalHint = _ogjstr;
+                    //publicVariable "FuMS_GlobalHint";  
+					FuMS_ExileToast = ["Point being captured",_ogjstr];
+					publicVariable "FuMS_ExileToast";
                     _mkrName setMarkerColor "ColorCivilian";
                     publicVariable _mkrName;
                     _dotName setMarkerText format["%1(almost secured)",_capPointName];
@@ -254,8 +270,10 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
                     _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
                     _ogjstr =  format ["%1<br />__________", _ogjstr];
                     _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-                    FuMS_GlobalHint = _ogjstr;
-                    publicVariable "FuMS_GlobalHint";  		
+                    //FuMS_GlobalHint = _ogjstr;
+                    //publicVariable "FuMS_GlobalHint";  	
+					FuMS_ExileToast = ["Point almost captured",_ogjstr];
+					publicVariable "FuMS_ExileToast";					
                     _mkrName setMarkerColor "ColorCivilian";					
                     publicVariable _mkrName;
                     _ZCP_min = true;
@@ -319,12 +337,14 @@ missionNamespace setVariable [_ZupaTrackerVar, []];
         {
             // all points have been captured, so delete them.
             _msnText = [_missionName,"Conquered",format["All points for %1 have been captured",_missionName]];
-            _ogjstr = format ["<t align='center' size='2.0' color='#f29420'>%1</t>",_msnText select 0];
-            _ogjstr = format ["%1<br /><t size='1.10' color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
+            _ogjstr = format ["<t color='#f29420'>%1</t>",_msnText select 0];
+            _ogjstr = format ["%1<t color='#f22b20'>%2</t>",_ogjstr,_msnText select 1];
             _ogjstr =  format ["%1<br />__________", _ogjstr];
-            _ogjstr = format["%1<br /><t size='1.25' color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
-            FuMS_GlobalHint = _ogjstr;
-            publicVariable "FuMS_GlobalHint";  
+            _ogjstr = format["%1<br /><t color='#ffff00'>%2</t>",_ogjstr, _msnText select 2];
+            //FuMS_GlobalHint = _ogjstr;
+           // publicVariable "FuMS_GlobalHint"; 
+			FuMS_ExileToast = ["All points captured",_ogjstr];
+			publicVariable "FuMS_ExileToast";			
             FuMS_Trigger_ZupaCapture set [_themeIndex, true];
             missionNamespace setVariable [format ["%1_ZuppaCapture",_root], true];
             diag_log format ["<FuMS> ZuppaCaptureInit: final eval for %1_ZuppaCapture",_root];

@@ -75,12 +75,20 @@ while {true} do
 				if (TypeName (_triggerDef select 3) != "SCALAR")exitwith {_abort=true;FuMS_FileError = format ["%1:%2 radius should be a number. Found %3",_msg,_trigName,_triggerDef select 3];};
 				if ([_triggerDef select 4] call FuMS_fnc_HC_Val_Util_VerifyLocation) exitwith {_abort=true;FuMS_FileError = format ["%1:%2 %4 Found %3",_msg,_trigName,_triggerDef select 4, FuMS_FileError];};				
 			};
+			  case "TIMERNOPLAYERS";
 			case "TIMER":
 			{ // num
 			//	_foundTrigger=true;
 				if (count _triggerDef != 2) exitWith {_abort=true;FuMS_FileError = format ["%1:%2 should be [""%2"", time in seconds]. Found %3",_msg,_trigName,_triggerDef];};
 				if (TypeName (_triggerDef select 1) != "SCALAR")exitwith {_abort=true;FuMS_FileError = format ["%1:%2 time(in seconds) should be a number. Found %3",_msg,_trigName,_triggerDef select 1];};			
 			};
+			case "TIMERNOPLAYERS":
+			{ // num
+			//	_foundTrigger=true;
+				if (count _triggerDef != 2) exitWith {_abort=true;FuMS_FileError = format ["%1:%2 should be [""%2"", time in seconds]. Found %3",_msg,_trigName,_triggerDef];};
+				if (TypeName (_triggerDef select 1) != "SCALAR")exitwith {_abort=true;FuMS_FileError = format ["%1:%2 time(in seconds) should be a number. Found %3",_msg,_trigName,_triggerDef select 1];};			
+			};
+
 			case "DETECTED":
 			{  // num, num
 			//_foundTrigger=true;

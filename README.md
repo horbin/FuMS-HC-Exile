@@ -3,6 +3,79 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.420
+****
+- Added ability to import mission building info from ASL type missions (Old school missions that used Above Sea Level rules when exporting their data)
+- Added "LOITER" AI logic to make AI stand guard in one spot until combat starts
+- Added "TimerNoPlayers" trigger so that you can have a timer end a mission unless there are players withen 300 m
+- Added ability to randomize loot drop locations by providing array in loot location
+- Corrected issue where AI would start shooting at each other, especially crews and drivers
+- Did some preliminary work on adding in Raptors and Destroyer static vehicle
+- Added ability to add in more popcaps per mission loot box (default is 500 + up to 1000 more but you can specify random amount in loot file)
+- Corrected issue when mission buildings are spawned in but didn't match terrain.  Now buildings will reset properly even on hillsides
+- Corrected issue with mission buildings spawning in without simluation enabled.  They also cannot be destroyed
+- Modified ZUPA code to use Exile Toasts to annouce status of mission capture points
+- Corrected issue with Admin Menu that displayed error on menu
+- Created mission template to fully document the mission system (WIP, this will be corrected soon)
+- Ported over missions from these several great authors who were graciious enough to let me include in the base FuMS system
+	
+	STATIC ALTIS MISSIONS
+	- Abandoned Village 		([CiC]red_ned)
+	- AI Island					([CiC]red_ned)
+	- Bosmos					([CiC]red_ned)
+	- Castle-183				([CiC]red_ned)
+	- Chelonisi					([CiC]red_ned)
+	- Destroyer 				(=CF=Dragunov) (STILL WIP, DO NOT USE)
+	- GraveRobbers				(Mythbuster)
+	- Military Junkyard			([CiC]red_ned)
+	- Kastro Castle				([CiC]red_ned)
+	- Kavala Hospital			(=CF=Dragunov)
+	- KoreFactory				(=CF=Dragunov)
+	- Labrinthe					(Kimi_Hunters)
+	- Marsh Battle				(Mythbuster)
+	- Kill the Mayor			([CiC]red_ned)
+	- Military Raid				(HeadlessRocket)
+	- Open Harbor				(Mythbuster)
+	- PowerPlant				(=CF=Dragunov)
+	- Proteus					(=CF=Dragunov)
+	- Radioactive				(=CF=Dragunov)
+	- Storage Invasion			([CiC]red_ned)
+	
+	DYNAMIC AI TYPE MISSIONS
+	
+	- ned Bandit				([CiC]red_ned)
+	- ned Reserach Mission		([CiC]red_ned)
+	- ned Sniper Camp			([CiC]red_ned)
+	- Pauls Bambi Slide			(GolovaRaoul)
+	
+	DYNAMIC LOOT TYPE MISSIONS
+	
+	- ned Building Materials	([CiC]red_ned)
+	- ned Cash Bandits			([CiC]red_ned)
+	- ned Drinks Transport		([CiC]red_ned)
+	- ned Guns Guns Guns		([CiC]red_ned)
+	- ned Medical Mission		([CiC]red_ned)
+	- Pauls Beert Transport 	(GolovaRaoul)
+	- Pauls IKEA loot			(GolovaRaoul)
+	
+	DYNAMIC VEHICLE MISSIONS
+	
+	- ned Civilian Car			([CiC]red_ned)
+	- ned Hatch Back			([CiC]red_ned)
+	- ned Huey 					([CiC]red_ned)
+	- ned Hunter				([CiC]red_ned)
+	- net Ifrit					([CiC]red_ned)
+	- ned Offroad				([CiC]red_ned)
+	- ned Strider				([CiC]red_ned)
+	- ned Ural					([CiC]red_ned)
+	- Paul Anti-Air				(GolovaRaoul)
+	- Pauls Little Bird			(GolovaRaoul)
+	
+These missions help document the new features and options for mission spawning so pleaes look through them to see if answers your questions.
+
+
+
+
 v0.41 (Bug Squashin') 
 **** 
 - Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly  

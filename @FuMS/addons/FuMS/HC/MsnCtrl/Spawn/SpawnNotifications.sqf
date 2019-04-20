@@ -99,6 +99,7 @@ if (_showMap) then
     {  
         if (_msnStatus_status == "WIN") then {_mkr1 setMarkerColor "ColorGreen";}
         else {_mkr1 setMarkerColor "ColorBlack";};
+		_mkr1 setMarkerBrush "Solid";		
             //publicVariable _mkr1;  
             //leave green circle up for 'delay' secs, then remove markers       
         //diag_log format ["##Spawn Notification: _msnStatus:%1  _delay:%2", _msnStatus, _delay];
@@ -122,13 +123,13 @@ if (_showMap) then
         _mkr1 setMarkerShape (_markers select 2);
         _mkr1 setMarkerSize [_markers select 5, _markers select 5];
         _mkr1 setMarkerColor (_markers select 3);
-        _mkr1 setMarkerAlpha 1;
+        _mkr1 setMarkerAlpha 0.8;
         _mkr1 setMarkerBrush (_markers select 4);
         //_mkr1 setMarkerText (_markers select 0);
         publicVariable _mkr1;
         
         _mkr2 setMarkerPos _eCenter;
-        _mkr2 setMarkerAlpha 1;
+        _mkr2 setMarkerAlpha 0.5;
         _mkr2 setMarkerType (_markers select 1);
         
         if ( count _missionNameOverride > 0) then
@@ -137,7 +138,10 @@ if (_showMap) then
             _mkr2 setMarkerText format[" %1",_missionNameOverride];   
         }
         else { _mkr2 setMarkerText format[" %1",(_markers select 0)];};
-        _mkr2 setMarkerColor (_markers select 3);
+        //_mkr2 setMarkerColor (_markers select 3);
+        _mkr2 setMarkerColor "ColorBlack";
+	
+		
         publicVariable _mkr2;
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_AddObject;
         ["Markers",_mkr2] call FuMS_fnc_HC_Util_HC_AddObject;

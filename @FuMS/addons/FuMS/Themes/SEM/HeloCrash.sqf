@@ -5,7 +5,7 @@
 
 [
 ["HeloCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Helicopter Crash","mil_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Helicopter Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.

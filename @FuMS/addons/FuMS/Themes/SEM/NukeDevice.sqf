@@ -5,7 +5,7 @@
 
 [
 ["NukeDevice", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Nuclear Device","mil_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Nuclear Device","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.

@@ -13,6 +13,7 @@ _id = owner _player;
 if (FuMS_AdminControlsEnabled) then
 {
     diag_log format ["##InitMenu: Checking for Admin Access for %1",_player];
+	diag_log format ["##InitMenu: Admin Access for %1 | %2",_player,([_player] call FuMS_HasAdminAccess)];
     if ([_player] call FuMS_HasAdminAccess) then
     {
         //  diag_log format ["##InitMenu: %1 found, passing scripts!",_player];

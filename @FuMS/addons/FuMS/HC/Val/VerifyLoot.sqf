@@ -28,7 +28,7 @@ while {true} do
         //-0- 2 strings
         _dat2 =_x;
         if (TypeName _dat2 != "ARRAY") exitWith {_abort=true; _msg = format ["Invalid Loot description. Found %1",_dat2];};
-        if ( count _dat2 != 5)exitWith {_abort=true; _msg = format ["Loot description should have 5 sections. Found %1",_dat2];};
+        if ( (count _dat2 < 5) or (count _dat2 > 6))exitWith {_abort=true; _msg = format ["Loot description should have 5 or 6 sections. Found %1",_dat2];};
         _dat3 = _dat2 select 0;			
         if (TypeName _dat3 != "ARRAY") exitWith {_abort=true; _msg = format ["Loot Name or box type invalid"];};
         if (count _dat3 != 2 and count _dat3 !=3)exitWith {_abort=true; _msg = format ["Loot Name or box type invalid. Ex:[""CloneHunter"",""box_nato_ammoveh_f"",""RANDOM"""];};

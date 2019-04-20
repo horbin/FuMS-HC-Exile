@@ -8,6 +8,11 @@
 // When FuMS encounters one of these defined arrays, it will select one of the items from the array at random to use
 // in the particular application (ie AI Uniform, loot in a box, etc).
 
+FuMS_Building_Supplies = ["Exile_Item_ConcreteWallKit","Exile_Item_ConcreteWallKit","Exile_Item_ConcreteWallKit","Exile_Item_ConcreteWallKit",
+"Exile_Item_ConcreteFloorKit","Exile_Item_ConcreteFloorKit","Exile_Item_ConcreteFloorKit","Exile_Item_ConcreteDoorKit","Exile_Item_ConcreteFloorKit",
+"Exile_Item_ConcreteGateKit","Exile_Item_RepairKitMetal","Exile_Item_DuctTape","Exile_Item_SafeKit","Exile_Item_CordlessScrewdriver",
+"Exile_Item_WoodDoorwayKit","Exile_Item_WooDDoorKit","Exile_Item_WoodWallKit","Exile_Item_WoodFloorKit"];
+
 FuMS_Crafting_Wood = ["Exile_Item_FortificationUpgrade","Exile_Item_WoodDoorwayKit","Exile_Item_WoodFloorKit","Exile_Item_WoodFloorPortKit",
 "Exile_Item_WoodGateKit","Exile_Item_WoodPlank","Exile_Item_WoodStairsKit","Exile_Item_WoodSupportKit",
 "Exile_Item_WoodWallKit","Exile_Item_WoodWallHalfKit","Exile_Item_WoodWindowKit"];
@@ -18,15 +23,22 @@ FuMS_Crafting_Tools = ["Exile_Item_WorkBenchKit","Exile_Item_CookingPot","Exile_
 FuMS_Crafting_Raw = ["Exile_Item_WoodLog","Exile_Item_LightBulb","Exile_Item_ExtensionCord","Exile_Item_JunkMetal",
 	"Exile_Item_Rope","Exile_Item_PlasticBottleEmpty","Exile_Item_FuelCanisterEmpty","Exile_Item_DuctTape"];
 FuMS_Crafting_ALL = FuMS_Crafting_Wood + FuMS_Crafting_Metal + FuMS_Crafting_Other + FuMS_Crafting_Tools + FuMS_Crafting_Raw;
+FuMS_BaseBuilding_ALL = FuMS_Building_Supplies + FuMS_Crafting_ALL;
 
 FuMS_Food_Cooked = ["Exile_Item_BBQSandwich_Cooked","Exile_Item_Catfood_Cooked","Exile_Item_ChristmasTinner_Cooked",
 	"Exile_Item_GloriousKnakworst_Cooked","Exile_Item_SausageGravy_Cooked","Exile_Item_Surstromming_Cooked"];
 FuMS_Food_Raw = ["Exile_Item_GloriousKnakworst","Exile_Item_Surstromming","Exile_Item_SausageGravy",
 	"Exile_Item_ChristmasTinner","Exile_Item_BBQSandwich","Exile_Item_Catfood"];
 FuMS_Food_ALL = FuMS_Food_Cooked + FuMS_Food_Raw;
-FuMS_Drink = ["Exile_Item_PlasticBottleFreshWater","Exile_Item_PlasticBottleEmpty","Exile_Item_Beer",
-	"Exile_Item_Energydrink"];
 
+FuMS_Drink = ["Exile_Item_PlasticBottleFreshWater","Exile_Item_PlasticBottleEmpty","Exile_Item_Beer","Exile_Item_PlasticBottleCoffee",
+"Exile_Item_PowerDrink","Exile_Item_ChocolateMilk", "Exile_Item_MountainDupe","Exile_Item_Energydrink"];
+
+FuMS_Medical_Supplies = ["Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin",
+"Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_InstaDoc","Exile_Item_Bandage",
+"Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin","Exile_Item_Bandage","Exile_Item_Vishpirin"];	
+	
+	
 // Uniforms
 FuMS_U_Civ = ["U_C_Journalist","U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_salmon",
 	"U_C_Poloshirt_stripped","U_C_Poloshirt_tricolour","U_C_Poor_1","U_C_Poor_2","U_C_Poor_shorts_1",
@@ -63,6 +75,16 @@ FuMS_V_Plate = ["V_PlateCarrier1_blk","V_PlateCarrier1_rgr","V_PlateCarrier2_rgr
 	"V_PlateCarrierIA2_dgtl","V_PlateCarrierIAGL_dgtl","V_PlateCarrierIAGL_oli",
 	"V_PlateCarrierL_CTRG","V_PlateCarrierSpec_blk","V_PlateCarrierSpec_mtp",
 	"V_PlateCarrierSpec_rgr"];
+	
+FuMS_Backpacks_ALL = ["B_HuntingBackpack", "B_OutdoorPack_blk", "B_OutdoorPack_blu", "B_OutdoorPack_tan", 
+	"B_AssaultPack_blk", "B_AssaultPack_cbr", "B_AssaultPack_dgtl", "B_AssaultPack_khk", 
+	"B_AssaultPack_mcamo", "B_AssaultPack_rgr", "B_AssaultPack_sgg", "B_FieldPack_blk", "B_FieldPack_cbr", 
+	"B_FieldPack_ocamo", "B_FieldPack_oucamo", "B_TacticalPack_blk", "B_TacticalPack_rgr", "B_TacticalPack_ocamo", 
+	"B_TacticalPack_mcamo", "B_TacticalPack_oli", "B_Kitbag_cbr", "B_Kitbag_mcamo","B_Kitbag_sgg", 
+	"B_Bergen_blk", "B_Bergen_mcamo", "B_Bergen_rgr", "B_Bergen_sgg", "B_Carryall_cbr", "B_Carryall_khk",
+	"B_Carryall_mcamo", "B_Carryall_ocamo", "B_Carryall_oli", "B_Carryall_oucamo"];
+ 
+
 FuMS_V_Rebreather = ["V_RebreatherB","V_RebreatherIA","V_RebreatherIR"];
 FuMS_V_All = FuMS_V_Bandolliers + FuMS_V_Chestrig + FuMS_V_Vests + FuMS_V_Harness + FuMS_V_Plate;
 
@@ -189,7 +211,10 @@ FuMS_Pistols = ["hgun_ACPC2_F","hgun_P07_F","hgun_Pistol_heavy_01_F","hgun_Pisto
 FuMS_SubMGs = [	"hgun_PDW2000_F","SMG_01_F","SMG_02_F"];
 FuMS_LightMGs = ["arifle_MX_SW_Black_F","arifle_MX_SW_F","LMG_Mk200_F","LMG_Zafir_F","MMG_01_hex_F","MMG_01_tan_F","MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"];
 FuMS_AssaultRifles = ["arifle_Katiba_C_F","arifle_Katiba_F","arifle_Katiba_GL_F","arifle_Mk20_F","arifle_Mk20_GL_F","arifle_Mk20_GL_plain_F","arifle_Mk20_plain_F","arifle_Mk20C_F","arifle_Mk20C_plain_F","arifle_MX_Black_F","arifle_MX_F","arifle_MX_GL_Black_F","arifle_MX_GL_F","arifle_MXC_Black_F","arifle_MXC_F","arifle_SDAR_F","arifle_TRG20_F","arifle_TRG21_F","arifle_TRG21_GL_F"];
-FuMS_SniperRifles = ["arifle_MXM_Black_F","arifle_MXM_F","srifle_DMR_01_F","srifle_DMR_02_camo_F","srifle_DMR_02_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_tan_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_GM6_F","srifle_LRR_camo_F","srifle_LRR_F"];
+FuMS_SniperRifles = ["arifle_MXM_Black_F","arifle_MXM_F","srifle_DMR_01_F","srifle_DMR_02_camo_F","srifle_DMR_02_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F",
+"srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_tan_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F",
+"srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_GM6_F","srifle_LRR_camo_F","srifle_LRR_F"];
+
 FuMS_Rifles_ALL = FuMS_LightMGs + FuMS_AssaultRifles + FuMS_SniperRifles;
 FuMS_Guns_ALL = FuMS_Rifles_ALL + FuMS_SubMGs + FuMS_Pistols;
 
@@ -210,6 +235,10 @@ FuMS_H20_SDVs = ["Exile_Boat_SDV_CSAT","Exile_Boat_SDV_Digital","Exile_Boat_SDV_
 
 // Helicopters
 FuMS_Heli_Hellcats = ["Exile_Chopper_Hellcat_Green","Exile_Chopper_Hellcat_FIA"];
+FuMS_Heli_UnarmedHueys = ["Exile_Chopper_Huey_Green","Exile_Chopper_Huey_Desert"];
+FuMS_Heli_ArmedHueys = ["Exile_Chopper_Huey_Armed_Desert","Exile_Chopper_Huey_Armed_Green"];
+FuMS_Heli_Hueys_All = FuMS_Heli_ArmedHueys + FuMS_Heli_UnarmedHueys;
+
 FuMS_Heli_Hummingbirds =["Exile_Chopper_Hummingbird_Green","Exile_Chopper_Hummingbird_Civillian_Blue","Exile_Chopper_Hummingbird_Civillian_Red",
 "Exile_Chopper_Hummingbird_Civillian_ION","Exile_Chopper_Hummingbird_Civillian_BlueLine",
 "Exile_Chopper_Hummingbird_Civillian_Digital","Exile_Chopper_Hummingbird_Civillian_Elliptical",
@@ -232,15 +261,33 @@ FuMS_Civ_Hatchbacks = ["Exile_Car_Hatchback_Beige","Exile_Car_Hatchback_Green","
 "Exile_Car_Hatchback_Rusty1","Exile_Car_Hatchback_Rusty2","Exile_Car_Hatchback_Rusty3"];
 FuMS_Civ_SportHatchbacks = ["Exile_Car_Hatchback_Sport_Red","Exile_Car_Hatchback_Sport_Blue","Exile_Car_Hatchback_Sport_Orange",
 "Exile_Car_Hatchback_Sport_White","Exile_Car_Hatchback_Sport_Beige","Exile_Car_Hatchback_Sport_Green"];
+FuMS_Civ_Hatchbacks_ALL = FuMS_Civ_Hatchbacks + FuMS_Civ_SportHatchbacks;
+
 FuMS_Civ_Offroads = ["Exile_Car_Offroad_Red","Exile_Car_Offroad_Beige","Exile_Car_Offroad_White","Exile_Car_Offroad_Blue",
 "Exile_Car_Offroad_DarkRed","Exile_Car_Offroad_BlueCustom","Exile_Car_Offroad_Guerilla01","Exile_Car_Offroad_Guerilla02",
 "Exile_Car_Offroad_Guerilla03","Exile_Car_Offroad_Guerilla04","Exile_Car_Offroad_Guerilla05","Exile_Car_Offroad_Guerilla06",
 "Exile_Car_Offroad_Guerilla07","Exile_Car_Offroad_Guerilla08","Exile_Car_Offroad_Guerilla09","Exile_Car_Offroad_Guerilla10",
 "Exile_Car_Offroad_Guerilla11","Exile_Car_Offroad_Guerilla12","Exile_Car_Offroad_Rusty1","Exile_Car_Offroad_Rusty2","Exile_Car_Offroad_Rusty3"];
-FuMS_Civ_SUVs = ["Exile_Car_SUV_Red","Exile_Car_SUV_Black","Exile_Car_SUV_Grey","Exile_Car_SUV_Orange"];
+FuMS_Civ_SUVs = ["Exile_Car_SUV_Red","Exile_Car_SUV_Black","Exile_Car_SUV_Grey","Exile_Car_SUV_Orange","Exile_Car_SUVXL_Black"];
 FuMS_Civ_Vans = ["Exile_Car_Van_Black","Exile_Car_Van_White","Exile_Car_Van_Red","Exile_Car_Van_Guerilla01","Exile_Car_Van_Guerilla02",
 "Exile_Car_Van_Guerilla03","Exile_Car_Van_Guerilla04","Exile_Car_Van_Guerilla05","Exile_Car_Van_Guerilla06","Exile_Car_Van_Guerilla07",
 "Exile_Car_Van_Guerilla08"];
+FuMS_Civ_Ikarus = ["Exile_Car_Ikarus_Blue","Exile_Car_Ikarus_Red","Exile_Car_Ikarus_Party"];
+FuMS_Civ_Tractors = ["Exile_Car_Tractor_Red","Exile_Car_OldTractor_Red","Exile_Car_TowTractor_White"];
+FuMS_Civ_Octavius = ["Exile_Car_Octavius_White","Exile_Car_Octavius_Black"];
+FuMS_Civ_UAZs = ["Exile_Car_UAZ_Green","Exile_Car_UAZ_Open_Green"];
+FuMS_Civ_V3S = ["Exile_Car_V3S_Covered","Exile_Car_V3S_Open"];
+
+FuMS_Civ_LandRover = [ "Exile_Car_LandRover_Red","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Green","Exile_Car_LandRover_Sand","Exile_Car_LandRover_Desert"];
+FuMS_Civ_Ambulance = ["Exile_Car_LandRover_Ambulance_Green","Exile_Car_LandRover_Ambulance_Desert", "Exile_Car_LandRover_Ambulance_Sand"];
+
+FuMS_Civ_Ladas = ["Exile_Car_Lada_Green","Exile_Car_Lada_Taxi","Exile_Car_Lada_Red","Exile_Car_Lada_Hipster","Exile_Car_Lada_White"];
+
+FuMS_Civ_Volhas = ["Exile_Car_Volha_White","Exile_Car_Volha_Blue","Exile_Car_Volha_Black"];
+
+
+
+
 
 // Civilian Work Vehicles
 FuMS_Work_RepairOffroads = ["Exile_Car_Offroad_Repair_Civillian","Exile_Car_Offroad_Repair_Red","Exile_Car_Offroad_Repair_Beige",
@@ -260,6 +307,15 @@ FuMS_Mil_ArmedOffroads = ["Exile_Car_Offroad_Armed_Guerilla01","Exile_Car_Offroa
 "Exile_Car_Offroad_Armed_Guerilla04","Exile_Car_Offroad_Armed_Guerilla05","Exile_Car_Offroad_Armed_Guerilla06",
 "Exile_Car_Offroad_Armed_Guerilla07","Exile_Car_Offroad_Armed_Guerilla08","Exile_Car_Offroad_Armed_Guerilla09",
 "Exile_Car_Offroad_Armed_Guerilla10","Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_Offroad_Armed_Guerilla12"];
+
+FuMS_Mil_UnarmedOffroads = ["Exile_Car_Offroad_Guerilla01",	"Exile_Car_Offroad_Guerilla02",	"Exile_Car_Offroad_Guerilla03",	"Exile_Car_Offroad_Guerilla04",	
+"Exile_Car_Offroad_Guerilla05",	"Exile_Car_Offroad_Guerilla06",	"Exile_Car_Offroad_Guerilla07",	"Exile_Car_Offroad_Guerilla08",	"Exile_Car_Offroad_Guerilla09",
+"Exile_Car_Offroad_Guerilla10",	"Exile_Car_Offroad_Guerilla11",	"Exile_Car_Offroad_Guerilla12"];
+
+FuMS_Mil_OpenUral = ["Exile_Car_Ural_Open_Worker","Exile_Car_Ural_Open_Yellow","Exile_Car_Ural_Open_Worker","Exile_Car_Ural_Open_Military"];
+FuMS_Mil_CoveredUral = ["Exile_Car_Ural_Covered_Worker","Exile_Car_Ural_Covered_Blue","Exile_Car_Ural_Covered_Yellow","Exile_Car_Ural_Covered_Military"];
+FuMS_Mil_Ural_ALL = FuMS_Mil_OpenUral + FuMS_Mil_CoveredUral;
+
 FuMS_Mil_Hemmts = ["Exile_Car_HEMMT"];
 FuMS_Mil_Hunters = ["Exile_Car_Hunter"];
 FuMS_Mil_Ifrits = ["Exile_Car_Ifrit"];
@@ -270,9 +326,10 @@ FuMS_Mil_Zamaks = ["Exile_Car_Zamak"];
 // Collections
 FuMS_Toy_All = FuMS_Toy_Bikes + FuMS_Toy_Quads + FuMS_Toy_Karts;
 FuMS_H20_All = FuMS_H20_Boats + FuMS_H20_RubberDucks+FuMS_H20_SDVs;
+FuMS_Heli_Troops = FuMS_Heli_Hellcats+FuMS_Heli_Hummingbirds+FuMS_Heli_Hurons+FuMS_Heli_Mohawks+FuMS_Heli_Orcas;
 FuMS_Heli_ALL = FuMS_Heli_Hellcats+FuMS_Heli_Hummingbirds+FuMS_Heli_Hurons+FuMS_Heli_Mohawks+FuMS_Heli_Orcas+FuMS_Heli_Tarus;
 FuMS_Plane_All = FuMS_Plane_Cessnas;
-FuMS_Civ_All = FuMS_Civ_Hatchbacks + FuMS_Civ_SportHatchbacks + FuMS_Civ_Offroads + FumS_Civ_SUVs+FuMS_Civ_Vans;
+FuMS_Civ_All = FuMS_Civ_Hatchbacks + FuMS_Civ_SportHatchbacks + FuMS_Civ_Offroads + FumS_Civ_SUVs + FuMS_Civ_Vans;
 FuMS_Work_All = FuMS_Work_RepairOffroads+FuMS_Work_BoxVans+FuMS_Work_FuelVans;
 FuMS_Mil_Unarmed =FuMS_Mil_Hemmts + FuMS_Mil_Hunters + FuMS_Mil_Ifrits + FuMS_Mil_Striders+FuMS_Mil_Tempests+FuMS_Mil_Zamaks;
 FuMS_Mil_Armed = FuMS_Mil_ArmedOffroads;

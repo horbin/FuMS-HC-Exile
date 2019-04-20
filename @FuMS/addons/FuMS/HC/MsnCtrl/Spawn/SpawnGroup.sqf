@@ -67,7 +67,7 @@ if (!isNil "_groupData") then
                 default { _group = [];};
             };
             if (isNil "_group") exitWith {diag_log format ["#Spawn Group: ###ERROR###: Invalid _side: %1. No group created!",_side];};
-           // diag_log format ["<FuMS> SpawnGroup: _group:%1 Side:%2",_group, _side];
+            //diag_log format ["<FuMS> SpawnGroup: _group:%1 Side:%2",_group, _side];
 			_group = [_group,_spawnpos, _units,_themeIndex ] call FuMS_fnc_HC_msnCtrl_Spawn_CreateGroup;	
             _group setBehaviour _behaviour;
             _group setCombatMode _combat;
