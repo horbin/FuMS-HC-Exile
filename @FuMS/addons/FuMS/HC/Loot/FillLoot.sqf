@@ -7,11 +7,15 @@
 // Outputs: box item, if created.
 // ASSERT Global Variable BaseLoot.sqf have been defined!
 
-private ["_lootOption","_pos","_options","_typeLoot","_boxtype","_box","_weapons","_magazines","_items","_backpacks","_found","_isVehicle",
+private ["_extraMoney","_pickLootPos","_lootOption","_pos","_options","_typeLoot","_boxtype","_box","_weapons","_magazines","_items","_backpacks","_found","_isVehicle",
 "_item","_number","_lootData","_randomLootData","_themeIndex"];
 _lootOption = toupper (_this select 0);
 _pos = _this select 1;
 _themeIndex = _this select 2;
+_extraMoney = 1000;
+
+//diag_log format ["<FuMS> FillLoot: Launch parameters:  _lootOption:%1 | _pos:%2 | _themeIndex:%3",_lootOption,_pos,_themeIndex];
+
 
 if (((FuMS_THEMEDATA select _themeIndex) select 0) select 3) then
 {
@@ -77,15 +81,32 @@ if (_lootOption != "NONE") then
             _magazines = _x select 2;
             _items = _x select 3;
             _backpacks = _x select 4;
+			if ((count _x) == 6) then {_extraMoney = _x select 5;};
+			//diag_log format ["## FillLoot: _extraMoney:%1 | COUNT:%2",_extraMoney,(count _x)];
+
             if (_isVehicle or _typeLoot == "SCATTER" or _boxtype =="SCATTER") then {_box = _pos;} // _pos contains a vehicle Object! or we are going to scatter loot.
             else 
             {         
                 // build a box and set up its smoke.
+				//diag_log format ["<FuMS> FillLoot: Array before logic.  Chose:%1",_pos];				
+				
+				if (typeName (_pos select 0) == "ARRAY") then
+				{
+					_pickLootPos = selectRandom _pos;
+					//diag_log format ["<FuMS> FillLoot: Array found for loot pos.  Chose:%1",_pickLootPos];
+					_pos = _pickLootPos;
+					// _pos = [_eCenter, _pickLootPos] call FuMS_fnc_HC_MsnCtrl_Util_XPos;
+
+				};
+				
+				
+				
+				
                // if (count _pos ==2) then //offset being used so find something nearby that is Safe.
               //  {
                //     _pos = [_pos, 0, 30, 1,0, 8,0,[],[]] call BIS_fnc_findSafePos; // 1m clear, terraingradient 8 pretty hilly
               //  }; //else leave the 3d solution because person making the mission knows what they are doing!
-        //       diag_log format ["<FuMS> FillLoot : Creating %1 at %2 with option %3",_boxtype, _pos, _typeLoot];
+				//diag_log format ["<FuMS> FillLoot : Creating %1 at %2 with option %3",_boxtype, _pos, _typeLoot];
                 _box = createVehicle [_boxtype, _pos,[],0,"NONE"];
                 if (FuMS_LootSmoke ) then
                 { 
@@ -145,119 +166,141 @@ if (_lootOption != "NONE") then
                 clearItemCargoGlobal _box;              
             };
             // box complete, now ready to fill box, vehicle, or scatter loot!
-            private ["_numItems"];
+            private ["_numItems","_lootCounter"];
             _numItems = 0;
             //diag_log format ["<FuMS> FillLoot: Filling %1 with loot!",_box];
             _weaponsAdded = [];
             {                
                // diag_log format ["<FuMS> FillLoot: Weapons: _x:%1, _x[0]:%2, _x[1]:%3", _x, _x select 0, _x select 1];
                 // _x[0] = "weapon name" or 'array of weapon names'
-                // _x[1] = quantity to add.
-                if (TypeName (_x select 0) == "ARRAY") then
-                {
-                    _item = (_x select 0) call BIS_fnc_selectRandom;
-                }else
-                {  
-                    _item = (_x select 0);
-                };
-                _number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
-                if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
-                {
-                    // pos is either 3dloc, 2d offset, or a vehicle object.
-                    [_pos, _item, _number,"WEAPON"] spawn FuMS_fnc_HC_Loot_Scatter;
-                }
-                else
-                {
-            //        diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
-                    if (_number > 0 ) then {_box addWeaponCargoglobal [_item, _number]; };                    
-                };
+                // _x[1] = quantity to add.				
+				_number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
+				for [{_lootCounter=0}, {_lootCounter<_number}, {_lootCounter=_lootCounter+1}] do
+				{				
+					if (TypeName (_x select 0) == "ARRAY") then
+					{
+						_item = (_x select 0) call BIS_fnc_selectRandom;
+					}else
+					{  
+						_item = (_x select 0);
+					};
+					if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
+					{
+						// pos is either 3dloc, 2d offset, or a vehicle object.
+						[_pos, _item, 1,"WEAPON"] spawn FuMS_fnc_HC_Loot_Scatter;
+					}
+					else
+					{
+					//        diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
+						if (_number > 0 ) then {_box addWeaponCargoglobal [_item, 1]; };    
+						_weaponsAdded = _weaponsAdded + [_item];						
+					};			
+				};
+				
                 _numItems = _numItems + _number;
-                _weaponsAdded = _weaponsAdded + [_item];
+
             }foreach _weapons;
             
             
             //Magazines
             {
-               // diag_log format ["<FuMS> FillLoot: Magazines: _x:%1 _x[0]:%2 _x[1]:%3", _x, _x select 0, _x select 1];
-                if (TypeName (_x select 0) == "ARRAY") then
-                {
-                    _item = ((_x select 0) call BIS_fnc_selectRandom);
-                }else
-                {  
-                    _item = (_x select 0);
-                };
-                _number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
+               // diag_log format ["<FuMS> FillLoot: Magazines: _x:%1 _x[0]:%2 _x[1]:%3", _x, _x select 0, _x select 1];	   
+				_number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
+				for [{_lootCounter=0}, {_lootCounter<_number}, {_lootCounter=_lootCounter+1}] do
+				{
+					if (TypeName (_x select 0) == "ARRAY") then
+					{
+						_item = ((_x select 0) call BIS_fnc_selectRandom);
+					}else
+					{  
+						_item = (_x select 0);
+					};					
+					// special case 'FuMS_AmmoForEach' defined. So add clips for each weapon that has been added!
+					if (_item == "FuMS_AmmoForEach") then
+					{
+						{
+							// get the proper type of magazine for weapon 'x'
+							_item = ((getArray (configFile >> "CfgWeapons" >> _x >> "magazines")) call BIS_fnc_selectRandom);
+							// Add the proper number of clips to the right locations
+							if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
+							{
+								[_pos, _item, 1, "MAGAZINE"] spawn FuMS_fnc_HC_Loot_Scatter;
+							}else
+							{
+								//     diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
+								_box addMagazineCargoglobal [_item, 1];   
+							};
+							_numItems = _numItems + 1;                                                
+						}foreach _weaponsAdded;
+					}else
+					// no special case, so add the clip that is defined.
+					{
+						if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
+						{
+							[_pos, _item, 1, "MAGAZINE"] spawn FuMS_fnc_HC_Loot_Scatter;
+						}else
+						{
+							//     diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
+							_box addMagazineCargoglobal [_item, 1];   
+						};
+					    _numItems = _numItems + 1;
+					
+					};
+				};	
+
                 
-                // special case 'FuMS_AmmoForEach' defined. So add clips for each weapon that has been added!
-                if (_item == "FuMS_AmmoForEach") then
-                {
-                    {
-                        // get the proper type of magazine for weapon 'x'
-                        _item = getArray (configFile >> "CfgWeapons" >> _x >> "magazines") select 0;
-                        // Add the proper number of clips to the right locations
-                        if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
-                        {
-                            [_pos, _item, _number, "MAGAZINE"] spawn FuMS_fnc_HC_Loot_Scatter;
-                        }else
-                        {
-                            //     diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
-                            _box addMagazineCargoglobal [_item, _number];   
-                        };
-                        _numItems = _numItems + _number;                                                
-                    }foreach _weaponsAdded;
-                }else
-                // no special case, so add the clip that is defined.
-                {
-                    if (_typeLoot == "SCATTER" or _boxtype == "SCATTER") then
-                    {
-                        [_pos, _item, _number, "MAGAZINE"] spawn FuMS_fnc_HC_Loot_Scatter;
-                    }else
-                    {
-                        //     diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
-                        _box addMagazineCargoglobal [_item, _number];   
-                    };
-                    _numItems = _numItems + _number;
-                };
             }foreach _magazines;
             
             // Normal Items
             {
-              //  diag_log format ["<FuMS> FillLoot: Items: _x:%1  _x[0]:%2  _x[1]:%3", _x, _x select 0, _x select 1];
-                if (TypeName (_x select 0) == "ARRAY") then
-                {
-                    _item = (_x select 0) call BIS_fnc_selectRandom;
-                }else
-                { 
-                    _item = (_x select 0);
-                };
-                _number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
-                if (_typeLoot == "SCATTER" or _boxtype=="SCATTER") then
-                {
-                    [_pos, _item, _number, "ITEM"] spawn FuMS_fnc_HC_Loot_Scatter;       
-                }else
-                {       
-             //       diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
-                    _box addItemCargoglobal [_item, _number]; 
-                };
+                //diag_log format ["<FuMS> FillLoot: Items: _x:%1  _x[0]:%2  _x[1]:%3", _x, _x select 0, _x select 1];
+				_number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
+				for [{_lootCounter=0}, {_lootCounter<_number}, {_lootCounter=_lootCounter+1}] do
+				{
+					if (TypeName (_x select 0) == "ARRAY") then
+					{
+						_item = (_x select 0) call BIS_fnc_selectRandom;
+					}else
+					{ 
+						_item = (_x select 0);
+					};
+
+					if (_typeLoot == "SCATTER" or _boxtype=="SCATTER") then
+					{
+						[_pos, _item, 1, "ITEM"] spawn FuMS_fnc_HC_Loot_Scatter;       
+					}else
+					{       
+						//diag_log format ["<FuMS> FillLoot (Items): (Loop %1) Adding %2 to %3",_lootCounter, _item, _box];
+						_box addItemCargoglobal [_item, 1]; 
+					};
+				};
+				
+				
+				
                 _numItems = _numItems + _number;
             }foreach _items;
             
             //Backpacks
             {
                 //diag_log format ["<FuMS> FillLoot: Backpacks: _x:%1 _x[0]:%2 _x[1]:%3", _x, _x select 0, _x select 1];
-                if (TypeName (_x select 0) == "ARRAY") then
-                {
-                    _item = (_x select 0) call BIS_fnc_selectRandom;
-                }else{  _item = (_x select 0);};
-                _number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
-                if (_typeLoot == "SCATTER" or _boxtype=="SCATTER") then
-                {
-                     [_pos, _item, _number, "BACKPACK"] spawn FuMS_fnc_HC_Loot_Scatter;
-                }else
-                {
-              //      diag_log format ["<FuMS> FillLoot: Adding %1 %2 to %3",_number, _item, _box];
-                    _box addBackpackCargoglobal [_item, _number]; 
-                };
+
+				_number = [_x select 1] call FuMS_fnc_HC_Loot_GetQuantity;
+				for [{_lootCounter=0}, {_lootCounter<_number}, {_lootCounter=_lootCounter+1}] do
+				{			
+					if (TypeName (_x select 0) == "ARRAY") then
+					{
+						_item = (_x select 0) call BIS_fnc_selectRandom;
+					}else{  _item = (_x select 0);};
+					if (_typeLoot == "SCATTER" or _boxtype=="SCATTER") then
+					{
+						 [_pos, _item, 1, "BACKPACK"] spawn FuMS_fnc_HC_Loot_Scatter;
+					}else
+					{
+						//diag_log format ["<FuMS> FillLoot (Backpacks): (Loop %1) Adding %2 to %3",_lootCounter, _item, _box];
+						_box addBackpackCargoglobal [_item, 1]; 
+					};
+				
+				};
                 _numItems = _numItems + _number;
             }foreach _backpacks;
             
@@ -267,14 +310,14 @@ if (_lootOption != "NONE") then
 			   }else
 			   {   
 				   private "_amount";
-				   _amount = 500 + floor random (1000); //Adds 500 poptabs + up to 1000 more to the box/container/crate referred to as "_box" 
+				   _amount = 500 + floor (random _extraMoney); //Adds 500 poptabs + up to (_extraMoney) more to the box/container/crate referred to as "_box" 
 		         //diag_log format ["<FuMS> FillLoot: Adding %1 poptabs %3",_amount, _box];
 				   _box setVariable ["ExileMoney", _amount, true]; 
 			   };
             
             //initialize FuMSLoot variable
            if (!(TypeName _box == "ARRAY")) then { _box setVariable ["FuMS_Loot", [0, _numItems], true];            };
-      //    diag_log format ["<FuMS> FillLoot: %1 items added to %2",_numItems, _box];
+		   // diag_log format ["<FuMS> FillLoot: %1 items added to %2",_numItems, _box];
            // private ["_packs","_ammo","_items","_weapons","_lootItems","_actualNumItems"];
             if (TypeName _box != "ARRAY") then
             {

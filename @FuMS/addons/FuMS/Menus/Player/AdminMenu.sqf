@@ -64,7 +64,7 @@ if (true) then
         FuMS_AdminToolsMenu = FuMS_AdminToolsMenu + [["Set Spawner", [0],"#USER:FuMS_AdminSetResourceMenu", -5, [["expression", ""]], "1", "1"]];
     };    
     
-    FuMS_AdminToolsMenu pushBack ["", [-1], "", -2, [["expression", ""]], "1", "0"];
+    FuMS_AdminToolsMenu pushBack ["===============", [0], "", -2, [["expression", ""]], "1", "0"];
     
     FuMS_anchorNameTxt = [FuMS_Anchor] call FuMS_fnc_HC_Util_GetShortName;
     // _anchorLoc =  format location to be readable FuMS_AnchorLoc
@@ -78,7 +78,7 @@ if (true) then
         _yy = round(_yy/1000);
         FuMS_anchorLoc = format ["   [%1K , %2K]",_xx,_yy];
     } else {FuMS_anchorLocTxt =      "   [---K, ---K]";}; 
-    FuMS_AdminToolsMenu pushBack ["Admin Spawn Info", [-1], "", -2, [["expression", ""]], "1", "0"];
+    FuMS_AdminToolsMenu pushBack ["Admin Spawn Info", [0], "", -2, [["expression", ""]], "1", "0"];
     FuMS_AdminToolsMenu pushBack [format["%1", FuMS_anchorNameTxt], [0], "", -2, [["expression", ""]], "1", "0"];
     FuMS_AdminToolsMenu pushBack [format["%1",FuMS_anchorLocTxt], [0], "", -2, [["expression", ""]], "1", "0"];
     FuMS_AdminToolsMenu pushBack [format["%1",FuMS_missionTxt], [0], "", -2, [["expression", ""]], "1", "0"];

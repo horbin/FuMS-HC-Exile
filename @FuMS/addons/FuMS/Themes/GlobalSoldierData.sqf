@@ -55,7 +55,7 @@ _soldierData =
         // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
-			["RESPECTGROUP",1]
+			["RESPECTGROUP",10]
         ]
     ],[
         "Rifleman",
@@ -74,7 +74,7 @@ _soldierData =
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
-			["RESPECTGROUP",1]
+			["RESPECTGROUP",10]
         ]
     ],[
         "LMG",
@@ -93,9 +93,29 @@ _soldierData =
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
-			["RESPECTGROUP",1]
+			["RESPECTGROUP",10]
         ]
     ],[
+	    "SMG",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [FuMS_U_Soldier,1], // Uniform
+        [FuMS_V_Harness,.5], // Vest.
+        [FuMS_H_Military,.5], // Helmet.
+        [FuMS_Packs_All,.5], // Backpack and chance.
+        [FuMS_SubMGs,1], // PriWeapon and chance
+        [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [FuMS_Pistols,.5], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ true, true, true, false], // DiverOverWater, UnlimitedAmmo, anti-tank
+        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]
+	],[
+	
         "Hunter",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [FuMS_U_Guerilla,1], // Uniform
@@ -112,7 +132,7 @@ _soldierData =
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
-			["RESPECTGROUP",1]
+			["RESPECTGROUP",10]
         ]
     ],[
         "Diver",
@@ -130,7 +150,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["20Rnd_556x45_UW_mag",2],[2,3]]             ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100]
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
         ]
     ],[
         "Driver",
@@ -148,7 +169,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100]
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
         ]
     ],[
         "Pilot",
@@ -166,9 +188,49 @@ _soldierData =
         [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100]
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
         ]
     ],[
+        "BanditLeader",
+        [.6, .7, .7, .7, .7, 1, .8, 1, .7],
+        ["U_Competitor",1], // Uniform
+        ["V_BandollierB_blk",.8], // Vest.
+        ["H_StrawHat",1], // Helmet
+        [FuMS_Packs_All,.5], // Backpack and chance.
+        ["Exile_Weapon_M1014",1], // PriWeapon and chance
+        [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["hgun_ACPC2_F",1], // Secondary Weapon and chance
+        [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 1, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 200],
+			["RESPECTGROUP",10]
+        ]
+    ],[
+        "BanditGroup",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .7],
+        ["U_Marshal",1], // Uniform
+        ["V_BandollierB_blk",.8], // Vest.
+        ["H_Cap_blk",1], // Helmet
+        [FuMS_Packs_All,.5], // Backpack and chance.
+        ["Exile_Weapon_AK47",1], // PriWeapon and chance
+        [ 1, 0 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["hgun_ACPC2_F",1], // Secondary Weapon and chance
+        [ 1, 1, 0, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0], // Binoculars, RangeFinders, NVG's
+        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 150],
+			["RESPECTGROUP",10]
+        ]
+    ],[	
+	
         "CivCombat",
 		[.02, .7, .1, .5, .5, .08, .1, .5, .5],
         [FuMS_U_Civ,1], // Uniform
@@ -184,7 +246,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.8],[1,1]], [[FuMS_Drink,.8],[1,1]],[["Exile_Item_InstaDoc",.05],[1,1]],[[FuMS_Smoke_Shell,.3],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 5]
+            ["RESPECT", 10],
+			["RESPECTGROUP",1]
         ]
     ],[
         "CivNonCombat",
@@ -202,7 +265,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]], [[FuMS_Drink,05],[1,1]]             ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 5]
+            ["RESPECT", 10],
+			["RESPECTGROUP",1]
         ]
     ],[
         "CivNoGun",
@@ -223,6 +287,26 @@ _soldierData =
             ["RESPECT", 0]
         ]
         
+	],[
+        "Bambi",
+		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+        ["Exile_Uniform_BambiOverall",1], // Uniform
+        [FuMS_V_Bandolliers,0], // Vest.
+        [FuMS_H_Civ,.8], // Helmet
+        [FuMS_Packs_All,0], // Backpack and chance.
+        [FuMS_SubMGs,0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [FuMS_Pistols,0], // Secondary Weapon and chance
+        [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 0]
+        ]		
+		
+		
     ],[        
 		"Civ01",
 		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
@@ -260,7 +344,7 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 2]
+            ["RESPECT", 20]
         ]
     ],
      [
@@ -279,7 +363,7 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 2]
+            ["RESPECT", 20]
         ]
     ],
      [
@@ -298,7 +382,7 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 2]
+            ["RESPECT", 20]
         ]
     ],
      [
@@ -344,8 +428,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]] ] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 0],
-			["RESPECTGROUP",0]
+            ["RESPECT", 50],
+			["RESPECTGROUP",10]
         ]
     ],
 	 [
@@ -367,8 +451,8 @@ _soldierData =
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]] ] ,
            // Crypto and Faction Rewards
         [
-            ["RESPECT", 0],
-			["RESPECTGROUP",0]
+            ["RESPECT", 50],
+			["RESPECTGROUP",10]
         ]
     ]
     

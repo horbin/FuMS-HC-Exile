@@ -5,7 +5,7 @@
 
 [
 ["HostilePatrol", 75], // Mission Title NOSPACES!, and encounter radius
-["Hostile Patrol","mil_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
+["Hostile Patrol","hd_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
    
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -67,7 +67,7 @@
 //	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 //	  ["Detect",["Detected","ALL","ALL"] ],
 //	  ["BodyCount",["BodyCount",9] ]
-	  ["Timer",["TIMER", 3000] ]
+	  ["Timer",["TimerNoPlayers", 3000] ]
 	  //                            offset      radius    time(s)  Name
 //	  ["Zuppa", ["ZuppaCapture",[ [ [-100,-100], 50,         90,  "Point 1" ],
  //                               [ [100,100],   50,         90,  "Point 2" ]   ]]  ],

@@ -1,6 +1,9 @@
 //VerifyLocation =
 // Horbin
 // 3/4/15
+// Modified by TheOneWhoKnocks
+// 4/20/19
+// Allow for random loot locations 
 
 
 private ["_loc","_abort","_numElements"];
@@ -11,7 +14,11 @@ while {true} do
 {
     if (isNil "_loc") exitWith {_abort=true;FuMS_FileError = format ["%1No value found.",FuMS_FileError];};
     if (TypeName _loc != "ARRAY" and TypeName _loc != "STRING") exitWith {_abort=true;FuMS_FileError = format ["%1 must an array containing a 2D offset, 3D location, or location name. Found %2",FuMS_FileError, _loc];};
-    if (TypeName _loc == "ARRAY") then
+    
+	if (TypeName _loc == "ARRAY" and TypeName (_loc select 0) == "ARRAY" ) then exitWith{};
+
+	
+	if (TypeName _loc == "ARRAY") then
     {
         _numElements = count _loc;
         if (_numElements > 3) exitWith {_abort=true;FuMS_FileError = format ["%1 must an array containing a 2D offset, 3D location, or location name. Found %2",FuMS_FileError, _loc];};

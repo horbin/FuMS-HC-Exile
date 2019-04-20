@@ -1,50 +1,54 @@
-//BaseServer.sqf
+// BaseServer.sqf
 // Horbin
 // Updated by TheOneWhoKnocks
-// 9/26/18
+// 4/20/19
+// Added in Altis missions and dynamic missions
 // Data specifc to your server's map.
 // ALTIS
 FuMS_ServerData =
 [
-    [ // Map Definition and FuMS configuration
-        false, // Enable FuMS missions to run on the main server.
-        // NOTE: setting to 'true' may drasticly impact server performance.
+    [ 								// Map Definition and FuMS configuration
+        false, 						// Enable FuMS missions to run on the main server.
+									// NOTE: setting to 'true' may drasticly impact server performance.
         "testpath",                 // MySQL support testing
-		true,				//Enable AdminControls! See Docs\AdminControls.txt
-        5   //minimum Server FPS. Below this FPS FuMS will not load new missions. 
-		// NOTE: This was lowered until I can fix the FPS monitor which currently reads too low.
+		true,						//Enable AdminControls! See Docs\AdminControls.txt
+        5   						//minimum Server FPS. Below this FPS FuMS will not load new missions. 
+									// NOTE: This was lowered until I can fix the FPS monitor which currently reads too low.
     ],
-    [  // Exclusion Areas
-    // See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+    [  								// Exclusion Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
     ],
-    [ // Default Areas
-    // See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+    [ 								// Default Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
     ],
     [	 
-		["PlayerWatch",-1], // DO NOT REMOVE OR COMMENT OUT THIS THEME!
-        // ActiveThemes
-        // A folder matching the names below needs to exist in the ..\Themes folder.
-        // use this block to easily turn off/on your various mission sets.
-        // -1 = all HC's.  0= Server only,  1=1st HC to connect, 2=2nd, etc.
-        //  Note: Server option not currenty operational.
+		["PlayerWatch",-1], 		// DO NOT REMOVE OR COMMENT OUT THIS THEME!
+									// ActiveThemes
+									// A folder matching the names below needs to exist in the ..\Themes folder.
+									// use this block to easily turn off/on your various mission sets.
+									// -1 = all HC's.  0= Server only,  1=1st HC to connect, 2=2nd, etc.
+									//  Note: Server option not currenty operational.
+									// NOTE: If you run mutiple HC's, static missions will spawn on top of and potentially kill each other.
+									// Static missions run on the FIRST HC only, so plan accordingly. 
 		
 		//["Admin",-1],
-		//["Test",-1], //Remove this theme if on a production server.
-		//["Zombies",-1], // Uncomment this if you have the Zombies add on installed
-		["HeloPatrols",-1], // 2 sets of 3 armed helo's patrol the skys!!!      
-		["SEM",-1], // basic old school Arma2 Epoch encounters
-		["TownRaid",-1], // random town is raided by 4 truck loads of humans!
-		["Small",-1],  // 6 man groups invade a random village
-		["Aquatic",-1], // 3 coastal areas w/ boats and ai   
-		["Convoy",-1], // 2 random convoys of 3 vehicles move across the map.
-		["StaticSpawns",-1], // creates 10 Dayz style Helo crashes at random locations.
-		//["Jurassic",-1], // creates 3 encounters with wondering Raptors and some scattered loot.
-		["Captive", -1], // Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
-		["RoadBlock_Pato",1] // Concept based upon missions from Pato!
+		//["Test",-1], 				//Remove this theme if on a production server.
+		//["Zombies",-1], 			// Uncomment this if you have the Zombies add on installed  (NOT TESTED)
+		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
+		["SEM",-1], 				// basic old school Arma2 Epoch encounters
+		["TownRaid",-1], 		// random town is raided by 4 truck loads of humans!
+		["Small",-1],  			// 6 man groups invade a random village
+		["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
+		["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
+		["StaticSpawns",-1], 	// creates 10 Dayz style Helo crashes at random locations.
+		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT WORKING)
+		["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
+		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
+		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
+		["DynamicAISpawns", -1],		// Missions that spawn AI groups with guards for any map
+		["Altis", 1], 				// Missions specific to Altis ported from Exile.Com  (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
+		["RoadBlock_Pato",1] 		// Concept based upon missions from Pato! (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
 		
-		// NOTE: If you run the Roadblock_Pato mission with mutiple HC's, they will spawn on top of each other and kill each other.
-		// Line 41 has been updated to run on the FIRST HC only, so plan accordingly. See line 27 to understand how to change this
-
     ],
     [  // Event and AI Radio messsage behavior
 	   // system no longer supported. Will be removed in follow on versions.
@@ -57,8 +61,8 @@ FuMS_ServerData =
     ],
 	[ // Soldier Defaults
 
-		5, // default number of rifle magazines for each AI
-		3, // default number of pistol magazines
+		6, // default number of rifle magazines for each AI
+		4, // default number of pistol magazines
 		false, // Turns ON VCOM_Driving V1.01 = Genesis92x for all land/boat vehicle drivers
 		      //http://forums.bistudio.com/showthread.php?187450-VCOM-AI-Driving-Mod
           //NOTE::**UNDER EXILE this is generating alot of 'string' errors in the HC's .rpt. May drastically impact performance!
@@ -123,7 +127,7 @@ FuMS_ServerData =
             true, 				// true= smoke created with box for ease of location.
             100,  				// proximity character has to get to box before smokes start. 0=unlimited
             ["Red","Blue"],  	//["Red","Blue","White"]// colors of smoke
-            2     				// Duration, in minutes, smoke lasts once triggered.
+            3     				// Duration, in minutes, smoke lasts once triggered.
         ],
 		true,  					// vehicles occupied by players persist through server reset and are sellable!
 		

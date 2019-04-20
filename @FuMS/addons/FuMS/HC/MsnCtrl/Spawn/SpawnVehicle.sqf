@@ -97,7 +97,8 @@ if (!_abort) then
         //**************************
         //attempt to create drivers before vehicles to see if this fixes issue!
         _silentCheckIn = (((FuMS_THEMEDATA select _themeIndex) select 3) select 0) select 1;
-        _driverGroup = [_driverdat, _eCenter, _encounterSize, [_themeIndex,_generation,_offspringID],_silentCheckIn, _missionName] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnGroup;    
+        _driverGroup = [_driverdat, _eCenter, _encounterSize, [_themeIndex,_generation,_offspringID],_silentCheckIn, _missionName] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnGroup;   
+		//diag_log format ["<FuMS:%1 SpawnVehicle: _driverGroup:%2",FuMS_Version,_driverGroup];		
         
         
         for [{_i=0},{_i < _numDriverGroups},{_i=_i+1}] do
@@ -250,7 +251,8 @@ if (!_abort) then
                         {    
                             private ["_type","_crew","_boarded"];
                             _boarded=true;
-                            _type = _crewData select 1;					
+                            _type = _crewData select 1;		
+							//diag_log format ["##SPAWN Vehicles : group:%1 | _type:%2 | pos:%3 | theme:%4", (group _leader),_type, (getPos _crewVeh), _themeIndex]; 							
                             _crew = [group _leader,_type, getPos _crewVeh, _themeIndex] call FuMS_fnc_HC_AI_SpawnSoldier;                   
                             _crew setVariable ["FuMS_AILOGIC", _leader getVariable "FuMS_AILOGIC", false];
                             _crew setVariable [ "FuMS_XFILL", _leader getVariable "FuMS_XFILL", false];   

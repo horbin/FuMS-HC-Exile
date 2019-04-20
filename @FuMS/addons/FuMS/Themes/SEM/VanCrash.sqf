@@ -5,7 +5,7 @@
 
 [
 ["VanCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-["Van Crash","mil_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
+["Van Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
    
 [  
     [// NOTIFICATION Messages and Map display Control.
