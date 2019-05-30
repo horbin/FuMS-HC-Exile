@@ -3,6 +3,15 @@
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+v0.49
+****
+Mission FX Upgrade
+****
+- Added Mission FX system to add ability to add ALIAS Anomolies to missions
+- Included a mission generator to pop up camps randomly
+
+
+
 v0.420
 ****
 - Added ability to import mission building info from ASL type missions (Old school missions that used Above Sea Level rules when exporting their data)
