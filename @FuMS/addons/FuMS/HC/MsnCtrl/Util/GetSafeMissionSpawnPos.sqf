@@ -79,7 +79,9 @@ while {_attempts > 0 and !_goodPos} do
             
             if (_nearTerritory ) then // find a plot pole, check for players at home or base raiding.
             {
-                diag_log format ["<FuMS> GetSafeMissionSpawnPos: Territory located near %1",_pos];           
+                diag_log format ["<FuMS> GetSafeMissionSpawnPos: Territory located near %1",_pos]; 
+				_plotPoleList = nearestObjects [_pos, ["Exile_Construction_Flag_Static"], _encounterRadius];
+				
                 {
                     _playerList = _x nearEntities ["Man",_encounterRadius];
                     diag_log format ["<FuMS> GetSafeMissionSpawnPos: Players located:%1",_playerList];   
@@ -111,7 +113,7 @@ while {_attempts > 0 and !_goodPos} do
             // check that the pos passes PlotPole safetey....no promise someone didn't build a water base!
             //diag_log format ["##GetSafeMissionSpawnPos: ""WATER"" Checking for plot poles within %1m of %2",_encounterRadius, _pos];
             _folksHome = false;
-            _plotPoleList = nearestObjects [_pos, ["PlotPole_EPOCH"], _encounterRadius];
+            _plotPoleList = nearestObjects [_pos, ["Exile_Construction_Flag_Static"], _encounterRadius];
             if (count _plotPoleList != 0 ) then // find a plot pole, check for players at home or base raiding.
             {
                 diag_log format ["<FuMS> GetSafeMissionSpawnPos: Plotpoles located:%1",_plotPoleList];           

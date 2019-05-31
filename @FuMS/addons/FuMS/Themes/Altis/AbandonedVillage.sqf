@@ -1,7 +1,9 @@
 // 	AbandonedVillage.sqf
 // 	TheOneWhoKnocks
 // 	4/20/19
-// Spawn location should be 5911.43,20216.8,0 as this map is specific to Altis
+//
+//  5/10/19 - Added custom loot and helo reinforcements
+//  Spawn location should be 5911.43,20216.8,0 as this map is specific to Altis
 // 	This mission was ported from [CiC]red_ned's amazing collection of missions that he has developed for the DMS mission system
 //	ORIGINAL CREDITS
 /*
@@ -13,9 +15,9 @@
 */
 //
 //	This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
-// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+//  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
 // 
-// Be cautious when editing data.
+//  Be cautious when editing data.
 
 [
 	["AbandonedVillage", 200], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
@@ -25,7 +27,7 @@
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 			// Notify players via global toast message
 		true,			// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 		10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 						//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -49,8 +51,8 @@
 	[  	//  Loot Config:  Refer to LootData.sqf for specifics																		
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["LOOTBOX" , 	[[5923.92,20082,0.152863], [5811.33,20133.5,0.104599], [5868.06,20230.9,0.889114]]],
-			["LOOTBOX" , 	[[5934.36,20212.2,0.37941], [5999.94,20250.2,9.38257], [5892.74,20174.7,0] ]]		
+			["AltisStaticLoot" , 	[[5923.92,20082,0.152863], [5811.33,20133.5,0.104599], [5868.06,20230.9,0.889114]]],
+			["AltisStaticLoot" , 	[[5934.36,20212.2,0.37941], [5999.94,20250.2,9.38257], [5892.74,20174.7,0] ]]		
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
@@ -128,16 +130,19 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
 
   

@@ -7,6 +7,8 @@ FuMS_Users =
 //name | GUID      |        admin level| Options
   //["Horbin","76561198074623284",1,       ["<ALL>"]], // able to toggle all themes
    // ["Horbin","72261198074623284",1,       ["<ALL>"]] // able to toggle all themes
+     ["TheOneWhoKnocks","76561198110476397",1,       ["<ALL>"]]
+
 //  ["test","0000000000000000",   2,       ["Test"]]      // only able to toggle the 'Test' theme
 
 ];

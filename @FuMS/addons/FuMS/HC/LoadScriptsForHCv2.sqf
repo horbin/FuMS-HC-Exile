@@ -88,6 +88,7 @@ _scripts =
                 "GetQuantity.sqf",
                 "FillLoot.sqf", 
                 "GetChoice.sqf",
+				"DropLootVehicle.sqf",
                 "Scatter.sqf"
             ]
         ],

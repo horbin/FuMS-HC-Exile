@@ -24,13 +24,13 @@
     
     // Mission Success Message
 [
-    "Mission Success",
+    "Snier nest desttroyed",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
 [
-    "Mission Failure!",
+    "Snipers escaped!",
     "The Sniper's have escaped."
 ] 
 ],

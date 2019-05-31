@@ -20,7 +20,7 @@
 	["Power Plant","hd_objective","ELLIPSE","ColorRed","SolidBorder",500],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
-		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+		true, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 			// Notify players via global toast message
 		true,			// Show encounter area on the map
 		600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -143,16 +143,20 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["LUCNT",		["LowUnitCount","EAST",15,500,[0,0]]  ],		// Triggers call for reinforcements
+			["LUCNT3",		["LowUnitCount","EAST",10,500,[0,0]]  ],		// Triggers call for reinforcements
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",0,250,[0,0]]  ]
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
-			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
-		]
+			[["CHILD",	["Help_Ground",[0,0],2,120]],["LUCNT"     ]],  
+			[["CHILD",	["Help_Helo",[0,0],2,180]],["LUCNT3"     ]],  
+			[["LOSE"],	["TIMER"     ]],
+			[["WIN"],	["AllDead","PLAYERNEAR"     ]],  // 
+			[["END"],	["TIMER","OR","AllDead","PLAYERNEAR"     ]]  
+		]      
 
 
   

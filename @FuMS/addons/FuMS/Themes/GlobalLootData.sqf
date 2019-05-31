@@ -46,6 +46,27 @@ _lootData =
 		]
 	],
 	
+	//******** Poptab Loot****************************
+	[
+		// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["PoptabLoot", "Exile_PopTabs"],
+		[// All weapons and quantity 
+			
+		],
+		[// All magazines and quantity
+			
+			// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
+		],
+		[// All items and quantity
+			
+		],
+		[// All backpacks and quantity
+			
+		],
+		10000 //Maximum number of poptabs to be included in poptab bag
+	],
+	
+	
 	//************ Generic Truck Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.

@@ -109,7 +109,7 @@
 		[
 		
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  "Exile_Car_Offroad_Armed_Guerilla01",[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  "B_G_Offroad_01_armed_F",[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],

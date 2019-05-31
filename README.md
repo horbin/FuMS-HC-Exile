@@ -9,7 +9,38 @@ Mission FX Upgrade
 ****
 - Added Mission FX system to add ability to add ALIAS Anomolies to missions
 - Included a mission generator to pop up camps randomly
+- Added ability to give vehicles as loot
+- Loot vehicles are air dropped in
+- Major rework of mission loot, still WIP
+- Added more reinforcemnt options including ground and vehicle based responses
+- Fixed errors in server.rpt regarding poles
+- Standardized all AI roaming vehicles to same model, same that is blocked from player usage
+- Added Poptab bag as loot crate that you can add poptabs directly to
+- Minor bug fixes
+- Developing new "location scouting" engine to offer more control over mission spawn locations
+- Trying out new functions to optimze performance
 
+Additional missions:
+
+STATIC BORNHOLM MISSIONS
+	- Foothold 					([CiC]red_ned)
+	
+STATIC CHERNARUS MISSIONS
+	- AI Base (NWAF)			
+	- AI Base (N)				
+
+
+	
+STATIC NAMALSK MISSIONS
+	- Lubjansk					([CiC]red_ned)
+	
+STATIC NAPF MISSIONS
+	- Castle 					([CiC]red_ned)
+	
+STATIC TANOA MISSIONS
+	- Comms Alpha 				([CiC]red_ned)
+	- Georgetown 				([CiC]red_ned)
+	- Hotel Invasion 			([CiC]red_ned)
 
 
 v0.420

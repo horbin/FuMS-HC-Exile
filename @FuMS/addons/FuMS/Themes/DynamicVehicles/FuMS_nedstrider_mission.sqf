@@ -31,7 +31,7 @@
 		],
 		[
 			"Strider Steal",	// The first line is the title of the pop-up box
-			"A Strider is parked at a small %1 base. Go kill them and steal it!"		// The second line is the actual text in the box
+			"A Strider is parked at a small base. Go kill them and steal it!"		// The second line is the actual text in the box
 		],
 		
 		// Mission Success Message
@@ -102,7 +102,7 @@
 		[
 		
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  "Exile_Car_Offroad_Armed_Guerilla01",[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  "B_G_Offroad_01_armed_F",[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],

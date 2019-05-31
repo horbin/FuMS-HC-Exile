@@ -50,7 +50,7 @@ _soldierData =
         // NOTE: controlling the deletion of this equipment upon AI death is controlled via settings in BaseServer.sqf
         [ [[FuMS_Food_Raw,.5],[1,1]], 
 		  [[FuMS_Drink,.5],[1,2]],
-		  [["Exile_Item_InstaDoc",.5],[1,1]],
+		  [[FuMS_Medical_Supplies,.9],[1,1]],
 		  [[FuMS_E_Grenade,.05],[1,1]]                    ], // Personal Gear [ "item", chance] [min, max]     
         // Crypto and Faction Rewards
         [
@@ -70,12 +70,31 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, "RANDOM", false], // DiverOverWater, UnlimitedAmmo, anti-tank
-        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]    ] ,
+        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
+	],[
+        "Pistolman",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [FuMS_U_Soldier,1], // Uniform
+        [FuMS_V_Harness,.5], // Vest.
+        [FuMS_H_Military,.5], // Helmet
+        [FuMS_Packs_All,.5], // Backpack and chance.
+        [FuMS_AssaultRifles,0], // PriWeapon and chance
+        [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [FuMS_Pistols,1], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo, anti-tank
+        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]    ] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]		
     ],[
         "LMG",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
@@ -89,7 +108,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, true, false], // DiverOverWater, UnlimitedAmmo, anti-tank
-        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
+        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -108,7 +127,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, true, false], // DiverOverWater, UnlimitedAmmo, anti-tank
-        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
+        [ [[FuMS_Food_Raw,.1],[1,1]],[[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]],[[FuMS_E_Grenade,.3],[1,1]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -128,7 +147,7 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]            ],
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]            ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -166,7 +185,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ] ,
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -185,7 +204,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -204,7 +223,7 @@ _soldierData =
         [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 1, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 200],
@@ -223,7 +242,7 @@ _soldierData =
         [ 1, 1, 0, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[["Exile_Item_InstaDoc",.1],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
+        [ [[FuMS_Food_Raw,.1],[1,1]], [[FuMS_Drink,.1],[1,1]],[[FuMS_Medical_Supplies,.7],[1,1]],[[FuMS_Smoke_Shell,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 150],
@@ -243,7 +262,7 @@ _soldierData =
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .1, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ true, true, false, false], // DiverOverWater, UnlimitedAmmo
-        [ [[FuMS_Food_Raw,.8],[1,1]], [[FuMS_Drink,.8],[1,1]],[["Exile_Item_InstaDoc",.05],[1,1]],[[FuMS_Smoke_Shell,.3],[1,1]]                ] ,
+        [ [[FuMS_Food_Raw,.8],[1,1]], [[FuMS_Drink,.8],[1,1]],[[FuMS_Medical_Supplies,.25],[1,1]],[[FuMS_Smoke_Shell,.3],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],

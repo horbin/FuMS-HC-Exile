@@ -26,7 +26,7 @@
     
     // Mission Success Message
 [
-	"Mission Success",
+	"Patrol boat destroyed",
     "The patrol boat was destroyed."
 ],
   

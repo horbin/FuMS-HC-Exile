@@ -78,15 +78,15 @@ if (_notify) then
         publicVariable "FuMS_GlobalHint";  
         */
     	
-	// Exile Toasts (Current logic is always true, this will be optional in future releases)
-	if (true) then
+	// Exile Toasts (Corrected to avoid NULL _msnText)
+	if (!isnil "_msnText") then
 	{
 		FuMS_ExileToast = [(_msnText select 0),(_msnText select 1)];
 		publicVariable "FuMS_ExileToast"; 
 	};
 	
-	// System Chat notification (Current logic is always true, this will be optional in future releases)
-	if (true) then
+	// System Chat notification (Corrected to avoid NULL _msnText)
+	if (!isnil "_msnText") then
 	{
 		format["%1: %2",toUpper (_msnText select 0),(_msnText select 1)] remoteExecCall ["systemChat",-2];
 	};

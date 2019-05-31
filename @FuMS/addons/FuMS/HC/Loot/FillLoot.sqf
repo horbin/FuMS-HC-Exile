@@ -8,7 +8,7 @@
 // ASSERT Global Variable BaseLoot.sqf have been defined!
 
 private ["_extraMoney","_pickLootPos","_lootOption","_pos","_options","_typeLoot","_boxtype","_box","_weapons","_magazines","_items","_backpacks","_found","_isVehicle",
-"_item","_number","_lootData","_randomLootData","_themeIndex"];
+"_item","_number","_lootData","_randomLootData","_themeIndex","_fakeBox"];
 _lootOption = toupper (_this select 0);
 _pos = _this select 1;
 _themeIndex = _this select 2;
@@ -69,7 +69,7 @@ if (_lootOption != "NONE") then
     {
         _options = _x select 0; // _options : "LootSetName", "BoxforLoot", "randomization"
         _typeLoot = toupper (_options select 0);
-        _boxtype = toupper (_options select 1);          
+        _boxtype = toupper (_options select 1); 
         if (_typeLoot == _lootOption) then  // Found lootOption in the list of LOOTDATA!
         {
             // check boxtype for "RANDOM" if so select from the global random options in BasicLoot.sqf       
@@ -89,8 +89,11 @@ if (_lootOption != "NONE") then
             {         
                 // build a box and set up its smoke.
 				//diag_log format ["<FuMS> FillLoot: Array before logic.  Chose:%1",_pos];				
+
+				//if (typeName (_pos select 0) == "ARRAY") then
 				
-				if (typeName (_pos select 0) == "ARRAY") then
+				_isArray = (_pos select 0) isEqualType [];
+				if (_isArray) then
 				{
 					_pickLootPos = selectRandom _pos;
 					//diag_log format ["<FuMS> FillLoot: Array found for loot pos.  Chose:%1",_pickLootPos];
@@ -107,7 +110,26 @@ if (_lootOption != "NONE") then
                //     _pos = [_pos, 0, 30, 1,0, 8,0,[],[]] call BIS_fnc_findSafePos; // 1m clear, terraingradient 8 pretty hilly
               //  }; //else leave the 3d solution because person making the mission knows what they are doing!
 				//diag_log format ["<FuMS> FillLoot : Creating %1 at %2 with option %3",_boxtype, _pos, _typeLoot];
-                _box = createVehicle [_boxtype, _pos,[],0,"NONE"];
+				/*
+				if (_boxtype == "Exile_PopTabs") then
+				{
+					_box = createVehicle ["Supply500", _pos,[],0,"NONE"];
+					_fakeBox = "Exile_PopTabs" createVehicle [0,0,0];
+					_fakeBox setVariable ["ExileMoney",25000,true];
+					_fakeBox attachTo [_box, [0,0,0]];
+					//deletes _fakeBox
+					_box addEventHandler ["Deleted", 
+					{
+						{
+							detach _x, 
+							deleteVehicle _x;
+						} 
+						forEach attachedObjects (_this select 0);
+					}];					
+				}else
+				{*/
+					_box = createVehicle [_boxtype, _pos,[],0,"NONE"];
+				//};
                 if (FuMS_LootSmoke ) then
                 { 
                          // FuMS_SmokeProximity = _dat select 1;
@@ -345,7 +367,7 @@ if (_lootOption != "NONE") then
     if (!_found) then
     {
         diag_log format ["*******************************************************"];
-        diag_log format ["*****FillLoot: Error! Loot option %1 in Theme Index #%2 found!", _lootOption, _this select 2];
+        diag_log format ["*****FillLoot: Error! Loot option %1 in Theme Index #%2 not found!", _lootOption, _this select 2];
         diag_log format ["*******************************************************"];
        // make an empty box and put it at 0 on the map since it isn't defined!
          if (_isVehicle) then {_box = _pos;}// _pos contains a vehicle Object!

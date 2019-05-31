@@ -370,3 +370,141 @@ FuMS_ZombieNoise_Server =
   
     
 };
+
+"FuMS_SpawnFlamer" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFlamer PVEH Code:  _data:%1",_data];
+	
+	_markerName = _data select 0;
+	_flamerRadius = _data select 1;
+	_flamerDamage = _data select 2;
+	_flamerHealth = _data select 3;
+
+	null = [_markerName,_flamerRadius,_flamerDamage,_flamerHealth] execVM "AL_flamer\al_flamer.sqf";
+  
+};
+
+"FuMS_SpawnFarty" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFarty PVEH Code:  _data:%1",_data];
+	
+	_markerName = _data select 0;
+	_class_name = _data select 1;
+	_anomalyVSarea = _data select 2;
+	_radius = _data select 3;
+	_damage_value = _data select 4;
+	_farty_trail = _data select 5;
+	_random_puddles = _data select 6;
+
+	null = [_markerName,_class_name,_anomalyVSarea,_radius,_damage_value,_farty_trail,_random_puddles] execVM "AL_farty\area_toxic_ini.sqf";
+      
+};
+
+"FuMS_SpawnFartyPools" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFartyPools PVEH Code:  _data:%1",_data];
+
+	_object_name = _data select 0;
+	_puddle_SFX = _data select 1;
+
+	null = [_object_name,_puddle_SFX] execVM "AL_farty\simple_toxic_puddle.sqf";
+  
+    
+};
+
+
+"FuMS_SpawnScreamer" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+
+	_markerName = _data select 0;
+	
+	diag_log format ["<FuMS> FuMS_SpawnScreamer PVEH Code:  _data:%1 : Marker:%2",_data,_markerName];
+
+	null=[_markerName] execvm "AL_screamer\screamer.sqf"
+  
+    
+};
+
+"FuMS_SpawnStrigoi" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnStrigoi PVEH Code:  _data:%1",_data];
+	
+	_strigoiMarker = _data select 0;
+	_territory = _data select 1;
+	_day_activ = _data select 2;
+	_inflicted_damage = _data select 3;
+	_hp_strigoi = _data select 4;
+	
+	// ACTIVE DURING NIGHT AND DAY
+	[_strigoiMarker, _territory, _day_activ,_inflicted_damage,_hp_strigoi] execvm "AL_strigoi\strigoi.sqf";
+	
+};
+
+"FuMS_SpawnSparky" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnSparky PVEH Code:  _data:%1",_data];
+	
+	_sparkyMarker = _data select 0;
+	_protection_gear = _data select 1;
+	_AI_avoid_sparky = _data select 2;
+	
+	null = [_sparkyMarker,_protection_gear,_AI_avoid_sparky] execvm "AL_spark\al_sparky.sqf";
+	
+};
+
+"FuMS_SpawnCrazy" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnCrazy PVEH Code:  _data:%1",_data];
+	
+	_crazyMarker = _data select 0;
+	_kamikazeNumber = _data select 1;
+	_sound = _data select 2;
+	_chasePlayers = _data select 3;
+	_triggerDistance = _data select 4;
+	
+	null = [_crazyMarker,_kamikazeNumber,_sound,_chasePlayers,_triggerDistance]  execvm "AL_crazy\kam_group.sqf";
+
+};
+
+
+"FuMS_SpawnRads" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnRads PVEH Code:  _data:%1",_data];
+	
+	_obj_rad = _data select 0;
+	_rad_radius	= _data select 1;		
+	_rad_dam = _data select 2;			
+	_rad_prot_equip = _data select 3;	
+	_rad_detector = _data select 4;		
+	_glowindark	= _data select 5;		
+	_timetoglow = _data select 6;		
+	_AI_react_rad = _data select 7;
+	
+	null = [_obj_rad,_rad_radius,_rad_dam,_rad_prot_equip,_rad_detector,_glowindark,_timetoglow,_AI_react_rad]  execvm "AL_radiation\radioactive_object.sqf";
+
+};
+
+"FuMS_SpawnNuke" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnNuke PVEH Code:  _data:%1",_data];
+	
+	_nuke_obj = _data select 0;
+	_radius	= _data select 1;		
+	_damage_buildings_units = _data select 2;			
+	_weather_effect = _data select 3;	
+	_radiation = _data select 4;		
+	_fallout	= _data select 5;		
+	_EMP = _data select 6;
+	
+	null = [_nuke_obj,_radius,_damage_buildings_units,_weather_effect,_radiation,_fallout,_EMP] execvm "Al_Nuke\alias_nuke.sqf";
+
+};

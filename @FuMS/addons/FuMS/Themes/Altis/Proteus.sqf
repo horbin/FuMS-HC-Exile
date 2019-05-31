@@ -17,7 +17,7 @@
 
 [
 	["Proteus", 400], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Proteus Shipwrecked","hd_objective","ELLIPSE","ColorRed","SolidBorder",400],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Proteus Shipwrecked","ExileContaminatedZone","ELLIPSE","ColorRed","SolidBorder",400],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
@@ -47,7 +47,7 @@
 	[  																		//  Loot Config:  Refer to LootData.sqf for specifics																		
 
 		["None" , 		[0,0] ], 		//[static loot, offset location] - spawns with the mission
-		["LOOTBOX" , 	[30,150] ], 	// Win loot, offset location - spawns after mission success
+		["ProteusLoot" ,[30,150] ], 	// Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  		// Failure loot, offset location - spawns on mission failure
 	],
 	[	// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
@@ -58,16 +58,16 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
 		["Submarine_01_F",				[11815.1,13395.3,4.05626],				296.5454,			[0,   0,     .5,         .5,         .5],"SMOKE_MEDIUM"],
+		["Land_Device_disassembled_F",	[11769.8,13339.1,0.00155616],			296.5454,			0]	
 	
-	
+/*	
 		["M3Editor", [-1,-1], "NONE", 0,
 												
 			[	// paste your array of building objects here
-				//["",[],64.5454,[[0.415415,0.909632,0],[0,0,1]],true],
 				["Land_Device_disassembled_F",[11769.8,13339.1,0.00155616],296.5454,[[0.415415,0.909632,0],[0,0,1]],true]	
 			]
 		]
-	  
+*/	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
 		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["Loiter",		[11836,13272,-0.0415688],[11836,13272,-0.0415688],[50]   ]],
@@ -146,17 +146,21 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
+
 
   
 	]

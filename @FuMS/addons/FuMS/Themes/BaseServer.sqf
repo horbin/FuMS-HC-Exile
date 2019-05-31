@@ -28,12 +28,11 @@ FuMS_ServerData =
 									// use this block to easily turn off/on your various mission sets.
 									// -1 = all HC's.  0= Server only,  1=1st HC to connect, 2=2nd, etc.
 									//  Note: Server option not currenty operational.
-									// NOTE: If you run mutiple HC's, static missions will spawn on top of and potentially kill each other.
-									// Static missions run on the FIRST HC only, so plan accordingly. 
 		
 		//["Admin",-1],
 		//["Test",-1], 				//Remove this theme if on a production server.
 		//["Zombies",-1], 			// Uncomment this if you have the Zombies add on installed  (NOT TESTED)
+		["MissionFX",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["SEM",-1], 				// basic old school Arma2 Epoch encounters
 		["TownRaid",-1], 		// random town is raided by 4 truck loads of humans!
@@ -41,14 +40,17 @@ FuMS_ServerData =
 		["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
 		["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 	// creates 10 Dayz style Helo crashes at random locations.
-		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT WORKING)
+		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
 		["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
 		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
 		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
 		["DynamicAISpawns", -1],		// Missions that spawn AI groups with guards for any map
-		["Altis", 1], 				// Missions specific to Altis ported from Exile.Com  (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
-		["RoadBlock_Pato",1] 		// Concept based upon missions from Pato! (SEE NOTE ABOVE ABOUT MULTIPLE HCs)
+		["Altis", -1], 				// Missions specific to Altis ported from Exile.Com
+		["RoadBlock_Pato",1] 		// Concept based upon missions from Pato!
 		
+		// NOTE: If you run the Roadblock_Pato mission with mutiple HC's, they will spawn on top of each other and kill each other.
+		// Line 50 has been updated to run on the FIRST HC only, so plan accordingly. See line 27 to understand how to change this
+
     ],
     [  // Event and AI Radio messsage behavior
 	   // system no longer supported. Will be removed in follow on versions.
@@ -136,7 +138,7 @@ FuMS_ServerData =
 		
 		// List of vehicles prohibited to use by players. This list allows them to be on the map for AI use
 		// but will prevent players from entering the vehicle.
-		["I_UGV_01_rcws_F","B_G_Offroad_01_armed_F"],
+		["I_UGV_01_rcws_F","B_G_Offroad_01_armed_F","O_LSV_02_unarmed_F"], //Remove that last one if you want the "vehicle reinforcments" vehicle be able to be stolen
 		
         true  //VehicleAmmoFlag true= sets vehicle ammo to zero when an AI vehicle is 1st occupied by a player.         
 	]
