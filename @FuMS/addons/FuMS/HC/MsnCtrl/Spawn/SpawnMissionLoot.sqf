@@ -64,9 +64,9 @@ if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
 	_isString = (_loot select 0) isEqualType "STRING";
 	
 
-//	if ((typeName (_loot select 0) == "ARRAY") and {( ((_loot select 0) select 0) isKindOf "LandVehicle")}  ) then
+	if ((typeName (_loot select 0) == "ARRAY") and {( ((_loot select 0) select 0) isKindOf "LandVehicle")}  ) then
 	
-	if (_isArray) and {( ((_loot select 0) select 0) isKindOf "LandVehicle")}  ) then
+	//if ((_isArray) and {( ((_loot select 0) select 0) isKindOf "LandVehicle")}  ) then
 	{
 		_lootIsVehicle = true;
 		_lootVehicle = selectRandom (_loot select 0);
@@ -74,10 +74,10 @@ if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
 
 	};
 
-//	if ((typeName (_loot select 0) == "STRING") and {((_loot select 0) isKindOf "LandVehicle")}) then
+	if ((typeName (_loot select 0) == "STRING") and {((_loot select 0) isKindOf "LandVehicle")}) then
 
 	
-	if (_isString) and {((_loot select 0) isKindOf "LandVehicle")}) then
+	//if ((_isString) and {((_loot select 0) isKindOf "LandVehicle")}) then
 	{
 		_lootIsVehicle = true;
 		_lootVehicle = _loot select 0;
@@ -85,10 +85,10 @@ if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
 
 	};
 	
-//	if ((typeName (_loot select 0) == "STRING") or _lootIsVehicle) then
+	if ((typeName (_loot select 0) == "STRING") or _lootIsVehicle) then
 
 	
-	if (_isString or _lootIsVehicle) then
+	//if (_isString or _lootIsVehicle) then
     {   
 	
         //if (typeName ((_loot select 1) select 0) == "ARRAY") then
@@ -137,27 +137,27 @@ if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
 			_isArray = _x isEqualType [];
 			_isString = _x isEqualType "STRING";
 
-//			if ((typeName (_x select 0) == "ARRAY") and {( ((_x select 0) select 0) isKindOf "LandVehicle")}  ) then
+			if ((typeName (_x select 0) == "ARRAY") and {( ((_x select 0) select 0) isKindOf "LandVehicle")}  ) then
 
 			
-			if (_isArray and {( ((_x select 0) select 0) isKindOf "LandVehicle")}  ) then
+			//if (_isArray and {( ((_x select 0) select 0) isKindOf "LandVehicle")}  ) then
 			{
 				_lootIsVehicle = true;
 				_lootVehicle = selectRandom (_x select 0);
 				//diag_log format ["<FuMS> SpawnMissionLoot (MULTILOOT): Vehicle Array detected as loot, chose:%1",_lootVehicle];
 			};
 
-//			if ((typeName (_x select 0) == "STRING") and {((_x select 0) isKindOf "LandVehicle")}) then
+			if ((typeName (_x select 0) == "STRING") and {((_x select 0) isKindOf "LandVehicle")}) then
 
-			if ((_isString and {((_x select 0) isKindOf "LandVehicle")}) then
+			//if (_isString and {((_x select 0) isKindOf "LandVehicle")}) then
 			{
 				_lootIsVehicle = true;
 				_lootVehicle = _x select 0;
 				//diag_log format ["<FuMS> SpawnMissionLoot (MULTILOOT): Vehicle detected as loot:%1",_lootVehicle];
 			};
 			
-//			if (typeName (_x select 1) == "ARRAY") then
-			_isArray = (_x select 1) isEqualType [];
+			if (typeName (_x select 1) == "ARRAY") then
+			//_isArray = (_x select 1) isEqualType [];
 			if (_isArray) then
 
 			{

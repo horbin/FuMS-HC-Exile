@@ -91,6 +91,8 @@ if (!isNil "_buildingData") then
                             //diag_log format ["<FuMS:%1> SpawnBuildings:(Phase I) Placing %2 at %3",FuMS_Version,_type,_newPos];
                         }else { _newPos = _x select 1;//diag_log format ["<FuMS:%1> SpawnBuildings:(Phase II) Placing %2 at %3",FuMS_Version,_type,_newPos];
 						};
+                        
+						//diag_log format ["<FuMS:%1> SpawnBuildings:Vehicle Spawned (1): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
 
                         if ( _type isKindOf "Air" or _type isKindOf "LandVehicle" or _type isKindOf "Ship") then
                         {                       								                     
