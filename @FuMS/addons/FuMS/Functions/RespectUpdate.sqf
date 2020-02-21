@@ -17,6 +17,7 @@ diag_log format ["<FuMS> RespectUpdate : Killer:%1 Victim:%2 Player:%3 Amount:%4
 _fragAttributes = [];
 _killerPlayerUID = getPlayerUID _killer;
 _vehicleKiller = (vehicle _killer);
+_usingExile = true;				   
 
 {
 	if ((getPlayerUID _x) isEqualTo _killerPlayerUID) exitWith {
@@ -39,7 +40,11 @@ if (FuMS_enableRespectRewards) then
 				_killerRespectPoints pushBack ["HUMILIATION", 5*_amount];
 				_newKillerFrags = _player getVariable ["ExileKills", 0];
 				_player setVariable ["ExileKills", _newKillerFrags + 1];
-				format["addAccountKill:%1", _killerPlayerUID] call ExileServer_system_database_query_fireAndForget;
+
+				if (_usingExile) then
+				{
+					format["addAccountKill:%1", _killerPlayerUID] call ExileServer_system_database_query_fireAndForget;
+				};
 			};
 		} else 
 		{
@@ -49,8 +54,12 @@ if (FuMS_enableRespectRewards) then
 				_killerRespectPoints pushBack ["ENEMY AI FRAGGED", _amount];
 				_newKillerFrags = _player getVariable ["ExileKills", 0];
 				_player setVariable ["ExileKills", _newKillerFrags + 1];
-				format["addAccountKill:%1", _killerPlayerUID] call ExileServer_system_database_query_fireAndForget;
-			
+
+				if (_usingExile) then
+				{
+					format["addAccountKill:%1", _killerPlayerUID] call ExileServer_system_database_query_fireAndForget;
+				};
+				
 				_lastKillAt = _player getVariable ["FuMS_LastKillAt", 0];
 				_killStack = _player getVariable ["FuMS_KillStack", 0];
 				if (isNil "_lastKillAt") then {_lastKillAt = 10000;};
@@ -108,7 +117,12 @@ if (FuMS_enableRespectRewards) then
 			{
 				if (isPlayer _x) then 
 				{
-					[_x, "systemChatRequest", [_killMessage]] call FuMS_sendExileMessage;
+
+					if (_usingExile) then
+					{
+						[_x, "systemChatRequest", [_killMessage]] call FuMS_sendExileMessage;
+					};
+					//["system","::",_killMessage] call FrSB_fnc_announce;
 				};
 			} count (units (group _killer));
 		};
@@ -134,13 +148,28 @@ if (FuMS_enableRespectRewards) then
 
 	if (_overallRespectChange != 0) then 
 	{
-		_newKillerScore = _player getVariable ["ExileScore", 0];
-		_newKillerScore = _newKillerScore + _overallRespectChange;
-		_player setVariable ["ExileScore", _newKillerScore];
-		format["setAccountScore:%1:%2", _newKillerScore,GetPlayerUID _player] call ExileServer_system_database_query_fireAndForget;
-		[_player, "showFragRequest", [_killerRespectPoints]] call FuMS_sendExileMessage;
+		_player addRating _amount;
+		diag_log format ["<FuMS> RespectUpdate : New ArmA Rating:%1",rating _player];
+
+		
+		
+
+		if (_usingExile) then
+		{
+			_newKillerScore = _player getVariable ["ExileScore", 0];
+			_newKillerScore = _newKillerScore + _overallRespectChange;
+			_player setVariable ["ExileScore", _newKillerScore];
+			
+			format["setAccountScore:%1:%2", _newKillerScore,GetPlayerUID _player] call ExileServer_system_database_query_fireAndForget;
+			[_player, "showFragRequest", [_killerRespectPoints]] call FuMS_sendExileMessage;
+		};
 	};
 			
-	_player call ExileServer_object_player_sendStatsUpdate;
+	//EXILE
+
+	if (_usingExile) then
+	{
+		player call ExileServer_object_player_sendStatsUpdate;
+	};
 };
 true

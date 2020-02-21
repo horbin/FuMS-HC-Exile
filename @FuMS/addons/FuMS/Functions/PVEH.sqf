@@ -6,6 +6,7 @@
 FuMS_SendExileMessage = compile preprocessFileLineNumbers "\FuMS\Functions\SendExileMessage.sqf";
 FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectUpdate.sqf";
 
+_usingExile = true;
 // NOTE: This may break if multiple HC's are in use. Or it will use the last HC that connects as the source for spawning playerwatch missions
 "FuMS_StartPlayerEncounter" addPublicVariableEventHandler
 {
@@ -15,7 +16,7 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
 		_playerID = owner _player;
 		FuMS_StartPlayerEncounterHC = [_player, _playerID];
 		FuMS_HC_SlotNumber publicVariableClient "FuMS_StartPlayerEncounterHC";
-		//diag_log format ["<FuMS> PVEH: %1:%2 starting a personal mission",_player, _playerID];
+		diag_log format ["<FuMS> PVEH: %1:%2 starting a personal mission",_player, _playerID];
 	};
 };
 
@@ -42,9 +43,14 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
 {
     _data =    _this select 1; // _data is an array of ["FactionName",amount] pairs.    
     _factionPairs = _data select 0;
-     diag_log format ["<FuMS> PVEH PayPlayer: _data: %1",_data];
     _player = _data select 1;
     _victim = _data select 2;
+	_debug = false;
+	
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> PVEH PayPlayer: _data: %1",_data];
+	};				
     
     _rescue = false;
     if (_player == _victim) then {_rescue=true;};
@@ -83,14 +89,17 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
                     {
                         if (_x != _player) then
                         {
-                            _points = [];
-                            _points pushBack ["GROUP RESPECT", _amount];
-                            _playerScore = _x getVariable ["ExileScore",0];
-                            _playerScore = _playerScore + _amount;
-                            _x setVariable ["ExileScore", _playerScore];
-                            format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
-                            [_x, "showFragRequest", [_points] ] call FuMS_sendExileMessage;                            
-                            _x call ExileServer_object_player_sendStatsUpdate;
+                            if (_usingExile) then
+							{
+								_points = [];
+								_points pushBack ["GROUP RESPECT", _amount];
+								_playerScore = _x getVariable ["ExileScore",0];
+								_playerScore = _playerScore + _amount;
+								_x setVariable ["ExileScore", _playerScore];
+								format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
+								[_x, "showFragRequest", [_points] ] call FuMS_sendExileMessage;                            
+								_x call ExileServer_object_player_sendStatsUpdate;
+							};
                         };
                     }foreach (units (group _player));
                 };             
@@ -100,14 +109,19 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
                 if (_rescue) then
                 {
                     {
-                        _points = [];
-                        _points pushBack ["RESCUE",_amount];
-                        _playerScore = _x getVariable ["ExileScore",0];
-                        _playerScore = _playerScore + _amount;
-                        _x setVariable ["ExileScore", _playerScore];
-                        format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
-                        [_x, "showFragRequest", [_points]] call FuMS_sendExileMessage;
-                        _x call ExileServer_object_player_sendStatsUpdate;
+						if (_usingExile) then
+						{
+							_points = [];
+							_points pushBack ["RESCUE",_amount];
+							_playerScore = _x getVariable ["ExileScore",0];
+							_playerScore = _playerScore + _amount;
+							_x setVariable ["ExileScore", _playerScore];
+							
+							
+							format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
+							[_x, "showFragRequest", [_points]] call FuMS_sendExileMessage;
+							_x call ExileServer_object_player_sendStatsUpdate;
+						};
                     }foreach (units (group _player));
                 };
             };
@@ -132,7 +146,11 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
     _sender = _data select 1;
     _receiver = _data select 2;
     _msg = _data select 3;
-    diag_log format ["<FuMS> PVEH: Msg passing: %1",_data];
+	_debug = false;
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> PVEH: Msg passing: %1",_data];
+    };
     if ( (format ["%1",_receiver select 0]) == "ALL") exitWith { publicVariable "FuMS_Message";};
     {
         (owner _x) publicVariableClient "FuMS_Message";
@@ -249,6 +267,7 @@ FuMS_BuildVehicle_Server =
 			};
             //diag_log format ["###EH:GetIn: HCTEMP = %1", _value];
             _vehobj setVariable ["FuMS_HCTEMP", "PLAYER", true];
+            _vehobj setVariable ["FuMS_Taken", true, true];			
         };       
     }];   
 
@@ -272,12 +291,12 @@ FuMS_RadioChatter_Server =
     }foreach _receivers; 
 };
 
-/*
+
 "FuMS_RADIOCHATTER_Distro" addPublicVariableEventHandler
 {
     [_this select 1] spawn FuMS_RadioChatter_Server;
 };
-*/
+
 
 FuMS_HeartMonitor = compile preprocessFileLineNumbers "\FuMS\Functions\HeartMonitor.sqf";
 FuMS_InitToken = true;
@@ -369,4 +388,142 @@ FuMS_ZombieNoise_Server =
     }foreach crew (_data select 0);
   
     
+};
+
+"FuMS_SpawnFlamer" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFlamer PVEH Code:  _data:%1",_data];
+	
+	_markerName = _data select 0;
+	_flamerRadius = _data select 1;
+	_flamerDamage = _data select 2;
+	_flamerHealth = _data select 3;
+
+	null = [_markerName,_flamerRadius,_flamerDamage,_flamerHealth] execVM "AL_flamer\al_flamer.sqf";
+  
+};
+
+"FuMS_SpawnFarty" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFarty PVEH Code:  _data:%1",_data];
+	
+	_markerName = _data select 0;
+	_class_name = _data select 1;
+	_anomalyVSarea = _data select 2;
+	_radius = _data select 3;
+	_damage_value = _data select 4;
+	_farty_trail = _data select 5;
+	_random_puddles = _data select 6;
+
+	null = [_markerName,_class_name,_anomalyVSarea,_radius,_damage_value,_farty_trail,_random_puddles] execVM "AL_farty\area_toxic_ini.sqf";
+      
+};
+
+"FuMS_SpawnFartyPools" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnFartyPools PVEH Code:  _data:%1",_data];
+
+	_object_name = _data select 0;
+	_puddle_SFX = _data select 1;
+
+	null = [_object_name,_puddle_SFX] execVM "AL_farty\simple_toxic_puddle.sqf";
+  
+    
+};
+
+
+"FuMS_SpawnScreamer" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+
+	_markerName = _data select 0;
+	
+	diag_log format ["<FuMS> FuMS_SpawnScreamer PVEH Code:  _data:%1 : Marker:%2",_data,_markerName];
+
+	null=[_markerName] execvm "AL_screamer\screamer.sqf"
+  
+    
+};
+
+"FuMS_SpawnStrigoi" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnStrigoi PVEH Code:  _data:%1",_data];
+	
+	_strigoiMarker = _data select 0;
+	_territory = _data select 1;
+	_day_activ = _data select 2;
+	_inflicted_damage = _data select 3;
+	_hp_strigoi = _data select 4;
+	
+	// ACTIVE DURING NIGHT AND DAY
+	[_strigoiMarker, _territory, _day_activ,_inflicted_damage,_hp_strigoi] execvm "AL_strigoi\strigoi.sqf";
+	
+};
+
+"FuMS_SpawnSparky" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnSparky PVEH Code:  _data:%1",_data];
+	
+	_sparkyMarker = _data select 0;
+	_protection_gear = _data select 1;
+	_AI_avoid_sparky = _data select 2;
+	
+	null = [_sparkyMarker,_protection_gear,_AI_avoid_sparky] execvm "AL_spark\al_sparky.sqf";
+	
+};
+
+"FuMS_SpawnCrazy" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnCrazy PVEH Code:  _data:%1",_data];
+	
+	_crazyMarker = _data select 0;
+	_kamikazeNumber = _data select 1;
+	_sound = _data select 2;
+	_chasePlayers = _data select 3;
+	_triggerDistance = _data select 4;
+	
+	null = [_crazyMarker,_kamikazeNumber,_sound,_chasePlayers,_triggerDistance]  execvm "AL_crazy\kam_group.sqf";
+
+};
+
+
+"FuMS_SpawnRads" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnRads PVEH Code:  _data:%1",_data];
+	
+	_obj_rad = _data select 0;
+	_rad_radius	= _data select 1;		
+	_rad_dam = _data select 2;			
+	_rad_prot_equip = _data select 3;	
+	_rad_detector = _data select 4;		
+	_glowindark	= _data select 5;		
+	_timetoglow = _data select 6;		
+	_AI_react_rad = _data select 7;
+	
+	null = [_obj_rad,_rad_radius,_rad_dam,_rad_prot_equip,_rad_detector,_glowindark,_timetoglow,_AI_react_rad]  execvm "AL_radiation\radioactive_object.sqf";
+
+};
+
+"FuMS_SpawnNuke" addPublicVariableEventHandler
+{
+	_data = _this select 1;
+	diag_log format ["<FuMS> FuMS_SpawnNuke PVEH Code:  _data:%1",_data];
+	
+	_nuke_obj = _data select 0;
+	_radius	= _data select 1;		
+	_damage_buildings_units = _data select 2;			
+	_weather_effect = _data select 3;	
+	_radiation = _data select 4;		
+	_fallout	= _data select 5;		
+	_EMP = _data select 6;
+	
+	null = [_nuke_obj,_radius,_damage_buildings_units,_weather_effect,_radiation,_fallout,_EMP] execvm "Al_Nuke\alias_nuke.sqf";
+
 };

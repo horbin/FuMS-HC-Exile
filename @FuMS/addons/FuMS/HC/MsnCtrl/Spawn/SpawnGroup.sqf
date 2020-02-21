@@ -57,21 +57,29 @@ if (!isNil "_groupData") then
 			_side = toupper _side;
             switch (_side) do 
             {                
-                case "RESISTANCE":{ _group = createGroup RESISTANCE;};//RESISTANCE
-                case "GUER": {_group = createGroup RESISTANCE;};
-                case "WEST": {_group = createGroup WEST;};
-                case "EAST": {_group = createGroup EAST;};
-                case "CIV" : {_group = createGroup CIVILIAN;};
-                case "CIVILIAN":{_group = createGroup CIVILIAN;};
-                case "ZOMBIE":{_group = createGroup WEST;};
-                default { _group = [];};
+                case "RESISTANCE":	{_group = createGroup RESISTANCE;};//RESISTANCE
+                case "GUER": 		{_group = createGroup RESISTANCE;};
+                case "WEST": 		{_group = createGroup WEST;};
+                case "EAST": 		{_group = createGroup EAST;};
+                case "CIV" : 		{_group = createGroup CIVILIAN;};
+                case "CIVILIAN":	{_group = createGroup CIVILIAN;};
+                case "ZOMBIE":		{_group = createGroup WEST;};
+                default 			{_group = [];};
             };
             if (isNil "_group") exitWith {diag_log format ["#Spawn Group: ###ERROR###: Invalid _side: %1. No group created!",_side];};
             //diag_log format ["<FuMS> SpawnGroup: _group:%1 Side:%2",_group, _side];
 			_group = [_group,_spawnpos, _units,_themeIndex ] call FuMS_fnc_HC_msnCtrl_Spawn_CreateGroup;	
-            _group setBehaviour _behaviour;
-            _group setCombatMode _combat;
-            _group setFormation _form;     
+            _group setBehaviour _behaviour; 	// "CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"
+			
+            _group setCombatMode _combat;		// "BLUE" : Never fire, keep formation
+												// "GREEN" : Hold fire, keep formation
+												// "WHITE" : Hold fire, engage at will/loose formation
+												// "YELLOW" : Fire at will, keep formation
+												// "RED" : Fire at will, engage at will/loose formation
+												
+            _group setFormation _form; 			// "COLUMN", "STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT"
+												// "VEE", "LINE", "FILE", "DIAMOND"
+    
            
             //    diag_log format["#Spawn Group: _group:%1, _spawnpos:%2, _patrol:%3",_group, _spawnpos, _patrol];
             //Group Behavior
@@ -80,16 +88,16 @@ if (!isNil "_groupData") then
             // FuMS AI global initialization.
             {
                 _x setVariable ["FuMS_AILOGIC", [ _patrol, _eCenter, _spawnpos, _patrolPatrolLoc, _patternOptions], false];
-                _x setVariable [ "FuMS_XFILL", [_themeIndex, _side, "TRUE"], false];      
-                _x setVariable ["FuMS_MSNTAG", [ ((FuMS_THEMEDATA select _themeIndex) select 0) select 0, _missionName], false];
-                _x setVariable ["FuMS_LINEAGE",_msnTag, false];                
+                _x setVariable ["FuMS_XFILL", 	[_themeIndex, _side, "TRUE"], false];      
+                _x setVariable ["FuMS_MSNTAG", 	[ ((FuMS_THEMEDATA select _themeIndex) select 0) select 0, _missionName], false];
+                _x setVariable ["FuMS_LINEAGE",_msnTag, false]; 
                 [_x] spawn FuMS_fnc_HC_AI_Logic_AIEvac;
                 
             }foreach units _group;   
             _group setVariable ["LINEAGE",_msnTag, false];
-           // _validOptions = [_group] call FuMS_fnc_HC_Val_Msn_ValidateAILOGIC; 
-           // if (_validOptions) then
-           // {
+            // _validOptions = [_group] call FuMS_fnc_HC_Val_Msn_ValidateAILOGIC; 
+            // if (_validOptions) then
+            // {
                 switch (_patrol) do
                 {
                     private ["_patrolRadius","_patrolDuration"];
@@ -141,7 +149,7 @@ if (!isNil "_groupData") then
                     {
                         [_group, _patternOptions] call FuMS_fnc_HC_AI_Logic_StaticGunner;
                     };
-                    case "Loiter":{};
+                    case "LOITER":{};
                     case "CONVOY":
                     {
                         //"NORMAL",true,true, true
@@ -158,6 +166,11 @@ if (!isNil "_groupData") then
                         //pilotgroup, dropoff point, options!                        
 						[_group, _patrolPatrolLoc, _patternOptions] spawn FuMS_fnc_HC_AI_Logic_Paradrop;
                     };
+					case "AIREVAC":
+                    {
+                        //pilotgroup, dropoff point, options!                        
+						[_group, _patrolPatrolLoc, _patternOptions] spawn FuMS_fnc_HC_AI_Logic_AirEvac;
+                    };
                     case "PATROLROUTE":
                     {                       
 						 [_group, _patrolPatrolLoc, _patternOptions] spawn FuMS_fnc_HC_AI_Logic_PatrolRoute;
@@ -170,6 +183,10 @@ if (!isNil "_groupData") then
                         }foreach units _group;                           
                     };				
                     case "TRACKROUTE":
+                    {                       
+                        [_group, _patrolPatrolLoc, _patternOptions] spawn FuMS_fnc_HC_AI_Logic_TrackRoute;
+                    };
+                    case "SADROUTE":
                     {                       
                         [_group, _patrolPatrolLoc, _patternOptions] spawn FuMS_fnc_HC_AI_Logic_TrackRoute;
                     };
@@ -195,8 +212,8 @@ if (!isNil "_groupData") then
                 if (count _groups == 0) then {_silentcheckin = false;}else{_silentcheckin=true;}
             };    
             // initiate radio logic for the group, now that its formation is complete!
-           // [_group, _themeIndex, _eCenter, _silentcheckin, _missionName] execVM "HC\Encounters\AI_Logic\RadioChatter\AIRadio.sqf";   
-		   //[_group, _themeIndex, _eCenter, _silentcheckin, _missionName] spawn FuMS_fnc_HC_AI_RC_AIRadio;
+			// [_group, _themeIndex, _eCenter, _silentcheckin, _missionName] execVM "HC\Encounters\AI_Logic\RadioChatter\AIRadio.sqf";   
+			//[_group, _themeIndex, _eCenter, _silentcheckin, _missionName] spawn FuMS_fnc_HC_AI_RC_AIRadio;
             _groups = _groups + [_group];
         }else{diag_log format ["##SpawnGroup: Error in data formatting in Group section: %1, theme:%2, data:%3",_missionName, _themeIndex, _x];};
     } foreach _groupData;

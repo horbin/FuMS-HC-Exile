@@ -5,7 +5,7 @@
 // 	This mission was ported from [CiC]red_ned's amazing collection of missions that he has developed for the DMS mission system
 //	ORIGINAL CREDITS
 /*
-	"Kavala Castle" v2.1 static mission for Altis.
+	"Kastro Castle" v2.1 static mission for Altis.
 	Created by [CiC]red_ned using templates by eraser1 
 	Credits to Lunchbox for mapping
 	19 years of CiC http://cic-gaming.co.uk
@@ -19,7 +19,7 @@
 
 [
 	["Kastro", 250], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Kavala Castle","hd_objective","ELLIPSE","ColorRed","SolidBorder",250],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Kastro Castle","hd_objective","ELLIPSE","ColorRed","SolidBorder",250],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
@@ -30,19 +30,19 @@
 						//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		[
-			"Kavala Castle",	// The first line is the title of the pop-up box
+			"Kastro Castle",	// The first line is the title of the pop-up box
 			"Terrorists have invaded the castle gift shop"		// The second line is the actual text in the box
 		],
 		
 		// Mission Success Message
 		[
-			"Kavala Castle Success",
+			"Kastro Castle Success",
 			"Convicts have successfully killed the Terrorists and stolen all the crates"
 		],
 	  
 		// Mission Failure Message
 		[
-			"Kavala Castle Failure!",
+			"Kastro Castle Failure!",
 			"Terrorists got bored and buggered off taking all the goodies..."
 		] 
 	],
@@ -50,8 +50,8 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["LOOTBOX" , 	[[3049.73,13202.9,18.3091],[2995.75,13238.9,-0.0138435],[2992.14,13289.1,7.87374],[3053.48,13255.4,-0.0370255]]],
-			["LOOTBOX" , 	[[3151.6,13084.6,8.69122],[3177.64,13150.8,3.96083],[3118.58,13210.5,0] ]]
+			["AltisStaticLoot" , 	[[3049.73,13202.9,18.3091],[2995.75,13238.9,-0.0138435],[2992.14,13289.1,7.87374],[3053.48,13255.4,-0.0370255]]],
+			["AltisStaticLoot" , 	[[3151.6,13084.6,8.69122],[3177.64,13150.8,3.96083],[3118.58,13210.5,0] ]]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -230,16 +230,19 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
   
 	]

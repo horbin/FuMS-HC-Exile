@@ -49,8 +49,8 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[	
-			["LOOTBOX" , 	[[6014.65,12545.9,0],[5998.48,12580.3,3.78252],[6083.06,12669.1,0],[6085.62,12629.8,0]]],
-			["LOOTBOX" , 	[[6056.47,12536.6,17.5502],[5998.86,12603.7,3.78252],[5997.91,12559.2,3.96569],[5963.36,12664.3,-0.0194626] ]]
+			["AltisStaticLoot" , 	[[6014.65,12545.9,0],[5998.48,12580.3,3.78252],[6083.06,12669.1,0],[6085.62,12629.8,0]]],
+			["AltisStaticLoot" , 	[[6056.47,12536.6,17.5502],[5998.86,12603.7,3.78252],[5997.91,12559.2,3.96569],[5963.36,12664.3,-0.0194626] ]]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -348,18 +348,20 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
-
   
 	]
 

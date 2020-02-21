@@ -186,7 +186,14 @@ _groups = missionNamespace getVariable format ["%1_groups",_thisTag];
 _boxes = missionNamespace getVariable format ["%1_boxes",_thisTag];
 //diag_log format ["<FuMS> RemoveDecayObjects: %3 Loot will expire in %2 minutes Loot : %1",_boxes, FuMS_LootBoxTime, count _boxes];
 {
-    if (typeName _x != "ARRAY") then
+    
+	//if (typeName _x != "ARRAY") then
+	
+	
+	_isArray = _x isEqualType [];
+	if (!_isArray) then
+
+	
     {
         [_x] spawn
         {

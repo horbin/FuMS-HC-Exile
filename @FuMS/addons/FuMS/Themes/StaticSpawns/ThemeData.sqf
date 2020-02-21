@@ -1,69 +1,64 @@
-//ThemeData.sqf
+// ThemeData.sqf
+// TheOneWhoKnocks
+// 
+// Original credits
 // Horbin
 // 4/21/15
+// Added in lootcrate drops, major updates for multiple types of crates
 // Inputs: Theme index into which to store this data.
 // Outputs: none
- //  Options , Mission List, Points List
+//  Options , Mission List, Points List
 _themeData =
 [
     [  // *******Options*********
         "StaticSpawns", // Needs to match the folder name!
-        5,  //Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
-             // 4=Static: All missions in 'Mission List' will be created at server start!
-			 // 5=Static: with no respawn. Use option 5 for 'create once' type missions.
-			 // Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
-			 //  option 5 will let the mission only spawn once per 6 hours (ie server reset)
-        60, // Respawn delay in seconds
-		true, // use Global Loot Data (GlobalLootData.sqf)
-		true,  // use Global Soldier Data file (GlobalSoldierData.sqf)
-		true, // ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
-               0,  // Player minimum to launch missions from this theme.
-        100   // Player maximum above which missions will not launch
+        5,  			//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+						// 4=Static: All missions in 'Mission List' will be created at server start!
+						// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
+						// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
+						//  option 5 will let the mission only spawn once per 6 hours (ie server reset)
+        60, 			// Respawn delay in seconds
+		false, 			// use Global Loot Data (GlobalLootData.sqf)
+		true,  			// use Global Soldier Data file (GlobalSoldierData.sqf)
+		true, 			// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
+        0,  			// Player minimum to launch missions from this theme.
+        100   			// Player maximum above which missions will not launch
     ],
-    [  //***** Mission List *****
-    // List of Missions. 
+    [  	//***** Mission List *****
+		// List of Missions. 
         // The below missions MUST be in the same folder as this file!            
-		//["TestMission01",[10700,12200] ], // spawn at the specific location. If '0' take from locations below!
-        //  ["BikeGang"],  // will spawn at any of the locations defined below! If none defined, BIS_fnc_findSafePos will be used.
-	   //  ["TestMission01","Charkia"],
-		  ["DayZHeloCrash"],// mission will only spawn in the town of Charkia
-		 ["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"]
-			//["WaterMission"],
-		// ["TestHeloPatrol","Stavros"],
-		//["MazeTest",[23587,18368.5]],
-        //  ["NukeDevice"],
-		// ["MazeTest2"]
-		// ["MazeTest2",[23300,17800]],
-		// ["MazeTest2",[15500,20000]]
-		//["TestParse"]
+		["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],
+		["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],
+		["LootcratesW"], ["LootcratesW"], ["LootcratesW"], 
+		["LootcratesE"], ["LootcratesE"], ["LootcratesE"] 
 		 
     ],
-    [   //***** Locations ***** !! 2D coords ONLY !!
-	    //Location format ["keyword"] or [[x,y],"optional name"] or [x,y]
+    [   //	***** Locations ***** !! 2D coords ONLY !!
+	    //	Location format ["keyword"] or [[x,y],"optional name"] or [x,y]
 		//  Where the 'optional name' is found, it will be used in place of the MissionName defined in the mission file.
-		// Urban locations will always use their location instead of the mission name.
-        // List of Encounter locations to be used if Global random locations are not desired
-		// If keywords "Villages", "Cities", "Capitals" found as entries, the appropriate
+		// 	Urban locations will always use their location instead of the mission name.
+        // 	List of Encounter locations to be used if Global random locations are not desired
+		// 	If keywords "Villages", "Cities", "Capitals" found as entries, the appropriate
 		//  locations from the mission map will be added to the list.
-		// Specific cities can also be included, if not all of a type are desired:
-		// Ex: ["Charkia"], ["Neochori"]
-		//["Marine"]
-		//["Villages"],["Cities"],["Capitals"];  //Encounter will only spawn in urban areas!
-		//["Villages"],["Cities"],["Capitals"],[[10715,10175],"AREA51"],[10010,10010],["Charkia"]  
-		//Encounter will spawn in all urban areas as well the other points provided.
-         // Note these points are NOT offsets, but points specific to ALTIS !!
-         // Note any locations here will OVERRIDE use of 'terrain type' checking provided by the "WATER" or "LAND" paramater in the Missions' area configuration section.
+		// 	Specific cities can also be included, if not all of a type are desired:
+		// 	Ex: ["Charkia"], ["Neochori"]
+		//	["Marine"]
+		//	["Villages"],["Cities"],["Capitals"];  //Encounter will only spawn in urban areas!
+		//	["Villages"],["Cities"],["Capitals"],[[10715,10175],"AREA51"],[10010,10010],["Charkia"]  
+		//	Encounter will spawn in all urban areas as well the other points provided.
+        // 	Note these points are NOT offsets, but points specific to ALTIS !!
+        // 	Note any locations here will OVERRIDE use of 'terrain type' checking provided by the "WATER" or "LAND" paramater in the Missions' area configuration section.
         
     ],
 	[ //***** Radio Chatter *****
-		[ // AI Radio Chatter configuration
-             9, // radio channel used by AI - "ALL"= messages heard w/o radio (other options 0-9)
-    //0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
-			false, // silent Check-in =true: AI squads will NOT check-in with BaseOps when they spawn.
-			true, // AI death messages enabled.
-			1500, // Radio Range (for AI. BaseOps's high power radio has unlimited range)
-			"",    // AI callsign, groups will be numbered..ie Bear01, Bear02
-			"" // BaseOps call sign
+		[ 			// AI Radio Chatter configuration
+            9, 		// radio channel used by AI - "ALL"= messages heard w/o radio (other options 0-9)
+					// 0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
+			false, 	// silent Check-in =true: AI squads will NOT check-in with BaseOps when they spawn.
+			true, 	// AI death messages enabled.
+			1500, 	// Radio Range (for AI. BaseOps's high power radio has unlimited range)
+			"",    	// AI callsign, groups will be numbered..ie Bear01, Bear02
+			"" 		// BaseOps call sign
 		],
 		//**Do not remove or change order of these items. 
 		// The 'chat text' can be changed to meet your theme's needs.

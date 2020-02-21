@@ -33,7 +33,7 @@ if (!((FuMS_ServerData select 4) select 0)) exitWith {};
     _silentcheckinOverride = _this select 3;
     _missionName = _this select 4;
     _themeRadioData = FuMS_THEMEDATA select _index;
-//diag_log format ["##AIRadio index:%1 data:%2",_index,FuMS_THEMEDATA select _index];
+	diag_log format ["##AIRadio index:%1 data:%2",_index,FuMS_THEMEDATA select _index];
     _data = _themeRadioData select 3;
     _options = _data select 0;
     _radioChannel = _options select 0;
@@ -48,14 +48,14 @@ if (!((FuMS_ServerData select 4) select 0)) exitWith {};
     _numgroups = FuMS_GroupCount select _index; // get number groups made so far for this theme.
     _numgroups = _numgroups +1;
     FuMS_GroupCount set [_index, _numgroups];
-//diag_log format ["##AIRadio: _aiCallsign:%1,  _numgroups:%2",_aiCallsign, _numgroups];
+	diag_log format ["##AIRadio: _aiCallsign:%1,  _numgroups:%2",_aiCallsign, _numgroups];
     if (_numgroups < 10) then
     {
         _number = format ["0%1",_numgroups];
         _callsign = format ["%1%2",_aiCallsign, _number];
     }
     else { _callsign = format ["%1%2",_aiCallsign, _numgroups];};
-  //  diag_log format ["##AIRadio: _callsign:%1",_callsign];
+	diag_log format ["##AIRadio: _callsign:%1",_callsign];
     // add RadioChat variable to support RadioChatter details in deathspam.
     if (_aiDeathMsg) then
     {

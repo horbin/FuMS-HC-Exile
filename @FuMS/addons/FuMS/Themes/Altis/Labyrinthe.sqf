@@ -40,9 +40,10 @@
 	],
 	[  	//  Loot Config:  Refer to LootData.sqf for specifics	
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
-		[		
-			["TestLoot" , 	[[23795.3,18002.1,0],[23802.9,17991.6,0]]],
-			["LOOTBOX" , 	[[23795.3,18020,0],[23803.6,18029,0] ]]
+		[	
+			["IP_O_APC_Wheeled_02_rcws_FST" , 	[[23795.3,18020,0],[23803.6,18029,0] ]],
+			["LabyrintheLoot" , 	[[23795.3,18002.1,0],[23802.9,17991.6,0]]],
+			["LabyrintheLoot" , 	[[23795.3,18020,0],[23803.6,18029,0] ]]
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
@@ -741,7 +742,7 @@
 		    ["ZUPPA1", ["ZuppaCapture",
 				[  
 					[ [-69.2,-56],  10,     180,  "Start" ],
-					[ [0.3,0.2],  	10,     180,  "Midway" ],
+					[ [0.3,0.2],  	5,     	180,  "Midway" ],
 					[ [60.5,40.2],  10,     180,  "Finish" ]			  
 				]]],
 	

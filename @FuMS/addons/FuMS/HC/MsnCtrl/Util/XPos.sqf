@@ -12,7 +12,14 @@ if (!isNil "_offset") then
 {
     if (count _offset == 3) exitWith { _newloc = _offset; }; // If 3D simply return it.
     if (count _offset == 1) then {_offset = _offset select 0;};  // string location embedded in an array ["Stavros"]
-    if (typeName _offset == "STRING") then { _newloc = [_offset] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+    //if (typeName _offset == "STRING") then { _newloc = [_offset] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+
+	//_isArray = (_loot select 0) isEqualType [];
+	_isString = _offset isEqualType "STRING";
+
+    if (_isString) then { _newloc = [_offset] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+
+
     else
     {  
         _newx = _origin select 0;
@@ -26,7 +33,12 @@ if (!isNil "_offset") then
 }else
 {
     if (count _origin == 1) then {_origin = _origin select 0;};  // string location embedded in an array ["Stavros"]
-    if (typeName _origin == "STRING") then { _newloc = [_origin] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+//    if (typeName _origin == "STRING") then { _newloc = [_origin] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+
+	_isString = _origin isEqualType "STRING";
+    if (_isString) then { _newloc = [_origin] call FuMS_fnc_HC_Util_FindTown;}  // just a string "Stavros"
+
+
     else { _newloc = _origin;};
 };
 _newloc

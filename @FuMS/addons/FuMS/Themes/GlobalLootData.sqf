@@ -1,7 +1,8 @@
 //LootData.sqf
-// Horbin
-// 1/8/15
+// TheOneWhoKnocks
 // Updated 9/30/18 to reformat file and remove specific loot.  All loot will be set to FuMS Global Variables
+// Updated 9/1/19 to factor in new development 
+// TheOneWhoKnocks
 //INPUTS: lootConfig, mission center, mission status.
 // Intended as a #include to the Fulcrum Mission System init file.
 // This function pulls the applicable data from here, and call the function to create the loot box.
@@ -24,53 +25,144 @@ _lootData =
 	//******** CloneHunter Loot****************************
 	[
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
-		["CloneHunter", "box_nato_ammoveh_f","RANDOM"],
+		["Template", "box_nato_ammoveh_f","RANDOM"],
 			[// All weapons and quantity 
-				[FuMS_LightMGs, 2],
-				[FuMS_AssaultRifles, 2]
+				[CAMS_LightMGs_E, [2,0,1]],
+				[CAMS_AssaultRifles_E, [2,0,1]]
 			],
 		[// All magazines and quantity
-			[FuMS_AmmoForEach, 4]    // 4 clips for each weapon Line defined above.
+			[FuMS_AmmoForEach, [4,0,2]]    // 4 clips for each weapon Line defined above.
+			// This will provide 4 - 6 for each spawned weapon
+		],
+		[	// All items and quantity
+			[CAMS_I_Meds, [2,0,1]],
+			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_W_Opticslv1, [2,0,1]],
+			["G_Diving",[2,0,1]]
+		],
+		[	// All backpacks and quantity
+			[CAMS_Packs_ALL, [1,0,1]]
+		],
+		10000	//Maximum number of poptabs to be included in poptab bag
+
+	],
+	[
+		// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["SmokeBomb", "GroundWeaponHolder_Scripted","RANDOM"],
+		[// All weapons and quantity 
+		],
+		[// All magazines and quantity
+			// This will provide 4 - 6 for each spawned weapon
+		],
+		[// All items and quantity
+		],
+		[// All backpacks and quantity
+		],
+		0
+	],
+	[
+		// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["Explosives", "Box_NATO_WpsSpecial_F","Special"],
+			[// All weapons and quantity 
+
+			],
+			[// All magazines and quantity
+				// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
+			],
+			[// All items and quantity
+				[CAMS_E_IED, 2]
+			],
+			[// All backpacks and quantity
+				[CAMS_Packs_ALL, 1]
+			],
+			0
+	],
+
+		[
+		// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["BasicLoot", "box_nato_ammoveh_f","RANDOM"],
+			[// All weapons and quantity 
+				[CAMS_LightMGs_E, [2,0,2]],
+				[CAMS_AssaultRifles_E, [2,0,1]]
+			],
+		[// All magazines and quantity
+			[FuMS_AmmoForEach, [4,2,2]]    // 4 clips for each weapon Line defined above.
 			// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
 		],
 		[// All items and quantity
-			[FuMS_B_Navigation, 2],
-			[FuMS_Crafting_Tools, 3],
-			[FuMS_W_Opticslv1, 2],
-			[FuMS_Food_Raw, 2],
-			[FuMS_Drink, 2],
-			["G_Diving",2]
+			[CAMS_I_Meds, [2,1,2]],
+			[CAMS_B_Navigation, [1,0,1]],
+			[CAMS_W_Opticslv1, [2,0,0]],
+			["G_Diving",[0,0,2]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 1]
-		]
+			[CAMS_Packs_ALL, [1,0,1]]
+		],
+		5000
 	],
+	
+	//******** Poptab Loot****************************
+	/*
+	[
+		// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["PoptabLoot", "Exile_PopTabs"],  // Should only be used with Exile servers
+		[// All weapons and quantity 
+			
+		],
+		[// All magazines and quantity
+			
+			// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
+		],
+		[// All items and quantity
+			
+		],
+		[// All backpacks and quantity
+			
+		],
+		10000 //Maximum number of poptabs to be included in poptab bag
+	],
+	*/
 	
 	//************ Generic Truck Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
-		["Truck01","box_nato_ammo_f","RANDOM"],
+		["TruckJunk","Vehicle","RANDOM"],
 		[// All weapons and quantity  
-			[FuMS_AssaultRifles, 2],
-			[FuMS_SniperRifles, 2]
+			["hgun_Pistol_Signal_F",[0,0,1]]
 		],
 		[// All magazines and quantity
-			[FuMS_AmmoForEach, 4]   
+			[FuMS_AmmoForEach, [0,1,1]]   
 		],
-		[// All items and quantity     
-			[FuMS_Food_Cooked, 3],
-			[FuMS_Crafting_Tools,1],
-			[FuMS_Crafting_Tools,1],
-			[FuMS_Crafting_Tools,1],
-			[FuMS_Crafting_Tools,1],
-			[FuMS_Crafting_Tools,1],
-			["G_Diving",2]
+		[// All items and quantity    
+			[CAMS_I_Meds,[0,0,3]],
+			[CAMS_Flares_Chemical,[0,0,2]],
+			[CAMS_G_ALL,[0,0,2]]
 		],// All backpacks and quantity
 		[
-			[FuMS_Packs_ALL, 2]
+			[CAMS_Packs_ALL, [1,0,2]]
 		]
 	],
-	
+
+	//************ Generic Neli Loot
+	[
+		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
+		["HeliJunk","VEHICLE","special"],
+		[// All weapons and quantity  
+			["hgun_Pistol_Signal_F",[0,0,1]]
+		],
+		[// All magazines and quantity
+			[FuMS_AmmoForEach, [0,1,1]]   
+		],
+		[// All items and quantity    
+			[CAMS_I_Meds,[0,0,3]],
+			[CAMS_Flares_Chemical,[0,0,2]],
+			[CAMS_G_ALL,[0,0,2]]
+		],// All backpacks and quantity
+		[
+			[CAMS_Packs_ALL, [1,0,2]]
+		]
+	],
+
 	//*********** Zombie Loot************************ 
 	[ 
 		// Zombie Bomb loot - specific to zombie encounters to provide a source for players to finish the objective!
@@ -94,58 +186,56 @@ _lootData =
 	[
 		["Scatter", "none","Special"],
 		[	// All weapons and quantity 
-			[FuMS_AssaultRifles, 2],
-			[FuMS_AssaultRifles, 2]
+			[CAMS_AssaultRifles_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,2]]
 		],
 		[// All magazines and quantity
-			[FuMS_AmmoForEach, 4]
-			//["200Rnd_65x39_cased_Box_Tracer", 4]
+			[FuMS_AmmoForEach, [4,0,1]]
 		],
 		[// All items and quantity
-			[FuMS_B_Navigation, 2],
-			[FuMS_Crafting_Tools, 3],
-			[FuMS_W_OpticsLv1, 2],
-			[FuMS_Food_Raw, 2],
-			[FuMS_Drink, 2] ,
-			["G_Diving",2]
+			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_W_OpticsLv1, [2,1,1]],
+			["G_Diving",[2,0,1]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 1]
+			[CAMS_Packs_ALL, [2,0,1]]
+		]
+	],
+	[
+		["WreckageLoot", "Scatter","Special"],
+		[	// All weapons and quantity 
+			[CAMS_AssaultRifles_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,2]]
+
+		],
+		[// All magazines and quantity
+			[FuMS_AmmoForEach, [4,0,1]]
+		],
+		[// All items and quantity
+			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_I_Meds, [4,0,4]],
+			[CAMS_W_OpticsLv1, [2,1,1]],
+			[CAMS_W_OpticsLv2, [2,1,1]],
+			["G_Diving",[2,0,1]]
+		],
+		[// All backpacks and quantity
+			[CAMS_Packs_ALL, [4,0,1]]
 		]
 	],
 	
 	// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
 	[
-		["RoadBlock","Land_Box_AmmoOld_F","special"],
+		["RoadBlock","Box_East_Wps_F","special"],
 		[// All weapons and quantity  
-			/*
-			[["arifle_Katiba_GL_F", "arifle_MX_GL_Black_F", "arifle_TRG21_F", "arifle_TRG20_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", 
-			"arifle_MX_SW_Black_F", "arifle_MXM_Black_F", "srifle_EBR_F"] , 1],
-			[["arifle_Katiba_GL_F", "arifle_MX_GL_Black_F", "arifle_TRG21_F", "arifle_TRG20_F", "arifle_Mk20_plain_F", "arifle_Mk20_F", 
-			"arifle_MX_SW_Black_F", "arifle_MXM_Black_F", "srifle_EBR_F"] , 1]
-			*/
-			[FuMS_Rifles_ALL, (floor (random 4))]
+			[CAMS_Rifles_ALL_E, [8,4,2]]
 		],
 		[// All magazines and quantity
-			[FuMS_AmmoForEach, 2]   
+			[FuMS_AmmoForEach, [4,1,2]]   
 		],
 		[// All items and quantity  
-
-			[["Exile_Item_InstaDoc", "Exile_Item_Surstromming_Cooked",
-			"Exile_Item_PlasticBottleFreshWater", "Exile_Item_PlasticBottleFreshWater", "Exile_Item_Matches"],2],
-		  
-			[["Exile_Item_InstaDoc", "Exile_Item_Surstromming_Cooked",
-			"Exile_Item_PlasticBottleFreshWater", "Exile_Item_PlasticBottleFreshWater", "Exile_Item_Matches"],2],
-		  
-			[["Exile_Item_CookingPot", "Exile_Item_CanOpener","Exile_Item_Matches"],4],
-		  
-			//[FuMS_Food_Cooked, 3],
-			//[FuMS_Crafting_Tools,1],
-			//[FuMS_Crafting_Tools,1],
-			//[FuMS_Crafting_Tools,1],
-			//[FuMS_Crafting_Tools,1],
-			//[FuMS_Crafting_Tools,1],
-			["G_Diving",2]
+			["G_Diving",[0,0,1]]
 		],// All backpacks and quantity
 		[
 			//[FuMS_Packs_ALL, 2]

@@ -47,20 +47,20 @@
 	[  	//  Loot Config:  Refer to LootData.sqf for specifics	
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["LOOTBOX" , 	[12796.6,16673.9,0]],
-			["LOOTBOX" , 	[12795.6,16671.9,0]]
+			["MilitaryBaseLoot" , 	[12796.6,16673.9,0]],
+			["MilitaryBaseLoot" , 	[12795.6,16671.9,0]]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[	
 		// Loot vehicle
-		// Class Name, 			Offset, 	Rotation, 	Condition Array [Fuel, Ammo, Engine Damage, FuelTank Damage, Hull Damage, Optional Fire/Smoke parameter.
+		// Class Name, 			Offset, 			Rotation, 	Condition Array [Fuel, Ammo, Engine Damage, FuelTank Damage, Hull Damage, Optional Fire/Smoke parameter.
 		//		Effect options: "FIRE_SMALL", "FIRE_MEDIUM", "FIRE_BIG", "SMOKE_SMALL", "SMOKE_MEDIUM", "SMOKE_BIG" 
-		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
-		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
-
-		["O_Truck_02_Ammo_F",				[12809.3,16654.1,0],				0,			[.5,   1,     .5,         .5,         .5]],
+		// ["I_UGV_01_rcws_F",	[0,100],   				0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
+		["O_UGV_01_rcws_F",		[0,100],   				0, 			[.5,   1,     .5,         .5,         .5]],  
+		
+		["O_Truck_02_Ammo_F",	[12809.3,16654.1,0],	0,			[.5,   1,     .5,         .5,         .5]],
 	// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		["M3Editor", [-1,-1], "NONE", 0,												
 			[	// paste your array of building objects here
@@ -189,16 +189,22 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",15,250,[0,0]]  ],		// Triggers call for reinforcements
+			["LUCNT2",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_VehicleE",[0,0],5,120]],["LUCNT"     ]],  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT2"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
 
   

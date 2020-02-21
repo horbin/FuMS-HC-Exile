@@ -125,11 +125,18 @@ while {true} do
 		if (count _dat3 !=3 and count _dat3 !=4) exitWith {_abort=true; _msg=format ["%1should array of 3 or 4 true/false values, found %2",_pre,_dat3];};	
         if (TypeName (_dat3 select 0) != "BOOL") exitWith {_abort=true; _msg=format ["%1DiverOverWater flag should be  true/false value, found %1",_dat3 select 0];};     
         if (TypeName (_dat3 select 1) != "BOOL") exitWith {_abort=true; _msg=format ["%1Unlimited Ammo flag should be  true/false value, found %1",_dat3 select 1];};     
-        if (TypeName (_dat3 select 2) != "BOOL" and TypeName (_dat3 select 2) !="STRING") exitWith {_abort=true; _msg=format ["%1AntiTank/AntiAir flag should be  true/false, ""AIR"", or ""LAND"", found %1",_dat3 select 2];};     
-        if (TypeName (_dat3 select 2) == "STRING") then
+        if (TypeName (_dat3 select 2) != "ARRAY" ) exitWith {_abort=true; _msg=format ["%1AntiTank/AntiAir flag:3 should be [""false"",""RANDOM"", ""AIR"", or ""LAND"" , Percentage of spawning], found %2",_pre,_dat3 select 2];};     
+        if (count (_dat3 select 2) != 2  ) exitWith {_abort=true; _msg=format ["%1AntiTank/AntiAir flag:5 should be [""false"",""RANDOM"", ""AIR"", or ""LAND"" , Percentage of spawning], found %2",_pre,_dat3 select 2];};     
+
+/*        if (TypeName ((_dat3 select 2) select 0) == "STRING") then
         {
-            if (toupper (_dat3 select 2) != "AIR" and toupper (_dat3 select 2) != "LAND" and toupper (_dat3 select 2) != "RANDOM") exitwith {_abort=true;_msg=format ["%1AntiTank/AntiAir flag should be  true/false, ""RANDOM"",""AIR"", or ""LAND"", found %1",_dat3 select 2];};     
+            if (toupper ((_dat3 select 2) select 0) != "AIR" and toupper ((_dat3 select 2) select 0) != "LAND" and toupper ((_dat3 select 2) select 0) != "RANDOM") exitwith {_abort=true;_msg=format ["%1AntiTank/AntiAir flag:6 should be [""false"",""RANDOM"", ""AIR"", or ""LAND"" , Percentage of spawning], found %2",_pre,_dat3 select 2];};     
         };
+
+*/
+
+
+
 		_dat3 = _dat2 select 12;
 		_pre= format ["%1:Items",_name];
 		if (TypeName _dat3 !="ARRAY") exitWith {_abort=true; _msg=format ["%1should in an array of items [[""item"", %chance],[min,max]], found %2",_pre,_dat3];};
