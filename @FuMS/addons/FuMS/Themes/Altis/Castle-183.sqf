@@ -49,8 +49,8 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["LOOTBOX" , 	[[11221.1,8630.63,0],[11214.1,8650.32,0],[11227.8,8727.58,0],[11158.9,8742.59,0]]],
-			["LOOTBOX" , 	[[11153.5,8713.62,0],[11148.4,8718.24,5.7063],[11169.7,8762.52,10.8516],[11186,8671.48,11.2788] ]]
+			["AltisStaticLoot" , 	[[11221.1,8630.63,0],[11214.1,8650.32,0],[11227.8,8727.58,0],[11158.9,8742.59,0]]],
+			["AltisStaticLoot" , 	[[11153.5,8713.62,0],[11148.4,8718.24,5.7063],[11169.7,8762.52,10.8516],[11186,8671.48,11.2788] ]]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -293,18 +293,19 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["AllDead",		["LowUnitCount","EAST",1,200,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,200,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead"     ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
-
   
 	]
 

@@ -25,13 +25,13 @@
     
     // Mission Success Message
 [
-    "Mission Success",
+    "Deice deactivated",
     "The Device has been disabled."
 ],
   
     // Mission Failure Message
 [
-    "Mission Failure!",
+    "Device misfired!",
     "Fortunately the device failed to activate, but the Bandits have escaped."
 ] 
 ],

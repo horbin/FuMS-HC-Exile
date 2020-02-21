@@ -73,9 +73,9 @@
 		["Land_BluntStone_02",				[2.39795,33.3604],		0,			0],
 		["Land_Wreck_Heli_Attack_01_F",		[-40.0642,-2.28564],	229.185,	0],
 		["Land_HistoricalPlaneWreck_01_F",	[43.7849,17.5664],		219.619,	0],
-		["cwa_CampEast",					[15.2898,1.7915],		180.16,		0],
-		["cwa_CampEast",					[15.2097,11.6899],		180.16,		0],
-		["cwa_CampEast",					[15.3953,21.4136],		180.16,		0],
+		//["cwa_CampEast",					[15.2898,1.7915],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
+		//["cwa_CampEast",					[15.2097,11.6899],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
+		//["cwa_CampEast",					[15.3953,21.4136],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
 		["Camp_EP1",						[-15.7988,-21.605],		88.112,		0],
 		["Camp_EP1",						[-16.0012,-14.7319],	88.112,		0],
 		["Camp_EP1",						[-16.2834,-8.10059],	88.112,		0],

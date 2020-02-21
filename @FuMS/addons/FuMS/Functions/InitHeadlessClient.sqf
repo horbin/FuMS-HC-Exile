@@ -47,7 +47,10 @@ _hc publicVariableClient "FuMS_BaseListofMissions";// Array of ["Name", "string 
 
 diag_log format ["<FuMS> InitHeadlessClient:  Starting transfer of %2 Custom Scripts to HC <%1:%3>",_hc, count FuMS_CustomScripts, _owner];
 {
-      waitUntil {_curFPS = diag_fps; _curFPS > FuMS_FPSMinimum};
+
+	  waitUntil {_curFPS = diag_fps; _curFPS > FuMS_FPSMinimum};
+	  diag_log format ["<FuMS> InitHeadlessClient:  Transferring |%2| Custom Script to HC <%1:%3>",_hc, _x, _owner];
+
     _codeString = missionNamespace getVariable _x;
     _hc publicVariableClient (format ["%1",_x]);
     sleep .5;
@@ -77,7 +80,7 @@ _startFPS = round (diag_fps * .3);
     waitUntil {_curFPS = diag_fps; _curFPS > FuMS_FPSMinimum};
     
     _codeString = missionNamespace getVariable _x;
-    //  diag_log format ["##InitHeadlessClient: FPS:%3 ---transmitting %1 to HC:%2    :",_x,_hc, _curFPS];
+    //diag_log format ["##InitHeadlessClient: FPS:%3 ---transmitting %1 to HC:%2    :",_x,_hc, _curFPS];
     _hc PublicVariableClient _x;
     sleep .5;
 }foreach FuMS_HC_ScriptList;

@@ -49,8 +49,8 @@
 		["None" , [0,0] ], 													//[static loot, offset location] - spawns with the mission
 																			// static loot will also spawn if 'NO TRIGGERS' is enabled.
 		[																	// Win loot, offset location - spawns after mission success
-			["LOOTBOX" , [[20903.4,14562.4,0],[20916.5,14612.4,0], [20928.8,14608.7,3.45173],[20891,14629.8,0]]],
-			["LOOTBOX" , [[20870.1,14622.4,0],[20896.3,14623.8,0], [20887.8,14617.3,0],[20882.3,14623.7,0]]] 		
+			["MarshLoot" , [[20903.4,14562.4,0],[20916.5,14612.4,0], [20928.8,14608.7,3.45173],[20891,14629.8,0]]],
+			["MarshLoot" , [[20870.1,14622.4,0],[20896.3,14623.8,0], [20887.8,14617.3,0],[20882.3,14623.7,0]]] 		
 		],	
 		["None" , [0,0] ]  													// Failure loot, offset location - spawns on mission failure
 	],
@@ -328,16 +328,24 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",20,250,[0,0]]  ],	// Triggers call for reinforcements
+			["LUCNT2",		["LowUnitCount","EAST",15,250,[0,0]]  ],	// Triggers call for reinforcements
+			["LUCNT3",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
-			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["WIN"],	["AllDead","PLAYERNEAR"]],
+			[["LOSE"],	["TIMER"]],
+			[["CHILD",	["Help_VehicleS",[0,0],1,120]],	["LUCNT"]],  
+			[["CHILD",	["Help_VehicleE",[0,0],1,180]],	["LUCNT2"]],  
+			[["CHILD",	["Help_Helo",[0,0],2,120]],		["LUCNT3"]],  
+			[["END"],	["AllDead","OR","TIMER"]]  
 		]
   
 	]

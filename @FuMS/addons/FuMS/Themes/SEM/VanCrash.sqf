@@ -24,13 +24,13 @@
     
     // Mission Success Message
 [
-    "Mission Success",
+    "Supply Van crash captured",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
 [
-    "Mission Failure!",
+    "Supply Van crash looted!",
     "The bandits have escaped."
 ] 
 ],

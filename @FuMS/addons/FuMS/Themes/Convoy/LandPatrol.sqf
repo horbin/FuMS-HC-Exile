@@ -24,12 +24,12 @@
 		],  
 																		// Mission Success Message
 		[
-			"Mission Success",
+			"Convoy destroyed",
 			"The convoy is destroyed!"
 		], 
 																		// Mission Failure Message
 		[
-			"Mission Failure!",
+			"Convoy escaped!",
 			"The convoy has reached its destination and escaped!"
 		] 
 	],

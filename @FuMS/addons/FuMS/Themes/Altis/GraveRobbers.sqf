@@ -50,8 +50,8 @@
 		["None" , [0,0] ], 													//[static loot, offset location] - spawns with the mission
 																			// static loot will also spawn if 'NO TRIGGERS' is enabled.
 		[																	// Win loot, offset location - spawns after mission success
-			["LOOTBOX" , [[-59.7,-54.31],[-0.2,-46.41], [-29.3,64.91]]],
-			["LOOTBOX" , [[22.4,24.34],[107.4,49.68], [49.6,51.071]]] 		
+			["GraveRobberLoot" , [[-59.7,-54.31],[-0.2,-46.41], [-29.3,64.91]]],
+			["GraveRobberLoot" , [[22.4,24.34],[107.4,49.68], [49.6,51.071]]] 		
 		],	
 		
 		["None" , [0,0] ]  													// Failure loot, offset location - spawns on mission failure
@@ -471,7 +471,7 @@
 	[			// Vehicles
 		[  		// Convoy #1                     
 			[   // Vehicle                     Offset     				Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"        ,[12227.610352,8373.829102,3.5],		[0],        "None" ], 
+				[  "O_HMG_01_high_F"        ,[12227.610352,8373.829102,3.5],[0],        "None" ], 
 				[  "O_HMG_01_high_F"   		,[12216.9,8382.73,7.75],		[0],     	"None" ], 
 				[  "O_HMG_01_high_F"       	,[12202,8284.56,9.405458],		[0],     	"None" ],
 				[  "O_HMG_01_high_F"        ,[12213,8426.9,3.293266],		[0],        "None" ], 
@@ -505,16 +505,19 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
   
 	]

@@ -92,7 +92,7 @@
 		[  // Division #1
 			[   // Vehicle                            Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 			[  
-				"B_Heli_Light_01_armed_F"           ,[500,0],[2,"Rifleman"],        "Truck01"      ]  
+				"B_Heli_Light_01_armed_F"           ,[500,0],[2,"Rifleman_E"],        "Truck01"      ]  
 				//  [  "B_Heli_Light_01_armed_F"           ,[0,-100],[1,"Rifleman"],     "Truck01"      ], //AH-9 Pawnee
 				//  [  "B_Heli_Transport_01_F"               ,[100,0],[1,"Rifleman"],     "Truck01"      ]   //WY-55 Hellcat
 		
@@ -101,7 +101,7 @@
 			],
 			[  
 				// Pilots                                                          # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options                                                                                                RTB, Roads, Despawn, Height
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[0,0],[0,0],[400]]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[400]]]
 			],
 			[   
 				// Troops : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.

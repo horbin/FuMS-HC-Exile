@@ -44,7 +44,7 @@
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter"]           ],   ["Explore",[50,50],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter"]           ],   ["Explore",[-50,-50],[0,0],[0]     ]]
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter_E"]           ],   ["Explore",[-50,-50],[0,0],[0]     ]]
 ],
 
 // Vehicles
@@ -61,7 +61,7 @@
        //  [FuMS_Mil_Tempests,[207,0],[0,""],"Truck01"]
      ],
      [    
-         [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[0,0],[0,0],[150]   ]]          
+         [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[150]   ]]          
      ],
      [
      ]
@@ -71,7 +71,7 @@
                 ["O_UAV_01_F",[-50,-10],[0,""],"none"]
      ],
      [    
-         [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[0,0],[0,0],[150]   ]]          
+         [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[150]   ]]          
      ],
      [
      ]

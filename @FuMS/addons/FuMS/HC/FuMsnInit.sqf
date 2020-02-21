@@ -193,6 +193,9 @@ if !(hasInterface) then
     FuMS_CapitalList = nearestLocations [FuMS_MapCenter, ["NameCityCapital"], 30000];
     FuMS_MarineList = nearestLocations [FuMS_MapCenter, ["NameMarine"], 30000];
     FuMS_DefinedMapLocations = FuMS_VillageList+FuMS_CityList+FuMS_CapitalList+FuMS_MarineList;
+	
+
+								
     
  /*   _testlocations = nearestLocations [FuMS_MapCenter, ["NameMarine"], 30000];
     {

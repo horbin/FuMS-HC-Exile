@@ -17,7 +17,7 @@
 
 [
 	["Radioactive", 400], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Radioactive","hd_objective","ELLIPSE","ColorRed","SolidBorder",400],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Radioactive Area Invasion","ExileContaminatedZone","ELLIPSE","ColorRed","SolidBorder",500],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
@@ -45,9 +45,9 @@
 		] 
 	],
 	[  																		//  Loot Config:  Refer to LootData.sqf for specifics																		
-		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
-		["LOOTBOX" , 	[0,0] ], // Win loot, offset location - spawns after mission success
-		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
+		["None" , 			[5,5] ], //[static loot, offset location] - spawns with the mission
+		["RadiationLoot" , 	[0,0] ], // Win loot, offset location - spawns after mission success
+		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[	// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		["M3Editor", [-1,-1], "NONE", 0,
@@ -136,15 +136,17 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["LUCNT2",		["LowUnitCount","EAST",4,250,[0,0]]  ],		// Triggers call for reinforcements
+			["AllDead",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
+			[["WIN"],["AllDead","PLAYERNEAR"     ]],
 			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["CHILD",	["Help_VehicleE",[0,0],5,120]],["LUCNT2"     ]],  
+			[["END"],["TIMER","OR","AllDead","PLAYERNEAR"    ]]  
 		]
   
 	]

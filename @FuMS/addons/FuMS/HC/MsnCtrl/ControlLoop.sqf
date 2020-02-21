@@ -26,7 +26,12 @@ _missionSelection = _themeOptions select 1;
 _respawnDelay = _themeOptions select 2;
 _themeMinPlayers = _themeOptions select 6;
 _themeMaxPlayers = _themeOptions select 7;
-//diag_log format ["##ControlLoop: %1 Missions Initializing##", _missionTheme];
+_debug = false;
+
+if (_debug) then
+{
+	diag_log format ["##ControlLoop: %1 Missions Initializing##", _missionTheme];
+};
 // Look for keyword locations. If found, add them to the provided list of _encounterLocations
 //diag_log format ["##ControlLoop: _missionTheme:%1  ActiveThemes:%2",_missionTheme, FuMS_ActiveThemes];
 
@@ -45,7 +50,7 @@ if (  !(_controlledByThisHC == -1 or _controlledByThisHC == FuMS_ThemeControlID)
 _locationAdditions = [];
 {
     //Locations: [STRING] or [[array], STRING] or [array]
- //   diag_log format ["##Control Loop : Examining Location : %1",_x];
+    //diag_log format ["##Control Loop : Examining Location : %1",_x];
     if (TypeName (_x select 0) == "STRING") then
     {
         private ["_name","_loc","_curLoc","_curLoc","_value"];
@@ -100,17 +105,21 @@ _locationAdditions = [];
     };
 }foreach _encounterLocations;
 //_encounterLocations FORMAT: [[loc], Name]], or [array]
-//diag_log format ["## Control Loop : Loc Additions: %1", _locationAdditions];
-//diag_log format ["##Control Loop: Encounter Locations: %1",_encounterLocations];
+																		
 _encounterLocations = _encounterLocations + _locationAdditions;
-//diag_log format ["## Control Loop:Them Index:%3 Full Location List: %2:%1", _encounterLocations, count _encounterLocations, _themeIndex];
 _trackList = _missionList;
 
+if (_debug) then
+{
+	diag_log format ["## Control Loop : Loc Additions: %1", _locationAdditions];
+	diag_log format ["## Control Loop: Encounter Locations: %1",_encounterLocations];
+	diag_log format ["## Control Loop:Them Index:%3 Full Location List: %2:%1", _encounterLocations, count _encounterLocations, _themeIndex];
+};
 //Initialize Radio Chatter and other THEME related global variables!
 private ["_data","_options","_abort"];
 _data = (FuMS_THEMEDATA select _themeIndex)select 3;
 //Theme Data elements : 0= config options, 1=AI messages, 2=base messages
-//  diag_log format ["##BaseOps: Themedata select 3: _data:%1",_data];
+//diag_log format ["##BaseOps: Themedata select 3: _data:%1",_data];
 _options = _data select 0;
 //FuMS_radioChannel set [ _themeIndex, _options select 0];
 //FuMS_silentCheckIn set [ _themeIndex, _options select 1];
@@ -129,7 +138,7 @@ _options = _data select 0;
 //FuMS_GroupCount set [ _themeIndex, 0 ]; // set this themes group count to zero.
 FuMS_BodyCount set [_themeIndex, 0];
 FuMS_Trigger_ZupaCapture set [_themeIndex,false];
- // _id = format ["%1%2",_themeName, _themeIndex];
+_id = format ["%1%2",_themeName, _themeIndex];
 
 _abort=false;
 while {true} do
@@ -145,8 +154,11 @@ while {true} do
         _numPlayers = count ([] call BIS_fnc_listPlayers);
         if (_numPlayers >= _themeMinPlayers and _numPlayers < _themeMaxPlayers) exitWith
         {           
-      //      diag_log format ["<FuMS> ControlLoop: Theme:%1(index:%5) #Players:%2 met launch requirements [%3:%4]. Starting a mission!", _themeName, _numPlayers, _themeMinPlayers,_themeMaxPlayers,_themeIndex];
-        };
+			if (_debug) then
+			{
+				diag_log format ["<FuMS> ControlLoop: Theme:%1(index:%5) #Players:%2 met launch requirements [%3:%4]. Starting a mission!", _themeName, _numPlayers, _themeMinPlayers,_themeMaxPlayers,_themeIndex];
+			};
+		};
          uisleep 60;
     };
 
@@ -158,7 +170,7 @@ while {true} do
 			waitUntil
 			{
 				_onOff = missionNameSpace getVariable format["FuMS_AdminThemeOn%1",FuMS_ThemeControlID];
-		//	  diag_log format ["<FuMS> ControlLoop:  _themeIndex:%1  _onOff : %2",_id, _onOff];
+				//diag_log format ["<FuMS> ControlLoop:  _themeIndex:%1  _onOff : %2",_id, _onOff];
 				sleep 2; 
 				(_onOff select _themeIndex)
 			};
@@ -176,11 +188,17 @@ while {true} do
 		uisleep 5;
 		if (FuMS_ServerFPS < FuMS_FPSMinimum) then
 		{
-			diag_log format ["<FuMS>: ControlLoop:Theme:%3 waiting on server FPS of %1 to become greater than :%2", FuMS_ServerFPS, FuMS_FPSMinimum,_themeIndex];		
+			if (_debug) then
+			{
+				diag_log format ["<FuMS>: ControlLoop:Theme:%3 waiting on server FPS of %1 to become greater than :%2", FuMS_ServerFPS, FuMS_FPSMinimum,_themeIndex];
+			};
 		}
 		else
 		{
-			//diag_log format ["<FuMS>: ControlLoop:Theme:%1 Another mission launch in progress: is_Starting=%2",_themeIndex,FuMS_Mission_is_starting];
+			if (_debug) then
+			{
+				diag_log format ["<FuMS>: ControlLoop:Theme:%1 Another mission launch in progress: is_Starting=%2",_themeIndex,FuMS_Mission_is_starting];
+			};
 		};
 	};
 	FuMS_Mission_is_Starting = true;
@@ -189,7 +207,12 @@ while {true} do
 	
     // SELECT A MISSION.
   
-//   diag_log format ["<FuMS> ControlLoop: %3 OrderOption:%2 _missionList:%1",_missionList, _missionSelection, _id];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> ControlLoop: %3 OrderOption:%2 _missionList:%1",_missionList, _missionSelection, _id];
+		diag_log format ["<FuMS> OrderOption:%2 _missionList:%1",_missionList, _missionSelection];
+
+	};
 	//  perform call of the mission chosen
     switch (_missionSelection) do
     {
@@ -232,8 +255,11 @@ while {true} do
     if (_missionSelection == 4 or _missionSelection ==5) then
     {
         _activeMission = _trackList;
-       // diag_log format ["##ControlLoop: Calling StaticMissionControlLoop with mission List:%1",_activeMission];
-        [_activeMission,_themeIndex,_missionTheme] call FuMS_fnc_HC_MsnCtrl_StaticMissionControlLoop;
+		if (_debug) then
+		{
+			diag_log format ["##ControlLoop: Calling StaticMissionControlLoop with mission List:%1",_activeMission];
+        };
+		[_activeMission,_themeIndex,_missionTheme] call FuMS_fnc_HC_MsnCtrl_StaticMissionControlLoop;
         FuMS_Mission_is_Starting = false;
         // loop has done its work and launched all the missions, so shut it down if Admin Controls are OFF
         if (!FuMS_AdminControlsEnabled) exitWith{diag_log format ["##controlLoop: Admin Controls OFF"];_abort=true};
@@ -251,7 +277,7 @@ while {true} do
     else
     {
         private ["_result","_dataFromServer","_missionFileName","_msnTag"];
-       // diag_log format ["##ControlLoop: _activeMission:%1",_activeMission];   
+        //diag_log format ["##ControlLoop: _activeMission:%1",_activeMission];   
         {   
             // Get location for the mission
             // 1st check if the mission is a ["missionName",[location]] pair           
@@ -310,19 +336,19 @@ while {true} do
             (!isNil "_var")
         };    
         // if MsnStatus is 'dead' at this point it was set by the previous mission. So wait until THIS mission changes the status to something other than DEAD!
-      //  diag_log format ["<FuMS> ControlLoop: %1_MsnStatus defined with value of %2. Waiting for mission to start.",_msnTag, _var];
+        //diag_log format ["<FuMS> ControlLoop: %1_MsnStatus defined with value of %2. Waiting for mission to start.",_msnTag, _var];
         waitUntil
         {
             _var = missionNamespace getVariable (format ["%1_MsnStatus",_msnTag]);            
             ( (_var select 0) != "DEAD")
         };
-       // diag_log format ["<FuMS> ControlLoop: %1_MsnStatus defined with value of %2. Waiting for 'DEAD'",_msnTag, _var];
+        //diag_log format ["<FuMS> ControlLoop: %1_MsnStatus defined with value of %2. Waiting for 'DEAD'",_msnTag, _var];
         waitUntil
         {           
             _var = missionNamespace getVariable (format ["%1_MsnStatus",_msnTag]);
             ( (_var select 0) == "DEAD")
         };
-     //   diag_log format ["<FuMS> ControlLoop: %1_MsnStatus %2. Selecting a new mission for this Theme:%3",_msnTag, _var, _missionTheme];
+        //diag_log format ["<FuMS> ControlLoop: %1_MsnStatus %2. Selecting a new mission for this Theme:%3",_msnTag, _var, _missionTheme];
         sleep _respawnDelay;
     };    
     if (_abort) exitWith{    

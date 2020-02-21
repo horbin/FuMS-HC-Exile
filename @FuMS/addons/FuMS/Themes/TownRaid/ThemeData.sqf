@@ -1,51 +1,47 @@
-//ThemeData.sqf
-// Horbin
-// 1/10/15
+// TownRaid.sqf
+// TheOneWhoKnocks
+// 7/20/19
 // Inputs: Theme index into which to store this data.
 // Outputs: none
- //  Options , Mission List, Points List
+//  Options , Mission List, Points List
 _themeData =
 [
     [  // *******Options*********
         "TownRaid", // Needs to match the folder name!
-        1,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        60, // Respawn delay in seconds
-		true, // Global loot data
-		true, // Global soldier data  
-		true,
-            1,  // Player minimum to launch missions from this theme.
-        100   // Player maximum above which missions will not launch
+        1,  		// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        90, 		// Respawn delay in seconds
+		true, 		// Global loot data
+		true, 		// Global soldier data  
+		true,		// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
+        1,  		// Player minimum to launch missions from this theme.
+        100   		// Player maximum above which missions will not launch
     ],
     [  //***** Mission List *****
-    //see Test Theme ThemeData.sqf for other options
-        // The below missions MUST be in the same folder as this file! 
-    //     ["BikeGang",[10715, 10175]]       ],
-		["RaidTown"]  // spawn at the specific location. If '0' take from locations below!
-    // ["TestMission01",[10715,10175]]
-  //   ["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],
-	
-		
-        //"TestMission03,0]
+		["RaidTown-S-Seed_W","Villages"],  // spawn at the specific location. If '0' take from locations below!
+		["RaidTown-S-Seed_W","Villages"]/*,
+		["RaidTown-S-Seed_E","Villages"],
+		["RaidTown-S-Seed_E","Villages"],
+		["RaidTown-S-Seed_I","Villages"]		
+
+/*
+		["RaidTownM"], 		
+		["RaidTownM"],  // spawn at the specific location. If '0' take from locations below!
+		["RaidTownM"],
+		["RaidTownM"], 		
+		["RaidTownM"], 		
+		["RaidTownL"],  // spawn at the specific location. If '0' take from locations below!
+		["RaidTownL"],
+		["RaidTownL"] 	*/	
     ],
     [   //***** Locations *****
-	    //Location format ["keyword"] or [x,y,"optional name"]
-		//  Where the 'optional name' is found, it will be used in place of the MissionName defined in the mission file.
-		// Urban locations will always use their location instead of the mission name.
-        // List of Encounter locations to be used if Global random locations are not desired
-		// If keywords "Villages", "Cities", "Capitals" found as entries, the appropriate
-		//  locations from the mission map will be added to the list.
-		// Specific cities can also be included, if not all of a type are desired:
-		// Ex: ["Charkia"], ["Neochori"]
-		
 		//["Villages"],["Cities"],["Capitals"];  //Encounter will only spawn in urban areas!
-		["Cities"],["Capitals"] 
-		//Encounter will spawn in all urban areas as well the other points provided.
-        
+		//["Cities"],["Capitals"] 
+		//Encounter will spawn in all urban areas as well the other points provided.       
     ],
 	[ //***** Radio Chatter *****
 		[ // AI Radio Chatter configuration
 			"ALL", // radio channel used by AI - "ALL"= messages heard w/o radio
-    //0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
+			//0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
 			false, // silent Check-in =true: AI squads will NOT check-in with BaseOps when they spawn.
 			true, // AI death messages enabled.
 			1500, // Radio Range (for AI. BaseOps's high power radio has unlimited range)

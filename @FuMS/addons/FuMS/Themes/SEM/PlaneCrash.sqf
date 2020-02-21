@@ -24,13 +24,13 @@
     
     // Mission Success Message
 [
-    "Mission Success",
+    "Aircraft Crash salvaged",
     "The bandits have been destroyed."
 ],
   
     // Mission Failure Message
 [
-    "Mission Failure!",
+    "Aircraft Crash looted!",
     "The bandits have escaped."
 ] 
 ],

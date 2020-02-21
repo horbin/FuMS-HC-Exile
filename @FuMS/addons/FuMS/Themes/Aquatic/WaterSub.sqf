@@ -26,13 +26,13 @@
     
 																		// Mission Success Message
 		[
-			"Mission Success",
+			"Ship Wreck salvaged!",
 			"The wreck has been salvaged."
 		],
   
 																		// Mission Failure Message
 		[
-			"Mission Failure!",
+			"Ship Wreck lost!",
 			"The wreck has vanished into the depths."
 		] 
 	],

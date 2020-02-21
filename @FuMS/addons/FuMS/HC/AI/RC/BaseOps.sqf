@@ -50,12 +50,12 @@ while {true} do
             if (_i != FuMS_GlobalDataIndex) then
             {            
                 // check msqQue
-                 // diag_log format ["##BaseOps: baseMsgs:%1",FuMS_baseMsgs select _i];
-            //    diag_log format ["##BaseOps: XMT_MsgQue:%1",FuMS_AI_XMT_MsgQue select _i];
+				diag_log format ["##BaseOps: baseMsgs:%1",FuMS_baseMsgs select _i];
+				diag_log format ["##BaseOps: XMT_MsgQue:%1",FuMS_AI_XMT_MsgQue select _i];
                 {
                     _xmtQ = (FuMS_AI_XMT_MsgQue select _i) select 1;
                     _basemsgtype = _x select 0;
-                     //diag_log format ["##BaseOps: _xmtQ:%1  _basemsgtype:%2",_xmtQ, _basemsgtype];
+					diag_log format ["##BaseOps: _xmtQ:%1  _basemsgtype:%2",_xmtQ, _basemsgtype];
                     if ( _xmtQ == _basemsgtype) then  // if received a message from a Grp.
                     {
                         // process the message and transmit it

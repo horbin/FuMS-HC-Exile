@@ -1,6 +1,7 @@
 //TestHeloPatrol.sqf
 // Horbin
 // 2/14/15
+// Updated 02/02/2020 by TheOneWhoKnocks
 // Be cautious when editing data.
 
 // NOTE: For all Offset values, if three dimensions are used, the point will be treated as an absolute point on the game map.
@@ -43,16 +44,16 @@
 		],
 		[
 			// Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
-			"CORE Directive",  // title line
-			"High Command has dispatched a squadron of helicopters to patrol the skys!" //description/radio message.
+			"Combat Air Patrol launched",  // title line
+			"Radio chatter indicates the enemy has launched a heli patrol!" //description/radio message.
 		],
 		[	// Mission Success Message
-			"Mission Success",  // title line
-			"Notifying High Command that the squadron has been lost!"
+			"Combat Air Patrol destroyed",  // title line
+			"Someone knocked down a combat air patrol and the radio is going crazy!"
 		],
 		[	// Mission Failure Message
-			"Mission Failure!",
-			"Reconnaissance complete. All forces are to RTB."
+			"Combat Air Patrol mission complete",
+			"Mission complete. All forces are to RTB."
 		]
 	],
 	[
@@ -90,18 +91,18 @@
 		//Airborne Vehicle Configuration
 		[  // Division #1
 			[ // Vehicle                         Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  "B_Heli_Light_01_armed_F"	,[0,0],		[1,"Rifleman"],		"Truck01" ],  
-				[  "B_Heli_Light_01_armed_F"    ,[0,-100],	[1,"Rifleman"],     "Truck01" ], 
-				[  "B_Heli_Transport_01_F"      ,[100,0],	[1,"Rifleman"],     "Truck01" ]  
+				[  "CAMS_Heli_Armed_E",		[0,0],		[1,"Rifleman"],		"HeliJunk" ],  
+				[  "CAMS_Heli_Armed_E",		[0,-100],	[1,"Rifleman"],     "HeliJunk" ], 
+				[  "CAMS_Heli_Transport_W",	[100,0],	[1,"Rifleman"],     "HeliJunk" ]  
 			],
 			[  
 			// Pilots                              # and type  |      Patrol  |  spawn  | dest | 'Patrol' options                                                                                                RTB, Roads, Despawn, Height
-				[["EAST","COMBAT","RED","COLUMN"],   [[3, "Driver"]],	["TrackRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],false,false,false,100   ]]]
+				[["EAST","COMBAT","RED","COLUMN"],   [[3, "Pilot_E"]],	["TrackRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],false,false,false,100   ]]]
 			],
 			[   
 				// Troops : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
 				//  Troop options               	# and type of Troops     		Patrol logic | spawn | dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper"],[1,"Rifleman"]],	["PatrolRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages"],true,false,true,100   ]]]
+				[["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper_E"],[1,"Rifleman_E"]],	["PatrolRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages"],true,false,true,100   ]]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 			]
 		]

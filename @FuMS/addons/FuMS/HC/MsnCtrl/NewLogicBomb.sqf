@@ -45,12 +45,16 @@ _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 //   not a mission launched from another mission.
 
 _endScript = "NONE";
+//diag_log format ["<FuMS> NewLogicBomb: (count _missionArea): %1",(count _missionArea)];
+
 if (count _missionArea > 3) then {_positionOffset = _missionArea select 3;};
 if (count _missionArea > 4) then
 {
     _startScript = _missionArea select 4;
     _endScript = _missionArea select 5;   
 };
+//diag_log format ["<FuMS> NewLogicBomb: _startScript: %1		_endScript:%2",_startScript,_endScript];
+
 if (!isNil "_positionOffset") then
 {
     private ["_min","_max","_dir","_dist"];
@@ -60,7 +64,7 @@ if (!isNil "_positionOffset") then
     _dir = _positionOffset select 2;
     _dist = (random (_max - _min)) + _min;
     if (_dir ==0) then {_dir = random 360;};
-    diag_log format ["<FuMS> NewLogicBomb: _dist:%1 _dir:%2 _eCenter:%3",_dist,_dir,_eCenter];
+    //diag_log format ["<FuMS> NewLogicBomb: _dist:%1 _dir:%2 _eCenter:%3",_dist,_dir,_eCenter];
     _positionOffset = [_eCenter,_dist, _dir] call BIS_fnc_relPos;  
 }else {_positionOffset = _eCenter;};
 //diag_log format ["<FuMS> NewLogicBomb: _positionOffset:%1",_positionOffset];
@@ -102,7 +106,7 @@ if (!isNil "_startScript") then
 {                                                                           
     if (toupper _startScript != "NONE") then
     {        
-        diag_log format ["<FuMS> NewLogicBomb: Running Custom Start Script :%1",_startScript];               
+        //diag_log format ["<FuMS> NewLogicBomb: Running Custom Start Script :%1",_startScript];               
         _customData = [ _eCenter, _positionOffset, _buildings, _groups, _vehicles, _boxes] call (missionNamespace getVariable _startScript);
     };
 };

@@ -10,7 +10,7 @@
     Created by =CF=Dragunov
 */
 //
-//	This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+// This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 // To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
 // 
 // Be cautious when editing data.
@@ -48,8 +48,8 @@
 	
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["LOOTBOX" , 	[[3049.73,13202.9,18.3091],[2995.75,13238.9,-0.0138435],[2992.14,13289.1,7.87374],[3053.48,13255.4,-0.0370255]]],
-			["LOOTBOX" , 	[[3151.6,13084.6,8.69122],[3177.64,13150.8,3.96083],[3118.58,13210.5,0] ]]
+			["KavalaLoot" , 	[[3049.73,13202.9,18.3091],[2995.75,13238.9,-0.0138435],[2992.14,13289.1,7.87374],[3053.48,13255.4,-0.0370255]]],
+			["KavalaLoot" , 	[[3151.6,13084.6,8.69122],[3177.64,13150.8,3.96083],[3118.58,13210.5,0] ]]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -73,9 +73,9 @@
 		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[3762.42,13015.7,0.157682],[3762.42,13015.7,0.157682],	[25]   ]],		//  ground level room
 		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Hunter"]  ],   					["Buildings",	[3751.32,12977,15.5085],[3751.32,12977,15.5085],		[25]   ]],		//  below helipad ramp
 		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[3683.76,12977.3,0.001194],[3683.76,12977.3,0.001194],	[25]   ]],		//  behind the houses in front
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"SMG"]  ],   						["Explore",		[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","VEE"],   			[  [4,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[75]   ]],
-		[["EAST","COMBAT","YELLOW","COLUMN"],  		[  [4,"Hunter"]  ],   					["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG"]  ],   						["Explore",		[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[75]   ]],
+		[["EAST","COMBAT","YELLOW","COLUMN"],  		[  [2,"Hunter"]  ],   					["Explore",		[0,0],[0,0],[100]   ]]
 
 	],
 	[			// Vehicles	
@@ -110,16 +110,21 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
-			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",15,250,[0,0]]  ],	// Triggers call for reinforcements
+			["LUCNT2",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["LUCNT"     ]],
-			[["LOSE"],["TIMER"     ]],
-
-			[["END"],["LUCNT","OR","TIMER"    ]]  
+			[["WIN"],	["AllDead" ,"PLAYERNEAR"   ]],
+			[["LOSE"],	["TIMER"     ]],
+			[["CHILD",	["Help_GroundE",[0,0],3,120]],["LUCNT"     ]],  
+			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT2"     ]],  
+			[["END"],	["AllDead","OR","TIMER"    ]]  
 		]
 
   

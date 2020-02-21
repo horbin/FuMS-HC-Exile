@@ -1,8 +1,95 @@
 #Fulcrum Mission System (FuMS)
-(like the mod? please feel free to donate.  http://conroh.com/fums/
+
 ------------------------------------------------------------------------------------
 ---- Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
+
+v0.50 (DEV)
+****
+Developers Edition
+****
+I suck at updating the documntation but I do comment the code pretty heavily, and the missions do a pretty good job of showing you what options there are. 
+
+System Changes:
+- ALIAS anomolies mission spawner working (Random anomoly will spawn looking like small bandit camp until the player gets close enough...)
+-- Anomolies supported:
+--- Farty
+--- Slimer
+--- Suicide Bombers
+--- Sparky
+--- Flamer
+--- 
+
+
+- New Dynamic Mission Spawning system implemented for the following themes: (Lighter load on CPU for inactive missions, more immersion programmed in with counter attacks and reinforcements)
+-- TownAttack - Now can be of different types of initial soldiers (West, East, Independent) that are guarding a town and as you approach, it comes under attack.
+-- StaticSpawns - Reworked to be more efficient in CPU time and more fun to find
+-- VehicleHijacks - Updated version of DynamicVehicles missions type missions.  Get in, steal a vehcile, kill anyone who tries to stop you.
+
+
+
+- Added new AI Logic
+-- Air Evac (AI can call in a transport helicopter to evacuate remaining soldiers.  Armed transport heli will come in and evac any units in area)
+-- SADRoute (FIND RIGHT WORDS AND DESCRIPTION) 
+
+- Custom magazine spawns: standard mag, random mag (of all types), and forbidden mags as options.  - ADD CODE FOR THIS BEFORE RELEASE	
+
+
+- Enabled basic radio chatter with audio from mission events (re-enforcements, counter attacks will gerate radio squak and message on screen)
+-- Audio can be disabled in config files
+-- Entire system can be disabled in config files
+
+Code changes:
+- Implemented CAMS (Common Asset Management System) for easy integraion with custom content
+- Added new trigger "TAKEVEHICLE" to monitor for stolen vehicles that have been moved a minimum distance
+- Added ability to desigante specific types of locations for individual missions, as opposed to one type for the whole theme (Missions can spawn in VILLAGES, MARINE, CITIES, ETC.)
+- Rockets now offer a percentage chance to be spawned on AI (Controls randomization and rareness of loot)
+- Began seperation of Exile code to support future stand alone system 
+- Rewrote GlobalLoootData for more generic settings and compatability with CAMS
+- Rewrote GlobalSoldierData to have better "classes" and different sides (East, West)
+- Added in debug options in a lot of functions for development
+- Lot of reformatting to clean up code
+
+v0.49
+****
+Mission FX Upgrade
+****
+- Added Mission FX system to add ability to add ALIAS Anomolies to missions
+- Included a mission generator to pop up camps randomly
+- Added ability to give vehicles as loot
+- Loot vehicles are air dropped in
+- Major rework of mission loot, still WIP
+- Added more reinforcemnt options including ground and vehicle based responses
+- Fixed errors in server.rpt regarding poles
+- Standardized all AI roaming vehicles to same model, same that is blocked from player usage
+- Added Poptab bag as loot crate that you can add poptabs directly to
+- Minor bug fixes
+- Developing new "location scouting" engine to offer more control over mission spawn locations
+- Trying out new functions to optimze performance
+
+Additional missions:
+
+STATIC BORNHOLM MISSIONS
+	- Foothold 					([CiC]red_ned)
+	
+STATIC CHERNARUS MISSIONS
+	- AI Base (NWAF)			
+	- AI Base (N)				
+
+
+	
+STATIC NAMALSK MISSIONS
+	- Lubjansk					([CiC]red_ned)
+	
+STATIC NAPF MISSIONS
+	- Castle 					([CiC]red_ned)
+	
+STATIC TANOA MISSIONS
+	- Comms Alpha 				([CiC]red_ned)
+	- Georgetown 				([CiC]red_ned)
+	- Hotel Invasion 			([CiC]red_ned)
+
+
 
 v0.420
 ****
