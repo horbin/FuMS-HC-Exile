@@ -12,7 +12,7 @@ FuMS_ServerData =
 									// NOTE: setting to 'true' may drasticly impact server performance.
         "testpath",                 // MySQL support testing
 		true,						//Enable AdminControls! See Docs\AdminControls.txt
-        5   						//minimum Server FPS. Below this FPS FuMS will not load new missions. 
+        20   						//minimum Server FPS. Below this FPS FuMS will not load new missions. 
 									// NOTE: This was lowered until I can fix the FPS monitor which currently reads too low.
     ],
     [  								// Exclusion Areas
@@ -32,21 +32,21 @@ FuMS_ServerData =
 		//["Admin",-1],
 		//["Test",-1], 				//Remove this theme if on a production server.
 		//["Zombies",-1], 			// Uncomment this if you have the Zombies add on installed  (NOT TESTED)
-		["MissionFX",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
+		//["MissionFX",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
-		["SEM",-1], 				// basic old school Arma2 Epoch encounters
-		["TownRaid",-1], 		// random town is raided by 4 truck loads of humans!
-		["Small",-1],  			// 6 man groups invade a random village
-		["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
-		["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
-		["StaticSpawns",-1], 	// creates 10 Dayz style Helo crashes at random locations.
+		//["SEM",-1], 				// basic old school Arma2 Epoch encounters
+		["TownRaid",-1], 			// random town is raided by 4 truck loads of humans!
+		//["Small",-1],  			// 6 man groups invade a random village
+		//["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
+		//["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
+		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
 		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
-		["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
-		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
-		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
-		["DynamicAISpawns", -1],		// Missions that spawn AI groups with guards for any map
-		["Altis", -1], 				// Missions specific to Altis ported from Exile.Com
-		["RoadBlock_Pato",1] 		// Concept based upon missions from Pato!
+		//["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
+		["DynamicVehicles", -1]		// Missions that spawn vehicles with guards for any map
+		//["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
+		//["DynamicAISpawns", -1]	// Missions that spawn AI groups with guards for any map
+		//["Altis", -1], 			// Missions specific to Altis ported from Exile.Com
+		//["RoadBlock_Pato",1] 		// Concept based upon missions from Pato!
 		
 		// NOTE: If you run the Roadblock_Pato mission with mutiple HC's, they will spawn on top of each other and kill each other.
 		// Line 50 has been updated to run on the FIRST HC only, so plan accordingly. See line 27 to understand how to change this
@@ -58,7 +58,7 @@ FuMS_ServerData =
         false, // EnableRadioAudio: turns on 'audio' effects for radio chatter
         true, // RadioRequired: if false, messages are heard without a radio on the player's belt.
         true, // RadioFollowTheme: Conforms with Theme radio channel choices. False:any radio works for all channels.
-        true, 800 // EnableAIChatter: enables random radio chatter between AI when players get within the specified range (meters) as default.
+        true, 500 // EnableAIChatter: enables random radio chatter between AI when players get within the specified range (meters) as default.
               // NOTE: Theme 'Radio Range' will override this setting.
     ],
 	[ // Soldier Defaults
@@ -106,7 +106,7 @@ FuMS_ServerData =
             "I_UAV_02_CAS_F",
             "I_UGV_01_F"     ,
             // side West
-             "B_UGV_01_rcws_F",
+            "B_UGV_01_rcws_F",
             "B_UAV_01_F",
             "B_UAV_02_F",
             "B_UAV_02_CAS_F",

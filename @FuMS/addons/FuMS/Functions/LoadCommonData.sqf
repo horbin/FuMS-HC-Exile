@@ -1,13 +1,14 @@
 //LoadCommonData.sqf
 // Horbin
-// 2/28/15
+// 2/17/2020
+// TheOneWhoKnocks
 // Inputs : None
 // Loads FuMS core data
 FuMS_BuildThemeMissionList = compile preprocessFileLineNumbers "\FuMS\Functions\BuildThemeMissionList.sqf"; 
 
 private ["_themeNumber","_hold","_abort"];
 
-FuMS_Version = "vExile.420";
+FuMS_Version = "vExile0.50";
 publicVariable "FuMS_Version";
 FuMS_HCIDs = [];
 FuMS_HCNames = [];
@@ -15,6 +16,7 @@ FuMS_HCIDs set [0,0]; // set the 1st slot to be the actual server's ID.
 FuMS_HCNames set [0, "SERVER"];
 FuMS_AdminListofMissions = []; //Full list of all missions on the server. [themeIndex, themeName, missionName] format.
 FuMS_isStable = true; // set to false in LoadCommonData if critical errors are found.
+
 FuMS_THEMEDATA = []; // Array containing data from \'themename'\ThemeData.sqf
 FuMS_LOOTDATA = [];  // Array containing data from \'themename'\LootData.sqf
 FuMS_SOLDIERDATA = []; // Array containing data from \'themename'\SoldierData.sqf    

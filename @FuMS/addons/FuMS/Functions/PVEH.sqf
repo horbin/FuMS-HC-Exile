@@ -6,6 +6,7 @@
 FuMS_SendExileMessage = compile preprocessFileLineNumbers "\FuMS\Functions\SendExileMessage.sqf";
 FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectUpdate.sqf";
 
+_usingExile = true;
 // NOTE: This may break if multiple HC's are in use. Or it will use the last HC that connects as the source for spawning playerwatch missions
 "FuMS_StartPlayerEncounter" addPublicVariableEventHandler
 {
@@ -15,7 +16,7 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
 		_playerID = owner _player;
 		FuMS_StartPlayerEncounterHC = [_player, _playerID];
 		FuMS_HC_SlotNumber publicVariableClient "FuMS_StartPlayerEncounterHC";
-		//diag_log format ["<FuMS> PVEH: %1:%2 starting a personal mission",_player, _playerID];
+		diag_log format ["<FuMS> PVEH: %1:%2 starting a personal mission",_player, _playerID];
 	};
 };
 
@@ -42,9 +43,14 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
 {
     _data =    _this select 1; // _data is an array of ["FactionName",amount] pairs.    
     _factionPairs = _data select 0;
-     diag_log format ["<FuMS> PVEH PayPlayer: _data: %1",_data];
     _player = _data select 1;
     _victim = _data select 2;
+	_debug = false;
+	
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> PVEH PayPlayer: _data: %1",_data];
+	};				
     
     _rescue = false;
     if (_player == _victim) then {_rescue=true;};
@@ -83,14 +89,17 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
                     {
                         if (_x != _player) then
                         {
-                            _points = [];
-                            _points pushBack ["GROUP RESPECT", _amount];
-                            _playerScore = _x getVariable ["ExileScore",0];
-                            _playerScore = _playerScore + _amount;
-                            _x setVariable ["ExileScore", _playerScore];
-                            format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
-                            [_x, "showFragRequest", [_points] ] call FuMS_sendExileMessage;                            
-                            _x call ExileServer_object_player_sendStatsUpdate;
+                            if (_usingExile) then
+							{
+								_points = [];
+								_points pushBack ["GROUP RESPECT", _amount];
+								_playerScore = _x getVariable ["ExileScore",0];
+								_playerScore = _playerScore + _amount;
+								_x setVariable ["ExileScore", _playerScore];
+								format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
+								[_x, "showFragRequest", [_points] ] call FuMS_sendExileMessage;                            
+								_x call ExileServer_object_player_sendStatsUpdate;
+							};
                         };
                     }foreach (units (group _player));
                 };             
@@ -100,14 +109,19 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
                 if (_rescue) then
                 {
                     {
-                        _points = [];
-                        _points pushBack ["RESCUE",_amount];
-                        _playerScore = _x getVariable ["ExileScore",0];
-                        _playerScore = _playerScore + _amount;
-                        _x setVariable ["ExileScore", _playerScore];
-                        format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
-                        [_x, "showFragRequest", [_points]] call FuMS_sendExileMessage;
-                        _x call ExileServer_object_player_sendStatsUpdate;
+						if (_usingExile) then
+						{
+							_points = [];
+							_points pushBack ["RESCUE",_amount];
+							_playerScore = _x getVariable ["ExileScore",0];
+							_playerScore = _playerScore + _amount;
+							_x setVariable ["ExileScore", _playerScore];
+							
+							
+							format["setAccountScore:%1:%2", _playerScore,GetPlayerUID _x] call ExileServer_system_database_query_fireAndForget;
+							[_x, "showFragRequest", [_points]] call FuMS_sendExileMessage;
+							_x call ExileServer_object_player_sendStatsUpdate;
+						};
                     }foreach (units (group _player));
                 };
             };
@@ -132,7 +146,11 @@ FuMS_RespectUpdate = compile preprocessFileLineNumbers "\FuMS\Functions\RespectU
     _sender = _data select 1;
     _receiver = _data select 2;
     _msg = _data select 3;
-    diag_log format ["<FuMS> PVEH: Msg passing: %1",_data];
+	_debug = false;
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> PVEH: Msg passing: %1",_data];
+    };
     if ( (format ["%1",_receiver select 0]) == "ALL") exitWith { publicVariable "FuMS_Message";};
     {
         (owner _x) publicVariableClient "FuMS_Message";
@@ -249,6 +267,7 @@ FuMS_BuildVehicle_Server =
 			};
             //diag_log format ["###EH:GetIn: HCTEMP = %1", _value];
             _vehobj setVariable ["FuMS_HCTEMP", "PLAYER", true];
+            _vehobj setVariable ["FuMS_Taken", true, true];			
         };       
     }];   
 
@@ -272,12 +291,12 @@ FuMS_RadioChatter_Server =
     }foreach _receivers; 
 };
 
-/*
+
 "FuMS_RADIOCHATTER_Distro" addPublicVariableEventHandler
 {
     [_this select 1] spawn FuMS_RadioChatter_Server;
 };
-*/
+
 
 FuMS_HeartMonitor = compile preprocessFileLineNumbers "\FuMS\Functions\HeartMonitor.sqf";
 FuMS_InitToken = true;

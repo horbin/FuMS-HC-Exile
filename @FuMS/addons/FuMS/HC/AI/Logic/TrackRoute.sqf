@@ -44,102 +44,105 @@ if (_returntoBase) then
 {
     private ["_loc"];
     //remove all waypoints the group currently may contain.
-//    _oldwps = waypoints _group;
-//    {
-//        deleteWaypoint _x;
-//    }foreach _oldwps;
+	//_oldwps = waypoints _group;
+	//{
+	//	deleteWaypoint _x;
+	//}foreach _oldwps;
     
-  // identify type of destination
+	// identify type of destination
     _loc = [_actionLoc, _x] call FuMS_fnc_HC_MsnCtrl_Util_XPos;
-  if (count _loc > 1) then
-  {  
-      _wp = [_group, _loc, 0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
-      // set mode and speed for each waypoint.
-      _wp SetWaypointType "MOVE";
-      _wp SetWaypointSpeed _speed;
-      _wp SetWaypointBehaviour _behaviour;
-      _wp SetWaypointCompletionRadius _compRadius;
-       _wp setWaypointBehaviour "COMBAT";
-      // if roadsOnly, force travel behaviour
-      if (_roadsOnly) then {_wp SetWaypointBehaviour "SAFE";};
-  };
- }foreach _destinations; 
+	if (count _loc > 1) then
+	{  
+		_wp = [_group, _loc, 0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
+		// set mode and speed for each waypoint.
+		_wp SetWaypointType "MOVE";
+		_wp SetWaypointSpeed _speed;
+		_wp SetWaypointBehaviour _behaviour;
+		_wp SetWaypointCompletionRadius _compRadius;
+		_wp setWaypointBehaviour "COMBAT";
+		// if roadsOnly, force travel behaviour
+		if (_roadsOnly) then 
+		{
+			_wp SetWaypointBehaviour "SAFE";
+		};
+	};
+}foreach _destinations; 
  
  
  
- if (_returnToBase) then  // travel back to base
- {
-     _wp = [_group, (getPos (leader _group)),0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
-     // set mode and speed for each waypoint.
-     _wp SetWaypointSpeed _speed;
-     _wp SetWaypointBehaviour _behaviour;
-     // if roadsOnly, force travel behaviour
-     if (_roadsOnly) then {_wp SetWaypointBehaviour "SAFE";};
-     _wp = [_group, (getWPPos [_group, 1]),0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
- };
+if (_returnToBase) then  // travel back to base
+{
+    _wp = [_group, (getPos (leader _group)),0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
+    // set mode and speed for each waypoint.
+    _wp SetWaypointSpeed _speed;
+    _wp SetWaypointBehaviour _behaviour;
+    // if roadsOnly, force travel behaviour
+    if (_roadsOnly) then {_wp SetWaypointBehaviour "SAFE";};
+    _wp = [_group, (getWPPos [_group, 1]),0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
+};
 
 sleep 10;
 // wait 10 seconds to ensure group has been fully formed and inserted into appropriate vehicles.
 // remaining functionality is not time critical!
  // ASSERT: below here all AI in _group are in a vehicle, and _group will receive no new members! (ie as crewman in SpawnVehicle)
- if (_despawn) then
- {
-     {
-         [_x, _wp] spawn
-         {
-             private ["_unit","_wp","_lastWpIndex","_curWpIndex"];
-             _unit = _this select 0;
-             _wp = _this select 1;
-             _lastWpIndex = _wp select 1;     
-             _curWpIndex = currentWaypoint group _unit;
-             
-             while {_lastWpIndex > _curWpIndex and alive _unit} do
-             { 
-                // diag_log format ["..PatrolRoute:despawn:%3 _lastWp:%1  _curWp:%2",_lastWpIndex, _curWpIndex,_unit];
-                 sleep 15;
-                 _curWpIndex = currentWaypoint group _unit;  
-             };
-             // last waypoint is active, now have to wait until complete.
-             /*
-             while {_lastWpIndex == _curWpIndex and alive _unit} do
-             {
-                 sleep 15;
-                 _curWpIndex = currentWaypoint group _unit;   
-                diag_log format ["..PatrolRoute:despawn:%3  _lastWp:%1  _curWp:%2 WAITING for last to complete.",_lastWpIndex, _curWpIndex,_unit];
-             };
-             // last waypoint has completed. Delete AI.
-             */
-          //   diag_log format ["..PatrolRoute:despawn:%1 last waypoint completed. Performing cleanup",_unit];
-             if (driver (vehicle _unit) == _unit and alive _unit)then // unit is the driver
-             { 
-                 // get list of all units in the vehicle and delete them.
-                 {
-                     if (alive _x) then {deleteVehicle _x;};
-                 }foreach crew (vehicle _unit);
-                 deleteVehicle (vehicle _unit);
-             };
-             if (alive _unit) then {deleteVehicle _unit;             };
-         };
-     }foreach units _group;
- }else  // if not despawning, then cycle active waypoints.
- {
-     _wp SetWaypointType "CYCLE"; 
- };
+if (_despawn) then
+{
+    {
+        [_x, _wp] spawn
+        {
+            private ["_unit","_wp","_lastWpIndex","_curWpIndex"];
+            _unit = _this select 0;
+            _wp = _this select 1;
+            _lastWpIndex = _wp select 1;     
+            _curWpIndex = currentWaypoint group _unit;
+            
+            while {_lastWpIndex > _curWpIndex and alive _unit} do
+            { 
+               // diag_log format ["..PatrolRoute:despawn:%3 _lastWp:%1  _curWp:%2",_lastWpIndex, _curWpIndex,_unit];
+                sleep 15;
+                _curWpIndex = currentWaypoint group _unit;  
+            };
+            // last waypoint is active, now have to wait until complete.
+            /*
+            while {_lastWpIndex == _curWpIndex and alive _unit} do
+            {
+                sleep 15;
+                _curWpIndex = currentWaypoint group _unit;   
+               diag_log format ["..PatrolRoute:despawn:%3  _lastWp:%1  _curWp:%2 WAITING for last to complete.",_lastWpIndex, _curWpIndex,_unit];
+            };
+            // last waypoint has completed. Delete AI.
+            */
+         //   diag_log format ["..PatrolRoute:despawn:%1 last waypoint completed. Performing cleanup",_unit];
+            if (driver (vehicle _unit) == _unit and alive _unit)then // unit is the driver
+            { 
+                // get list of all units in the vehicle and delete them.
+                {
+                    if (alive _x) then {deleteVehicle _x;};
+                }foreach crew (vehicle _unit);
+                deleteVehicle (vehicle _unit);
+            };
+            if (alive _unit) then {deleteVehicle _unit;             };
+        };
+    }foreach units _group;
+}else  // if not despawning, then cycle active waypoints.
+{
+    _wp SetWaypointType "CYCLE"; 
+};
 
- /*
- // This is set up in SpawnVehicle for each driver.
+/*
+// This is set up in SpawnVehicle for each driver.
 // spawn stuck code.  
- if (   ! (( vehicle (leader _group) ) isKindOf "Air") ) then
- {
-     {
-         if (_x == driver(vehicle _x)) then
-         {
-             //[_x] execVM "HC\Encounters\AI_Logic\VehStuck.sqf";
-			 [_x] spawn FuMS_fnc_HC_AI_Logic_VehStuck;
-           //  diag_log format ["##PatrolRoute: VehStuck.sqf started for %1 in %2",_x, vehicle _x];
-         };
-     }foreach units _group;
- };
+if (   ! (( vehicle (leader _group) ) isKindOf "Air") ) then
+{
+    {
+        if (_x == driver(vehicle _x)) then
+        {
+            //[_x] execVM "HC\Encounters\AI_Logic\VehStuck.sqf";
+		 [_x] spawn FuMS_fnc_HC_AI_Logic_VehStuck;
+          //  diag_log format ["##PatrolRoute: VehStuck.sqf started for %1 in %2",_x, vehicle _x];
+        };
+    }foreach units _group;
+};
 */
 if (false) then
  {

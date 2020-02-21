@@ -144,11 +144,11 @@
 			],
 			[                 
 				// Drivers                                                          # and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
 			],
 			// Troops : These are distributed across all vehicles in this convoy.                                                         
 			[    
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Hunter"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Hunter_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
 
 			]
 		] 

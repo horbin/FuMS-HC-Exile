@@ -77,14 +77,14 @@
     // These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
  [         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
    //[  "B_SDV_01_F",                    [0,10],[5,"Diver"],        "Truck01"      ], 
-     [  "B_Boat_Armed_01_minigun_F"           ,[50,0],[3,"Rifleman"],     "None"      ] 
+     [  "B_Boat_Armed_01_minigun_F"           ,[50,0],[3,"Rifleman_E"],     "None"      ] 
    //  [  FuMS_H20_RubberDucks          ,[0,0], [3,"Rifleman"],     "Truck01"      ]
   
                  // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
     ],[  
     // Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[0,0],[0,0],[50]   ]]
+   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[50]   ]]
   ],[   
      // Troops : These are distributed across all vehicles in this convoy. These lines are identical to the lines in the group section.
      //  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options

@@ -1,8 +1,10 @@
 // ThemeData.sqf
+// TheOneWhoKnocks
+// 
+// Original credits
 // Horbin
 // 4/21/15
-// Updated 5/1/19 by TheOneWhoKnocks
-// Added in lootcrate drops, 
+// Added in lootcrate drops, major updates for multiple types of crates
 // Inputs: Theme index into which to store this data.
 // Outputs: none
 //  Options , Mission List, Points List
@@ -25,8 +27,10 @@ _themeData =
     [  	//***** Mission List *****
 		// List of Missions. 
         // The below missions MUST be in the same folder as this file!            
-		["DayZHeloCrash"], ["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],["DayZHeloCrash"],
-		["Lootcrates"], ["Lootcrates"], ["Lootcrates"], ["Lootcrates"], ["Lootcrates"], ["Lootcrates"] 
+		["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],
+		["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],
+		["LootcratesW"], ["LootcratesW"], ["LootcratesW"], 
+		["LootcratesE"], ["LootcratesE"], ["LootcratesE"] 
 		 
     ],
     [   //	***** Locations ***** !! 2D coords ONLY !!

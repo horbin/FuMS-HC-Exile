@@ -100,6 +100,16 @@ while {true} do
             {
                 
             };
+            case "TAKEVEHICLE":
+            {
+                // ["vehicle number",distane]
+             //   _foundTrigger = true;
+                if (count _triggerDef != 3) exitWith {_abort=true;FuMS_FileError = format ["%1:%2 should be [""%2"", ""List of Object Index"",distance in m ]. Found %3",_msg,_trigName,_triggerDef];};
+                if (TypeName (_triggerDef select 1) != "STRING") exitwith {_abort=true;FuMS_FileError = format ["%1:%2 List of Object Index should be a string of ALL, 1, 1-4, or 2,3,4, etc. Found %3",_msg,_trigName,_triggerDef select 1];};							
+                if (TypeName (_triggerDef select 2) != "SCALAR") exitwith {_abort=true;FuMS_FileError = format ["%1:%2 Distance should be a number. Found %3",_msg,_trigName,_triggerDef select 2];};			
+                
+            };
+			
             case "DMGBUILDINGS";
             case "DMGVEHICLES":
             {

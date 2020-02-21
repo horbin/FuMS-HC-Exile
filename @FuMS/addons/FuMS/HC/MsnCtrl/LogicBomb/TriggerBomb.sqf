@@ -182,6 +182,43 @@ _triggerList = _triggerList + [ ["OK", ["squirrel!"]]         ];
             _params = [_msnTag, _trigName, "VEHICLES"]; 
             [_params, _msnTag,"DMGOBJECTS",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;                                                 
         };    
+        case "TAKEVEHICLE":
+        {
+            private ["_vehNum","_amount","_list","_vehicles","_params","_total","_obj"];
+            _vehNum = _trigType select 1;
+            _distance = _trigType select 2;
+            _vehicles = missionNamespace getVariable (format["%1_Vehicles", _msnTag]);
+			
+            _list = [_vehNum, count _vehicles] call FuMS_fnc_HC_MsnCtrl_Util_GetIndexers;
+
+
+			_obj = _vehicles select (_list select 0);
+			_obj setVariable ["FuMS_Taken", false, true];
+			_obj setVariable ["FuMS_Homepos", getpos _obj, true];
+			diag_log format ["<FuMS> TriggerBomb:TakeVehicle: Vehicle#%1 for %2_%3 set with distance of %4",_vehNum,_msnTag,_trigName,_distance];
+			_params = [_msnTag, _trigName, _obj, _distance]; 
+			[_params, _msnTag,"CHECKVEHICLE",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;                                                 
+
+
+			 
+            //_list = [_vehNum, count _vehicles] call FuMS_fnc_HC_MsnCtrl_Util_GetIndexers;
+			/*
+			diag_log format ["TriggerBomb: TakeVehicle: _vehNum:%1 _distance:%2",_vehNum,_distance];
+			
+			
+             _total = count _list;
+            missionNamespace setVariable [format ["%1_%2_ObjectTotal",_msnTag,_trigName], _total];
+            {
+                _obj = _vehicles select _x;
+                _obj setVariable ["FuMS_Taken", false, true];
+                _obj setVariable ["FuMS_Homepos", getpos _obj, true];
+                diag_log format ["<FuMS> TriggerBomb:TakeVehicle: Vehicle#%1 for %2_%3 set at distance of %4",_x,_msnTag,_trigName,_distance];
+            }foreach _list;
+            _params = [_msnTag, _trigName, _distance]; 
+            [_params, _msnTag,"CHECKVEHICLE",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;                                                 
+		*/
+		
+		};    
          case "CAPTIVE":
         // ["CAPTIVE", numAI]
         {

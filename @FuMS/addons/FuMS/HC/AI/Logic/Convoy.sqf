@@ -16,13 +16,19 @@ _roadsOnly = _patternOptions select 2;
 _despawn = _patternOptions select 3;
 _convoyType = _patternOptions select 4;
 _xfill = false;
+_debug = false;
+
 if (isNil "_convoyType") then {_convoyType = "Insert";};
 switch (_convoyType) do
 {
     case "XFILL" : {_xfill = true;};
 };
+if (_debug) then
+{
+	diag_log format ["AI_LOGIC:: Convoy : Traveling to %1",_destination];
+	diag_log format ["AI_LOGIC:: Convoy : _patternOptions %1",_patternOptions];
+};
 
-//diag_log format ["AI_LOGIC:: Convoy : Traveling to %1",_destination];
 _wp = [_group, _destination, 0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
 _wp setWaypointSpeed _speed;
 _wp setWaypointFormation "COLUMN";
@@ -58,7 +64,10 @@ else
     if (_returnToBase) then
     {
         // Sets waypoint to current position of the group leader! (should be their spawn location)
-    //    diag_log format ["Convoy: Setting Return to Base: %1",getPos (leader _group)];
+		if (_debug) then
+		{
+			diag_log format ["Convoy: Setting Return to Base: %1",getPos (leader _group)];
+		};
         _wp = [_group, getPos (leader _group) , 0] call FuMS_fnc_HC_AI_Logic_AddWaypoint;
         _wp setWaypointType "MOVE";
         _wp setWaypointSpeed "NORMAL";
@@ -68,7 +77,7 @@ else
         // add boxpatrol waypoints.
         //INPUTS: Group, centroid, radius (meters), rotation, closeout
        [_group, _destination, 150, 0, true] call FuMS_fnc_HC_AI_Logic_BoxPatrol;         
-    }
+    };
 };
 // set up special behaviour for all drivers in this group!
 {           
@@ -83,23 +92,40 @@ else
             _homePos = getPos _unit;
             _hasLeftHome = 0;
             _homePos set [2,0];
+			_debug = false;
             while {alive _unit} do
             {   
                 sleep 15;
                 _curPos = getPos _unit;
                 _curPos set [2,0];
-                if (_hasLeftHome > 0 ) then
+				if (_debug) then
+				{
+					diag_log format ["##Convoy : %1 status: _curPos:%2 | _hasLeftHome:%3 | _homePos:%4 | distance:%5 | time:%6",_unit,_curPos,_hasLeftHome,_homePos, (_curPos distance _homePos), time];
+                };
+				if (_hasLeftHome > 0 ) then
                 {
-                    if (_curPos distance _homePos < 100) then 
+					if (_debug) then
+					{
+						diag_log format ["##Convoy : %1 status: Has left",_unit];
+                    };
+					if (_curPos distance _homePos < 100) then 
                     {
-                        // driver is close to home!
+						if (_debug) then
+						{
+							diag_log format ["##Convoy : %1 status: Distance Close",_unit];
+                        };
+						// driver is close to home!
                         if ( time > (_hasLeftHome +120)  )then // and had been away for atleast 2 minutes
                         {         
                             private ["_veh"];
-                    //        diag_log format ["##Convoy : %1 has returned home. Deleting them!",_unit];
-                            
                             _veh = vehicle _unit;
-                       //     diag_log format ["##Convoy: Deleting %1",units _veh];
+
+							if (_debug) then
+							{
+								diag_log format ["##Convoy : %1 has returned home. Deleting them!",_unit];
+								diag_log format ["##Convoy: Deleting %1",units _veh];
+                            };
+							
                             {
                                 deleteVehicle _x;
                             }foreach assignedCargo _veh;
