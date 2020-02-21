@@ -1,43 +1,41 @@
-#Fulcrum Mission System (FuMS)
+# Fulcrum Mission System (FuMS)
 
 ------------------------------------------------------------------------------------
----- Read the information in the Docs folder, or you are missing out!
+###### Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
 
 v0.50 (DEV)
 ****
 Developers Edition
+###### This is a rough WIP post to keep the content backed up.  It works but a lot has been turned off for now while I test and develop
+###### This will be completed soon and all functions turned back on
 ****
-I suck at updating the documntation but I do comment the code pretty heavily, and the missions do a pretty good job of showing you what options there are. 
+
+* I suck at updating the documentation but I do comment the code pretty heavily, and the missions do a pretty good job of showing you what options there are. *
 
 System Changes:
 - ALIAS anomolies mission spawner working (Random anomoly will spawn looking like small bandit camp until the player gets close enough...)
--- Anomolies supported:
---- Farty
---- Slimer
---- Suicide Bombers
---- Sparky
---- Flamer
---- 
-
+	- Anomolies supported:
+	- Farty
+	- Slimer
+	- Suicide Bombers
+	- Sparky
+	- Flamer
 
 - New Dynamic Mission Spawning system implemented for the following themes: (Lighter load on CPU for inactive missions, more immersion programmed in with counter attacks and reinforcements)
--- TownAttack - Now can be of different types of initial soldiers (West, East, Independent) that are guarding a town and as you approach, it comes under attack.
--- StaticSpawns - Reworked to be more efficient in CPU time and more fun to find
--- VehicleHijacks - Updated version of DynamicVehicles missions type missions.  Get in, steal a vehcile, kill anyone who tries to stop you.
-
-
+	- TownAttack - Now can be of different types of initial soldiers (West, East, Independent) that are guarding a town and as you approach, it comes under attack.
+	- StaticSpawns - Reworked to be more efficient in CPU time and more fun to find
+	- VehicleHijacks - Updated version of DynamicVehicles missions type missions.  Get in, steal a vehcile, kill anyone who tries to stop you.
 
 - Added new AI Logic
--- Air Evac (AI can call in a transport helicopter to evacuate remaining soldiers.  Armed transport heli will come in and evac any units in area)
--- SADRoute (FIND RIGHT WORDS AND DESCRIPTION) 
+	- Air Evac (AI can call in a transport helicopter to evacuate remaining soldiers.  Armed transport heli will come in and evac any units in area)
+	- SADRoute (FIND RIGHT WORDS AND DESCRIPTION) 
 
 - Custom magazine spawns: standard mag, random mag (of all types), and forbidden mags as options.  - ADD CODE FOR THIS BEFORE RELEASE	
 
-
 - Enabled basic radio chatter with audio from mission events (re-enforcements, counter attacks will gerate radio squak and message on screen)
--- Audio can be disabled in config files
--- Entire system can be disabled in config files
+	- Audio can be disabled in config files
+	- Entire system can be disabled in config files
 
 Code changes:
 - Implemented CAMS (Common Asset Management System) for easy integraion with custom content
@@ -88,7 +86,6 @@ STATIC TANOA MISSIONS
 	- Comms Alpha 				([CiC]red_ned)
 	- Georgetown 				([CiC]red_ned)
 	- Hotel Invasion 			([CiC]red_ned)
-
 
 
 v0.420
@@ -164,22 +161,19 @@ These missions help document the new features and options for mission spawning s
 
 
 
+v0.41 (Bug Squashin') 
+**** 
+- Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly  
+- Modified Convoy to spawn in Cities or Capitols as opposed to randomly, which ended up leaving trucks in the middle of forests on small or dense maps  
+- Modified convoy to use Cities as waypoints instead of villages which are often in densely forested areas  
+- Updated all mission themes to make them easier to read and customize  
+- Added announcements to missions spawned on players to give hints of trouble. (Might spawn on all players???) 
+- Corrected spawn points of Roadblock_pato theme so AI doesn’t get stuck  
+- Minor adjustments to several default themes  
+- Disabled zombie missions on default load (still supported,  but not ON by default)  
+- Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add)  
+- Removed specific weapons and rounds from some missions, trying to use FuMS groups for all missions 
  
-=======
-v0.41 (Bug Squashin')
-****
-- Repaired "Bodycount" trigger to function properly, now Convoy and TownInvasion missions complete properly 
-- Modified Convoy to spawn in Cities or Capitols as opposed to randomly, which ended up leaving trucks in the middle of forests on small or dense maps 
-- Modified convoy to use Cities as waypoints instead of villages which are often in densely forested areas 
-- Updated all mission themes to make them easier to read and customize 
-- Added announcements to missions spawned on players to give hints of trouble. (Might spawn on all players???)
-- Corrected spawn points of Roadblock_pato theme so AI doesn’t get stuck 
-- Minor adjustments to several default themes 
-- Disabled zombie missions on default load (still supported,  but not ON by default) 
-- Changed out road patrol vehicle to Exile Off-road ( not everyone uses UGVs but easy to add) 
-- Removed specific weapons and rounds form some missions, trying to use FuMS groups for all missions
-
-
 v0.4 (The ReLaunch)
 ****
 NOTE TO ADMINS: Some changes to the Themes was neccesary to utilize the Exile Toast system.  Previously the mission annoucement had
