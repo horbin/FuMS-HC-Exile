@@ -1,6 +1,7 @@
 //LoadCommonData.sqf
 // Horbin
 // 2/17/2020
+// Rewritten into standalone system 2/17/2020
 // TheOneWhoKnocks
 // Inputs : None
 // Loads FuMS core data
