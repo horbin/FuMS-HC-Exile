@@ -1,4 +1,4 @@
-// Help_Helo.sqf
+// Help_Helo_W.sqf
 // TheOneWhoKnocks
 // 3/15/19
 // Mission designed to be launched in response to a call for reinforcements.
@@ -9,12 +9,12 @@
 // Be cautious when editing data.
 
 [
-	["airReinforcments", 200], 				// Mission Title NOSPACES!, and encounter radius
+	["HelpHelo_W", 200], 				// Mission Title NOSPACES!, and encounter radius
 											// Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
-	["ParaDrop Troops","mil_dot","ELLIPSE","ColorGreen","FDiagonal",200],    
+	["ParaDrop Troops W","mil_dot","ELLIPSE","ColorGreen","FDiagonal",200],    
 	[  
 		[   								// NOTIFICATION Messages and Map display Control.
-			true, "ALL", 200, 				// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL", 500, 				// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			false, 							// Notify players via global message
 			false,							// Show encounter area on the map
 			10,    							// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -23,8 +23,8 @@
 		],
 											// Spawn Mission Message
 		[
-			"REINFORCEMENTS!", 							// title line, do not remove these!
-			"You hear over the radio that the resistance has called in... The A Team!" //description/radio message.
+			"BLUEFOR Requesting Reinforcements!", 							// title line, do not remove these!
+			"You hear over the radio that BLUEFOR has called in paratroopers!" //description/radio message.
 		],  
 											// Mission Success Message
 		[
@@ -46,9 +46,6 @@
   
 	],
 	[ 										// AI GROUPS. Only options marked 'Def:' implemented.
-											//  	[["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1,"Sniper"],[2,"Rifleman"],[2,"Hunter"]  ],   ["BoxPatrol",[250,0],[0,0],[75]   ]]
-											//   	[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]                                         ],   ["Sentry",[-20,10],[0,0],[70] ]],
-											//		[["RESISTANCE","COMBAT","RED","LINE"],   [  [2,"Hunter"]                                              ],   ["Guard",[6,6],[0,0],[30]     ]]
 	],
 											// Vehicles
 	[
@@ -56,16 +53,17 @@
 			[         						// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "Truck01"      ], 
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
-				[  FuMS_Heli_Troops, [0,2000], [1,"Paratrooper"],     "None"      ]
+				[  ImFX_Heli_Troops, [0,2000], 			[1,"Pilot_W"],     "None"      ]
 			],
 			[  
 											// PILOTS: # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1, "Pilot"]  ],   ["ParaDrop",[0,2000],[0,0],["Full", 100, true,true  ]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],	[	[1, "Pilot_W"]  ],   ["ParaDrop",[0,2000],[0,0],["Full", 100, true,true  ]   ]]
 			],
 			[   
 											// TROOPS : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
 											//  Troop behaviour and side options                    # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["RESISTANCE","COMBAT","RED","COLUMN"],[[1,"Parasniper"],[2,"Paratrooper"],[2,"SMG"]],["BoxPatrol",[0,2000],[0,0],[100]]]
+				//[["EAST","COMBAT","RED","COLUMN"],	[	[1,"Sniper_W"],[2,"Paratrooper_W"],[1,"SMG_W"],[1,"LMG_W"]],["BoxPatrol",[0,2000],[0,0],[100]]]
+				[["EAST","COMBAT","RED","COLUMN"],	[	[1,"Sniper_W"]],["Towerguard",[0,2000],[0,0],[300,"ANY"]]]
 											// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 			]
 		]

@@ -4,7 +4,7 @@
 // Spawns in an OPFOR recovery squad to transport remaining OPFOR out of combat zone
 
 [
-	["EvacTown", 200], // Mission Title NOSPACES!, and encounter radius
+	["EvacTownM", 200], // Mission Title NOSPACES!, and encounter radius
 	["Evac","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
@@ -83,17 +83,7 @@
 			[   
 			]
 		],
-		[  // Convoy #3  East
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[600,0],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[600,0],[50,0],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		],
-		[  // Convoy #4    West
+		[  // Convoy #3    West
 			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 				[  FuMS_Mil_ArmedOffroads,[-600,0],[1,"Rifleman"],        "Truck01"      ] 
 			],
