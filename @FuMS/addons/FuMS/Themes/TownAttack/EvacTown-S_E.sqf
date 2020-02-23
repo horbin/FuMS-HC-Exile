@@ -1,24 +1,24 @@
-// EvacTown.sqf
+// EvacTown-S_E.sqf
 // TheOneWhoKnocks
 // 12/28/19
 // Spawns in an OPFOR recovery squad to transport remaining OPFOR out of combat zone
 
 [
-	["EvacTown", 200], // Mission Title NOSPACES!, and encounter radius
-	["Evac","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["EvacTown-S_E", 200], // Mission Title NOSPACES!, and encounter radius
+	["EvacTown-S_E","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
-		true, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-		true, 			// Notify players via global message
+		true, "ALL",500, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+		false, 			// Notify players via global message
 		false,			// Show encounter area on the map
 		0,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 		0       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 						//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],		
 		[	// Spawn Mission Message
-			"Town Raid Gang is Exfiltrating",
-			"The gang is calling in their buddies to get them out of there."
+			"OPFOR IS Exfiltrating",
+			"OPFOR calling in their buddies to get them out of there."
 		],	
 		[	// Mission Success Message
 			"Mission Success",
@@ -63,46 +63,17 @@
 
 		// Vehicles
 	[
-		[ 	// Convoy #1    South
+		[ 	// Convoy #1    West
 			[ // Vehicle          Offset  | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[ FuMS_Mil_UnarmedOffroads,[0,-600],[1,"Rifleman"],        "Truck01"      ] 
+				[ CAMS_Mil_Transport_E,	[-600,0],	[1,"Rifleman_E"],        "Truck01"      ],
+				[ CAMS_Mil_ArmedOffroad_E,	[-650,0],		[1,"Rifleman_E"],        "Truck01"      ] 				
 			],
 			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,-600],[0,0],["NORMAL",true,true, true, "XFILL"]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Driver_E"]  ],   ["Convoy",[-550,0],[0,0],["NORMAL",true,true, true, "XFILL"]   ]]
 			],
 			[   
 			]
-		],
-		[  	// Convoy #2    North
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,600],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,600],[0,50],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		],
-		[  // Convoy #3  East
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[600,0],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[600,0],[50,0],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		],
-		[  // Convoy #4    West
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_ArmedOffroads,[-600,0],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[-600,0],[50,50],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		]  
+		]
 	],
 	[
 		[

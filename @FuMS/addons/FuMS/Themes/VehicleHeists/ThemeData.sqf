@@ -7,14 +7,14 @@
 _themeData =
 [
     [  // *******Options*********
-        "DynamicVehicles", 	// Needs to match the folder name!
-        1,  				// Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+        "VehicleHeists", 	// Needs to match the folder name!
+        5,  				// Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
 							// 4=Static: All missions in 'Mission List' will be created at server start!
 							// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
 							// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
 							//  option 5 will let the mission only spawn once per 6 hours (ie server reset)
         300, 				// Respawn delay in seconds
-		false, 				// use Global Loot Data (GlobalLootData.sqf)
+		true, 				// use Global Loot Data (GlobalLootData.sqf)
 		true,  				// use Global Soldier Data file (GlobalSoldierData.sqf)
 		true, 				// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
         1,  				// Player minimum to launch missions from this theme.
@@ -22,19 +22,12 @@ _themeData =
        
     ],
     [  //***** Mission List *****
-    // List of Missions. 
+		// List of Missions. 
         // The below missions MUST be in the same folder as this file! 
-		["FuMS_paul_littlebird_mission"],
-		["FuMS_nedhuey_mission"],
-		["FuMS_paul_antiair"],
-		["FuMS_nedural_mission"],
-		["FuMS_nedstrider_mission"],
-		["FuMS_nedoffroad_mission"],
-		["FuMS_nedifrit_mission"],
-		["FuMS_nedhunter_mission"],
-		["FuMS_nedhatchback_mission"],
-		["FuMS_nedcar_mission"]		
-		
+		["ArmedOffroadSteal"],
+		["CarSteal"],
+		["OffroadSteal"],
+		["LittleBirdSteal"]
     ],
     [   //***** Locations ***** !! 2D coords ONLY !!
 	    //Location format ["keyword"] or [[x,y],"optional name"] or [x,y]

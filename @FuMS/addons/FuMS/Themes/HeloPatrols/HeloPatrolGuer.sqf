@@ -1,7 +1,7 @@
-// HeliPatrolE.sqf
+// HeliPatrolG.sqf
 // TheOneWhoKnocks
 // 
-// Spawns (EAST) heli patrol that flies around untli shot down.
+// Spawns (GUER) heli patrol that flies around until shot down.
 // Be cautious when editing data.
 
 // NOTE: For all Offset values, if three dimensions are used, the point will be treated as an absolute point on the game map.
@@ -14,18 +14,18 @@
 	[
 							//------------------------------------------------------------------------------------
 							//-----Mission Area Setup-----
-		"HeloPatrolEast",  	// Mission Title NOSPACES!
+		"HeloPatrolGuer",  	// Mission Title NOSPACES!
 		200                	// encounter radius
 	],
 	[ 
 							//------------------------------------------------------------------------------------
 							//-----Notification Configuration-----
 							//--Map Marker Config.
-		"Helo Patrol",  	// Name, set to "" for nothing
+		"Helo PatrolG",  	// Name, set to "" for nothing
 		"mil_dot", 			// icon type:                                     https://community.bistudio.com/wiki/cfgMarkers for other options.
 							// mil_triangle, mil_objective, mil_box, group1, loc_Power, etc.
 		"ELLIPSE", 			// "RECTANGLE". do not use "ICON", two markers are used in making each mission indicator.
-		"ColorRed",			//                                                  https://community.bistudio.com/wiki/setMarkerColor
+		"ColorGreen",			//                                                  https://community.bistudio.com/wiki/setMarkerColor
 		"FDiagonal",		// Cross, Vertical, Horizontal, etc      https://community.bistudio.com/wiki/setMarkerBrush 
        200           		// size of the marker.    
 	],
@@ -44,11 +44,11 @@
 		],
 		[
 			// Mission spawn message, DO NOT Remove these! They can be edited down to "" if desired.
-			"OPFOR Combat Air Patrol launched",  // title line
+			"GUERILLA Combat Air Patrol launched",  // title line
 			"Radio chatter indicates the enemy has launched a heli patrol!" //description/radio message.
 		],
 		[	// Mission Success Message
-			"OPFOR Combat Air Patrol destroyed",  // title line
+			"GUERILLA Combat Air Patrol destroyed",  // title line
 			"Someone knocked down a combat air patrol and the radio is going crazy!"
 		],
 		[	// Mission Failure Message
@@ -92,18 +92,18 @@
 		//Airborne Vehicle Configuration
 		[  // Division #1
 			[ // Vehicle                         Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Heli_Armed_E,		[0,0],		[1,"Rifleman_E"],	"HeliJunk" ],  
-				[  CAMS_Heli_Armed_E,		[0,-100],	[1,"Rifleman_E"],	"HeliJunk" ], 
-				[  CAMS_Heli_Transport_W,	[100,0],	[1,"Rifleman_E"],	"HeliJunk" ]  
+				[  CAMS_Heli_Armed_I,		[0,0],		[1,"Rifleman_I"],	"HeliJunk" ],  
+				[  CAMS_Heli_Armed_I,		[0,-100],	[1,"Rifleman_I"],	"HeliJunk" ], 
+				[  CAMS_Heli_Transport_I,	[100,0],	[1,"Rifleman_I"],	"HeliJunk" ]  
 			],
 			[  
 			// Pilots                              # and type  |      Patrol  |  spawn  | dest | 'Patrol' options                                                                                                RTB, Roads, Despawn, Height
-				[["EAST","COMBAT","RED","COLUMN"],   [[3, "Pilot_E"]],	["TrackRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],false,false,false,100   ]]]
+				[["GUER","COMBAT","RED","COLUMN"],   [[3, "Pilot_I"]],	["TrackRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],false,false,false,100   ]]]
 			],
 			[   
 				// Troops : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
 				//  Troop options               	# and type of Troops     		Patrol logic | spawn | dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper_E"],[1,"Rifleman_E"]],	["PatrolRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages"],true,false,true,100   ]]]
+				[["GUER","COMBAT","RED","COLUMN"],	[[1,"Sniper_I"],[1,"Rifleman_I"]],	["PatrolRoute",[0,0],[0,0],["COMBAT","NORMAL",["Villages"],true,false,true,100   ]]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 			]
 		]
