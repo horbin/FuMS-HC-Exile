@@ -10,12 +10,13 @@
 //AddIt = compile preprocessFileLineNumbers "HC\Encounters\Functions\AddIt.sqf";
 //GetChoice = compile preprocessFileLineNumbers "HC\Encounters\LogicBomb\GetChoice.sqf";
 //AttachMuzzle = compile preprocessFileLineNumbers "HC\Encounters\AI_Logic\AttachMuzzle.sqf";
-private ["_group","_type","_pos","_themeIndex","_unit","_typeFound","_aiName","_gear","_flags","_skills","_types","_i","_priweapon","_soldierData","_secweapon"];
+private ["_group","_type","_pos","_themeIndex","_unit","_typeFound","_aiName","_gear","_flags","_skills","_types","_i","_priweapon","_soldierData","_secweapon","_randomMag"];
 _group = _this select 0;
 _type = toupper (_this select 1);
 _pos = _this select 2;
 _themeIndex = _this select 3;
 
+_randomMag = true;
 _debug = false;
 
 _AImodel = missionNamespace getVariable ["ImFX_AiModel_E",["O_G_Soldier_F"]] select 0;
@@ -137,9 +138,16 @@ _typeFound = false;
                 {
                     _priweapon = _gear select 0;
                     _unit addWeapon _priweapon;
-                    //_mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
+                    _mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
                     _magAll = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines");
-                    _mag = _magAll call BIS_fnc_selectRandom;
+                    
+					if (_randomMag) then
+					{
+						_mag = _magAll call BIS_fnc_selectRandom;
+					} else
+					{
+						//_mag = _magAll select 0;
+					};
 
                     if (_debug) then
 					{
@@ -156,6 +164,13 @@ _typeFound = false;
                         _unit addWeapon _priweapon;
                         _mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
 	                    _magAll = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines");
+						if (_randomMag) then
+						{
+							_mag = _magAll call BIS_fnc_selectRandom;
+						} else
+						{
+							//_mag = _magAll select 0;
+						};
 
 						if (_debug) then
 						{
@@ -176,6 +191,18 @@ _typeFound = false;
                         _secweapon = _gear select 0;
                         _unit addWeapon _secweapon;
                         _mag = getArray (configFile >> "CfgWeapons" >> _secweapon >> "magazines") select 0;
+						//_mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
+						_magAll = getArray (configFile >> "CfgWeapons" >> _secweapon >> "magazines");
+						
+						if (_randomMag) then
+						{
+							_mag = _magAll call BIS_fnc_selectRandom;
+						} else
+						{
+							//_mag = _magAll select 0;
+						};
+						
+						
                         _unit addMagazines [ _mag, FuMS_SoldierMagCount_Pistol];
                         //_unit addMagazine [(_gear select 1),_numPistolMags];
                     }else
@@ -184,7 +211,17 @@ _typeFound = false;
                         {
                             _secweapon= _gear;
                             _unit addWeapon _secweapon;
-                            _mag = getArray (configFile >> "CfgWeapons" >> _secweapon >> "magazines") select 0;
+							_mag = getArray (configFile >> "CfgWeapons" >> _secweapon >> "magazines") select 0;
+							//_mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
+							_magAll = getArray (configFile >> "CfgWeapons" >> _secweapon >> "magazines");
+							
+							if (_randomMag) then
+							{
+								_mag = _magAll call BIS_fnc_selectRandom;
+							} else
+							{
+								_mag = _magAll select 0;
+							};
                             _unit addMagazines [ _mag, FuMS_SoldierMagCount_Pistol];
                         };
                     };   
@@ -348,7 +385,7 @@ _typeFound = false;
         };    
         // All AI, Zombies, and Raptors
         _unit addEventHandler ["killed",{[(_this select 0), (_this select 1)] spawn FuMS_fnc_HC_AI_AIKilled;}];
-		diag_log "SpawnSoldier: %%%%%%%%%%%%%%%%%% Made it %%%%%%%%%%%%%%%";
+		//diag_log "SpawnSoldier: %%%%%%%%%%%%%%%%%% Made it %%%%%%%%%%%%%%%";
 		//_unit addMPEventHandler ["MPKilled", {[_this select 0, _this select 1, _this select 2] call FrSB_fnc_unitKilledSFX;}];//SHINY
 		//_unit addMPEventHandler ["MPHit", {[_this select 0, _this select 1, _this select 2, _this select 3] call FrSB_fnc_unitHitSFX;}];//SHINY
 		

@@ -55,8 +55,8 @@ _scripts =
 				"TowerGuard.sqf",
 				"StaticGunner.sqf",
 				"Captured.sqf"					
-			],
-/*
+			]
+			/*
 			[
 				"RZnD",
 				[
@@ -68,10 +68,10 @@ _scripts =
 					"zBoard.sqf",
 					"zJump.sqf",
 					"zombie.sqf"
-					]
 				]
-            ],
-*/
+			]
+			*/
+		],
 		[
 			"RC",
 			[				

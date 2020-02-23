@@ -63,46 +63,17 @@
 
 		// Vehicles
 	[
-		[ 	// Convoy #1    South
+		[ 	// Convoy #1    West
 			[ // Vehicle          Offset  | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[ FuMS_Mil_UnarmedOffroads,[0,-600],[1,"Rifleman"],        "Truck01"      ] 
+				[ FuMS_Mil_UnarmedOffroads,	[-600,0],	[1,"Rifleman"],        "Truck01"      ],
+				[ FuMS_Mil_ArmedOffroads,	[-650,0],		[1,"Rifleman"],        "Truck01"      ] 				
 			],
 			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,-600],[0,0],["NORMAL",true,true, true, "XFILL"]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Driver"]  ],   ["Convoy",[-550,0],[0,0],["NORMAL",true,true, true, "XFILL"]   ]]
 			],
 			[   
 			]
-		],
-		[  	// Convoy #2    North
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,600],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,600],[0,50],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		],
-		[  // Convoy #3  East
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[600,0],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[600,0],[50,0],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		],
-		[  // Convoy #4    West
-			[ // Vehicle           Offset | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_ArmedOffroads,[-600,0],[1,"Rifleman"],        "Truck01"      ] 
-			],
-			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[-600,0],[50,50],["NORMAL",true,true, true,"XFILL"]   ]]
-			],
-			[   
-			]
-		]  
+		]
 	],
 	[
 		[

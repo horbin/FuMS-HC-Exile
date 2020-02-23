@@ -35,14 +35,16 @@ FuMS_ServerData =
 		//["MissionFX",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		//["SEM",-1], 				// basic old school Arma2 Epoch encounters
-		["TownRaid",-1], 			// random town is raided by 4 truck loads of humans!
+		//["Townraid",-1], 			// random town is raided by 4 truck loads of humans!
+		["TownAttack",-1], 			// random town is raided by 4 truck loads of humans!
 		//["Small",-1],  			// 6 man groups invade a random village
 		//["Aquatic",-1], 			// 3 coastal areas w/ boats and ai   
 		//["Convoy",-1], 			// 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
 		//["Jurassic",-1], 			// creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
 		//["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
-		["DynamicVehicles", -1]		// Missions that spawn vehicles with guards for any map
+		["VehicleHeists", -1]		// Missions that spawn vehicles with guards for any map
+		//["DynamicVehicles", -1]		// Missions that spawn vehicles with guards for any map
 		//["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
 		//["DynamicAISpawns", -1]	// Missions that spawn AI groups with guards for any map
 		//["Altis", -1], 			// Missions specific to Altis ported from Exile.Com

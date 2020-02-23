@@ -1,4 +1,4 @@
-// RaidTown.sqf
+// RaidTown-S.sqf
 // TheOneWhoKnocks
 // 12/28/19
 //
@@ -6,8 +6,8 @@
 // 
 
 [
-	["RaidTown", 200], // Mission Title NOSPACES!, and encounter radius
-	["Town Raid","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["RaidTownS", 200], // Mission Title NOSPACES!, and encounter radius
+	["Town Raid - S","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
@@ -45,11 +45,11 @@
 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [3,"Rifleman"]  ],   	["Buildings",		[0,0],[0,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [3,"Hunter"]  ],   		["Buildings",		[0,0],[0,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman"]  ],   	["Buildings",		[0,0],[0,0],[50]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [20,"CivCombat"]  ],   	["Buildings",		[0,0],[0,0],[100]   ]]
-//		[["RESISTANCE","COMBAT","RED","COLUMN"],  	[  [20,"CivCombat"]  ],   	["Explore",		[0,0],[0,0],[75]   ]]
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [1,"Rifleman"]  ],   	["Buildings",	[0,0],[0,0],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [2,"Hunter"]  ],   		["Buildings",	[0,0],[0,0],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [2,"Pistolman"]  ],   	["Buildings",	[0,0],[0,0],[50]   ]],
+		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [3,"CivCombat"]  ],   	["Buildings",	[0,0],[0,0],[100]  ]],
+		[["RESISTANCE","COMBAT","RED","COLUMN"],  	[  [3,"CivCombat"]  ],   	["Explore",		[0,0],[0,0],[75]   ]]
 
 	],
 
@@ -57,64 +57,34 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,-1000],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[0,-1000],[1,"Rifleman"],        "Truck01"      ],
+				[  FuMS_Mil_UnarmedOffroads,[0,-1050],[1,"Rifleman"],        "Truck01"      ] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,-600],[0,-100],["NORMAL",true,true, true]   ]]
+				[["EAST","COMBAT","BLUE","COLUMN"],   [  [2, "Driver"]  ],   ["Convoy",[0,-600],[0,-50],["NORMAL",true,true, true]   ]]
 			],
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[5, "Rifleman"]],["Buildings",[0,-600],[0,-50],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[3, "Rifleman"]],["Buildings",[0,-1000],[0,-25],[100]]], // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[3, "Rifleman"]],["Explore",[0,-1050],[25,0],[100]]] // [timer, radius]
 			]
 		],
-		[  // Convoy #2    North
+		[  // Convoy #2    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,1000],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[-1000,0],[1,"Rifleman"],        "Truck01"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,600],[0,100],["NORMAL",true,true, true]   ]]
+				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[-1000,0],[-10,0],["NORMAL",true,true, true]   ]]
 			],
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[5, "Rifleman"]],["Buildings",[0,600],[0,50],[100]]] // [timer, radius]
-			]
-		],
-		[  // Convoy #3  East
-			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[1000,0],[2,"Rifleman"],        "Truck01"      ] 
-			],
-			[  
-				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[600,0],[100,0],["NORMAL",true,true, true]   ]]
-			],
-			[   
-				// Troops : These are distributed across all vehicles in this convoy.                                                         
-				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[5, "Rifleman"]],["Buildings",[600,0],[50,0],[100]]] // [timer, radius]
-			]
-		],
-		[  // Convoy #4    West
-			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[-1000,0],[2,"Rifleman"],        "Truck01"      ] 
-			],
-			[  
-				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[-600,0],[-100,0],["NORMAL",true,true, true]   ]]
-			],
-			[   
-				// Troops : These are distributed across all vehicles in this convoy.                                                         
-				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[5, "Rifleman"]],["Buildings",[-600,0],[-50,0],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG"] ,[3, "Rifleman"]],["Buildings",[-1000,0],[-10,0],[100]]] // [timer, radius]
 			]
 		]
-
-
-
-	   
 	],
 	[
 		[
@@ -127,16 +97,16 @@
 			//	  ["LUCNT",["LowUnitCount","GUER",1,0,[0,0]]  ]
 			//	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 			//	  ["Detect",["Detected","ALL","ALL"] ],
-			["BodyCount",	["BodyCount",70] ],
-			["Timer",		["TIMER", 500] ], // 1800  
-			["TimerEvac", 	["TIMER", 300] ] // 1400
+			["BodyCount",	["BodyCount",15] ],
+			["Timer",		["TIMER", 1400] ], // 1800  
+			["TimerEvac", 	["TIMER", 900] ] // 1400
 		  
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],["BodyCount"     ]],  // 
-			[["CHILD",["EvacTown",[0,0],1,600]],["TimerEvac"      ]],  // 
+			[["CHILD",["EvacTown-S",[0,0],2,240]],["TimerEvac"      ]],  // 
 			// [["Reinforce","Help_Vehicle","Trig4"]], 
 			[["LOSE"],["TIMER"]   ],
 			[["END"],["BodyCount","OR","TIMER"     ]]  
