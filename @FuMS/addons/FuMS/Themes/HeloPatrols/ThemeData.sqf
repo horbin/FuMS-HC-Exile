@@ -20,10 +20,10 @@ _themeData =
     [  							//***** Mission List *****
 								// List of Missions. Value of '0' indicates random location ##NOT [0] ###, otherwise location indicated used for the encounter.
 								// The below missions MUST be in the same folder as this file! 
-		//["HeloPatrolEast"],  	// EAST Patrol
-       //["HeloPatrolEast"]		// EAST Patrol   <=- Don't forget commas if you add other patrols
-		["HeloPatrolWest"],  	// WEST Patrol
-        ["HeloPatrolWest"]	// WEST Patrol
+		["HeloPatrolEast"],  	// EAST Patrol
+		["HeloPatrolEast"]		// EAST Patrol   <=- Don't forget commas if you add other patrols
+		//["HeloPatrolWest"],  	// WEST Patrol
+        //["HeloPatrolWest"]	// WEST Patrol
 		//["HeloPatrolGuer"],  	// GUER Patrol
         //["HeloPatrolGuer"]	// GUER Patrol
 	

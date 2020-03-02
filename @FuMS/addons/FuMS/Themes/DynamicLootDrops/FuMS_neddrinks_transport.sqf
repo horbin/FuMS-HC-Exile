@@ -17,11 +17,11 @@
 //  Be cautious when editing data.
 
 [
-	["DrinkTruck", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
+	["DrinkTruck", 100], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
 	["Drink Supply","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",500, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -48,7 +48,7 @@
 	[  	//  Loot Config:  Refer to LootData.sqf for specifics																		
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
-		["DrinkLoot" , 	[5,5] ], // Win loot, offset location - spawns after mission success
+		["DrinkLoot" , 	[-10,-3] ], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[	
@@ -65,9 +65,9 @@
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   ["Loiter",	[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   ["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_E"]  ],   ["Explore",	[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	
@@ -88,10 +88,6 @@
 			[["WIN"],	["LUCNT"     			]],
 			[["LOSE"],	["Timer"				]],
 			[["END"],	["LUCNT","OR","Timer"	]]  
-		]
-
-  
+		] 
 	]
-
-
 ];

@@ -60,7 +60,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Heli_UnarmedHueys, 	[15,15],	0,	[.5,   1,     .5,         .5,         .5]]
+		[CAMS_Exile_Heli_UnarmedHueys, 	[15,15],	(round random 360),	[.5,   1,     .5,         .5,         .5]]
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
@@ -69,23 +69,23 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","YELLOW","VEE"],   [  [2,"Pilot"]  ],   					["Loiter",		[13,13],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"SMG"]  ],   						["BoxPatrol",	[13,13],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"LMG"]  ],   						["Explore",		[13,13],[0,0],[100]   ]]
+		[["EAST","AWARE","YELLOW","VEE"],   [  [2,"Pilot_E"]  ],   					["Loiter",		[13,13],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"SMG_E"]  ],   						["BoxPatrol",	[13,13],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"LMG_E"]  ],   						["Explore",		[13,13],[0,0],[100]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  	
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F",		[-7,3],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[3,-7],						[180],     	"None" ] 
+				[  "O_HMG_01_high_F",		[-27,3],						[(round random 360)],     	"None" ],
+				[  "O_HMG_01_high_F",		[23,-7],						[(round random 360)],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

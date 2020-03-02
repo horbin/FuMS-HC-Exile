@@ -56,7 +56,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Rifleman_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_E,1], // Uniform
@@ -75,7 +76,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
+	],
+	[
         "Paratrooper_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_E,1], // Uniform
@@ -467,7 +469,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Rifleman_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
@@ -486,7 +489,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
+	],
+	[
         "Paratrooper_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
@@ -562,8 +566,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
-	
+	],
+	[
         "Hunter_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Guerilla_I,1], // Uniform
@@ -582,7 +586,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Diver_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Wetsuit_I,1], // Uniform
@@ -601,7 +606,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Driver_I",
 		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
@@ -620,7 +626,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Pilot_I",
 		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Aviation_I,1], // Uniform
@@ -639,7 +646,8 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[	
+	],
+	[	
         "Survivor",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [ImFX_Uniform_Survivor,1], // Uniform
@@ -658,50 +666,9 @@ _soldierData =
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
-
-	/*
-    ],[
-        "BanditLeader",
-        [.6, .7, .7, .7, .7, 1, .8, 1, .7],
-        ["U_Competitor",1], // Uniform
-        ["V_BandollierB_blk",.8], // Vest.
-        ["H_StrawHat",1], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
-        ["arifle_Mk20_F",1], // PriWeapon and chance
-        [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        ["hgun_ACPC2_F",1], // Secondary Weapon and chance
-        [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
-        [ 1, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
-          // Crypto and Faction Rewards
-        [
-            ["RESPECT", 200],
-			["RESPECTGROUP",10]
-        ]
-    ],[
-        "BanditGroup",
-        [.4, .6, .6, .6, .6, 1, .8, 1, .7],
-        ["U_Marshal",1], // Uniform
-        ["V_BandollierB_blk",.8], // Vest.
-        ["H_Cap_blk",1], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
-        ["arifle_Mk20_F",1], // PriWeapon and chance
-        [ 1, 0 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        ["hgun_ACPC2_F",1], // Secondary Weapon and chance
-        [ 1, 1, 0, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
-        [ 0, 0, 0], // Binoculars, RangeFinders, NVG's
-        [ true, true, false, false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
-          // Crypto and Faction Rewards
-        [
-            ["RESPECT", 150],
-			["RESPECTGROUP",10]
-        ]
-    ],[	
-	*/
-        "CivCombat",
+    ],
+    [
+		"CivCombat",
 		[.02, .7, .1, .5, .5, .08, .1, .5, .5],
         [CAMS_U_Civ,1], // Uniform
         [CAMS_V_Bandolliers,.5], // Vest.
@@ -719,7 +686,8 @@ _soldierData =
             ["RESPECT", 10],
 			["RESPECTGROUP",1]
         ]
-    ],[
+    ],
+	[
         "CivNonCombat",
 		[.02, .7, .1, .3, .5, .08, .1, .1, .5],
         [CAMS_U_Civ,1], // Uniform
@@ -759,7 +727,7 @@ _soldierData =
 		
 		
     ],[        
-		"Civ01",
+		"Captive",
 		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
         [CAMS_U_Civ,1], // Uniform
         [CAMS_V_Vests,0], // Vest.

@@ -26,13 +26,13 @@
 		
 		// Mission Success Message
 	[
-		"BLUEFOR force repel attack",
+		"BLUEFOR force repels attack",
 		"The BLUEFOR forces repelled the attack from OPFOR and are gethering enemy weapons"
 	],
 	  
 		// Mission Failure Message
 	[   
-		"Vilage attack over",
+		"Village attack over",
 		"Both sides suffered heavy losses and the conflict is petering out"
 	] 
 	],

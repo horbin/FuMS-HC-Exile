@@ -78,7 +78,7 @@
      //      [  FuMS_Toy_Quads          ,[0,0],[],     "None"      ]
 		//   [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
 		 //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
-         //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "Truck01"]   
+         //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "TruckJunk"]   
                  // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
       ],
@@ -104,7 +104,7 @@
        //    [  FuMS_Toy_Quads         ,[-53,1000],[],     "None"      ]
 //		   [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
 //		   [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
- //          [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "Truck01"]   
+ //          [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "TruckJunk"]   
                  // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
       ],

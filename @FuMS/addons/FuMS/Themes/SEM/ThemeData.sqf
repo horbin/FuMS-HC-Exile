@@ -8,12 +8,12 @@ _themeData =
 [
     [
         "SEM",   // Needs to match the folder name!
-        3,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        1,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
         60, // Respawn delay in seconds
 		true, // global loot
 		true, // global soldier data
 		true,  // autostart
-        0,  // Player minimum to launch missions from this theme.
+        1,  // Player minimum to launch missions from this theme.
         100   // Player maximum above which missions will not launch
     ],
     [  
@@ -22,9 +22,9 @@ _themeData =
         //see Test Theme ThemeData.sqf for other options
         ["BanditCamp"],
 		["HeloCrash"],
-		["NukeDevice"],
+		["StrangeDevice"],
 		["PlaneCrash"],
-		["VanCrash"]
+		["VehicleCrash"]
     ],
     [   
         // List of Encounter locations to be used if Global random locations are not desired

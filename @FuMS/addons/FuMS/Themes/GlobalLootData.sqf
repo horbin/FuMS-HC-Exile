@@ -78,13 +78,13 @@ _lootData =
 			0
 	],
 
-		[
+	[
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["BasicLoot", "box_nato_ammoveh_f","RANDOM"],
-			[// All weapons and quantity 
-				[CAMS_LightMGs_E, [2,0,2]],
-				[CAMS_AssaultRifles_E, [2,0,1]]
-			],
+		[// All weapons and quantity 
+			[CAMS_LightMGs_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,1]]
+		],
 		[// All magazines and quantity
 			[FuMS_AmmoForEach, [4,2,2]]    // 4 clips for each weapon Line defined above.
 			// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)

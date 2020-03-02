@@ -22,7 +22,7 @@
 	["Building Materials","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -60,7 +60,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Work_All,						[-10,10],			0,			[.5,   1,     .5,         .5,         .5]],
+		[CAMS_Civ_Work,						[-10,10],			0,			[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -80,25 +80,25 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","YELLOW","VEE"],   [  [3,"Rifleman"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman"]  ],   				["BoxPatrol",	[5,5],[0,0],[75]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","AWARE","YELLOW","VEE"],   [  [3,"Rifleman_E"]  ],   	["Loiter",		[2,2],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman_E"]  ],   	["BoxPatrol",	[5,5],[0,0],[75]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   	["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  	
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F",		[-7,3],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[-7,-3],					[180],     	"None" ],
-				[  "O_HMG_01_high_F",		[7,7],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[3,-7],						[180],     	"None" ] 
+				[  "O_HMG_01_high_F",	[((round random 100)-50),((round random 100)-50)],	[0],     	"None" ],
+				[  "O_HMG_01_high_F",	[((round random 100)-50),((round random 100)-50)],	[180],     	"None" ],
+				[  "O_HMG_01_high_F",	[((round random 100)-50),((round random 100)-50)],	[0],     	"None" ],
+				[  "O_HMG_01_high_F",	[((round random 100)-50),((round random 100)-50)],	[180],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -113,14 +113,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  FuMS_Mil_ArmedOffroads,		[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  "B_G_Offroad_01_armed_F",		[50,50],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Driver"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Driver_E"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

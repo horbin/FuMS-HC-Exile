@@ -10,8 +10,8 @@
 	["Vic Reinforce","mil_dot","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[   // NOTIFICATION Messages and Map display Control.
-			true, "ALL", 0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, // Notify players via global message
+			true, "ALL", 500, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			false, // Notify players via global message
 			false,// Show encounter area on the map
 			10,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
@@ -49,18 +49,18 @@
 			// Spawns 3 vehicles 600m south of encounter center. These 3 will move as a convoy and contain 3 groups of mixed troops.
 			// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				["O_LSV_02_unarmed_F"           ,[0,-250],[ 1, "Rifleman"          ],       "None"]   
+				["O_LSV_02_unarmed_F"           ,[0,-250],[ 1, "Rifleman_E"          ],       "None"]   
 				 // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["Convoy",[0,-250],[0,0],["Full",true,false,true   ]]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["Convoy",[0,-250],[0,0],["Full",true,false,true   ]]]
 			],
 			[   
 				// Troops : These are distributed across all vehicles in this convoy. These lines are identical to the lines in the group section.
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"Sniper"],[2,"Rifleman"]],["BoxPatrol",[0,0],[0,0],[50]]]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"Sniper_E"],[2,"Rifleman_E"]],["BoxPatrol",[0,0],[0,0],[50]]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 			]

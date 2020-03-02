@@ -253,20 +253,20 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["Loiter",		[20685.7,14725.9,0],[20685.7,14725.9,0],[10]]],
-		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["Loiter",		[12799.7,16708.2,17.8497],[12799.7,16708.2,17.8497],[10]   ]],
-		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["Loiter",		[12907.8,16721.3,18.4271],[12907.8,16721.3,18.4271],[10]   ]],
-		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[20685.7,14725.9,0],[20685.7,14725.9,0],[10]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[21096.4,14758.3,0],[21096.4,14758.3,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Hunter"]  ],   					["Buildings",	[20685.7,14725.9,0],[20685.7,14725.9,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[20809.1,14740.7,0],[20809.1,14740.7,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG"]  ],   						["Explore",		[21050.4,14632.9,0],[21050.4,14632.9,0],	[75]   ]],
-		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman"]  ],   				["BoxPatrol",	[20735.3,14478.4,0],[20735.3,14478.4,0],	[75]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[20986.5,14604.9,0],[20986.5,14604.9,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Hunter"]  ],   					["Buildings",	[20863.3,14857.9,0],[20863.3,14857.9,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[20938.3,14616.3,0],[20938.3,14616.3,0],	[75]   ]],		
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG"]  ],   						["Explore",		[20874.7,14577.7,0],[20874.7,14577.7,0],	[75]   ]],
-		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman"]  ],   				["BoxPatrol",	[20900.1,14492.4,0],[20900.1,14492.4,0],	[75]   ]]
+		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   					["Loiter",		[20685.7,14725.9,0],[20685.7,14725.9,0],[10]]],
+		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   					["Loiter",		[12799.7,16708.2,17.8497],[12799.7,16708.2,17.8497],[10]   ]],
+		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   					["Loiter",		[12907.8,16721.3,18.4271],[12907.8,16721.3,18.4271],[10]   ]],
+		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   					["TowerGuard",	[20685.7,14725.9,0],[20685.7,14725.9,0],[10]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman_E"]  ],			["BoxPatrol",	[21096.4,14758.3,0],[21096.4,14758.3,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Hunter_E"]  ],   		["Buildings",	[20685.7,14725.9,0],[20685.7,14725.9,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman_E"]  ],   		["BoxPatrol",	[20809.1,14740.7,0],[20809.1,14740.7,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG_E"]  ],   			["Explore",		[21050.4,14632.9,0],[21050.4,14632.9,0],	[75]   ]],
+		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman_E"]  ],   		["BoxPatrol",	[20735.3,14478.4,0],[20735.3,14478.4,0],	[75]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman_E"]  ],   		["BoxPatrol",	[20986.5,14604.9,0],[20986.5,14604.9,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Hunter_E"]  ],   		["Buildings",	[20863.3,14857.9,0],[20863.3,14857.9,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [2,"Rifleman_E"]  ],   		["BoxPatrol",	[20938.3,14616.3,0],[20938.3,14616.3,0],	[75]   ]],		
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG_E"]  ],   			["Explore",		[20874.7,14577.7,0],[20874.7,14577.7,0],	[75]   ]],
+		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman_E"]  ],   		["BoxPatrol",	[20900.1,14492.4,0],[20900.1,14492.4,0],	[75]   ]]
 
 	],
 				// Example: PatrolBehavior: ["BoxPatrol", [100,0], [0,0],0 ]  
@@ -309,7 +309,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [10, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [10, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

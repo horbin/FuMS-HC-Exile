@@ -114,25 +114,48 @@ _immersionData =
 	[
 		"ImFX_Land_Armed_Transport",0,true,
 		[
-			"CAMS_Mil_ArmedTransport_E"
+			"CAMS_Mil_ArmedTransport_W","CAMS_Mil_ArmedTransport_E","CAMS_Mil_ArmedTransport_I"
 		]
 	],	
 	[
 		"ImFX_Land_Unarmed_Transport",0,true,
 		[
-			"CAMS_Mil_OpenTransport_E","CAMS_Mil_CoveredTransport_E","CAMS_Mil_CoveredUral"
+			"CAMS_Mil_Transport_W","CAMS_Mil_Transport_E","CAMS_Mil_Transport_I"
 		]
 	],	
 	[
 		"ImFX_Land_Civ_Truck",0,true,
 		[
-			"CAMS_Civ_SUVs"
+			"CAMS_Civ_SUV"
 		]
 	],	
+	[
+		"ImFX_Land_Medic",1,true,
+		[
+			"C_Van_02_medevac_F","O_Truck_02_medical_F","O_Truck_03_medical_F",
+			"I_E_Van_02_medevac_F","B_Truck_01_medical_F","I_Truck_02_medical_F"
+		]
+	],	
+
 	[
 		"ImFX_Land_Civ_Car",0,true,
 		[
 			"CAMS_Civ_ALL"
+		]
+	],
+	[	// Uniforms that "Doctor" or "Scientist" AI can wear 
+		"ImFX_Uniform_Scientist",1,true,
+		[
+			"U_B_CBRN_Suit_01_MTP_F","U_B_CBRN_Suit_01_Tropic_F","U_B_CBRN_Suit_01_Wdl_F","U_I_CBRN_Suit_01_AAF_F",
+			"U_I_E_CBRN_Suit_01_EAF_F","U_C_CBRN_Suit_01_Blue_F","U_C_CBRN_Suit_01_White_F","U_C_Uniform_Scientist_01_F",
+			"U_C_Uniform_Scientist_01_formal_F","U_C_Uniform_Scientist_02_F","U_C_Uniform_Scientist_02_formal_F"
+		]
+	],	
+	[	// Uniforms that "Bambi" class can wear 
+		"ImFX_Uniform_Bambi",1,true,
+		[
+			"U_C_ConstructionCoverall_Red_F","U_C_ConstructionCoverall_Vrana_F",
+			"U_C_ConstructionCoverall_Black_F","U_C_ConstructionCoverall_Blue_F"
 		]
 	],
 	[	// Uniforms that "Survivor" class can wear (Other NPC's acting as "Players")
@@ -205,13 +228,14 @@ _immersionData =
 		 
 			"Rangefinder","NVGoggles","NVGoggles_INDEP","NVGoggles_OPFOR"
 		]
-	]
+	],
 	/////////////////////////////////////// Misc Assets
-	
-	
-	
-	
-	
+	[
+		"ImFX_Build_Mil_Tower",1,true,
+		[
+			"Land_BagBunker_Tower_F"
+		]
+	]
 ];
 
 /////////////////////////////

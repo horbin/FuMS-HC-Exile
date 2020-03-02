@@ -17,16 +17,16 @@
 //  Be cautious when editing data.
 
 [
-	["BeerTruck", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Beer and Guns","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["BeerTruck", 100], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
+	["Beer and Guns","hd_objective","ELLIPSE","ColorOrange","Solid",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
-		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, 			// Notify players via global toast message
-			true,			// Show encounter area on the map
+		[						// NOTIFICATION Messages and Map display Control.
+			true, "ALL",500, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, 				// Notify players via global toast message
+			true,				// Show encounter area on the map
 			900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
-							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
+			10       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+								//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		[
 			"Beer and Guns Truck",	// The first line is the title of the pop-up box
@@ -63,36 +63,36 @@
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]		
-		["Land_LampStreet_F",		[3.90027,8.875]		,0,			0],
-		["Land_Wreck_Car2_F",		[3.63806,7.73828]	,6.05262,	0],
-		["Land_CampingTable_F",		[-4.58936,-1.69434]	,0,			0],
-		["Land_CampingChair_V2_F",	[-4.10376,-2.92188]	,0,			0],
-		["Land_CampingChair_V2_F",	[-5.26514,-0.529297],164.204,	0],
-		["Land_CampingChair_V2_F",	[-3.94312,-0.419434],175.073,	0],
-		["Land_CampingChair_V2_F",	[-5.37817,-2.99561]	,14.3409,	0],
-		["Land_Camping_Light_off_F",[-4.43689,-1.72559]	,0,			0],
-		["Campfire_burning_F",		[4.21326,-5.03174]	,0,			0],
-		["Land_WoodPile_F",			[5.35144,-8.99365]	,235.813,	0],
-		["Land_WoodPile_large_F",	[8.15515,-9.37549]	,0,			0],
-		["Land_WoodenLog_F",		[5.76978,-6.22021]	,0,			0],
-		["Land_Axe_F",				[5.3302,-7.14648]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-5.14563,-1.68]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-3.79651,-1.79443]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-3.99939,-1.89648]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-4.84216,-1.60352]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-4.66138,-1.91211]	,0,			0],
-		["Exile_Cosmetic_Beer",		[-4.0719,-1.62988]	,0,			0],
-		["Exile_Cosmetic_Beer",		[4.26416,10.2529]	,0,			0],
-		["Exile_Cosmetic_Beer",		[4.34668,10.4028]	,0,			0],
-		["Exile_Cosmetic_Beer",		[4.51453,10.1758]	,0,			0],
-		["Body",					[5.08875,8.27051]	,0,			0]
+		["Land_LampStreet_F",		[3.90027,8.875]		,(round random 360),			0],
+		["Land_Wreck_Car2_F",		[3.63806,7.73828]	,(round random 360),			0],
+		["Land_CampingTable_F",		[-4.58936,-1.69434]	,(round random 360),			0],
+		["Land_CampingChair_V2_F",	[-4.10376,-2.92188]	,0,								0],
+		["Land_CampingChair_V2_F",	[-5.26514,-0.529297],164.204,						0],
+		["Land_CampingChair_V2_F",	[-3.94312,-0.419434],175.073,						0],
+		["Land_CampingChair_V2_F",	[-5.37817,-2.99561]	,14.3409,						0],
+		["Land_Camping_Light_off_F",[-4.43689,-1.72559]	,(round random 360),			0],
+		["Campfire_burning_F",		[4.21326,-5.03174]	,(round random 360),			0],
+		["Land_WoodPile_F",			[5.35144,-8.99365]	,235.813,						0],
+		["Land_WoodPile_large_F",	[8.15515,-9.37549]	,(round random 360),			0],
+		["Land_WoodenLog_F",		[5.76978,-6.22021]	,(round random 360),			0],
+		["Land_Axe_F",				[5.3302,-7.14648]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-5.14563,-1.68]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-3.79651,-1.79443]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-3.99939,-1.89648]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-4.84216,-1.60352]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-4.66138,-1.91211]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[-4.0719,-1.62988]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[4.26416,10.2529]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[4.34668,10.4028]	,(round random 360),			0],
+		["Exile_Cosmetic_Beer",		[4.51453,10.1758]	,(round random 360),			0],
+		["Body",					[5.08875,8.27051]	,(round random 360),			0]
 		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","YELLOW","VEE"],   [  [3,"Rifleman"]  ],   				["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","YELLOW","VEE"],   [  [3,"Rifleman_E"]  ],   	["Loiter",		[0,0],[((random 20)-10),((random 20)-10)],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   	["BoxPatrol",	[((random 20)-10),((random 20)-10)],[((random 20)-10),((random 20)-10)],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_E"]  ],   	["Explore",		[((random 20)-10),((random 20)-10)],[((random 20)-10),((random 20)-10)],[100]   ]]
 
 	],
 	[			// Vehicles	
@@ -114,9 +114,5 @@
 			[["LOSE"],	["Timer"					]],
 			[["END"],	["LUCNT","OR","Timer"	]]  
 		]
-
-  
 	]
-
-
 ];

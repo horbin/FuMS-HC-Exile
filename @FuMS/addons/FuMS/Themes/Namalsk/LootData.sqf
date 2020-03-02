@@ -99,7 +99,7 @@ _lootData =
 	//************ Generic Truck Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
-		["Truck01","box_nato_ammo_f"],
+		["TruckJunk","box_nato_ammo_f"],
 		[// All weapons and quantity  
    
 		],

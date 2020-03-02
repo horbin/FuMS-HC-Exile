@@ -25,29 +25,23 @@ _lootData =
 	// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["LOOTBOX", "box_nato_ammoveh_f"],
 		[// All weapons and quantity 
-			[FuMS_SniperRifles, 2],
-			[FuMS_LightMGs, 2],
-			[FuMS_AssaultRifles, 2]
+			[CAMS_Rifles_ALL_I, 2]
 		],
 		[// All magazines and quantity
-			[FuMS_Ammo_762, 4],
-
-			[FuMS_Ammo_127, 4],
-			[FuMS_Ammo_65, 4],
-			[FuMS_Ammo_556, 4]
+			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
 			["Exile_Item_InstaDoc", 3],
 			["optic_Arco", 2],
 			["Exile_Item_Heatpack", 3],
-			[FuMS_Food_ALL, 2] ,
+			[FuMS_Food_ALL, 2] ,// Add to Exile Immersion File
 			[FuMS_Crafting_Wood, 5],
 			[FuMS_Crafting_Metal, 5],
 			[FuMS_Crafting_Tools, 5],
-			[FuMS_E_All, 2]
+			[CAMS_E_All, 2]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 2]
+			[CAMS_Packs_ALL, 2]
 		]
 	],//********** Loot**********************
 
@@ -56,16 +50,16 @@ _lootData =
 	// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["TestLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_AssaultRifles, 2]
+			[CAMS_Rifles_ALL_I, 2]
 		],
 		[// All magazines and quantity
-			[FuMS_Ammo_556, 4]
+			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 2]
+			[CAMS_E_All, 2]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 2]
+			[CAMS_Packs_ALL, 2]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -77,16 +71,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["AltisStaticLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[20,0,10]]
+			[CAMS_Guns_ALL_E, 		[20,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[20,0,10]]
+			[CAMS_E_All, 			[20,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[4,0,3]]
+			[CAMS_Packs_ALL, 		[4,0,3]]
 		],
 		2000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -98,16 +92,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["GraveRobberLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[5,0,10]]
+			[CAMS_Guns_ALL_E, 		[5,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[40,0,10]]
+			[CAMS_E_All, 			[40,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[2,0,1]]
+			[CAMS_Packs_ALL, 		[2,0,1]]
 		],
 		25000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -119,16 +113,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["KavalaLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[5,0,10]]
+			[CAMS_Guns_ALL_E, 		[5,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[40,0,10]]
+			[CAMS_E_All, 			[40,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[2,0,1]]
+			[CAMS_Packs_ALL, 		[2,0,1]]
 		],
 		25000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -140,16 +134,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["LabyrintheLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[5,0,5]]
+			[CAMS_Guns_ALL_E, 		[5,0,5]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[2,0,1]]
+			[CAMS_Packs_ALL, 		[2,0,1]]
 		],
 		2000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -161,16 +155,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["RadiationLoot", "Exile_Container_SupplyBox"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -182,16 +176,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["MilitaryBaseLoot", "I_CargoNet_01_ammo_F"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -203,16 +197,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["PowerPlantLoot", "Exile_Container_SupplyBox"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -224,16 +218,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["ProteusLoot", "Exile_Container_SupplyBox"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -245,16 +239,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["MarshLoot", "Exile_Container_SupplyBox"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -266,16 +260,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["HarborLoot", "Exile_Container_SupplyBox"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[10,0,10]]
+			[CAMS_Guns_ALL_E, 		[10,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[30,0,10]]
+			[CAMS_E_All, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[3,0,2]]
+			[CAMS_Packs_ALL, 		[3,0,2]]
 		],
 		10000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -285,7 +279,7 @@ _lootData =
 	//************ Generic Truck Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
-		["Truck01","box_nato_ammo_f"],
+		["TruckJunk","box_nato_ammo_f"],
 		[// All weapons and quantity  
    
 		],

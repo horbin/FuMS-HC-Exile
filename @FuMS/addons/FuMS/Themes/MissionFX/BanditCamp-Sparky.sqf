@@ -37,7 +37,7 @@
 		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[ FuMS_Civ_All,						[-10,10],	0,		[.5,   1,     .5,         .5,         .5]],
+		[ CAMS_Civ_All,						[-10,10],	(round random 360),		[.5,   1,     .5,         .5,         .5]],
 		// This line will spawn a sparky anomoly in the mission
 		["Land_RoadCrack_01_4x4_F",			[-5,25],	90,		0],  //type, offset, rotation, presist flag
 		["Land_RoadCrack_01_4x4_F",			[15,-35],	90,		0],  //type, offset, rotation, presist flag
@@ -49,7 +49,7 @@
 		["Land_BagBunker_Tower_F",			[0,0],		0,		0]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   	[[2,"Rifleman"]      ],   ["BoxPatrol",[-6,-6],[0,0],[10]     ]]
+		[["EAST","COMBAT","RED","LINE"],   	[[2,"Rifleman_E"]      ],   ["BoxPatrol",[-6,-6],[0,0],[10]     ]]
 	],
 
 	// Vehicles

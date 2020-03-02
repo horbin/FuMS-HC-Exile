@@ -14,7 +14,9 @@ FuMS_fnc_TraceBodyCount =
     _unit = _this select 1;
     // Research the 'heritage' of the unit here to expand the list.
     // if the 'owner' of this is a child then look to parent.
-    _lineage = missionNameSpace getVariable (format ["%1_Lineage",_msnTag]);
+    _lineage = missionNameSpace getVariable [(format ["%1_Lineage",_msnTag]),[0,0]];
+	//diag_log format ["##CHECKFORBODYCOUNT: Launch Parameters: _msnTag:%1 | _unit:%2 | _lineage:%3", _msnTag, _unit, _lineage];
+
     if (_lineage select 1 != 0) then
     {   
         // call self on parent

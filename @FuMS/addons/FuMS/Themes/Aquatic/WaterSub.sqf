@@ -11,7 +11,7 @@
 																		// type is "mil_objective"
 	[  
 		[																// NOTIFICATION Messages and Map display Control.
-			true, "ALL",0, 												// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, 												// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 														// Notify players via global message
 			true,														// Show encounter area on the map
 			0,    														// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -38,18 +38,18 @@
 	],
 	[  																//  Loot Config:  Refer to LootData.sqf for specifcs
 		["None" , [18,-9] ], 										//[static loot, offset location] - spawns with the mission
-		["RANDOM" , [0,0] ], 										// Win loot, offset location - spawns after mission success
+		["RANDOM" , [10,10] ], 										// Win loot, offset location - spawns after mission success
 		["None" , [0,0] ]  											// Failure loot, offset location - spawns on mission failure
 	],
 	[																//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		["Land_UWreck_FishingBoat_F",[0,0],0,0]   					//type, offset, rotation, presist flag
+		[CAMS_Boat_Wreck,			[0,0],0,0]   					//type, offset, rotation, presist flag
 	],
 	[ 																// AI GROUPS. Only options marked 'Def:' implemented.
 																		//   [["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1,"Sniper"],[2,"Rifleman"],[2,"Hunter"]  ],   ["BoxPatrol",[0,75],[0,0],[0]   ]],
 																		//    [["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]                                         ],   ["Guard",[-20,10],[0,0],[70] ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
 																		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[150]     ]],
 																		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 	],
@@ -76,16 +76,16 @@
 																	// Spawns 3 vehicles 600m south of encounter center. These 3 will move as a convoy and contain 3 groups of mixed troops.
 																		// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[         												// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_H20_SDVs,                    [0,10],[5,"Diver"],        "Truck01"      ]
-																		//  [  "B_Boat_Armed_01_minigun_F"           ,[10,0],[1,"Rifleman"],     "Truck01"      ], 
-																		//  [  "B_Boat_Transport_01_F"           ,[0,0], [1,"Rifleman"],     "Truck01"      ]
-																		//[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "Truck01"]   
+				[  CAMS_H20_SDV_I,                    [0,10],[5,"Diver_E"],        "TruckJunk"      ]
+																		//  [  "B_Boat_Armed_01_minigun_F"           ,[10,0],[1,"Rifleman"],     "TruckJunk"      ], 
+																		//  [  "B_Boat_Transport_01_F"           ,[0,0], [1,"Rifleman"],     "TruckJunk"      ]
+																		//[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "TruckJunk"]   
 																		// If driver-less vehicles are desired, place them at the bottom of the list. 
 																		// Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 																		// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[0,0],[0,0],[50]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Diver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[100]   ]]
 			],
 			[   
 																		// Troops : These are distributed across all vehicles in this convoy. These lines are identical to the lines in the group section.

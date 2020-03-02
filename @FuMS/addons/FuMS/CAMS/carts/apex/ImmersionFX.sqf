@@ -46,7 +46,13 @@ _immersionData =
 		"ImFX_Air_Rescue_Heli",1,false,
 		[
 		]
-	]
+	],
+	[
+		"ImFX_Land_Medic",1,false,
+		[
+			"O_T_Truck_02_Medical_F","O_T_Truck_03_medical_ghex_F","B_T_Truck_01_medical_F"
+		]
+	]	
 
 ];
 

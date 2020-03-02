@@ -63,20 +63,20 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[21957.828125,21010.695313,4.545008],[21957.828125,21010.695313,4.545008],[10, "ANY"]   ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["SENTRY",		[0,0],[0,0],[200] ]],
-		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["SENTRY",		[0,0],[0,0],[300]   ]],
-		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[21868.0292969,20942.171875,1.374988],[21868.0292969,20942.171875,1.374988],[50]   ]],		//  Fountain
-		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[21858.667969,21025.705078,0.0014286],[21858.667969,21025.705078,0.0014286],[50]   ]],		//  back road clear area
-		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[22049.220703,21100.746094,0.00123978],[22049.220703,21100.746094,0.00123978],[50]   ]],	//  Clear area behind the hotel 1
-		//[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
-		//[["EAST","COMBAT","RED","VEE"],   			[  [4,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[100]   ]],
-		//[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[200]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [1,"Sniper"],[3,"Rifleman"]  ],   	["Explore",		[0,0],[0,0],[300]   ]]
+		//[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   					["TowerGuard",	[21957.828125,21010.695313,4.545008],[21957.828125,21010.695313,4.545008],[150, "ANY"]   ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["SENTRY",		[0,0],[0,0],[200] ]],
+		//[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   					["SENTRY",		[0,0],[0,0],[300]   ]],
+		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[21868.0292969,20942.171875,1.374988],[21868.0292969,20942.171875,1.374988],[50]   ]],		//  Fountain
+		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[21858.667969,21025.705078,0.0014286],[21858.667969,21025.705078,0.0014286],[50]   ]],		//  back road clear area
+		//[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[22049.220703,21100.746094,0.00123978],[22049.220703,21100.746094,0.00123978],[50]   ]],	//  Clear area behind the hotel 1
+		//[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
+		//[["EAST","COMBAT","RED","VEE"],   			[  [4,"Rifleman_E"]  ],   				["BoxPatrol",	[0,0],[0,0],[100]   ]],
+		//[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[200]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [1,"Sniper_E"],[3,"Rifleman_E"]  ],   	["Explore",		[0,0],[0,0],[300]   ]]
 
 	],
 	[			// Vehicles	
@@ -103,7 +103,7 @@
 			[  
 				// 	Drivers                          		# and type  |        Patrol AI    |  spawn   | 	dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [11, "Rifleman"]  ],   ["Gunner",		[0,0],		[0,0],			[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [11, "Rifleman_E"]  ],   ["Gunner",		[0,0],		[0,0],			[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

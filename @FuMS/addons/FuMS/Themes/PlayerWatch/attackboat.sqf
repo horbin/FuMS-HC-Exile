@@ -76,9 +76,9 @@
     // Spawns 3 vehicles 600m south of encounter center. These 3 will move as a convoy and contain 3 groups of mixed troops.
     // These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
  [         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-   //[  "B_SDV_01_F",                    [0,10],[5,"Diver"],        "Truck01"      ], 
+   //[  "B_SDV_01_F",                    [0,10],[5,"Diver"],        "TruckJunk"      ], 
      [  "B_Boat_Armed_01_minigun_F"           ,[50,0],[3,"Rifleman_E"],     "None"      ] 
-   //  [  FuMS_H20_RubberDucks          ,[0,0], [3,"Rifleman"],     "Truck01"      ]
+   //  [  FuMS_H20_RubberDucks          ,[0,0], [3,"Rifleman"],     "TruckJunk"      ]
   
                  // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!

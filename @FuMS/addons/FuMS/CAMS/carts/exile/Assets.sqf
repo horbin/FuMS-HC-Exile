@@ -185,7 +185,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs",1,true,
+		"CAMS_H20_SDV_I",1,true,
 		[
 			"Exile_Boat_SDV_CSAT","Exile_Boat_SDV_Digital","Exile_Boat_SDV_Grey"
 		]
@@ -371,7 +371,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Civ_SUVs",1,true,
+		"CAMS_Civ_SUV",1,true,
 		[
 			"Exile_Car_SUV_Red","Exile_Car_SUV_Black","Exile_Car_SUV_Grey","Exile_Car_SUV_Orange",
 			"Exile_Car_SUVXL_Black"
@@ -459,7 +459,7 @@ _cartContents =
 	[
 		"CAMS_Civ_Cars",0,true,
 		[
-			"CAMS_Civ_Hatchbacks_ALL", "CAMS_Civ_SUVs", "CAMS_Civ_Vans", "CAMS_Civ_Octavius", 
+			"CAMS_Civ_Hatchbacks_ALL", "CAMS_Civ_SUV", "CAMS_Civ_Vans", "CAMS_Civ_Octavius", 
 			"CAMS_Civ_Ladas", "CAMS_Civ_Volhas"
 		]
 	],

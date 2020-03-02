@@ -22,7 +22,7 @@
 	["Guns guns guns","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -48,8 +48,8 @@
 	],
 	[  	//  Loot Config:  Refer to LootData.sqf for specifics																		
 
-		["None" , 			[5,5] ], //[static loot, offset location] - spawns with the mission
-		["GunsLoot" ,		[5,5] ], // Win loot, offset location - spawns after mission success
+		["GunsLoot", 		[5,5] ], //[static loot, offset location] - spawns with the mission
+		["GunsLoot" ,		[15,25] ], // Win loot, offset location - spawns after mission success
 		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[	
@@ -60,7 +60,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Mil_Ural_ALL,					[-30,-30],			0,			[.5,   1,     .5,         .5,         .5]],
+		[ImFX_Land_Unarmed_Transport,					[((round random 60)-30),((round random 60)-30)],			0,			[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -80,25 +80,25 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [4,"LMG"]  ],   						["BoxPatrol",	[5,5],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   	["Loiter",		[2,2],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [4,"LMG_E"]  ],   		["BoxPatrol",	[5,5],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   	["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  	
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F",		[-7,3],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[-7,-3],					[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[7,7],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[3,-7],						[0],     	"None" ] 
+				[  "O_HMG_01_high_F",		[-17,3],					[0],     	"None" ],
+				[  "O_HMG_01_high_F",		[-7,-13],					[0],     	"None" ],
+				[  "O_HMG_01_high_F",		[17,7],						[0],     	"None" ],
+				[  "O_HMG_01_high_F",		[13,-7],					[0],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -113,14 +113,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  FuMS_Mil_ArmedOffroads,		[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  "B_G_Offroad_01_armed_F",		[50,50],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_E"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -130,7 +130,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
 				]
 			]
 		]

@@ -61,28 +61,28 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[21957.828125,21010.695313,4.545008],[21957.828125,21010.695313,4.545008],[10, "ANY"]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["SENTRY",		[0,0],[0,0],[200] ]],
-		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper"]  ],   					["SENTRY",		[0,0],[0,0],[300]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [1,"Rifleman"],[2,"SMG"]  ],  		["BoxPatrol",	[21868.0292969,20942.171875,1.374988],[21868.0292969,20942.171875,1.374988],[50]   ]],		//  Fountain
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [1,"Rifleman"],[2,"LMG"]  ],   		["BoxPatrol",	[21858.667969,21025.705078,0.0014286],[21858.667969,21025.705078,0.0014286],[50]   ]],		//  back road clear area
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[22049.220703,21100.746094,0.00123978],[22049.220703,21100.746094,0.00123978],[50]   ]],	//  Clear area behind the hotel 1
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","VEE"],   			[  [4,"Hunter"]  ],   					["BoxPatrol",	[0,0],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[200]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [1,"Sniper"],[3,"Rifleman"]  ],   	["Explore",		[0,0],[0,0],[300]   ]]
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["TowerGuard",	[21957.828125,21010.695313,4.545008],[21957.828125,21010.695313,4.545008],[150, "ANY"]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["SENTRY",		[0,0],[0,0],[200] ]],
+		[["EAST","AWARE","RED","COLUMN"],  			[  [1,"Sniper_E"]  ],   				["SENTRY",		[0,0],[0,0],[300]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [1,"Rifleman_E"],[2,"SMG_E"]  ],  	["BoxPatrol",	[21868.0292969,20942.171875,1.374988],[21868.0292969,20942.171875,1.374988],[50]   ]],		//  Fountain
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [1,"Rifleman_E"],[2,"LMG_E"]  ],   	["BoxPatrol",	[21858.667969,21025.705078,0.0014286],[21858.667969,21025.705078,0.0014286],[50]   ]],		//  back road clear area
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[22049.220703,21100.746094,0.00123978],[22049.220703,21100.746094,0.00123978],[50]   ]],	//  Clear area behind the hotel 1
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","VEE"],   			[  [4,"Hunter_E"]  ],   				["BoxPatrol",	[0,0],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [4,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[200]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [1,"Sniper_E"],[3,"Rifleman_E"]  ],  ["Explore",		[0,0],[0,0],[300]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns 
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"       	,[-3,0],									[0],     	"None" ],
-				[  "O_HMG_01_high_F"        ,[0,3],										[0],        "None" ], 
-				[  "O_HMG_01_high_F"        ,[3,0],										[0],        "None" ], 
+				[  "O_HMG_01_high_F"       	,[-13,0],									[0],     	"None" ],
+				[  "O_HMG_01_high_F"        ,[0,13],										[0],        "None" ], 
+				[  "O_HMG_01_high_F"        ,[23,0],										[0],        "None" ], 
 				[  "O_HMG_01_high_F"   		,[21868.0292969,20944.171875,1.374988],		[0],     	"None" ],				
 				[  "O_HMG_01_high_F"   		,[21978.435547,21002.785156,9.867336],		[0],     	"None" ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
@@ -91,7 +91,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman_E"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -106,14 +106,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  FuMS_Mil_ArmedOffroads,		[0,0],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  CAMS_Mil_ArmedOffroad_E,		[0,0],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman"]  ],   ["BoxPatrol",[0,0],[0,0],[100]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_E"]  ],   ["BoxPatrol",[0,0],[0,0],[100]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -123,7 +123,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman"]]  ,   ["BoxPatrol",[0,0],[0,0],[100]   ]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[0,0],[0,0],[100]   ]   
 				]
 			]
 		]	

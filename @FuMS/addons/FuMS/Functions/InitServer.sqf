@@ -3,6 +3,8 @@
 // 10/6/15
 //
 // 
+waitUntil {CAMS_isStable};
+
 _handle = [] execVM "\FuMS\Functions\LoadCommonData.sqf";
 waitUntil {ScriptDone _handle};
 
