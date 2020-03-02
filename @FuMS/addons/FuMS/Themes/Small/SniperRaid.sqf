@@ -4,11 +4,11 @@
 // Based upon drsubo Mission Scripts
 
 [
-	["SniperRaid", 75], // Mission Title NOSPACES!, and encounter radius
-	["Sniper Raid","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",75],    
+	["SniperRaid", 200], // Mission Title NOSPACES!, and encounter radius
+	["Sniper Raid","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-			true, "ALL", 0,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL", 1000,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global message
 			true,			// Show encounter area on the map
 			600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -38,10 +38,7 @@
 		
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],  [  [2,"SNIPER"]           ],     ["TowerGuard",[6,-6],[0,0],[100,"ANY"]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"SNIPER"]           ],     ["BUILDINGS",[-6,6],[0,0],[50]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"SNIPER"]           ],     ["EXPLORE",   [10,10],[0,1], [50]      ]],
-		[["EAST","STEALTH","RED","LINE"],  [  [2,"SNIPER"]           ],     ["SENTRY",   [0,-10],[1,0], [50]      ]]
+		[["EAST","STEALTH","RED","LINE"],  [  [2,"Sniper_E"]           ],     ["TowerGuard",[((round random 50)-100),((round random 50)-100)],[0,0],[100,"ANY"]     ]]
 	],
 
 	 // Vehicles
@@ -58,6 +55,7 @@
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
+			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
 			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements
 			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
 		],
@@ -66,7 +64,7 @@
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-			//[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["CHILD",	["SpawnSnipers",[0,0],1,10000]],["LaunchAI"     ]],  
 			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
 	]

@@ -17,11 +17,11 @@
 //  Be cautious when editing data.
 
 [
-	["IKEACrash", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
+	["IKEACrash", 200], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
 	["IKEA Transport Pod","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -59,48 +59,48 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Civ_V3S,						[-15,-15],	0,	[.5,   1,     .5,         .5,         .5]],
+		[CAMS_Civ_Van,						[1,1],	0,	[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
-		["Land_loco_742_blue",				[2.74121,25.9517],		0,			0],
-		["Land_wagon_box",					[3.13965,13.5854],		0,			0],
-		["Land_wagon_box",					[3.13037,1.84424],		0,			0],
-		["Land_wagon_tanker",				[2.7085,-9.4292],		0,			0],
-		["Land_wagon_box",					[3.08813,-20.7246],		0,			0],
-		["Land_wagon_flat",					[2.67603,-34.9854],		0,			0],
-		["CUP_sign_krizeni_s_trati",		[5.77979,33.4868],		0,			0],
-		["Land_BluntStone_02",				[2.39795,33.3604],		0,			0],
-		["Land_Wreck_Heli_Attack_01_F",		[-40.0642,-2.28564],	229.185,	0],
-		["Land_HistoricalPlaneWreck_01_F",	[43.7849,17.5664],		219.619,	0],
+		["Land_loco_742_blue",				[2.74121,25.9517],		(round random 360),		0],
+		["Land_wagon_box",					[3.13965,13.5854],		(round random 360),		0],
+		["Land_wagon_box",					[3.13037,1.84424],		(round random 360),		0],
+		["Land_wagon_tanker",				[2.7085,-9.4292],		(round random 360),		0],
+		["Land_wagon_box",					[3.08813,-20.7246],		(round random 360),		0],
+		["Land_wagon_flat",					[2.67603,-34.9854],		(round random 360),		0],
+		["CUP_sign_krizeni_s_trati",		[5.77979,33.4868],		(round random 360),		0],
+		["Land_BluntStone_02",				[2.39795,33.3604],		(round random 360),		0],
+		["Land_Wreck_Heli_Attack_01_F",		[-40.0642,-2.28564],	(round random 360),		0],
+		["Land_HistoricalPlaneWreck_01_F",	[43.7849,17.5664],		(round random 360),		0],
 		//["cwa_CampEast",					[15.2898,1.7915],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
 		//["cwa_CampEast",					[15.2097,11.6899],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
 		//["cwa_CampEast",					[15.3953,21.4136],		180.16,		0], //CUP Terrains CWA - uncomment if you have this installed
-		["Camp_EP1",						[-15.7988,-21.605],		88.112,		0],
-		["Camp_EP1",						[-16.0012,-14.7319],	88.112,		0],
-		["Camp_EP1",						[-16.2834,-8.10059],	88.112,		0],
-		["Land_Crates_EP1",					[-18.1858,-9.90771],	0,			0],
-		["Land_transport_crates_EP1",		[-16.3994,-7.89551],	170.795,	0],
-		["CUP_hromada_beden_dekorativniX",	[-17.6592,-15.7769],	0,			0],
-		["AmmoCrates_NoInteractive_Large",	[-17.6487,-14.1675],	0,			0],
-		["Land_Crates_stack_EP1",			[-17.8672,-21.0947],	0,			0],
-		["AmmoCrates_NoInteractive_Large",	[-17.8623,-23.3926],	0,			0],
-		["Land_WoodenCrate_01_stack_x3_F",	[-15.1353,-22.9233],	0,			0],
-		["Land_PortableGenerator_01_F",		[12.5583,3.97217],		0,			0],
-		["Land_PaperBox_closed_F",			[11.9631,-0.224121],	0,			0],
-		["Land_PaperBox_open_empty_F",		[14.0903,-0.220215],	0,			0],
-		["Land_Device_disassembled_F",		[15.7361,12.6533],		90.472,		0],
-		["Land_ScrapHeap_2_F",				[7.32495,-7.34082],		201.825,	0],
-		["Land_Ind_BoardsPack2",			[13.4478,22.6548],		106.041,	0],
-		["Computer",						[11.613,19.2949],		0,			0],
-		["Land_CampingTable_F",				[11.5535,19.5879],		95.2015,	0]
+		["Camp_EP1",						[-15.7988,-21.605],		(round random 360),		0],
+		["Camp_EP1",						[-16.0012,-14.7319],	(round random 360),		0],
+		["Camp_EP1",						[-16.2834,-8.10059],	(round random 360),		0],
+		["Land_Crates_EP1",					[-18.1858,-9.90771],	(round random 360),		0],
+		["Land_transport_crates_EP1",		[-16.3994,-7.89551],	(round random 360),		0],
+		["CUP_hromada_beden_dekorativniX",	[-17.6592,-15.7769],	(round random 360),		0],
+		["AmmoCrates_NoInteractive_Large",	[-17.6487,-14.1675],	(round random 360),		0],
+		["Land_Crates_stack_EP1",			[-17.8672,-21.0947],	(round random 360),		0],
+		["AmmoCrates_NoInteractive_Large",	[-17.8623,-23.3926],	(round random 360),		0],
+		["Land_WoodenCrate_01_stack_x3_F",	[-15.1353,-22.9233],	(round random 360),		0],
+		["Land_PortableGenerator_01_F",		[12.5583,3.97217],		(round random 360),		0],
+		["Land_PaperBox_closed_F",			[11.9631,-0.224121],	(round random 360),		0],
+		["Land_PaperBox_open_empty_F",		[14.0903,-0.220215],	(round random 360),		0],
+		["Land_Device_disassembled_F",		[15.7361,12.6533],		90.472,					0],
+		["Land_ScrapHeap_2_F",				[7.32495,-7.34082],		201.825,				0],
+		["Land_Ind_BoardsPack2",			[13.4478,22.6548],		106.041,				0],
+		["Computer",						[11.613,19.2949],		(round random 360),		0],
+		["Land_CampingTable_F",				[11.5535,19.5879],		95.2015,				0]
 		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Hunter"]  ],   					["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]	],   	["Loiter",		[0,0],[((random 20)-10),((random 20)-10)],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]	],   	["BoxPatrol",	[((random 20)-10),((random 20)-10)],[((random 20)-10),((random 20)-10)],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Hunter_E"]	],   	["Explore",		[((random 20)-10),((random 20)-10)],[((random 20)-10),((random 20)-10)],[100]   ]]
 
 	],
 	[			// Vehicles	

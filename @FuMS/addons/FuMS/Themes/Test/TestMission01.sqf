@@ -208,10 +208,10 @@
     // Spawns 3 vehicles 600m south of encounter center. These 3 will move as a convoy and contain 3 groups of mixed troops.
     // These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
  [         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
- //  [  "B_Truck_01_transport_EPOCH",[-50,-610],[1,"Rifleman"],        "Truck01"      ], 
+ //  [  "B_Truck_01_transport_EPOCH",[-50,-610],[1,"Rifleman"],        "TruckJunk"      ], 
  //  [  "C_Offroad_01_EPOCH"           ,[-50,-635],[1,"Rifleman"],     "None"      ], 
 //   [  "C_Offroad_01_EPOCH"           ,[-50,-688],[1,"Rifleman"],     "None"      ]
-   //[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "Truck01"]   
+   //[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "TruckJunk"]   
         ["O_Mortar_01_F",[0,60],[0],"None"],
         ["B_HMG_01_high_F",[2,62],[250],"None"],
         ["B_static_AT_F",[5,60],[180],"None"]
@@ -261,10 +261,10 @@
                 ["I_UAV_01_F",[0,100],[0,""],"none"],
                 ["I_UAV_01_F",[50,70],[0,""],"none"],
                 ["I_UAV_01_F",[0,10],[0,""],"none"],
-         [FuMS_Mil_ALL,[200,0],[0,""],"Truck01"],
-         [FuMS_Mil_Hemmts,[205,0],[0,""],"Truck01"],
-         [FuMS_Mil_Zamaks,[203,0],[0,""],"Truck01"],
-         [FuMS_Mil_Tempests,[207,0],[0,""],"Truck01"]
+         [FuMS_Mil_ALL,[200,0],[0,""],"TruckJunk"],
+         [FuMS_Mil_Hemmts,[205,0],[0,""],"TruckJunk"],
+         [FuMS_Mil_Zamaks,[203,0],[0,""],"TruckJunk"],
+         [FuMS_Mil_Tempests,[207,0],[0,""],"TruckJunk"]
      ],
      [    
          [["EAST","COMBAT","RED","COLUMN"],   [  [4, "Driver"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          

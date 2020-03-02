@@ -221,7 +221,7 @@
 		],
 		[
 			[   // Vehicle                     Offset     			Crew and number   	CargoLoot 		Damage
-				[  FuMS_Mil_ArmedOffroads,	[5503.89,10042.7,0],	[1,"Rifleman"],      "Truck01",		[0.25]      ]
+				[  FuMS_Mil_ArmedOffroads,	[5503.89,10042.7,0],	[1,"Rifleman"],      "TruckJunk",		[0.25]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],

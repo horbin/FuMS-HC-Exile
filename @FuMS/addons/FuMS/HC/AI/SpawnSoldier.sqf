@@ -106,7 +106,8 @@ _typeFound = false;
             default
             {
                 // NOTE if I_Soldier_EPOCH type is changed, AllDeadorGone.sqf will need to be modified
-                _unit = _group createUnit[_AImodel, _pos, [], 0, "FORM"];
+                _unit = _group createUnit[_AImodel, _pos, [], 5, "FORM"];
+				_unit setDir (round random 360);
 				[_unit] join _group;
 				if (_debug) then
 				{

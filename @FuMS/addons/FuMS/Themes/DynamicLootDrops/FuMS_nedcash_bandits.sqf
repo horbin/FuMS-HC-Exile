@@ -50,9 +50,9 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["EmptyLoot" , 	[-2,-2] ],
-			["EmptyLoot" , 	[2,-2] ],
-			["EmptyLoot" , 	[2,2] ]
+			["PopTabLoot" , 	[-2,-2] ],
+			["PopTabLoot" , 	[2,-2] ],
+			["PopTabLoot" , 	[2,2] ]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -63,16 +63,16 @@
 		// Class Name, 			Offset, 	Rotation, 	Condition Array [Fuel, Ammo, Engine Damage, FuelTank Damage, Hull Damage, Optional Fire/Smoke parameter.
 		//		Effect options: "FIRE_SMALL", "FIRE_MEDIUM", "FIRE_BIG", "SMOKE_SMALL", "SMOKE_MEDIUM", "SMOKE_BIG" 
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
-		[FuMS_Veh_Land, 		[-10,-0.2],   	0, 			[.5,   1,     .5,         .5,         .5]]   
+		[CAMS_Civ_ALL, 		[-10,-0.2],   	0, 			[.5,   1,     .5,         .5,         .5]]   
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]		
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG"]  ],   						["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter"]  ],   					["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG_E"]  ],   	["Loiter",		[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_E"]  ],	["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter_E"]  ],   ["Explore",		[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	

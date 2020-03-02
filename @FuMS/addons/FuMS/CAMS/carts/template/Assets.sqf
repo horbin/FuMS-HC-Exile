@@ -554,7 +554,7 @@ _cartContents =
 	[
 		"CAMS_H20_All_C",0,true,
 		[
-			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDVs_C", "CAMS_H20_Jetski_C"
+			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDV_C", "CAMS_H20_Jetski_C"
 		]
 	],
 	
@@ -576,7 +576,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_W",1,true,
+		"CAMS_H20_SDV_W",1,true,
 		[
 		]
 	],
@@ -584,7 +584,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_W",0,true,
 		[
-			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDVs_W"
+			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDV_W"
 		]
 	],	
 	
@@ -605,7 +605,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_E",1,true,
+		"CAMS_H20_SDV_E",1,true,
 		[
 		]
 	],
@@ -613,7 +613,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_E",0,true,
 		[
-			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_Patrol_E","CAMS_H20_SDVs_E"
+			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_Patrol_E","CAMS_H20_SDV_E"
 		]
 	],	
 	
@@ -629,7 +629,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_G",1,true,
+		"CAMS_H20_SDV_G",1,true,
 		[
 		]
 	],
@@ -637,7 +637,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_G",0,true,
 		[
-			"CAMS_H20_Boats_G", "CAMS_H20_RubberDucks_G", "CAMS_H20_SDVs_G"
+			"CAMS_H20_Boats_G", "CAMS_H20_RubberDucks_G", "CAMS_H20_SDV_G"
 		]
 	],	
 

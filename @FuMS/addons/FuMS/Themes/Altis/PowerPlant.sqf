@@ -60,33 +60,33 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman"]  ],   				["Loiter",		[15368.97168,15976.119141,0.0014534],[15368.97168,15976.119141,0.0014534],[50]   ]],			//  Near the desk (W)
-		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman"]  ],   				["Loiter",		[15351.546875,16216.283203,0.00143528],[15351.546875,16216.283203,0.00143528],[50]   ]],		//  By the small military cargo tower near the road (N)
-		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman"]  ],   				["Loiter",		[15480.575195,15901.859375,0.00140667],[15480.575195,15901.859375,0.00140667],[50]   ]],		//  Clear space by the small cargo tower (W)
-		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper"]  ],   					["TowerGuard",	[15480.4,15912.2,4.32122],[15480.4,15912.2,4.32122],[10, "ANY"]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper"]  ],   					["TowerGuard",	[15371.9,15852.3,4.34659],[15371.9,15852.3,4.34659],[10, "ANY"]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper"]  ],   					["TowerGuard",	[15363,15892,3.1363],[15363,15892,3.1363],[10, "ANY"]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper"]  ],   					["TowerGuard",	[15280.9,15895.2,4.27559],[15280.9,15895.2,4.27559],[10, "ANY"]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper"]  ],   					["Loiter",		[15268.7,16238.1,48.2208],[15280.9,15895.2,4.27559],[10, "ANY"]   ]],
-		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman"]  ],   				["BoxPatrol",	[15429.394531,15990.97168,0.00141668],[15429.394531,15990.97168,0.00141668],[75]   ]],			//  Opposite side, clear space (E)
-		[["EAST","COMBAT","RED","LINE"],   		[  [3,"Rifleman"]  ],   				["BoxPatrol",	[15381.762695,15911.453125,0.00144291],[15381.762695,15911.453125,0.00144291],[75]   ]],		//  Clear space near water (E)
-		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman"]  ],   				["BoxPatrol",	[15412.185547,16042.538086,0.00141907],[15412.185547,16042.538086,0.00141907],[75]   ]],		//  Clear space East side aligned with hill (E)
-		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman"]  ],   				["BoxPatrol",	[15385.728516,16253.981445,0.00142002],[15385.728516,16253.981445,0.00142002],[75]   ]],		//  Clear area by the agora solar huge towers
-		[["EAST","COMBAT","YELLOW","COLUMN"],  	[  [1,"Sniper"],[3,"Rifleman"]  ],   	["Buildings",	[15214.838867,16230.0810547,0.00147247],[15214.838867,16230.0810547,0.00147247],[150]   ]],		//  Clear area by the fuel tanks (NW)
+		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman_E"]  ],   				["Loiter",		[15368.97168,15976.119141,0.0014534],[15368.97168,15976.119141,0.0014534],[50]   ]],			//  Near the desk (W)
+		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman_E"]  ],   				["Loiter",		[15351.546875,16216.283203,0.00143528],[15351.546875,16216.283203,0.00143528],[50]   ]],		//  By the small military cargo tower near the road (N)
+		[["EAST","COMBAT","RED","VEE"],   		[  [2,"Rifleman_E"]  ],   				["Loiter",		[15480.575195,15901.859375,0.00140667],[15480.575195,15901.859375,0.00140667],[50]   ]],		//  Clear space by the small cargo tower (W)
+		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper_E"]  ],   				["TowerGuard",	[15480.4,15912.2,4.32122],[15480.4,15912.2,4.32122],[150, "ANY"]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper_E"]  ],   				["TowerGuard",	[15371.9,15852.3,4.34659],[15371.9,15852.3,4.34659],[150, "ANY"]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper_E"]  ],   				["TowerGuard",	[15363,15892,3.1363],[15363,15892,3.1363],[150, "ANY"]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper_E"]  ],   				["TowerGuard",	[15280.9,15895.2,4.27559],[15280.9,15895.2,4.27559],[150, "ANY"]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  	[  [1,"Sniper_E"]  ],   				["Loiter",		[15268.7,16238.1,48.2208],[15280.9,15895.2,4.27559],[150, "ANY"]   ]],
+		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[15429.394531,15990.97168,0.00141668],[15429.394531,15990.97168,0.00141668],[75]   ]],			//  Opposite side, clear space (E)
+		[["EAST","COMBAT","RED","LINE"],   		[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[15381.762695,15911.453125,0.00144291],[15381.762695,15911.453125,0.00144291],[75]   ]],		//  Clear space near water (E)
+		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[15412.185547,16042.538086,0.00141907],[15412.185547,16042.538086,0.00141907],[75]   ]],		//  Clear space East side aligned with hill (E)
+		[["EAST","COMBAT","RED","VEE"],   		[  [3,"Rifleman_E"]  ],   				["BoxPatrol",	[15385.728516,16253.981445,0.00142002],[15385.728516,16253.981445,0.00142002],[75]   ]],		//  Clear area by the agora solar huge towers
+		[["EAST","COMBAT","YELLOW","COLUMN"],  	[  [1,"Sniper_E"],[3,"Rifleman_E"]  ],	["Buildings",	[15214.838867,16230.0810547,0.00147247],[15214.838867,16230.0810547,0.00147247],[150]   ]],		//  Clear area by the fuel tanks (NW)
 
 		
-		[["EAST","AWARE","YELLOW","COLUMN"],	[  [4,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],	[  [1,"Sniper"],[2,"Rifleman"]  ],   	["Buildings",	[0,0],[0,0],[125]   ]],
-		[["EAST","AWARE","YELLOW","LINE"],  	[  [1,"Sniper"],[2,"Rifleman"]  ],   	["Explore",		[0,0],[0,0],[150]   ]]
+		[["EAST","AWARE","YELLOW","COLUMN"],	[  [4,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[100]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],	[  [1,"Sniper_E"],[2,"Rifleman_E"]  ],  ["Buildings",	[0,0],[0,0],[125]   ]],
+		[["EAST","AWARE","YELLOW","LINE"],  	[  [1,"Sniper_E"],[2,"Rifleman_E"]  ],  ["Explore",		[0,0],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"       	,[-5,0],									[0],     	"None" ],		// 5 meters West of center pos (table)
-				[  "O_HMG_01_high_F"       	,[5,0],										[0],     	"None" ],		// 5 meters East of center pos (table)
-				[  "O_HMG_01_high_F"        ,[0,5],										[0],        "None" ], 		// 5 meters North of center pos
-				[  "O_HMG_01_high_F"        ,[0,-5],									[0],        "None" ], 		// 5 meters South of center pos		
+				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],									[0],     	"None" ],		// 5 meters West of center pos (table)
+				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],									[0],     	"None" ],		// 5 meters East of center pos (table)
+				[  "O_HMG_01_high_F"        ,[((round random 100)-50),((round random 100)-50)],									[0],        "None" ], 		// 5 meters North of center pos
+				[  "O_HMG_01_high_F"        ,[((round random 100)-50),((round random 100)-50)],									[0],        "None" ], 		// 5 meters South of center pos		
 				[  "O_HMG_01_high_F"   		,[15252.710938,16250.327148,10.100967],		[0],     	"None" ],		// Top of NorthWest Fuel Tank (NW)			
 				[  "O_HMG_01_high_F"   		,[15359.521484,16216.516602,4.342695],		[0],     	"None" ]		// Top of the military cargo tower by the road (N)
 				// If driver-less vehicles are desired, place them at the bottom of the list ND Hv less drivers than vehicles in the next section
@@ -95,7 +95,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [6, "Rifleman"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [6, "Rifleman_E"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -106,18 +106,17 @@
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 			]
 		], 
-
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  FuMS_Mil_ArmedOffroads,		[0,0],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  CAMS_Mil_ArmedOffroad_E,		[0,0],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman"]  ],   ["BoxPatrol",[0,0],[0,0],[100]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_E"]  ],   ["BoxPatrol",[0,0],[0,0],[100]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -127,13 +126,10 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman"]]  ,   ["BoxPatrol",[0,0],[0,0],[100]   ]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[0,0],[0,0],[100]   ]   
 				]
 			]
-		]	
-
-
-		
+		]		
 	],
 	[
 		[
@@ -157,10 +153,5 @@
 			[["WIN"],	["AllDead","PLAYERNEAR"     ]],  // 
 			[["END"],	["TIMER","OR","AllDead","PLAYERNEAR"     ]]  
 		]      
-
-
-  
 	]
-
-
 ];

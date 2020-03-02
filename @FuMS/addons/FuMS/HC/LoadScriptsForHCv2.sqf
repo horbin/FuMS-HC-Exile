@@ -46,6 +46,7 @@ _scripts =
 				"AIPB.sqf", 
 				"AreaPatrol.sqf", 
 				"BoxPatrol.sqf", 
+				"Loiter.sqf",
 				"Paradrop.sqf", 
 				"PolygonPatrol.sqf", 
 				"Convoy.sqf", 

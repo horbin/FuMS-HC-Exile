@@ -58,40 +58,40 @@
 		["M3Editor", [-1,-1], "NONE", 0,
 												
 			[	// paste your array of building objects here
-				["Land_UWreck_MV22_F",[[268.757,[3731.72,12976.2,19.4927]]],24.5454,[[0.415415,0.909632,0],[0,0,1]],false],
-				["Land_Wreck_HMMWV_F",[[259.375,[3748.81,13036,0.00164413]]],24.5454,[[0.415415,0.909632,0],[0,0,1]],false],
-				["Land_Wreck_UAZ_F",[[286.456,[3734.42,12993.6,0.0014801]]],41.3637,[[0.660836,0.75053,0],[0,0,1]],false]
+				["Land_UWreck_MV22_F",	[3731.72,12976.2,19.4927],	24.5454,[[0.415415,0.909632,0],[0,0,1]],false],
+				["Land_Wreck_HMMWV_F",	[3748.81,13036,0.00164413],	24.5454,[[0.415415,0.909632,0],[0,0,1]],false],
+				["Land_Wreck_UAZ_F",	[3734.42,12993.6,0.0014801],41.3637,[[0.660836,0.75053,0],[0,0,1]],false]
 			]
 		]
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["Loiter",		[3746.06,12970,18.8735],[3746.06,12970,18.8735],[10]]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["Loiter",		[3726.84,12976.6,19.4938],[0,0],[10]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[3762.42,13015.7,0.157682],[3762.42,13015.7,0.157682],	[25]   ]],		//  ground level room
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Hunter"]  ],   					["Buildings",	[3751.32,12977,15.5085],[3751.32,12977,15.5085],		[25]   ]],		//  below helipad ramp
-		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman"]  ],   				["BoxPatrol",	[3683.76,12977.3,0.001194],[3683.76,12977.3,0.001194],	[25]   ]],		//  behind the houses in front
-		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG"]  ],   						["Explore",		[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman"]  ],   				["BoxPatrol",	[0,0],[0,0],[75]   ]],
-		[["EAST","COMBAT","YELLOW","COLUMN"],  		[  [2,"Hunter"]  ],   					["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   		["Loiter",		[3746.06,12970,18.8735],[3746.06,12970,18.8735],[10]]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   		["Loiter",		[3726.84,12976.6,19.4938],[0,0],[10]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   		["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","AWARE","YELLOW","COLUMN"],  		[  [1,"Sniper_E"]  ],   		["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ], 		["BoxPatrol",	[3762.42,13015.7,0.157682],[3762.42,13015.7,0.157682],	[25]   ]],		//  ground level room
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Hunter_E"]  ],   		["Buildings",	[3751.32,12977,15.5085],[3751.32,12977,15.5085],		[25]   ]],		//  below helipad ramp
+		[["EAST","COMBAT","RED","STAG COLUMN"],   	[  [3,"Rifleman_E"]  ], 		["BoxPatrol",	[3683.76,12977.3,0.001194],[3683.76,12977.3,0.001194],	[25]   ]],		//  behind the houses in front
+		[["EAST","COMBAT","RED","COLUMN"],  		[  [2,"SMG_E"]  ],   			["Explore",		[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","VEE"],   			[  [2,"Rifleman_E"]  ], 		["BoxPatrol",	[0,0],[0,0],[75]   ]],
+		[["EAST","COMBAT","YELLOW","COLUMN"],  		[  [2,"Hunter_E"]  ],   		["Explore",		[0,0],[0,0],[100]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns 
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"       	,[-3,0],									[310],     	"None" ],	// 3 meters West of center pos
-				[  "O_HMG_01_high_F"        ,[3723.3,12977.2,15.5121],					[270],        "None" ], 	// projected front
-				[  "O_HMG_01_high_F"        ,[3763.25,13032.1,18.9741],					[0],        "None" ], 	// projected back
-				[  "O_HMG_01_high_F"   		,[3773.12,12986.1,0.142307],				[90],     	"None" ]	// reception desk - indoor
+				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[310],  "None" ],	// 3 meters West of center pos
+				[  "O_HMG_01_high_F"        ,[3723.3,12977.2,15.5121],		[270],  "None" ], 	// projected front
+				[  "O_HMG_01_high_F"        ,[3763.25,13032.1,18.9741],		[0],	"None" ], 	// projected back
+				[  "O_HMG_01_high_F"   		,[3773.12,12986.1,0.142307],	[90],   "None" ]	// reception desk - indoor
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

@@ -93,39 +93,39 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman"]  ],   					["Loiter",		[6179.83,16197.4,0],[6179.83,16197.4,0],[10]]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman"]  ],   					["Loiter",		[6049.91,16206.1,0],[6049.91,16206.1,0],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman"]  ],   					["Loiter",		[6170.4,16304.8,0],[6170.4,16304.8,0],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman"]  ],   					["Loiter",		[6308.93,16200.3,0],[6308.93,16200.3,0],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper"]  ],   						["Loiter",		[6061.08,16192.4,17.6498],[6061.08,16192.4,17.6498],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper"]  ],   						["Loiter",		[6192.9,16201.3,17.5302],[6192.9,16201.3,17.5302],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper"]  ],   						["Loiter",		[6275.65,16303.9,17.569],[6275.65,16303.9,17.569],[10]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper"]  ],   						["TowerGuard",	[6178.35,16299.4,4.19821],[6178.35,16299.4,4.19821],[10,"ANY"]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Hunter"]  ],   						["Sentry",		[6356.6,16228.2,0],[6356.6,16228.2,0],	[75]   ]],		
-		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"LMG"]  ],   							["Loiter",		[6245.25,16271.9,0],[6245.25,16271.9,0],[10]   ]],
-		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Rifleman"]  ],   					["BoxPatrol",	[0,0],[0,0],	[50]   ]],	
-		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"LMG"]  ],   							["Buildings",	[0,0],[0,0],		[75]   ]],	
-		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Rifleman"]  ],   					["BoxPatrol",	[0,0],[0,0],	[100]   ]],		
-		[["EAST","COMBAT","RED","COLUMN"],  			[  [4,"Hunter"]  ],   						["Explore",		[0,0],[0,0],[150]   ]],
-		[["EAST","COMBAT","RED","VEE"],   				[  [4,"Rifleman"]  ],   					["BoxPatrol",	[0,0],[0,0],[175]   ]],
-		[["EAST","COMBAT","YELLOW","COLUMN"],  			[  [4,"SMG"]  ],   							["Explore",		[0,0],[0,0],[200]   ]]
+		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman_E"]  ],		["Loiter",		[6179.83,16197.4,0],[6179.83,16197.4,0],[10]]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman_E"]  ],   	["Loiter",		[6049.91,16206.1,0],[6049.91,16206.1,0],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman_E"]  ],   	["Loiter",		[6170.4,16304.8,0],[6170.4,16304.8,0],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"Rifleman_E"]  ],   	["Loiter",		[6308.93,16200.3,0],[6308.93,16200.3,0],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper_E"]  ],   	["Loiter",		[6061.08,16192.4,17.6498],[6061.08,16192.4,17.6498],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper_E"]  ],   	["Loiter",		[6192.9,16201.3,17.5302],[6192.9,16201.3,17.5302],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper_E"]  ],   	["Loiter",		[6275.65,16303.9,17.569],[6275.65,16303.9,17.569],[10]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  				[  [1,"Sniper_E"]  ],   	["TowerGuard",	[6178.35,16299.4,4.19821],[6178.35,16299.4,4.19821],[10,"ANY"]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Hunter_E"]  ],   	["Sentry",		[6356.6,16228.2,0],[6356.6,16228.2,0],	[75]   ]],		
+		[["EAST","AWARE","RED","COLUMN"],  				[  [2,"LMG_E"]  ],   		["Loiter",		[6245.25,16271.9,0],[6245.25,16271.9,0],[10]   ]],
+		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Rifleman_E"]  ],   	["BoxPatrol",	[0,0],[0,0],	[50]   ]],	
+		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"LMG_E"]  ],   		["Buildings",	[0,0],[0,0],		[75]   ]],	
+		[["EAST","COMBAT","RED","STAG COLUMN"],   		[  [3,"Rifleman_E"]  ],   	["BoxPatrol",	[0,0],[0,0],	[100]   ]],		
+		[["EAST","COMBAT","RED","COLUMN"],  			[  [4,"Hunter_E"]  ],   	["Explore",		[0,0],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","VEE"],   				[  [4,"Rifleman_E"]  ],   	["BoxPatrol",	[0,0],[0,0],[175]   ]],
+		[["EAST","COMBAT","YELLOW","COLUMN"],  			[  [4,"SMG_E"]  ],   		["Explore",		[0,0],[0,0],[200]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns 
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"       	,[-5,0],									[310],     	"None" ],	// 3 meters West of center pos
-				[  "O_HMG_01_high_F"        ,[0,-5],									[270],      "None" ], 	// projected front
-				[  "O_HMG_01_high_F"        ,[6272.85,16301.2,15.8243],					[270],      "None" ], 	// projected front
-				[  "O_HMG_01_high_F"        ,[6129.94,16272.1,1.3512],					[0],        "None" ], 	// projected back
-				[  "O_HMG_01_high_F"   		,[6242.14,16211.7,0.632],					[90],     	"None" ]	// reception desk - indoor
+				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],					[310],     	"None" ],	// 3 meters West of center pos
+				[  "O_HMG_01_high_F"        ,[((round random 100)-50),((round random 100)-50)],					[270],      "None" ], 	// projected front
+				[  "O_HMG_01_high_F"        ,[6272.85,16301.2,15.8243],	[270],      "None" ], 	// projected front
+				[  "O_HMG_01_high_F"        ,[6129.94,16272.1,1.3512],	[0],        "None" ], 	// projected back
+				[  "O_HMG_01_high_F"   		,[6242.14,16211.7,0.632],	[90],     	"None" ]	// reception desk - indoor
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -153,10 +153,10 @@
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
-			[["LOSE"],["TIMER"     ]],
-			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
-			[["END"],["AllDead","OR","TIMER"    ]]  
+			[["WIN"],		["AllDead" ,"PLAYERNEAR"   ]],
+			[["LOSE"],		["TIMER"     ]],
+			[["CHILD",		["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["END"],		["AllDead","OR","TIMER"    ]]  
 		]
 
   

@@ -81,7 +81,7 @@
        //    [  "C_Offroad_01_EPOCH"          ,[0,75],[1 ,"Rifleman"],     "Random"      ]
 		//   [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
 		 //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[1,"Rifleman"],     "None"      ], 
-         //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "Truck01"]   
+         //  [  "C_Quadbike_01_EPOCH"          ,[-50,-600],[ 1, "Rifleman"],     "TruckJunk"]   
                  // If driver-less vehicles are desired, place them at the bottom of the list. 
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
       ],

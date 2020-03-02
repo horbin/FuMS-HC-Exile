@@ -948,7 +948,7 @@ _cartContents =
 	[
 		"CAMS_H20_All_C",0,true,
 		[
-			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDVs_C", "CAMS_H20_Jetski_C"
+			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDV_C", "CAMS_H20_Jetski_C"
 		]
 	],
 	
@@ -967,7 +967,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_W",1,true,
+		"CAMS_H20_SDV_W",1,true,
 		[
 			"B_SDV_01_F"
 		]
@@ -976,7 +976,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_W",0,true,
 		[
-			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDVs_W"
+			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDV_W"
 		]
 	],	
 	
@@ -994,7 +994,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_E",1,true,
+		"CAMS_H20_SDV_E",1,true,
 		[
 			"O_SDV_01_F"
 		]
@@ -1003,7 +1003,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_E",0,true,
 		[
-			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_SDVs_E"
+			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_SDV_E"
 		]
 	],	
 	
@@ -1021,7 +1021,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_I",1,true,
+		"CAMS_H20_SDV_I",1,true,
 		[
 			"I_SDV_01_F"
 		]
@@ -1030,7 +1030,7 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_I",0,true,
 		[
-			"CAMS_H20_Boats_I", "CAMS_H20_RubberDucks_I", "CAMS_H20_SDVs_I"
+			"CAMS_H20_Boats_I", "CAMS_H20_RubberDucks_I", "CAMS_H20_SDV_I"
 		]
 	],	
 
@@ -1308,7 +1308,7 @@ _cartContents =
 	[
 		"CAMS_Mil_Transport_ALL_W",0,true,
 		[
-			"CAMS_Mil_OpenTransport_W", "CAMS_Mil_CoveredTransport_W", "CAMS_Mil_ArmedTransport_W"
+			"CAMS_Mil_Transport_W", "CAMS_Mil_ArmedTransport_W"
 		]
 	],
 
@@ -1410,13 +1410,13 @@ _cartContents =
 	[
 		"CAMS_Mil_Transport_ALL_E",0,true,
 		[
-			"CAMS_Mil_OpenTransport_E","CAMS_Mil_CoveredTransport_E", "CAMS_Mil_ArmedTransport_E"
+			"CAMS_Mil_Transport_E","CAMS_Mil_ArmedTransport_E"
 		]
 	],
 	[
 		"CAMS_Mil_Unarmed_E",0,true,
 		[
-			"CAMS_Mil_UnarmedOffroad_E", "CAMS_Mil_OpenTransport_E", "CAMS_Mil_CoveredTransport_E"
+			"CAMS_Mil_UnarmedOffroad_E", "CAMS_Mil_Transport_ALL_E"
 		]
 	],	
 	[
@@ -1466,15 +1466,9 @@ _cartContents =
 	],
 	
 	[
-		"CAMS_Mil_OpenTransport_I",1,true,
+		"CAMS_Mil_Transport_I",1,true,
 		[
-			"I_G_Offroad_01_F", "I_Truck_02_transport_F", "I_G_Van_01_transport_F"
-		]
-	],
-	[
-		"CAMS_Mil_CoveredTransport_I",1,true,
-		[
-			"I_Truck_02_covered_F"
+			"I_G_Offroad_01_F", "I_Truck_02_transport_F", "I_G_Van_01_transport_F","I_Truck_02_covered_F"
 		]
 	],
 	[
@@ -1500,13 +1494,13 @@ _cartContents =
 	[
 		"CAMS_Mil_Transport_ALL_I",0,true,
 		[
-			"CAMS_Mil_OpenTransport_I", "CAMS_Mil_CoveredTransport_I", "CAMS_Mil_ArmedTransport_I"
+			"CAMS_Mil_Transport_I", "CAMS_Mil_ArmedTransport_I"
 		]
 	],
 	[
 		"CAMS_Mil_Unarmed_I",0,true,
 		[
-			"CAMS_Mil_UnarmedOffroads_I", "CAMS_Mil_OpenTransport_I", "CAMS_Mil_CoveredTransport_I"
+			"CAMS_Mil_UnarmedOffroads_I", "CAMS_Mil_Transport_I"
 		]
 	],	
 	[

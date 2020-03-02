@@ -1,15 +1,15 @@
-//Gang.sqf
+// Gang.sqf
 // TheOneWhoKnocks
 // 1/15/2020
 // Based upon drsubo Mission Scripts
 
 [
-	["Gang", 75], // Mission Title NOSPACES!, and encounter radius
-	["Gang","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",75],    
+	["Gang", 200], // Mission Title NOSPACES!, and encounter radius
+	["Gang","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-			true, "ALL", 0,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL", 700,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global message
 			true,			// Show encounter area on the map
 			600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -25,8 +25,8 @@
 			"The gang was wiped out and players are sorting through there stuff."
 		],
 		[// Mission Failure Message
-			"Mission Failure!",
-			"The Looters have ransacked the town and escaped."
+			"Gang escapes!",
+			"The gang bangers have ransacked the town and escaped."
 		] 
 	],
 	[  //  Loot Config:  Refer to LootData.sqf for specifcs
@@ -39,10 +39,7 @@
 		 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"HUNTER"]           ],     ["BUILDINGS",[6,-6],[0,0],[75]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"HUNTER"]           ],     ["BUILDINGS",[-6,6],[0,0],[75]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"LMG"],[1,"HUNTER"] ],     ["EXPLORE",   [0,0],[0,1], [50]      ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"HUNTER"]           ],     ["SENTRY",   [0,0],[1,0], [50]      ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [2,"Hunter_E"]           ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[75]     ]]
 	],
 	 // Vehicles
 	[		 
@@ -56,14 +53,16 @@
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
+			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
 			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements
 			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
 		],
-		[	// Define what actions should occur when above trigger logics evaluate to true
+		[
+			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-			//[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["CHILD",	["SpawnGang",[0,0],1,10000]],["LaunchAI"     ]],  
 			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
 	]

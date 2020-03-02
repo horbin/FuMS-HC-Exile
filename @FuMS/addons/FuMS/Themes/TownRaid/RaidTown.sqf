@@ -57,7 +57,7 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,-1000],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[0,-1000],[2,"Rifleman"],        "TruckJunk"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -71,7 +71,7 @@
 		],
 		[  // Convoy #2    North
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,1000],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[0,1000],[2,"Rifleman"],        "TruckJunk"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -85,7 +85,7 @@
 		],
 		[  // Convoy #3  East
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[1000,0],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[1000,0],[2,"Rifleman"],        "TruckJunk"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -99,7 +99,7 @@
 		],
 		[  // Convoy #4    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[-1000,0],[2,"Rifleman"],        "Truck01"      ] 
+				[  FuMS_Mil_UnarmedOffroads,[-1000,0],[2,"Rifleman"],        "TruckJunk"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options

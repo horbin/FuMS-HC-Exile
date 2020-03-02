@@ -88,13 +88,13 @@
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
 	
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Sniper"],[2,"SMG"]  ],   		["BoxPatrol",	[5788.61,20139.4],[5788.61,20139.4],[75]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [5,"Hunter"]  ],   					["BoxPatrol",	[6001.65,20233.9,0],[6001.65,20233.9,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman"]  ],   				["Sentry",		[2,2],[0,0],[150]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"LMG"]  ],   						["Sentry",		[-3,-1],[0,0],[150]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [6,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[150]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Sniper"],[4,"Rifleman"]  ],   	["Buildings",	[0,0],[0,0],[100]   ]]
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Sniper_E"],[2,"SMG_E"]  ],   	["BoxPatrol",	[5788.61,20139.4],[5788.61,20139.4],[75]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [5,"Hunter_E"]  ],   				["BoxPatrol",	[6001.65,20233.9,0],[6001.65,20233.9,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   				["Sentry",		[2,2],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"LMG_E"]  ],   					["Sentry",		[-3,-1],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [6,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Sniper_E"],[4,"Rifleman_E"]  ],  ["Buildings",	[0,0],[0,0],[100]   ]]
 
 	],
 	[			// Vehicles
@@ -111,7 +111,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [5, "Rifleman_E"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

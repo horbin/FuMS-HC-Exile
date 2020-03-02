@@ -15,7 +15,7 @@
 	[  
 		[   								// NOTIFICATION Messages and Map display Control.
 			true, "ALL", 0, 				// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, 							// Notify players via global message
+			false, 							// Notify players via global message
 			false,							// Show encounter area on the map
 			10,    							// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       						// Lose delay: Time in seconds after a lose before mission cleanup is performed
@@ -54,7 +54,7 @@
 	[
 		[  									// Division #1
 			[         						// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "Truck01"      ], 
+											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "TruckJunk"      ], 
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
 				[  ImFX_Heli_Troops, [0,2000], [1,"Pilot_I"],     "None"      ]
 			],

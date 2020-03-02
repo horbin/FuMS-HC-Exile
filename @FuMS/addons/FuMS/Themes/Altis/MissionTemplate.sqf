@@ -182,7 +182,7 @@
 		
 		AI Example
 				Side		Behavior	Combat Mode 	Formation      AI quantity and type		AI Logic	Specific logic parameters
-		[ ["RESISTANCE",	"COMBAT",	"RED",			"LINE"],	[[1,"Sniper"],[3,"Rifleman"]],[  "TowerGuard",	[0,0], [0,0],[150,"ANY"] ]]
+		[ ["RESISTANCE",	"COMBAT",	"RED",			"LINE"],	[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "TowerGuard",	[0,0], [0,0],[150,"ANY"] ]]
 		
 		Defined sides:
 		RESISTANCE, WEST, EAST, CIV
@@ -213,23 +213,23 @@
 		*/
 		// Example AI spawns
 		// 3 rifleman that will spawn 20 m to the west of mission center and patrol buildings within 50m for unlimited duration
-		[["EAST","COMBAT","RED","LINE"],[[3,"Rifleman"]],["Buildings",[-20,0],[-20,0],[50] ]], 
+		[["EAST","COMBAT","RED","LINE"],[[3,"Rifleman_E"]],["Buildings",[-20,0],[-20,0],[50] ]], 
 
 		// 5 rifleman that will spawn 25 m to the north of mission center and patrol in a box pattern for a 50 m radius
-		[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["BoxPatrol",[0,25],[0,25],[50] ]],
+		[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman_E"]],["BoxPatrol",[0,25],[0,25],[50] ]],
 
 		// 5 rifleman that will spawn 40 m to the west of mission center and run around amoungst all strcutures withen 50m 
-		[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman"]],["Explore",[-40,0],[-40,0],[50] ]],
+		[["EAST","COMBAT","RED","LINE"],[[5,"Rifleman_E"]],["Explore",[-40,0],[-40,0],[50] ]],
 
 		// 3 snipers that will spawn on top of buildings of classname "Land_Cargo_Patrol_V2_F" found withen 150 m of mission center
-		[["EAST","COMBAT","RED","LINE"],[[3,"Sniper"]],[  "TowerGuard",[0,0], [0,0],[150,"Land_Cargo_Patrol_V2_F"] ]]
+		[["EAST","COMBAT","RED","LINE"],[[3,"Sniper_E"]],[  "TowerGuard",[0,0], [0,0],[150,"Land_Cargo_Patrol_V2_F"] ]]
 		// 5 rifleman that spawn at [21520,11491.9,0] and march to encounter centr to set up a box patrol!    
 		// Expanded group example:
 		// 1 sniper, 2 rifleman, 2 hunters wil spawn east of encounter center and perform a box shaped patrol.
 
 		// 2 hunters that will spawn near encounter center and take up guard positions.
 		// This example the AI are spawned 6 meters NE of encoutner center, and will look for a building within 30meters of encounter senter to take up Sentry postions.
-		// [["RESISTANCE","COMBAT","RED","LINE"],[[2,"Hunter"]],["Sentry",[0,0],[0,0],[30]]
+		// [["RESISTANCE","COMBAT","RED","LINE"],[[2,"Hunter_E"]],["Sentry",[0,0],[0,0],[30]]
 		// NOTE: if no buildings are located within 'radius' both 'Buildings' and 'Lookout' will locate nearest buildings to the encounter and move there!
 		// NOTE: See AI_LOGIC.txt for detailed and most current descriptions of AI logic.
 	],
@@ -242,7 +242,7 @@
 		//
 		// VEHICLES
 		// Vehicle classname			  spawn 		crew # and type			loot			damage (optional)
-		//[  "O_MRAP_02_hmg_F ",		[-50,-610],		[1,"Rifleman"],        "Truck01",		[1.0]      ]
+		//[  "O_MRAP_02_hmg_F ",		[-50,-610],		[1,"Rifleman_E"],        "TruckJunk",		[1.0]      ]
 		//
 		// STATIC WEAPONS  
 		// Vehicle classname			  spawn 		facing					loot			damage (optinal
@@ -258,22 +258,22 @@
 			// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[	// VEHICLES IN GROUP  
 				//   Vehicle classname			Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[ "B_Boat_Armed_01_minigun_F",	[10,0],		[3,"Rifleman"],     	"Truck01"], 
-				[ FuMS_H20_RubberDucks,			[0,0], 		[3,"Rifleman"],     	"Truck01"]
+				[ "B_Boat_Armed_01_minigun_F",	[10,0],		[3,"Rifleman_E"],     	"TruckJunk"], 
+				[ FuMS_H20_RubberDucks,			[0,0], 		[3,"Rifleman_E"],     	"TruckJunk"]
 				// If driver-less vehicles are desired, place them at the bottom of the list and put less drivers than vehicles
 				// Troops below WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[	// DRIVERS FOR VEHICLES (Review notes from above on AI setup and behaviors
 				// This example provides enough drivers for each vehicle above
 				// Driver behavior						# and type  |         AI Logic     |    	spawn   | 	dest  | 'AI Logic' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Driver"]  ],   ["BoxPatrol",		[0,0],		[0,0],	[50]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Driver_E"]  ],   ["BoxPatrol",		[0,0],		[0,0],	[50]   ]]
 			],
 			[	// Troops : These are distributed across all vehicles in this group. These lines are identical to the lines in the group section.
 				// Because these are boats, they don't need troops or disembark logic, but included for examples
 				// Troop behaviour and side options          # and type of Troops     	Patrol logic |  	spawn     |	dest |		'Patrol' options
-				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper"],[1,"Rifleman"]],	["BoxPatrol",	[-70,-600],		[0,0],		[0]]],
-				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper"],[2,"Rifleman"]],	["BoxPatrol",	[-70,-600],		[50,0],		[50]]],
-				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper"],[1,"Rifleman"]],	["BoxPatrol",	[-70,-600],		[-50,0],	[50]]]
+				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper_E"],[1,"Rifleman_E"]],	["BoxPatrol",	[-70,-600],		[0,0],		[0]]],
+				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper_E"],[2,"Rifleman_E"]],	["BoxPatrol",	[-70,-600],		[50,0],		[50]]],
+				// [["EAST","COMBAT","RED","COLUMN"],	[[1,"Sniper_E"],[1,"Rifleman_E"]],	["BoxPatrol",	[-70,-600],		[-50,0],	[50]]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 			]
@@ -285,7 +285,7 @@
 			],
 			[   // DRIVERS FOR VEHICLES              
 				// Driver behavior                          # and type  |         AI Logic     |    spawn   | dest   | 'AI Logic' options
-				[["EAST","COMBAT","RED","COLUMN"],   	[  [1, "Driver"]  ],   ["BoxPatrol",	[100,100],	[0,0],		[100]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   	[  [1, "Driver_E"]  ],   ["BoxPatrol",	[100,100],	[0,0],		[100]   ]]          
 			],
 			[	//TROOPS
 				// None included becuase this is a UGV
@@ -309,18 +309,18 @@
 		[  	// GROUP #4 (Armed convoy example)
 			[ // VEHICLES
 				// Vehicle                     Offset     Crew (only 1 type!)   	CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_Hemmts,				[0,0],		[1 ,"Rifleman"],        "Random"      ], 
-				[  FuMS_Mil_ArmedOffroads,		[0,50],		[1 ,"Rifleman"],     	"Random"      ], 
-				[  FuMS_Mil_Hunters,			[0,75],		[1 ,"Rifleman"],     	"Random"      ]
+				[  FuMS_Mil_Hemmts,				[0,0],		[1 ,"Rifleman_E"],        "Random"      ], 
+				[  FuMS_Mil_ArmedOffroads,		[0,50],		[1 ,"Rifleman_E"],     	"Random"      ], 
+				[  FuMS_Mil_Hunters,			[0,75],		[1 ,"Rifleman_E"],     	"Random"      ]
 			],
 			[  
 			//    Drivers behavior             		     # and type  |         AI Logic     |    spawn   | 	dest       | 	AI Logic options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [3, "Driver"]  ],   ["TrackRoute",		[0,0],		[0,0],		["SAFE","LIMITED",["Cities","Cities"],true,true,false,0]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [3, "Driver_E"]  ],   ["TrackRoute",		[0,0],		[0,0],		["SAFE","LIMITED",["Cities","Cities"],true,true,false,0]   ]]
 			],
 			// Troops : These are distributed across all vehicles in this convoy.                                                         
 			[   //  Troop behaviour and side options                # and type of Troops          Patrol logic |  	spawn     |		dest |		AI Logic options
-				[["EAST","COMBAT","RED","COLUMN"],   			[  [3,"Sniper"],[2,"Rifleman"] ],   ["BoxPatrol",	[0,0],			[0,0],		[100]   ]]
-				[["EAST","COMBAT","RED","COLUMN"],   			[  [1,"Sniper"],[2,"Rifleman"] ],   ["BoxPatrol",	[-70,-600],		[50,0],		[50]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   			[  [3,"Sniper_E"],[2,"Rifleman_E"] ],   ["BoxPatrol",	[0,0],			[0,0],		[100]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   			[  [1,"Sniper_E"],[2,"Rifleman_E"] ],   ["BoxPatrol",	[-70,-600],		[50,0],		[50]   ]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 			]
@@ -328,18 +328,18 @@
 		[	// GROUP #5 (Airborne Vehicle example)
 			[	// VEHICLES
 				//	Vehicle classname           Offset     	Crew (only 1 type!)   	CargoLoot (see Loot section below for more detail!)
-				[  "B_Heli_Light_01_armed_F",	[0,0],		[1,"Rifleman"],			"Truck01"      ], //AH-9 Pawnee 
-				[  "B_Heli_Light_01_armed_F",	[0,-100],	[1,"Rifleman"],			"Truck01"      ], //AH-9 Pawnee
-				[  "B_Heli_Transport_01_F",		[100,0],	[1,"Rifleman"],			"Truck01"      ]  //U-80 Ghost Hawk
+				[  "B_Heli_Light_01_armed_F",	[0,0],		[1,"Rifleman_E"],			"TruckJunk"      ], //AH-9 Pawnee 
+				[  "B_Heli_Light_01_armed_F",	[0,-100],	[1,"Rifleman_E"],			"TruckJunk"      ], //AH-9 Pawnee
+				[  "B_Heli_Transport_01_F",		[100,0],	[1,"Rifleman_E"],			"TruckJunk"      ]  //U-80 Ghost Hawk
 			],
 			[	// DRIVERS  
 				// Pilot behavior                       	# and type  |         AI Logic     |    spawn  | dest  | 'AI Logic' options  (see documentation)                                                     RTB, 	Roads, 	Despawn, 	Height
-				[["EAST","COMBAT","RED","COLUMN"],		[  [3, "Driver"]  ],   ["TrackRoute",		[0,0],	[0,0],	["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],		false,	false,	false,		100   ]]]
+				[["EAST","COMBAT","RED","COLUMN"],		[  [3, "Driver_E"]  ],   ["TrackRoute",		[0,0],	[0,0],	["COMBAT","NORMAL",["Villages","Villages","Cities","Capitals","Villages","Villages"],		false,	false,	false,		100   ]]]
 			],
 			[   
 				// TROOPS : These are distributed across all aircraft in the group 
 				//  Troop behaviour and side options        	# and type of Troops     	Patrol logic |  spawn   |dest |	'AI Logic options  		locations		RTB, 	Roads, 	Despawn, 	fly height
-				[["EAST","COMBAT","RED","COLUMN"],			[[1,"Sniper"],[1,"Rifleman"]],	["PatrolRoute",	[0,0],	[0,0],	["COMBAT","NORMAL",		["Villages"],	true,	false,	true,		100   ]]]
+				[["EAST","COMBAT","RED","COLUMN"],			[[1,"Sniper_E"],[1,"Rifleman_E"]],	["PatrolRoute",	[0,0],	[0,0],	["COMBAT","NORMAL",		["Villages"],	true,	false,	true,		100   ]]]
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 				]
 			]

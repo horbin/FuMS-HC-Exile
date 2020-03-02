@@ -12,7 +12,7 @@
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL", 500, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-		true, 				// Notify players via global message
+		false, 				// Notify players via global message
 		false,				// Show encounter area on the map
 		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
@@ -51,7 +51,7 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				//[  CAMS_Mil_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "Truck01"      ],
+				//[  CAMS_Mil_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
 				[  CAMS_Mil_UnarmedOffroad_E,		[0,-1050],	[1,"Rifleman_E"],	"TruckJunk"] 				
 			],
 			[  

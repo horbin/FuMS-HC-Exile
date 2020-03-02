@@ -48,6 +48,12 @@ _immersionData =
 		[
 			"Exile_Item_InstaDoc","Exile_Item_Vishpirin","Exile_Item_Bandage"
 		]
+	],
+	[	// Uniforms that "Bambi" class can wear 
+		"ImFX_Uniform_Bambi",1,false,
+		[
+			"Exile_Uniform_BambiOverall"
+		]
 	]
 
 ];

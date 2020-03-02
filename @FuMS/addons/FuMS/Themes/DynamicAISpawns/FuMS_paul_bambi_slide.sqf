@@ -21,7 +21,7 @@
 	["Bambis Playing","hd_objective","ELLIPSE","ColorBlue","Cross",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -59,19 +59,19 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Civ_Hatchbacks_ALL,	[-20,-20],	0,	[.5,   1,     .5,         .5,         .5]],
+		[CAMS_Civ_Hatchbacks_ALL,	[((round random 40)-20),((round random 40)-20)],	(round random 360),	[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
-		["Land_Slide_F",			[-2,-1],				180,	0],
-		["Land_Slide_F",			[2,1],					0,		0],
-		["Land_Slide_F",			[3,5],					250,	0]		
+		["Land_Slide_F",			[-3,-2],				(round random 360),	0],
+		["Land_Slide_F",			[3,2],					(round random 360),	0],
+		["Land_Slide_F",			[4,6],					(round random 360),	0]		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["CIV","SAFE","GREEN","WEDGE"],   	[  [3,"Bambi"]  ],   					["Buildings",		[0,0],[0,0],[25]   ]],
-		[["EAST","AWARE","RED","VEE"],   	[  [2,"CivNonCombat"]  ],   			["Explore",		[0,0],[0,0],[50]   ]],
-		[["EAST","AWARE","RED","COLUMN"],  	[  [2,"CivCombat"]  ],   				["Explore",		[0,0],[0,0],[75]   ]]
+		[["CIV","SAFE","GREEN","WEDGE"],   	[  [4,"Bambi"]  ],   		["Buildings",	[0,0],[0,0],[25]   ]],
+		[["EAST","AWARE","RED","VEE"],   	[  [2,"CivNonCombat"]  ],   ["Explore",		[0,0],[0,0],[50]   ]],
+		[["EAST","AWARE","RED","COLUMN"],  	[  [2,"CivCombat"]  ],   	["Explore",		[0,0],[0,0],[75]   ]]
 
 	],
 	[			// Vehicles	
@@ -84,7 +84,7 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
 			["Timer", 		["TimerNoPlayers", 		2400]],	//40 minutes	
-			["LUCNT",		["LowUnitCount","EAST",0,0,[0,0]]  ]			
+			["LUCNT",		["LowUnitCount","CIV",0,200,[0,0]]  ]			
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
@@ -93,9 +93,5 @@
 			[["LOSE"],	["Timer"				]],
 			[["END"],	["LUCNT","OR","Timer"	]]  
 		]
-
-  
 	]
-
-
 ];

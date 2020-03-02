@@ -59,7 +59,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Heli_Hummingbirds, 	[-10,-10],	0,	[.5,   1,     .6,         .5,         .75]],
+		[CAMS_Heli_Hummingbirds, 	[-10,-10],	0,	[.5,   1,     .6,         .5,         .75]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
@@ -75,9 +75,9 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman"]  ],   				["Loiter",		[-13,-13],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman"]  ],   				["BoxPatrol",	[-13,-13],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"LMG"]  ],   						["Explore",		[-13,-13],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   				["Loiter",		[-13,-13],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   				["BoxPatrol",	[-13,-13],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"LMG_E"]  ],   						["Explore",		[-13,-13],[0,0],[100]   ]]
 
 	],
 	[			// Vehicles	

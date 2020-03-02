@@ -11,7 +11,7 @@ private ["_pos","_mission","_missionNameOverride","_missionFileName"];
 _pos = _this select 0;
 _mission = _this select 1;
 _missionNameOverride = _this select 2;
-diag_log format ["##SetSpecialNameandLocation: _mission:%1",_mission];
+//diag_log format ["##SetSpecialNameandLocation: _mission:%1",_mission];
 if (TypeName _mission == "ARRAY") then
 {
     if (count _mission > 1) then
@@ -69,7 +69,7 @@ if (TypeName _mission == "ARRAY") then
 				};
 			}foreach FuMS_DefinedMapLocations;             
 
-			diag_log format ["##SetSpecialNameandLocation: _pos:%1 _name:%2",_pos,_missionNameOverride];
+			//diag_log format ["##SetSpecialNameandLocation: _pos:%1 _name:%2",_pos,_missionNameOverride];
         };
     }else{_missionFileName = _mission select 0;};  // mission is of format [["MissionName"]]
 } else {_missionFileName = _mission;}; // mission is of format ["MissionName"]
