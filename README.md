@@ -4,10 +4,10 @@
 ###### Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
 
-v0.50 (DEV)
+v0.50d
 ****
-Developers Edition
-###### This is a rough WIP post to keep the content backed up.  It works but a lot has been turned off for now while I test and develop
+Developer's Edition
+###### This is nearly complete (updating documentation still) version with nearly all mission types turned back on
 ###### This will be completed soon and all functions turned back on
 ****
 
@@ -29,18 +29,21 @@ System Changes:
 
 - Added new AI Logic
 	- Air Evac (AI can call in a transport helicopter to evacuate remaining soldiers.  Armed transport heli will come in and evac any units in area)
-	- SADRoute (FIND RIGHT WORDS AND DESCRIPTION) 
+	- SADRoute (Search and Destroy type convoys, works better with helicopters) 
 
-- Custom magazine spawns: standard mag, random mag (of all types), and forbidden mags as options.  - ADD CODE FOR THIS BEFORE RELEASE	
+- Custom magazine spawns: standard mag (picks "default" mag), random mag (random selection of of all available types), and forbidden mags(WIP) as options.  	
 
+// Radio Chatter is still heavy WIP
 - Enabled basic radio chatter with audio from mission events (re-enforcements, counter attacks will gerate radio squak and message on screen)
 	- Audio can be disabled in config files
 	- Entire system can be disabled in config files
 
 Code changes:
-- Implemented CAMS (Common Asset Management System) for easy integraion with custom content
+- Implemented CAMS (Common Asset Management System) for easy integration with custom content
+- All mission themes updated for new CAMS system
 - Added new trigger "TAKEVEHICLE" to monitor for stolen vehicles that have been moved a minimum distance
-- Added ability to desigante specific types of locations for individual missions, as opposed to one type for the whole theme (Missions can spawn in VILLAGES, MARINE, CITIES, ETC.)
+- Created new LOITER logic so soldiers use ambient animation and new LOITER waypoints
+- Added ability to designate specific types of locations for individual missions, as opposed to one type for the whole theme (Missions can spawn in VILLAGES, MARINE, CITIES, ETC.)
 - Rockets now offer a percentage chance to be spawned on AI (Controls randomization and rareness of loot)
 - Began seperation of Exile code to support future stand alone system 
 - Rewrote GlobalLoootData for more generic settings and compatability with CAMS
