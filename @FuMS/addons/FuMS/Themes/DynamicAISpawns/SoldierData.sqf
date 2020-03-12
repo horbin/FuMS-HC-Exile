@@ -26,7 +26,7 @@ _soldierData =
         [CAMS_V_Bandolliers,0], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,0], // Backpack and chance.
-        [CAMS_SubMGs_E,0], // PriWeapon and chance
+        [CAMS_SMG_E,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,0], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -132,7 +132,7 @@ _soldierData =
         [.6, .7, .7, .7, .7, 1, .8, 1, .7],
         [ImFX_Uniform_Scientist,1], // Uniform
         ["V_BandollierB_blk",0], // Vest.
-        ["Headgear_H_Bandanna_camo",1], // Helmet
+        ["H_Bandanna_camo",1], // Helmet
         [CAMS_Packs_All,.5], // Backpack and chance.
         ["arifle_Mk20_F",0], // PriWeapon and chance
         [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
@@ -174,7 +174,7 @@ _soldierData =
         [CAMS_V_Chestrig,.1], // Vest.
         [CAMS_H_Military,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,.8], // PriWeapon and chance
+        [CAMS_SMG_I,.8], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.9], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -194,7 +194,7 @@ _soldierData =
         [CAMS_V_Bandolliers,.5], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,.9], // PriWeapon and chance
+        [CAMS_SMG_I,.9], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -214,7 +214,7 @@ _soldierData =
         [CAMS_V_Bandolliers,.5], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,0], // PriWeapon and chance
+        [CAMS_SMG_I,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)

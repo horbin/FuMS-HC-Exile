@@ -42,30 +42,41 @@ _mines = [];
 _markers = [];
 _anomolies = [];
 
+_debug = false;
 
 diag_log format ["<FuMS> Custom Script: MissionFXStart executed."];
 
 // To call any other custom script you have designed AND defined in the \FuMS\Theme\<your theme>\Scripts folder
 // simply call it by name.
-diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_vehicles,_buildings];
-
+if (_debug) then
+{
+	diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_vehicles,_buildings];
+};
 
 ////////////////// Spawn Minefields
 {
-	diag_log format ["<FuMS> MissionFXStart mine check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart mine check %1",_x];
+	};
 	if (_x isKindof "MineGeneric") then
 	{
 		private _spawnedMines = [_x] call SpawnMinefield;
 		_mines append _spawnedMines;
 	};
 }foreach _buildings;
-//diag_log format ["<FuMS> MissionFXStart mines created %1",_spawnedMines];
-
+if (_debug) then
+{
+	diag_log format ["<FuMS> MissionFXStart mines created %1",_spawnedMines];
+};
 
 ///////////////// Alias Flamer
 
 {
-	diag_log format ["<FuMS> MissionFXStart Flamer check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Flamer check %1",_x];
+	};
 
 	if (typeOf _x == "FirePlace_burning_F") then
 	{
@@ -88,7 +99,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Farty
 
 {
-	diag_log format ["<FuMS> MissionFXStart Farty check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Farty check %1",_x];
+	};
 
 	if ((typeOf _x == "Land_GarbageBarrel_01_F") or (typeOf _x == "Land_GarbageBarrel_01_english_F")) then
 	{
@@ -118,7 +132,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Farty Pool
 
 {
-	diag_log format ["<FuMS> MissionFXStart Farty Pool check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Farty Pool check %1",_x];
+	};
 	//	if ((typeOf _x == "ATMine") or (typeOf _x == "APERSMine")) then
 
 	if (typeOf _x == "Skeet_Clay_F") then
@@ -133,7 +150,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Screamer
 
 {
-	diag_log format ["<FuMS> MissionFXStart Screamer check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Screamer check %1",_x];
+	};
 
 	if (typeOf _x == "Land_AncientStatue_01_F") then
 	{
@@ -159,7 +179,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Strigoi
 
 {
-	diag_log format ["<FuMS> MissionFXStart Strigoi check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Strigoi check %1",_x];
+	};
 
 	if (typeOf _x == "Land_Grave_rocks_f") then
 	{
@@ -182,7 +205,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Sparky
 
 {
-	diag_log format ["<FuMS> MissionFXStart Sparky check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Sparky check %1",_x];
+	};
 
 	if (typeOf _x == "Land_RoadCrack_01_4x4_F") then
 	{
@@ -206,7 +232,10 @@ diag_log format ["<FuMS> MissionFXStart Script _vehicles %1 | _buildings %2",_ve
 ///////////////// Alias Kamikaze
 
 {
-	diag_log format ["<FuMS> MissionFXStart Crazy check %1",_x];
+	if (_debug) then
+	{
+		diag_log format ["<FuMS> MissionFXStart Crazy check %1",_x];
+	};
 
 	if (typeOf _x == "Land_Sign_WarningUnexplodedAmmo_F") then
 	{

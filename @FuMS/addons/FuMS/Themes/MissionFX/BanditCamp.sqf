@@ -37,7 +37,7 @@
 		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[ CAMS_Civ_All,					[-10,10],	0,		[.5,   1,     .5,         .5,         .5]]
+		[ ImFX_Land_Cars,					[-10,10],	0,		[.5,   1,     .5,         .5,         .5]]
 		
 		// This line will spawn a flamer anomoly in the mission
 		//["FirePlace_burning_F",				[25,-25],	0,		0],  //type, offset, rotation, presist flag

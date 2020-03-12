@@ -60,7 +60,7 @@
 			],
 			[  
 											// PILOTS: # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[0,2000],[0,0],["Full", 100, true,true  ]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[-2000,-2000],[0,0],["Full", 100, true,true  ]   ]]
 			],
 			[   
 											// TROOPS : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.

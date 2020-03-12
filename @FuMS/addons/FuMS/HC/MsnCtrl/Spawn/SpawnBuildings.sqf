@@ -21,7 +21,7 @@ _generation = _lineage select 1;
 _offspringID = _lineage select 2;
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
-_debug = false;
+_debug = true;
 
 if (!isNil "_buildingData") then
 {
@@ -47,7 +47,7 @@ if (!isNil "_buildingData") then
 			
 			if (_debug) then
 			{
-				diag_log format ["##SPAWNBUILDINGS: Launch params: _type:%1 | _offset:%2 | _rotation:%3 | _persist:%4",_type, _offset, _rotation, _persist];
+				diag_log format ["##SPAWNBUILDINGS: Launch params: _offset:%2 | _rotation:%3 | _persist:%4 | _mission:%5 | _type:%1",_type, _offset, _rotation, _persist,  _curMission];
 			};
         
             // if _type is an Array, it should be a 'list' of building or vehicle class names, so pick one randomly.
@@ -343,7 +343,7 @@ if (!isNil "_buildingData") then
             else
             {
                 // Data format error if this code is being executed!
-                        diag_log format ["<FuMS> SpawnBuilding: ERROR in building data format for mission %1/%2", FuMS_ActiveThemes select _themeIndex,  _curMission];
+                diag_log format ["<FuMS> SpawnBuilding: ERROR in building data format for mission %1/%2", FuMS_ActiveThemes select _themeIndex,  _curMission];
                 diag_log format ["<FuMS> SpawnBuilding: Offending building/vehicle : %1", _x];
                 _buildingData=_buildingData-[_x];                                                
             };               

@@ -55,12 +55,12 @@
 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_E"]  ],   	["Buildings",	[1,0],[0,10],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_E"]  ],   		["Buildings",	[0,2],[-10,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_E"]  ],   	["Buildings",	[0,10],[3,0],[50]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_E"]  ],   	["Buildings",	[-10,0],[0,4],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_E"]  ],   		["Buildings",	[-4,0],[0,-10],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_E"]  ],   	["Buildings",	[0,-3],[10,0],[50]   ]],
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[1,0],[0,10],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_I"]  ],   		["Buildings",	[0,2],[-10,0],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,10],[3,0],[50]   ]],
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[-10,0],[0,4],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_I"]  ],   		["Buildings",	[-4,0],[0,-10],[75]   ]],
+		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,-3],[10,0],[50]   ]],
 		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [10,"CivCombat"]  ],   	["Buildings",	[0,-10],[-2,0],[100]  ]],
 		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [10,"CivCombat"]  ],   	["Buildings",	[10,0],[0,-1],[100]  ]],
 		[["RESISTANCE","COMBAT","RED","COLUMN"],  	[  [10,"CivCombat"]  ],   	["Explore",		[5,5],[-5,5],[75]   ]]
@@ -71,9 +71,9 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[25,-1025],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[15,-1050],[1,"Rifleman_E"],        "TruckJunk"      ] 				
+				[  CAMS_Land_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[25,-1025],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[15,-1050],[1,"Rifleman_E"],        "TruckJunk"      ] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -89,8 +89,8 @@
 		],
 		[  // Convoy #2    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 				
+				[  CAMS_Land_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -106,8 +106,8 @@
 
 		[  // Convoy #3    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
+				[  CAMS_Land_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
 				
 			],
 			[  
@@ -123,9 +123,9 @@
 		],
 		[  // Convoy #4    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
+				[  CAMS_Land_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[-1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[-1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
 				
 			],
 			[  
@@ -142,8 +142,8 @@
 		],
 		[  // Convoy #5    Southwest
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[1000,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[1050,-1000],[1,"Rifleman_E"],        "TruckJunk"      ] 
+				[  CAMS_Land_UnarmedOffroad_E,[1000,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[1050,-1000],[1,"Rifleman_E"],        "TruckJunk"      ] 
 				
 			],
 			[  
@@ -159,8 +159,8 @@
 		],
 		[  // Convoy #6    Northwest
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[-1000,1000],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[-1050,1000],[1,"Rifleman_E"],        "TruckJunk"      ] 
+				[  CAMS_Land_UnarmedOffroad_E,[-1000,1000],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[-1050,1000],[1,"Rifleman_E"],        "TruckJunk"      ] 
 				
 			],
 			[  
@@ -176,8 +176,8 @@
 		],
 		[  // Convoy #7    East
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_E,[1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
+				[  CAMS_Land_UnarmedOffroad_E,[1000,0],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[1050,0],[1,"Rifleman_E"],        "TruckJunk"      ] 
 				
 			],
 			[  

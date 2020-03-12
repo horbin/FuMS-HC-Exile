@@ -9,9 +9,9 @@
 	["Bandit Camp","mil_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-		true, 1,0,
-		true, // Notify players via global message
-		true,// Show encounter area on the map
+		false, 1,0,
+		false, // Notify players via global message
+		false,// Show encounter area on the map
 		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
@@ -37,14 +37,14 @@
 		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[ CAMS_Civ_All,					[-10,10],	(round random 360),		[.5,   1,     .5,         .5,         .5]],
+		//[ ImFX_Land_Cars,					[-10,10],	(round random 360),		[.5,   1,     .5,         .5,         .5]],
 
 		// This line will spawn a single pool at this location in the mission
-		["Skeet_Clay_F",				[105,-105],	0,		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[-115,-85],	0,		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[-95,135],	0,		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[95,105],	0,		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[75,-75],	0,		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
 
 		// This line will spawn a toxic pool with (first item) or without (second item) an anomoly in the mission
 		["Land_GarbageBarrel_01_F",		[5,5],	0,		0],  //type, offset, rotation, presist flag
@@ -57,7 +57,15 @@
 
 	// Vehicles
 	[
-					 
+		[  		// Convoy #1                     
+			[   // Vehicle                     Offset     				Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
+				[  ImFX_Land_Cars       	,[((round random 20)-10),((round random 20)-10)],						[0,"Driver_E"],     	"None" ]					 
+			],
+			[  
+			],
+			[   //  Troop behaviour and side options    	# and type of Troops       Patrol logic |  spawn     |dest |'Patrol' options
+			]
+		]  
 	],
 	[
 		[
@@ -67,15 +75,15 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			//	  ["PROX",["ProxPlayer",[0,0],80,1]  ],
-			["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes
+			//["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes
 			["LUCNT",		["LowUnitCount","EAST",0,0,[0,0]]  ]
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],		["LUCNT"]],   
-			[["LOSE"],		["Timer"]],
-			[["END"],		["LUCNT","OR","Timer"]]  
+			//[["LOSE"],		["Timer"]],
+			[["END"],		["LUCNT"]]  
 		]      
 	]
 ];

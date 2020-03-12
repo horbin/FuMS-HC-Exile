@@ -82,7 +82,7 @@
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
-				[CAMS_Civ_SUV,		[4,4],			[1,"BanditGroup"],        "BanditTruck",		[.25]      ]
+				[CAMS_Land_SUV_C,		[4,4],			[1,"BanditGroup"],        "BanditTruck",		[.25]      ]
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options

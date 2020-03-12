@@ -51,8 +51,8 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				//[  CAMS_Mil_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
-				[  CAMS_Mil_UnarmedOffroad_I,		[0,-1050],	[1,"Rifleman_I"],	"TruckJunk"] 				
+				//[  CAMS_Land_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_I,		[0,-1050],	[1,"Rifleman_I"],	"TruckJunk"] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -67,7 +67,7 @@
 		],
 		[  // Convoy #2    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_I,		[-1000,0],	[1,"Rifleman_I"],	"TruckJunk"] 
+				[  CAMS_Land_UnarmedOffroad_I,		[-1000,0],	[1,"Rifleman_I"],	"TruckJunk"] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options

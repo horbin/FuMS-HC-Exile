@@ -24,29 +24,13 @@ _debugCart = false;
 _cartContents = 
 [	
 	[
-		"CAMS_Heli_Unarmed_W",1,false,
-		[
-			
-		]
-	],
-	[
-		"CAMS_Heli_Armed_W",1,false,
-		[
-			
-		]
-	],
-	[
 		"CAMS_Heli_Transport_W",1,false,
 		[
 			"B_Heli_Transport_03_F ","B_Heli_Transport_03_unarmed_F","B_Heli_Transport_03_black_F","B_Heli_Transport_03_unarmed_green_F"
 		]
 	],
-	
-	
-	
-	
 	[
-		"CAMS_Heli_Taru_E",1,false,
+		"CAMS_Heli_Taru_E",1,true,
 		[
 			"O_Heli_Transport_04_F","O_Heli_Transport_04_ammo_F","O_Heli_Transport_04_box_F",
 			"O_Heli_Transport_04_fuel_F","O_Heli_Transport_04_medevac_F","O_Heli_Transport_04_repair_F",
@@ -55,20 +39,22 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Heli_Armed_E",1,false,
-		[
-			
-		]
-	],
-	[
 		"CAMS_Heli_Transport_E",1,false,
 		[
 			"O_Heli_Transport_04_bench_F","O_Heli_Transport_04_covered_F","O_Heli_Transport_04_bench_black_F",
 			"O_Heli_Transport_04_covered_black_F","O_Heli_Transport_04_medevac_black_F"
 		]
+	],
+	[
+		"CAMS_Heli_Unarmed_C",1,true,
+		[
+			"C_Heli_Light_01_civil_F","C_Heli_light_01_blue_F","C_Heli_light_01_red_F","C_Heli_light_01_ion_F","C_Heli_light_01_blueLine_F",
+			"C_Heli_light_01_digital_F","C_Heli_light_01_elliptical_F","C_Heli_light_01_furious_F","C_Heli_light_01_graywatcher_F",
+			"C_Heli_light_01_jeans_F","C_Heli_light_01_light_F","C_Heli_light_01_shadow_F","C_Heli_light_01_sheriff_F","C_Heli_light_01_speedy_F",
+			"C_Heli_light_01_sunset_F","C_Heli_light_01_vrana_F","C_Heli_light_01_wasp_F","C_Heli_light_01_wave_F","C_Heli_light_01_stripped_F",
+			"C_Heli_light_01_luxe_F"
+		]
 	]
-	
-	
 ];
 
 

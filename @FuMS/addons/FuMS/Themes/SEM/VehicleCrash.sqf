@@ -40,8 +40,8 @@
 		["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[CAMS_Vehicle_Wreck,	[6,6],		(round random 360),	0,	"SMOKE_MEDIUM"],   //type, offset, rotation, presist flag
-		[CAMS_Vehicle_Wreck,	[-6,-6],	(round random 360),	0,	"SMOKE_MEDIUM"]  
+		[CAMS_Wreck_Mil,	[6,6],		(round random 360),	0,	"SMOKE_MEDIUM"],   //type, offset, rotation, presist flag
+		[CAMS_Wreck_Mil,	[-6,-6],	(round random 360),	0,	"SMOKE_MEDIUM"]  
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_E"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]

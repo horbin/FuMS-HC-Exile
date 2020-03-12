@@ -122,7 +122,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_LightMgs_E,1], // PriWeapon and chance
+        [CAMS_LMG_E,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -141,7 +141,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_SubMGs_E,1], // PriWeapon and chance
+        [CAMS_SMG_E,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -199,7 +199,7 @@ _soldierData =
         [CAMS_V_Chestrig,.1], // Vest.
         [CAMS_H_Military,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_E,.8], // PriWeapon and chance
+        [CAMS_SMG_E,.8], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,.9], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -218,7 +218,7 @@ _soldierData =
         [CAMS_V_Chestrig,.8], // Vest.
         [CAMS_H_Aviation,1], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_E,.5], // PriWeapon and chance
+        [CAMS_SMG_E,.5], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,1], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -326,7 +326,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_LightMgs_W,1], // PriWeapon and chance
+        [CAMS_LMG_W,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_W,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -345,7 +345,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_SubMGs_W,1], // PriWeapon and chance
+        [CAMS_SMG_W,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_W,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -403,7 +403,7 @@ _soldierData =
         [CAMS_V_Chestrig,.1], // Vest.
         [CAMS_H_Military,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_W,.8], // PriWeapon and chance
+        [CAMS_SMG_W,.8], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_W,.9], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -422,7 +422,7 @@ _soldierData =
         [CAMS_V_Chestrig,.8], // Vest.
         [CAMS_H_Aviation,1], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_W,.5], // PriWeapon and chance
+        [CAMS_SMG_W,.5], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_W,1], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -535,7 +535,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_LightMgs_I,1], // PriWeapon and chance
+        [CAMS_LMG_I,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -554,7 +554,7 @@ _soldierData =
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
-        [CAMS_SubMGs_I,1], // PriWeapon and chance
+        [CAMS_SMG_I,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -614,7 +614,7 @@ _soldierData =
         [CAMS_V_Chestrig,.1], // Vest.
         [CAMS_H_Military,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,.8], // PriWeapon and chance
+        [CAMS_SMG_I,.8], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.9], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -634,7 +634,7 @@ _soldierData =
         [CAMS_V_Chestrig,.8], // Vest.
         [CAMS_H_Aviation,1], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,.5], // PriWeapon and chance
+        [CAMS_SMG_I,.5], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,1], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -674,7 +674,7 @@ _soldierData =
         [CAMS_V_Bandolliers,.5], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
-        [CAMS_SubMGs_I,.9], // PriWeapon and chance
+        [CAMS_SMG_I,.9], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -694,7 +694,7 @@ _soldierData =
         [CAMS_V_Bandolliers,.1], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,.05], // Backpack and chance.
-        [CAMS_SubMGs_I,0], // PriWeapon and chance
+        [CAMS_SMG_I,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,1], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -713,7 +713,7 @@ _soldierData =
         [CAMS_V_Bandolliers,0], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_Packs_All,0], // Backpack and chance.
-        [CAMS_SubMGs_E,0], // PriWeapon and chance
+        [CAMS_SMG_E,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,0], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
@@ -724,8 +724,25 @@ _soldierData =
         [
             ["RESPECT", 0]
         ]		
-		
-		
+    ],[
+        "Doctor",
+        [.6, .7, .7, .7, .7, 1, .8, 1, .7],
+        [ImFX_Uniform_Scientist,1], // Uniform
+        ["V_BandollierB_blk",0], // Vest.
+        ["H_Bandanna_camo",1], // Helmet
+        [CAMS_Packs_All,.5], // Backpack and chance.
+        ["arifle_Mk20_F",0], // PriWeapon and chance
+        [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_I,1], // Secondary Weapon and chance
+        [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 1, 0, .1 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, [false,0], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 10],
+			["RESPECTGROUP",1]
+        ]		
     ],[        
 		"Captive",
 		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
@@ -733,7 +750,7 @@ _soldierData =
         [CAMS_V_Vests,0], // Vest.
         [CAMS_H_Civ,.8], // Helmet
         [CAMS_packs_All,0], // Backpack and chance.
-        [CAMS_SubMGs_E,0], // PriWeapon and chance
+        [CAMS_SMG_E,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,0], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)

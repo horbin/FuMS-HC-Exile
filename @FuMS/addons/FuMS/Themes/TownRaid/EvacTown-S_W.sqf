@@ -65,8 +65,8 @@
 	[
 		[ 	// Convoy #1    West
 			[ // Vehicle          Offset  | Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[ CAMS_Mil_Transport_ALL_W,	[-600,0],	[1,"Rifleman_W"],        "Truck01"      ],
-				[ CAMS_Mil_Armed_W,	[-650,0],		[1,"Rifleman_W"],        "Truck01"      ] 				
+				[ CAMS_Land_Transport_ALL_W,	[-600,0],	[1,"Rifleman_W"],        "TruckJunk"      ],
+				[ CAMS_Land_Armed_W,	[-650,0],		[1,"Rifleman_W"],        "TruckJunk"      ] 				
 			],
 			[ // Drivers                                 # and type  |        Patrol | spawn | dest | 'Patrol' options
 				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Driver_W"]  ],   ["Convoy",[-550,0],[0,0],["NORMAL",true,true, true, "XFILL"]   ]]

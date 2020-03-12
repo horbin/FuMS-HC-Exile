@@ -59,7 +59,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[CAMS_Mil_AA_E,				[-10,-10],				0,			[.5,   1,     .5,         .5,         .5]],
+		[CAMS_Land_AA_E,				[-10,-10],				0,			[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -111,7 +111,7 @@
 		[
 		
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  CAMS_Mil_ArmedOffroad_E,[50,50],	[1,"Hunter_E"],        "TruckJunk",[0]      ]
+				[  CAMS_Land_ArmedOffroad_E,[50,50],	[1,"Hunter_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
