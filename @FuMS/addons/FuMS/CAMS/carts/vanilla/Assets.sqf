@@ -21,10 +21,13 @@ _debugCart = false;
 
 _cartContents = 
 [	
-	// Civ and guerilla uniforms
+	///////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////// Uniforms
+	//////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////  Civ
 	[	
 		"CAMS_U_Civ",		// Global variable being adjusted
-		4,					// Side this is assigned to 
+		1,					// Side this is assigned to 
 							// 0 - Global group combination
 							// 1 - Everything else
 		true,				// TRUE - Replaces vanilla class      FALSE - Appends to vanilla class
@@ -36,13 +39,13 @@ _cartContents =
 		]
 	],
 
-	// Uniforms - WEST
+	//////////////////////////////////// Uniforms - WEST
 	
 	[
 		"CAMS_U_Soldier_W",1,true,
 		[
 			"U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest",
-			"U_B_CombatUniform_mcam_worn","U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"
+			"U_B_CombatUniform_mcam_worn","U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3","U_B_SpecopsUniform_sgg"
 		]	
 	],
 	[
@@ -51,8 +54,7 @@ _cartContents =
 			"U_BG_Guerilla2_1","U_BG_Guerrilla_6_1","U_BG_Guerilla1_1","U_BG_Guerilla2_2",
 			"U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_leader"
 		]
-	],
-	
+	],	
 	[
 		"CAMS_U_Ghillie_W",1,true,
 		[
@@ -78,7 +80,7 @@ _cartContents =
 		]
 	],
 	
-	// Uniforms - EAST
+	//////////////////////////////////////// Uniforms - EAST
 	
 	[
 		"CAMS_U_Soldier_E",1,true,
@@ -115,11 +117,11 @@ _cartContents =
 	[	
 		"CAMS_U_All_E",0,true,
 		[
-			"CAMS_U_Civ", "CAMS_U_Soldier_E", "CAMS_U_Guerilla_E", "CAMS_U_Ghillie_E", "CAMS_U_Wetsuit_E", "CAMS_U_Aviation_E"
+			"CAMS_U_Soldier_E", "CAMS_U_Guerilla_E", "CAMS_U_Ghillie_E", "CAMS_U_Wetsuit_E", "CAMS_U_Aviation_E"
 		]
 	],
 
-	// Uniforms - Independant
+	//////////////////////////////////////////// Uniforms - Independant
 	
 	[
 		"CAMS_U_Soldier_I",1,true,
@@ -155,12 +157,12 @@ _cartContents =
 	[	
 		"CAMS_U_All_I",0,true,
 		[
-			"CAMS_U_Civ", "CAMS_U_Soldier_I", "CAMS_U_Guerilla_I", "CAMS_U_Ghillie_I", "CAMS_U_Wetsuit_I", "CAMS_U_Aviation_I"
+			"CAMS_U_Soldier_I", "CAMS_U_Guerilla_I", "CAMS_U_Ghillie_I", "CAMS_U_Wetsuit_I", "CAMS_U_Aviation_I"
 		]
 	],
 		
-	
-	// Vest / Chest container items
+	/////////////////////////////////////////////////////// Vest / Chest items
+	////////////////////////////////////////////////////// Mayb have to be broken down by EAST, WEST, IND in future or expansion packs
 	[
 		"CAMS_V_Bandolliers",1,true,
 		[
@@ -332,10 +334,7 @@ _cartContents =
 			"CAMS_H_Military", "CAMS_H_Civ", "CAMS_H_Boonie", "CAMS_H_Shemags", "CAMS_H_Aviation"
 		]
 	],
-	
-	
-	
-	// Glasses
+	///////////////////////////////////////////////////////////// Glasses
 	[
 		"CAMS_G_Regular",1,true,
 		[
@@ -385,19 +384,19 @@ _cartContents =
 	],
 
 	[
-		"CAMS_G_Guer_ALL",0,true,
+		"CAMS_G_ALL_Guer",0,true,
 		[
 			"CAMS_G_Regular","CAMS_G_Tactical","CAMS_G_Sport","CAMS_G_Shades", "CAMS_G_Bandana", "CAMS_G_Balaclava"
 		]
 	],
 	[
-		"CAMS_G_CIV_ALL",0,true,
+		"CAMS_G_ALL_CIV",0,true,
 		[
 			"CAMS_G_Regular","CAMS_G_Sport","CAMS_G_Shades", "CAMS_G_Lady"
 		]
 	],	
 	[
-		"CAMS_G_Military_ALL",0,true,
+		"CAMS_G_ALL_Mil",0,true,
 		[
 			"CAMS_G_Tactical","CAMS_G_Sport","CAMS_G_Shades"
 		]
@@ -410,81 +409,195 @@ _cartContents =
 		]
 	],
 	
+	/////////////////////////////////////////////////////
+	///////////// CAMS AI Models 
+	/////////////////////////////////////////////////////
 	
-	// Weapon attachments
+	/////////////// EAST
 	[
-		"CAMS_W_Pointer",1,true,
+		"CAMS_AI_FIA_E",1,true,
 		[
-			"acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","acc_pointer_IR"
+			"O_G_Soldier_F",
+			"O_G_Soldier_lite_F",
+			"O_G_Soldier_SL_F",
+			"O_G_Soldier_TL_F",
+			"O_G_Soldier_AR_F",
+			"O_G_medic_F",
+			"O_G_engineer_F",
+			"O_G_Soldier_exp_F",
+			"O_G_Soldier_GL_F",
+			"O_G_Soldier_M_F",
+			"O_G_Soldier_LAT_F",
+			"O_G_Soldier_A_F",
+			"O_G_officer_F",
+			"O_G_Soldier_unarmed_F",
+			"O_G_Survivor_F"
 		]
 	],
 	[
-		"CAMS_W_Bipod",1,true,
+		"CAMS_AI_CSAT_SOLDIER",1,true,
 		[
-			"bipod_01_F_blk","bipod_01_F_mtp","bipod_01_F_snd","bipod_01_F_khk","bipod_02_F_blk","bipod_02_F_hex",
-			"bipod_02_F_tan","bipod_03_F_blk","bipod_03_F_oli"
+			"O_Soldier_F",
+			"O_officer_F",
+			"O_Soldier_lite_F",
+			"O_Soldier_GL_F",
+			"O_Soldier_AR_F",
+			"O_Soldier_SL_F",
+			"O_Soldier_TL_F",
+			"O_soldier_M_F",
+			"O_Soldier_LAT_F",
+			"O_medic_F",
+			"O_soldier_repair_F",
+			"O_soldier_exp_F",
+			"O_helipilot_F",
+			"O_Soldier_A_F",
+			"O_Soldier_AT_F",
+			"O_Soldier_AA_F",
+			"O_engineer_F",
+			"O_crew_F",
+			"O_Pilot_F",
+			"O_helicrew_F",
+			"O_soldier_PG_F",
+			"O_soldier_UAV_F",
+			"O_Survivor_F",
+			"O_Soldier_unarmed_F",
+			"O_Soldier_AAR_F",
+			"O_Soldier_AAT_F",
+			"O_Soldier_AAA_F",
+			"O_support_MG_F",
+			"O_support_GMG_F",
+			"O_support_Mort_F",
+			"O_support_AMG_F",
+			"O_support_AMort_F"
 		]
 	],
 	[
-		"CAMS_W_Muzzle",1,true,
+		"CAMS_AI_CSAT_URBAN",1,true,
 		[
-			"muzzle_snds_338_black","muzzle_snds_338_green","muzzle_snds_338_sand",
-			"muzzle_snds_570",
-			"muzzle_snds_58_blk_F","muzzle_snds_58_wdm_F","muzzle_snds_58_ghex_F","muzzle_snds_58_hex_F",
-			"muzzle_snds_65_TI_blk_F","muzzle_snds_65_TI_hex_F","muzzle_snds_65_TI_ghex_F",
-			"muzzle_snds_93mmg","muzzle_snds_93mmg_tan",
-			"muzzle_snds_acp",
-			"muzzle_snds_B","muzzle_snds_B_khk_F","muzzle_snds_B_snd_F","muzzle_snds_B_lush_F","muzzle_snds_B_arid_F",
-			"muzzle_snds_H","muzzle_snds_H_khk_F","muzzle_snds_H_snd_F","muzzle_snds_H_MG","muzzle_snds_H_SW","muzzle_snds_H_MG_blk_F","muzzle_snds_H_MG_khk_F",
-			"muzzle_snds_L",
-			"muzzle_snds_M","muzzle_snds_m_khk_F","muzzle_snds_m_snd_F"
+			"O_soldierU_F",
+			"O_soldierU_AR_F",
+			"O_soldierU_AAR_F",
+			"O_soldierU_LAT_F",
+			"O_soldierU_AT_F",
+			"O_soldierU_AAT_F",
+			"O_soldierU_AA_F",
+			"O_soldierU_AAA_F",
+			"O_soldierU_TL_F",
+			"O_SoldierU_SL_F",
+			"O_soldierU_medic_F",
+			"O_soldierU_repair_F",
+			"O_soldierU_exp_F",
+			"O_engineer_U_F",
+			"O_soldierU_M_F",
+			"O_soldierU_A_F",
+			"O_SoldierU_GL_F",
+			"O_SoldierU_unarmed_F"		
 		]
 	],
 	[
-		"CAMS_W_OpticsLv1",1,true,
+		"CAMS_AI_CSAT_SF",1,true,
 		[
-			"optic_Aco","optic_ACO_grn","optic_ACO_grn_smg","optic_Aco_smg",
-			"optic_Arco","optic_Arco_blk_F","optic_Arco_ghex_F",
-			"optic_Holosight","optic_Holosight_smg","optic_Holosight_blk_F","optic_Holosight_khk_F","optic_Holosight_smg_blk_F","optic_Holosight_smg_khk_F",
-			"optic_Yorris","optic_MRD","optic_MRCO"
+			"O_diver_F",
+			"O_diver_TL_F",
+			"O_diver_exp_F",
+			"O_spotter_F",
+			"O_sniper_F",
+			"O_recon_F",
+			"O_recon_M_F",
+			"O_recon_LAT_F",
+			"O_recon_medic_F",
+			"O_recon_exp_F",
+			"O_recon_JTAC_F",
+			"O_recon_TL_F",
+			"O_ghillie_lsh_F",
+			"O_ghillie_sard_F",
+			"O_ghillie_ard_F"
 		]
 	],
 	[
-		"CAMS_W_OpticsLv2",1,true,
+		"CAMS_AI_ALL_E",0,true,
 		[
-			"optic_LRPS","optic_LRPS_tna_F","optic_LRPS_ghex_F",
-			"optic_NVS",
-			"optic_SOS","optic_SOS_khk_F"
+			"CAMS_AI_FIA_E",
+			"CAMS_AI_CSAT_SOLDIER",
+			"CAMS_AI_CSAT_URBAN",
+			"CAMS_AI_CSAT_SF"
+		]
+	],				
+	//////////////// WEST
+	[
+		"CAMS_AI_FIA_W",1,true,
+		[
+			"B_G_Soldier_F","B_G_Soldier_lite_F","B_G_Soldier_SL_F","B_G_Soldier_TL_F","B_G_Soldier_AR_F",
+			"B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F",
+			"B_G_Soldier_LAT_F","B_G_Soldier_A_F","B_G_officer_F","B_G_Soldier_unarmed_F","B_G_Survivor_F"
 		]
 	],
 	[
-		"CAMS_W_OpticsLv3",1,true,
+		"CAMS_AI_NATO_SOLDIER",1,true,
 		[
-			"optic_AMS","optic_AMS_khk","optic_AMS_snd",
-			"optic_DMS","optic_DMS_ghex_F",
-			"optic_ERCO_blk_F","optic_ERCO_khk_F","optic_ERCO_snd_F",
-			"optic_Hamr","optic_Hamr_khk_F",
-			"optic_KHS_blk",
-			"optic_KHS_hex","optic_KHS_old","optic_KHS_tan","optic_Nightstalker","optic_tws","optic_tws_mg"
+			"B_Soldier_F","B_RangeMaster_F","B_Soldier_lite_F","B_Soldier_GL_F","B_soldier_AR_F","B_Soldier_SL_F",
+			"B_Soldier_TL_F","B_soldier_M_F","B_soldier_LAT_F","B_medic_F","B_soldier_repair_F","B_soldier_exp_F",
+			"B_Helipilot_F","B_Soldier_A_F","B_soldier_AT_F","B_soldier_AA_F","B_engineer_F","B_crew_F",
+			"B_officer_F","B_Competitor_F","B_Pilot_F","B_helicrew_F","B_soldier_PG_F","B_soldier_UAV_F",
+			"B_Survivor_F","B_Soldier_unarmed_F","B_soldier_AAR_F","B_soldier_AAT_F","B_soldier_AAA_F","B_support_MG_F",
+			"B_support_GMG_F","B_support_Mort_F","B_support_AMG_F","B_support_AMort_F"
+			]
+	],
+	[
+		"CAMS_AI_NATO_SF",1,true,
+		[
+			"B_diver_F","B_diver_TL_F","B_diver_exp_F","B_recon_F","B_recon_LAT_F","B_recon_exp_F",
+			"B_recon_medic_F","B_recon_TL_F","B_recon_M_F","B_recon_JTAC_F","B_spotter_F","B_sniper_F"
 		]
 	],
 	[
-		"CAMS_W_Optics_ALL",0,true,
+		"CAMS_AI_ALL_W",0,true,
 		[
-			"CAMS_W_OpticsLv1", "CAMS_W_OpticsLv2", "CAMS_W_OpticsLv3"
+			"CAMS_AI_FIA_W","CAMS_AI_NATO_SOLDIER","CAMS_AI_NATO_SF"
+		]
+	],
+	
+	//////////////// IND
+	[
+		"CAMS_AI_FIA_I",1,true,
+		[
+			"I_G_Soldier_F","I_G_Soldier_lite_F","I_G_Soldier_SL_F","I_G_Soldier_TL_F","I_G_Soldier_AR_F",
+			"I_G_medic_F","I_G_engineer_F","I_G_Soldier_exp_F","I_G_Soldier_GL_F","I_G_Soldier_M_F",
+			"I_G_Soldier_LAT_F","I_G_Soldier_A_F","I_G_officer_F","I_G_Soldier_unarmed_F","I_G_Survivor_F"
 		]
 	],
 	[
-		"CAMS_W_Attachments_ALL",0,true,
+		"CAMS_AI_AAF",1,true,
 		[
-			"CAMS_W_Pointer", "CAMS_W_Bipod", "CAMS_W_Muzzle", "CAMS_W_Optics_ALL"
+			"I_soldier_F","I_Soldier_lite_F","I_Soldier_A_F","I_Soldier_GL_F","I_Soldier_AR_F","I_Soldier_SL_F",
+			"I_Soldier_TL_F","I_Soldier_M_F","I_Soldier_LAT_F","I_Soldier_AT_F","I_Soldier_AA_F","I_medic_F",
+			"I_Soldier_repair_F","I_Soldier_exp_F","I_engineer_F","I_crew_F","I_helipilot_F","I_pilot_F",
+			"I_helicrew_F","I_officer_F","I_Story_Colonel_F","I_soldier_UAV_F","I_Survivor_F","I_Soldier_unarmed_F",
+			"I_Soldier_AAR_F","I_Soldier_AAT_F","I_Soldier_AAA_F","I_support_MG_F","I_support_GMG_F","I_support_Mort_F",
+			"I_support_AMG_F","I_support_AMort_F"
+		]
+	],
+	[
+		"CAMS_AI_AAF_SF",1,true,
+		[
+			"I_diver_F","I_diver_exp_F","I_diver_TL_F","I_Spotter_F","I_Sniper_F"
+		]
+	],
+	[
+		"CAMS_AI_ALL_I",0,true,
+		[
+			"CAMS_AI_FIA_I","CAMS_AI_AAF","CAMS_AI_AAF_SF"
 		]
 	],
 	
 
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////// Items ///////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+
 	// Navigation and Belt Items
 	[
-		"CAMS_B_Navigation",1,true,
+		"CAMS_I_Navigation",1,true,
 		[
 			"ItemWatch","ItemGPS","ItemMap","ItemCompass","ItemRadio","Binocular",
 			"Rangefinder","Laserdesignator","Laserdesignator_02","Laserdesignator_03","NVGoggles",
@@ -492,14 +605,13 @@ _cartContents =
 		]
 	],
 	
-	// Other Items
+	// Meds - Has all vanilla stuff since its more for loot and random AI loot, but break up if you want or if your content has a lot of custom stuff here
 	[
 		"CAMS_I_Meds",1,true,
 		[
 			"FirstAidKit","Medikit","ToolKit"
 		]
 	],
-
 	// Backpacks
 	[
 		"CAMS_Packs_Lv1",1,true,
@@ -602,8 +714,14 @@ _cartContents =
 			"CAMS_Smoke_Shell", "CAMS_Smoke_1Rnd", "CAMS_Smoke_3rnd"
 		]
 	],
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////// Explosives ///////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	
 
-	// Explosives
+	// Grenades
 	[
 		"CAMS_E_Grenade",1,true,
 		[
@@ -634,40 +752,113 @@ _cartContents =
 			"CAMS_E_GrenadeIR_W","CAMS_E_GrenadeIR_E","CAMS_E_GrenadeIR_I"
 		]
 	],
+	// Explosive Shells
 	[
-		"CAMS_E_1Rnd",5,true,
+		"CAMS_E_1Rnd",1,true,
 		[
 			"1Rnd_HE_Grenade_shell"
 		]
 	],
 	[
-		"CAMS_E_3Rnd",5,true,
+		"CAMS_E_3Rnd",1,true,
 		[
 			"3Rnd_HE_Grenade_shell"
 		]
 	],
+	// Mines
 	[
-		"CAMS_E_Mine",5,true,
+		"CAMS_E_Mine",1,true,
 		[
 			"APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","APERSTripMine_Wire_Mag",
 			"ClaymoreDirectionalMine_Remote_Mag","SLAMDirectionalMine_Wire_Mag"
 		]
-	],
+	],// IEDs
 	[
-		"CAMS_E_IED",5,true,
+		"CAMS_E_IED",1,true,
 		[
 			"DemoCharge_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanBig_Remote_Mag",
 			"IEDUrbanSmall_Remote_Mag","SatchelCharge_Remote_Mag"
 		]
-	],
-	
-	//CAMS_E_Grenade_ALL = CAMS_E_Grenade + CAMS_E_GrenadeIR + CAMS_E_GrenadeStun;
-	//CAMS_E_Shell_ALL = CAMS_E_1Rnd + CAMS_E_3Rnd;
-	
+	],	
 	[
 		"CAMS_E_ALL",0,true,
 		[
 			"CAMS_E_Grenade", "CAMS_E_GrenadeIR_ALL", "CAMS_E_1Rnd", "CAMS_E_3Rnd", "CAMS_E_Mine", "CAMS_E_IED"
+		]
+	],
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////// Weapons ////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	// Weapon attachments
+	[
+		"CAMS_W_Pointer",1,true,
+		[
+			"acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","acc_pointer_IR"
+		]
+	],
+	[
+		"CAMS_W_Bipod",1,true,
+		[
+			"bipod_01_F_blk","bipod_01_F_mtp","bipod_01_F_snd","bipod_01_F_khk","bipod_02_F_blk","bipod_02_F_hex",
+			"bipod_02_F_tan","bipod_03_F_blk","bipod_03_F_oli"
+		]
+	],
+	[
+		"CAMS_W_Muzzle",1,true,
+		[
+			"muzzle_snds_338_black","muzzle_snds_338_green","muzzle_snds_338_sand",
+			"muzzle_snds_570",
+			"muzzle_snds_58_blk_F","muzzle_snds_58_wdm_F","muzzle_snds_58_ghex_F","muzzle_snds_58_hex_F",
+			"muzzle_snds_65_TI_blk_F","muzzle_snds_65_TI_hex_F","muzzle_snds_65_TI_ghex_F",
+			"muzzle_snds_93mmg","muzzle_snds_93mmg_tan",
+			"muzzle_snds_acp",
+			"muzzle_snds_B","muzzle_snds_B_khk_F","muzzle_snds_B_snd_F","muzzle_snds_B_lush_F","muzzle_snds_B_arid_F",
+			"muzzle_snds_H","muzzle_snds_H_khk_F","muzzle_snds_H_snd_F","muzzle_snds_H_MG","muzzle_snds_H_SW","muzzle_snds_H_MG_blk_F","muzzle_snds_H_MG_khk_F",
+			"muzzle_snds_L",
+			"muzzle_snds_M","muzzle_snds_m_khk_F","muzzle_snds_m_snd_F"
+		]
+	],
+	[
+		"CAMS_W_OpticsLv1",1,true,
+		[
+			"optic_Aco","optic_ACO_grn","optic_ACO_grn_smg","optic_Aco_smg",
+			"optic_Arco","optic_Arco_blk_F","optic_Arco_ghex_F",
+			"optic_Holosight","optic_Holosight_smg","optic_Holosight_blk_F","optic_Holosight_khk_F","optic_Holosight_smg_blk_F","optic_Holosight_smg_khk_F",
+			"optic_Yorris","optic_MRD","optic_MRCO"
+		]
+	],
+	[
+		"CAMS_W_OpticsLv2",1,true,
+		[
+			"optic_LRPS","optic_LRPS_tna_F","optic_LRPS_ghex_F",
+			"optic_NVS",
+			"optic_SOS","optic_SOS_khk_F"
+		]
+	],
+	[
+		"CAMS_W_OpticsLv3",1,true,
+		[
+			"optic_AMS","optic_AMS_khk","optic_AMS_snd",
+			"optic_DMS","optic_DMS_ghex_F",
+			"optic_ERCO_blk_F","optic_ERCO_khk_F","optic_ERCO_snd_F",
+			"optic_Hamr","optic_Hamr_khk_F",
+			"optic_KHS_blk",
+			"optic_KHS_hex","optic_KHS_old","optic_KHS_tan","optic_Nightstalker","optic_tws","optic_tws_mg"
+		]
+	],
+	[
+		"CAMS_W_Optics_ALL",0,true,
+		[
+			"CAMS_W_OpticsLv1", "CAMS_W_OpticsLv2", "CAMS_W_OpticsLv3"
+		]
+	],
+	[
+		"CAMS_W_Attachments_ALL",0,true,
+		[
+			"CAMS_W_Pointer", "CAMS_W_Bipod", "CAMS_W_Muzzle", "CAMS_W_Optics_ALL"
 		]
 	],
 	
@@ -682,9 +873,8 @@ _cartContents =
 			"hgun_Pistol_Signal_F"
 		]
 	],
-
 	[
-		"CAMS_SubMGs_W",1,true,
+		"CAMS_SMG_W",1,true,
 		[
 			"SMG_01_F","SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki",
 			"SMG_03C_TR_hex","SMG_03_black","SMG_03_camo","SMG_03_khaki","SMG_03_hex","SMG_03C_black","SMG_03C_camo","SMG_03C_khaki","SMG_03C_hex",
@@ -692,16 +882,15 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_LightMGs_W",1,true,
+		"CAMS_LMG_W",1,true,
 		[
 			"arifle_MX_SW_Black_F","arifle_MX_SW_F","arifle_MX_SW_khk_F",
 			"arifle_SPAR_02_blk_F","arifle_SPAR_02_khk_F","arifle_SPAR_02_snd_F",
-			"LMG_Mk200_F","LMG_Mk200_BI_F" //Not sure if these stay
-
+			"LMG_Mk200_F","LMG_Mk200_BI_F" 
 		]
 	],
 	[
-		"CAMS_MedMGs_W",1,true,
+		"CAMS_MMG_W",1,true,
 		[
 			"MMG_01_hex_F","MMG_01_tan_F"
 		]
@@ -713,7 +902,7 @@ _cartContents =
 			//"arifle_Mk20C_F", "arifle_Mk20C_plain_F",//I
 			"arifle_MX_Black_F", "arifle_MX_F", "arifle_MX_GL_Black_F", "arifle_MX_GL_F", //W
 			"arifle_MXC_Black_F","arifle_MXC_F", //W
-			"arifle_SDAR_F", //UNDERWATER GUN
+			//"arifle_SDAR_F", //UNDERWATER GUN
 			"arifle_TRG20_F", //ALL
 			"arifle_TRG21_F", "arifle_TRG21_GL_F"//all
 		]
@@ -745,18 +934,22 @@ _cartContents =
 			"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_F","launch_MRAWS_sand_rail_F"
 		]
 	],
-	
+	[
+		"CAMS_MG_ALL_W",0,true,
+		[
+			"CAMS_SMG_W", "CAMS_MMG_W", "CAMS_LMG_W"
+		]
+	],	
 	[
 		"CAMS_Rifles_ALL_W",0,true,
 		[
-			"CAMS_LightMGs_W", "CAMS_MedMGs_W", "CAMS_AssaultRifles_W", "CAMS_SniperRifles_W"
+			"CAMS_MG_ALL_W", "CAMS_AssaultRifles_W", "CAMS_SniperRifles_W"
 		]
 	],
-	
 	[
 		"CAMS_Guns_ALL_W",0,true,
 		[
-			"CAMS_Rifles_ALL_W", "CAMS_SubMGs_W", "CAMS_Pistols_W"
+			"CAMS_Rifles_ALL_W", "CAMS_Pistols_W"
 		]
 	],
 
@@ -771,7 +964,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_SubMGs_E",1,true,
+		"CAMS_SMG_E",1,true,
 		[
 			"SMG_01_F","SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki",
 			"SMG_03C_TR_hex","SMG_03_black","SMG_03_camo","SMG_03_khaki","SMG_03_hex","SMG_03C_black","SMG_03C_camo","SMG_03C_khaki","SMG_03C_hex",
@@ -779,7 +972,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_LightMGs_E",1,true,
+		"CAMS_LMG_E",1,true,
 		[
 			"arifle_CTARS_blk_F","arifle_CTARS_hex_F","arifle_CTARS_ghex_F",
 			"LMG_Zafir_F",
@@ -787,7 +980,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_MedMGs_E",1,true,
+		"CAMS_MMG_E",1,true,
 		[
 			"MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"
 		]
@@ -828,18 +1021,24 @@ _cartContents =
 			"launch_O_Vorona_brown_F","launch_O_Vorona_green_F"
 		]
 	],
+	[
+		"CAMS_MG_ALL_E",0,true,
+		[
+			"CAMS_SMG_E", "CAMS_MMG_E", "CAMS_LMG_E"
+		]
+	],	
 	
 	[
 		"CAMS_Rifles_ALL_E",0,true,
 		[
-			"CAMS_LightMGs_E", "CAMS_MedMGs_E", "CAMS_AssaultRifles_E", "CAMS_SniperRifles_E"
+			"CAMS_MG_ALL_E", "CAMS_AssaultRifles_E", "CAMS_SniperRifles_E"
 		]
 	],
 	
 	[
 		"CAMS_Guns_ALL_E",0,true,
 		[
-			"CAMS_Rifles_ALL_E", "CAMS_SubMGs_E", "CAMS_Pistols_E"
+			"CAMS_Rifles_ALL_E", "CAMS_Pistols_E"
 		]
 	],
 
@@ -856,7 +1055,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_SubMGs_I",1,true,
+		"CAMS_SMG_I",1,true,
 		[
 			"SMG_01_F","SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki",
 			"SMG_03C_TR_hex","SMG_03_black","SMG_03_camo","SMG_03_khaki","SMG_03_hex","SMG_03C_black","SMG_03C_camo","SMG_03C_khaki","SMG_03C_hex",
@@ -864,14 +1063,14 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_LightMGs_I",1,true,
+		"CAMS_LMG_I",1,true,
 		[
 			"LMG_03_F",
 			"LMG_Mk200_F","LMG_Mk200_BI_F" //Not sure if these stay
 		]
 	],
 	[
-		"CAMS_MedMGs_I",1,true,
+		"CAMS_MMG_I",1,true,
 		[
 			"MMG_01_hex_F","MMG_01_tan_F","MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"
 		]
@@ -906,25 +1105,30 @@ _cartContents =
 			"launch_NLAW_F",
 			"launch_RPG32_F","launch_RPG7_F","launch_RPG32_camo_F",
 			"launch_MRAWS_olive_F","launch_MRAWS_olive_rail_F","launch_MRAWS_green_F","launch_MRAWS_green_rail_F","launch_MRAWS_sand_rail_F","launch_MRAWS_sand_F"
-			
 		]
 	],
-
+	[
+		"CAMS_MG_ALL_I",0,true,
+		[
+			"CAMS_SMG_I", "CAMS_MMG_I", "CAMS_LMG_I"
+		]
+	],		
 	[
 		"CAMS_Rifles_ALL_I",0,true,
 		[
-			"CAMS_LightMGs_I", "CAMS_MedMGs_I", "CAMS_AssaultRifles_I", "CAMS_SniperRifles_I"
+			"CAMS_MG_ALL_I", "CAMS_AssaultRifles_I", "CAMS_SniperRifles_I"
 		]
-	],
-	
+	],	
 	[
 		"CAMS_Guns_ALL_I",0,true,
 		[
-			"CAMS_Rifles_ALL_I", "CAMS_SubMGs_I", "CAMS_Pistols_I"
+			"CAMS_Rifles_ALL_I", "CAMS_Pistols_I"
 		]
 	],
 
-	// ******* VEHICLES ********************
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////// VEHICLES //////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 	//  Water vehicles - Civ / General
 	[
 		"CAMS_H20_Boats_C",1,true,
@@ -948,12 +1152,10 @@ _cartContents =
 	[
 		"CAMS_H20_All_C",0,true,
 		[
-			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDVs_C", "CAMS_H20_Jetski_C"
+			"CAMS_H20_Boats_C", "CAMS_H20_RubberDucks_C", "CAMS_H20_SDV_C", "CAMS_H20_Jetski_C"
 		]
 	],
-	
-
-	// Water Vehicles - West
+	///////////////////////////////// Water Vehicles - West
 	[
 		"CAMS_H20_Boats_W",1,true,
 		[
@@ -963,24 +1165,22 @@ _cartContents =
 	[
 		"CAMS_H20_RubberDucks_W",1,true,
 		[
-			"B_Boat_Transport_01_F","B_Lifeboat","B_G_Boat_Transport_01_F"
+			"B_Boat_Transport_01_F","B_Lifeboat","B_G_Boat_Transport_01_F","B_G_Boat_Transport_02_F"
 		]
 	],
 	[
-		"CAMS_H20_SDVs_W",1,true,
+		"CAMS_H20_SDV_W",1,true,
 		[
 			"B_SDV_01_F"
 		]
 	],
-
 	[
 		"CAMS_H20_ALL_W",0,true,
 		[
-			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDVs_W"
+			"CAMS_H20_Boats_W", "CAMS_H20_RubberDucks_W", "CAMS_H20_SDV_W"
 		]
-	],	
-	
-	// Water Vehicles - East
+	],		
+	//////////////////////////////// Water Vehicles - East
 	[
 		"CAMS_H20_Boats_E",1,true,
 		[
@@ -994,20 +1194,19 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_E",1,true,
+		"CAMS_H20_SDV_E",1,true,
 		[
 			"O_SDV_01_F"
 		]
 	],
-
 	[
 		"CAMS_H20_ALL_E",0,true,
 		[
-			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_SDVs_E"
+			"CAMS_H20_Boats_E", "CAMS_H20_RubberDucks_E", "CAMS_H20_SDV_E"
 		]
 	],	
 	
-	// Water Vehicles - Ind
+	//////////////////////////// Water Vehicles - Ind
 	[
 		"CAMS_H20_Boats_I",1,true,
 		[
@@ -1021,7 +1220,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_H20_SDVs_I",1,true,
+		"CAMS_H20_SDV_I",1,true,
 		[
 			"I_SDV_01_F"
 		]
@@ -1030,30 +1229,21 @@ _cartContents =
 	[
 		"CAMS_H20_ALL_I",0,true,
 		[
-			"CAMS_H20_Boats_I", "CAMS_H20_RubberDucks_I", "CAMS_H20_SDVs_I"
+			"CAMS_H20_Boats_I", "CAMS_H20_RubberDucks_I", "CAMS_H20_SDV_I"
 		]
 	],	
-
-	
 	[
 		"CAMS_H20_ALL",0,true,
 		[
 			"CAMS_H20_ALL_W","CAMS_H20_ALL_E","CAMS_H20_ALL_I", "CAMS_H20_ALL_C"
 		]
-	],
-	
-	// Helicopters
-
-	[
-		"CAMS_Heli_Unarmed_C",1,true,
-		[
-			"C_Heli_Light_01_civil_F", "C_Heli_light_01_blueLine_F", "C_Heli_light_01_blue_F", "C_Heli_light_01_digital_F", "C_Heli_light_01_elliptical_F", 
-			"C_Heli_light_01_furious_F", "C_Heli_light_01_graywatcher_F", "C_Heli_light_01_ion_F", "C_Heli_light_01_jeans_F", "C_Heli_light_01_light_F", 
-			"C_Heli_light_01_luxe_F", "C_Heli_light_01_red_F", "C_Heli_light_01_shadow_F", "C_Heli_light_01_sheriff_F", "C_Heli_light_01_speedy_F",
-			"C_Heli_light_01_stripped_F", "C_Heli_light_01_sunset_F", "C_Heli_light_01_vrana_F", "C_Heli_light_01_wasp_F", "C_Heli_light_01_wave_F"
-		]
 	],	
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////// Air Vehicles /////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////	
+
+	///////////////////////////////////////////////// Helicopters - West
 	[
 		"CAMS_Heli_Unarmed_W",1,true,
 		[
@@ -1073,6 +1263,7 @@ _cartContents =
 		]
 	],
 
+	///////////////////////////////////////////////// Helicopters - Civ
 	[
 		"CAMS_Heli_Unarmed_E",1,true,
 		[
@@ -1086,7 +1277,7 @@ _cartContents =
 			"O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Attack_02_dynamicLoadout_black_F"
 		]
 	],
-
+	/////////////////////////////////// Helicopters - Independant 
 	[
 		"CAMS_Heli_Unarmed_I",1,true,
 		[
@@ -1106,8 +1297,7 @@ _cartContents =
 		]
 	],
 	
-	
-	// Aircraft
+	/////////////////////////////////////// Aircraft - West
 	[
 		"CAMS_Plane_CAS_W",1,true,
 		[
@@ -1120,7 +1310,7 @@ _cartContents =
 			"B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UAV_02_dynamicLoadout_F"
 		]
 	],
-
+	///////////////////////////////////// Aircraft - East
 	[
 		"CAMS_Plane_CAS_E",1,true,
 		[
@@ -1134,7 +1324,8 @@ _cartContents =
 			"O_UAV_01_F", "O_UAV_02_F","O_UAV_02_dynamicLoadout_F"
 		]
 	],
-
+	
+	///////////////////////////////////// Aircraft - Ind
 	[
 		"CAMS_Plane_CAS_I",1,true,
 		[
@@ -1149,12 +1340,13 @@ _cartContents =
 		]
 	],
 	
-	//////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////// Land Vehicles ///////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	
-	// Civilian Vehicles
+	////////////////////////////////////// Civilian Vehicles
 	[
-		"CAMS_Civ_Car",1,true,
+		"CAMS_Land_Car_C",1,true,
 		[
 			"C_Hatchback_01_F", "C_Hatchback_01_beigecustom_F", "C_Hatchback_01_black_F", "C_Hatchback_01_blue_F", "C_Hatchback_01_bluecustom_F", 
 			"C_Hatchback_01_dark_F", "C_Hatchback_01_green_F", "C_Hatchback_01_grey_F", "C_Hatchback_01_sport_F", "C_Hatchback_01_sport_blue_F",
@@ -1163,7 +1355,7 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Civ_Offroad",1,true,
+		"CAMS_Land_Offroad_C",1,true,
 		[
 			"C_Offroad_01_F", "C_Offroad_01_blue_F", "C_Offroad_01_bluecustom_F", "C_Offroad_01_darkred_F", "C_Offroad_01_red_F", 
 			"C_Offroad_01_sand_F", "C_Offroad_01_white_F", "C_Offroad_02_unarmed_F", "C_Offroad_02_unarmed_black_F",
@@ -1172,113 +1364,105 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Civ_Transport",1,true,
+		"CAMS_Land_Transport_C",1,true,
 		[
 			"C_Truck_02_covered_F", "C_Truck_02_transport_F"
 		]
 	],
 	[
-		"CAMS_Civ_SUV",1,true,
+		"CAMS_Land_SUV_C",1,true,
 		[
 			"C_SUV_01_F","SUV_01_base_red_F","SUV_01_base_black_F","SUV_01_base_grey_F","SUV_01_base_orange_F"
 		]
 	],
 	[
-		"CAMS_Civ_Van",1,true,
+		"CAMS_Land_Van_C",1,true,
 		[
 			"C_Van_01_box_F", "C_Van_01_box_red_F", "C_Van_01_box_white_F", "C_Van_01_transport_F", "C_Van_01_transport_red_F", "C_Van_01_transport_white_F",
 			"C_Van_02_transport_F", "C_Van_02_vehicle_F", "C_Van_02_medevac_F", "C_Van_02_service_F"
 		]
 	],
 	[
-		"CAMS_Civ_Utility",1,true,
+		"CAMS_Land_Utility_C",1,true,
 		[
 			"C_Offroad_01_repair_F", "C_Truck_02_fuel_F", "C_Van_01_fuel_F", "C_Van_01_fuel_red_F", "C_Van_01_fuel_red_v2_F", 
 			"C_Truck_02_box_F", "C_Van_01_fuel_white_F", "C_Van_01_fuel_white_v2_F"
 		]
 	],
 	[
-		"CAMS_Civ_Toy",1,true,
+		"CAMS_Land_Quad_C",1,true,
 		[
 			"C_Quadbike_01_F", "C_Quadbike_01_black_F", "C_Quadbike_01_blue_F", "C_Quadbike_01_red_F", "C_Quadbike_01_white_F"
 		]
 	],
 	[
-		"CAMS_Civ_Kart",1,true,
+		"CAMS_Land_Kart_C",1,true,
 		[
 			"C_Kart_01_black_F","C_Kart_01_Blu_F","C_Kart_01_F","C_Kart_01_Fuel_F","C_Kart_01_green_F",
 			"C_Kart_01_orange_F","C_Kart_01_Red_F","C_Kart_01_Vrana_F","C_Kart_01_white_F","C_Kart_01_yellow_F"
 		]
 	],
-	
-	
-
 	[
-		"CAMS_Civ_Work",0,true,
+		"CAMS_Land_Work_C",0,true,
 		[
-			"CAMS_Civ_Car", "CAMS_Civ_Offroad", "CAMS_Civ_Van"
+			"CAMS_Land_Car_C", "CAMS_Land_Offroad_C", "CAMS_Land_Van_C"
 		]
 	],	
 	[
-		"CAMS_Civ_Truck",0,true,
+		"CAMS_Land_Truck_C",0,true,
 		[
-			"CAMS_Civ_Offroad", "CAMS_Civ_Transport", "CAMS_Civ_SUV", "CAMS_Civ_Van"
+			"CAMS_Land_Offroad_C", "CAMS_Land_Transport_C", "CAMS_Land_SUV_C", "CAMS_Land_Van_C"
 		]
 	],
 	[
-		"CAMS_Civ_ALL",0,true,
+		"CAMS_Land_ALL_C",0,true,
 		[
-			"CAMS_Civ_Work", "CAMS_Civ_Truck"
+			"CAMS_Land_Work_C", "CAMS_Land_Truck_C"
 		]
 	],	
 
 
-
-
-	//////////////////// West Vehicles
-
-
+	////////////////////////////////////////////////////// West Vehicles
 	[
-		"CAMS_Mil_ArmedOffroad_W",1,true,
+		"CAMS_Land_ArmedOffroad_W",1,true,
 		[
 			"B_MRAP_01_gmg_F","B_MRAP_01_hmg_F","B_G_Offroad_01_armed_F","B_G_Offroad_01_AT_F"
 		]
 	],
 	[
-		"CAMS_Mil_UnarmedOffroad_W",1,true,
+		"CAMS_Land_UnarmedOffroad_W",1,true,
 		[
 			"B_MRAP_01_F","B_G_Offroad_01_F",
 			"B_GEN_Offroad_01_covered_F","B_Truck_01_flatbed_F","B_T_Truck_01_flatbed_F","B_Truck_01_cargo_F","B_T_Truck_01_cargo_F"
 		]
 	],
 	[
-		"CAMS_Mil_UGV_Armed_W",1,true,
+		"CAMS_Land_UGV_Armed_W",1,true,
 		[
 			"B_UGV_01_rcws_F"
 		]
 	],
 	[
-		"CAMS_Mil_UGV_Unarmed_W",1,true,
+		"CAMS_Land_UGV_Unarmed_W",1,true,
 		[
 			"B_UGV_01_F"
 		]
 	],
 	[
-		"CAMS_Mil_Toy_W",1,true,
+		"CAMS_Land_Quad_W",1,true,
 		[
 			"B_Quadbike_01_F","B_G_Quadbike_01_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Transport_W",1,true,
+		"CAMS_Land_Transport_W",1,true,
 		[
 			"B_Truck_01_transport_F","B_G_Van_01_transport_F","B_Truck_01_covered_F",
 			"B_GEN_Van_02_transport_F","B_G_Van_02_vehicle_F","B_GEN_Van_02_vehicle_F"
 		]
 	],
 	[
-		"CAMS_Mil_UtilityVehicle_W",1,true,
+		"CAMS_Land_UtilityVehicle_W",1,true,
 		[
 			"B_G_Offroad_01_repair_F","B_Truck_01_Repair_F","B_Truck_01_ammo_F","B_Truck_01_fuel_F","B_Truck_01_medical_F",
 			"B_Truck_01_mover_F","B_Truck_01_box_F","B_G_Van_01_fuel_F",
@@ -1286,274 +1470,250 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Mil_ArmedTransport_W",1,true,
+		"CAMS_Land_ArmedTransport_W",1,true,
 		[
-			"B_APC_Tracked_01_AA_F","B_APC_Tracked_01_CRV_F","B_APC_Tracked_01_rcws_F","B_APC_Wheeled_01_cannon_F","B_APC_Wheeled_03_cannon_F"
+			"B_APC_Tracked_01_AA_F","B_APC_Tracked_01_CRV_F","B_APC_Tracked_01_rcws_F","B_APC_Wheeled_01_cannon_F",
+			"B_APC_Wheeled_03_cannon_F"  //Where did this come from?
 		]
 	],
-
 	[
-		"CAMS_Mil_Tank_W",1,true,
+		"CAMS_Land_Tank_W",1,true,
 		[
 			"B_MBT_01_TUSK_F","B_MBT_01_cannon_F"
 		]
 	],
 	[
-		"CAMS_Mil_Artillery_W",1,true,
+		"CAMS_Land_Artillery_W",1,true,
 		[
 			"B_MBT_01_arty_F","B_MBT_01_mlrs_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Transport_ALL_W",0,true,
+		"CAMS_Land_Transport_ALL_W",0,true,
 		[
-			"CAMS_Mil_OpenTransport_W", "CAMS_Mil_CoveredTransport_W", "CAMS_Mil_ArmedTransport_W"
-		]
-	],
-
-	[
-		"CAMS_Mil_Unarmed_W",0,true,
-		[
-			"CAMS_Mil_UnarmedOffroad_W" + "CAMS_Mil_OpenTransport_W" + "CAMS_Mil_CoveredTransport_W"
+			"CAMS_Land_Transport_W", "CAMS_Land_ArmedTransport_W"
 		]
 	],
 	[
-		"CAMS_Mil_Armed_W",0,true,
+		"CAMS_Land_Unarmed_W",0,true,
 		[
-			"CAMS_Mil_ArmedOffroads_W" + "CAMS_Mil_ArmedTransport_W"
+			"CAMS_Land_UnarmedOffroad_W", "CAMS_Land_Transport_W"
 		]
 	],
 	[
-		"CAMS_Mil_ALL_W",0,true,
+		"CAMS_Land_Armed_W",0,true,
 		[
-			"CAMS_Mil_Unarmed_W" + "CAMS_Mil_Armed_W"
+			"CAMS_Land_ArmedOffroads_W", "CAMS_Land_ArmedTransport_W"
+		]
+	],
+	[
+		"CAMS_Land_ALL_W",0,true,
+		[
+			"CAMS_Land_Unarmed_W", "CAMS_Land_Armed_W"
 		]
 	],
 
-	//////////////////// EAST Vehicles
-
-
+	//////////////////////////////////////// EAST Vehicles
 	[
-		"CAMS_Mil_ArmedOffroad_E",1,true,
+		"CAMS_Land_ArmedOffroad_E",1,true,
 		[
 			"O_MRAP_02_gmg_F", "O_MRAP_02_hmg_F", "O_G_Offroad_01_armed_F", "O_G_Offroad_01_AT_F"
 		]
 	],
 	[
-		"CAMS_Mil_UnarmedOffroad_E",1,true,
+		"CAMS_Land_UnarmedOffroad_E",1,true,
 		[
 			"O_MRAP_02_F", "O_G_Offroad_01_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_UGV_Armed_E",1,true,
+		"CAMS_Land_UGV_Armed_E",1,true,
 		[
 			"O_UGV_01_rcws_F"
 		]
 	],
 	[
-		"CAMS_Mil_UGV_Unarmed_E",1,true,
+		"CAMS_Land_UGV_Unarmed_E",1,true,
 		[
 			"O_UGV_01_F"
 		]
 	],
 	[
-		"CAMS_Mil_Toy_Quad_E",1,true,
+		"CAMS_Land_Quad_E",1,true,
 		[
-			"O_Quadbike_01_F", "O_G_Quadbike_01_F"
+			"O_Quadbike_01_F"
 		]
 	],
 
 	[
-		"CAMS_Mil_Transport_E",1,true,
+		"CAMS_Land_Transport_E",1,true,
 		[
 			"O_Truck_02_transport_F", "O_G_Van_01_transport_F", "O_T_Truck_03_transport_ghex_F","O_Truck_02_covered_F", 
 			"O_T_Truck_03_covered_ghex_F","O_Truck_03_transport_F","O_Truck_03_covered_F"
 		]
 	],
 	[
-		"CAMS_Mil_UtilityVehicle_E",1,true,
+		"CAMS_Land_UtilityVehicle_E",1,true,
 		[
-			"O_G_Offroad_01_repair_F", "O_Truck_02_Ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F", "O_G_Van_01_fuel_F",
-			"O_T_Truck_03_ammo_ghex_F","O_T_Truck_03_device_ghex_F","O_T_Truck_03_fuel_ghex_F",	"O_T_Truck_03_medical_ghex_F",
-			"O_T_Truck_03_repair_ghex_F","O_Truck_03_repair_F","O_Truck_03_ammo_F","O_Truck_03_fuel_F","O_Truck_03_medical_F","O_Truck_03_device_F"
+			"O_G_Offroad_01_repair_F", "O_Truck_02_Ammo_F", "O_Truck_02_box_F", "O_Truck_02_fuel_F", "O_Truck_02_medical_F"
 		]
 	],
 	[
-		"CAMS_Mil_ArmedTransport_E",1,true,
+		"CAMS_Land_ArmedTransport_E",1,true,
 		[
-			"O_APC_Tracked_02_cannon_F", "O_APC_Tracked_02_AA_F", "O_APC_Wheeled_02_rcws_v2_F", "O_APC_Wheeled_02_rcws_F"
+			"O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_v2_F", "O_APC_Wheeled_02_rcws_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Tank_E",1,true,
+		"CAMS_Land_Tank_E",1,true,
 		[
 			"O_MBT_02_cannon_F"
 		]
 	],
 	[
-		"CAMS_Mil_AA_E",1,true,
+		"CAMS_Land_AA_E",1,true,
 		[
 			"O_APC_Tracked_02_AA_F"
 		]
 	],	
 	[
-		"CAMS_Mil_Artillery_E",1,true,
+		"CAMS_Land_Artillery_E",1,true,
 		[
 			"O_MBT_02_arty_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Transport_ALL_E",0,true,
+		"CAMS_Land_Transport_ALL_E",0,true,
 		[
-			"CAMS_Mil_OpenTransport_E","CAMS_Mil_CoveredTransport_E", "CAMS_Mil_ArmedTransport_E"
+			"CAMS_Land_Transport_E", "CAMS_Land_ArmedTransport_E"
 		]
 	],
 	[
-		"CAMS_Mil_Unarmed_E",0,true,
+		"CAMS_Land_Unarmed_E",0,true,
 		[
-			"CAMS_Mil_UnarmedOffroad_E", "CAMS_Mil_OpenTransport_E", "CAMS_Mil_CoveredTransport_E"
+			"CAMS_Land_UnarmedOffroad_E", "CAMS_Land_Transport_E"
 		]
 	],	
 	[
-		"CAMS_Mil_Armed_E",0,true,
+		"CAMS_Land_Armed_E",0,true,
 		[
-			"CAMS_Mil_ArmedOffroad_E", "CAMS_Mil_ArmedTransport_E"
+			"CAMS_Land_ArmedOffroad_E", "CAMS_Land_ArmedTransport_E"
 		]
 	],	
 	[
-		"CAMS_Mil_ALL_E",0,true,
+		"CAMS_Land_ALL_E",0,true,
 		[
-			"CAMS_Mil_Unarmed_E", "CAMS_Mil_Armed_E"
+			"CAMS_Land_Unarmed_E", "CAMS_Land_Armed_E"
 		]
 	],
 
-	//////////////////// Guerilla Vehicles
+	/////////////////////////////////////////////////////// Guerilla Vehicles
 	[
-		"CAMS_Mil_ArmedOffroad_I",1,true,
+		"CAMS_Land_ArmedOffroad_I",1,true,
 		[
-			"I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F"
+			"I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F","I_G_Offroad_01_armed_F","I_G_Offroad_01_AT_F"	
 		]
 	],
 	[
-		"CAMS_Mil_UnarmedOffroad_I",1,true,
+		"CAMS_Land_UnarmedOffroad_I",1,true,
 		[
-			"I_MRAP_03_F"
+			"I_G_Offroad_01_F","I_MRAP_03_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_UGV_Armed_I",1,true,
+		"CAMS_Land_UGV_Armed_I",1,true,
 		[
 			"I_UGV_01_rcws_F"
 		]
 	],
 	[
-		"CAMS_Mil_UGV_Unarmed_I",1,true,
+		"CAMS_Land_UGV_Unarmed_I",1,true,
 		[
 			"I_UGV_01_F"
 		]
 	],
 	[
-		"CAMS_Mil_Toy_Quad_E",1,true,
+		"CAMS_Land_Quad_E",1,true,
 		[
 			"I_G_Quadbike_01_F", "I_Quadbike_01_F"
 		]
 	],
-	
 	[
-		"CAMS_Mil_OpenTransport_I",1,true,
+		"CAMS_Land_Transport_I",1,true,
 		[
-			"I_G_Offroad_01_F", "I_Truck_02_transport_F", "I_G_Van_01_transport_F"
+			 "I_Truck_02_transport_F", "I_G_Van_01_transport_F", "I_Truck_02_covered_F"
 		]
 	],
 	[
-		"CAMS_Mil_CoveredTransport_I",1,true,
-		[
-			"I_Truck_02_covered_F"
-		]
-	],
-	[
-		"CAMS_Mil_UtilityVehicle_I",1,true,
+		"CAMS_Land_UtilityVehicle_I",1,true,
 		[
 			"I_G_Offroad_01_repair_F", "I_Truck_02_ammo_F", "I_Truck_02_box_F", "I_Truck_02_fuel_F", "I_Truck_02_medical_F", "I_G_Van_01_fuel_F"
 		]
 	],
 	[
-		"CAMS_Mil_ArmedTransport_I",1,true,
+		"CAMS_Land_ArmedTransport_I",1,true,
 		[
-			"I_G_Offroad_01_armed_F", "I_G_Offroad_01_AT_F", "I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F"
+			"I_APC_Wheeled_03_cannon_F", "I_APC_tracked_03_cannon_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Tank_I",1,true,
+		"CAMS_Land_Tank_I",1,true,
 		[
 			"I_MBT_03_cannon_F"
 		]
 	],
-
 	[
-		"CAMS_Mil_Transport_ALL_I",0,true,
+		"CAMS_Land_Transport_ALL_I",0,true,
 		[
-			"CAMS_Mil_OpenTransport_I", "CAMS_Mil_CoveredTransport_I", "CAMS_Mil_ArmedTransport_I"
+			"CAMS_Land_Transport_I", "CAMS_Land_ArmedTransport_I"
 		]
 	],
 	[
-		"CAMS_Mil_Unarmed_I",0,true,
+		"CAMS_Land_Unarmed_I",0,true,
 		[
-			"CAMS_Mil_UnarmedOffroads_I", "CAMS_Mil_OpenTransport_I", "CAMS_Mil_CoveredTransport_I"
+			"CAMS_Land_UnarmedOffroad_I", "CAMS_Land_Transport_I"
 		]
 	],	
 	[
-		"CAMS_Mil_Armed_I",0,true,
+		"CAMS_Land_Armed_I",0,true,
 		[
-			"CAMS_Mil_ArmedOffroads_I", "CAMS_Mil_ArmedTransport_I"
+			"CAMS_Land_ArmedOffroad_I", "CAMS_Land_ArmedTransport_I"
 		]
 	],	
 	[
-		"CAMS_Mil_ALL_I",0,true,
+		"CAMS_Land_ALL_I",0,true,
 		[
-			"CAMS_Mil_Unarmed_I", "CAMS_Mil_Armed_I"
+			"CAMS_Land_Unarmed_I", "CAMS_Land_Armed_I"
 		]
 	],
 
-	
-
-	//////////////////////////// Misc
-
-		
-	// Static Guns
+	//////////////////////////////////////////// Static Guns
 	[
-		"CAMS_Mil_StaticGuns_W",1,true,
+		"CAMS_Land_StaticGuns_W",1,true,
 		[
 			"B_HMG_01_A_F", "B_HMG_01_F", "B_HMG_01_high_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticGL_W",1,true,
+		"CAMS_Land_StaticGL_W",1,true,
 		[
 			"B_GMG_01_A_F", "B_GMG_01_F", "B_GMG_01_high_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticAA_W",1,true,
+		"CAMS_Land_StaticAA_W",1,true,
 		[
 			"B_static_AA_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticAT_W",1,true,
+		"CAMS_Land_StaticAT_W",1,true,
 		[
 			"B_static_AT_F"
 		]
 	],
 	[
-		"CAMS_Mil_Mortar_W",1,true,
+		"CAMS_Land_Mortar_W",1,true,
 		[
 			"B_G_Mortar_01_F","B_Mortar_01_F"
 		]
@@ -1561,120 +1721,119 @@ _cartContents =
 
 
 	[
-		"CAMS_Mil_StaticGuns_E",1,true,
+		"CAMS_Land_StaticGuns_E",1,true,
 		[
 			"O_HMG_01_F", "O_HMG_01_high_F", "O_HMG_01_A_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticGL_E",1,true,
+		"CAMS_Land_StaticGL_E",1,true,
 		[
 			"O_GMG_01_F", "O_GMG_01_high_F", "O_GMG_01_A_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticAA_E",1,true,
+		"CAMS_Land_StaticAA_E",1,true,
 		[
 			"O_static_AA_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticAT_E",1,true,
+		"CAMS_Land_StaticAT_E",1,true,
 		[
 			"O_static_AT_F"
 		]
 	],
 	[
-		"CAMS_Mil_Mortar_E",1,true,
+		"CAMS_Land_Mortar_E",1,true,
 		[
-			"O_Mortar_01_F", "O_G_Mortar_01_F"
+			"O_Mortar_01_F"
 		]
 	],
 
 	[
-		"CAMS_Mil_StaticGuns_G",1,true,
+		"CAMS_Land_StaticGuns_I",1,true,
 		[
 			"I_HMG_01_A_F", "I_HMG_01_F", "I_HMG_01_high_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticGL_G",1,true,
+		"CAMS_Land_StaticGL_I",1,true,
 		[
 			"I_GMG_01_A_F", "I_GMG_01_F", "I_GMG_01_high_F"
 		]
 	],
 			
 	[
-		"CAMS_Mil_StaticAA_G",1,true,
+		"CAMS_Land_StaticAA_I",1,true,
 		[
 			"I_static_AA_F"
 		]
 	],
 	[
-		"CAMS_Mil_StaticAT_G",1,true,
+		"CAMS_Land_StaticAT_I",1,true,
 		[
 			"I_static_AT_F"
 		]
 	],
 	[
-		"CAMS_Mil_Mortar_G",1,true,
+		"CAMS_Land_Mortar_I",1,true,
 		[
 			"I_Mortar_01_F", "I_G_Mortar_01_F"
 		]
 	],
 
 
-
-
-
-
-
-
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////// Misc Content ////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	// If it doesnt havea classname, I suggest you use the ImmersionFX files just for continuity  //
+	// but it doesn't really matter where they are unless you are going to distribute the files   //
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	[
-		"CAMS_Hist_Wreck",1,true,
+		"CAMS_Wreck_Hist",1,true,
 		[
 			"Land_HistoricalPlaneWreck_01_F","Land_HistoricalPlaneWreck_02_front_F","Land_HistoricalPlaneWreck_03_F"
 		]
 	],
 	[
-		"CAMS_Car_Wreck",1,true,
+		"CAMS_Wreck_Car",1,true,
 		[
-			"Land_Wreck_Car_F","Land_Wreck_Car2_F","Land_Wreck_Car3_F","Land_Wreck_CarDismantled_F",
-			"Land_Wreck_Skodovka_F"
+			"Land_Wreck_Car_F","Land_Wreck_Car2_F","Land_Wreck_Car3_F","Land_Wreck_CarDismantled_F","Land_Wreck_Skodovka_F"
 		]
 	],
 	[
-		"CAMS_Truck_Wreck",1,true,
+		"CAMS_Wreck_Truck",1,true,
 		[
 			"Land_Wreck_Offroad_F","Land_Wreck_Offroad2_F"
 		]
 	],
 	[
-		"CAMS_Vehicle_Wreck",1,true,
+		"CAMS_Wreck_Mil",1,true,
 		[
 			"Land_Wreck_BMP2_F","Land_Wreck_HMMWV_F","Land_Wreck_BRDM2_F","Land_Wreck_Ural_F","Land_Wreck_Hunter_F"
 		]
 	],
 	[
-		"CAMS_Tank_Wreck",1,true,
+		"CAMS_Wreck_Tank",1,true,
 		[
 			"Land_Wreck_Slammer_F","Land_Wreck_Slammer_hull_F","Land_Wreck_T72_hull_F"
 		]
 	],
 	[
-		"CAMS_Heli_Wreck",1,true,
+		"CAMS_Wreck_Heli",1,true,
 		[
 			"Land_Wreck_Heli_Attack_02_F","Land_UWreck_Heli_Attack_02_F","Land_Wreck_Heli_Attack_01_F"
 		]
 	],
 	[
-		"CAMS_Plane_Wreck",1,true,
+		"CAMS_Wreck_Plane",1,true,
 		[
 			"Land_UWreck_MV22_F","Plane_Fighter_03_wreck_F","Land_Wreck_Plane_Transport_01_F"
 		]
 	],
 	[
-		"CAMS_Boat_Wreck",1,true,
+		"CAMS_Wreck_Boat",1,true,
 		[
 			"Land_UWreck_FishingBoat_F","Land_Wreck_Traw_F","Land_Wreck_Traw2_F"
 		]
@@ -1682,8 +1841,15 @@ _cartContents =
 	[
 		"CAMS_Wreck_Land",0,true,
 		[
-			"CAMS_Car_Wreck", "CAMS_Truck_Wreck", "CAMS_Vehicle_Wreck", "CAMS_Heli_Wreck", "CAMS_Plane_Wreck", 
-			"CAMS_Hist_Wreck"
+			"CAMS_Wreck_Car","CAMS_Wreck_Truck","CAMS_Wreck_Mil"
+		]
+	],
+
+	[
+		"CAMS_Wreck_ALL",0,true,
+		[
+			"CAMS_Wreck_Car", "CAMS_Wreck_Truck", "CAMS_Wreck_Mil", "CAMS_Wreck_Heli", "CAMS_Wreck_Plane", 
+			"CAMS_Wreck_Hist"
 		]
 	]
 ];

@@ -149,7 +149,10 @@ if (!isNil "_groupData") then
                     {
                         [_group, _patternOptions] call FuMS_fnc_HC_AI_Logic_StaticGunner;
                     };
-                    case "LOITER":{};
+                    case "LOITER":
+					{
+						[_group, _eCenter, _patternOptions] call FuMS_fnc_HC_AI_Logic_Loiter;
+					};
                     case "CONVOY":
                     {
                         //"NORMAL",true,true, true

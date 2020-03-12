@@ -10,7 +10,7 @@ _themeData =
         "TownAttack", // Needs to match the folder name!
         1,  		// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
         90, 		// Respawn delay in seconds
-		true, 		// Global loot data
+		false, 		// Global loot data
 		true, 		// Global soldier data  
 		true,		// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
         1,  		// Player minimum to launch missions from this theme.
@@ -18,20 +18,25 @@ _themeData =
     ],
     [  //***** Mission List *****
 		["RaidTown-S-Seed_W","Villages"],  // spawn at the specific location. If '0' take from locations below!
-		["RaidTown-S-Seed_W","Villages"]/*,
+		["RaidTown-S-Seed_W","Villages"],
 		["RaidTown-S-Seed_E","Villages"],
 		["RaidTown-S-Seed_E","Villages"],
 		["RaidTown-S-Seed_I","Villages"]		
 
 /*
-		["RaidTownM"], 		
-		["RaidTownM"],  // spawn at the specific location. If '0' take from locations below!
-		["RaidTownM"],
-		["RaidTownM"], 		
-		["RaidTownM"], 		
-		["RaidTownL"],  // spawn at the specific location. If '0' take from locations below!
-		["RaidTownL"],
-		["RaidTownL"] 	*/	
+		["RaidTown-M-Seed_W","Cities"],  // These have not been written yet, but this is the intent
+		["RaidTown-M-Seed_W","Cities"],
+		["RaidTown-M-Seed_E","Cities"],
+		["RaidTown-M-Seed_E","Cities"],
+		["RaidTown-M-Seed_I","Cities"]	
+
+		["RaidTown-L-Seed_W","Capitals"],  // These have not been written yet, but this is the intent
+		["RaidTown-L-Seed_W","Capitals"],
+		["RaidTown-L-Seed_E","Capitals"],
+		["RaidTown-L-Seed_E","Capitals"],
+		["RaidTown-L-Seed_I","Capitals"]	
+
+*/	
     ],
     [   //***** Locations *****
 		//["Villages"],["Cities"],["Capitals"];  //Encounter will only spawn in urban areas!

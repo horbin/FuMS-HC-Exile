@@ -55,10 +55,10 @@
             //    ["I_UAV_01_F",[0,100],[0,""],"none"],
             //    ["O_UAV_01_F",[50,70],[0,""],"none"],
                 ["O_UAV_01_F",[0,10],[0,""],"none"]
-       //  [FuMS_Mil_ALL,[200,0],[0,""],"Truck01"],
-       //  [FuMS_Mil_Hemmts,[205,0],[0,""],"Truck01"],
-       //  [FuMS_Mil_Zamaks,[203,0],[0,""],"Truck01"],
-       //  [FuMS_Mil_Tempests,[207,0],[0,""],"Truck01"]
+       //  [FuMS_Mil_ALL,[200,0],[0,""],"TruckJunk"],
+       //  [FuMS_Mil_Hemmts,[205,0],[0,""],"TruckJunk"],
+       //  [FuMS_Mil_Zamaks,[203,0],[0,""],"TruckJunk"],
+       //  [FuMS_Mil_Tempests,[207,0],[0,""],"TruckJunk"]
      ],
      [    
          [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[150]   ]]          

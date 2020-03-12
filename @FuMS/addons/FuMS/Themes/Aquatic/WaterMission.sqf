@@ -15,7 +15,7 @@
 																			// type is "mil_objective"
 	[  
 		[																	// NOTIFICATION Messages and Map display Control.
-			true, "ALL",0, 													// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, 													// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 															// Notify players via global message
 			true,															// Show encounter area on the map
 			0,    															// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -42,16 +42,16 @@
 	],
 	[  																		//  Loot Config:  Refer to LootData.sqf for specifcs
 		["None" , [18,-9] ], 												//[static loot, offset location] - spawns with the mission
-		["RANDOM" , [0,0] ], 												// Win loot, offset location - spawns after mission success
+		["RANDOM" , [5,5] ], 												// Win loot, offset location - spawns after mission success
 		["None" , [0,0] ]  													// Failure loot, offset location - spawns on mission failure
 	],
 	[																		//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		["Land_UWreck_FishingBoat_F",[0,0],0,0]   							//type, offset, rotation, presist flag
+		[CAMS_Wreck_Boat,			[0,0],0,0]   							//type, offset, rotation, presist flag
 	],
 	[ 																		// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
 	],
 																			//Example: PatrolBehavior: ["BoxPatrol", [100,0], [0,0],0 ]  
 																			// AI will spawn 100m east of encounter center, a 4 point patrol will be set up at 80% encounter radius. AI will move to this and start patrolling.
@@ -76,10 +76,10 @@
 																			// Spawns 3 vehicles 600m south of encounter center. These 3 will move as a convoy and contain 3 groups of mixed troops.
 																			// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[         														// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-																			//  [  "B_SDV_01_F",                    [0,10],[1,"Diver"],        "Truck01"      ], 
-																			//   [  "B_Boat_Armed_01_minigun_F"           ,[10,0],[1,"Rifleman"],     "Truck01"      ], 
-																			//  [  "B_Boat_Transport_01_F"           ,[0,0], [1,"Rifleman"],     "Truck01"      ]
-																			//[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "Truck01"]   
+																			//  [  "B_SDV_01_F",                    [0,10],[1,"Diver"],        "TruckJunk"      ], 
+																			//   [  "B_Boat_Armed_01_minigun_F"           ,[10,0],[1,"Rifleman"],     "TruckJunk"      ], 
+																			//  [  "B_Boat_Transport_01_F"           ,[0,0], [1,"Rifleman"],     "TruckJunk"      ]
+																			//[  "C_Offroad_01_EPOCH"           ,[13300,14600,0],[ 0, ""          ],       "TruckJunk"]   
 																			// If driver-less vehicles are desired, place them at the bottom of the list. 
 																			// Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],

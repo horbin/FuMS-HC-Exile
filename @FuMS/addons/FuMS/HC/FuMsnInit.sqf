@@ -187,15 +187,37 @@ if !(hasInterface) then
     //diag_log format ["<FuMS> FuMsnInit: #%2:LOOTDATA:%1", FuMS_LOOTDATA, count FuMS_LOOTDATA];
    // diag_log format ["<FuMS> FuMsnInit: #%2:SOLDIERDATA:%1", FuMS_SOLDIERDATA, count FuMS_SOLDIERDATA];
             
-    // Identify major civilized areas on the map.
+    // Identify major areas on the map.
     FuMS_VillageList = nearestLocations [FuMS_MapCenter, ["NameVillage"], 30000];
     FuMS_CityList =nearestLocations [FuMS_MapCenter, ["NameCity"], 30000];
     FuMS_CapitalList = nearestLocations [FuMS_MapCenter, ["NameCityCapital"], 30000];
     FuMS_MarineList = nearestLocations [FuMS_MapCenter, ["NameMarine"], 30000];
     FuMS_DefinedMapLocations = FuMS_VillageList+FuMS_CityList+FuMS_CapitalList+FuMS_MarineList;
-	
 
-								
+	FuMS_HillList = nearestLocations [FuMS_MapCenter, ["Hill"], 30000];
+	FuMS_MountList = nearestLocations [FuMS_MapCenter, ["Mount"], 30000];
+	FuMS_NameLocalList = (nearestLocations [FuMS_MapCenter, ["NameLocal"], 30000]) - FuMS_DefinedMapLocations;
+	diag_log format ["##Init(NameLocal): %1",FuMS_NameLocalList];
+	{
+		diag_log format ["##Init(NameLocal: %1",text _x];
+	}forEach FuMS_NameLocalList;
+	//FuMS_NameLocalList = FuMS_NameLocalList - FuMS_DefinedMapLocations;
+	FuMS_ChurchList = nearestTerrainObjects [FuMS_MapCenter, ["CHURCH"], 30000,false];
+	FuMS_ChapelList = nearestTerrainObjects [FuMS_MapCenter, ["CHAPEL"], 30000,false];
+	FuMS_BunkerList = nearestTerrainObjects [FuMS_MapCenter, ["BUNKER"], 30000,false];
+	FuMS_ViewTowerList = nearestTerrainObjects [FuMS_MapCenter, ["VIEW-TOWER"], 30000,false];
+	FuMS_HospitalList = nearestTerrainObjects [FuMS_MapCenter, ["HOSPITAL"], 30000,false];
+	FuMS_FountainList = nearestTerrainObjects [FuMS_MapCenter, ["FOUNTAIN"], 30000,false];
+	FuMS_GasStationList = nearestTerrainObjects [FuMS_MapCenter, ["FUELSTATION"], 30000,false];
+	FuMS_TransmitterList = nearestTerrainObjects [FuMS_MapCenter, ["TRANSMITTER"], 30000,false];
+	FuMS_WaterTowerList = nearestTerrainObjects [FuMS_MapCenter, ["WATERTOWER"], 30000,false];
+	FuMS_ShipwreckList = nearestTerrainObjects [FuMS_MapCenter, ["SHIPWRECK"], 30000,false];
+	FuMS_IndustrialList = nearestTerrainObjects [FuMS_MapCenter, ["STACK"], 30000,false];
+	FuMS_BusStopList = nearestTerrainObjects [FuMS_MapCenter, ["BUSSTOP"], 30000,false];
+	FuMS_PowerWindList = nearestTerrainObjects [FuMS_MapCenter, ["POWERWIND"], 30000,false];
+	FuMS_PowerSolarList = nearestTerrainObjects [FuMS_MapCenter, ["POWERSOLAR"], 30000,false];
+	FuMS_PowerWaveList = nearestTerrainObjects [FuMS_MapCenter, ["POWERWAVE"], 30000,false];
+	
     
  /*   _testlocations = nearestLocations [FuMS_MapCenter, ["NameMarine"], 30000];
     {

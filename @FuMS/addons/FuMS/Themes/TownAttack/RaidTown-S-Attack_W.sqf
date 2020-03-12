@@ -11,7 +11,7 @@
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-		true, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+		true, "ALL",500, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		false, 				// Notify players via global message
 		false,				// Show encounter area on the map
 		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -51,8 +51,8 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				//[  CAMS_Mil_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "Truck01"      ],
-				[  CAMS_Mil_UnarmedOffroad_E,[0,-1050],[1,"Rifleman_W"],        "Truck01"      ] 				
+				//[  CAMS_Land_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "TruckJunk"      ],
+				[  CAMS_Land_UnarmedOffroad_W,[0,-1050],[1,"Rifleman_W"],        "TruckJunk"      ] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
@@ -67,7 +67,7 @@
 		],
 		[  // Convoy #2    West
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  CAMS_Mil_UnarmedOffroad_W,[-1000,0],[1,"Rifleman_W"],        "Truck01"      ] 
+				[  CAMS_Land_UnarmedOffroad_W,[-1000,0],[1,"Rifleman_W"],        "TruckJunk"      ] 
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options

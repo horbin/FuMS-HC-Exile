@@ -10,11 +10,11 @@
 	["Captives","mil_dot", "ELLIPSE","ColorYellow","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-		true, 1,0,
-		true, // Notify players via global message
-		true,// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
-		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
+		true, "ALL" ,1000,
+		true, 			// Notify players via global message
+		true,			// Show encounter area on the map
+		300,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
@@ -38,34 +38,34 @@
 		["None" , 	[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		["Land_BarrelWater_F",      [-7,-7], 	0,  0],
-		["Land_Wreck_Car2_F",       [12,12],  	0,  0],
-		["Land_Wreck_Offroad2_F",   [-10,-10],	0,  0],
-		["Land_HighVoltageTower_F", [20,-10],	0,  0],
-		["CamoNet_INDP_big_F",      [-20, 10],	0,  0],
-		["Land_Wreck_Car2_F",		[0,50],		0, 	0, "Fire"],
+		["Land_BarrelWater_F",      [-7,-7], 	(round random 360),  0],
+		["Land_Wreck_Car2_F",       [12,12],  	(round random 360),  0],
+		["Land_Wreck_Offroad2_F",   [-10,-10],	(round random 360),  0],
+		["Land_HighVoltageTower_F", [20,-10],	(round random 360),  0],
+		["CamoNet_INDP_big_F",      [-20, 10],	(round random 360),  0],
+		["Land_Wreck_Car2_F",		[0,50],		(round random 360), 	0, "Fire"],
 
-		["B_G_Van_02_vehicle_F",	[0,100],   	0,       [.5,   1,     .5,         .5,         .5]],
+		["B_G_Van_02_vehicle_F",	[0,100],   	(round random 360),       [.5,   1,     .5,         .5,         .5]],
 
 		
 		["M3Editor", [0,0], "NONE", 0,
 							// paste your array of building objects here
 			[
-				["Land_TentHangar_V1_F",[14692.4,16710.5,0],312.727,[0,0,1],true]
+				["Land_TentHangar_V1_F",[14692.4,16710.5,0],(round random 360),[0,0,1],true]
 			]
  		]
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper"],[3,"Rifleman"]],[  "BoxPatrol",[0,0], [0,0],[25] ]],
+		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "BoxPatrol",[0,0], [0,0],[25] ]],
 							// GROUP 0 - Spawns 4 AI into a 25m box patrol around the building
-		[["EAST","COMBAT","RED","LINE"],[[1,"Sniper"],[3,"Rifleman"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]],
+		[["EAST","COMBAT","RED","LINE"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]],
 							// GROUP 1 - Spawns 4 AI will spawn into the specified building using TOWERGUARD logic.
 							// if "ANY" is changed to a specific building type, ex: "Land_Cargo_Tower_V3_F", they will all spawn into this building type.
-		[["EAST","COMBAT","RED","LINE"],[[2,"Hunter"]],["Buildings",[6,6],[0,0],[100]]],
+		[["EAST","COMBAT","RED","LINE"],[[2,"Hunter_E"]],["Buildings",[6,6],[0,0],[100]]],
 							// GROUP 2 - These 2 will patrol in and out of the buildings withn 100m of encounter center.
-		[["RESISTANCE","SAFE","BLUE","WEDGE"],[[10,"Civ01"]],["Captured",[0,0],[0,0],[-1,[[300,300],[-300,-300],[300,-300],[-300,300]]  ]] ],
+		[["RESISTANCE","SAFE","BLUE","WEDGE"],[[10,"Captive"]],["Captured",[0,0],[0,0],[-1,[[300,300],[-300,-300],[300,-300],[-300,300]]  ]] ],
 							// This grp of 10 prisoners should stand around
-		[["RESISTANCE","SAFE","BLUE","WEDGE"],[[3,"Civ01"]],["Captured",[25,0],[25,0],[0,[[300,300],[-300,-300],[300,-300],[-300,300]]  ]] ]
+		[["RESISTANCE","SAFE","BLUE","WEDGE"],[[3,"Captive"]],["Captured",[25,0],[25,0],[0,[[300,300],[-300,-300],[300,-300],[-300,300]]  ]] ]
 							// This grp of 3 prisoners should follow the group leader of grp '0' (BoxPatrol group above)!
 	],
 
@@ -73,11 +73,11 @@
 	[
 		[ // Convoy #1
 			[        
-				[FuMS_Veh_Land,[20,0],[0,""],"None",[["engine",.5],["fueltank",.3],["hull",.9],["wheel_1_1",.5]]],
-				[FuMS_Veh_Land,[30,0],[0,""],"None",[["engine",.5],["hull",.5]]     ]
+				[ImFX_Land_All,[20,0],[0,"Driver_E"],"None",[["engine",.5],["fueltank",.3],["hull",.7],["wheel_1_1",.5]]],
+				[ImFX_Land_All,[30,0],[0,"Driver_E"],"None",[["engine",.5],["hull",.5]]     ]
 			],
 			[    
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
 			],
 			[
 			]

@@ -22,8 +22,8 @@
 	[  
 		[																	// NOTIFICATION Messages and Map display Control.
 			true,    		// Notify players via Radio Message
-			0,   			// radio channel. "ALL" = no radio required.
-			0,         		//range from encounter center AI radio's can be heard (0=unlimited.)
+			"ALL",   			// radio channel. "ALL" = no radio required.
+			500,         		//range from encounter center AI radio's can be heard (0=unlimited.)
 			true,  			// Notify players via global message - hint screen on right of game display -
 			true,   		// Show encounter area on the map
 			900,      		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -443,13 +443,13 @@
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
 	
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Sniper"],[2,"Rifleman"]  ],   	["BoxPatrol",	[12327.6,8442.97],[12327.6,8442.97],[75]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [5,"Rifleman"]  ],   				["BoxPatrol",	[12265.6,8430.59],[12265.6,8430.59],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Sniper"]  ],   					["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman"]  ],   				["LOITER",		[-70,46],[-70,46],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman"]  ],   				["LOITER",		[12379.807617,8459.946289,0],[12379.807617,8459.946289,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [6,"Rifleman"]  ],   				["Explore",		[0,0],[0,0],[150]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Sniper"],[4,"Rifleman"]  ],   	["Buildings",	[0,0],[0,0],[100]   ]]
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Sniper_E"],[2,"Rifleman_E"]  ],  ["BoxPatrol",	[12327.6,8442.97],[12327.6,8442.97],[75]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [5,"Rifleman_E"]  ],   				["BoxPatrol",	[12265.6,8430.59],[12265.6,8430.59],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Sniper_E"]  ],   				["TowerGuard",	[0,0],[0,0],[150, "ANY"]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   				["LOITER",		[-70,46],[-70,46],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   				["LOITER",		[12379.807617,8459.946289,0],[12379.807617,8459.946289,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [6,"Rifleman_E"]  ],   				["Explore",		[0,0],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Sniper_E"],[4,"Rifleman_E"]  ],  ["Buildings",	[0,0],[0,0],[100]   ]]
 
 	],
 				// Example: PatrolBehavior: ["BoxPatrol", [100,0], [0,0],0 ]  
@@ -486,7 +486,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [9, "Rifleman"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [9, "Rifleman_E"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

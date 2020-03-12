@@ -185,7 +185,7 @@ while {true} do
 	while {!(FuMS_ServerFPS > FuMS_FPSMinimum and !FuMS_Mission_is_Starting)} do
 	{
 		_hold = true;
-		uisleep 5;
+		uisleep 30;
 		if (FuMS_ServerFPS < FuMS_FPSMinimum) then
 		{
 			if (_debug) then
@@ -202,7 +202,7 @@ while {true} do
 		};
 	};
 	FuMS_Mission_is_Starting = true;
-	//if (_hold) then {diag_log format ["<FuMS>: ControlLoop: Theme:%1: My turn! Launching mission",_themeIndex];};
+	if (_hold) then {diag_log format ["<FuMS>: ControlLoop: Theme:%1: My turn! Launching mission",_themeIndex];};
 	
 	
     // SELECT A MISSION.

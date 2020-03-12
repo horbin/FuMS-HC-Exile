@@ -1,17 +1,15 @@
-// Small4.sqf
-// Horbin
-// 1/11/15
-// Updated 9/1/2019 by TheOneWhoKnocks
-// Reformatted and enhanced triggers
+// BanditPosse.sqf
+// TheOneWhoKnocks
+// 02/02/2020
 // Based upon drsubo Mission Scripts
 
 [
-	["BanditPosse", 75], // Mission Title NOSPACES!, and encounter radius
-	["Bandit Posse","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",75],    
+	["BanditPosse", 200], // Mission Title NOSPACES!, and encounter radius
+	["Bandit Posse","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.
-			true, "ALL", 0,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL", 700,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 		// Notify players via global message
 			true,		// Show encounter area on the map
 			600,    	// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -40,9 +38,7 @@
 	 // ["CamoNet_INDP_open_F",[0,0],0,0]  //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"HUNTER"],[1,"LMG"] ],     ["BUILDINGS",[6,-6],[0,0],[75]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [4,"HUNTER"],[1,"LMG"] ],     ["BUILDINGS",[-6,6],[0,0],[75]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [1,"SNIPER"]           ],     ["SENTRY",   [0,0],[1,0], [50]      ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [2,"Sniper_E"]           ],     ["SENTRY",   [((round random 50)-100),((round random 50)-100)],[1,0], [100]      ]]
 	],
 	 // Vehicles
 	[				 
@@ -56,14 +52,16 @@
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
+			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
 			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements
 			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
 		],
-		[	// Define what actions should occur when above trigger logics evaluate to true
+		[
+			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],["TIMER"     ]],
-			//[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["CHILD",	["SpawnPosse",[0,0],1,10000]],["LaunchAI"     ]],  
 			[["END"],["AllDead","OR","TIMER"    ]]  
 		]
 	]

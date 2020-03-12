@@ -7,26 +7,26 @@
 _themeData =
 [
     [  // *******Options*********
-        "Townraid", // Needs to match the folder name!
-        3,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        500, // Respawn delay in seconds
-		true, // Global loot data
-		true, // Global soldier data  
-		true,
-        1,  // Player minimum to launch missions from this theme.
-        100   // Player maximum above which missions will not launch
+        "Townraid", 	// Needs to match the folder name!
+        1,  			// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        500, 			// Respawn delay in seconds
+		false, 			// Global loot data
+		true, 			// Global soldier data  
+		true,			// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
+        1,  			// Player minimum to launch missions from this theme.
+        100   			// Player maximum above which missions will not launch
     ],
     [  //***** Mission List *****
     //see Test Theme ThemeData.sqf for other options
         // The below missions MUST be in the same folder as this file! 
-		["RaidTown-S"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-S"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-M"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-M"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-M"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-M"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-L"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-L"]  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-S","Villages"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-S","Villages"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-L","Capitals"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-L","Capitals"]  	// spawn at the specific location. If '0' take from locations below!
     ],
     [   //***** Locations *****
 	    //Location format ["keyword"] or [x,y,"optional name"]
@@ -37,7 +37,7 @@ _themeData =
 		//  locations from the mission map will be added to the list.
 		// Specific cities can also be included, if not all of a type are desired:
 		// Ex: ["Charkia"], ["Neochori"]
-		["Villages"],["Cities"],["Capitals"] //Encounter will only spawn in urban areas!
+		//["Villages"],["Cities"],["Capitals"] //Encounter will only spawn in urban areas!
     ],
 	[ //***** Radio Chatter *****
 		[ // AI Radio Chatter configuration

@@ -40,7 +40,7 @@
 		["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[CAMS_Heli_Wreck,[0,0], (random 360), 0, "Fire_Big" ]
+		[CAMS_Wreck_Heli,[0,0], (random 360), 0, "Fire_Big" ]
 	  
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.

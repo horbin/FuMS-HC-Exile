@@ -51,19 +51,19 @@
 	[
 		[  									// Division #1
 			[         						// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "Truck01"      ], 
+											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "TruckJunk"      ], 
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
 				[  ImFX_Heli_Troops, [0,2000], 			[1,"Pilot_W"],     "None"      ]
 			],
 			[  
 											// PILOTS: # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],	[	[1, "Pilot_W"]  ],   ["ParaDrop",[0,2000],[0,0],["Full", 100, true,true  ]   ]]
+				[["WEST","COMBAT","RED","COLUMN"],	[	[1, "Pilot_W"]  ],   ["ParaDrop",[2200,0],[0,0],["Full", 100, true,true  ]   ]]
 			],
 			[   
 											// TROOPS : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
 											//  Troop behaviour and side options                    # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
 				//[["EAST","COMBAT","RED","COLUMN"],	[	[1,"Sniper_W"],[2,"Paratrooper_W"],[1,"SMG_W"],[1,"LMG_W"]],["BoxPatrol",[0,2000],[0,0],[100]]]
-				[["EAST","COMBAT","RED","COLUMN"],	[	[1,"Sniper_W"]],["Towerguard",[0,2000],[0,0],[300,"ANY"]]]
+				[["WEST","COMBAT","RED","COLUMN"],	[	[1,"Sniper_W"]],["Towerguard",[0,2000],[0,0],[300,"ANY"]]]
 											// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 			]
 		]

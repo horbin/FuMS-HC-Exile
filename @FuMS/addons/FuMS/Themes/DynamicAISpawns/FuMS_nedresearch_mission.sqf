@@ -60,32 +60,37 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[FuMS_Mil_CoveredUral,		[17.2,0],				0,			[.5,   1,     .5,         .5,         .5]]
+		[CAMS_Land_Transport_ALL_I,		[17.2,0],				(round random 360),			[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
+		["Land_CncBarrierMedium4_F",[1,7],0,0],
+		["Land_CncBarrierMedium4_F",[1,-7],0,0],
+		["Land_CncBarrierMedium4_F",[-3,-4],90,0],
+		["Land_CncBarrierMedium4_F",[-3,3.5],90,0]		
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
 
 		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [4,"Rifleman"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman"]  ],   				["BoxPatrol",	[5,5],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Hunter"]  ],   					["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","SAFE","GREEN","WEDGE"],   [  [4,"Doctor"]  ],   		["Loiter",		[0,0],[10,10],[50]   ]],
+		[["EAST","AWARE","RED","VEE"],   	[  [4,"Rifleman_E"]  ],   	["Buildings",	[2,2],[0,0],[150]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman_E"]  ],   	["BoxPatrol",	[5,5],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Hunter_E"]  ],   		["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  		
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F",		[7,3],						[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[7,4],						[0],     	"None" ] 
+				[  "O_HMG_01_high_F",		[((round random 100)-50),((round random 100)-50)],					[(round random 360)],     	"None" ],
+				[  "O_HMG_01_high_F",		[-7,4],						[(round random 360)],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -100,14 +105,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  FuMS_Mil_ArmedOffroads,		[50,50],	[1,"Rifleman"],        "Truck01",[0]      ]
+				[  "B_G_Offroad_01_armed_F",		[50,50],	[0,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Driver"]  ],   ["BoxPatrol",[75,75],[-75,-75],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Driver_E"]  ],   ["BoxPatrol",[75,75],[-75,-75],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

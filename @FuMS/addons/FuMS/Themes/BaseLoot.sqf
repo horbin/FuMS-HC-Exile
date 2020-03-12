@@ -341,7 +341,7 @@ FuMS_Heli_Orcas = ["Exile_Chopper_Orca_CSAT","Exile_Chopper_Orca_Black","Exile_C
 FuMS_Heli_Tarus = ["Exile_Chopper_Taru_Transport_CSAT","Exile_Chopper_Taru_Transport_Black","Exile_Chopper_Taru_CSAT",
 "Exile_Chopper_Taru_Black","Exile_Chopper_Taru_Covered_CSAT","Exile_Chopper_Taru_Covered_Black"];
 FuMS_Heli_Airdrop = FuMS_Heli_Hellcats + FuMS_Heli_UnarmedHueys;
-FuMS_Heli_Troops = FuMS_Heli_UnarmedHueys + FuMS_Heli_Hummingbirds + FuMS_Heli_Hurons + FuMS_Heli_Mohawks + FuMS_Heli_Orcas;
+CAMS_Heli_Transport_E = FuMS_Heli_UnarmedHueys + FuMS_Heli_Hummingbirds + FuMS_Heli_Hurons + FuMS_Heli_Mohawks + FuMS_Heli_Orcas;
 FuMS_Heli_ALL = FuMS_Heli_Hellcats + FuMS_Heli_Hueys_All + FuMS_Heli_Hummingbirds+FuMS_Heli_Hurons+FuMS_Heli_Mohawks+FuMS_Heli_Orcas+FuMS_Heli_Tarus;
 
 // UAV

@@ -27,7 +27,7 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["Template", "box_nato_ammoveh_f","RANDOM"],
 			[// All weapons and quantity 
-				[CAMS_LightMGs_E, [2,0,1]],
+				[CAMS_LMG_E, [2,0,1]],
 				[CAMS_AssaultRifles_E, [2,0,1]]
 			],
 		[// All magazines and quantity
@@ -36,7 +36,7 @@ _lootData =
 		],
 		[	// All items and quantity
 			[CAMS_I_Meds, [2,0,1]],
-			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_I_Navigation, [2,0,1]],
 			[CAMS_W_Opticslv1, [2,0,1]],
 			["G_Diving",[2,0,1]]
 		],
@@ -46,6 +46,46 @@ _lootData =
 		10000	//Maximum number of poptabs to be included in poptab bag
 
 	],
+	
+	[
+	// Loot Option title, and box to be used.  Use of array names is permitted. 
+	// Loot used for Abandonded Village mission
+		["TownLoot", "box_FIA_support_f"],
+		[// All weapons and quantity 
+			[FuMS_Guns_ALL, 		[20,0,10]]
+		],
+		[// All magazines and quantity
+			["FuMS_AmmoForEach",	[1,0,2]]
+		],
+		[// All items and quantity
+			[FuMS_E_All, 			[10,0,10]]
+		],
+		[// All backpacks and quantity
+			[FuMS_Packs_ALL, 		[4,0,3]]
+		],
+		20000  //optional, number of random poptabs to add to loot
+	],//********** Loot**********************
+// Copy from first comment to here to make custom loot box 	
+
+// Copy from here to next comment to make new loot box
+	[
+	// Loot Option title, and box to be used.  Use of array names is permitted. 
+	// Loot used for Abandonded Village mission
+		["TownLootLoss", "box_FIA_support_f"],
+		[// All weapons and quantity 
+		],
+		[// All magazines and quantity
+		],
+		[// All items and quantity
+		],
+		[// All backpacks and quantity
+			[CAMS_Packs_ALL, [1,0,2]]
+		],
+		420  //optional, number of random poptabs to add to loot
+	],//********** Loot**********************
+	
+	
+	
 	[
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["SmokeBomb", "GroundWeaponHolder_Scripted","RANDOM"],
@@ -78,20 +118,20 @@ _lootData =
 			0
 	],
 
-		[
+	[
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["BasicLoot", "box_nato_ammoveh_f","RANDOM"],
-			[// All weapons and quantity 
-				[CAMS_LightMGs_E, [2,0,2]],
-				[CAMS_AssaultRifles_E, [2,0,1]]
-			],
+		[// All weapons and quantity 
+			[CAMS_LMG_E, [2,0,2]],
+			[CAMS_AssaultRifles_E, [2,0,1]]
+		],
 		[// All magazines and quantity
 			[FuMS_AmmoForEach, [4,2,2]]    // 4 clips for each weapon Line defined above.
 			// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
 		],
 		[// All items and quantity
 			[CAMS_I_Meds, [2,1,2]],
-			[CAMS_B_Navigation, [1,0,1]],
+			[CAMS_I_Navigation, [1,0,1]],
 			[CAMS_W_Opticslv1, [2,0,0]],
 			["G_Diving",[0,0,2]]
 		],
@@ -193,7 +233,7 @@ _lootData =
 			[FuMS_AmmoForEach, [4,0,1]]
 		],
 		[// All items and quantity
-			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_I_Navigation, [2,0,1]],
 			[CAMS_W_OpticsLv1, [2,1,1]],
 			["G_Diving",[2,0,1]]
 		],
@@ -214,7 +254,7 @@ _lootData =
 			[FuMS_AmmoForEach, [4,0,1]]
 		],
 		[// All items and quantity
-			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_I_Navigation, [2,0,1]],
 			[CAMS_I_Meds, [4,0,4]],
 			[CAMS_W_OpticsLv1, [2,1,1]],
 			[CAMS_W_OpticsLv2, [2,1,1]],
@@ -227,7 +267,7 @@ _lootData =
 	
 	// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
 	[
-		["RoadBlock","Box_East_Wps_F","special"],
+		["RoadBlock","box_nato_ammoveh_f","special"],
 		[// All weapons and quantity  
 			[CAMS_Rifles_ALL_E, [8,4,2]]
 		],

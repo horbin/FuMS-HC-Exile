@@ -12,7 +12,7 @@
 	["Help Ground E","mil_dot","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[   			// NOTIFICATION Messages and Map display Control.
-		true, "ALL", 0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+		true, "ALL", 500, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		false, 			// Notify players via global message
 		false,			// Show encounter area on the map
 		30,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed

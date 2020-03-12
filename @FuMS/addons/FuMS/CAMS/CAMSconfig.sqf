@@ -23,6 +23,8 @@ CAMS_useVanilla	= true;	// True - Loads Arma 3 Vanilla Content | False - Does no
 CAMS_useExile		= true;	// True - Loads Exile Content | False - Does not load exile assets
 
 CAMS_cartList = 	[	// Name of CART directory 
+							"helicopters",
+							"marksmen",
 							"jets",
 							"apex"
 						];

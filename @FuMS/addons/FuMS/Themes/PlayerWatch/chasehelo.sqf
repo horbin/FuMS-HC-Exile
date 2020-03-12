@@ -92,9 +92,9 @@
 		[  // Division #1
 			[   // Vehicle                            Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 			[  
-				"B_Heli_Light_01_armed_F"           ,[500,0],[2,"Rifleman_E"],        "Truck01"      ]  
-				//  [  "B_Heli_Light_01_armed_F"           ,[0,-100],[1,"Rifleman"],     "Truck01"      ], //AH-9 Pawnee
-				//  [  "B_Heli_Transport_01_F"               ,[100,0],[1,"Rifleman"],     "Truck01"      ]   //WY-55 Hellcat
+				"B_Heli_Light_01_armed_F"           ,[500,0],[2,"Rifleman_E"],        "TruckJunk"      ]  
+				//  [  "B_Heli_Light_01_armed_F"           ,[0,-100],[1,"Rifleman"],     "TruckJunk"      ], //AH-9 Pawnee
+				//  [  "B_Heli_Transport_01_F"               ,[100,0],[1,"Rifleman"],     "TruckJunk"      ]   //WY-55 Hellcat
 		
 				//"B_Heli_Transport_01_F" //U-80 Ghost Hawk
 				//"I_Heli_light_03_F" // WY-55 Hellcat

@@ -672,32 +672,32 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.	
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman"]  ],   	["Explore",		[23729.9,18001.2,0],[23729.9,18001.2,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter"]  ],   		["Explore",		[23725.4,18009.3,0],[23725.4,18009.3,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG"]  ],   			["Explore",		[23729.9,18020.4,0],[23729.9,18020.4,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG"]  ],   			["Explore",		[23741.1,18011.8,0],[23741.1,18011.8,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver"]  ],   		["Explore",		[23736.8,18007.9,0],[23736.8,18007.9,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot"]  ],   		["Explore",		[23722.5,17991.9,0],[23722.5,17991.9,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditLeader"]  ],   ["Explore",		[23714.3,17984.6,0],[23714.3,17984.6,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditGroup"]  ],   	["Explore",		[23722.1,17974,0],	[23722.1,17974,0],	[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],		["Explore",		[23729.9,18001.2,0],[23729.9,18001.2,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter_E"]  ],   	["Explore",		[23725.4,18009.3,0],[23725.4,18009.3,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG_E"]  ],   		["Explore",		[23729.9,18020.4,0],[23729.9,18020.4,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG_E"]  ],   		["Explore",		[23741.1,18011.8,0],[23741.1,18011.8,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver_E"]  ],   	["Explore",		[23736.8,18007.9,0],[23736.8,18007.9,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot_E"]  ],   		["Explore",		[23722.5,17991.9,0],[23722.5,17991.9,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23714.3,17984.6,0],[23714.3,17984.6,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23722.1,17974,0],	[23722.1,17974,0],	[20]   ]],
 		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"CivCombat"]  ],   	["Explore",		[23725.8,17975,0],	[23725.8,17975,0],	[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman"]  ],   	["Explore",		[23745.6,17992.7,0],[23745.6,17992.7,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter"]  ],   		["Explore",		[23745,17997.7,0],	[23745,17997.7,0],	[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG"]  ],   			["Explore",		[23748.3,18017.1,0],[23748.3,18017.1,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG"]  ],   			["Explore",		[23752.6,18033.6,0],[23752.6,18033.6,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver"]  ],   		["Explore",		[23733.7,18036.4,0],[23733.7,18036.4,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot"]  ],   		["Explore",		[23711.2,18028.1,0],[23711.2,18028.1,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditLeader"]  ],   ["Explore",		[23697.2,18031.2,0],[23697.2,18031.2,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditGroup"]  ],   	["Explore",		[23693.5,18016.5,0],[23693.5,18016.5,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23745.6,17992.7,0],[23745.6,17992.7,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter_E"]  ],   	["Explore",		[23745,17997.7,0],	[23745,17997.7,0],	[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG_E"]  ],   		["Explore",		[23748.3,18017.1,0],[23748.3,18017.1,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG_E"]  ],   		["Explore",		[23752.6,18033.6,0],[23752.6,18033.6,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver_E"]  ],   	["Explore",		[23733.7,18036.4,0],[23733.7,18036.4,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot_E"]  ],   		["Explore",		[23711.2,18028.1,0],[23711.2,18028.1,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23697.2,18031.2,0],[23697.2,18031.2,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23693.5,18016.5,0],[23693.5,18016.5,0],[20]   ]],
 		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"CivCombat"]  ],   	["Explore",		[23702.9,18013.7,0],[23702.9,18013.7,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman"]  ],   	["Explore",		[23699.5,17998.3,0],[23699.5,17998.3,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter"]  ],   		["Explore",		[23702.1,17981.7,0],[23702.1,17981.7,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG"]  ],   			["Explore",		[23738.7,17982.1,0],[23738.7,17982.1,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG"]  ],   			["Explore",		[23718.8,18006.8,0],[23718.8,18006.8,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver"]  ],   		["Explore",		[23722.1,18024.6,0],[23722.1,18024.6,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot"]  ],   		["Explore",		[23719.6,18034.9,0],[23719.6,18034.9,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditLeader"]  ],   ["Explore",		[23711.2,17988.4,0],[23711.2,17988.4,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"BanditGroup"]  ],   	["Explore",		[23733.4,17989.8,0],[23733.4,17989.8,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23699.5,17998.3,0],[23699.5,17998.3,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Hunter_E"]  ],   	["Explore",		[23702.1,17981.7,0],[23702.1,17981.7,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"SMG_E"]  ],   		["Explore",		[23738.7,17982.1,0],[23738.7,17982.1,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"LMG_E"]  ],   		["Explore",		[23718.8,18006.8,0],[23718.8,18006.8,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Driver_E"]  ],   	["Explore",		[23722.1,18024.6,0],[23722.1,18024.6,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Pilot_E"]  ],   		["Explore",		[23719.6,18034.9,0],[23719.6,18034.9,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23711.2,17988.4,0],[23711.2,17988.4,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"Rifleman_E"]  ],   	["Explore",		[23733.4,17989.8,0],[23733.4,17989.8,0],[20]   ]],
 		[["EAST","COMBAT","RED","COLUMN"],  [  [1,"CivCombat"]  ],   	["Explore",		[23760.1,18011.9,0],[23760.1,18011.9,0],[20]   ]]
 	],
 	[			// Vehicles
@@ -719,7 +719,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [10, "Rifleman"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [10, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

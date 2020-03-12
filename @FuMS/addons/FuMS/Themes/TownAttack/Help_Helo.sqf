@@ -15,7 +15,7 @@
 	[  
 		[   								// NOTIFICATION Messages and Map display Control.
 			true, "ALL", 200, 				// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, 							// Notify players via global message
+			false, 							// Notify players via global message
 			false,							// Show encounter area on the map
 			10,    							// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       						// Lose delay: Time in seconds after a lose before mission cleanup is performed
@@ -54,13 +54,13 @@
 	[
 		[  									// Division #1
 			[         						// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "Truck01"      ], 
+											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "TruckJunk"      ], 
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
 				[  ImFX_Heli_Troops, [0,2000], [1,"Pilot_E"],     "None"      ]
 			],
 			[  
 											// PILOTS: # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[0,2000],[0,0],["Full", 100, true,true  ]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[2300,0],[0,0],["Full", 100, true,true  ]   ]]
 			],
 			[   
 											// TROOPS : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.

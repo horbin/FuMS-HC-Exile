@@ -12,8 +12,8 @@
 	["SpawnGuards","hd_objective","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			true, 0,700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, 			// Notify players via global toast message
+			true, "ALL",700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			false, 			// Notify players via global toast message
 			false,			// Show encounter area on the map
 			30,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
@@ -44,7 +44,6 @@
 		["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		//[CAMS_Heli_Wreck,[0,0], (random 360), 0, "Fire_Big" ]
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.

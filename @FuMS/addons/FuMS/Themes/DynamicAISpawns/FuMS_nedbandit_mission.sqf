@@ -23,7 +23,7 @@
 	["Bandit Leader","hd_objective","ELLIPSE","ColorBlue","Cross",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
-			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
 			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
@@ -70,9 +70,9 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [1,"BanditLeader"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"BanditGroup"]  ],   					["BoxPatrol",	[5,5],[0,0],[20]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"BanditGroup"]  ],   					["Explore",		[-5,-5],[0,0],[50]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [1,"BanditLeader"]  ],   	["Loiter",		[2,2],[0,0],[40]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [3,"BanditGroup"]  ],   		["BoxPatrol",	[5,5],[0,0],[20]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"BanditGroup"]  ],   		["Explore",		[-5,-5],[0,0],[50]   ]]
 
 	],
 	[			// Vehicles	
@@ -82,7 +82,7 @@
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
-				[FuMS_Civ_SUVs,		[1,1],			[1,"BanditGroup"],        "BanditTruck",		[.25]      ]
+				[CAMS_Land_SUV_C,		[4,4],			[1,"BanditGroup"],        "BanditTruck",		[.25]      ]
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options

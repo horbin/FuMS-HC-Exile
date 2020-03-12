@@ -553,7 +553,7 @@ private _center = [0,0,0];
 		],
 		[
 			[   // Vehicle                     Offset     			Crew and number   	CargoLoot 		Damage
-				[  FuMS_Mil_ArmedOffroads,	[4179.81,11122.1,0],	[1,"Rifleman"],      "Truck01",		[0.25]      ]
+				[  FuMS_Mil_ArmedOffroads,	[4179.81,11122.1,0],	[1,"Rifleman"],      "TruckJunk",		[0.25]      ]
 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
@@ -576,7 +576,7 @@ private _center = [0,0,0];
 		[
 			
 			[   // Vehicle                     Offset     			Crew and number   	CargoLoot 		Damage
-				[  FuMS_Mil_ArmedOffroads,	[4017.39,10948.5,0],	[1,"Rifleman"],      "Truck01",		[0.25]      ]
+				[  FuMS_Mil_ArmedOffroads,	[4017.39,10948.5,0],	[1,"Rifleman"],      "TruckJunk",		[0.25]      ]
 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!

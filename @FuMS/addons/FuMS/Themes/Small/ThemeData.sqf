@@ -8,7 +8,7 @@ _themeData =
 [
     [
         "Small",   	// Needs to match the folder name!
-        3,  		//Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        1,  		// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
         60, 		// Respawn delay in seconds
 		true,  		// Global Loot Data
 		true,  		// Global Soldier Data
@@ -18,14 +18,14 @@ _themeData =
     ],
     [  
        //see Test Theme ThemeData.sqf for other options
-		["sniperraid"],
-		["hostilepatrol"],
-		["gang"],
-		["banditposse"]
+		["SniperRaid","Villages"],
+		["HostilePatrol","Villages"],
+		["Gang","Villages"],
+		["BanditPosse","Villages"]
 		
     ],
     [   //***** Locations *****
-		["Villages"]        
+		//["Villages"]        
     ],
 	[
 		[ // AI Radio Chatter configuration

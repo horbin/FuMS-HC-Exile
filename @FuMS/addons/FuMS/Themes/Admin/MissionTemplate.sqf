@@ -246,7 +246,7 @@
 		//
 		// VEHICLES
 		// Vehicle classname			  spawn 		crew # and type			loot			damage (optional)
-		//[  "O_MRAP_02_hmg_F ",		[-50,-610],		[1,"Rifleman"],        "Truck01",		[1.0]      ]
+		//[  "O_MRAP_02_hmg_F ",		[-50,-610],		[1,"Rifleman"],        "TruckJunk",		[1.0]      ]
 		//
 		// STATIC WEAPONS  
 		// Vehicle classname			  spawn 		facing					loot			damage (optinal
@@ -262,8 +262,8 @@
 			// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[	// VEHICLES IN GROUP  
 				//   Vehicle classname			Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[ "B_Boat_Armed_01_minigun_F",	[10,0],		[3,"Rifleman"],     	"Truck01"], 
-				[ FuMS_H20_RubberDucks,			[0,0], 		[3,"Rifleman"],     	"Truck01"]
+				[ "B_Boat_Armed_01_minigun_F",	[10,0],		[3,"Rifleman"],     	"TruckJunk"], 
+				[ FuMS_H20_RubberDucks,			[0,0], 		[3,"Rifleman"],     	"TruckJunk"]
 				// If driver-less vehicles are desired, place them at the bottom of the list and put less drivers than vehicles
 				// Troops below WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
@@ -332,9 +332,9 @@
 		[	// GROUP #5 (Airborne Vehicle example)
 			[	// VEHICLES
 				//	Vehicle classname           Offset     	Crew (only 1 type!)   	CargoLoot (see Loot section below for more detail!)
-				[  "B_Heli_Light_01_armed_F",	[0,0],		[1,"Rifleman"],			"Truck01"      ], //AH-9 Pawnee 
-				[  "B_Heli_Light_01_armed_F",	[0,-100],	[1,"Rifleman"],			"Truck01"      ], //AH-9 Pawnee
-				[  "B_Heli_Transport_01_F",		[100,0],	[1,"Rifleman"],			"Truck01"      ]  //U-80 Ghost Hawk
+				[  "B_Heli_Light_01_armed_F",	[0,0],		[1,"Rifleman"],			"TruckJunk"      ], //AH-9 Pawnee 
+				[  "B_Heli_Light_01_armed_F",	[0,-100],	[1,"Rifleman"],			"TruckJunk"      ], //AH-9 Pawnee
+				[  "B_Heli_Transport_01_F",		[100,0],	[1,"Rifleman"],			"TruckJunk"      ]  //U-80 Ghost Hawk
 			],
 			[	// DRIVERS  
 				// Pilot behavior                       	# and type  |         AI Logic     |    spawn  | dest  | 'AI Logic' options  (see documentation)                                                     RTB, 	Roads, 	Despawn, 	Height

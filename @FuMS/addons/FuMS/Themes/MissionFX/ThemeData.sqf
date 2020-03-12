@@ -10,7 +10,7 @@ _themeData =
 [
     [  // *******Options*********
         "MissionFX", 	// Needs to match the folder name!
-        1,  			//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+        5,  			//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
 						// 4=Static: All missions in 'Mission List' will be created at server start!
 						// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
 						// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
