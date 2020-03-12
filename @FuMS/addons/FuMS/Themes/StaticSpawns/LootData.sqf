@@ -26,7 +26,7 @@ _lootData =
 		["LootcrateE", "box_nato_ammoveh_f"],
 		[// All weapons and quantity 
 			[CAMS_SniperRifles_E, 	[1,0,2]],
-			[CAMS_LightMGs_E, 		[0,0,1]],
+			[CAMS_LMG_E, 		[0,0,1]],
 			[CAMS_AssaultRifles_E, 	[2,0,2]]
 		],
 		[// All magazines and quantity
@@ -35,7 +35,7 @@ _lootData =
 		[// All items and quantity
 			[CAMS_W_OpticsLv1, 		[2,0,1]],
 			[CAMS_I_Meds, 			[2,0,4]],
-			[CAMS_B_Navigation, 	[2,1,3]],
+			[CAMS_I_Navigation, 	[2,1,3]],
 			[CAMS_W_Pointer, 		[0,0,1]],
 			[CAMS_Flares_Normal, 	[2,0,2]],
 			[CAMS_E_ALL, 			[0,0,2]]
@@ -49,7 +49,7 @@ _lootData =
 		["LootcrateW", "box_nato_ammoveh_f"],
 		[// All weapons and quantity 
 			[CAMS_SniperRifles_W, 	[1,0,2]],
-			[CAMS_LightMGs_W, 		[0,0,1]],
+			[CAMS_LMG_W, 		[0,0,1]],
 			[CAMS_AssaultRifles_W, 	[2,0,2]]
 		],
 		[// All magazines and quantity
@@ -58,7 +58,7 @@ _lootData =
 		[// All items and quantity
 			[CAMS_W_OpticsLv1, 		[2,0,1]],
 			[CAMS_I_Meds, 			[2,0,4]],
-			[CAMS_B_Navigation,		[2,1,3]],
+			[CAMS_I_Navigation,		[2,1,3]],
 			[CAMS_W_Pointer, 		[0,0,1]],
 			[CAMS_Flares_Normal, 	[2,0,2]],
 			[CAMS_E_ALL, 			[0,0,2]]
@@ -100,11 +100,11 @@ _lootData =
 		],
 		[// All items and quantity CAMS_I_Junk
 			[CAMS_I_Meds, 			[2,0,4]],
-			[CAMS_B_Navigation,		[3,0,2]],
+			[CAMS_I_Navigation,		[3,0,2]],
 //			[CAMS_I_Junk, 			[5,0,3]],
 //			[CAMS_I_Tools, 			[1,0,1]],
 			[CAMS_G_Tactical, 		[1,0,1]],
-			[CAMS_B_Navigation, 	[2,0,2]],
+			[CAMS_I_Navigation, 	[2,0,2]],
 			[CAMS_W_Attachments_ALL,[2,0,2]]
 //			[CAMS_I_Drink, 			[2,0,2]]
 		],
@@ -123,11 +123,11 @@ _lootData =
 		],
 		[// All items and quantity CAMS_I_Junk
 			[CAMS_I_Meds, 			[2,0,4]],
-			[CAMS_B_Navigation,		[3,0,2]],
+			[CAMS_I_Navigation,		[3,0,2]],
 //			[CAMS_I_Junk, 			[5,0,3]],
 //			[CAMS_I_Tools, 			[1,0,1]],
 			[CAMS_G_Tactical, 		[1,0,1]],
-			[CAMS_B_Navigation, 	[2,0,2]],
+			[CAMS_I_Navigation, 	[2,0,2]],
 			[CAMS_W_Attachments_ALL,[2,0,2]]
 //			[CAMS_I_Drink, 			[2,0,2]]
 		],

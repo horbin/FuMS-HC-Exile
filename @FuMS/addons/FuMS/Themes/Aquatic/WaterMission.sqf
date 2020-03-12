@@ -46,7 +46,7 @@
 		["None" , [0,0] ]  													// Failure loot, offset location - spawns on mission failure
 	],
 	[																		//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[CAMS_Boat_Wreck,			[0,0],0,0]   							//type, offset, rotation, presist flag
+		[CAMS_Wreck_Boat,			[0,0],0,0]   							//type, offset, rotation, presist flag
 	],
 	[ 																		// AI GROUPS. Only options marked 'Def:' implemented.
 		[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver_E"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],

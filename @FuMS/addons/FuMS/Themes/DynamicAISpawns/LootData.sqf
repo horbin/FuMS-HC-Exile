@@ -26,7 +26,7 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["Template", "box_nato_ammoveh_f","RANDOM"],
 		[// All weapons and quantity 
-			[CAMS_LightMGs_E, [2,0,1]],
+			[CAMS_LMG_E, [2,0,1]],
 			[CAMS_AssaultRifles_E, [2,0,1]]
 		],
 		[// All magazines and quantity
@@ -35,7 +35,7 @@ _lootData =
 		],
 		[	// All items and quantity
 			[CAMS_I_Meds, [2,0,1]],
-			[CAMS_B_Navigation, [2,0,1]],
+			[CAMS_I_Navigation, [2,0,1]],
 			[CAMS_W_Opticslv1, [2,0,1]],
 			["G_Diving",[2,0,1]]
 		],

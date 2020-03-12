@@ -60,7 +60,6 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[ImFX_Land_Unarmed_Transport,					[((round random 60)-30),((round random 60)-30)],			0,			[.5,   1,     .5,         .5,         .5]],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -107,6 +106,30 @@
 			[   //  Troop behaviour and side options    	# and type of Troops       Patrol logic |  spawn     |dest |'Patrol' options
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
+			]
+		],		
+
+		[
+		
+			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
+				[  ImFX_Work_BoxVans,		[((round random 100)-50),((round random 100)-50)],	[0,"Rifleman_E"],        "TruckJunk",[0]      ]
+				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
+				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
+			],
+			[  
+				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
+				[
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 0, "Rifleman_E"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
+
+				]
+				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
+			],
+				// Troops : These are distributed across all vehicles in this convoy.                                                         
+			[   //  Troop behaviour and side options    	# and type of Troops       Patrol logic |  spawn     |dest |'Patrol' options
+				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
+				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
+				[
+				]
 			]
 		],
 

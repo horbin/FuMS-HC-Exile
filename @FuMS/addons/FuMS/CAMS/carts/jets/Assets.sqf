@@ -40,24 +40,81 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Plane_UAV_E",1,false,
-		[
-			
-		]
-	],
-	[
 		"CAMS_Plane_CAS_I",1,false,
 		[
-			"I_Plane_Fighter_04_F","I_Plane_Fighter_04_Cluster_F"
+			"I_Plane_Fighter_04_F",
+			"I_Plane_Fighter_04_Cluster_F"  //Not sure where this came from
+
+		]
+	],
+	// Static Guns
+	[
+		"CAMS_Mil_StaticGuns_W",1,false,
+		[
+			"B_Static_Designator_01_F"
 		]
 	],
 	[
-		"CAMS_Plane_UAV_I",1,false,
+		"CAMS_Mil_StaticGuns_E",1,false,
 		[
-			
+			"O_Static_Designator_01_F"
+		]
+	],
+	/////////////// EAST
+	[
+		"CAMS_AI_CSAT_SOLDIER",1,false,
+		[
+			"O_Sharpshooter_F","O_HeavyGunner_F"
+		]
+	],
+	[
+		"CAMS_AI_CSAT_URBAN",1,false,
+		[
+			"O_Urban_Sharpshooter_F","O_Urban_HeavyGunner_F"
+		]
+	],
+	[
+		"CAMS_AI_CSAT_SF",1,false,
+		[
+			"O_Pathfinder_F"
+		
+		]
+	],
+	[
+		"CAMS_AI_ALL_E",0,true,
+		[
+			"CAMS_AI_FIA_E",
+			"CAMS_AI_CSAT_SOLDIER",
+			"CAMS_AI_CSAT_URBAN",
+			"CAMS_AI_CSAT_SF"
+		]
+	],				
+	//////////////// WEST
+	[
+		"CAMS_AI_FIA_W",1,false,
+		[
+			"B_G_Sharpshooter_F"			
+		]
+	],
+	[
+		"CAMS_AI_NATO_SOLDIER",1,false,
+		[
+			"B_Sharpshooter_F","B_HeavyGunner_F"
+		]
+	],
+	
+	[
+		"CAMS_AI_NATO_SF",1,false,
+		[
+			"B_ghillie_lsh_F","B_ghillie_sard_F","B_ghillie_ard_F","B_Recon_Sharpshooter_F"
+		]
+	],
+	[
+		"CAMS_AI_ALL_W",0,true,
+		[
+			"CAMS_AI_FIA_W","CAMS_AI_NATO_SOLDIER","CAMS_AI_NATO_SF"
 		]
 	]
-
 ];
 
 
@@ -70,4 +127,3 @@ _cartContents =
 _hold = [_cartName,_cartContents,_debugCart] spawn CAMS_fnc_loadCart;
 if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] Cart(%2): assets.sqf: ERROR in cart loading function",CAMS_Version,_cartName];CAMS_isStable=false;};
 waitUntil { ScriptDone _hold};
-

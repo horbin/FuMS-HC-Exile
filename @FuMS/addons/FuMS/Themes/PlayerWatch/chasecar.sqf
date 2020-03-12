@@ -138,17 +138,17 @@
   
 		[  // Convoy #1                     
 			[         // Vehicle                     Offset         Crew (only 1 type!)   Cargo
-				["Exile_Car_Offroad_Rusty1",[0,0],[0,""],"none"]           
+				["Exile_Car_Offroad_Rusty1",[200,200],[0,0],"none"]           
 				//["I_UAV_02_F",[125,100],[0,""],"none"],
 				//["I_UGV_01_F",[175,100],[0,""],"none"]
 			],
 			[                 
 				// Drivers                                                          # and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[200,200],[0,0],[200]   ]]          
 			],
 			// Troops : These are distributed across all vehicles in this convoy.                                                         
 			[    
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Hunter_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Hunter_E"]  ],   ["BoxPatrol",[200,200],[0,0],[200]   ]]          
 
 			]
 		] 

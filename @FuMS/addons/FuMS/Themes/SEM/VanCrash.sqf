@@ -35,13 +35,13 @@
 	] 
 	],
 	[  //  Loot Config:  Refer to LootData.sqf for specifcs
-		["None" , [18,-9] ], //[static loot, offset location] - spawns with the mission
-		["WreckageLoot" , [-5,0] ], // Win loot, offset location - spawns after mission success
-		["None" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
+		["None" , 			[18,-9] ], 	// [static loot, offset location] - spawns with the mission
+		["WreckageLoot",	[-5,0] ], 	// Win loot, offset location - spawns after mission success
+		["None" , 			[0,0] ]  	// Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[CAMS_Vehicle_Wreck,[6,6],0,0,"SMOKE_MEDIUM"],   //type, offset, rotation, presist flag
-		[CAMS_Vehicle_Wreck,[-6,-6],0,0,"SMOKE_MEDIUM"]  
+		[CAMS_Wreck_Mil,	[6,6],		0,	0,	"SMOKE_MEDIUM"],   //type, offset, rotation, presist flag
+		[CAMS_Wreck_Mil,	[-6,-6],	0,	0,	"SMOKE_MEDIUM"]  
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 	//   [["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1,"Sniper"],[2,"Rifleman"],[2,"Hunter"]  ],   ["BoxPatrol",[0,75],[0,0],[0]   ]],

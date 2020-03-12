@@ -73,8 +73,8 @@
 	[
 		[ // Convoy #1
 			[        
-				[CAMS_Civ_ALL,[20,0],[0,""],"None",[["engine",.5],["fueltank",.3],["hull",.9],["wheel_1_1",.5]]],
-				[CAMS_Civ_ALL,[30,0],[0,""],"None",[["engine",.5],["hull",.5]]     ]
+				[ImFX_Land_All,[20,0],[0,"Driver_E"],"None",[["engine",.5],["fueltank",.3],["hull",.7],["wheel_1_1",.5]]],
+				[ImFX_Land_All,[30,0],[0,"Driver_E"],"None",[["engine",.5],["hull",.5]]     ]
 			],
 			[    
 				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[100,100],[0,0],[200]   ]]          

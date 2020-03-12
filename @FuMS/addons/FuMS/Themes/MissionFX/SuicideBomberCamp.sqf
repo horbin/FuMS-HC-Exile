@@ -42,16 +42,16 @@
 		["None" , 			[0,0] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
-		[ CAMS_Civ_All,								[-10,10],	321,		[.5,   1,     .5,         .5,         .5]],
-		[ CAMS_Civ_All,								[-12,14],	45,			[.5,   1,     .5,         .5,         .5]],
-		[ CAMS_Civ_All,								[-15,10],	204,		[.5,   1,     .5,         .5,         .5]],
+		//[ ImFX_Land_Cars,								[-10,10],	321,		[.5,   1,     .5,         .5,         .5]],
+		//[ ImFX_Land_Cars,								[-12,14],	45,			[.5,   1,     .5,         .5,         .5]],
+		//[ ImFX_Land_Cars,								[-15,10],	204,		[.5,   1,     .5,         .5,         .5]],
 
 
 		// This line will spawn a group of kamikaze crazies in the mission
-		["Land_Sign_WarningUnexplodedAmmo_F",		[-5,20],	90,		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[21,12],	00,		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[8,-21],	270,		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[-11,-15],	180,		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
 
 		["Land_CampingTable_small_white_F",[-4.70117,-0.396484,0],286.635,0],
 		["Land_CampingTable_small_F",[2.37695,-1.14844,0],64.6661,0],
@@ -98,6 +98,17 @@
 
 	// Vehicles
 	[
+		[  		// Convoy #1                     
+			[   // Vehicle                     Offset     				Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
+				[  ImFX_Land_Cars       	,[((round random 100)-50),((round random 100)-50)],		[0,"Driver_E"],     	"None" ],					 
+				[  ImFX_Land_Cars       	,[((round random 100)-50),((round random 100)-50)],		[0,"Driver_E"],     	"None" ],					 
+				[  ImFX_Land_Cars       	,[((round random 100)-50),((round random 100)-50)],		[0,"Driver_E"],     	"None" ]					 
+			],
+			[  
+			],
+			[   //  Troop behaviour and side options    	# and type of Troops       Patrol logic |  spawn     |dest |'Patrol' options
+			]
+		]  
 					 
 	],
 	[
@@ -108,15 +119,15 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			//	  ["PROX",["ProxPlayer",[0,0],80,1]  ],
-			["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes
+			//["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes
 			["LUCNT",		["LowUnitCount","EAST",0,0,[0,0]]  ]
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],		["LUCNT"]],   
-			[["LOSE"],		["Timer"]],
-			[["END"],		["LUCNT","OR","Timer"]]  
+			//[["LOSE"],		["Timer"]],
+			[["END"],		["LUCNT"]]  
 		]      
 	]
 ];
