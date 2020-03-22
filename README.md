@@ -4,16 +4,18 @@
 ###### Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
 
-v0.50d
+v0.50 (Final)
 ****
 Developer's Edition
-###### This is nearly complete (updating documentation still) version with nearly all mission types turned back on
-###### This will be completed soon and all functions turned back on
 ****
 
 * I suck at updating the documentation but I do comment the code pretty heavily, and the missions do a pretty good job of showing you what options there are. *
 
 System Changes:
+
+- Map Immersion System (BETA)
+	- Allows you to easily swap buildings out for custom content buildings (Currently testing Unsung) 
+
 - ALIAS anomolies mission spawner working (Random anomoly will spawn looking like small bandit camp until the player gets close enough...)
 	- Anomolies supported:
 	- Farty
@@ -40,7 +42,17 @@ System Changes:
 
 Code changes:
 - Implemented CAMS (Common Asset Management System) for easy integration with custom content
-- All mission themes updated for new CAMS system
+	- Includes full intregrations with:
+		- All Arma Vanilla content
+		- Marksmen
+		- Apex
+		- Helicopters
+		- Exile
+		- Unsung
+		- CUP Weapons
+		- CUP Vehicles
+		- CUP Units
+- All (Almost) mission themes updated for new CAMS system
 - Added new trigger "TAKEVEHICLE" to monitor for stolen vehicles that have been moved a minimum distance
 - Created new LOITER logic so soldiers use ambient animation and new LOITER waypoints
 - Added ability to designate specific types of locations for individual missions, as opposed to one type for the whole theme (Missions can spawn in VILLAGES, MARINE, CITIES, ETC.)
@@ -51,6 +63,8 @@ Code changes:
 - Added in debug options in a lot of functions for development
 - Lot of reformatting to clean up code
 
+****
+****
 v0.49
 ****
 Mission FX Upgrade

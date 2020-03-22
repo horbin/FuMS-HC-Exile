@@ -124,7 +124,7 @@ if (!_abort) then
             _driver = "none";
             if (_i < _numdrivers) then {_driver = _driverIndividual select _i;};
             _data = [_pos, _driver, _vehType select _i] call FuMS_fnc_HC_MsnCtrl_Util_GetSafeSpawnVehPos;	
-            diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: mission:%5, pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data,_missionName];
+            //diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: mission:%5, pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data,_missionName];
             _veh = [ _vehType select _i, _data select 0, [], 0 , _data select 1] call FuMS_fnc_HC_Util_HC_CreateVehicle;	
             _veh setVariable ["FuMS_LINEAGE",_msnTag, false];
 			{_veh deleteVehicleCrew _x} forEach crew _veh;

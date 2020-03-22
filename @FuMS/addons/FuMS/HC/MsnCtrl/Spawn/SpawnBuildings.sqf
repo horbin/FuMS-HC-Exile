@@ -21,7 +21,7 @@ _generation = _lineage select 1;
 _offspringID = _lineage select 2;
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
-_debug = true;
+_debug = false;
 
 if (!isNil "_buildingData") then
 {

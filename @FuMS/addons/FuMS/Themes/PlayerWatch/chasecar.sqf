@@ -138,7 +138,7 @@
   
 		[  // Convoy #1                     
 			[         // Vehicle                     Offset         Crew (only 1 type!)   Cargo
-				["Exile_Car_Offroad_Rusty1",[200,200],[0,0],"none"]           
+				["Exile_Car_Offroad_Rusty1",[100,100],[0,0],"none"]           
 				//["I_UAV_02_F",[125,100],[0,""],"none"],
 				//["I_UGV_01_F",[175,100],[0,""],"none"]
 			],

@@ -25,14 +25,14 @@
 		
 		// Mission Success Message
 		[   
-			"",
-			""
+			"Gunfight over",
+			"Both sides were taken out"
 		],
 	  
 		// Mission Failure Message
 		[  
-			"",
-			""
+			"Gunfight over",
+			"That settles that."
 		] 
 	],
 	[  //  Loot Config:  Refer to LootData.sqf for specifcs

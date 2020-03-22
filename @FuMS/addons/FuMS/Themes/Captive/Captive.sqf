@@ -56,7 +56,7 @@
  		]
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "BoxPatrol",[0,0], [0,0],[25] ]],
+		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "BoxPatrol",[0,0], [0,0],[50] ]],
 							// GROUP 0 - Spawns 4 AI into a 25m box patrol around the building
 		[["EAST","COMBAT","RED","LINE"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]],
 							// GROUP 1 - Spawns 4 AI will spawn into the specified building using TOWERGUARD logic.

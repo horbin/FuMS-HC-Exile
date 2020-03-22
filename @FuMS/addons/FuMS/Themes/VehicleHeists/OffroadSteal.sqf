@@ -88,7 +88,6 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
 			["SpawnGuards",	["ProxPlayer", 	[-50,-50], 700, 1]],
-			["HeliBoarded",	["ProxPlayer", 	[0,0], 100, 1]],
 			["OffroadStolen",	["TakeVehicle", 	"0", 50]],
 			["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes	
 			["KillMost",	["BodyCount",6] ]

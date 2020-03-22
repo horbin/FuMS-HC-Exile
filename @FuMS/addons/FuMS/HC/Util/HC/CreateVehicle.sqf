@@ -12,7 +12,7 @@ _markers = _this select 2;
 _dist = _this select 3;
 _mode = _this select 4;
 
-diag_log format ["##CREATEVEHICLE: _type:%1 | _pos:%2 | _markers:%3 | _dist:%4 | _mode:%5",_type,_pos,_markers,_dist,_mode];
+//diag_log format ["##CREATEVEHICLE: _type:%1 | _pos:%2 | _markers:%3 | _dist:%4 | _mode:%5",_type,_pos,_markers,_dist,_mode];
 
 _veh = createVehicle [_type, _pos, _markers, _dist, _mode];
  

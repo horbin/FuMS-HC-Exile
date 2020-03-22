@@ -50,9 +50,9 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["PopTabLoot" , 	[-2,-2] ],
-			["PopTabLoot" , 	[2,-2] ],
-			["PopTabLoot" , 	[2,2] ]
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ],
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ],
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure

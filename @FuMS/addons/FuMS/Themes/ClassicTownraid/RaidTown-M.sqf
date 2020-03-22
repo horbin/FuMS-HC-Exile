@@ -41,10 +41,10 @@
 	[  //  Loot Config:  Refer to LootData.sqf for specifcs
 		["None" , [0,0] ], //[static loot, offset location] - spawns with the mission
 		[
-			["TownLoot" , [0,10] ], // Win loot, offset location - spawns after mission success
-			["TownLoot" , [5,0] ]
+			["TownLoot" , [((round random 50)-25),((round random 50)-25)] ], // Win loot, offset location - spawns after mission success
+			["TownLoot" , [((round random 50)-25),((round random 50)-25)] ]
 		],
-		["TownLootLoss" , [0,0] ]  // Failure loot, offset location - spawns on mission failure
+		["TownLootLoss" , [((round random 50)-25),((round random 50)-25)] ]  // Failure loot, offset location - spawns on mission failure
 	],
 	[//BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 
@@ -62,8 +62,8 @@
 	[
 		[  // Convoy #1    South
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  FuMS_Mil_UnarmedOffroads,[0,-1000],[1,"Rifleman"],        "Truck01"      ],
-				[  FuMS_Mil_UnarmedOffroads,[0,-1050],[1,"Rifleman"],        "Truck01"      ] 				
+				[  CAMS_Land_UnarmedOffroad_E,[0,-1000],[1,"Rifleman_E"],        "Truck01"      ],
+				[  CAMS_Land_UnarmedOffroad_E,[0,-1050],[1,"Rifleman_E"],        "Truck01"      ] 				
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options

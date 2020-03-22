@@ -63,9 +63,9 @@
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
-		["Land_Slide_F",			[-3,-2],				(round random 360),	0],
-		["Land_Slide_F",			[3,2],					(round random 360),	0],
-		["Land_Slide_F",			[4,6],					(round random 360),	0]		
+		["Land_Slide_F",			[-4,-3],				(round random 360),	0],
+		["Land_Slide_F",			[4,3],					(round random 360),	0],
+		["Land_Slide_F",			[5,7],					(round random 360),	0]		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.

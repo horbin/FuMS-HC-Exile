@@ -77,11 +77,11 @@ FuMS_PlayerWatch_Configuration =
 	],
 		// Player near a town (more than 7 buildings within 50m of the player)
 	[
-		"smallband","gunfight"//,"zombies"
+		"smallband","gunfight","chasecar"//,"zombies"
 	],
 		// Player near roads (at least 1 road within 10m of the player)
 	[
-		"smallband"//,	"zombies",	
+		"smallband","chasecar"//,	"zombies",	
 	],
 		//Player doesn't meet any of the above requirements
 	[

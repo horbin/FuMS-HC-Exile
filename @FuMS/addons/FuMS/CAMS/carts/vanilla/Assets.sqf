@@ -723,11 +723,24 @@ _cartContents =
 
 	// Grenades
 	[
-		"CAMS_E_Grenade",1,true,
+		"CAMS_E_Grenade_W",1,true,
 		[
 			"HandGrenade","MiniGrenade"
 		]
 	],
+	[
+		"CAMS_E_Grenade_E",1,true,
+		[
+			"HandGrenade","MiniGrenade"
+		]
+	],
+	[
+		"CAMS_E_Grenade",0,true,
+		[
+			"CAMS_E_Grenade_W","CAMS_E_Grenade_E"
+		]
+	],	
+	
 	[
 		"CAMS_E_GrenadeIR_W",1,true,
 		[

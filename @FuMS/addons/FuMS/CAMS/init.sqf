@@ -51,25 +51,6 @@ if (_loadVanilla) then
 	//["[CAMS] System","Cart:Vanilla ImmersionFX loaded"] spawn Haz_fnc_createNotification;
 };
 
-if (_loadExile) then
-{
-	_hold = [] execVM "FuMS\CAMS\carts\Exile\assets.sqf";
-	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in assets.sqf",_camsVersion];CAMS_isStable=false;};
-	waitUntil { ScriptDone _hold};
-	diag_log "[CAMS] System | Exile assets loaded";
-	//["systemChatRequest", ["[CAMS] System | Exile assets loaded"]] call ExileServer_system_network_send_broadcast;
-	//["[CAMS] System","Exile assets loaded"] spawn Haz_fnc_createNotification;
-	
-	_hold = [] execVM "FuMS\CAMS\carts\Exile\ImmersionFX.sqf";
-	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in cart ImmersionFX.sqf : %2",_camsVersion,_x];CAMS_isStable=false;};
-	waitUntil { ScriptDone _hold};
-	diag_log "[CAMS] System | Exile ImmersionFX loaded";
-	//["systemChatRequest", ["[CAMS] System | Exile ImmersionFX loaded"]] call ExileServer_system_network_send_broadcast;
-	//["[CAMS] System","Cart:Exile ImmersionFX loaded"] spawn Haz_fnc_createNotification;
-};
-
-
-
 //process carts
 {
 	_hold = [] execVM format ["FuMS\CAMS\carts\%1\assets.sqf",_x];
@@ -95,6 +76,26 @@ if (_loadExile) then
 } forEach _cartsLoaded;
 
 // Complete ImmersionFX
+
+
+if (_loadExile) then
+{
+	_hold = [] execVM "FuMS\CAMS\carts\Exile\assets.sqf";
+	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in assets.sqf",_camsVersion];CAMS_isStable=false;};
+	waitUntil { ScriptDone _hold};
+	diag_log "[CAMS] System | Exile assets loaded";
+	//["systemChatRequest", ["[CAMS] System | Exile assets loaded"]] call ExileServer_system_network_send_broadcast;
+	//["[CAMS] System","Exile assets loaded"] spawn Haz_fnc_createNotification;
+	
+	_hold = [] execVM "FuMS\CAMS\carts\Exile\ImmersionFX.sqf";
+	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in cart ImmersionFX.sqf : %2",_camsVersion,_x];CAMS_isStable=false;};
+	waitUntil { ScriptDone _hold};
+	diag_log "[CAMS] System | Exile ImmersionFX loaded";
+	//["systemChatRequest", ["[CAMS] System | Exile ImmersionFX loaded"]] call ExileServer_system_network_send_broadcast;
+	//["[CAMS] System","Cart:Exile ImmersionFX loaded"] spawn Haz_fnc_createNotification;
+};
+
+
 
 CAMS_isStable = true;
 publicVariable "CAMS_isStable";

@@ -38,7 +38,7 @@ FuMS_ServerData =
 		["Townraid",-1], 			// random town is raided and then attacked!
 		["TownAttack",-1], 			// random town is raided , with mutiple responses, based on player coming close!
 		["Small",-1],  				// 6 man groups invade a random village
-		["Aquatic",-1], 			// 1 coastal areas w/ boats and ai   
+		//["Aquatic",-1], 			// 1 coastal areas w/ boats and ai   
 		//["Convoy",-1]				// DO NOT USE FOR NOW - 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
 		//["Jurassic",-1], 			// NOT TESTED, NOT UPDATED creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
