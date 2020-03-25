@@ -122,7 +122,8 @@ _cartContents =
 		"CAMS_Heli_Armed_W",1,false,
 		[
 			// West - ACR
-			"CUP_B_Mi35_Dynamic_CZ","CUP_B_Mi35_Dynamic_CZ_Dark","CUP_B_Mi35_Dynamic_CZ_Des","CUP_B_Mi35_Dynamic_CZ_Tiger","CUP_B_Mi35_Dynamic_CZ_Ram",		
+			"CUP_B_Mi35_Dynamic_CZ","CUP_B_Mi35_Dynamic_CZ_Dark","CUP_B_Mi35_Dynamic_CZ_Des","CUP_B_Mi35_Dynamic_CZ_Tiger",
+			"CUP_B_Mi35_Dynamic_CZ_Ram",		
 		
 			// British Armed Forces
 			"CUP_B_AH1_DL_BAF",	
@@ -329,7 +330,9 @@ _cartContents =
 			"CUP_B_P8Poseidon_USN",
 			
 			"CUP_B_MV22_USMC","CUP_B_MV22_USMC_RAMPGUN","CUP_B_MV22_VIV_USMC"
-		],
+			
+		]
+	],
 	[
 		"CAMS_Plane_UAV_W",1,false,
 		[
@@ -343,8 +346,6 @@ _cartContents =
 			"CUP_B_USMC_DYN_MQ9"			
 			
 		]
-	],
-		
 	],
 
 	///////////////////////////////////// Aircraft - East
@@ -412,7 +413,7 @@ _cartContents =
 			"CUP_C_Volha_Blue_TKCIV","CUP_C_Volha_Gray_TKCIV","CUP_C_Volha_Limo_TKCIV",
 			
 			"CUP_O_Volha_SLA"
-		],	
+		]	
 	],
 	[
 		"CAMS_Land_Offroad_C",1,false,
@@ -608,7 +609,7 @@ _cartContents =
 			"CUP_B_HMMWV_Unarmed_USMC",
 			"CUP_B_M1151_USMC",
 			"CUP_B_M1152_USMC",
-			"CUP_B_MTVR_USMC"
+			"CUP_B_MTVR_USMC",
 
 			"CUP_B_M1151_DSRT_USMC","CUP_B_M1152_DSRT_USMC"			
 		]
@@ -729,7 +730,7 @@ _cartContents =
 			"CUP_B_BRDM2_CDF","CUP_B_BRDM2_ATGM_CDF","CUP_B_BRDM2_HQ_CDF",
 			"CUP_B_BTR60_CDF",
 			"CUP_B_BTR80_CDF","CUP_B_BTR80A_CDF",
-			"CUP_B_MTLB_pk_CDF","CUP_B_MTLB_pk_Winter_CDF"	
+			"CUP_B_MTLB_pk_CDF","CUP_B_MTLB_pk_Winter_CDF",	
 
 			// FIA
 			"CUP_B_BTR60_FIA",
@@ -801,7 +802,7 @@ _cartContents =
 		"CAMS_Land_Artillery_W",1,false,
 		[
 			// West - ACR
-			"CUP_B_RM70_CZ"
+			"CUP_B_RM70_CZ",
 			
 			// British Armed Forced
 			"CUP_B_M270_DPICM_BAF_WOOD","CUP_B_M270_DPICM_BAF_DES",
@@ -825,7 +826,7 @@ _cartContents =
 			// Chenaurus Defense Forces
 			"CUP_B_UAZ_AA_CDF",
 			"CUP_B_Ural_ZU23_CDF",
-			"CUP_B_ZSU23_CDF","CUP_B_ZSU23_Afghan_CDF"
+			"CUP_B_ZSU23_CDF","CUP_B_ZSU23_Afghan_CDF",
 
 			// NATO (Pacific)
 			"CUP_B_HMMWV_Avenger_NATO_T","CUP_B_M6LineBacker_NATO_T",
@@ -937,7 +938,7 @@ _cartContents =
 		"CAMS_Land_Transport_E",1,false,
 		[
 			// Armed Forces of the Russian Federation
-			"CUP_O_BMP2_AMB_RU","CUP_O_GAZ_Vodnik_MedEvac_RU"
+			"CUP_O_BMP2_AMB_RU","CUP_O_GAZ_Vodnik_MedEvac_RU",
 
 			"CUP_O_Kamaz_RU","CUP_O_Kamaz_Open_RU",
 			
@@ -1166,6 +1167,7 @@ _cartContents =
 	[
 		"CAMS_Land_UnarmedOffroad_I",1,false,
 		[
+		]
 	],
 	[
 		"CAMS_Land_UGV_Armed_I",1,false,

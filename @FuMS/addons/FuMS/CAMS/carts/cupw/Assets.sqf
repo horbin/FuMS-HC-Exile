@@ -31,7 +31,7 @@ _cartContents =
 		"CAMS_I_Navigation",1,false,
 		[
 			// West Radio
-			"ItemRadio",
+			"ItemRadio"
 		]
 	],
 	
@@ -106,6 +106,7 @@ _cartContents =
 	[
 		"CAMS_Smoke_ALL",0,true,
 		[
+			"CAMS_Smoke_W", "CAMS_Smoke_E"
 		]
 	],
 	

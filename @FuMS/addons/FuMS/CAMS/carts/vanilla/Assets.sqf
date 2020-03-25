@@ -686,12 +686,19 @@ _cartContents =
 
 	//Smokes
 	[
-		"CAMS_Smoke_Shell",1,true,
+		"CAMS_Smoke_W",1,true,
 		[
 			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
 			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
 		]
 	],
+	[
+		"CAMS_Smoke_E",1,true,
+		[
+			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
+			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
+		]
+	],	
 	[
 		"CAMS_Smoke_1Rnd",1,true,
 		[
@@ -711,7 +718,7 @@ _cartContents =
 	[
 		"CAMS_Smoke_ALL",0,true,
 		[
-			"CAMS_Smoke_Shell", "CAMS_Smoke_1Rnd", "CAMS_Smoke_3rnd"
+			"CAMS_Smoke_W", "CAMS_Smoke_E"
 		]
 	],
 	
