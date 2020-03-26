@@ -26,11 +26,11 @@ CAMS_cartList = 	[	// Name of CART directory
 							"helicopters",
 							"marksmen",
 							"jets",
-							"apex"
+							"apex",
 							//"unsung"
 							
-							//"cupw",
-							//"cupv",
+							"cupw",
+							"cupv"
 							//"cupu"
 						];
 						

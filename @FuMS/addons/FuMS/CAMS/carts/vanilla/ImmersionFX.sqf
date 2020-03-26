@@ -140,7 +140,7 @@ _immersionData =
 	[
 		"ImFX_Land_Civ_Car",0,true,
 		[
-			"CAMS_Civ_ALL"
+			"CAMS_Land_ALL_C"
 		]
 	],
 	[	// Uniforms that "Doctor" or "Scientist" AI can wear 

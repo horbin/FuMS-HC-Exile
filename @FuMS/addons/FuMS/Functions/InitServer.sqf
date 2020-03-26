@@ -54,6 +54,11 @@ if (FuMS_ServerFuMSEnable) then
 _handle = [] execVM "\FuMS\Functions\MapImmersion.sqf";
 waitUntil {ScriptDone _handle};
 
+// Time Accelerator (TESTING)
+//_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
+
+
+
 FuMS_ServerIsClean = true;
 publicVariable "FuMS_ServerIsClean";
 diag_log format ["<FuMS:%1> Init.sqf:  Server side FuMS initialized and operational.",FuMS_Version];

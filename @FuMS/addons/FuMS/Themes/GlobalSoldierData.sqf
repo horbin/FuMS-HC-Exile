@@ -70,7 +70,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -90,7 +90,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -109,7 +109,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -128,7 +128,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -147,7 +147,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -167,7 +167,7 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]            ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]            ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -205,7 +205,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -224,7 +224,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -275,7 +275,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -294,7 +294,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -313,7 +313,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -332,7 +332,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -351,7 +351,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -371,7 +371,7 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]            ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]            ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -409,7 +409,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -428,7 +428,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -483,7 +483,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -503,7 +503,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -522,7 +522,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]    ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -541,7 +541,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -560,7 +560,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]],[[CAMS_E_Grenade_E,.3],[1,1]]              ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_E_Grenade_E,.3],[1,2]]              ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -580,7 +580,7 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]            ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]            ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -620,7 +620,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -640,7 +640,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -680,7 +680,7 @@ _soldierData =
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .1, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ true, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.3],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.3],[1,2]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
@@ -737,7 +737,7 @@ _soldierData =
         [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 1, 0, .1 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[1,2]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],

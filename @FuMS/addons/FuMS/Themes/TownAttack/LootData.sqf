@@ -25,16 +25,16 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["TownLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[20,0,10]]
+			[CAMS_Rifles_ALL_E, 		[20,0,10]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[10,0,10]]
+			[CAMS_E_Grenade, 			[10,0,10]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[4,0,3]]
+			[CAMS_Packs_ALL, 		[4,0,3]]
 		],
 		20000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************

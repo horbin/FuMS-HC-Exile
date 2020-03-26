@@ -101,6 +101,10 @@ while {!_done} do
                             // _x = [ ["WIN"],["Trig1","Trig2"]]
                             _actionName = toupper( (_x select 0) select 0);
                             // call loot
+							
+							//diag_log format ["##ACTIONBOMB: _lootConfig:%1 | _positionOffset:%2 | _x select 0:%3 | [_themeIndex, _generation, _offspringID]:%4",_lootConfig, _positionOffset, _x select 0,[_themeIndex, _generation, _offspringID]];
+							
+							
                             _boxes = [_lootConfig, _positionOffset, _x select 0,[_themeIndex, _generation, _offspringID], _boxes] 
                             call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnMissionLoot;
                             // call messaging

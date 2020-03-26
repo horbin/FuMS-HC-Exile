@@ -12,6 +12,7 @@ FuMS_fnc_TraceBodyCount =
     private ["_msnTag","_lineage","_bcVar","_unit","_capVar"];
     _msnTag = _this select 0;
     _unit = _this select 1;
+	_debug = false;
     // Research the 'heritage' of the unit here to expand the list.
     // if the 'owner' of this is a child then look to parent.
     _lineage = missionNameSpace getVariable [(format ["%1_Lineage",_msnTag]),[0,0]];
@@ -31,7 +32,10 @@ FuMS_fnc_TraceBodyCount =
             _capVar = _capVar + 1;
             missionNameSpace setVariable [format ["%1_CaptiveCount",_msnTag],_capVar];       
         };
-        diag_log format ["<FuMS> CheckforBodyCount : CaptiveCount %1 for %2",_capVar, _msnTag];   
+		if (_debug) then
+		{
+			diag_log format ["<FuMS> CheckforBodyCount : CaptiveCount %1 for %2",_capVar, _msnTag];  
+		};
     }else
     {
         _bcVar = missionNameSpace getVariable (format ["%1_BodyCount",_msnTag]);
@@ -41,7 +45,10 @@ FuMS_fnc_TraceBodyCount =
             {
                 _bcVar = _bcVar +1;
                 missionNameSpace setVariable [format ["%1_BodyCount",_msnTag],_bcVar];
-                diag_log format ["<FuMS> CheckforBodyCount : %1 for %2",_bcVar, _msnTag];
+                if (_debug) then
+				{
+					diag_log format ["<FuMS> CheckforBodyCount : %1 for %2",_bcVar, _msnTag];
+				};
             };
         };
     };    

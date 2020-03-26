@@ -30,7 +30,8 @@ _themeData =
 		["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],
 		["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],
 		["LootcratesW"], ["LootcratesW"], ["LootcratesW"], 
-		["LootcratesE"], ["LootcratesE"], ["LootcratesE"] 
+		["LootcratesE"], ["LootcratesE"], ["LootcratesE"] ,
+		["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"]
 		 
     ],
     [   //	***** Locations ***** !! 2D coords ONLY !!

@@ -132,7 +132,9 @@ if (_showMap) then
         _mkr2 setMarkerAlpha 0.5;
         _mkr2 setMarkerType (_markers select 1);
         
-        if ( count _missionNameOverride > 0) then
+        //if ( count _missionNameOverride > 0) then
+        if ( false ) then
+
         {
            // diag_log format ["##SpawnNotifications : override mission %2 name to %1",_missionNameOverride, _markers select 0];
             _mkr2 setMarkerText format[" %1",_missionNameOverride];   
