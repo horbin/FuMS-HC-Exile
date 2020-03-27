@@ -135,9 +135,23 @@ _immersionData =
 	
 ];
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Map Immersion Data
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+_swapArray = 
+[
+	//["Land_wpp_Turbine_V1_F","Land_WX_Windmill",180] // [Orig classname, new classname, rotation adjustment]
+];
+
+
 /////////////////////////////
 // Cart processing //////////
 /////////////////////////////
 _hold = [_cartName,_immersionData,_debugCart] spawn CAMS_fnc_loadCart;
 if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] Cart(%2): ImmersionFX.sqf: ERROR in cart loading function",CAMS_Version,_cartName];CAMS_isStable=false;};
 waitUntil { ScriptDone _hold};
+
+_oldSwapArray = missionNameSpace getvariable ["ImFX_BuildingSwap",[]];
+_newSwapArray = _oldSwapArray + _swapArray;
+missionNameSpace setVariable ["ImFX_BuildingSwap",_newSwapArray,true];

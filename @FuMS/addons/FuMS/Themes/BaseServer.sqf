@@ -8,20 +8,20 @@
 FuMS_ServerData =
 [
     [ 								// Map Definition and FuMS configuration
-        false, 						// Enable FuMS missions to run on the main server.
-									// NOTE: setting to 'true' may drasticly impact server performance.
-        "testpath",                 // MySQL support testing
-		true,						//Enable AdminControls! See Docs\AdminControls.txt
-        20   						//minimum Server FPS. Below this FPS FuMS will not load new missions. 
-									// NOTE: This was lowered until I can fix the FPS monitor which currently reads too low.
+        false, 						// FuMS ON SERVER
+									// NOTE: setting to 'true' may drasticly impact server performance. ** THIS IS NOT CURRENTLY SUPPORTED
+        "testpath",                 // DATABASE CONFIG ** THIS IS NOT CURRENTLY SUPPORTED
+		true,						// ADMIN CONTROLS Enable AdminControls! See Docs
+        20   						// MIN FRAMERATE Below this FPS FuMS will not load new missions. 
+									// NOTE: Adjust to fit your server environment and specific configuration
     ],
-    [  								// Exclusion Areas
-									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
-    ],
-    [ 								// Default Areas
-									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
-    ],
-    [	 
+		[  								// Exclusion Areas
+										// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+		],
+		[ 								// Default Areas
+										// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+		],
+    [	// Active themes section 
 		["PlayerWatch",-1], 		// DO NOT REMOVE OR COMMENT OUT THIS THEME!
 									// ActiveThemes
 									// A folder matching the names below needs to exist in the ..\Themes folder.
@@ -38,7 +38,7 @@ FuMS_ServerData =
 		["Townraid",-1], 			// random town is raided and then attacked!
 		["TownAttack",-1], 			// random town is raided , with mutiple responses, based on player coming close!
 		["Small",-1],  				// 6 man groups invade a random village
-		//["Aquatic",-1], 			// 1 coastal areas w/ boats and ai   
+		["Aquatic",-1], 			// 1 coastal areas w/ boats and ai   
 		//["Convoy",-1]				// DO NOT USE FOR NOW - 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
 		//["Jurassic",-1], 			// NOT TESTED, NOT UPDATED creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
@@ -58,17 +58,17 @@ FuMS_ServerData =
     ],
     [  // Event and AI Radio messsage behavior
 	   // system no longer supported. Will be removed in follow on versions.
-        false, // EnableRadioChatterSystem: turns on the system, allowing below options to function
-        false, // EnableRadioAudio: turns on 'audio' effects for radio chatter
-        true, // RadioRequired: if false, messages are heard without a radio on the player's belt.
-        true, // RadioFollowTheme: Conforms with Theme radio channel choices. False:any radio works for all channels.
+        false, // ENABLE RADIOCHATTER : turns on the system, allowing below options to function
+        false, // ENABLE RADIOAUDIO: turns on 'audio' effects for radio chatter
+        true, // RADIO REQUIRED: if false, messages are heard without a radio on the player's belt.
+        true, // RADIOFOLLOW THEME: Conforms with Theme radio channel choices. False:any radio works for all channels.
         true, 500 // EnableAIChatter: enables random radio chatter between AI when players get within the specified range (meters) as default.
               // NOTE: Theme 'Radio Range' will override this setting.
     ],
 	[ // Soldier Defaults
 
-		6, // default number of rifle magazines for each AI
-		4, // default number of pistol magazines
+		6, // RIFLE MAGS: default number of rifle magazines for each AI
+		4, // PISTOL MAGS: default number of pistol magazines
 		false, // Turns ON VCOM_Driving V1.01 = Genesis92x for all land/boat vehicle drivers
 		      //http://forums.bistudio.com/showthread.php?187450-VCOM-AI-Driving-Mod
           //NOTE::**UNDER EXILE this is generating alot of 'string' errors in the HC's .rpt. May drastically impact performance!
@@ -78,7 +78,7 @@ FuMS_ServerData =
 		  // Currently set to use the GlobalSoliderData.sqf file
 		  // if unique AI are desired, modify these numbers in GlobalSoldierData.sqf or SoldierData.sqf as applicable.
 		  // values here OVERRIDE any value set in the other files! (value of zero = use other files values).
-		[
+		[ // SKILLS ARRAY: 
 		0, // aimingAccuracy : target lead, bullet drop, recoil
 		0,	// aimingShake : how steady AI can hold a weapon
 		0,	// aimingSpeed : how quick AI can rotate and stabilize its aim and shoot.
@@ -91,7 +91,7 @@ FuMS_ServerData =
 		],
         // soldier only equipment. Items in this list are only available to AI.
         //  when an AI dies, gear on this list is deleted from the AI's inventory.
-        [
+        [	// SOLDIER ONLY GEAR: 
             [], //Uniforms
             [], // Vests
             [], // Backpacks.
@@ -102,8 +102,8 @@ FuMS_ServerData =
         ],
         // List of UAV and UGV's that FuMS will recognize and populate with proper AI logic when created in the vehicle section of missions.
         // vehicles created in the 'buildings' section will be inactive!
-        [
-            // side 'GUER' or Resistance (ie the bad guys)
+        [	// UAV AND UGV's: 
+            // side 'GUER' or Resistance (ie survivors/players)
             "I_UGV_01_rcws_F",
             "I_UAV_01_F",
             "I_UAV_02_F",
@@ -120,27 +120,25 @@ FuMS_ServerData =
             "O_UAV_01_F",
             "O_UAV_02_F",
             "O_UAV_02_CAS_F",
-            "O_UGV_01_F"     
-			
+            "O_UGV_01_F"
         ]
-            
 	],
 	[ // Loot Defaults
 
-		30, // number of minutes after mission completion before deleting a loot box.
+		30, // DELETE LOOT DELAY : number of minutes after mission completion before deleting a loot box.
 		// NOTE: This is not based on when the box is spawned, but WHEN the mission completes!
 		[  // SMOKE BOX Options
             true, 				// true= smoke created with box for ease of location.
             100,  				// proximity character has to get to box before smokes start. 0=unlimited
-            ["Red","Blue"],  	//["Red","Blue","White"]// colors of smoke
+            ["Red","Blue"],  	// ["Red","Blue","White"]// colors of smoke
             3     				// Duration, in minutes, smoke lasts once triggered.
         ],
-		true,  					// vehicles occupied by players persist through server reset and are sellable!
+		false,  				// VEHICLE PERSISTANCE: vehicles occupied by players persist through server reset and are sellable!
 		
-		// List of box types used by "Random" in LootData and GlobalLootData files.
+		// CRATE OPTIONS: List of box types used by "Random" in LootData and GlobalLootData files.
 		["B_supplyCrate_F","O_supplyCrate_F","I_supplyCrate_F","CargoNet_01_box_F"],
 		
-		// List of vehicles prohibited to use by players. This list allows them to be on the map for AI use
+		// PROHIBITED VEHICLES: List of vehicles prohibited to use by players. This list allows them to be on the map for AI use
 		// but will prevent players from entering the vehicle.
 		["I_UGV_01_rcws_F","B_G_Offroad_01_armed_F","O_LSV_02_unarmed_F"], //Remove that last one if you want the "vehicle reinforcments" vehicle be able to be stolen
 		
