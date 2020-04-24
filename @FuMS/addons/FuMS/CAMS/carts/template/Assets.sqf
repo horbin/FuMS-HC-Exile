@@ -1,4 +1,5 @@
 // Assets.sqf
+// Unsung Version
 // TheOneWhoKnocks
 // Overwrites the global variables used by FrSB to generate various elements of the system
 
@@ -13,8 +14,8 @@ private ["_cartContents","_cartName","_debugCart"];
 ///////////////////////////////////////////////////
 // CART config ////////////////////////////////////
 ///////////////////////////////////////////////////
-_cartName = "vanilla";
-_debugCart = false;
+_cartName = "unsung"; 	// Change this to match the directory name of the content you are adding
+_debugCart = false;		// Setting this to true adds additional info to log for troubleshooting purposes
 
 
 // Some items are repeated to add a "chance" element.  The more duplicates, the higher chance of spawning, and conversely the lower for others
