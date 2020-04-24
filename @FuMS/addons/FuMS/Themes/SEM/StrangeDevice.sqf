@@ -6,7 +6,7 @@
 
 [
 	["StrangeDevice", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Strange Device","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Strange Device","plp_mark_as_biohazard","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.

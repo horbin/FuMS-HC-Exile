@@ -18,7 +18,7 @@
 
 [
 	["DrinkTruck", 100], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Drink Supply","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Drink Supply","plp_mark_as_drinkingwater","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",500, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

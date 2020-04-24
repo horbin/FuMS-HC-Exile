@@ -7,7 +7,7 @@
 
 [
 	["RaidTown-S-Seed_E", 300], // Mission Title NOSPACES!, and encounter radius
-	["RaidTown-S-Seed_E","mil_objective","ELLIPSE","ColorRed","FDiagonal",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Village Attack","plp_mark_civ_streetfood","ELLIPSE","ColorRed","FDiagonal",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.

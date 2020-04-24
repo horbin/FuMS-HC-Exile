@@ -17,7 +17,7 @@
 
 [
 	["OpenHarbor", 400, "LAND"], 											// Mission Title NOSPACES!, and encounter radius
-	["Open Harbor","hd_objective","ELLIPSE","ColorRed","SolidBorder",400],  	// Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Open Harbor","plp_mark_civc_harbor","ELLIPSE","ColorRed","SolidBorder",400],  	// Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[																	// NOTIFICATION Messages and Map display Control.
 			true,    		// Notify players via Radio Message

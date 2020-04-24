@@ -5,7 +5,7 @@
 
 [
 	["Gang", 200], // Mission Title NOSPACES!, and encounter radius
-	["Gang","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
+	["Gang","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.

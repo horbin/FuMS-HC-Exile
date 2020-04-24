@@ -18,7 +18,7 @@
 
 [
 	["AntiAir", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Anti-Air soldiers","hd_objective","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Anti-Air soldiers","plp_mark_as_aacannon","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

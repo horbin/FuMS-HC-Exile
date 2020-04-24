@@ -19,7 +19,7 @@
 
 [
 	["Storage", 250], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Storage Invasion","hd_objective","ELLIPSE","ColorRed","SolidBorder",250],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Storage Invasion","plp_mark_civc_storage","ELLIPSE","ColorRed","SolidBorder",250],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

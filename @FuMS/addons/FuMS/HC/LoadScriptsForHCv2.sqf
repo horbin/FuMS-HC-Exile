@@ -58,8 +58,8 @@ _scripts =
 				"TrackRoute.sqf",
 				"StaticGunner.sqf",
 				"VehStuck.sqf"
-			]
-			/*
+			],
+			
 			[
 				"RZnD",
 				[
@@ -73,7 +73,7 @@ _scripts =
 					"zombie.sqf"
 				]
 			]
-			*/
+			
 		],
 		[
 			"RC",

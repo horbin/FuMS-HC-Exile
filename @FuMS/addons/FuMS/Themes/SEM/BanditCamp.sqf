@@ -6,7 +6,7 @@
 
 [
 	["BanditCamp", 200, "LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Bandit Camp","hd_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Bandit Camp","plp_mark_as_camp", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.

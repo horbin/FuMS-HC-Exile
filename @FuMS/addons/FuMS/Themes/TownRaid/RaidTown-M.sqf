@@ -9,7 +9,7 @@
 
 [
 	["RaidTownM", 200], // Mission Title NOSPACES!, and encounter radius
-	["Town Raid - M","mil_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["City Raid","plp_mark_civ_building","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.

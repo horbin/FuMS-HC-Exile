@@ -6,7 +6,7 @@
 
 [
 	["PlaneCrash", 150,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Aircraft Crash","hd_objective","ELLIPSE","Colorgreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Aircraft Crash","plp_mark_as_wreckplane","ELLIPSE","Colorgreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.

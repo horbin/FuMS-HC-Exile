@@ -5,7 +5,7 @@
 
 [
 	["SniperRaid", 200], // Mission Title NOSPACES!, and encounter radius
-	["Sniper Raid","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
+	["Sniper Raid","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",200],    
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 			true, "ALL", 1000,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
