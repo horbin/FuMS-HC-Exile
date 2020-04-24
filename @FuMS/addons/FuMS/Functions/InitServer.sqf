@@ -55,7 +55,7 @@ _handle = [] execVM "\FuMS\Functions\MapImmersion.sqf";
 waitUntil {ScriptDone _handle};
 
 // Time Accelerator (TESTING)
-_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
+//_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
 
 
 
