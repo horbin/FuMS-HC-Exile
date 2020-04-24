@@ -48,8 +48,8 @@
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]                                         ],   ["Guard",[-20,10],[0,0],[70] ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
-		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivCombat"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]],
-		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivNoGun"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
+		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivCombat"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
+		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivNoGun"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]]
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[150]     ]],
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 	],

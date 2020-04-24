@@ -1,4 +1,5 @@
 // Assets.sqf
+// Exile version
 // TheOneWhoKnocks
 // Overwrites the global variables used by FrSB to generate various elements of the system
 

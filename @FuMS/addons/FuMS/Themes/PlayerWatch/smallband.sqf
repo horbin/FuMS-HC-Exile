@@ -44,7 +44,7 @@
 
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"]           ],   ["Explore",[50,50],[0,0],[0]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"]           ],   ["Explore",[((floor random 100)-50),((floor random 100)-50)],[0,0],[50]     ]]
 	],
 
 	// Vehicles

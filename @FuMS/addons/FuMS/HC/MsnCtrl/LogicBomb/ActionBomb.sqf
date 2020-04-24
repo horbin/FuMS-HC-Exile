@@ -61,23 +61,24 @@ while {!_done} do
             private ["_eCenter","_positionOffset","_buildings","_groups","_vehicles","_boxes","_customData","_endScript","_encounterSize",
             "_missionTheme","_curMission","_themeIndex","_generation","_offspringID","_mkr1","_mkr2","_missionNameOverride",
              "_lootConfig","_markers","_notifications","_actionName","_zupakill"];
-								_eCenter = _passData select 0;
-								_positionOffset = _passData select 1;
-								_buildings = _passData select 2;
-								_groups = _passData select 3;
-								_vehicles = _passData select 4;
-								_boxes = _passData select 5;
-								_customData = _passData select 6;
-								_endScript = _passData select 7;
-								_encounterSize = _passData select 8;
-								_missionTheme = _passData select 9;
-								_curMission = _passData select 10;
-								_themeIndex = _passData select 11;
-								_generation = _passData select 12;
-								_offspringID = _passData select 13;
-								_mkr1 = _passData select 14;
-								_mkr2 = _passData select 15;
-								_missionNameOverride = _passData select 16;            
+			 
+			_eCenter = _passData select 0;
+			_positionOffset = _passData select 1;
+			_buildings = _passData select 2;
+			_groups = _passData select 3;
+			_vehicles = _passData select 4;
+			_boxes = _passData select 5;
+			_customData = _passData select 6;
+			_endScript = _passData select 7;
+			_encounterSize = _passData select 8;
+			_missionTheme = _passData select 9;
+			_curMission = _passData select 10;
+			_themeIndex = _passData select 11;
+			_generation = _passData select 12;
+			_offspringID = _passData select 13;
+			_mkr1 = _passData select 14;
+			_mkr2 = _passData select 15;
+			_missionNameOverride = _passData select 16;            
             _lootConfig = _passData select 17;
             _markers = _passData select 18;
             _notifications = _passData select 19;
@@ -101,6 +102,10 @@ while {!_done} do
                             // _x = [ ["WIN"],["Trig1","Trig2"]]
                             _actionName = toupper( (_x select 0) select 0);
                             // call loot
+							
+							//diag_log format ["##ACTIONBOMB: _lootConfig:%1 | _positionOffset:%2 | _x select 0:%3 | [_themeIndex, _generation, _offspringID]:%4",_lootConfig, _positionOffset, _x select 0,[_themeIndex, _generation, _offspringID]];
+							
+							
                             _boxes = [_lootConfig, _positionOffset, _x select 0,[_themeIndex, _generation, _offspringID], _boxes] 
                             call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnMissionLoot;
                             // call messaging

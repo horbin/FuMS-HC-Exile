@@ -87,8 +87,7 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
 			["SpawnGuards",	["ProxPlayer", 	[-50,-50], 700, 1]],
-			["HeliBoarded",	["ProxPlayer", 	[0,0], 100, 1]],
-			["HeliTest",	["TakeVehicle", 	"0", 50]],
+			["HeliTaken",	["TakeVehicle", 	"0", 50]],
 			["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes	
 			["KillMost",	["BodyCount",6] ]
 			
@@ -98,7 +97,7 @@
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			[["CHILD",	["SpawnGuards",[0,0],1,10000]],["SpawnGuards"     ]],  
-			[["WIN"],	["HeliTest"     			]],
+			[["WIN"],	["HeliTaken"     			]],
 			[["LOSE"],	["Timer"				]],
 			[["END"],	["HeliTest","OR","Timer"	]]  
 		]

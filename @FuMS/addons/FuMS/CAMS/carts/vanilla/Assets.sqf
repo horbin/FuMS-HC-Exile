@@ -686,12 +686,19 @@ _cartContents =
 
 	//Smokes
 	[
-		"CAMS_Smoke_Shell",1,true,
+		"CAMS_Smoke_W",1,true,
 		[
 			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
 			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
 		]
 	],
+	[
+		"CAMS_Smoke_E",1,true,
+		[
+			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
+			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
+		]
+	],	
 	[
 		"CAMS_Smoke_1Rnd",1,true,
 		[
@@ -711,7 +718,7 @@ _cartContents =
 	[
 		"CAMS_Smoke_ALL",0,true,
 		[
-			"CAMS_Smoke_Shell", "CAMS_Smoke_1Rnd", "CAMS_Smoke_3rnd"
+			"CAMS_Smoke_W", "CAMS_Smoke_E"
 		]
 	],
 	
@@ -723,11 +730,24 @@ _cartContents =
 
 	// Grenades
 	[
-		"CAMS_E_Grenade",1,true,
+		"CAMS_E_Grenade_W",1,true,
 		[
 			"HandGrenade","MiniGrenade"
 		]
 	],
+	[
+		"CAMS_E_Grenade_E",1,true,
+		[
+			"HandGrenade","MiniGrenade"
+		]
+	],
+	[
+		"CAMS_E_Grenade",0,true,
+		[
+			"CAMS_E_Grenade_W","CAMS_E_Grenade_E"
+		]
+	],	
+	
 	[
 		"CAMS_E_GrenadeIR_W",1,true,
 		[

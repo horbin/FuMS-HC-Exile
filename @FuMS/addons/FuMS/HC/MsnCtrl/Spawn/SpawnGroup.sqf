@@ -118,7 +118,17 @@ if (!isNil "_groupData") then
                             _patrolRadius = .8* _encounterSize;
                         };  
                         [_group, _patrolPatrolLoc, _patrolRadius, 0, true] call FuMS_fnc_HC_AI_Logic_BoxPatrol;
+                    };     
+                    case "HUNTPLAYER":
+                    { 
+                        _patrolRadius = _patternOptions select 0;
+                        if ( _patrolRadius == 0) then 
+                        { 
+                            _patrolRadius = .8* _encounterSize;
+                        };  
+                        [_group, _patrolPatrolLoc, _patrolRadius, 0, true] call FuMS_fnc_HC_AI_Logic_HuntPlayer;
                     };       
+					
                     case "EXPLORE":
                     { 
                         _patrolRadius = _patternOptions select 0;
@@ -152,6 +162,10 @@ if (!isNil "_groupData") then
                     case "LOITER":
 					{
 						[_group, _eCenter, _patternOptions] call FuMS_fnc_HC_AI_Logic_Loiter;
+					};
+                    case "HUNTPLAYER":
+					{
+						[_group, _eCenter, _patternOptions] call FuMS_fnc_HC_AI_Logic_HuntPlayer;
 					};
                     case "CONVOY":
                     {

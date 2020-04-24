@@ -1,4 +1,4 @@
-//WaterMission.sqf
+//WaterSub.sqf
 // Horbin
 // 2/26/15
 // Updated by TheOneWhoKnocks

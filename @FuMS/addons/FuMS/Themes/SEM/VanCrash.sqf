@@ -45,9 +45,9 @@
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 	//   [["RESISTANCE","COMBAT","RED","COLUMN"],   [  [1,"Sniper"],[2,"Rifleman"],[2,"Hunter"]  ],   ["BoxPatrol",[0,75],[0,0],[0]   ]],
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper"]           ],     ["LOITER",[6,-6],[0,0],[10]     ]],
-		[["EAST","CARELESS","RED","LINE"], 	[  [2,"Rifleman"],[2,"LMG"] ],   ["EXPLORE",[7,7],[0,0],[50]     ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman"]           ],   ["BOXPATROL",[-5,-5],[0,0],[70]     ]]
+		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_E"]           ],     ["LOITER",[6,-6],[0,0],[10]     ]],
+		[["EAST","CARELESS","RED","LINE"], 	[  [2,"Rifleman_E"],[2,"LMG_E"] ],   ["EXPLORE",[7,7],[0,0],[50]     ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_E"]           ],   ["BOXPATROL",[-5,-5],[0,0],[70]     ]]
 	],
 
 	// Vehicles

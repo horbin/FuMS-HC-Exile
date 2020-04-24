@@ -202,7 +202,7 @@ while {true} do
 		};
 	};
 	FuMS_Mission_is_Starting = true;
-	if (_hold) then {diag_log format ["<FuMS>: ControlLoop: Theme:%1: My turn! Launching mission",_themeIndex];};
+	//if (_hold) then {diag_log format ["<FuMS>: ControlLoop: Theme:%1: My turn! Launching mission",_themeIndex];};
 	
 	
     // SELECT A MISSION.

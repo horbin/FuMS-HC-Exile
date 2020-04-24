@@ -37,25 +37,27 @@ _scripts =
 		[
 			"Logic",
 			[
-				"AIEvac.sqf",
-				"DriverXFill.sqf",
-				"fnparadrop.sqf",
 				"AddWaypoint.sqf", 
-				"VehStuck.sqf",
+				"AIEvac.sqf",
 				"AIGuardBuilding.sqf", 
 				"AIPB.sqf", 
 				"AreaPatrol.sqf", 
 				"BoxPatrol.sqf", 
+				"Captured.sqf",				
+				"Convoy.sqf", 
+				"DriverXFill.sqf",
+				"fnparadrop.sqf",
+				"HuntPlayer.sqf",
 				"Loiter.sqf",
 				"Paradrop.sqf", 
-				"PolygonPatrol.sqf", 
-				"Convoy.sqf", 
 				"PatrolRoute.sqf", 
+				"PolygonPatrol.sqf", 
+				"SADRoute.sqf",
 				"ScriptPatrol.sqf",
-				"TrackRoute.sqf",
 				"TowerGuard.sqf",
+				"TrackRoute.sqf",
 				"StaticGunner.sqf",
-				"Captured.sqf"					
+				"VehStuck.sqf"
 			]
 			/*
 			[

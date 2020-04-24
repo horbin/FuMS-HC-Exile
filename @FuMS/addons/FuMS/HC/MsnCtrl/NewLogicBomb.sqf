@@ -96,6 +96,7 @@ _convoys = [_vehicleData, _positionOffset, _encounterSize, _groups, _vehicles,[ 
 _groups = _convoys select 0;
 _vehicles = _convoys select 1;
 
+//diag_log format ["##NEWLOGICBOMB: _lootConfig:#1 | _positionOffset:%2",_lootConfig, _positionOffset];
 _boxes = [_lootConfig, _positionOffset, ["STATIC"], [_themeIndex, _generation, _offspringID], _boxes] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnMissionLoot;
 
 [_markers, _notifications, ["STATIC"], _mkr1, _mkr2, _eCenter, _missionNameOverride] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnNotifications;

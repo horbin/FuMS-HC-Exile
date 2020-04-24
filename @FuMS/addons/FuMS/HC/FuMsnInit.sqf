@@ -197,11 +197,6 @@ if !(hasInterface) then
 	FuMS_HillList = nearestLocations [FuMS_MapCenter, ["Hill"], 30000];
 	FuMS_MountList = nearestLocations [FuMS_MapCenter, ["Mount"], 30000];
 	FuMS_NameLocalList = (nearestLocations [FuMS_MapCenter, ["NameLocal"], 30000]) - FuMS_DefinedMapLocations;
-	diag_log format ["##Init(NameLocal): %1",FuMS_NameLocalList];
-	{
-		diag_log format ["##Init(NameLocal: %1",text _x];
-	}forEach FuMS_NameLocalList;
-	//FuMS_NameLocalList = FuMS_NameLocalList - FuMS_DefinedMapLocations;
 	FuMS_ChurchList = nearestTerrainObjects [FuMS_MapCenter, ["CHURCH"], 30000,false];
 	FuMS_ChapelList = nearestTerrainObjects [FuMS_MapCenter, ["CHAPEL"], 30000,false];
 	FuMS_BunkerList = nearestTerrainObjects [FuMS_MapCenter, ["BUNKER"], 30000,false];

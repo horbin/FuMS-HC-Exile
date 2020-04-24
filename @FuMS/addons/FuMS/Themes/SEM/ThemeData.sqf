@@ -7,14 +7,14 @@
 _themeData =
 [
     [
-        "SEM",   // Needs to match the folder name!
-        1,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        60, // Respawn delay in seconds
-		true, // global loot
-		true, // global soldier data
-		true,  // autostart
-        1,  // Player minimum to launch missions from this theme.
-        100   // Player maximum above which missions will not launch
+        "SEM",   	// Needs to match the folder name!
+        1,  		// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        60, 		// Respawn delay in seconds
+		true, 		// global loot
+		true, 		// global soldier data
+		true,  		// autostart
+        1,  		// Player minimum to launch missions from this theme.
+        100   		// Player maximum above which missions will not launch
     ],
     [  
         
@@ -60,9 +60,6 @@ _themeData =
 			["DetHostileAI", "Roger. Weapons Free, Capture as many as you can."]
 		]
 	]	
-	
-	
-	
 ];
 
 FuMS_THEMEDATA set [_this select 0, _themeData];

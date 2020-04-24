@@ -23,8 +23,10 @@ _AImodel = missionNamespace getVariable ["ImFX_AiModel_E",["O_G_Soldier_F"]] sel
 _rockAT = missionNamespace getVariable ["CAMS_AT_E",["launch_RPG32_F"]];
 _rockAA = missionNamespace getVariable ["CAMS_AA_E",["launch_RPG32_F"]];
 
-
-//diag_log format ["<FuMS:%2> SpawnSoldier: AIModel: %1",_AImodel,FuMS_Version];
+if (_debug) then
+{
+	diag_log format ["<FuMS:%2> SpawnSoldier: AIModel: %1",_AImodel,FuMS_Version];
+};
 
 
 if (((FuMS_THEMEDATA select _themeIndex) select 0) select 4) then

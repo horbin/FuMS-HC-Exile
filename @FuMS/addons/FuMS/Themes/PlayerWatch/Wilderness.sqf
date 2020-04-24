@@ -43,7 +43,7 @@
 
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
-[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"]           ],   ["Explore",[50,50],[0,0],[0]     ]]
+[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter_E"]           ],   ["Explore",[50,50],[0,0],[0]     ]]
 ],
 
 // Vehicles
