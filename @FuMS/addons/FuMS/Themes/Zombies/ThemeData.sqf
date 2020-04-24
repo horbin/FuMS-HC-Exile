@@ -7,26 +7,26 @@
 _themeData =
 [
     [  // *******Options*********
-        "Zombies", // Needs to match the folder name!
-        4,  //Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
-             // 4=Static: All missions in 'Mission List' will be created at server start!
-			 // 5=Static: with no respawn. Use option 5 for 'create once' type missions.
-			 // Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
-			 //  option 5 will let the mission only spawn once per 6 hours (ie server reset)
-        3600, // Respawn delay in seconds (town remains empty for 1 hour after it is cleared
-		true, // use Global Loot Data (GlobalLootData.sqf)
-		true,  // use Global Soldier Data file (GlobalSoldierData.sqf)
-		true, // ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
-            0,  // Player minimum to launch missions from this theme.
-        100   // Player maximum above which missions will not launch
+        "Zombies", 	// Needs to match the folder name!
+        4,  		//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+					// 4=Static: All missions in 'Mission List' will be created at server start!
+					// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
+					// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
+					//  option 5 will let the mission only spawn once per 6 hours (ie server reset)
+        3600, 		// Respawn delay in seconds (town remains empty for 1 hour after it is cleared
+		true, 		// use Global Loot Data (GlobalLootData.sqf)
+		false,  	// use Global Soldier Data file (GlobalSoldierData.sqf)
+		true, 		// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
+        0,  		// Player minimum to launch missions from this theme.
+        100   		// Player maximum above which missions will not launch
        
     ],
-    [  //***** Mission List *****
-    // List of Missions. 
+    [	//***** Mission List *****
+		// List of Missions. 
         // The below missions MUST be in the same folder as this file! 
      
-          ["Zombies"],["Zombies"],["Zombies"],
-		 ["Zombies"],["Zombies"],["Zombies"]          
+        ["Zombies"],["Zombies"],["Zombies"],
+		["Zombies"],["Zombies"],["Zombies"]          
 		// ["MazeTest2",[23300,17800]],
 		// ["MazeTest2",[15500,20000]]
 		//["TestParse"]
@@ -50,13 +50,13 @@ _themeData =
     ],
 	[ //***** Radio Chatter *****
 		[ // AI Radio Chatter configuration
-             9, // radio channel used by AI - "ALL"= messages heard w/o radio (other options 0-9)
-    //0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
-			true, // silent Check-in =true: AI squads will NOT check-in with BaseOps when they spawn.
-			false, // AI death messages enabled.
-			1500, // Radio Range (for AI. BaseOps's high power radio has unlimited range)
-			"Bear",    // AI callsign, groups will be numbered..ie Bear01, Bear02
-			"Closeout" // BaseOps call sign
+             9, 		// radio channel used by AI - "ALL"= messages heard w/o radio (other options 0-9)
+						//0=Quartz, 1=Garnet, 2=Citrine, 3=Amethyst, 4=Topaz, 5=Sapphire, 6=Onyx, 7=Emerald, 8=Ruby, 9=Jade
+			true, 		// silent Check-in =true: AI squads will NOT check-in with BaseOps when they spawn.
+			false, 		// AI death messages enabled.
+			1500, 		// Radio Range (for AI. BaseOps's high power radio has unlimited range)
+			"Bear",    	// AI callsign, groups will be numbered..ie Bear01, Bear02
+			"Closeout" 	// BaseOps call sign
 		],
 		//**Do not remove or change order of these items. 
 		// The 'chat text' can be changed to meet your theme's needs.
