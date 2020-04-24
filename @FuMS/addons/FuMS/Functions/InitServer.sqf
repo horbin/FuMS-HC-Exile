@@ -52,6 +52,10 @@ if (FuMS_ServerFuMSEnable) then
 //diag_log format ["<FuMS:%1> Init: Passing Zombie sound scripts to all players"];
 //publicVariable "FuMS_str_HC_Zombies_INF_fnc_nextSound";
 
+// Time Accelerator (TESTING)
+_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
+
+
 
 FuMS_ServerIsClean = true;
 publicVariable "FuMS_ServerIsClean";
