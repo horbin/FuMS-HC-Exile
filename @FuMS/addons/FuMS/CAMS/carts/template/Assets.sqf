@@ -1,7 +1,7 @@
 // Assets.sqf
-// Unsung Version
+// Template
 // TheOneWhoKnocks
-// Overwrites the global variables used by FrSB to generate various elements of the system
+// Overwrites the global variables used by FuMS to generate various elements of the system
 
 // Global variables in this file are available to the AI creation and Loot creation portions of FuMS
 // Any where you would normally place an item class name, one of these variables may be substituted in its place.
