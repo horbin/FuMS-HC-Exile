@@ -14,7 +14,7 @@ private ["_cartContents","_cartName","_debugCart"];
 ///////////////////////////////////////////////////
 // CART config ////////////////////////////////////
 ///////////////////////////////////////////////////
-_cartName = "unsung"; 	// Change this to match the directory name of the content you are adding
+_cartName = "template"; 	// Change this to match the directory name of the content you are adding
 _debugCart = false;		// Setting this to true adds additional info to log for troubleshooting purposes
 
 
