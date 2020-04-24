@@ -131,18 +131,34 @@ if (_showMap) then
         _mkr2 setMarkerPos _eCenter;
         _mkr2 setMarkerAlpha 0.5;
         _mkr2 setMarkerType (_markers select 1);
+		_marker2Type = (_markers select 1);
         
-        if ( count _missionNameOverride > 0) then
+        //if ( count _missionNameOverride > 0) then
+        if ( false ) then
+
         {
            // diag_log format ["##SpawnNotifications : override mission %2 name to %1",_missionNameOverride, _markers select 0];
             _mkr2 setMarkerText format[" %1",_missionNameOverride];   
         }
         else { _mkr2 setMarkerText format[" %1",(_markers select 0)];};
         //_mkr2 setMarkerColor (_markers select 3);
-        _mkr2 setMarkerColor "ColorBlack";
-	
+        
 		
-        publicVariable _mkr2;
+		_mkr2Array = toArray toUpper _marker2Type;
+		_mkr2Array resize 3;
+		_mkr2Array = toString _mkr2Array;
+		
+		diag_log format ["#SPAWN: Marker Name Prefix: %1",_mkr2Array];
+		if (_mkr2Array == "PLP") then
+		{
+			_mkr2 setMarkerColor "ColorWhite";
+		} else
+		{
+			_mkr2 setMarkerColor "ColorBlack";
+		};
+
+		
+		publicVariable _mkr2;
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_AddObject;
         ["Markers",_mkr2] call FuMS_fnc_HC_Util_HC_AddObject;
       
