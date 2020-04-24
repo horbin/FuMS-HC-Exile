@@ -57,7 +57,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["LaunchStart",["ProxPlayer",[0,0],500,1]  ],
+			["LaunchStart",["ProxPlayer",[0,0],800,1]  ],
 			["LaunchAttack",["ProxPlayer",[0,0],300,1]  ],
 
 			//["LUCNT",["LowUnitCount","GUER",1,0,[0,0]]  ],

@@ -129,6 +129,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
+					["EAST","COMBAT","RED","COLUMN"],    [[ 0, "Rifleman_E"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
 				]
 			]
 		],
@@ -175,9 +176,5 @@
 			[["LOSE"],	["Timer"	]],
 			[["END"],	["LUCNT","OR","Timer"	]]  
 		]
-
-  
 	]
-
-
 ];

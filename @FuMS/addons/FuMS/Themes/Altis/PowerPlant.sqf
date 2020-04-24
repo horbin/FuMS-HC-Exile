@@ -109,7 +109,7 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  CAMS_Land_ArmedOffroad_E,		[0,0],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
+				[  CAMS_Land_ArmedOffroad_E,		[((round random 50)-25),((round random 50)-25)],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],

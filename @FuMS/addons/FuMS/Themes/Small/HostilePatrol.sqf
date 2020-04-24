@@ -44,7 +44,7 @@
 		 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"Hunter_E"]           ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[150]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter_E"]           ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[150]     ]]
 
 	],
 
