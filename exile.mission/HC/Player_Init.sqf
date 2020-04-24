@@ -18,7 +18,7 @@ diag_log format ["FuMS initializing for player:%1",player];
                 {
                     systemchat format ["You hear abnormal radio noise."];
                    // player sideChat "We have visitors";
-                   // playsound "radioAmbient6";
+                   playsound selectRandom ["radioAmbient2","radioAmbient6","radioAmbient8"];
                   
                   //  playsound "radioAmbient8";
                   
@@ -208,7 +208,7 @@ FuMS_fnc_AddCaptiveMenu =
 
 "FuMS_AIONLYVEHICLE" addPublicVariableEventHandler
 {
-    systemChat "FuMS: Some odd technical incompatibility prevents you from interfacing with this vehicle!";
+    systemChat "FuMS: Sorry, this is a stick shift and you suck!";
 };
 
 "FuMS_ZupaCapture" addPublicVariableEventHandler
@@ -221,7 +221,7 @@ FuMS_RadioMsgQue = [];
 
 "FuMS_RADIOCHATTER" addPublicVariableEventHandler
 {
-	/*
+	
     _rscLayer = "radioChatterBar" call BIS_fnc_rscLayer;
     _msg = format ["%1",_this select 1];
     FuMS_RadioMsgQue = FuMS_RadioMsgQue + [_msg];
@@ -238,7 +238,7 @@ FuMS_RadioMsgQue = [];
     };
     ((uiNamespace getVariable "radioChatterBar")displayCtrl 1010) ctrlSetText _data;
     _rscLayer cutFadeOut 20;
-*/	
+	
 };  
 
 //Admin Controls Menu! 
