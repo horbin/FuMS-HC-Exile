@@ -5,7 +5,7 @@
 
 [
 	["BanditPosse", 200], // Mission Title NOSPACES!, and encounter radius
-	["Bandit Posse","plp_mark_as_infantry","ELLIPSE","ColorOrange","FDiagonal",200],    
+	["Bandit Posse","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.

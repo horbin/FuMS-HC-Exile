@@ -6,7 +6,7 @@
 
 [
 	["StrangeDevice", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Strange Device","plp_mark_as_biohazard","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Strange Device","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
@@ -40,6 +40,9 @@
 		["Land_Device_disassembled_F",[6,6],(round random 360),1]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper_E"]           ],     	["Explore",[6,-6],[10,10],[10]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"],[1,"LMG_E"] ],   ["Explore",[7,7],[0,0],[20]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"]           ],   	["BoxPatrol",[-6,-6],[0,0],[30]     ]]
 	],
 
 	// Vehicles

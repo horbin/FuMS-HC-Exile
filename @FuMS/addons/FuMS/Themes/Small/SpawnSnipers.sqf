@@ -5,7 +5,7 @@
 
 [
 	["SpawnSnipers", 75], // Mission Title NOSPACES!, and encounter radius
-	["SpawnSnipers","plp_mark_as_watchtower","ELLIPSE","ColorOrange","FDiagonal",75],    
+	["SpawnSnipers","hd_objective","ELLIPSE","ColorOrange","FDiagonal",75],    
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 			true, "ALL", 700,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

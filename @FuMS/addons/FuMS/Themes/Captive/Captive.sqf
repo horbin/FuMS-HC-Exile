@@ -7,7 +7,7 @@
 
 [
 	["Captive", 200, "LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Captives","plp_mark_as_jail", "ELLIPSE","ColorYellow","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Captives","hd_objective", "ELLIPSE","ColorYellow","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL" ,1000,

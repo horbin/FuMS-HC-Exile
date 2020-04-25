@@ -5,7 +5,7 @@
 
 [
 	["VehicleCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Vehicle Crash","plp_mark_as_wreckcar","ELLIPSE","ColorGreen","FDiagonal",200],    
+	["Vehicle Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.
