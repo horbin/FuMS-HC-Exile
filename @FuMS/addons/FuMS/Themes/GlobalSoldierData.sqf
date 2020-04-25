@@ -776,7 +776,7 @@ _soldierData =
         ["",0], // Secondary Weapon and chance
         [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
-        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
@@ -795,7 +795,7 @@ _soldierData =
         ["",0], // Secondary Weapon and chance
         [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
-        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
@@ -813,7 +813,7 @@ _soldierData =
         ["",0], // Secondary Weapon and chance
         [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
-        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
@@ -831,7 +831,7 @@ _soldierData =
         ["",0], // Secondary Weapon and chance
         [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
-        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
         [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
           // Crypto and Faction Rewards
         [
