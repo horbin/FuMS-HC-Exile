@@ -147,8 +147,9 @@ if (_showMap) then
 		_mkr2Array = toArray toUpper _marker2Type;
 		_mkr2Array resize 3;
 		_mkr2Array = toString _mkr2Array;
+		_mkr2 setMarkerColor "ColorBlack";		
 		
-		diag_log format ["#SPAWN: Marker Name Prefix: %1",_mkr2Array];
+		/*diag_log format ["#SPAWN: Marker Name Prefix: %1",_mkr2Array];
 		if (_mkr2Array == "PLP") then
 		{
 			_mkr2 setMarkerColor "ColorWhite";
@@ -156,7 +157,7 @@ if (_showMap) then
 		{
 			_mkr2 setMarkerColor "ColorBlack";
 		};
-
+		*/
 		
 		publicVariable _mkr2;
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_AddObject;
