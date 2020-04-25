@@ -17,7 +17,7 @@
 
 [
 	["MilitaryRaid", 150], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Military Base Raid","plp_mark_civc_rifle","ELLIPSE","ColorRed","SolidBorder",150],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Military Base Raid","hd_objective","ELLIPSE","ColorRed","SolidBorder",150],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

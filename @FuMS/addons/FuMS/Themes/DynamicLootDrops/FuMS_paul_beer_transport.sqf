@@ -18,7 +18,7 @@
 
 [
 	["BeerTruck", 100], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Beer and Guns","plp_mark_as_barrel","ELLIPSE","ColorOrange","Solid",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Beer and Guns","hd_objective","ELLIPSE","ColorOrange","Solid",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[						// NOTIFICATION Messages and Map display Control.
 			true, "ALL",500, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

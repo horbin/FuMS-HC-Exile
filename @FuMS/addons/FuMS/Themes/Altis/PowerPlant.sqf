@@ -17,7 +17,7 @@
 
 [
 	["PowerPlant", 500], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Power Plant","plp_mark_civc_solarpanel","ELLIPSE","ColorRed","SolidBorder",500],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Power Plant","hd_objective","ELLIPSE","ColorRed","SolidBorder",500],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		true, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

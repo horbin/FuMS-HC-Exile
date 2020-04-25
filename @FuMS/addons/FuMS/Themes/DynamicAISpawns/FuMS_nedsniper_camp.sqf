@@ -19,7 +19,7 @@
 
 [
 	["SniperCamp", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Sniper Camp","plp_mark_as_sniperrifle","ELLIPSE","ColorBlue","Cross",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Sniper Camp","hd_objective","ELLIPSE","ColorBlue","Cross",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

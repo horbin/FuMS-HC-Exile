@@ -18,7 +18,7 @@
 
 [
 	["BambiSlide", 200], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Bambis Playing","plp_mark_civ_playground","ELLIPSE","ColorBlue","Cross",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Bambis Playing","hd_objective","ELLIPSE","ColorBlue","Cross",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

@@ -39,7 +39,8 @@ _soldierData =
         ]
     ],
 	[
-        "ZombieSoldier",[1,1,1,1,1,1,1,1,1],
+        "ZombieSoldier",
+		[1,1,1,1,1,1,1,1,1],
         ["",0], // Uniform
         ["",0], // Vest.
         ["",0], // Helmet

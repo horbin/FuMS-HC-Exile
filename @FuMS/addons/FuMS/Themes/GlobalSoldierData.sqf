@@ -763,6 +763,81 @@ _soldierData =
 			["RESCUEGROUP", 500],
 			["RESCUETABS", 250]
         ]
-	]
+	],
+	[
+		"Zombie",
+		[1,1,1,.5,.5,1,1,.6,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+	[
+        "ZombieSoldier",
+		[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+    [
+        "ZombieSpider",[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+    [
+        "ZombieBoss",[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, false], // DiverOverWater, UnlimitedAmmo
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 50]
+        ]
+    ]
+	
 ];
 FuMS_SOLDIERDATA set [_this select 0, _soldierData];

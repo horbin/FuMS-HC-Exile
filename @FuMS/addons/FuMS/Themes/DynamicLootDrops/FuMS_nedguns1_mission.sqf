@@ -19,7 +19,7 @@
 
 [
 	["GunsMission", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Guns guns guns","plp_mark_as_pistol","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Guns guns guns","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.

@@ -104,7 +104,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TIMER", 1800] ],
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["LUCNT",		["LowUnitCount","EAST",5,250,[0,0]]  ],		// Triggers call for reinforcements
 			//["LowCivs",		["LowUnitCount","RESISTANCE",6,250,[0,0]]  ],		// Triggers call for reinforcements
 			["Captive1", 	["Captive", 7]  ]

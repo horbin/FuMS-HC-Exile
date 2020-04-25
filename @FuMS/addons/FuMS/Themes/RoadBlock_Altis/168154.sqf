@@ -22,7 +22,7 @@
 		//-----Notification Configuration-----
 		//--Map Marker Config.
 		"Free Gas",  	// Name, set to "" for nothing
-		"plp_mark_as_fuel", 		// icon type:                                     https://community.bistudio.com/wiki/cfgMarkers for other options.
+		"hd_objective", 		// icon type:                                     https://community.bistudio.com/wiki/cfgMarkers for other options.
 						// mil_triangle, mil_objective, mil_box, group1, loc_Power, etc.
 		"ELLIPSE", 		// "RECTANGLE". do not use "ICON", two markers are used in making each mission indicator.
 		"ColorYellow",	//                                                  https://community.bistudio.com/wiki/setMarkerColor

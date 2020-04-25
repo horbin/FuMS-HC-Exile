@@ -6,7 +6,7 @@
 
 [
 	["SuicideBomberCamp", 200, "LAND",[0,0,0],"MissionFXStart","MissionFXEnd"], // Mission Title NOSPACES!, and encounter radius
-	["Bomber Camp","plp_mark_as_vestmilitary", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Bomber Camp","hd_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, 1,0,

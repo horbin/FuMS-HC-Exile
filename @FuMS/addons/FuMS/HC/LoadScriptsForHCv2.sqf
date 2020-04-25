@@ -12,12 +12,12 @@ _start = time;
 //Use to find PLP markers
 FuMS_ZnDs = isClass(configFile>>"cfgPatches">>"Ryanzombies");
 diag_log format ["<FuMS> LoadScriptsForHC : Ryan's Zombies and Demons = %1", FuMS_ZnDs];
-//if (_ryansZnDs) then
-//{
-//	FuMS_Zombie = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
-//	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombiespider.sqf";
-//	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombieboss.sqf";
-//};
+if (FuMS_ZnDs) then
+{
+	FuMS_Zombie = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombiespider.sqf";
+	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombieboss.sqf";
+};
 
 //HC Root
 _scripts =

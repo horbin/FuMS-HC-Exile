@@ -125,7 +125,7 @@
 			//	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 			//	  ["Detect",["Detected","ALL","ALL"] ],
 			["BodyCount",	["BodyCount",40] ],
-			["Timer",		["TIMER", 1800] ], // 1800  
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["TimerEvac", 	["TIMER", 1400] ] // 1400
 		  
 		],
