@@ -1,8 +1,11 @@
 // GetWorldInfo.sqf
-// code taken from A3EAI by Face
+// Code based on A3EAI by Face
 // http://epochmod.com/forum/index.php?/topic/31551-a3eai-ai-addon-for-a3-epoch-alpha-057-released/
-// Horbin
-// 4/3/2015
+// and further modifed with code from Brenner650
+// https://github.com/Brenner650/A3XAI
+// Modified by
+// TheOneWhoKnocks
+// 4/25/2020
 
   
 // Exclusion Areas
@@ -20,6 +23,7 @@
 private ["_worldname"];
 FuMS_BlackList = [];
 FuMS_DefaultPos = [];
+_debug= false;
 _worldname = (toLower worldName);
 	{
 		if ( _worldname isEqualTo (_x select 0) ) exitWith 
@@ -114,7 +118,7 @@ _worldname = (toLower worldName);
 			[
 				//Exclusion Areas
 				[[4144.52,9255.61,0],[3144.52,8255.61,0]],  //West Spawn Area
-				[[11466.9,12192.4,0.],[12466.9,13192.4,0]],  //East Spawn Area
+				[[11466.9,12192.4,0],[12466.9,13192.4,0]],  //East Spawn Area
 				[[3537.25,15053.3,0],[3537.25,16053.3,0]],  //North Spawn
 				[[13313.2,6376.4,0],[14313.2,7376.4,0]] //Clone Lab
 			],
@@ -125,7 +129,105 @@ _worldname = (toLower worldName);
         [_worldname,getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition"),7000]
     ];
 
-    
-diag_log format ["##GetWorldInfo: Map:%1 Center:%2 Size:%3",_worldname, FuMS_MapCenter, FuMS_MapRange];
+
+//Set up trader city blacklist areas - borrowed from A3XAI
+_traderCityPositions = [];
+call {
+	{
+		if ((triggerStatements _x) isEqualTo ["(vehicle player) in thisList","call ExileClient_object_player_event_onEnterSafezone","call ExileClient_object_player_event_onLeaveSafezone"]) then {
+			_traderCityPositions pushBack (getPosATL _x);
+			if (_debug) then {diag_log format ["##FUMS (GetWorldInfo): Stage 1: Found trader safezone at %1",getPosATL _x];};
+		};
+	} forEach (allMissionObjects "EmptyDetector");
+	if (_debug) then
+	{
+		diag_log format ["##FUMS (GetWorldInfo): Stage 1 Trader List: %1",_traderCityPositions];
+	};
+	if !(_traderCityPositions isEqualTo []) exitWith {};
+	
+	{
+		if ((markerType _x) isEqualTo "ExileTraderZone") then 
+		{
+			_traderCityPositions pushBack (getMarkerPos _x);
+			if (_debug) then {diag_log format ["##FUMS (GetWorldInfo): Stage 2: Found trader marker %1",_x];};
+		};
+	} forEach allMapMarkers;
+
+	if (_debug) then
+	{
+		diag_log format ["##FUMS (GetWorldInfo): Stage 2 Trader List: %1",_traderCityPositions];
+	};
+	
+	if !(_traderCityPositions isEqualTo []) exitWith {};
+	
+/*
+
+	if (_debug) then {diag_log format ["A3XAI Debug: Could not automatically detect any trader locations. Reading trader locations from A3XAI_traderAreaLocations."];};
+	{
+		call {
+			if ((typeName _x) != "ARRAY") exitWith {diag_log "A3XAI Error: Non-array value found in A3XAI_traderAreaLocations";};
+			if ((count _x) < 2) exitWith {diag_log "A3XAI Error: Array value with fewer than 2 elements found in A3XAI_traderAreaLocations";};
+			_traderCityPositions pushBack _x;
+			if (A3XAI_debugLevel > 0) then {diag_log format ["A3XAI Debug: Found trader location at %1",_x];};
+		};
+	} forEach A3XAI_traderAreaLocations;
+*/
+	
+	if (_traderCityPositions isEqualTo []) then {
+		diag_log "##FUMS (GetWorldInfo): Could not automatically detect trader safezones.";
+	};
+};
+
+
+
+
+//Set up bambi blacklist areas
+_bambiSpawnPos = [];
+call 
+{
+	{
+		if ((markerType _x) isEqualTo "ExileSpawnZone") then {
+			_bambiSpawnPos pushBack (getMarkerPos _x);
+			if (_debug) then {diag_log format ["##FUMS (GetWorldInfo): Stage 1: Found spawn marker %1",_x];};
+		};
+	} forEach allMapMarkers;
+
+	if (_debug) then
+	{
+		diag_log format ["##FUMS (GetWorldInfo): Bambi List: %1",_bambiSpawnPos];
+	};
+	
+	if !(_bambiSpawnPos isEqualTo []) exitWith {};
+	
+	
+	if (_bambiSpawnPos isEqualTo []) then {
+		diag_log "##FUMS (GetWorldInfo): Could not automatically detect trader safezones.";
+	};
+};
+
+{
+	_oldX = _x select 0;
+	_oldY = _x select 1;
+	_newZone = [[_oldX - 500, _oldY + 500, 0],[_oldX + 500, _oldY - 500, 0]];
+	if (_debug) then
+	{
+		diag_log format ["##FUMS (GetWorldInfo): _newZone:%1",_newZone];
+	};
+	FuMS_BlackList append [_newZone];
+} forEach _traderCityPositions;
+
+{
+	_oldX = _x select 0;
+	_oldY = _x select 1;
+	_newZone = [[_oldX + 500, _oldY + 500, 0],[_oldX - 500, _oldY - 500, 0]];
+	if (_debug) then
+	{
+		diag_log format ["##FUMS (GetWorldInfo): _newZone:%1",_newZone];
+	};
+	FuMS_BlackList append [_newZone];
+} forEach _bambiSpawnPos;
+
+diag_log format ["##FUMS (GetWorldInfo): Map:%1 Center:%2 Size:%3",_worldname, FuMS_MapCenter, FuMS_MapRange];
+diag_log format ["##FUMS (GetWorldInfo): FuMS_BlackList:%1",FuMS_BlackList];
     
     

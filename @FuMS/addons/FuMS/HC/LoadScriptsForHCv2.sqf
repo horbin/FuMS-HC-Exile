@@ -72,8 +72,33 @@ _scripts =
 					"zJump.sqf",
 					"zombie.sqf"
 				]
+			],
+			[
+				"Group",
+				[
+					"GroupMonitor.sqf",
+					//"A3XAI_antistuck_air.sqf",
+					//"A3XAI_antistuck_aircustom.sqf",
+					//"A3XAI_antistuck_generic.sqf",
+					//"A3XAI_antistuck_land.sqf",
+					//"A3XAI_antistuck_uav.sqf",
+					//"A3XAI_antistuck_ugv.sqf",
+					//"A3XAI_checkAmmoFuel.sqf",
+					//"A3XAI_checkGroupUnits.sqf",
+					//"A3XAI_execEveryLoop_air.sqf",
+					//"A3XAI_execEveryLoop_infantry.sqf",
+					//"A3XAI_execEveryLoop_uav.sqf",
+					//"A3XAI_execEveryLoop_ugv.sqf",
+					//"A3XAI_execEveryLoop_vehicle.sqf",
+					//"A3XAI_generateGroupLoot.sqf",
+					//"A3XAI_generateLoadout.sqf",
+					//"A3XAI_generateLootOnDeath.sqf",
+					//"A3XAI_generateLootPool.sqf",
+					"GetAntistuckTime.sqf"
+					//"A3XAI_getLocalFunctions.sqf",
+					//"A3XAI_setLoadoutVariables.sqf"
+				]
 			]
-			
 		],
 		[
 			"RC",
