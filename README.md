@@ -4,6 +4,72 @@
 ###### Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
 
+v0.6
+****
+Playtesting Edition
+###### After many hours of playtesting, I have corrected a significant number of issues and added a ton of integration content.
+###### Enjoy
+
+System changes
+- Updated CAMS to 0.96
+	- Added support for Warfare Thai
+	- Added support for Unsung Vietnam
+	- Added support for Frith's Ruin
+	- Added support for Birds and Bees
+	- Added support for Ravage
+	- Added support for CUP Weapons
+	- Added support for CUP Vehicles
+	- Added support for CUP Uniforms (WIP)
+	- Added support for Extended Survival Pack
+	- Added support for NIARMS-AR15
+	- Added support for Foxcars
+	- Added support for Madmax
+	- Corrected Exile issues and added more content from mod
+	
+- MapReader system updated
+	- Automatically blacklists trader zones and bambi zones
+	- Can autodetect any map to find center and range
+	- Allows you to define your map including specific blacklist areas and default locations
+	- Added support for New York and Chernarus Redux
+	
+- New Mission(s) and changes
+	- Dynamic roadblocks (Cherno Redux)
+	- Cool Car Vehicle theft
+	- New AI classes and overhaul of AI settings
+	- Complete loot table overhaul
+	- Timers set to 30 minutes before clean up after a mission win
+	- PlayerWatch missions updated
+	- Added in a lot of randomization to things like mission times, number of men at random encounters, etc
+
+- Began porting in group functionalty from A3XAI to give groups finer control over actions
+	- No aggro area support
+
+	
+New Modules
+	- Map Immersion System
+		- System can swap out building on map for custom content buildings
+		- Allows you to retheme an existing map to utilize custom content
+		- Also allows you to correct map errors (Delete building at wrong height and put back at right height) 
+			- ex. ChernoRedux and the big blue door barn
+	- Asaayu's Abandoned Roads function added as option
+		- Populates server roads with junk to give map a war-torn look
+	- Time Xcellerator speeds up time 
+		- 4x between 6:00 AM to 6:00 PM
+		- 12x between 6:00 PM and 6:00 AM
+	- PLP Marker integration
+		- Mission's all support PLP markers by default
+		- Can be disabled with one setting
+
+Minor Changes
+	- Corrected unlimited ammo function to still require AI to reload
+		- This is more realistic and prevents ridiculous levels of supressive fire 
+	- Corrected addItem function to allow all AI loot to be added 
+	- Added debug opions to most major functions
+		- Generates additonal log file information to help troubleshoot
+	- Modified soldier AI logic to better balance the game
+	
+	
+
 v0.50d
 ****
 Developer's Edition

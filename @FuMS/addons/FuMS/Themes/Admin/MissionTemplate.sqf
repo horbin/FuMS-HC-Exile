@@ -379,7 +379,7 @@
 			//	["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ], 	// Trigger true if unit count for GUER side spawned on this mission exceeds 6 anywhere on the map (ex reinforcements show up)
 			//	["Detect",["Detected","ALL","ALL"] ],			// Trigger true if any vehicle or AI detects a player
 			["BodyCount",	["BodyCount",20] ],					// Trigger true if the player kills 20 AI
-			["Timer",		["TIMER", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds
+			["Timer",		["TimerNoPlayers", 1800] ],   		// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["TimerEvac", 	["TIMER", 1400] ] 					// Trigger true if the mission timer reaches 1400 seconds (Multiple timers possible)
 			//
 			//	Zuppa triggers can include multiple points

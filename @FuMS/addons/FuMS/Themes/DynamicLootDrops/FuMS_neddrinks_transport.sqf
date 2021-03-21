@@ -18,13 +18,13 @@
 
 [
 	["DrinkTruck", 100], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Drink Supply","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Drink Supply","plp_mark_civ_Bar","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",500, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -65,9 +65,9 @@
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   ["Loiter",	[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   ["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_E"]  ],   ["Explore",	[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_I"]  ],   ["Loiter",	[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_I"]  ],   ["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_I"]  ],   ["Explore",	[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	
@@ -79,7 +79,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
-			["Timer", 		["TimerNoPlayers", 		1200]],	//20 minutes
+			["Timer", 		["TimerNoPlayers", 		(round random [1000,1300,1200])]],	//20 minutes
 			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
 		],
 		[

@@ -19,13 +19,13 @@ _themeData =
     [  //***** Mission List *****
     //see Test Theme ThemeData.sqf for other options
         // The below missions MUST be in the same folder as this file! 
-		["RaidTown-S","Villages"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-S","Villages"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-S","Villages"],  // spawn at the specific location. If '0' take from locations below!
+		["RaidTown-S","Villages"],  // spawn at the specific location. If '0' take from locations below!
 		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
 		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
 		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
 		["RaidTown-M","Cities"],  	// spawn at the specific location. If '0' take from locations below!
-		["RaidTown-L","Capitals"],  	// spawn at the specific location. If '0' take from locations below!
+		["RaidTown-L","Capitals"],  // spawn at the specific location. If '0' take from locations below!
 		["RaidTown-L","Capitals"]  	// spawn at the specific location. If '0' take from locations below!
     ],
     [   //***** Locations *****

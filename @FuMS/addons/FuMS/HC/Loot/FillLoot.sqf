@@ -14,7 +14,12 @@ _pos = _this select 1;
 _themeIndex = _this select 2;
 _extraMoney = 1000;
 
-//diag_log format ["<FuMS> FillLoot: Launch parameters:  _lootOption:%1 | _pos:%2 | _themeIndex:%3",_lootOption,_pos,_themeIndex];
+_debug = false;
+
+if (_debug) then
+{
+	diag_log format ["<FuMS> FillLoot: Launch parameters:  _lootOption:%1 | _pos:%2 | _themeIndex:%3",_lootOption,_pos,_themeIndex];
+};
 
 
 if (((FuMS_THEMEDATA select _themeIndex) select 0) select 3) then

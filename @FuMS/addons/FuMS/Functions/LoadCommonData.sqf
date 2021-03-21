@@ -9,7 +9,7 @@ FuMS_BuildThemeMissionList = compile preprocessFileLineNumbers "\FuMS\Functions\
 
 private ["_themeNumber","_hold","_abort"];
 
-FuMS_Version = "vExile0.50";
+FuMS_Version = "vExile0.60";
 publicVariable "FuMS_Version";
 FuMS_HCIDs = [];
 FuMS_HCNames = [];
@@ -172,6 +172,10 @@ FuMS_FPSVariance = .3; // max 30% fps drop acceptable
 FuMS_GlobalLootOptions = (FuMS_ServerData select 6);
 FuMS_VehicleZeroAmmo = (FuMS_ServerData select 6) select 5;
 FuMS_UnMannedVehicles = (FuMS_ServerData select 5) select 5;
+FuMS_UsePLPMarkers = (FuMS_ServerData select 7) select 0;
+publicVariable "FuMS_UsePLPMarkers";
+FuMS_UseTimeXcell = (FuMS_ServerData select 7) select 1;
+FuMS_AddRoadClutter = (FuMS_ServerData select 7) select 2;
 
 _hold = []execVM "\FuMS\Themes\AdminData.sqf";
 waitUntil {ScriptDone _hold};

@@ -45,7 +45,7 @@
 		["Land_BagBunker_Tower_F",		[0,0],		0,		0]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"Rifleman_E"]           ],   ["BoxPatrol",[-6,-6],[0,0],[10]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [2,"Rifleman_E"]           ],   ["BoxPatrol",[-6,-6],[0,0],[20]     ]]
 	],
 
 	// Vehicles

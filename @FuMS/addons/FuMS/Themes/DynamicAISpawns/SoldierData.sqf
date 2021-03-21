@@ -12,6 +12,9 @@
 // Courge = .1 : affects unit's subordinates' morale.
 // ReloadSpeed = .1: affects delay between weapon switching and reloading
 // Commanding = .5 : how quickly recognized targets are shared with the AI's group.
+// General = 0.6 : This is an overall modifier to all other settings.  Let's you scale the skills up and down without 
+//			modifying all the other values.  
+
 
 // NOTE: AI FLAGS
 // FlagWater = true: spawning over water will default to a "Diver" configuration (Frog suit and Rebreather!)
@@ -21,7 +24,7 @@ _soldierData =
 [
 	[////////////////////////////////////////////////////////////////////////////
         "Bambi",
-		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
+		[.02, .5, .1, .3, .5, .1, .05, .1, .5],
         [ImFX_Uniform_Bambi,1], // Uniform
         [CAMS_V_Bandolliers,0], // Vest.
         [CAMS_H_Civ,.8], // Helmet
@@ -40,7 +43,7 @@ _soldierData =
 	],
     [///////////////////////////////////////////////
         "Sniper",
-		[.4, .6, .6, .6, .6, 1, .8, 1, .6], // Soldier skill levels
+		[.5, .7, .6, .6, .6, 1, .8, 1, .6], // Soldier skill levels
         [CAMS_U_Ghillie_I,1], // Uniform
         [CAMS_V_Vests,.5], // Vest.
         [CAMS_H_MilitaryCaps,.5], // Helmet.
@@ -59,7 +62,7 @@ _soldierData =
         // false = no special anti-vehicle weapons.
         // NOTE: controlling the deletion of this equipment upon AI death is controlled via settings in BaseServer.sqf
         [ 
-		  [[CAMS_E_Grenade,.25],[1,2]]                    
+		  [[CAMS_Grenade_ALL,.25],[1,2]]                    
 		], // Personal Gear [ "item", chance] [min, max]     
         // Crypto and Faction Rewards
         [
@@ -69,7 +72,7 @@ _soldierData =
     ],
 	[//////////////////////////////////////////////////////////////////
         "Rifleman",
-        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [.4, .6, .6, .7, .5, 0.9, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet
@@ -79,8 +82,8 @@ _soldierData =
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, ["LAND",0.1], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[CAMS_Smoke_ALL,.8],[2,3]],[[CAMS_Grenade_ALL,.3],[1,2]]    ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -94,13 +97,13 @@ _soldierData =
         ["V_BandollierB_blk",.8], // Vest.
         ["H_StrawHat",1], // Helmet
         [CAMS_Packs_All,.5], // Backpack and chance.
-        ["arifle_Mk20_F",1], // PriWeapon and chance
+        ["Exile_Weapon_AKS_Gold",1], // PriWeapon and chance
         [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        ["hgun_ACPC2_F",1], // Secondary Weapon and chance
+        ["Exile_Weapon_TaurusGold",1], // Secondary Weapon and chance
         [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 1, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, [false,0], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ false, true, ["AIR",0.2], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 200],
@@ -114,13 +117,13 @@ _soldierData =
         ["V_BandollierB_blk",.8], // Vest.
         ["H_Cap_blk",1], // Helmet
         [CAMS_Packs_All,.5], // Backpack and chance.
-        ["arifle_Mk20_F",1], // PriWeapon and chance
+        [CAMS_AssaultRifles_I,1], // PriWeapon and chance
         [ 1, 0 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         ["hgun_ACPC2_F",1], // Secondary Weapon and chance
         [ 1, 1, 0, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,.2], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[2,3]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 150],
@@ -140,7 +143,7 @@ _soldierData =
         [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 1, 0, .1 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
@@ -160,7 +163,7 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]            ],
+        [ [[CAMS_Smoke_ALL,.8],[1,1]]            ],
           // Crypto and Faction Rewards
         [
             ["RESPECT", 150],
@@ -180,7 +183,7 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.8],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -200,7 +203,7 @@ _soldierData =
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .1, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.3],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.3],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
@@ -220,7 +223,7 @@ _soldierData =
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .1, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.3],[1,1]]                ] ,
+        [ [[CAMS_Smoke_ALL,.3],[1,1]]                ] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", -50],

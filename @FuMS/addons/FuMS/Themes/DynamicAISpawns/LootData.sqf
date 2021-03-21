@@ -26,8 +26,8 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["Template", "box_nato_ammoveh_f","RANDOM"],
 		[// All weapons and quantity 
-			[CAMS_LMG_E, [2,0,1]],
-			[CAMS_AssaultRifles_E, [2,0,1]]
+			[CAMS_LMG_I, [2,0,1]],
+			[CAMS_AssaultRifles_I, [2,0,1]]
 		],
 		[// All magazines and quantity
 			[FuMS_AmmoForEach, [4,0,2]]    // 4 clips for each weapon Line defined above.
@@ -50,7 +50,7 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["SmallLoot", "Box_NATO_Wps_F"],  //
 		[// All weapons and quantity 
-			[CAMS_AssaultRifles_E, [2,0,1]]
+			[CAMS_AssaultRifles_I, [2,0,1]]
 		],
 		[// All magazines and quantity
 			[FuMS_AmmoForEach, [2,0,2]]    // 4 clips for each weapon Line defined above.
@@ -71,7 +71,7 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["SniperLoot", "box_exile_weapons_1v"],  //Box_NATO_Wps_F
 		[// All weapons and quantity 
-			[CAMS_SniperRifles_E,		[0,0,10]]	
+			[CAMS_SniperRifles_I,		[0,0,10]]	
 		],
 		[// All magazines and quantity
 			[FuMS_AmmoForEach,			[2,1,4]]

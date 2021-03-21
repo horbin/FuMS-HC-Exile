@@ -12,7 +12,7 @@
 			true, "ALL", 700,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			false, 		// Notify players via global message
 			false,		// Show encounter area on the map
-			600,    	// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    	// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			30       	// Lose delay: Time in seconds after a lose before mission cleanup is performed
 						//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],	
@@ -38,8 +38,8 @@
 	 // ["CamoNet_INDP_open_F",[0,0],0,0]  //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter_E"],[1,"LMG_E"] ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[155]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [4,"Hunter_E"],[1,"LMG_E"] ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[75]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Hunter_E"],[1,"SMG_E"] ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[155]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [4,"Hunter_E"],[1,"SMG_E"] ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[75]     ]]
 	],
 	 // Vehicles
 	[				 

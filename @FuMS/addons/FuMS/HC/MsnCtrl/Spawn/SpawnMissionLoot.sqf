@@ -25,6 +25,13 @@ _generation = _lineage select 1;
 _offspringID = _lineage select 2;
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
+_debugSpawnMiss = false;
+
+if (_debugSpawnMiss) then
+{
+	diag_log format ["##SPAWNMISSION: Launch: msnTag: %1",_msnTag];
+};
+
 _lootIsVehicle = false;
 
 if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
@@ -158,7 +165,7 @@ if (!isNil "_lootConfig") then  // if no loot data then no loot for mission!
 			
 			if (typeName (_x select 1) == "ARRAY") then
 			//_isArray = (_x select 1) isEqualType [];
-			if (_isArray) then
+			//if (_isArray) then
 
 			{
 				_pickLootPos = selectRandom (_x select 1);

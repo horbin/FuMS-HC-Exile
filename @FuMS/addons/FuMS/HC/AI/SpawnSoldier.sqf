@@ -17,14 +17,20 @@ _pos = _this select 2;
 _themeIndex = _this select 3;
 
 _randomMag = true;
-_debug = false;
+_debugSpawnSoldier = false;
 
 _AImodel = missionNamespace getVariable ["ImFX_AiModel_E",["O_G_Soldier_F"]] select 0;
-_rockAT = missionNamespace getVariable ["CAMS_AT_E",["launch_RPG32_F"]];
-_rockAA = missionNamespace getVariable ["CAMS_AA_E",["launch_RPG32_F"]];
+//_rockAT = missionNamespace getVariable ["CAMS_AT_E",["launch_RPG32_F"]];
+//_rockAA = missionNamespace getVariable ["CAMS_AA_E",["launch_RPG32_F"]];
+
+_rockAT = "Launch64mm_RPG18";
+_rockAA = "Launch72mm_9K38";
 
 
-//diag_log format ["<FuMS:%2> SpawnSoldier: AIModel: %1",_AImodel,FuMS_Version];
+if (_debugSpawnSoldier) then
+{
+	diag_log format ["<FuMS:%2> SpawnSoldier: AIModel: %1",_AImodel,FuMS_Version];
+};
 
 
 if (((FuMS_THEMEDATA select _themeIndex) select 0) select 4) then
@@ -40,7 +46,7 @@ if (isNil "_soldierData") exitWith
     diag_log format ["Check options in ThemeData.sqf for theme %1",((FuMS_THEMEDATA select _themeIndex) select 0) select 0];
 };
 
-if (_debug) then
+if (_debugSpawnSoldier) then
 {
 	diag_log format ["<FuMS:%3> SpawnSoldier: Index:%2 _soldierData:%1",_soldierData,_themeIndex,FuMS_Version];
 };
@@ -48,7 +54,7 @@ _typeFound = false;
 // locate the data for 'type' soldier.
 {
     _aiName = toupper (_x select 0);  // type name
-	if (_debug) then
+	if (_debugSpawnSoldier) then
 	{
 		diag_log format ["<FuMS:%3> SpawnSoldier: _aiName:%1 _type:%2",_type,_aiName,FuMS_Version];
 	};
@@ -81,6 +87,7 @@ _typeFound = false;
 				if (!FuMS_ZnDs) then {_zombie = _AImodel;};
                 _unit = _group createUnit[_zombie call Bis_fnc_selectRandom, _pos, [], 25, "NONE"];    // swap when skins available    
                 _unit setVariable ["FuMS_RyanZombieType", "ZOMBIE"];
+				//[_unit] call FuMS_Zombie;
             };
              case "ZOMBIESOLDIER":
             {               
@@ -88,6 +95,8 @@ _typeFound = false;
 				if (!FuMS_ZnDs) then {_zombieSoldier = _AImodel;};
                 _unit = _group createUnit[_zombieSoldier call Bis_fnc_selectRandom, _pos, [], 25, "NONE"];    // swap when skins available    
                 _unit setVariable ["FuMS_RyanZombieType", "ZOMBIESOLDIER"];
+				//[_unit] call FuMS_Zombie;
+				
             };
             case "ZOMBIESPIDER":
             {
@@ -95,6 +104,8 @@ _typeFound = false;
 				if (!FuMS_ZnDs) then {_zombieSpider = _AImodel;};
                 _unit = _group createUnit[_zombieSpider call Bis_fnc_selectRandom, _pos, [], 25, "NONE"];    // swap when skins available    
                 _unit setVariable ["FuMS_RyanZombieType", "ZOMBIESPIDER"];
+				//[_unit] call FuMS_Zombie;
+				
             };
             case "ZOMBIEBOSS":
             {
@@ -102,6 +113,8 @@ _typeFound = false;
 				if (!FuMS_ZnDs) then {_zombieBoss = _AImodel;};
                 _unit = _group createUnit[_zombieBoss call Bis_fnc_selectRandom, _pos, [], 25, "NONE"];    // swap when skins available    
                 _unit setVariable ["FuMS_RyanZombieType", "ZOMBIEBOSS"];
+				//[_unit] call FuMS_Zombie;
+				
             };
             default
             {
@@ -109,7 +122,7 @@ _typeFound = false;
                 _unit = _group createUnit[_AImodel, _pos, [], 5, "FORM"];
 				_unit setDir (round random 360);
 				[_unit] join _group;
-				if (_debug) then
+				if (_debugSpawnSoldier) then
 				{
 					diag_log format ["<FuMS> SpawnSoldier: group: %1 | group side:%2 | unit side:%3",_group,(side _group),(side _unit)];
 				};
@@ -130,7 +143,7 @@ _typeFound = false;
                 _gear = [_x select 5] call FuMS_fnc_HC_Loot_GetChoice;if (_gear != "") then {_unit addBackpack _gear;};
                 // Rifle
                 _gear = [_x select 6] call FuMS_fnc_HC_Loot_GetChoice;
-				if (_debug) then
+				if (_debugSpawnSoldier) then
 				{
 					diag_log format ["##SpawnSoldier: Rifle-gear:%1",_gear];
 				};
@@ -139,6 +152,10 @@ _typeFound = false;
                 {
                     _priweapon = _gear select 0;
                     _unit addWeapon _priweapon;
+				    _name = format["%1 (%2)",_aiName,_priweapon];
+
+					_unit setName _name;
+
                     _mag = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines") select 0;
                     _magAll = getArray (configFile >> "CfgWeapons" >> _priweapon >> "magazines");
                     
@@ -150,7 +167,7 @@ _typeFound = false;
 						//_mag = _magAll select 0;
 					};
 
-                    if (_debug) then
+                    if (_debugSpawnSoldier) then
 					{
 						diag_log format ["<FuMS> SpawnSoldier: %1 with %2 has ammo %3",_unit,_priweapon,_mag];
 						diag_log format ["<FuMS: SpawnSoldier: Magazines found: %1 | Count:%2",_magAll,count _magAll];
@@ -173,7 +190,7 @@ _typeFound = false;
 							//_mag = _magAll select 0;
 						};
 
-						if (_debug) then
+						if (_debugSpawnSoldier) then
 						{
 							diag_log format ["<FuMS> SpawnSoldier: %1 with %2 has ammo %3",_unit,_priweapon,_mag];
 							diag_log format ["<FuMS: SpawnSoldier: Magazines found: %1 | Count:%2",_magAll,count _magAll];
@@ -279,6 +296,7 @@ _typeFound = false;
                         };
                     };
                     // give them unlimited ammo!
+					/*
                     if (_flags select 1) then
                     {
                         _unit addeventhandler ["fired",
@@ -287,10 +305,24 @@ _typeFound = false;
                             _gunDevice setvehicleammo 1;
                         }];
                     };
+					*/
+					
+                    if (_flags select 1) then
+                    {
+                        _unit addeventhandler ["Reloaded",
+                        {
+							params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+							//diag_log format ["RELOADED: _unit :%1 | _weapon :%2 | _muzzle :%3 | _newMagazine :%4 | _oldMagazine :%5",_unit, _weapon, _muzzle, _newMagazine, _oldMagazine];
+							_unit addMagazines [ (_newMagazine select 0), 1];
+                        }];
+                    };					
+					
+					
+					
                     // give them some RPG's!
                     _rpgData = _flags select 2;
 					_rpg = _rpgData select 0;
-					if (_debug) then
+					if (_debugSpawnSoldier) then
 					{
 						diag_log format ["<FuMS: SpawnSoldier: RPG data: %1 | _rpg:%2",_rpgData,_rpg];
 					};
@@ -300,9 +332,9 @@ _typeFound = false;
 						if ([_rpgData select 1] call FuMS_fnc_HC_Loot_AddIt) then 						
 						{
 							private ["_launcher","_ammo1","_ammo2"];
-							_launcher = "none";
-							_ammo1 = "none";
-							_ammo2 = "none";
+							_launcher = "NONE";
+							_ammo1 = "NONE";
+							_ammo2 = "NONE";
 
 							if (TypeName _rpg == "BOOL") then
 							{
@@ -321,28 +353,28 @@ _typeFound = false;
 								};
 								if (toupper _rpg == "LAND") then
 								{
-									_launcher = _rockAT call BIS_fnc_selectRandom;
-									if (_debug) then
+									_launcher = _rockAT;// call BIS_fnc_selectRandom;
+									if (_debugSpawnSoldier) then
 									{
 										diag_log format ["<FuMS: SpawnSoldier: (LAND)RPG picked: %1",_launcher];
 									};
 								}else
 								{
-									_launcher = _rockAA call BIS_fnc_selectRandom;
-									if (_debug) then
+									_launcher = _rockAA;// call BIS_fnc_selectRandom;
+									if (_debugSpawnSoldier) then
 									{
 										diag_log format ["<FuMS: SpawnSoldier: (AIR)RPG picked: %1",_launcher];
 									};
 								};                
 							};
-							if !(_launcher == "none") then
+							if !(toupper _launcher == "NONE") then
 							{
 								_unit addWeapon _launcher;   
 								_ammo = getArray (configFile >> "CfgWeapons" >> _launcher >> "magazines");
 								_unit addMagazines [_ammo call BIS_fnc_selectRandom , 1];
 								_unit addMagazines [_ammo call BIS_fnc_selectRandom , 1];
 
-								if (_debug) then
+								if (_debugSpawnSoldier) then
 								{
 									diag_log format ["<FuMS: SpawnSoldier: RPG added: %1 | _ammo:%2",_launcher,_ammo];
 								};
@@ -397,7 +429,7 @@ _typeFound = false;
         //diag_log format ["##SpawnSoldier: Other Equipment:%1",_gear];
         {  
             private ["_item","_variance","_min","_numitems"];
-            //   diag_log format ["##SpawnSoldier: Attempting to add %1", _x];
+            //diag_log format ["##SpawnSoldier: Attempting to add %1", _x];
             _item = [_x select 0] call FuMS_fnc_HC_Loot_GetChoice;
             if (_item != "") then 
              {
@@ -405,7 +437,8 @@ _typeFound = false;
                  _min = _variance select 0;
                  _numItems = _min + floor (random ( (_variance select 1)-_min) );
                  //diag_log format ["##SpawnSoldier: Adding %1 %2",_numItems, _item];
-                 _unit addMagazines [ _item, _numItems];
+				 for [{ _i = 0 }, { _i < _numItems }, { _i = _i + 1 }] do { _unit addItem _item }; 
+                 //_unit addItem [ _item, _numItems];
              };
         }foreach _gear;
         

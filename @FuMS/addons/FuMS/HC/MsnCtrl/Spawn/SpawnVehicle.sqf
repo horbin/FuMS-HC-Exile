@@ -21,9 +21,17 @@ _offspringID = _lineage select 2;
 
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
+_debugSV = false;
+
 _returnval =[_groups, _totalvehicles];
 _abort = false;
 _msg = "";
+
+if (_debugSV) then
+{
+	diag_log format ["SpawnVehicle Launch: Mission: %1",_msnTag];
+};
+
 if (!_abort) then
 {
     { 
@@ -31,6 +39,11 @@ if (!_abort) then
         private ["_numVeh","_ebk","_vehType","_vehLoc","_vehLoot","_numDriverGroups","_driverBehaviour","_driverTypes","_driverOptions","_vehCrew",
         "_numTroopGroups","_troopBehaviour","_troopTypes","_troopOptions","_vehicles","_vehDamage"];  
         _convoy = _x;
+		if (_debugSV) then
+		{
+			diag_log format ["<FuMS> SpawnVehicle Start: %1", _x];
+		};
+
         _vehdat = _convoy select 0; // vehicle definitions block
         _driverdat = _convoy select 1;  // driver def block
         _troopdat = _convoy select 2; // troop def block
@@ -60,7 +73,10 @@ if (!_abort) then
             _vehLoc set [_numVeh, _x select 1];
             _vehCrew set [_numVeh, _x select 2];
             _vehLoot set [_numVeh, _x select 3];	
-           // diag_log format ["<FuMS> SpawnVehicle: %1:%2 ",count _x, _x];
+			if (_debugSV) then
+			{
+				diag_log format ["<FuMS> SpawnVehicle: %1:%2 ",count _x, _x];
+			};
             if (count _x > 4) then
             {
                 _vehDamage set [_numVeh, _x select 4];
@@ -98,7 +114,10 @@ if (!_abort) then
         //attempt to create drivers before vehicles to see if this fixes issue!
         _silentCheckIn = (((FuMS_THEMEDATA select _themeIndex) select 3) select 0) select 1;
         _driverGroup = [_driverdat, _eCenter, _encounterSize, [_themeIndex,_generation,_offspringID],_silentCheckIn, _missionName] call FuMS_fnc_HC_MsnCtrl_Spawn_SpawnGroup;   
-		//diag_log format ["<FuMS:%1 SpawnVehicle: _driverGroup:%2",FuMS_Version,_driverGroup];		
+		if (_debugSV) then
+		{
+			diag_log format ["<FuMS:%1 SpawnVehicle: _driverGroup:%2",FuMS_Version,_driverGroup];		
+		};
         
         
         for [{_i=0},{_i < _numDriverGroups},{_i=_i+1}] do
@@ -124,15 +143,23 @@ if (!_abort) then
             _driver = "none";
             if (_i < _numdrivers) then {_driver = _driverIndividual select _i;};
             _data = [_pos, _driver, _vehType select _i] call FuMS_fnc_HC_MsnCtrl_Util_GetSafeSpawnVehPos;	
-            diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: mission:%5, pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data,_missionName];
-            _veh = [ _vehType select _i, _data select 0, [], 0 , _data select 1] call FuMS_fnc_HC_Util_HC_CreateVehicle;	
+			if (_debugSV) then
+			{
+				diag_log format ["<FuMS> SpawnVehicle: Creating a Vehicle: mission:%5, pos:%1, driver:%2, type:%3 data:%4",_pos, _driver, _vehType select _i,_data,_missionName];
+            };
+			_veh = [ _vehType select _i, _data select 0, [], 0 , _data select 1] call FuMS_fnc_HC_Util_HC_CreateVehicle;	
             _veh setVariable ["FuMS_LINEAGE",_msnTag, false];
+			_veh setVariable ["FuMS_HOMEPOS", getpos _veh, true];
+
 			{_veh deleteVehicleCrew _x} forEach crew _veh;
 			_veh setUnloadInCombat [true, true];
             
             if (_veh iskindof "StaticWeapon") then
             {
-             //   diag_log format ["<FuMS:%1 SpawnVehicle: Setting staticWeapon %2 to face %3",FuMS_Version,_veh,(_vehCrew select _i) select 0];
+				if (_debugSV) then
+				{
+					diag_log format ["<FuMS:%1 SpawnVehicle: Setting staticWeapon %2 to face %3",FuMS_Version,_veh,(_vehCrew select _i) select 0];
+				};
                 _veh setDir ((_vehCrew select _i) select 0);
             };
             // install its loot if any!
@@ -142,7 +169,10 @@ if (!_abort) then
                 _veh = [_loot, _veh, _themeIndex] call FuMS_fnc_HC_Loot_FillLoot;
             };
             _damage = _vehDamage select _i;
-           // diag_log format ["<FuMS> SpawnVehicle: damage options:%1",_damage];
+			if (_debugSV) then
+			{
+				diag_log format ["<FuMS> SpawnVehicle: damage options:%1",_damage];
+			};
             if (count _damage > 0) then
             {                
                 _var = _damage select 0; 
@@ -170,10 +200,22 @@ if (!_abort) then
             _drivers = _drivers + units _x;
             _groups = _groups + [_x];
         }foreach _driverGroup;
-              
+            
+		if (_debugSV) then
+		{
+			diag_log format ["<FuMS> SpawnVehicle: _driverGroup: %1",_driverGroup];
+
+			diag_log format ["<FuMS> SpawnVehicle: _vehicles: %1",_vehicles];
+		};
+
+			
         for [{_i=0},{_i < count _drivers},{_i=_i+1}] do
         { 
             private ["_var"];
+			if (_debugSV) then
+			{
+				diag_log format ["##SV: -i: %1",_i];
+			};
             if ((_vehicles select _i) isKindOf "StaticWeapon") then
             {
                 (_drivers select _i) moveinGunner (_vehicles select _i);

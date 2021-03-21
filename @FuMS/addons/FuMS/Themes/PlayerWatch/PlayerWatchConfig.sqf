@@ -49,15 +49,15 @@ FuMS_PlayerWatch_Configuration =
 	],
 		// Player in Own Territory (defined at max range)
 	[
-	     "neutrals"  // 50/50 chance of nothing or 'neutrals' mission
+	     "helodrop"  // 50/50 chance of nothing or 'neutrals' mission
 	],
 		// Player in someone else's Territory (defined at max range)
 	[
-	     "helodrop","neutrals"
+	     "helodrop","chaseCar"
 	],
 		// Player in Air vehicle
 	[
-		"chaseHelo","smallband"
+		"chaseHelo"
 	],	
 		// Player in Land vehicle
 	[
@@ -69,23 +69,24 @@ FuMS_PlayerWatch_Configuration =
 	],
 		// Player is in Water
 	[
-	    "divers","chaseHelo"
+	    "attackBoat","divers","chaseHelo"
 	],
 		// Player is in spawn zone (hard coded to 325m from all exile defined spawning locations)
 	[
+		"NONE"
 		//"zombies"
 	],
 		// Player near a town (more than 7 buildings within 50m of the player)
 	[
-		"smallband","gunfight"//,"zombies"
+		"smallband","gunfight","chasecar"//,"zombies"
 	],
 		// Player near roads (at least 1 road within 10m of the player)
 	[
-		"smallband"//,	"zombies",	
+		"smallband","chasecar"//,	"zombies",	
 	],
 		//Player doesn't meet any of the above requirements
 	[
-		"gunfight"//,"zombies"
+		"helodrop","gunfight"//,"zombies"
 	]
 ];
 

@@ -7,7 +7,7 @@
 
 [
 	["Captive", 200, "LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Captives","mil_dot", "ELLIPSE","ColorYellow","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Captives","hd_objective", "ELLIPSE","ColorYellow","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL" ,1000,
@@ -56,7 +56,7 @@
  		]
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "BoxPatrol",[0,0], [0,0],[25] ]],
+		[["EAST", "AWARE", "RED", "COLUMN"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "BoxPatrol",[0,0], [0,0],[50] ]],
 							// GROUP 0 - Spawns 4 AI into a 25m box patrol around the building
 		[["EAST","COMBAT","RED","LINE"],[[1,"Sniper_E"],[3,"Rifleman_E"]],[  "TowerGuard",[0,0], [0,0],[150,"ANY"] ]],
 							// GROUP 1 - Spawns 4 AI will spawn into the specified building using TOWERGUARD logic.
@@ -104,7 +104,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TIMER", 1800] ],
+			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["LUCNT",		["LowUnitCount","EAST",5,250,[0,0]]  ],		// Triggers call for reinforcements
 			//["LowCivs",		["LowUnitCount","RESISTANCE",6,250,[0,0]]  ],		// Triggers call for reinforcements
 			["Captive1", 	["Captive", 7]  ]

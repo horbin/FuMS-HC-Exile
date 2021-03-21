@@ -19,13 +19,13 @@
 
 [
 	["CashBandit", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Cash Bandits","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Cash Bandits","plp_mark_civ_casino","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -50,9 +50,9 @@
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		[
-			["PopTabLoot" , 	[-2,-2] ],
-			["PopTabLoot" , 	[2,-2] ],
-			["PopTabLoot" , 	[2,2] ]
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ],
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ],
+			["PopTabLoot" , 	[((round random 20)-10),((round random 20)-10)] ]
 
 		], // Win loot, offset location - spawns after mission success
 		["None" , 		[0,0] ]  // Failure loot, offset location - spawns on mission failure
@@ -70,9 +70,9 @@
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG_E"]  ],   	["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_E"]  ],	["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter_E"]  ],   ["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG_I"]  ],   	["Loiter",		[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_I"]  ],	["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter_I"]  ],   ["Explore",		[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	

@@ -13,8 +13,8 @@
 		false, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		false,				// Show encounter area on the map
-		0,    				// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		0       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		900,    				// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		900       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 	// Spawn Mission Message
@@ -48,8 +48,8 @@
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]                                         ],   ["Guard",[-20,10],[0,0],[70] ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[25]     ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Diver"]           ],     ["BoxPatrol",[0,0],[0,0],[15]     ]],
-		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivCombat"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]],
-		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivNoGun"]           ],     ["BoxPatrol",[0,0],[0,0],[5]     ]]
+		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivNoGun"]           ],     ["Explore",[200,200],[0,0],[25]     ]],
+		[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"CivNoGun"]           ],     ["Buildings",[-200,200],[0,0],[25]     ]]
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[150]     ]],
 		//[["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["BoxPatrol",[-6,-6],[0,0],[0]     ]]
 	],

@@ -1,4 +1,4 @@
-//SmallBand.sqf
+// SmallBand.sqf
 // Horbin
 // 12/31/14
 // Based upon drsubo Mission Scripts
@@ -11,24 +11,27 @@
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, 1,0,
-		true, // Notify players via global message
-		false,// Show encounter area on the map
-		30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
-		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
-			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
+		true, 		// Notify players via global message
+		false,		// Show encounter area on the map
+		900,    	// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30       	// Lose delay: Time in seconds after a lose before mission cleanup is performed
+					//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
-		[   "Shhh...",
-			 "What was that?"
-		 ],
+		[   
+			"Shhh...",
+			"What was that?"
+		],
 		
 		// Mission Success Message
-		[   "Got em'",
-			 "Last time they'll sneak up on you I guess."
+		[   
+			"Got em'",
+			"Last time they'll sneak up on you I guess."
 		],
 	  
 		// Mission Failure Message
-		[  "",
+		[  
+			"",
 			"I guess it was nothing..."
 		] 
 	],
@@ -44,7 +47,7 @@
 
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_E"]           ],   ["Explore",[50,50],[0,0],[0]     ]]
+		[["EAST","COMBAT","RED","VEE"],   [  [(ceil random 4),"Rifleman_I"]           ],   ["Explore",[(floor random [100,120,130]),(floor random [10,120,130])],[0,0],[50]     ]]
 	],
 
 	// Vehicles

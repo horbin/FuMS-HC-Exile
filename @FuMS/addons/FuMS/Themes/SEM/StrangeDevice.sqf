@@ -6,15 +6,15 @@
 
 [
 	["StrangeDevice", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Strange Device","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Strange Device","plp_mark_as_biohazard","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL",700, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		90      			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30      			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],	
 	[// Spawn Mission Message
@@ -40,6 +40,9 @@
 		["Land_Device_disassembled_F",[6,6],(round random 360),1]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper_I"]           ],     	["Explore",[6,-6],[10,10],[10]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_I"],[1,"SMG_I"] ],   ["Explore",[7,7],[0,0],[20]     ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman_I"]           ],   	["BoxPatrol",[-6,-6],[0,0],[30]     ]]
 	],
 
 	// Vehicles
@@ -58,7 +61,7 @@
 			//["LUCNT",["LowUnitCount","EAST",1,0,[0,0]]  ],
 			["LaunchGuards",	["ProxPlayer",[0,0], 700, 1]],				// Player must be near event center to count as win
 			["DeviceDestroyed",["DmgBuildings","0",1.0] ],
-			["Timer",["TIMER", 1900] ]
+			["Timer",			["TimerNoPlayers", (random [1200, 2000, 1800]) ] ]   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 		],
 		[
 		  // Define what actions should occur when above trigger logics evaluate to true

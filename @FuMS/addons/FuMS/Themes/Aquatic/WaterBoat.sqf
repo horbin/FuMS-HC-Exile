@@ -1,4 +1,4 @@
-//WaterMission.sqf
+//WaterBoat.sqf
 // Horbin
 // 2/26/15
 // Updated by TheOneWhoKnocks
@@ -6,8 +6,8 @@
 // Based upon drsubo Mission Scripts
 
 [
-	["WaterMission", 100,"WATER"], 										// Mission Title NOSPACES!, and encounter radius
-	["Ship Wreck","c_ship","ELLIPSE","ColorBlue","FDiagonal",200],    	// Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["WaterBoat", 100,"WATER"], 										// Mission Title NOSPACES!, and encounter radius
+	["Boat Wreck","c_ship","ELLIPSE","ColorBlue","FDiagonal",200],    	// Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 																		// type is "mil_objective"
 	[  
 		[																// NOTIFICATION Messages and Map display Control.

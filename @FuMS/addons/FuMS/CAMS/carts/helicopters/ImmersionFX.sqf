@@ -1,4 +1,5 @@
 // ImmersionFX.sqf
+// Helicopters file
 // TheOneWhoKnocks
 // Overwrites the global variables used by FrSB to integrate crstom content into system
 
@@ -13,7 +14,7 @@ private ["_immersionData","_cartName","_debugCart"];
 ///////////////////////////////////////////////////
 // CART config ////////////////////////////////////
 ///////////////////////////////////////////////////
-_cartName = "apex";
+_cartName = "helicopters";
 _debugCart = false;
 
 _immersionData = 

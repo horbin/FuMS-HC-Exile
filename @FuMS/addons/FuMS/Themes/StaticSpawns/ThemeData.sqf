@@ -27,10 +27,19 @@ _themeData =
     [  	//***** Mission List *****
 		// List of Missions. 
         // The below missions MUST be in the same folder as this file!            
-		["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],
-		["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],
-		["LootcratesW"], ["LootcratesW"], ["LootcratesW"], 
-		["LootcratesE"], ["LootcratesE"], ["LootcratesE"] 
+		//["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],["DayZHeloCrashW"],
+		//["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],["DayZHeloCrashE"],
+		["DayZHeloCrashI"],["DayZHeloCrashI"],["DayZHeloCrashI"],["DayZHeloCrashI"],["DayZHeloCrashI"],
+		
+		//["LootcratesW"], ["LootcratesW"], ["LootcratesW"], 
+		//["LootcratesE"], ["LootcratesE"], ["LootcratesE"] ,
+		["LootcratesI"], ["LootcratesI"], ["LootcratesI"],
+
+		
+		// To use this mission, you must ensure you populate the ImFX_Land_LootCar array, or this will show an error
+		//["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"],
+
+		["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"],["LootVics","Cities"]
 		 
     ],
     [   //	***** Locations ***** !! 2D coords ONLY !!

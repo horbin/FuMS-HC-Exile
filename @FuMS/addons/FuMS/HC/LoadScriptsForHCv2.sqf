@@ -12,12 +12,14 @@ _start = time;
 //Use to find PLP markers
 FuMS_ZnDs = isClass(configFile>>"cfgPatches">>"Ryanzombies");
 diag_log format ["<FuMS> LoadScriptsForHC : Ryan's Zombies and Demons = %1", FuMS_ZnDs];
-//if (_ryansZnDs) then
-//{
-//	FuMS_Zombie = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
-//	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombiespider.sqf";
-//	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombieboss.sqf";
-//};
+if (FuMS_ZnDs) then
+{
+	FuMS_Zombie = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	diag_log format ["<FuMS> LoadScriptsForHC : Ryan's Zombies and Demons SCRIPT %1", FuMS_Zombie];
+	
+};
 
 //HC Root
 _scripts =
@@ -37,27 +39,29 @@ _scripts =
 		[
 			"Logic",
 			[
-				"AIEvac.sqf",
-				"DriverXFill.sqf",
-				"fnparadrop.sqf",
 				"AddWaypoint.sqf", 
-				"VehStuck.sqf",
+				"AIEvac.sqf",
 				"AIGuardBuilding.sqf", 
 				"AIPB.sqf", 
 				"AreaPatrol.sqf", 
 				"BoxPatrol.sqf", 
+				"Captured.sqf",				
+				"Convoy.sqf", 
+				"DriverXFill.sqf",
+				"fnparadrop.sqf",
+				"HuntPlayer.sqf",
 				"Loiter.sqf",
 				"Paradrop.sqf", 
-				"PolygonPatrol.sqf", 
-				"Convoy.sqf", 
 				"PatrolRoute.sqf", 
+				"PolygonPatrol.sqf", 
+				"SADRoute.sqf",
 				"ScriptPatrol.sqf",
-				"TrackRoute.sqf",
 				"TowerGuard.sqf",
+				"TrackRoute.sqf",
 				"StaticGunner.sqf",
-				"Captured.sqf"					
-			]
-			/*
+				"VehStuck.sqf"
+			],
+			
 			[
 				"RZnD",
 				[
@@ -71,7 +75,6 @@ _scripts =
 					"zombie.sqf"
 				]
 			]
-			*/
 		],
 		[
 			"RC",
@@ -82,7 +85,38 @@ _scripts =
 				"AIRadio.sqf", 
 				"BaseOps.sqf"
 			]
-		]	
+		],
+		[
+			"Group",
+			[
+				"checkInNoAggroArea.sqf",
+				"groupMonitor.sqf",
+				"forceBehavior.sqf",
+				"noAggroAreaToggle.sqf",
+				"getLocalFunctions.sqf",
+				"setNoAggroStatus.sqf",
+				//"A3XAI_antistuck_air.sqf",
+				//"A3XAI_antistuck_aircustom.sqf",
+				//"A3XAI_antistuck_generic.sqf",
+				//"A3XAI_antistuck_land.sqf",
+				//"A3XAI_antistuck_uav.sqf",
+				//"A3XAI_antistuck_ugv.sqf",
+				//"A3XAI_checkAmmoFuel.sqf",
+				//"A3XAI_checkGroupUnits.sqf",
+				//"A3XAI_execEveryLoop_air.sqf",
+				"execEveryLoop_infantry.sqf",
+				//"A3XAI_execEveryLoop_uav.sqf",
+				//"A3XAI_execEveryLoop_ugv.sqf",
+				//"A3XAI_execEveryLoop_vehicle.sqf",
+				//"A3XAI_generateGroupLoot.sqf",
+				//"A3XAI_generateLoadout.sqf",
+				//"A3XAI_generateLootOnDeath.sqf",
+				//"A3XAI_generateLootPool.sqf",
+				"getAntistuckTime.sqf"
+				//"getLocalFunctions.sqf"
+				//"A3XAI_setLoadoutVariables.sqf"
+			]
+		]
 	],
 	[
 		"Loot",
@@ -173,6 +207,7 @@ _scripts =
 	[
 		"Util",
 		[
+			"paramCheck.sqf",
 			"FindNearestLand.sqf", 
 			"FindNearestRoad.sqf", 
 			"FindNearestWater.sqf", 

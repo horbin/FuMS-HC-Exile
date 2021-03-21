@@ -18,13 +18,13 @@
 
 [
 	["BambiSlide", 200], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Bambis Playing","hd_objective","ELLIPSE","ColorBlue","Cross",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Bambis Playing","plp_mark_civc_playground","ELLIPSE","ColorBlue","Cross",100],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -45,7 +45,7 @@
 			"The Bambis stopped playing on the slide and moved on with their lives!"
 		] 
 	],
-	[  																		//  Loot Config:  Refer to LootData.sqf for specifics																		
+	[  	//  Loot Config:  Refer to LootData.sqf for specifics																		
 
 		["None" , 		[5,5] ], //[static loot, offset location] - spawns with the mission
 		["BambiLoot" , 	[5,5] ], // Win loot, offset location - spawns after mission success
@@ -63,9 +63,9 @@
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        	0]
-		["Land_Slide_F",			[-3,-2],				(round random 360),	0],
-		["Land_Slide_F",			[3,2],					(round random 360),	0],
-		["Land_Slide_F",			[4,6],					(round random 360),	0]		
+		["Land_Slide_F",			[-4,-3],				(round random 360),	0],
+		["Land_Slide_F",			[4,3],					(round random 360),	0],
+		["Land_Slide_F",			[5,7],					(round random 360),	0]		
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.

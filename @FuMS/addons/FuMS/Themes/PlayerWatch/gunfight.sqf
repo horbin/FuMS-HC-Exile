@@ -11,11 +11,11 @@
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, 1,0,
-		true, // Notify players via global message
-		false,// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
-		300       // Lose delay: Time in seconds after a lose before mission cleanup is performed
-			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
+		true, 		// Notify players via global message
+		false,		// Show encounter area on the map
+		600,    	// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		300       	// Lose delay: Time in seconds after a lose before mission cleanup is performed
+					//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
 		[   
@@ -25,14 +25,14 @@
 		
 		// Mission Success Message
 		[   
-			"",
-			""
+			"Gunfight over",
+			"Both sides were taken out"
 		],
 	  
 		// Mission Failure Message
 		[  
-			"",
-			""
+			"Gunfight over",
+			"That settles that."
 		] 
 	],
 	[  //  Loot Config:  Refer to LootData.sqf for specifcs
@@ -47,8 +47,8 @@
 
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 		//[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [3,"Pistolman_E"]           ],   ["Explore",[75,75],[0,0],[0]     ]],
-		[["WEST","COMBAT","RED","LINE"],   [  [3,"Pistolman_W"]           ],   ["Explore",[-75,-75],[0,0],[0]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [(ceil random 3),"Pistolman_E"]           ],   ["Explore",[175,75],[0,0],[0]     ]],
+		[["WEST","COMBAT","RED","LINE"],   [  [(ceil random 3),"Pistolman_W"]           ],   ["Explore",[-75,-175],[0,0],[0]     ]]
 	],
 
 	// Vehicles

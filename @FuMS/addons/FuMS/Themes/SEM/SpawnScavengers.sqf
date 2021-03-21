@@ -15,7 +15,7 @@
 			true, "ALL", 700, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			false, 				// Notify players via global toast message
 			false,				// Show encounter area on the map
-			30,    				// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    				// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 								// NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -48,9 +48,9 @@
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
 		//[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   			["Loiter",		[-13,-13],	[-13,-13],	[10] ]],
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],	["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]],
-		[["EAST","CARELESS","YELLOW","LINE"], 	[  [2,"Rifleman_I"],[2,"LMG_I"] ],	["EXPLORE",[((round random 50)-100),((round random 50)-100)],[((round random 50)-100),((round random 50)-100)],[50]     ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_I"]           	],	["BOXPATROL",[((round random 50)-100),((round random 50)-100)],[((round random 50)-100),((round random 50)-100)],[70]     ]]
+		//[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],	["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]],
+		[["EAST","CARELESS","YELLOW","LINE"], 	[  [2,"Rifleman_I"],[2,"SMG_I"] ],	["EXPLORE",[((round random 50)-100),((round random 50)-100)],[((round random 50)-100),((round random 50)-100)],[50]     ]],
+		[["EAST","AWARE","RED","VEE"],   	[  [2,"Rifleman_I"]           	],	["BOXPATROL",[((round random 50)-100),((round random 50)-100)],[((round random 50)-100),((round random 50)-100)],[70]     ]]
 
 	],
 

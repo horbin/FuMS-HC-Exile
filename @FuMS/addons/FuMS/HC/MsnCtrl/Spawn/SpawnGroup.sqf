@@ -30,6 +30,8 @@ _generation = _lineage select 1;
 _offspringID = _lineage select 2;
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
+_debugSpawnGroup = false;
+
 if (isNil "_silentcheckin") then
 {
     _silentcheckin = (((FuMS_THEMEDATA select _themeIndex) select 3) select 0) select 1;
@@ -63,12 +65,24 @@ if (!isNil "_groupData") then
                 case "EAST": 		{_group = createGroup EAST;};
                 case "CIV" : 		{_group = createGroup CIVILIAN;};
                 case "CIVILIAN":	{_group = createGroup CIVILIAN;};
-                case "ZOMBIE":		{_group = createGroup WEST;};
+                case "ZOMBIE":		{_group = createGroup EAST;};
                 default 			{_group = [];};
             };
             if (isNil "_group") exitWith {diag_log format ["#Spawn Group: ###ERROR###: Invalid _side: %1. No group created!",_side];};
-            //diag_log format ["<FuMS> SpawnGroup: _group:%1 Side:%2",_group, _side];
+			if (_debugSpawnGroup) then
+			{
+				diag_log format ["<FuMS> SpawnGroup: _group:%1 Side:%2",_group, _side];
+			};
 			_group = [_group,_spawnpos, _units,_themeIndex ] call FuMS_fnc_HC_msnCtrl_Spawn_CreateGroup;	
+			if (_debugSpawnGroup) then
+			{
+				diag_log format ["##FUMS (SPAWNGROUP): HC ID: %1",FuMS_HC_SlotNumber];
+			};
+			_group setGroupOwner FuMS_HC_SlotNumber;
+			if (_debugSpawnGroup) then
+			{
+				diag_log format ["##FUMS (SPAWNGROUP): _group:%1 | owner:%2",_group,groupOwner _group];
+			};
             _group setBehaviour _behaviour; 	// "CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"
 			
             _group setCombatMode _combat;		// "BLUE" : Never fire, keep formation
@@ -81,7 +95,10 @@ if (!isNil "_groupData") then
 												// "VEE", "LINE", "FILE", "DIAMOND"
     
            
-            //    diag_log format["#Spawn Group: _group:%1, _spawnpos:%2, _patrol:%3",_group, _spawnpos, _patrol];
+			if (_debugSpawnGroup) then
+			{
+				diag_log format["#Spawn Group: _group:%1, _spawnpos:%2, _patrol:%3",_group, _spawnpos, _patrol];
+			};
             //Group Behavior
             _patrolPatrolLoc = [_eCenter, _patrolPatrolLoc] call FuMS_fnc_HC_MsnCtrl_Util_XPos;
             _patrol = toUpper _patrol;        
@@ -118,7 +135,17 @@ if (!isNil "_groupData") then
                             _patrolRadius = .8* _encounterSize;
                         };  
                         [_group, _patrolPatrolLoc, _patrolRadius, 0, true] call FuMS_fnc_HC_AI_Logic_BoxPatrol;
+                    };     
+                    case "HUNTPLAYER":
+                    { 
+                        _patrolRadius = _patternOptions select 0;
+                        if ( _patrolRadius == 0) then 
+                        { 
+                            _patrolRadius = .8* _encounterSize;
+                        };  
+                        [_group, _patrolPatrolLoc, _patrolRadius, 0, true] call FuMS_fnc_HC_AI_Logic_HuntPlayer;
                     };       
+					
                     case "EXPLORE":
                     { 
                         _patrolRadius = _patternOptions select 0;
@@ -152,6 +179,10 @@ if (!isNil "_groupData") then
                     case "LOITER":
 					{
 						[_group, _eCenter, _patternOptions] call FuMS_fnc_HC_AI_Logic_Loiter;
+					};
+                    case "HUNTPLAYER":
+					{
+						[_group, _eCenter, _patternOptions] call FuMS_fnc_HC_AI_Logic_HuntPlayer;
 					};
                     case "CONVOY":
                     {
@@ -214,6 +245,16 @@ if (!isNil "_groupData") then
             {
                 if (count _groups == 0) then {_silentcheckin = false;}else{_silentcheckin=true;}
             };    
+			
+			
+			
+			[_group,_patrol] spawn FuMS_fnc_HC_AI_Group_GroupMonitor;
+
+			
+			
+			
+			
+			
             // initiate radio logic for the group, now that its formation is complete!
 			// [_group, _themeIndex, _eCenter, _silentcheckin, _missionName] execVM "HC\Encounters\AI_Logic\RadioChatter\AIRadio.sqf";   
 			//[_group, _themeIndex, _eCenter, _silentcheckin, _missionName] spawn FuMS_fnc_HC_AI_RC_AIRadio;

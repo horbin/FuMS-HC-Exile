@@ -270,8 +270,8 @@
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],				// Player must be near event center to count as win
-			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
-			["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ]		// Triggers call for reinforcements
+			["AllDead",		["LowUnitCount","EAST",1,150,[0,0]]  ],		// Always leaves one behind as a special surprise for players.
+			["LUCNT",		["LowUnitCount","EAST",10,150,[0,0]]  ]		// Triggers call for reinforcements
 
 		],
 		[
@@ -279,7 +279,7 @@
 			// Note: a comma between two logics is interpreted as "AND"
 			[["WIN"],	["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],	["TIMER"     ]],
-			[["CHILD",	["Help_Helo",[0,0],5,120]],["LUCNT"     ]],  
+			[["CHILD",	["Help_Helo",[0,0],5,180]],["LUCNT"     ]],  
 			[["END"],	["AllDead","OR","TIMER"    ]]  
 		]
 	]

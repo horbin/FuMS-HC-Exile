@@ -26,11 +26,7 @@ _cartContents =
 	//////////////////////////////////////////////////////////////////////////////////////
 	///////////////////////////////  Civ
 	[	
-		"CAMS_U_Civ",		// Global variable being adjusted
-		1,					// Side this is assigned to 
-							// 0 - Global group combination
-							// 1 - Everything else
-		true,				// TRUE - Replaces vanilla class      FALSE - Appends to vanilla class
+		"CAMS_U_Civ",1,true,
 					
 		[
 			"U_C_Journalist","U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_salmon",
@@ -599,9 +595,19 @@ _cartContents =
 	[
 		"CAMS_I_Navigation",1,true,
 		[
-			"ItemWatch","ItemGPS","ItemMap","ItemCompass","ItemRadio","Binocular",
-			"Rangefinder","Laserdesignator","Laserdesignator_02","Laserdesignator_03","NVGoggles",
-			"NVGoggles_INDEP","NVGoggles_OPFOR"
+			"ItemWatch",
+			"ItemGPS",
+			"ItemMap",
+			"ItemCompass",
+			"ItemRadio",
+			"Binocular",
+			"Rangefinder",
+			//"Laserdesignator",
+			//"Laserdesignator_02",
+			//"Laserdesignator_03",
+			"NVGoggles",
+			"NVGoggles_INDEP",
+			"NVGoggles_OPFOR"
 		]
 	],
 	
@@ -614,32 +620,35 @@ _cartContents =
 	],
 	// Backpacks
 	[
-		"CAMS_Packs_Lv1",1,true,
+		"CAMS_Packs_W",1,true,
 		[
 			"B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_dgtl","B_AssaultPack_khk",
 			"B_AssaultPack_mcamo","B_AssaultPack_rgr","B_AssaultPack_sgg","B_OutdoorPack_blk","B_OutdoorPack_blu",
-			"B_OutdoorPack_tan"
-		]
-	],
-	[
-		"CAMS_Packs_Lv2",1,true,
-		[
+			"B_OutdoorPack_tan",
 			"B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_ocamo","B_FieldPack_oucamo",
 			"B_TacticalPack_blk","B_TacticalPack_rgr","B_TacticalPack_ocamo","B_TacticalPack_mcamo",
-			"B_TacticalPack_oli","B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg"
-		]
-	],
-	[
-		"CAMS_Packs_Lv3",1,true,
-		[
+			"B_TacticalPack_oli","B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg",
 			"B_Kitbag_cbr","B_Kitbag_mcamo","B_Kitbag_sgg","B_Carryall_cbr","B_Carryall_khk",
 			"B_Carryall_mcamo","B_Carryall_ocamo","B_Carryall_oli","B_Carryall_oucamo","B_HuntingBackpack"
 		]
 	],
 	[
+		"CAMS_Packs_E",1,true,
+		[
+			"B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_dgtl","B_AssaultPack_khk",
+			"B_AssaultPack_mcamo","B_AssaultPack_rgr","B_AssaultPack_sgg","B_OutdoorPack_blk","B_OutdoorPack_blu",
+			"B_OutdoorPack_tan",
+			"B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_ocamo","B_FieldPack_oucamo",
+			"B_TacticalPack_blk","B_TacticalPack_rgr","B_TacticalPack_ocamo","B_TacticalPack_mcamo",
+			"B_TacticalPack_oli","B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg",
+			"B_Kitbag_cbr","B_Kitbag_mcamo","B_Kitbag_sgg","B_Carryall_cbr","B_Carryall_khk",
+			"B_Carryall_mcamo","B_Carryall_ocamo","B_Carryall_oli","B_Carryall_oucamo","B_HuntingBackpack"
+		]
+	],	
+	[
 		"CAMS_Packs_ALL",0,true,
 		[
-			"CAMS_Packs_Lv1", "CAMS_Packs_Lv2", "CAMS_Packs_Lv3"
+			"CAMS_Packs_W", "CAMS_Packs_E"
 		]
 	],
 	
@@ -686,12 +695,19 @@ _cartContents =
 
 	//Smokes
 	[
-		"CAMS_Smoke_Shell",1,true,
+		"CAMS_Smoke_W",1,true,
 		[
 			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
 			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
 		]
 	],
+	[
+		"CAMS_Smoke_E",1,true,
+		[
+			"SmokeShell","SmokeShellBlue","SmokeShellGreen","SmokeShellOrange",
+			"SmokeShellPurple","SmokeShellRed","SmokeShellYellow"
+		]
+	],	
 	[
 		"CAMS_Smoke_1Rnd",1,true,
 		[
@@ -711,7 +727,7 @@ _cartContents =
 	[
 		"CAMS_Smoke_ALL",0,true,
 		[
-			"CAMS_Smoke_Shell", "CAMS_Smoke_1Rnd", "CAMS_Smoke_3rnd"
+			"CAMS_Smoke_W", "CAMS_Smoke_E"
 		]
 	],
 	
@@ -723,67 +739,87 @@ _cartContents =
 
 	// Grenades
 	[
-		"CAMS_E_Grenade",1,true,
+		"CAMS_Grenade_W",1,true,
 		[
 			"HandGrenade","MiniGrenade"
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_W",1,true,
+		"CAMS_Grenade_E",1,true,
+		[
+			"HandGrenade","MiniGrenade"
+		]
+	],
+	[
+		"CAMS_Grenade_ALL",0,true,
+		[
+			"CAMS_Grenade_W","CAMS_Grenade_E"
+		]
+	],	
+	
+	[
+		"CAMS_Grenade_IR_W",1,true,
 		[
 			"B_IR_Grenade"
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_E",1,true,
+		"CAMS_Grenade_IR_E",1,true,
 		[
 			"O_IR_Grenade"
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_I",1,true,
+		"CAMS_Grenade_IR_I",1,true,
 		[
 			"I_IR_Grenade"
 		]
 	],	
 	[
-		"CAMS_E_GrenadeIR_ALL",0,true,
+		"CAMS_Grenade_IR_ALL",0,true,
 		[
-			"CAMS_E_GrenadeIR_W","CAMS_E_GrenadeIR_E","CAMS_E_GrenadeIR_I"
+			"CAMS_Grenade_IR_W","CAMS_Grenade_IR_E","CAMS_Grenade_IR_I"
 		]
 	],
 	// Explosive Shells
 	[
-		"CAMS_E_1Rnd",1,true,
+		"CAMS_Shells_1Rnd",1,true,
 		[
 			"1Rnd_HE_Grenade_shell"
 		]
 	],
 	[
-		"CAMS_E_3Rnd",1,true,
+		"CAMS_Shells_3Rnd",1,true,
 		[
 			"3Rnd_HE_Grenade_shell"
 		]
 	],
 	// Mines
 	[
-		"CAMS_E_Mine",1,true,
+		"CAMS_Bombs_Mines",1,true,
 		[
 			"APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","APERSTripMine_Wire_Mag",
 			"ClaymoreDirectionalMine_Remote_Mag","SLAMDirectionalMine_Wire_Mag"
 		]
 	],// IEDs
 	[
-		"CAMS_E_IED",1,true,
+		"CAMS_Bombs_IED",1,true,
 		[
 			"DemoCharge_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanBig_Remote_Mag",
 			"IEDUrbanSmall_Remote_Mag","SatchelCharge_Remote_Mag"
 		]
 	],	
 	[
-		"CAMS_E_ALL",0,true,
+		"CAMS_Bombs_ALL",0,true,
 		[
-			"CAMS_E_Grenade", "CAMS_E_GrenadeIR_ALL", "CAMS_E_1Rnd", "CAMS_E_3Rnd", "CAMS_E_Mine", "CAMS_E_IED"
+			"CAMS_Bombs_Mines", "CAMS_Bombs_IED"
+		]
+	],
+
+	[
+		"CAMS_Grenade_ALL",0,true,
+		[
+			"CAMS_Grenade_ALL", "CAMS_Grenade_ALLIR_ALL", "CAMS_Shells_1Rnd", "CAMS_Shells_3Rnd"
 		]
 	],
 
@@ -874,6 +910,11 @@ _cartContents =
 		]
 	],
 	[
+		"CAMS_Shotguns_W",1,true,
+		[
+		]
+	],	
+	[
 		"CAMS_SMG_W",1,true,
 		[
 			"SMG_01_F","SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki",
@@ -904,7 +945,8 @@ _cartContents =
 			"arifle_MXC_Black_F","arifle_MXC_F", //W
 			//"arifle_SDAR_F", //UNDERWATER GUN
 			"arifle_TRG20_F", //ALL
-			"arifle_TRG21_F", "arifle_TRG21_GL_F"//all
+			"arifle_TRG21_F", 
+			"arifle_TRG21_GL_F"//all
 		]
 	],
 	[
@@ -963,6 +1005,11 @@ _cartContents =
 			"hgun_Pistol_Signal_F"
 		]
 	],
+	[
+		"CAMS_Shotguns_E",1,true,
+		[
+		]
+	],		
 	[
 		"CAMS_SMG_E",1,true,
 		[
@@ -1055,6 +1102,11 @@ _cartContents =
 		]
 	],
 	[
+		"CAMS_Shotguns_I",1,true,
+		[
+		]
+	],		
+	[
 		"CAMS_SMG_I",1,true,
 		[
 			"SMG_01_F","SMG_03_TR_black","SMG_03_TR_camo","SMG_03_TR_khaki","SMG_03_TR_hex","SMG_03C_TR_black","SMG_03C_TR_camo","SMG_03C_TR_khaki",
@@ -1125,6 +1177,15 @@ _cartContents =
 			"CAMS_Rifles_ALL_I", "CAMS_Pistols_I"
 		]
 	],
+
+
+	[
+		"CAMS_Guns_ALL",0,true,
+		[
+			"CAMS_Guns_ALL_W", "CAMS_Guns_ALL_E","CAMS_Guns_ALL_I"
+		]
+	],
+
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////// VEHICLES //////////////////////////////////////////////////////////
@@ -1273,8 +1334,8 @@ _cartContents =
 	[
 		"CAMS_Heli_Armed_E",1,true,
 		[
-			"O_Heli_Light_02_F","O_Heli_Light_02_v2_F","O_Heli_Attack_02_F","O_Heli_Attack_02_black_F", 
-			"O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Attack_02_dynamicLoadout_black_F"
+			"O_Heli_Light_02_F","O_Heli_Light_02_v2_F","O_Heli_Attack_02_F","O_Heli_Attack_02_black_F"
+			//, "O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Attack_02_dynamicLoadout_black_F"
 		]
 	],
 	/////////////////////////////////// Helicopters - Independant 

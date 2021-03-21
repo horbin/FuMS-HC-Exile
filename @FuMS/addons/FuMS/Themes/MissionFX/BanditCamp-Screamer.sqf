@@ -12,7 +12,7 @@
 		false, 1,0,
 		false, // Notify players via global message
 		false,// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -40,15 +40,15 @@
 		//[ ImFX_Land_Cars,					[-10,10],	(round random 360),		[.5,   1,     .5,         .5,         .5]],
 		
 		// This line will spawn a screamer anomoly in the mission
-		["Land_AncientStatue_01_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_01_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_01_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_01_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_01_F",		[((round random 150)-75),((round random 150)-75)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_01_F",		[((round random 150)-75),((round random 150)-75)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_01_F",		[((round random 150)-75),((round random 150)-75)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_01_F",		[((round random 150)-75),((round random 150)-75)],	(round random 360),		0],  //type, offset, rotation, presist flag
 		
-		["Land_AncientStatue_02_F",		[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_02_F",		[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_02_F",		[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_AncientStatue_02_F",		[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_02_F",		[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_02_F",		[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_02_F",		[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_AncientStatue_02_F",		[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
 
 
 

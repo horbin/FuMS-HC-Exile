@@ -38,7 +38,7 @@ _lootData =
 			[FuMS_Crafting_Wood, 5],
 			[FuMS_Crafting_Metal, 5],
 			[FuMS_Crafting_Tools, 5],
-			[CAMS_E_All, 2]
+			[CAMS_Grenade_ALL, 2]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 2]
@@ -56,7 +56,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 2]
+			[CAMS_Grenade_ALL, 2]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 2]
@@ -77,7 +77,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[20,0,10]]
+			[CAMS_Grenade_ALL, 			[20,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[4,0,3]]
@@ -98,7 +98,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[40,0,10]]
+			[CAMS_Grenade_ALL, 			[40,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[2,0,1]]
@@ -119,7 +119,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[40,0,10]]
+			[CAMS_Grenade_ALL, 			[40,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[2,0,1]]
@@ -140,7 +140,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[2,0,1]]
@@ -161,7 +161,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]
@@ -182,7 +182,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]
@@ -203,7 +203,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]
@@ -224,7 +224,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]
@@ -245,7 +245,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]
@@ -266,7 +266,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_All, 			[30,0,10]]
+			[CAMS_Grenade_ALL, 			[30,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[3,0,2]]

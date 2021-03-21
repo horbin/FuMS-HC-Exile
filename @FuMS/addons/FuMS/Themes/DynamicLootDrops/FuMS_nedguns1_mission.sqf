@@ -19,14 +19,14 @@
 
 [
 	["GunsMission", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Guns guns guns","hd_objective","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Guns guns guns","plp_mark_as_container","ELLIPSE","ColorOrange","Solid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",700, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
-			60       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		[
@@ -79,17 +79,17 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   	["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [4,"LMG_E"]  ],   		["BoxPatrol",	[5,5],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   	["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_I"]  ],   	["Loiter",		[2,2],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [4,"LMG_I"]  ],   		["BoxPatrol",	[5,5],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_I"]  ],   	["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  	
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
 				[  "O_HMG_01_high_F",		[-17,3],					[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[-7,-13],					[0],     	"None" ],
-				[  "O_HMG_01_high_F",		[17,7],						[0],     	"None" ],
+			//	[  "O_HMG_01_high_F",		[-7,-13],					[0],     	"None" ],
+			//	[  "O_HMG_01_high_F",		[17,7],						[0],     	"None" ],
 				[  "O_HMG_01_high_F",		[13,-7],					[0],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
@@ -97,7 +97,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman_I"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -119,7 +119,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 0, "Rifleman_E"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 0, "Rifleman_I"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -129,6 +129,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
+					["EAST","COMBAT","RED","COLUMN"],    [[ 0, "Rifleman_I"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
 				]
 			]
 		],
@@ -136,14 +137,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  "B_G_Offroad_01_armed_F",		[50,50],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
+				[  "B_G_Offroad_01_armed_F",		[50,50],	[1,"Rifleman_I"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_E"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_I"]  ],   ["BoxPatrol",[50,50],[-50,-50],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -153,7 +154,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_I"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150]]   
 				]
 			]
 		]
@@ -165,7 +166,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
-			["Timer", 		["TimerNoPlayers", 		1200]],	//20 minutes
+			["Timer", 		["TimerNoPlayers", 		(round random [1000,1300,1200])]],	//20 minutes
 			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
 		],
 		[
@@ -175,9 +176,5 @@
 			[["LOSE"],	["Timer"	]],
 			[["END"],	["LUCNT","OR","Timer"	]]  
 		]
-
-  
 	]
-
-
 ];

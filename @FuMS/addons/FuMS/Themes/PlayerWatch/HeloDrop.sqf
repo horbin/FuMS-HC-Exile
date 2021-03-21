@@ -1,7 +1,7 @@
-//Reinforcements.sqf
-// Horbin
-// 1/18/15
-// Mission designed to be launched in response to a call for reinforcements.
+// Helodrop.sqf
+// TheOneWhoKnocks
+// 5/1/2020
+// Mission designed to be launched during playerwatch event.
 // No triggers and no loot for this mission, just Troops!
 // Units will spawn 250m to the east and proceed to within 75mn of the encounter and patrol!
 // Be cautious when editing data.
@@ -12,22 +12,22 @@
 	["HeloDrop","mil_dot","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[   // NOTIFICATION Messages and Map display Control.
-			false, "ALL", 0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-			true, // Notify players via global message
-			false,// Show encounter area on the map
-			10,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
-			10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
+			false, "ALL", 0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, 				// Notify players via global message
+			false,				// Show encounter area on the map
+			1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			10       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 			//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
 		[
-			"ALERT!", // title line, do not remove these!
-			"Reinforcements have arrived." //description/radio message.
+			"AIRBORNE!", // title line, do not remove these!
+			"Death from above, bitches!" //description/radio message.
 		],  
 		// Mission Success Message
 		[
 			"",
-			"Seems quiet now..."
+			"Seems all quiet now..."
 		], 
 		// Mission Failure Message
 		[
@@ -54,11 +54,11 @@
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 				//     [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "TruckJunk"      ], 
 				//     [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
-				[  FuMS_Heli_Mohawks         ,[0,-1700],[1,"Rifleman_E"],     "None"      ]
+				[  ImFX_Heli_Troops         ,[0,-1700],[1,"Rifleman_E"],     "None"      ]
 			],
 			[  
 				// Pilots                                                          # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-			   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["ParaDrop",[0,-1700],[0,0],["Full", 100, true,true  ]   ]]
+			   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[0,-1700],[0,0],["Full", 100, true,true  ]   ]]
 			],
 			[   
 				// Troops : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
@@ -93,7 +93,7 @@
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			//	  [["WIN"],["LUCNT"     ]],  // 
+			[["WIN"],["LUCNT"     ]],  // 
 			//  [["CHILD","Help_Helo",[0,0]],["OK"      ]],  // 
 			// [["Reinforce","Help_Vehicle","Trig4"]], 
 			//	  [["LOSE"],["TIMER", "OR", "VehDmg1", "BldgDmg1"]   ],

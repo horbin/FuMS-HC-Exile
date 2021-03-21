@@ -4,8 +4,8 @@
 // Based upon drsubo Mission Scripts
 
 [
-["Wilderness", 100, "LAND"], // Mission Title NOSPACES!, and encounter radius
-["Wilderness","mil_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+["Zombies", 100, "LAND"], // Mission Title NOSPACES!, and encounter radius
+["Zombies","mil_objective", "ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
    // type is "mil_objective"
 [  
     [// NOTIFICATION Messages and Map display Control.
@@ -17,18 +17,18 @@
           //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
     ],
     // Spawn Mission Message
-    [   "",
-         ""
+    [   "Zombie Invasion",
+         "Zombie Invasion Started"
      ],
     
     // Mission Success Message
-    [   "",
-         ""
+    [   "Zombie Invasion",
+         "Zombie Invasion Won"
     ],
   
     // Mission Failure Message
-    [  "",
-        ""
+    [  "Zombie Invasion",
+        "Zombie Invasion Lost"
     ] 
 ],
 [  //  Loot Config:  Refer to LootData.sqf for specifcs
@@ -44,9 +44,9 @@
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Sniper"]           ],     ["Explore",[6,-6],[0,0],[0]     ]],
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"],[1,"LMG"] ],   ["Explore",[6,6],[0,0],[0]     ]],
 //[["EAST","COMBAT","RED","LINE"],   [  [3,"Rifleman"]           ],   ["Explore",[50,50],[0,0],[0]     ]]
- [["WEST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSpider"]  ],   ["Zombie",[50,50],[0,0], [100,true,300]    ]],
-  [["WEST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSoldier"]  ],   ["Zombie",[-50,-50],[0,0], [100,true,300]    ]],
-  [["WEST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSoldier"]  ],   ["Zombie",[50,-50],[0,0], [100,true,300]    ]]
+ [["EAST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSpider"]  ],   ["Zombie",[50,50],[0,0], [100,true,300]    ]],
+  [["EAST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSoldier"]  ],   ["Zombie",[-50,-50],[0,0], [100,true,300]    ]],
+  [["EAST","COMBAT","RED","COLUMN"],   [  [1,"Zombie"],[1,"ZombieSoldier"]  ],   ["Zombie",[50,-50],[0,0], [100,true,300]    ]]
 ],
 
 // Vehicles
@@ -61,7 +61,7 @@
 	  // NOTE: "OK" is a reserved trigger. Do not define it here.
 	  //  "OK" can be used in the actions section to force an action to occur at mission start!	 
 	//  ["PROX",["ProxPlayer",[0,0],80,1]  ],
-	  ["LUCNT",["LowUnitCount","WEST",0,0,[0,0]]  ],
+	  ["LUCNT",["LowUnitCount","EAST",0,0,[0,0]]  ],
 //	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 //	  ["Detect",["Detected","ALL","ALL"] ],
 //	  ["BodyCount",["BodyCount",9] ]

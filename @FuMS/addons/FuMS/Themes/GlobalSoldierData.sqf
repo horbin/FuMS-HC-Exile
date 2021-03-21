@@ -49,34 +49,66 @@ _soldierData =
         // false = no special anti-vehicle weapons.
         // NOTE: controlling the deletion of this equipment upon AI death is controlled via settings in BaseServer.sqf
         [ 
-		  [[CAMS_E_Grenade,.25],[1,2]]                    
-		], // Personal Gear [ "item", chance] [min, max]     
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
         // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 150],
+			["RESPECTGROUP",15]
         ]
     ],
 	[
         "Rifleman_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_E,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
-        [CAMS_H_Military,.5], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_V_Chestrig,.9], // Vest.
+        [CAMS_H_Military,.9], // Helmet
+        [CAMS_Packs_All,.9], // Backpack and chance.
         [CAMS_AssaultRifles_E,1], // PriWeapon and chance
         [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_E,.5], // Secondary Weapon and chance
+        [CAMS_Pistols_E,.7], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, ["LAND",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
 	],
+	[
+        "AAman_E",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [CAMS_U_Soldier_E,1], // Uniform
+        [CAMS_V_Chestrig,.9], // Vest.
+        [CAMS_H_Military,.9], // Helmet
+        [CAMS_Packs_All,.9], // Backpack and chance.
+        [CAMS_AssaultRifles_E,1], // PriWeapon and chance
+        [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_E,.7], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, ["AIR",1], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[CAMS_Smoke_ALL,.8],[1,2]],[[CAMS_Grenade_E,.4],[1,2]]    ] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]
+	],	
 	[
         "Paratrooper_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
@@ -86,11 +118,18 @@ _soldierData =
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_AssaultRifles_E,1], // PriWeapon and chance
         [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_E,.5], // Secondary Weapon and chance
+        [CAMS_Pistols_E,.8], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, [false,0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -99,27 +138,35 @@ _soldierData =
 	],[
         "Pistolman_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
-        [CAMS_U_Soldier_I,1], // Uniform
+        [CAMS_U_Soldier_E,1], // Uniform
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_Packs_All,.3], // Backpack and chance.
         [CAMS_AssaultRifles_I,0], // PriWeapon and chance
         [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_I,1], // Secondary Weapon and chance
+        [CAMS_Pistols_E,1], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 80],
+			["RESPECTGROUP",8]
         ]		
-    ],[
+    ],
+	[
         "LMG_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_E,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Plate,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_LMG_E,1], // PriWeapon and chance
@@ -127,36 +174,51 @@ _soldierData =
         [CAMS_Pistols_E,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 125],
+			["RESPECTGROUP",12]
         ]
-    ],[
+    ],
+	[
 	    "SMG_E",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_E,1], // Uniform
         [CAMS_V_Harness,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
-        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_Packs_All,.6], // Backpack and chance.
         [CAMS_SMG_E,1], // PriWeapon and chance
         [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_E,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ false, true, ["RANDOM",0.1], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 120],
+			["RESPECTGROUP",12]
         ]
 	],[
 	
         "Hunter_E",
-        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [.5, .6, .6, .8, .8, 1, .8, 1, .6],
         [CAMS_U_Guerilla_E,1], // Uniform
         [CAMS_V_Bandolliers,.2], // Vest.
         [CAMS_H_Hunter,.8], // Helmet.
@@ -167,11 +229,19 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]            ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[ImFX_Hunting_Tools,1],[2,4]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_Raw,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 120],
+			["RESPECTGROUP",12]
         ]
     ],[
         "Diver_E",
@@ -205,15 +275,23 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[ImFX_Crafting_Tools,.4],[1,2]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-    ],[
+    ],
+	[
         "Pilot_E",
-		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
+		[.4, .6, .6, .4, .5, .8, .8, .75, .6],
         [CAMS_U_Aviation_E,1], // Uniform
         [CAMS_V_Chestrig,.8], // Vest.
         [CAMS_H_Aviation,1], // Helmet
@@ -224,17 +302,76 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
-	
-	
-	
-	
+	],
+	[
+        "DumbPilot_E",
+		[.1, .1, .1, .4, .4, .9, .5, .5, .5],
+        [CAMS_U_Aviation_E,1], // Uniform
+        [CAMS_V_Chestrig,.8], // Vest.
+        [CAMS_H_Aviation,1], // Helmet
+        [CAMS_Packs_All,.1], // Backpack and chance.
+        [CAMS_SMG_E,.5], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_E,1], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]
+	],
+
+	[
+        "AirCrew_E",
+		[.3, .3, .3, .3, .6, .7, .6, .7, .5],
+        [CAMS_U_Aviation_E,1], // Uniform
+        [CAMS_V_Chestrig,.8], // Vest.
+        [CAMS_H_Aviation,1], // Helmet
+        [CAMS_Packs_All,.1], // Backpack and chance.
+        [CAMS_SMG_E,.5], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_E,1], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]
+	],
+	[
 	"Sniper_W",
 		[.4, .6, .6, .6, .6, 1, .8, 1, .6], // Soldier skill levels
         [CAMS_U_Ghillie_W,1], // Uniform
@@ -255,33 +392,73 @@ _soldierData =
         // false = no special anti-vehicle weapons.
         // NOTE: controlling the deletion of this equipment upon AI death is controlled via settings in BaseServer.sqf
         [ 
-		  [[CAMS_E_Grenade,.25],[1,2]]                    
-		], // Personal Gear [ "item", chance] [min, max]     
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
         // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 150],
+			["RESPECTGROUP",15]
         ]
     ],[
         "Rifleman_W",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_W,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
-        [CAMS_H_Military,.5], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_V_Chestrig,.9], // Vest.
+        [CAMS_H_Military,.9], // Helmet
+        [CAMS_Packs_All,.8], // Backpack and chance.
         [CAMS_AssaultRifles_W,1], // PriWeapon and chance
         [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_W,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, ["LAND",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
+	],
+	[
+        "AAman_W",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [CAMS_U_Soldier_W,1], // Uniform
+        [CAMS_V_Chestrig,.9], // Vest.
+        [CAMS_H_Military,.9], // Helmet
+        [CAMS_Packs_All,.8], // Backpack and chance.
+        [CAMS_AssaultRifles_W,1], // PriWeapon and chance
+        [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_W,.5], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, ["AIR",1], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 100],
+			["RESPECTGROUP",10]
+        ]
+	],
+	[
         "Paratrooper_W",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_W,1], // Uniform
@@ -293,8 +470,15 @@ _soldierData =
         [CAMS_Pistols_W,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, [false,0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -304,7 +488,7 @@ _soldierData =
         "Pistolman_W",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_W,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Bandolliers,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_AssaultRifles_W,0], // PriWeapon and chance
@@ -313,17 +497,24 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 80],
+			["RESPECTGROUP",8]
         ]		
     ],[
         "LMG_W",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_W,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Plate,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_LMG_W,1], // PriWeapon and chance
@@ -332,11 +523,18 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 125],
+			["RESPECTGROUP",12]
         ]
     ],[
 	    "SMG_W",
@@ -351,16 +549,23 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 120],
+			["RESPECTGROUP",12]
         ]
 	],[
 	
         "Hunter_W",
-        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [.5, .6, .6, .8, .8, 1, .8, 1, .6],
         [CAMS_U_Guerilla_W,1], // Uniform
         [CAMS_V_Bandolliers,.2], // Vest.
         [CAMS_H_Hunter,.8], // Helmet.
@@ -371,7 +576,15 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]            ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[ImFX_Hunting_Tools,1],[2,4]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_Raw,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -409,7 +622,14 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -428,25 +648,28 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
 			["RESPECTGROUP",10]
         ]
-	],[
+	],
 	
 	
-	
-	
-	
-	
-	
-	"Sniper_I",
+	[
+		"Sniper_I",
 		[.4, .6, .6, .6, .6, 1, .8, 1, .6], // Soldier skill levels
         [CAMS_U_Ghillie_I,1], // Uniform
         [CAMS_V_Vests,.5], // Vest.
-        [CAMS_H_MilitaryCaps,.5], // Helmet.
+        [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,1], // Backpack and chance to have it
         [CAMS_SniperRifles_I,1], // PriWeapon
         [ 1, .3 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
@@ -462,28 +685,40 @@ _soldierData =
         // false = no special anti-vehicle weapons.
         // NOTE: controlling the deletion of this equipment upon AI death is controlled via settings in BaseServer.sqf
         [ 
-		  [[CAMS_E_Grenade,.25],[1,2]]                    
-		], // Personal Gear [ "item", chance] [min, max]     
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
         // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 150],
+			["RESPECTGROUP",15]
         ]
     ],
 	[
         "Rifleman_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Chestrig,.9], // Vest.
         [CAMS_H_Military,.5], // Helmet
-        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_Packs_All,.8], // Backpack and chance.
         [CAMS_AssaultRifles_I,1], // PriWeapon and chance
         [ .5, .3 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -502,8 +737,15 @@ _soldierData =
         [CAMS_Pistols_I,.5], // Secondary Weapon and chance
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ false, true, [false,0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -522,7 +764,14 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]    ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -532,7 +781,7 @@ _soldierData =
         "LMG_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Plate,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_LMG_I,1], // PriWeapon and chance
@@ -541,17 +790,52 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 125],
+			["RESPECTGROUP",12]
         ]
-    ],[
+    ],
+	[
+	    "MMG_I",
+        [.4, .6, .6, .6, .6, 1, .8, 1, .6],
+        [CAMS_U_Soldier_I,1], // Uniform
+        [CAMS_V_Plate,.5], // Vest.
+        [CAMS_H_Military,.5], // Helmet.
+        [CAMS_Packs_All,.5], // Backpack and chance.
+        [CAMS_MMG_I,1], // PriWeapon and chance
+        [ .2, .1 , .5], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        [CAMS_Pistols_I,.5], // Secondary Weapon and chance
+        [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
+        [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 125],
+			["RESPECTGROUP",12]
+        ]
+	],
+		[
 	    "SMG_I",
         [.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Soldier_I,1], // Uniform
-        [CAMS_V_Harness,.5], // Vest.
+        [CAMS_V_Plate,.5], // Vest.
         [CAMS_H_Military,.5], // Helmet.
         [CAMS_Packs_All,.5], // Backpack and chance.
         [CAMS_SMG_I,1], // PriWeapon and chance
@@ -560,11 +844,18 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, ["RANDOM",0.3], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]],[[CAMS_E_Grenade,.3],[1,1]]              ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 120],
+			["RESPECTGROUP",12]
         ]
 	],
 	[
@@ -580,11 +871,19 @@ _soldierData =
         [ .3, .3, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]            ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[ImFX_Hunting_Tools,1],[2,4]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_Raw,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
-            ["RESPECT", 100],
-			["RESPECTGROUP",10]
+            ["RESPECT", 150],
+			["RESPECTGROUP",15]
         ]
     ],
 	[
@@ -620,7 +919,14 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -632,7 +938,7 @@ _soldierData =
 		[.4, .6, .6, .6, .6, 1, .8, 1, .6],
         [CAMS_U_Aviation_I,1], // Uniform
         [CAMS_V_Chestrig,.8], // Vest.
-        [CAMS_H_Aviation,1], // Helmet
+        [CAMS_H_Military,1], // Helmet
         [CAMS_Packs_All,.1], // Backpack and chance.
         [CAMS_SMG_I,.5], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
@@ -640,7 +946,14 @@ _soldierData =
         [ .3, .3, 0, .1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -659,8 +972,15 @@ _soldierData =
         [ImFX_Pistol_Survivor,.5], // Secondary Weapon and chance
         [ .8, .8, .5, .8, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .5, 0, .3 ], // Binoculars, RangeFinders, NVG's
-        [ false, true, ["RANDOM",0.15], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,2]],[[CAMS_E_Grenade,.4],[1,2]]    ] ,
+        [ false, true, [false,0.15], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 100],
@@ -676,11 +996,18 @@ _soldierData =
         [CAMS_Packs_All,.1], // Backpack and chance.
         [CAMS_SMG_I,.9], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_I,.5], // Secondary Weapon and chance
+        [CAMS_Pistols_E,.5], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ .1, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ true, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.3],[1,1]]                ] ,
+        [ 
+			[[CAMS_I_Meds,.8],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[CAMS_Grenade_E,.4],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
@@ -696,11 +1023,17 @@ _soldierData =
         [CAMS_Packs_All,.05], // Backpack and chance.
         [CAMS_SMG_I,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_I,1], // Secondary Weapon and chance
+        [CAMS_Pistols_E,1], // Secondary Weapon and chance
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ true, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ ] ,
+        [ 
+			[[CAMS_I_Meds,.5],[1,2]],
+			[[CAMS_I_Navigation,.4],[0,1]],
+			[[CAMS_Smoke_ALL,.5],[1,2]],
+			[[ImFX_Food_Drink,.5],[1,2]],
+			[[ImFX_Food_MRE,.5],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
@@ -719,12 +1052,17 @@ _soldierData =
         [ .1, 0, 0, .1, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
         [ true, true, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ ],
+        [ 
+			[[CAMS_I_Meds,.4],[1,2]],
+			[[ImFX_Food_Drink,.4],[1,2]],
+			[[ImFX_Food_MRE,.4],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 0]
         ]		
-    ],[
+    ],
+	[
         "Doctor",
         [.6, .7, .7, .7, .7, 1, .8, 1, .7],
         [ImFX_Uniform_Scientist,1], // Uniform
@@ -733,22 +1071,28 @@ _soldierData =
         [CAMS_Packs_All,.5], // Backpack and chance.
         ["arifle_Mk20_F",0], // PriWeapon and chance
         [ 1, 1 , 1], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
-        [CAMS_Pistols_I,1], // Secondary Weapon and chance
+        [CAMS_Pistols_E,0], // Secondary Weapon and chance
         [ 1, 1, 1, 1, 9],  // Map, Compass, GPS, Watch, Radio(1-9)
         [ 1, 0, .1 ], // Binoculars, RangeFinders, NVG's
         [ false, true, [false,0], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
-        [ [[CAMS_Smoke_Shell,.8],[1,1]]                ],
+        [ 
+			[[CAMS_I_Meds,1],[3,5]],
+			[[CAMS_Smoke_ALL,.8],[1,2]],
+			[[ImFX_Food_Drink,.8],[1,2]],
+			[[ImFX_Food_MRE,.8],[1,2]]    
+		] ,
           // Crypto and Faction Rewards
         [
             ["RESPECT", 10],
 			["RESPECTGROUP",1]
         ]		
-    ],[        
+    ],
+	[        
 		"Captive",
 		[.02, .7, .1, .3, .5, .1, .05, .1, .5],
-        [CAMS_U_Civ,1], // Uniform
+        ["U_Captive_A",1], // Uniform
         [CAMS_V_Vests,0], // Vest.
-        [CAMS_H_Civ,.8], // Helmet
+        ["H_Hat_Headbag",.5], // Helmet
         [CAMS_packs_All,0], // Backpack and chance.
         [CAMS_SMG_E,0], // PriWeapon and chance
         [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
@@ -763,6 +1107,81 @@ _soldierData =
 			["RESCUEGROUP", 500],
 			["RESCUETABS", 250]
         ]
-	]
+	],
+	[
+		"Zombie",
+		[1,1,1,.5,.5,1,1,.6,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+	[
+        "ZombieSoldier",
+		[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+    [
+        "ZombieSpider",[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 2]
+        ]
+    ],
+    [
+        "ZombieBoss",[1,1,1,1,1,1,1,1,1],
+        ["",0], // Uniform
+        ["",0], // Vest.
+        ["",0], // Helmet
+        ["",0], // Backpack and chance.
+        ["",0], // PriWeapon and chance
+        [ 0, 0 , 0], // scope, muzzle, flashlight:  percent chance of having one appropriate to the rifle.
+        ["",0], // Secondary Weapon and chance
+        [ 0, 0, 0, 0, 0],  // Map, Compass, GPS, Watch, Radio(1-9)
+        [ 0, 0, 0 ], // Binoculars, RangeFinders, NVG's
+        [ false, false, [false,0.5], false], // DiverOverWater, UnlimitedAmmo, anti-tank!, ISCAPTURED
+        [ [[FuMS_Food_Raw,.05],[1,1]],[[FuMS_Drink,.05],[1,1]]             ],
+          // Crypto and Faction Rewards
+        [
+            ["RESPECT", 50]
+        ]
+    ]
+	
 ];
 FuMS_SOLDIERDATA set [_this select 0, _soldierData];

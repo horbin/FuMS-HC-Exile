@@ -6,15 +6,15 @@
 
 [
 	["HeloCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Helicopter Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Helicopter Crash","plp_mark_as_wreckheli","ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL",700, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		10       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
@@ -44,8 +44,8 @@
 		[CAMS_Wreck_Heli,[6,6],(round random 360),0,"FIRE_BIG"]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]],
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
+		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]]
+		//[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 	
 	],
 
@@ -61,9 +61,9 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 2000] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
-			["TimerEvac", 	["Timer", 1400] ], // 1400		  
-			["PLAYERNEAR",	["ProxPlayer",[0,0], 200, 1]],// Player must be near event center to count as win
+			["Timer",		["TimerNoPlayers", (random [1200, 2000, 1800]) ] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["TimerEvac", 	["Timer", random [1100,1300,1500]] ], // 1400		  
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
 			["LaunchGuards",["ProxPlayer",[0,0], 700, 1]],				// Player must be near event center to count as win	
 			["LUCNT",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Triggers call for reinforcements
 			["AllDead",		["LowUnitCount","EAST",0,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
