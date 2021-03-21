@@ -7,6 +7,8 @@
 private ["_markers","_notifications","_msnStatus","_mkr1","_mkr2","_eCenter","_notify","_showMap","_delay",
 "_msnSuccessText","_msnStartText","_msnFailureText","_ogjstr","_msnText","_options","_winDelay","_loseDelay",
 "_radionotify","_radiochannel","_radiorange","_missionNameOverride","_msnStatus_status"];
+_usePLP = missionNamespace getVariable ["FuMS_UsePLPMarkers", false];
+
 _markers = _this select 0;
 _notifications = _this select 1;
 _msnStatus = _this select 2;
@@ -102,13 +104,13 @@ if (_showMap) then
 		_mkr1 setMarkerBrush "Solid";		
             //publicVariable _mkr1;  
             //leave green circle up for 'delay' secs, then remove markers       
-        //diag_log format ["##Spawn Notification: _msnStatus:%1  _delay:%2", _msnStatus, _delay];
+			//diag_log format ["##Spawn Notification: _msnStatus:%1  _delay:%2", _msnStatus, _delay];
             sleep _delay;
             _mkr1 setMarkerAlpha 0;
-           _mkr2 setMarkerAlpha 0;
+			_mkr2 setMarkerAlpha 0;
             _mkr2 setMarkerText "";
             publicVariable _mkr1;
-           publicVariable _mkr2;     
+			publicVariable _mkr2;     
            
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_RemoveObject;
         ["Markers",_mkr2] call FuMS_fnc_HC_Util_HC_RemoveObject;
@@ -130,7 +132,14 @@ if (_showMap) then
         
         _mkr2 setMarkerPos _eCenter;
         _mkr2 setMarkerAlpha 0.5;
-        _mkr2 setMarkerType (_markers select 1);
+		if (_usePLP) then
+		{
+			_mkr2 setMarkerType (_markers select 1);
+		} else
+		{
+			_mkr2 setMarkerType "hd_objective";			
+		};
+		_marker2Type = (_markers select 1);
         
         //if ( count _missionNameOverride > 0) then
         if ( false ) then
@@ -141,10 +150,24 @@ if (_showMap) then
         }
         else { _mkr2 setMarkerText format[" %1",(_markers select 0)];};
         //_mkr2 setMarkerColor (_markers select 3);
-        _mkr2 setMarkerColor "ColorBlack";
-	
+        
 		
-        publicVariable _mkr2;
+		_mkr2Array = toArray toUpper _marker2Type;
+		_mkr2Array resize 3;
+		_mkr2Array = toString _mkr2Array;
+		//_mkr2 setMarkerColor "ColorBlack";		
+		
+		//diag_log format ["#SPAWN: Marker Name Prefix: %1",_mkr2Array];
+		if (_usePLP) then
+		{
+			_mkr2 setMarkerColor "ColorWhite";
+		} else
+		{
+			_mkr2 setMarkerColor "ColorBlack";
+		};
+		
+		
+		publicVariable _mkr2;
         ["Markers",_mkr1] call FuMS_fnc_HC_Util_HC_AddObject;
         ["Markers",_mkr2] call FuMS_fnc_HC_Util_HC_AddObject;
       

@@ -105,7 +105,7 @@ private ["_pos","_dir","_attackrandom"];
         {
             private ["_eathitrandom"];
             
-            [_target] exec "\ryanzombies\scream.sqf";
+            //[_target] exec "\ryanzombies\scream.sqf";
             _eathitrandom = _eathitarray select floor random count _eathitarray;
             playsound3d [format ["%1",_eathitrandom],_target];
         }else

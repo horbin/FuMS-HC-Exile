@@ -51,6 +51,8 @@ if (_loadVanilla) then
 	//["[CAMS] System","Cart:Vanilla ImmersionFX loaded"] spawn Haz_fnc_createNotification;
 };
 
+
+
 //process carts
 {
 	_hold = [] execVM format ["FuMS\CAMS\carts\%1\assets.sqf",_x];
@@ -63,20 +65,6 @@ if (_loadVanilla) then
 } forEach _cartsLoaded;
 
 //carts completed
-
-// immersion FX
-{
-	_hold = [] execVM format ["FuMS\CAMS\carts\%1\ImmersionFX.sqf",_x];
-	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in cart assets.sqf : %2",_camsVersion,_x];CAMS_isStable=false;};
-	waitUntil { ScriptDone _hold};
-	diag_log format ["[CAMS] Cart:%1 immersionFX loaded",_x];
-	//["systemChatRequest", [format ["Cart:%1 immersionFX loaded",_x]]] call ExileServer_system_network_send_broadcast;
-	//["CAMS System",format ["Cart:%1 immersionFX loaded",_x]] spawn Haz_fnc_createNotification;
-
-} forEach _cartsLoaded;
-
-// Complete ImmersionFX
-
 
 if (_loadExile) then
 {
@@ -94,6 +82,21 @@ if (_loadExile) then
 	//["systemChatRequest", ["[CAMS] System | Exile ImmersionFX loaded"]] call ExileServer_system_network_send_broadcast;
 	//["[CAMS] System","Cart:Exile ImmersionFX loaded"] spawn Haz_fnc_createNotification;
 };
+// immersion FX
+{
+	_hold = [] execVM format ["FuMS\CAMS\carts\%1\ImmersionFX.sqf",_x];
+	if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] init.sqf: ERROR in cart assets.sqf : %2",_camsVersion,_x];CAMS_isStable=false;};
+	waitUntil { ScriptDone _hold};
+	diag_log format ["[CAMS] Cart:%1 immersionFX loaded",_x];
+	//["systemChatRequest", [format ["Cart:%1 immersionFX loaded",_x]]] call ExileServer_system_network_send_broadcast;
+	//["CAMS System",format ["Cart:%1 immersionFX loaded",_x]] spawn Haz_fnc_createNotification;
+
+} forEach _cartsLoaded;
+
+// Complete ImmersionFX
+
+
+
 
 
 

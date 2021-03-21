@@ -192,6 +192,7 @@ FuMS_BuildVehicle_Server =
   _vehObj = _this select 0;
 
     _vehObj setVariable ["FuMS_HCTEMP", "AI", true]; // HCTEMP set to "PLAYER" once a player enters.
+	_vehObj setVariable ["FuMS_HOMEPOS", getpos _vehObj, true];
 
   //  _vehObj=createVehicle[_item,_position,[],0,"NONE"];
   //  _vehObj call EPOCH_server_setVToken;
@@ -267,7 +268,7 @@ FuMS_BuildVehicle_Server =
 			};
             //diag_log format ["###EH:GetIn: HCTEMP = %1", _value];
             _vehobj setVariable ["FuMS_HCTEMP", "PLAYER", true];
-            _vehobj setVariable ["FuMS_Taken", true, true];			
+            _vehobj setVariable ["FuMS_TAKEN", true, true];				
         };       
     }];   
 
@@ -335,7 +336,7 @@ FuMS_InitToken = true;
     [_headlessClient] spawn FuMS_HeartMonitor;      
 };
 
-/*
+
 FuMS_ZombieNoise_Server =
 {
     private ["_data","_sound","_zombie","_players"];
@@ -356,7 +357,7 @@ FuMS_ZombieNoise_Server =
 {
     [_this select 1] spawn FuMS_ZombieNoise_Server;    
 };
-*/
+
 
 "FuMS_ZupaCaptureServer" addPublicVariableEventHandler
 {

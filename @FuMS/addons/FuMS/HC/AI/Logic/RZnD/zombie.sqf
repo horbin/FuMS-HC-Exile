@@ -40,11 +40,11 @@ switch (toupper _typeZombie) do
 {
     case "ZOMBIE":
     {  // set memory to 1, jump throw back to 0.1,15
-        _attackarray = ["ryanzombies\sounds\ryanzombiesattack1.ogg", "ryanzombies\sounds\ryanzombiesattack2.ogg", "ryanzombies\sounds\ryanzombiesattack3.ogg", "ryanzombies\sounds\ryanzombiesattack4.ogg", "ryanzombies\sounds\ryanzombiesattack5.ogg"];
-        _jumparray = ["ryanzombies\sounds\ryanzombiesleap1.ogg", "ryanzombies\sounds\ryanzombiesleap2.ogg", "ryanzombies\sounds\ryanzombiesleap3.ogg", "ryanzombies\sounds\ryanzombiesleap4.ogg", "ryanzombies\sounds\ryanzombiesleap5.ogg", "ryanzombies\sounds\ryanzombiesleap6.ogg"];
-        _collisionarray = ["ryanzombies\sounds\collision1.ogg", "ryanzombies\sounds\collision2.ogg", "ryanzombies\sounds\collision3.ogg", "ryanzombies\sounds\collision4.ogg"];
-        _throwarray = ["ryanzombies\sounds\vehicle_collision.wss", "ryanzombies\sounds\vehicle_drag_end.wss"];
-        _eathitarray = ["ryanzombies\sounds\ryanzombieseathit.wav"];
+        _attackarray = ["ryanzombies\sounds\attack1.ogg", "ryanzombies\sounds\attack2.ogg", "ryanzombies\sounds\attack3.ogg", "ryanzombies\sounds\attack4.ogg", "ryanzombies\sounds\attack5.ogg"];
+        _jumparray = ["ryanzombies\sounds\jump1.ogg", "ryanzombies\sounds\jump2.ogg", "ryanzombies\sounds\jump3.ogg", "ryanzombies\sounds\jump4.ogg", "ryanzombies\sounds\jump5.ogg", "ryanzombies\sounds\jump6.ogg"];
+        _collisionarray = ["ryanzombies\sounds\vehicle_hit1.ogg", "ryanzombies\sounds\vehicle_hit2.ogg", "ryanzombies\sounds\vehicle_hit3.ogg", "ryanzombies\sounds\vehicle_hit4.ogg"];
+        _throwarray = ["ryanzombies\sounds\vehicle_throw1.ogg", "ryanzombies\sounds\vehicle_throw2.ogg"];
+        _eathitarray = ["ryanzombies\sounds\eat1.ogg", "ryanzombies\sounds\eat2.ogg", "ryanzombies\sounds\eat3.ogg", "ryanzombies\sounds\eat4.ogg", "ryanzombies\sounds\eat5.ogg"];
         _zombie setVariable ["FuMS_ZJump",[20, 00]]; // jump range and chance to jump
         _zombie setVariable ["FuMS_ZThrow",[00, 10]]; // chance and 'how close target must be to vehicle in order for zombie to throw it'
         _zombie setVariable ["FuMS_ZAttackStats", [
@@ -60,11 +60,11 @@ switch (toupper _typeZombie) do
     };
     case "ZOMBIESOLDIER":
     {
-        _attackarray = ["ryanzombies\sounds\ryanzombiesattack1.ogg", "ryanzombies\sounds\ryanzombiesattack2.ogg", "ryanzombies\sounds\ryanzombiesattack3.ogg", "ryanzombies\sounds\ryanzombiesattack4.ogg", "ryanzombies\sounds\ryanzombiesattack5.ogg"];
-        _jumparray = ["ryanzombies\sounds\ryanzombiesleap1.ogg", "ryanzombies\sounds\ryanzombiesleap2.ogg", "ryanzombies\sounds\ryanzombiesleap3.ogg", "ryanzombies\sounds\ryanzombiesleap4.ogg", "ryanzombies\sounds\ryanzombiesleap5.ogg", "ryanzombies\sounds\ryanzombiesleap6.ogg"];
-        _collisionarray = ["ryanzombies\sounds\collision1.ogg", "ryanzombies\sounds\collision2.ogg", "ryanzombies\sounds\collision3.ogg", "ryanzombies\sounds\collision4.ogg"];
-        _throwarray = ["ryanzombies\sounds\vehicle_collision.wss", "ryanzombies\sounds\vehicle_drag_end.wss"];
-        _eathitarray = ["ryanzombies\sounds\ryanzombieseathit.wav"];
+        _attackarray = ["ryanzombies\sounds\attack_demon1.ogg", "ryanzombies\sounds\attack_demon2.ogg", "ryanzombies\sounds\attack_demon3.ogg", "ryanzombies\sounds\attack_demon4.ogg", "ryanzombies\sounds\attack_demon5.ogg"];
+        _jumparray = ["ryanzombies\sounds\jump1.ogg", "ryanzombies\sounds\jump2.ogg", "ryanzombies\sounds\jump3.ogg", "ryanzombies\sounds\jump4.ogg", "ryanzombies\sounds\jump5.ogg", "ryanzombies\sounds\jump6.ogg"];
+        _collisionarray = ["ryanzombies\sounds\vehicle_hit1.ogg", "ryanzombies\sounds\vehicle_hit2.ogg", "ryanzombies\sounds\vehicle_hit3.ogg", "ryanzombies\sounds\vehicle_hit4.ogg"];
+        _throwarray = ["ryanzombies\sounds\vehicle_throw1.ogg", "ryanzombies\sounds\vehicle_throw2.ogg"];
+        _eathitarray = ["ryanzombies\sounds\eat1.ogg", "ryanzombies\sounds\eat2.ogg", "ryanzombies\sounds\eat3.ogg", "ryanzombies\sounds\eat4.ogg", "ryanzombies\sounds\eat5.ogg"];
         _zombie setVariable ["FuMS_ZJump",[20, 5]]; // jump range and chance to jump
         _zombie setVariable ["FuMS_ZThrow",[60, 20]]; // chance and distance
         _zombie setVariable ["FuMS_ZAttackStats", [
@@ -81,11 +81,11 @@ switch (toupper _typeZombie) do
     };
     case "ZOMBIESPIDER":
     {
-        _attackarray = ["ryanzombies\sounds\ryanzombiesattack1.ogg", "ryanzombies\sounds\ryanzombiesattack2.ogg", "ryanzombies\sounds\ryanzombiesattack3.ogg", "ryanzombies\sounds\ryanzombiesattack4.ogg", "ryanzombies\sounds\ryanzombiesattack5.ogg"];
-        _jumparray = ["ryanzombies\sounds\ryanzombiesleap1.ogg", "ryanzombies\sounds\ryanzombiesleap2.ogg", "ryanzombies\sounds\ryanzombiesleap3.ogg", "ryanzombies\sounds\ryanzombiesleap4.ogg", "ryanzombies\sounds\ryanzombiesleap5.ogg", "ryanzombies\sounds\ryanzombiesleap6.ogg"];
-        _collisionarray = ["ryanzombies\sounds\collision1.ogg", "ryanzombies\sounds\collision2.ogg", "ryanzombies\sounds\collision3.ogg", "ryanzombies\sounds\collision4.ogg"];
-        _throwarray = ["ryanzombies\sounds\vehicle_collision.wss", "ryanzombies\sounds\vehicle_drag_end.wss"] ;
-        _eathitarray = ["ryanzombies\sounds\ryanzombieseathit.wav"];
+        _attackarray = ["ryanzombies\sounds\attack_crawler1.ogg", "ryanzombies\sounds\attack_crawler2.ogg"];
+        _jumparray = ["ryanzombies\sounds\jump1.ogg", "ryanzombies\sounds\jump2.ogg", "ryanzombies\sounds\jump3.ogg", "ryanzombies\sounds\jump4.ogg", "ryanzombies\sounds\jump5.ogg", "ryanzombies\sounds\jump6.ogg"];
+        _collisionarray = ["ryanzombies\sounds\vehicle_hit1.ogg", "ryanzombies\sounds\vehicle_hit2.ogg", "ryanzombies\sounds\vehicle_hit3.ogg", "ryanzombies\sounds\vehicle_hit4.ogg"];
+        _throwarray = ["ryanzombies\sounds\vehicle_throw1.ogg", "ryanzombies\sounds\vehicle_throw2.ogg"];
+        _eathitarray = ["ryanzombies\sounds\eat1.ogg", "ryanzombies\sounds\eat2.ogg", "ryanzombies\sounds\eat3.ogg", "ryanzombies\sounds\eat4.ogg", "ryanzombies\sounds\eat5.ogg"];
          _zombie setVariable ["FuMS_ZJump",[40, 50]]; // jump range and chance to jump
         _zombie setVariable ["FuMS_ZThrow",[5, 15]]; // chance and distance
         _zombie setVariable ["FuMS_ZAttackStats", [
@@ -101,11 +101,12 @@ switch (toupper _typeZombie) do
     };
     case "ZOMBIEBOSS":
     {
-        _attackarray = ["ryanzombies\sounds\ryanzombiesattack1boss.ogg", "ryanzombies\sounds\ryanzombiesattack2boss.ogg", "ryanzombies\sounds\ryanzombiesattack3boss.ogg", "ryanzombies\sounds\ryanzombiesattack4boss.ogg", "ryanzombies\sounds\ryanzombiesattack5boss.ogg"];
-        _jumparray = ["ryanzombies\sounds\ryanzombiesleap1.ogg", "ryanzombies\sounds\ryanzombiesleap2.ogg", "ryanzombies\sounds\ryanzombiesleap3.ogg", "ryanzombies\sounds\ryanzombiesleap4.ogg", "ryanzombies\sounds\ryanzombiesleap5.ogg", "ryanzombies\sounds\ryanzombiesleap6.ogg"];
-        _collisionarray = ["ryanzombies\sounds\collision1.ogg", "ryanzombies\sounds\collision2.ogg", "ryanzombies\sounds\collision3.ogg", "ryanzombies\sounds\collision4.ogg"];
-        _throwarray = ["ryanzombies\sounds\vehicle_collision.wss", "ryanzombies\sounds\vehicle_drag_end.wss"];
-        _eathitarray = ["ryanzombies\sounds\ryanzombieseathitboss1.ogg", "ryanzombies\sounds\ryanzombieseathitboss2.ogg"];
+        _attackarray = ["ryanzombies\sounds\attack_demon1.ogg", "ryanzombies\sounds\attack_demon2.ogg", "ryanzombies\sounds\attack_demon3.ogg", "ryanzombies\sounds\attack_demon4.ogg", 
+						"ryanzombies\sounds\attack_demon5.ogg", "ryanzombies\sounds\attack_demon6.ogg", "ryanzombies\sounds\attack_demon7.ogg", "ryanzombies\sounds\attack_demon8.ogg"];
+        _jumparray = ["ryanzombies\sounds\jump1.ogg", "ryanzombies\sounds\jump2.ogg", "ryanzombies\sounds\jump3.ogg", "ryanzombies\sounds\jump4.ogg", "ryanzombies\sounds\jump5.ogg", "ryanzombies\sounds\jump6.ogg"];
+        _collisionarray = ["ryanzombies\sounds\vehicle_hit1.ogg", "ryanzombies\sounds\vehicle_hit2.ogg", "ryanzombies\sounds\vehicle_hit3.ogg", "ryanzombies\sounds\vehicle_hit4.ogg"];
+        _throwarray = ["ryanzombies\sounds\vehicle_throw1.ogg", "ryanzombies\sounds\vehicle_throw2.ogg"];
+        _eathitarray = ["ryanzombies\sounds\eat1.ogg", "ryanzombies\sounds\eat2.ogg", "ryanzombies\sounds\eat3.ogg", "ryanzombies\sounds\eat4.ogg", "ryanzombies\sounds\eat5.ogg"];
           _zombie setVariable ["FuMS_ZJump",[40, 30]]; // jump range and chance to jump
         _zombie setVariable ["FuMS_ZThrow",[80, 35]]; // chance and distance
         _zombie setVariable ["FuMS_ZAttackStats", [
@@ -162,7 +163,7 @@ while {alive _zombie} do
         //_zombie moveto (getpos _zombie); // stop any random zombie movement so it is able to be driven by MoveToTarget.
         if ((_sound < diag_tickTime) && (!ryanzombiesdisableaggressive)) then
         {
-            [_zombie] exec "\ryanzombies\soundsclose.sqf";
+            //[_zombie] exec "\ryanzombies\soundsclose.sqf";
             _sound = diag_tickTime + 5;
         };                               
         _zombieMemory = _zombie getVariable "FuMS_ZMemory";    

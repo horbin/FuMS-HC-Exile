@@ -31,7 +31,7 @@ _lootData =
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_Grenade, 			[10,0,10]]
+			[CAMS_Grenade_ALL, 			[10,0,10]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[4,0,3]]

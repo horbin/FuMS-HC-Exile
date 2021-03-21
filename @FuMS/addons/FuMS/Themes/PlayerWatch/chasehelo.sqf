@@ -36,7 +36,7 @@
 			0,         //range from encounter center AI radio's can be heard (0=unlimited.)
 			true,  // Notify players via global message - hint screen on right of game display -
 			false,   // Show encounter area on the map
-			30,      // Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,      // Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 		//NOTE: the above delay must finish before the mission is considered 'complete' by the mission manager control loop.
 		// These two delays will also affect how much time will elapse from mission completion until living AI cleanup.
@@ -48,13 +48,13 @@
 		],
 		[  
 			// Mission Success Message
-			"Mission Success",  // title line
-			"Patrol helo destroyed."
+			"Patrol helo destroyed",  // title line
+			"Problem solved"
 		],
 		[
 			// Mission Failure Message
-			"Mission Failure!",
-			"This should never fail"
+			"Heli leaving",
+			"Eh, he's pissing off..."
 		]
 	],
 	[
@@ -62,16 +62,19 @@
 		//-----Loot Configuration-----    
 		// Refer to LootData.sqf for available loot types and contents.
 		[
-		   "None",[0,0]
+		   "None",
+		   [0,0]
 		   //Array of loot now supported using above syntax.
 		   // replace "Random" with your desired loot option from LootData.sqf, or leave random for random results!
 		   // AND don't forget you can use these loot options to fill vehicles with loot too!(see vehicle section below)
-		],[
+		],
+		[
 			"None" ,        // WIN Loot
 			[0,0]                // Offset from mission center x,y, 3 coords [x,y,z] places loot at a specific map location!  
-		],[
+		],
+		[
 			"None" ,            // Lose Loot.
-			 [0,0]                // Offset from mission center.
+			[0,0]                // Offset from mission center.
 		]
 	],
 	[
@@ -101,7 +104,7 @@
 			],
 			[  
 				// Pilots                                                          # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options                                                                                                RTB, Roads, Despawn, Height
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[400]]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["Explore",[500,0],[0,0],[500]]]
 			],
 			[   
 				// Troops : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
@@ -121,11 +124,11 @@
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
 			//	  ["PROX",["ProxPlayer",[0,0],80,1]  ],
-			["LUCNT",["LowUnitCount","EAST",0,0,[0,0]]  ]
+			["LUCNT",["LowUnitCount","EAST",0,0,[0,0]]  ],
 			//["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 			//["Detect",["Detected","ALL","ALL"] ],
 			//["BodyCount",["BodyCount",9] ]
-			//["Timer",["TIMER", 1800] ],
+			["Timer",["TIMER", 300] ]
 			//		                          offset    radius    time(s)  Name
 			//["Zuppa", ["ZuppaCapture",[ [ [-100,-100], 50,         90,  "Point 1" ],
 			//                               [ [100,100],   50,         90,  "Point 2" ]   ]]  ],
@@ -136,11 +139,11 @@
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			//  [["WIN"],["BodyCount"     ]],  // 
+			[["WIN"],["LUCNT"     ]],  // 
 			//  [["CHILD","Help_Helo",[0,0]],["OK"      ]],  // 
 			// [["Reinforce","Help_Vehicle","Trig4"]], 
-			//	  [["LOSE"],["TIMER", "OR", "VehDmg1", "BldgDmg1"]   ],
-			[["END"],["LUCNT"     ]]  
+			[["LOSE"],	["TIMER"]   ],
+			[["END"],	["LUCNT", "OR", "Timer"]	]  
 		]      
 	]
 ];

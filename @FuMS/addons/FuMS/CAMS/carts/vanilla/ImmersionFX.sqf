@@ -16,8 +16,6 @@ private ["_immersionData","_cartName","_debugCart"];
 _cartName = "vanilla";
 _debugCart = false;
 
-
-
 _immersionData = 
 [
 	/////////////////////////////////////// AI Models to use
@@ -37,6 +35,9 @@ _immersionData =
 
 			// A-164 Wipeout
 			"B_Plane_CAS_01_dynamicLoadout_F",
+			"B_Plane_CAS_01_F",
+			"O_Plane_CAS_02_F",
+			"I_Plane_Fighter_03_CAS_F",
 			
 			// MQ-4A Greyhawk (UAV)
 			"B_UAV_02_dynamicLoadout_F",
@@ -56,14 +57,31 @@ _immersionData =
 			"O_Plane_CAS_02_dynamicLoadout_F"
 		]
 	],
+	
+	// Heli Assets
+	[	
+		"ImFX_Heli_Rescue",1,true,
+		[
+			// UH-80 Ghosthawk
+			"B_Heli_Transport_01_F",
+			"B_Heli_Transport_01_camo_F",
+			
+			// CH-67 Huron
+			"B_Heli_Transport_03_unarmed_F",
+			
+			// MH-9 Hummingbird
+			"B_Heli_Light_01_F",
+			
+			// UH1H
+			"UH1H_Closed_TK"		
+		]
+	],
 	[
 		"ImFX_Air_Airdrop",0,true,
 		[
 			"CAMS_Heli_Unarmed_W","CAMS_Heli_Transport_W"
 		]
 	],
-
-	/////////////////////////////////////// Heli Assets
 	[
 		"ImFX_Heli_Escort",0,true,
 		[
@@ -80,25 +98,6 @@ _immersionData =
 		"ImFX_Heli_Troops",0,true,
 		[
 			"CAMS_Heli_Unarmed_E","CAMS_Heli_Unarmed_I","CAMS_Heli_Unarmed_W"
-		]
-	],
-	[
-		"ImFX_Air_Rescue_Heli",1,true,
-		// NOTE: These MUST have a default crew assigned to them, otherwise the vehicle will just crash.  Not all content
-		// providers crew all vehicles, be sure to test in the editor first toensure they have a deafult crew in the model
-		[
-			// UH-80 Ghosthawk
-			"B_Heli_Transport_01_F",
-			"B_Heli_Transport_01_camo_F",
-			
-			// CH-67 Huron
-			"B_Heli_Transport_03_unarmed_F",
-			
-			// MH-9 Hummingbird
-			"B_Heli_Light_01_F",
-			
-			// UH1H
-			"UH1H_Closed_TK"
 		]
 	],
 
@@ -138,11 +137,23 @@ _immersionData =
 	],	
 
 	[
+		"ImFX_Land_LootCar",0,true,
+		[
+			"CAMS_Land_ALL_C"
+		]
+	],
+[
 		"ImFX_Land_Civ_Car",0,true,
 		[
 			"CAMS_Land_ALL_C"
 		]
 	],
+
+	////////////////////////////////////////////////////////////////////////////////////
+	// Immersive AI uniforms
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	
 	[	// Uniforms that "Doctor" or "Scientist" AI can wear 
 		"ImFX_Uniform_Scientist",1,true,
 		[
@@ -158,6 +169,7 @@ _immersionData =
 			"U_C_ConstructionCoverall_Black_F","U_C_ConstructionCoverall_Blue_F"
 		]
 	],
+	
 	[	// Uniforms that "Survivor" class can wear (Other NPC's acting as "Players")
 		"ImFX_Uniform_Survivor",0,true,
 		[
@@ -179,7 +191,7 @@ _immersionData =
 	[	// Uniforms that "Survivor" class can wear (Independant side)
 		"ImFX_Pack_Survivor",0,true,
 		[
-			"CAMS_Packs_Lv1"
+			"CAMS_Packs_ALL"
 		]
 	],
 	[	// Uniforms that "Survivor" class can wear (Independant side)
@@ -194,7 +206,8 @@ _immersionData =
 			"CAMS_Pistols_I","CAMS_Pistols_E","CAMS_Pistols_W"
 		]
 	],	
-	///////////////// Weapon Specifics
+
+	
 	///////////////// DAPE Loot Tables
 	[
 		"ImFX_DAPE_lootWeapons",1,true,
@@ -233,7 +246,13 @@ _immersionData =
 	[
 		"ImFX_Build_Mil_Tower",1,true,
 		[
-			"Land_BagBunker_Tower_F"
+			"Land_BagBunker_Tower_F",
+			"Land_GuardTower_01_F",
+			"Land_GuardTower_02_F",
+			"Land_HBarrier_01_tower_green_F",
+			"Land_HBarrier_01_big_tower_green_F",
+			"Land_Fort_Watchtower",
+			"Land_Fort_Watchtower_EP1"
 		]
 	]
 ];

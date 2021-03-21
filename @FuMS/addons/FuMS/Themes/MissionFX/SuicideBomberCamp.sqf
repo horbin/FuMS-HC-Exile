@@ -6,13 +6,13 @@
 
 [
 	["SuicideBomberCamp", 200, "LAND",[0,0,0],"MissionFXStart","MissionFXEnd"], // Mission Title NOSPACES!, and encounter radius
-	["Bomber Camp","mil_objective", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Bomber Camp","plp_mark_as_bomb", "ELLIPSE","ColorGreen","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, 1,0,
 		true, // Notify players via global message
 		true,// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -48,10 +48,10 @@
 
 
 		// This line will spawn a group of kamikaze crazies in the mission
-		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 50)-25),((round random 50)-25)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 250)-125),((round random 250)-125)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 250)-125),((round random 250)-125)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 250)-125),((round random 250)-125)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Land_Sign_WarningUnexplodedAmmo_F",		[((round random 250)-125),((round random 250)-125)],	(round random 360),		0],  //type, offset, rotation, presist flag
 
 		["Land_CampingTable_small_white_F",[-4.70117,-0.396484,0],286.635,0],
 		["Land_CampingTable_small_F",[2.37695,-1.14844,0],64.6661,0],
@@ -92,7 +92,7 @@
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 		[["EAST","COMBAT","RED","LINE"],   [  [4,"Rifleman_E"]           ],   ["BoxPatrol",[-6,-6],[0,0],[10]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [4,"Rifleman_E"]           ],   ["BoxPatrol",[6,6],[0,0],[25]     ]]
+		[["EAST","COMBAT","RED","LINE"],   [  [4,"Rifleman_E"]           ],   ["Explore",[6,6],[0,0],[25]     ]]
 
 	],
 

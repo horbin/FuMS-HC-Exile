@@ -47,8 +47,11 @@ _mapCenter = [worldSize / 2, worldsize / 2, 100];
 		_tempDir = getDir _x + _dirMod; 
 		hideObjectGlobal _x; 
 	   
-		_bldg = createVehicle [ _newBuild, _tempPos,[],0,"CAN_COLLIDE"]; 
-		_bldg setDir _tempdir; 
+   		_bldg = createVehicle [ _newBuild, _tempPos,[],0,"CAN_COLLIDE"]; 
+		//_bldg = createVehicle [ _newBuild, [(_tempPos select 0), (_tempPos select 1), ((_tempPos select 2)+10)],[],0,"CAN_COLLIDE"]; 
+		_bldg setPosATL (_tempPos);		
+		_bldg setDir _tempdir;
+		_bldg enableSimulationGlobal true;
 			  
 	}foreach _sites;
 }forEach _swapArray;

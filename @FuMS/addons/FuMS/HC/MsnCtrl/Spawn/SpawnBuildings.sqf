@@ -21,7 +21,7 @@ _generation = _lineage select 1;
 _offspringID = _lineage select 2;
 _msnTag = format ["FuMS_%1_%2_%3",_themeIndex,_generation,_offspringID];
 
-_debug = false;
+_debugSpawnBuild = false;
 
 if (!isNil "_buildingData") then
 {
@@ -45,9 +45,9 @@ if (!isNil "_buildingData") then
             _persist = _x select 3;
             // valid 'keywords' = M3EDITOR
 			
-			if (_debug) then
+			if (_debugSpawnBuild) then
 			{
-				diag_log format ["##SPAWNBUILDINGS: Launch params: _offset:%2 | _rotation:%3 | _persist:%4 | _mission:%5 | _type:%1",_type, _offset, _rotation, _persist,  _curMission];
+				diag_log format ["##SPAWNBUILDINGS: Spawning: _offset:%2 | _rotation:%3 | _persist:%4 | _mission:%5 | _type:%1",_type, _offset, _rotation, _persist,  _curMission];
 			};
         
             // if _type is an Array, it should be a 'list' of building or vehicle class names, so pick one randomly.
@@ -104,7 +104,7 @@ if (!isNil "_buildingData") then
                         if ( _type isKindOf "Air" or _type isKindOf "LandVehicle" or _type isKindOf "Ship") then
                         {                       								                     
                             _bldg = [ _type, _newPos, [], 0 , "CAN_COLLIDE"] call FuMS_fnc_HC_Util_HC_CreateVehicle;
-                             //diag_log format ["<FuMS:%1> SpawnBuildings:Vehicle Spawned (1): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
+                             diag_log format ["<FuMS:%1> SpawnBuildings:Vehicle Spawned (1): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
                             _vehicles = _vehicles + [_bldg];
                         }else
                         {																		
@@ -121,7 +121,7 @@ if (!isNil "_buildingData") then
 
 							
                             _buildings = _buildings + [_bldg];
-							//diag_log format ["<FuMS:%1> SpawnBuildings:Building Spawned (2): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
+							diag_log format ["<FuMS:%1> SpawnBuildings:Building Spawned (2): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
                         };
                         _bldg setVariable ["LINEAGE",_msnTag, false];
                         

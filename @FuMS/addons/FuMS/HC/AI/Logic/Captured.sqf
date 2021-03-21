@@ -254,7 +254,7 @@ uisleep 20;
                     private ["_var"];
                     // diag_log format ["<FuMS> Captured: %1 at %4 is %2  to position %3",_unit, _action select 0, _moveTo, getPos _unit];
                     _var = _unit getVariable "FuMS_CaptiveAction";     
-                    if (!alive _unit) exitwith {};
+                    if (!alive _unit) exitwith {false};
                     (unitReady _unit or (_var select 0 != _action select 0) or (_var select 1 != _action select 1)  or (_moveTo distance _unit < 10)  )
                     // wait for unit to be dead or done moving
                     //  OR its action or 'commander' changes

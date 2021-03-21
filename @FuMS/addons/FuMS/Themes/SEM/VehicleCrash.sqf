@@ -5,21 +5,21 @@
 
 [
 	["VehicleCrash", 100,"LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Vehicle Crash","hd_objective","ELLIPSE","ColorGreen","FDiagonal",200],    
+	["Vehicle Crash","plp_mark_civ_wrecktruck","ELLIPSE","ColorGreen","FDiagonal",200],    
 	   
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		true, "ALL",700, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 		90       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
 	[
 		"Supply Vehicle Crash!",
-		"A supply vehicle has crashed and is being ransacked by militia.  Get there, stop them, and steal the loot for yourself!"
+		"A supply convoy has been destroyed and is being ransacked by militia.  Get there, stop them, and steal the loot for yourself!"
 	],
 		
 		// Mission Success Message
@@ -44,7 +44,7 @@
 		[CAMS_Wreck_Mil,	[-6,-6],	(round random 360),	0,	"SMOKE_MEDIUM"]  
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_E"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
+		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_I"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 	],
 
 	// Vehicles
@@ -59,7 +59,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",				["TimerNoPlayers", 1800] ],   			// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["Timer",			["TimerNoPlayers", (random [1200, 2000, 1800]) ] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			//["TimerEvac", 	["Timer", 1400] ], // 1400		  
 			["LaunchScavengers",	["ProxPlayer",[0,0], 700, 1]],			// Player must be near event center to count as win
 			["PLAYERNEAR",			["ProxPlayer",[0,0], 100, 1]],			// Player must be near event center to count as win

@@ -4,13 +4,13 @@
 // Be cautious when editing data.
 
 [
-	["DayZHeloCrashW", 50, "LAND"], // Mission Title NOSPACES!, and encounter radius
-	["DayZHeloCrash - W","mil_dot","ELLIPSE","ColorYellow","FDiagonal",25],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["DayZHeloCrashW", 5, "LAND"], // Mission Title NOSPACES!, and encounter radius
+	["","plp_icon_wreckheli","ELLIPSE","ColorYellow","FDiagonal",25],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[				// NOTIFICATION Messages and Map display Control.
 		false, 0, 0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		false, 			// Notify players via global message
-		false,			// Show encounter area on the map
+		true,			// Show encounter area on the map
 		30,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 		10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 						//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.

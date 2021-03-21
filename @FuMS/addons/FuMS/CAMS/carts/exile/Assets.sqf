@@ -181,7 +181,11 @@ _cartContents =
 	[
 		"CAMS_I_Meds",1,false,
 		[
-			"Exile_Item_Bandage","Exile_Item_Heatpack","Exile_Item_InstaDoc","Exile_Item_Vishpirin"
+			"Exile_Item_Bandage",
+			"Exile_Item_Heatpack",
+			"Exile_Item_Vishpirin",
+			"Exile_Item_Defibrillator",
+			"Exile_Item_InstaDoc"
 		]
 	],
 	
@@ -201,15 +205,15 @@ _cartContents =
 
 	// Explosive Shells
 	[
-		"CAMS_E_IED",1,false,
+		"CAMS_Bombs_IED",1,false,
 		[
 			"Exile_Ammo_BreachingCharge_BigMomma_Veh","Exile_Ammo_BreachingCharge_Metal_Veh","Exile_Ammo_BreachingCharge_Wood_Veh"
 		]
 	],	
 	[
-		"CAMS_E_ALL",0,true,
+		"CAMS_Grenade_ALL",0,true,
 		[
-			"CAMS_E_Grenade", "CAMS_E_GrenadeIR_ALL", "CAMS_E_1Rnd", "CAMS_E_3Rnd", "CAMS_E_Mine", "CAMS_E_IED"
+			"CAMS_Grenade_ALL", "CAMS_Grenade_ALLIR_ALL", "CAMS_Shells_1Rnd", "CAMS_Shells_3Rnd", "CAMS_Bombs_Mines", "CAMS_Bombs_IED"
 		]
 	],
 
@@ -226,10 +230,15 @@ _cartContents =
 		]
 	],
 	[
+		"CAMS_Shotguns_W",1,false,
+		[
+			"Exile_Weapon_M1014" 			
+		]
+	],		
+	[
 		"CAMS_SMG_I",1,false,
 		[
-			"Exile_Weapon_SA61",
-			"Exile_Weapon_M1014"		// Shotgun - Just put it here for now 			
+			"Exile_Weapon_SA61"
 		]
 	],
 	[
@@ -241,8 +250,13 @@ _cartContents =
 	[
 		"CAMS_AssaultRifles_I",1,false,
 		[
-			"Exile_Weapon_AK107","Exile_Weapon_AK107_GL","Exile_Weapon_AK47","Exile_Weapon_AK74","Exile_Weapon_AK74_GL","Exile_Weapon_AKM",
-			"Exile_Weapon_AKS","Exile_Weapon_AKS_Gold","Exile_Weapon_M16A2","Exile_Weapon_M16A4","Exile_Weapon_M4"		
+			"Exile_Weapon_AK107","Exile_Weapon_AK107_GL",
+			"Exile_Weapon_AK47",
+			"Exile_Weapon_AK74","Exile_Weapon_AK74_GL",
+			"Exile_Weapon_AKM",
+			"Exile_Weapon_AKS","Exile_Weapon_AKS_Gold",
+			"Exile_Weapon_M16A2","Exile_Weapon_M16A4",
+			"Exile_Weapon_M4"		
 		]
 	],
 	[
@@ -268,6 +282,13 @@ _cartContents =
 		"CAMS_Guns_ALL_I",0,true,
 		[
 			"CAMS_Rifles_ALL_I", "CAMS_Pistols_I"
+		]
+	],
+	
+	[
+		"CAMS_Guns_ALL",0,true,
+		[
+			"CAMS_Guns_ALL_W", "CAMS_Guns_ALL_E","CAMS_Guns_ALL_I"
 		]
 	],
 
@@ -344,7 +365,7 @@ _cartContents =
 	[
 		"CAMS_Heli_Armed_I",1,false,
 		[
-			"Exile_Chopper_Huey_Armed_Desert","Exile_Chopper_Huey_Armed_Green"
+			//"Exile_Chopper_Huey_Armed_Desert","Exile_Chopper_Huey_Armed_Green"
 		]
 	],	
 	[
@@ -387,8 +408,6 @@ _cartContents =
 	[
 		"CAMS_Land_Car_C",1,false,
 		[
-			"Exile_Bike_OldBike","Exile_Bike_MountainBike",
-
 			"Exile_Car_Ikarus_Blue","Exile_Car_Ikarus_Red","Exile_Car_Ikarus_Party",
 
 			"Exile_Car_Golf_Black","Exile_Car_Golf_Red",
@@ -409,20 +428,19 @@ _cartContents =
 
 			"Exile_Car_Hatchback_Sport_Red","Exile_Car_Hatchback_Sport_Blue","Exile_Car_Hatchback_Sport_Orange",
 			"Exile_Car_Hatchback_Sport_White","Exile_Car_Hatchback_Sport_Beige","Exile_Car_Hatchback_Sport_Green"
-			,"Exile_Car_Hatchback_Sport_Admin"
+			//,"Exile_Car_Hatchback_Sport_Admin"
 			
 		]
 	],
 	[
 		"CAMS_Land_Offroad_C",1,false,
 		[
-			"Exile_Car_Offroad_Red","Exile_Car_Offroad_Beige","Exile_Car_Offroad_White","Exile_Car_Offroad_Blue",
-			"Exile_Car_Offroad_DarkRed","Exile_Car_Offroad_BlueCustom","Exile_Car_Offroad_Guerilla01",
-			"Exile_Car_Offroad_Guerilla02","Exile_Car_Offroad_Guerilla03","Exile_Car_Offroad_Guerilla04",
-			"Exile_Car_Offroad_Guerilla05","Exile_Car_Offroad_Guerilla06","Exile_Car_Offroad_Guerilla07",
-			"Exile_Car_Offroad_Guerilla08","Exile_Car_Offroad_Guerilla09","Exile_Car_Offroad_Guerilla10",
-			"Exile_Car_Offroad_Guerilla11","Exile_Car_Offroad_Guerilla12","Exile_Car_Offroad_Rusty1",
-			"Exile_Car_Offroad_Rusty2","Exile_Car_Offroad_Rusty3",		
+			"Exile_Car_Offroad_Red","Exile_Car_Offroad_Beige","Exile_Car_Offroad_White",
+			"Exile_Car_Offroad_Blue","Exile_Car_Offroad_DarkRed","Exile_Car_Offroad_BlueCustom",
+			//"Exile_Car_Offroad_Guerilla01","Exile_Car_Offroad_Guerilla02","Exile_Car_Offroad_Guerilla03","Exile_Car_Offroad_Guerilla04",
+			//"Exile_Car_Offroad_Guerilla05","Exile_Car_Offroad_Guerilla06","Exile_Car_Offroad_Guerilla07","Exile_Car_Offroad_Guerilla08",
+			//"Exile_Car_Offroad_Guerilla09","Exile_Car_Offroad_Guerilla10","Exile_Car_Offroad_Guerilla11","Exile_Car_Offroad_Guerilla12",
+			"Exile_Car_Offroad_Rusty1","Exile_Car_Offroad_Rusty2","Exile_Car_Offroad_Rusty3",		
 
 			"Exile_Car_MB4WD","Exile_Car_MB4WDOpen",
 
@@ -442,7 +460,6 @@ _cartContents =
 			"Exile_Car_SUV_Red","Exile_Car_SUV_Black","Exile_Car_SUV_Grey","Exile_Car_SUV_Orange",
 			"Exile_Car_SUVXL_Black","Exile_Car_SUV_Rusty1","Exile_Car_SUV_Rusty2","Exile_Car_SUV_Rusty3",
 	
-
 			"Exile_Car_LandRover_Red","Exile_Car_LandRover_Urban","Exile_Car_LandRover_Green",
 			"Exile_Car_LandRover_Sand","Exile_Car_LandRover_Desert"
 			
@@ -511,8 +528,8 @@ _cartContents =
 			"Exile_Car_Offroad_Armed_Guerilla07","Exile_Car_Offroad_Armed_Guerilla08","Exile_Car_Offroad_Armed_Guerilla09",
 			"Exile_Car_Offroad_Armed_Guerilla10","Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_Offroad_Armed_Guerilla12",
 
-			"Exile_Car_HMMWV_M134_Desert","Exile_Car_HMMWV_M134_Green","Exile_Car_HMMWV_M2_Desert",
-			"Exile_Car_HMMWV_M2_Green",
+			"Exile_Car_HMMWV_M134_Desert","Exile_Car_HMMWV_M134_Green",
+			"Exile_Car_HMMWV_M2_Desert","Exile_Car_HMMWV_M2_Green",
 
 			"Exile_Car_SUV_Armed_Black",
 

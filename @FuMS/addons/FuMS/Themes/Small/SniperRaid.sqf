@@ -5,13 +5,13 @@
 
 [
 	["SniperRaid", 200], // Mission Title NOSPACES!, and encounter radius
-	["Sniper Raid","hd_objective","ELLIPSE","ColorOrange","FDiagonal",200],    
+	["Sniper Raid","plp_mark_civ_sniperrifle","ELLIPSE","ColorOrange","FDiagonal",200],    
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 			true, "ALL", 1000,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global message
 			true,			// Show encounter area on the map
-			600,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			30       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -38,7 +38,8 @@
 		
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],  [  [3,"Sniper_E"]           ],     ["TowerGuard",[((round random 50)-100),((round random 50)-100)],[0,0],[100,"ANY"]     ]]
+		[["EAST","STEALTH","RED","LINE"],  [  [1,"Sniper_E"]           ],     ["TowerGuard",[((round random 50)-100),((round random 50)-100)],[0,0],[100,"ANY"]     ]],
+		[["EAST","STEALTH","RED","LINE"],  [  [1,"Sniper_E"]           ],     ["TowerGuard",[((round random 50)-100),((round random 50)-100)],[0,0],[100,"ANY"]     ]]
 	],
 
 	 // Vehicles
@@ -53,7 +54,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", 1800] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
+			["Timer",		["TimerNoPlayers", random [1600,1800,2000]] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
 			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
 			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements

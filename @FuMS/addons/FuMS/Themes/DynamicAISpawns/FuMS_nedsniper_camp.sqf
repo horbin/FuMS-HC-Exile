@@ -19,13 +19,13 @@
 
 [
 	["SniperCamp", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Sniper Camp","hd_objective","ELLIPSE","ColorBlue","Cross",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Sniper Camp","plp_mark_as_watchtower","ELLIPSE","ColorBlue","Cross",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			true, "ALL",1000, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -97,7 +97,6 @@
 					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Sniper"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
-				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
 			],
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 			[   //  Troop behaviour and side options    	# and type of Troops       Patrol logic |  spawn     |dest |'Patrol' options

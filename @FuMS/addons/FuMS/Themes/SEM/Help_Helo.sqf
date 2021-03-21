@@ -15,7 +15,7 @@
 			true, "ALL", 200, 				// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			false, 							// Notify players via global message
 			false,							// Show encounter area on the map
-			10,    							// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    							// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       						// Lose delay: Time in seconds after a lose before mission cleanup is performed
 											// NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -54,16 +54,16 @@
 			[         						// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH",[0,-1900],[1,"Rifleman"],        "TruckJunk"      ], 
 											//     ex. [  "O_Heli_Light_02_unarmed_EPOCH"           ,[0,-1800],[1,"Rifleman"],     "None"      ], 
-				[  ImFX_Heli_Troops, [0,2000], [1,"Paratrooper_E"],     "None"      ]
+				[  ImFX_Heli_Troops, [0,2000], [1,"Paratrooper_I"],     "None"      ]
 			],
 			[  
 											// PILOTS: # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_E"]  ],   ["ParaDrop",[0,-1800],[20,-20],["Full", 100, true,true  ]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Pilot_I"]  ],   ["ParaDrop",[0,-1800],[20,-20],["Full", 100, true,true  ]   ]]
 			],
 			[   
 											// TROOPS : These are distributed across all aircraft in the division. These lines are identical to the lines in the group section.
 				//Troop behaviour and side options                    # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[2,"Paratrooper_E"]],["BoxPatrol",[0,2000],[0,0],[75]]]
+				[["EAST","COMBAT","RED","COLUMN"],[[2,"Paratrooper_I"]],["BoxPatrol",[0,2000],[0,0],[75]]]
 											// 'dest' for troops is where they will go to perform their 'Patrol Logic' once they get on deck
 			]
 		]

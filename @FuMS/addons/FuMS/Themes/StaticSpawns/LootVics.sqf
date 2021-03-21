@@ -6,14 +6,14 @@
 // Be cautious when editing data.
 
 [
-	["LootVic", 300, "LAND"], // Mission Title NOSPACES!, and encounter radius
-	["Loot Vic","ExileMissionStrongholdIcon","ELLIPSE","ColorWhite","FDiagonal",25],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["LootVic", 5, "LAND"], // Mission Title NOSPACES!, and encounter radius
+	["Loot Vic","ExileMissionStrongholdIcon","ELLIPSE","ColorWhite","FDiagonal",5],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, 0, 0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		false, // Notify players via global message
 		false,// Show encounter area on the map
-		30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		10,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -51,10 +51,10 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  CAMS_Land_ALL_C,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_E"],        "TruckJunk",[0]      ],
-				[  CAMS_Land_ALL_C,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_E"],        "TruckJunk",[0]      ],
-				[  CAMS_Land_ALL_C,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_E"],        "TruckJunk",[0]      ],
-				[  CAMS_Land_ALL_C,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
+				//[  ImFX_Land_LootCar,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_I"],        "TruckJunk",[0]      ],
+				//[  ImFX_Land_LootCar,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_I"],        "TruckJunk",[0]      ],
+				[  ImFX_Land_LootCar,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_I"],        "TruckJunk",[0]      ],
+				[  ImFX_Land_LootCar,		[((random 300)-150),((random 300)-150)],	[1,"Rifleman_I"],        "TruckJunk",[0]      ]
 				
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!

@@ -14,6 +14,8 @@ _missionName = _this select 2;
 
 _MAXATTEMPTS = 15;  // number of attempts conducted before settling on a possible poor location.
  
+_debug = false;
+ 
 // Basic random location generation
 _minRange = 0;
 _waterMode = 0; // 0=no, 1=either, 2=water only
@@ -49,8 +51,20 @@ _goodPos = false;
 _attempts = _MAXATTEMPTS;
 while {_attempts > 0 and !_goodPos} do
 {
-      _pos = [FuMS_MapCenter, _minRange, FuMS_MapRange, _minRange, _waterMode, _terrainGradient, 
-                    _shoreMode, FuMS_BlackList, FuMS_Defaultpos] call BIS_fnc_findSafePos;   
+	_pos = [FuMS_MapCenter, _minRange, FuMS_MapRange, _minRange, _waterMode, _terrainGradient, 
+			_shoreMode, FuMS_BlackList, FuMS_Defaultpos] call BIS_fnc_findSafePos;  
+/*
+	_markname = str(_pos);
+	_mark = createMarker [_markname,_pos];
+	_mark setMarkerShape "ELLIPSE";
+	_mark setMarkerType "Dot";
+	_mark setMarkerColor "ColorRed";
+	_mark setMarkerBrush "SolidBorder";
+*/
+	
+	
+	
+	
     
     // search the encounter radius for live players.
     _folksHome = false;
@@ -63,6 +77,10 @@ while {_attempts > 0 and !_goodPos} do
         private ["_dist"];       
         // if distance between centers of two encounters are less than the sum of their radii they overlap.
         _dist = _pos distance (_x select 0);
+		if (_debug) then
+		{
+			diag_log format ["<FuMS> GetSafeMissionSpawnPos: Territory:%1 distance to territory:%2",_x,_dist];
+		};
         if (_dist < (_encounterRadius + (_x select 1) )   ) exitWith {_folksHome=true;diag_log format ["<FuMS> GetSafeMissionSpawnPos: Another mission: %1 too close.",_x select 2];};
     }foreach FuMS_MissionTerritory; // [_eCenter, _radius, "ThemeMissionname"]
     if (!_folksHome) then
@@ -79,12 +97,18 @@ while {_attempts > 0 and !_goodPos} do
             
             if (_nearTerritory ) then // find a plot pole, check for players at home or base raiding.
             {
-                diag_log format ["<FuMS> GetSafeMissionSpawnPos: Territory located near %1",_pos]; 
+                if (_debug) then
+				{
+					diag_log format ["<FuMS> GetSafeMissionSpawnPos: Territory located near %1",_pos]; 
+				};
 				_plotPoleList = nearestObjects [_pos, ["Exile_Construction_Flag_Static"], _encounterRadius];
 				
                 {
                     _playerList = _x nearEntities ["Man",_encounterRadius];
-                    diag_log format ["<FuMS> GetSafeMissionSpawnPos: Players located:%1",_playerList];   
+                    if (_debug) then
+					{
+						diag_log format ["<FuMS> GetSafeMissionSpawnPos: Players located:%1",_playerList];   
+					};
                     if (count _playerList > 0) exitwith {_folksHome = true;}; // plot pole, but  players home!
                 }foreach _plotPoleList;           
             };
@@ -94,7 +118,7 @@ while {_attempts > 0 and !_goodPos} do
                 private ["_xx","_yy","_rad","_isSafe","_i","_rng"];
                 _xx = _pos select 0;
                 _yy = _pos select 1;
-                _rad = _encounterRadius / 3;
+                _rad = _encounterRadius / 6;
                 _isSafe = true;
                 for [{_i=1},{_i < 4},{_i=_i+1}] do
                 {        
@@ -116,10 +140,16 @@ while {_attempts > 0 and !_goodPos} do
             _plotPoleList = nearestObjects [_pos, ["Exile_Construction_Flag_Static"], _encounterRadius];
             if (count _plotPoleList != 0 ) then // find a plot pole, check for players at home or base raiding.
             {
-                diag_log format ["<FuMS> GetSafeMissionSpawnPos: Plotpoles located:%1",_plotPoleList];           
+                if (_debug) then
+				{
+					diag_log format ["<FuMS> GetSafeMissionSpawnPos: Plotpoles located:%1",_plotPoleList];           
+				};
                 {
                     _playerList = _x nearEntities ["Man",_encounterRadius];
-                    diag_log format ["<FuMS> GetSafeMissionSpawnPos: Players located:%1",_playerList];   
+                    if (_debug) then
+					{
+						diag_log format ["<FuMS> GetSafeMissionSpawnPos: Players located:%1",_playerList];   
+					};
                     if (count _playerList > 0) exitwith {_folksHome = true;}; // plot pole, but  players home!
                 }foreach _plotPoleList;           
             };
@@ -149,7 +179,10 @@ while {_attempts > 0 and !_goodPos} do
 if (!_goodPos) then { diag_log format ["<FuMS> GetSafeMissionSpawnPos: No good position found for %1 after %2 attempts. Using location:%3",_missionName,_MAXATTEMPTS,_pos];}
 else 
 {
-    //diag_log format ["<FuMS> GetSafeMissionSpawnPos: Good position %2 found with %1 attempts remaining.",_attempts,_pos];
+    if (_debug) then
+	{
+		diag_log format ["<FuMS> GetSafeMissionSpawnPos: Good position %2 found with %1 attempts remaining.",_attempts,_pos];
+	};
 };
 _pos					
 

@@ -12,15 +12,15 @@ FuMS_ServerData =
 									// NOTE: setting to 'true' may drasticly impact server performance. ** THIS IS NOT CURRENTLY SUPPORTED
         "testpath",                 // DATABASE CONFIG ** THIS IS NOT CURRENTLY SUPPORTED
 		true,						// ADMIN CONTROLS Enable AdminControls! See Docs
-        20   						// MIN FRAMERATE Below this FPS FuMS will not load new missions. 
+        30   						// MIN FRAMERATE Below this FPS FuMS will not load new missions. 
 									// NOTE: Adjust to fit your server environment and specific configuration
     ],
-		[  								// Exclusion Areas
-										// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
-		],
-		[ 								// Default Areas
-										// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
-		],
+	[  								// Exclusion Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+	],
+	[ 								// Default Areas
+									// See \FuMS\HC\Util\GetWorldInfo.sqf if you need to make changes
+	],
     [	// Active themes section 
 		["PlayerWatch",-1], 		// DO NOT REMOVE OR COMMENT OUT THIS THEME!
 									// ActiveThemes
@@ -32,7 +32,7 @@ FuMS_ServerData =
 		//["Admin",-1],				// Remove this theme if on a production server.
 		//["Test",-1], 				// Remove this theme if on a production server.
 		//["Zombies",-1], 			// NOT TESTED, NOT UPDATED Uncomment this if you have the Zombies add on installed  (NOT TESTED)
-		["MissionFX",-1], 			// Random ALIAS anomoliesthat look like small camps      
+		//["MissionFX",-1], 		// Random ALIAS anomoliesthat look like small camps      
 		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["SEM",-1], 				// basic old school Arma2 Epoch encounters
 		["Townraid",-1], 			// random town is raided and then attacked!
@@ -42,18 +42,20 @@ FuMS_ServerData =
 		//["Convoy",-1]				// DO NOT USE FOR NOW - 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
 		//["Jurassic",-1], 			// NOT TESTED, NOT UPDATED creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
-		["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
+		//["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
 		["VehicleHeists", -1],		// Missions that spawn vehicles with guards for any map
-		["DynamicVehicles", -1],		// Missions that spawn vehicles with guards for any map
+		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
 		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
 		["DynamicAISpawns", -1],	// Missions that spawn AI groups with guards for any map
-		["Altis", -1], 				// Missions specific to Altis ported from Exile.Com
-		["RoadBlock_Altis",1] 		// Roadblocks specific to Altis
+		["Altis", 1], 				// Missions specific to Altis ported from Exile.Com
+		//["Chernarus", 1],			// Missions specific to Altis ported from Exile.Com
+		//["RoadBlock_ChernoRedux",1] // Roadblocks specific to ChernoRedux
+		["RoadBlock_Altis",1] 	// Roadblocks specific to Altis
 		//["RoadBlock_Tanoa",1] 	// Roadblocks specific to Tanoa
 
 		
-		// NOTE: If you run the Roadblock_Pato mission with mutiple HC's, they will spawn on top of each other and kill each other.
-		// Line 50 has been updated to run on the FIRST HC only, so plan accordingly. See line 27 to understand how to change this
+		// NOTE: If you run the Roadblock_XXX missions with mutiple HC's, they will spawn on top of each other and kill each other.
+		// These have been updated to run on the FIRST HC only, so plan accordingly. See line 29 to understand how to change this
 
     ],
     [  // Event and AI Radio messsage behavior
@@ -143,8 +145,12 @@ FuMS_ServerData =
 		["I_UGV_01_rcws_F","B_G_Offroad_01_armed_F","O_LSV_02_unarmed_F"], //Remove that last one if you want the "vehicle reinforcments" vehicle be able to be stolen
 		
         true  //VehicleAmmoFlag true= sets vehicle ammo to zero when an AI vehicle is 1st occupied by a player.         
+	],
+	[	// Options
+		false,	// Use PLP markers
+		true,	// Use time acceleration (6 AM to 6 PM moved at 4x speed, 6 PM to 6 AM runs at 12x speed)
+		false	// Add road clutter 
 	]
-
 ];
 
 

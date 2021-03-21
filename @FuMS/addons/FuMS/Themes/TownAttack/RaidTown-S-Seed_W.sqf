@@ -7,15 +7,15 @@
 
 [
 	["RaidTown-S-Seed_W", 300], // Mission Title NOSPACES!, and encounter radius
-	["RaidTown-S-Seed_W","mil_objective","ELLIPSE","ColorBlue","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Village Attack","plp_mark_civ_submachinegun","ELLIPSE","ColorBlue","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		600       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
@@ -65,7 +65,7 @@
 			//	  ["Detect",["Detected","ALL","ALL"] ],
 			["Contact",		["BodyCount",5] ],
 			["BodyCount",	["BodyCount",15] ],
-			["EndMission",	["TIMER", 1400] ] // 1800  
+			["EndMission", 			["TimerNoPlayers", 		(random [1000,1200,1300])]]	//30 minutes	
 		  
 		],
 		[

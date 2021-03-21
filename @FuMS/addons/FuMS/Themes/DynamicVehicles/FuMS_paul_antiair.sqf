@@ -18,19 +18,19 @@
 
 [
 	["AntiAir", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Anti-Air soldiers","hd_objective","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Anti-Air soldiers","plp_mark_as_aacannon","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		[
 			"Anti-Air soldiers",	// The first line is the title of the pop-up box
-			"Soldiers are setting up Anti Air to reduce the amount of Jets... Go stop them and steal their Tigiris!!"		// The second line is the actual text in the box
+			"Soldiers are setting up Anti Air to reduce the amount of Jets... Go stop them and destroy that gun!"		// The second line is the actual text in the box
 		],
 		
 		// Mission Success Message
@@ -59,7 +59,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[CAMS_Land_AA_E,				[-10,-10],				0,			[.5,   1,     .5,         .5,         .5]],
+		[CAMS_Land_AA_E,				[-10,-10],				0,			[.2,   0,     .75,         .75,         .75], "SMOKE_SMALL" ],
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -128,7 +128,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150] ]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Hunter_E"]]  ,   ["BoxPatrol",[50,50],[-50,-50],[150] ]   
 				]
 			]
 		]

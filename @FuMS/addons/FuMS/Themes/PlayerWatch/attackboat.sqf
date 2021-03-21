@@ -84,7 +84,7 @@
 				 // Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
     ],[  
     // Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[0,0],[0,0],[50]   ]]
+   [["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["BoxPatrol",[390,0],[0,0],[50]   ]]
   ],[   
      // Troops : These are distributed across all vehicles in this convoy. These lines are identical to the lines in the group section.
      //  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options

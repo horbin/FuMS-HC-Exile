@@ -16,7 +16,14 @@ if (count _data != 2) exitWith {diag_log format["##GetChoice: ERROR in data sent
 _dataset = _data select 0;
 _chance = _data select 1;
 _selection = "";
-//diag_log format ["## GetChoice: _data:%1 _chance:%2",_dataset, _chance];
+
+_debugGC = false;
+
+if (_debugGC) then
+{
+	diag_log format ["## GetChoice: _data:%1 _chance:%2",_dataset, _chance];
+};
+
 if ( [_chance] call FuMS_fnc_HC_Loot_AddIt) then
 {
     if (TypeName _dataset == "ARRAY") then
@@ -26,5 +33,9 @@ if ( [_chance] call FuMS_fnc_HC_Loot_AddIt) then
     { 
         _selection = _dataset;
     };
+	if (_debugGC) then
+	{
+		diag_log format ["## GetChoice: _selection:%1 |  _data:%2",_selection,_dataset];
+	};
 };
 _selection

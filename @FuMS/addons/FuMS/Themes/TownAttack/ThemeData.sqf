@@ -20,10 +20,9 @@ _themeData =
 		["RaidTown-S-Seed_W","Villages"],  // spawn at the specific location. If '0' take from locations below!
 		["RaidTown-S-Seed_W","Villages"],
 		["RaidTown-S-Seed_E","Villages"],
-		["RaidTown-S-Seed_E","Villages"],
+		["RaidTown-S-Seed_E","Villages"]
+/*		,
 		["RaidTown-S-Seed_I","Villages"]		
-
-/*
 		["RaidTown-M-Seed_W","Cities"],  // These have not been written yet, but this is the intent
 		["RaidTown-M-Seed_W","Cities"],
 		["RaidTown-M-Seed_E","Cities"],

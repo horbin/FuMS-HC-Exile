@@ -12,7 +12,7 @@
 			true, "ALL", 700,	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			false, 				// Notify players via global message
 			false,				// Show encounter area on the map
-			600,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 								//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -45,7 +45,7 @@
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 		[["EAST","COMBAT","RED","LINE"],   [  [2,"Hunter_E"]           ],     ["BUILDINGS",[((round random 50)-100),((round random 50)-100)],[0,0],[50]     ]],
-		[["EAST","COMBAT","RED","LINE"],   [  [2,"LMG_E"]              ],     ["EXPLORE",   [((round random 50)-100),((round random 50)-100)],[0,1], [50]      ]],
+		[["EAST","COMBAT","RED","LINE"],   [  [1,"LMG_E"]              ],     ["EXPLORE",   [((round random 50)-100),((round random 50)-100)],[0,1], [50]      ]],
 		[["EAST","COMBAT","RED","LINE"],   [  [2,"Sniper_E"]           ],     ["SENTRY",   [((round random 50)-100),((round random 50)-100)],[1,0], [50]      ]]
 
 	],

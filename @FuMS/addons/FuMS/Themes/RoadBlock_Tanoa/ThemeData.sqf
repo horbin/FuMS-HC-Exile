@@ -7,25 +7,30 @@
 _themeData =
 [
     [
-        "RoadBlock_Altis",   	// Needs to match the folder name!
-        5,  					//Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        60, 					// Respawn delay in seconds
-		true, 					// global loot
-		true, 					// global soldier data
-		true,  					// autostart
-        1,  					// Player minimum to launch missions from this theme.
-        100   					// Player maximum above which missions will not launch
+        "RoadBlock_Pato",   // Needs to match the folder name!
+        5,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
+        60, // Respawn delay in seconds
+		true, // global loot
+		true, // global soldier data
+		true,  // autostart
+                1,  // Player minimum to launch missions from this theme.
+        100   // Player maximum above which missions will not launch
     ],
     [  
         
         // The below missions MUST be in the same folder as this file! 
         // see Test Theme ThemeData.sqf for other options
-		// Currently, these are map specific becuase of spawned in base configurations, so you have to comment out the ones you dont want
-		// Future state will have additonal map specific locations as info is contributed, as well as random locations
-		["WestIsland",	[8444.573,9860.862]],	// Used for Tanoa
-		["SEIsland",	[11056.534,3734.269]],	// Used for Tanoa
-		["HiddenBase"]							//Base spawns in random location with no marker.  This should always be the last mission in this file.
-		// Make sure no comma at end of last mission
+	// Currently, these are map specific becuase of spawned in base configurations, so you have to comment out the ones you dont want
+	// Future state will have additonal map specific locations as info is contributed, as well as random locations
+	
+	["WestIsland",[8444.573,9860.862]],	// Used for Tanoa
+	["SEIsland",[11056.534,3734.269]],	// Used for Tanoa
+	
+    //["Dump",[5786.56,20082.1]],		// Used for Altis
+	//["168154",[16894.9,15475.3]],		// Used for Altis
+	//["Ioannina",[23337.7,19770.1]],		// Used for Altis
+	["HiddenBase"]						//Base spawns in random location with no marker.  This should always be the last mission in this file.
+	// Make sure no comma at end of last mission
 		
     ],
     [   

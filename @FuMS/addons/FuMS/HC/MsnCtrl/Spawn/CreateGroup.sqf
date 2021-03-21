@@ -23,6 +23,9 @@ _themeIndex = _this select 3;
     };
 } foreach _partycomp;
 
+_group setVariable ["unitType","infantry"];
+
+
 //Notify server of new group so it will perform clean up on an HC disconnect.
 if (!isServer) then
 {

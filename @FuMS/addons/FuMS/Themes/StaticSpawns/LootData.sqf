@@ -38,7 +38,7 @@ _lootData =
 			[CAMS_I_Navigation, 	[2,1,3]],
 			[CAMS_W_Pointer, 		[0,0,1]],
 			[CAMS_Flares_Normal, 	[2,0,2]],
-			[CAMS_E_ALL, 			[0,0,2]]
+			[CAMS_Grenade_ALL, 			[0,0,2]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[0,0,1]]
@@ -61,7 +61,30 @@ _lootData =
 			[CAMS_I_Navigation,		[2,1,3]],
 			[CAMS_W_Pointer, 		[0,0,1]],
 			[CAMS_Flares_Normal, 	[2,0,2]],
-			[CAMS_E_ALL, 			[0,0,2]]
+			[CAMS_Grenade_ALL, 			[0,0,2]]
+		],
+		[// All backpacks and quantity
+			[CAMS_Packs_ALL, 		[0,0,1]]
+		]
+	],//********** Loot**********************
+	[
+	// Loot Option title, and box to be used.  Use of array names is permitted. 
+		["LootcrateI", "box_nato_ammoveh_f"],
+		[// All weapons and quantity 
+			[CAMS_SniperRifles_I, 	[1,0,2]],
+			[CAMS_LMG_I, 		[0,0,1]],
+			[CAMS_AssaultRifles_I, 	[2,0,2]]
+		],
+		[// All magazines and quantity
+			[FuMS_AmmoForEach, 		[3,0,2]]
+		],
+		[// All items and quantity
+			[CAMS_W_OpticsLv1, 		[2,0,1]],
+			[CAMS_I_Meds, 			[2,0,4]],
+			[CAMS_I_Navigation,		[2,1,3]],
+			[CAMS_W_Pointer, 		[0,0,1]],
+			[CAMS_Flares_Normal, 	[2,0,2]],
+			[CAMS_Grenade_ALL, 			[0,0,2]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 		[0,0,1]]
@@ -79,7 +102,7 @@ _lootData =
 			[FuMS_AmmoForEach, 		[2,0,2]]
 		],
 		[// All items and quantity
-			[CAMS_E_ALL, 			[0,0,2]]
+			[CAMS_Grenade_ALL, 			[0,0,2]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, 2]

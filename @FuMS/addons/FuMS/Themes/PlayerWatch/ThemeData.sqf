@@ -12,7 +12,7 @@ _themeData =
     [
         "PlayerWatch",   // Needs to match the folder name!
         1,  //Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        60, // Respawn delay in seconds
+        600, // Respawn delay in seconds
 		true,  // Global Loot Data
 		true,  // Global Soldier Data
 		false,   // AutoStart (do not set this to true, or all sorts of crazy stuff will occur)
@@ -22,7 +22,14 @@ _themeData =
     [  
        //All missions defined in PlayerWatchConfig.sqf MUST be declared here in order
 	   //  for the server to properly compile and push the mission to the HC!
-		["neutrals"],["helodrop"],["chaseHelo"],["chasecar"],["attackboat"],["divers"],["smallband"],//["zombies"],   // Enable random zombie spawn here by removing first set of //
+		["neutrals"],
+		["helodrop"],
+		["chaseHelo"],
+		["chasecar"],
+		["attackboat"],
+		["divers"],
+		["smallband"],
+		//["zombies"],   // Enable random zombie spawn here by removing first set of //
 		["gunfight"]
 		
 	

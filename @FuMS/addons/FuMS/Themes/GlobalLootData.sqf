@@ -52,16 +52,21 @@ _lootData =
 	// Loot used for Abandonded Village mission
 		["TownLoot", "box_FIA_support_f"],
 		[// All weapons and quantity 
-			[FuMS_Guns_ALL, 		[20,0,10]]
+			[CAMS_Guns_ALL, 		[10,0,5]]
 		],
 		[// All magazines and quantity
 			["FuMS_AmmoForEach",	[1,0,2]]
 		],
 		[// All items and quantity
-			[FuMS_E_All, 			[10,0,10]]
+			[ImFX_Food_Drink, 			[4,0,8]],
+			[ImFX_Food_MRE, 			[6,0,6]],
+			[CAMS_Flares_ALL, 			[4,0,8]],
+			[CAMS_Smoke_ALL, 			[6,0,6]],
+			[CAMS_Grenade_ALL, 			[4,0,8]],
+			[CAMS_Bombs_ALL, 			[0,0,1]]
 		],
 		[// All backpacks and quantity
-			[FuMS_Packs_ALL, 		[4,0,3]]
+			[CAMS_Packs_ALL, 		[4,0,3]]
 		],
 		20000  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -79,7 +84,8 @@ _lootData =
 		[// All items and quantity
 		],
 		[// All backpacks and quantity
-			[CAMS_Packs_ALL, [1,0,2]]
+			[CAMS_Packs_ALL, [1,0,2]],
+			[ImFX_Food_MRE, [1,0,2]]
 		],
 		420  //optional, number of random poptabs to add to loot
 	],//********** Loot**********************
@@ -110,7 +116,7 @@ _lootData =
 				// This will provide 4 clips for the LightMG's and 4 for the rifles for a total of 8 clips (not 16 clips)
 			],
 			[// All items and quantity
-				[CAMS_E_IED, 2]
+				[CAMS_Bombs_IED, 2]
 			],
 			[// All backpacks and quantity
 				[CAMS_Packs_ALL, 1]
@@ -122,7 +128,7 @@ _lootData =
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["BasicLoot", "box_nato_ammoveh_f","RANDOM"],
 		[// All weapons and quantity 
-			[CAMS_LMG_E, [2,0,2]],
+			[CAMS_SMG_E, [2,0,2]],
 			[CAMS_AssaultRifles_E, [2,0,1]]
 		],
 		[// All magazines and quantity
@@ -142,7 +148,7 @@ _lootData =
 	],
 	
 	//******** Poptab Loot****************************
-	/*
+	
 	[
 		// Loot Option title, and box to be used.  Use of array names is permitted. 
 		["PoptabLoot", "Exile_PopTabs"],  // Should only be used with Exile servers
@@ -161,12 +167,12 @@ _lootData =
 		],
 		10000 //Maximum number of poptabs to be included in poptab bag
 	],
-	*/
+	
 	
 	//************ Generic Truck Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
-		["TruckJunk","Vehicle","RANDOM"],
+		["TruckJunk","VEHICLE","RANDOM"],
 		[// All weapons and quantity  
 			["hgun_Pistol_Signal_F",[0,0,1]]
 		],
@@ -174,8 +180,12 @@ _lootData =
 			[FuMS_AmmoForEach, [0,1,1]]   
 		],
 		[// All items and quantity    
-			[CAMS_I_Meds,[0,0,3]],
-			[CAMS_Flares_Chemical,[0,0,2]],
+			[ImFX_Food_Drink,[2,0,3]],
+			[ImFX_Crafting_Tools,[1,0,2]],
+			[ImFX_Food_Raw,[2,0,3]],
+			[ImFX_Crafting_Raw,[2,0,3]],
+			[CAMS_I_Meds,[2,0,3]],
+			[CAMS_Flares_Chemical,[2,0,1]],
 			[CAMS_G_ALL,[0,0,2]]
 		],// All backpacks and quantity
 		[
@@ -183,7 +193,7 @@ _lootData =
 		]
 	],
 
-	//************ Generic Neli Loot
+	//************ Generic Heli Loot
 	[
 		// Loot Option title, and box to be used.  If box = 'VEHICLE' then loot is intended to be placed in a vehicle.
 		["HeliJunk","VEHICLE","special"],
@@ -194,8 +204,12 @@ _lootData =
 			[FuMS_AmmoForEach, [0,1,1]]   
 		],
 		[// All items and quantity    
-			[CAMS_I_Meds,[0,0,3]],
-			[CAMS_Flares_Chemical,[0,0,2]],
+			[ImFX_Food_Drink,[2,0,3]],
+			[ImFX_Crafting_Tools,[1,0,2]],
+			[ImFX_Food_Raw,[2,0,3]],
+			[ImFX_Crafting_Raw,[2,0,3]],
+			[CAMS_I_Meds,[2,0,3]],
+			[CAMS_Flares_Chemical,[2,0,1]],
 			[CAMS_G_ALL,[0,0,2]]
 		],// All backpacks and quantity
 		[
@@ -233,9 +247,13 @@ _lootData =
 			[FuMS_AmmoForEach, [4,0,1]]
 		],
 		[// All items and quantity
-			[CAMS_I_Navigation, [2,0,1]],
-			[CAMS_W_OpticsLv1, [2,1,1]],
-			["G_Diving",[2,0,1]]
+			[ImFX_Food_Drink,[2,0,3]],
+			[ImFX_Crafting_Tools,[1,0,2]],
+			[ImFX_Food_Raw,[2,0,3]],
+			[ImFX_Crafting_Raw,[2,0,3]],
+			[CAMS_I_Meds,[2,0,3]],
+			[CAMS_Flares_Chemical,[2,0,1]],
+			[CAMS_G_ALL,[0,0,2]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, [2,0,1]]
@@ -254,11 +272,13 @@ _lootData =
 			[FuMS_AmmoForEach, [4,0,1]]
 		],
 		[// All items and quantity
-			[CAMS_I_Navigation, [2,0,1]],
-			[CAMS_I_Meds, [4,0,4]],
-			[CAMS_W_OpticsLv1, [2,1,1]],
-			[CAMS_W_OpticsLv2, [2,1,1]],
-			["G_Diving",[2,0,1]]
+			[ImFX_Food_Drink,[2,0,3]],
+			[ImFX_Crafting_Tools,[1,0,2]],
+			[ImFX_Food_Raw,[2,0,3]],
+			[ImFX_Crafting_Raw,[2,0,3]],
+			[CAMS_I_Meds,[2,0,3]],
+			[CAMS_Flares_Chemical,[2,0,1]],
+			[CAMS_G_ALL,[0,0,2]]
 		],
 		[// All backpacks and quantity
 			[CAMS_Packs_ALL, [4,0,1]]
@@ -275,10 +295,16 @@ _lootData =
 			[FuMS_AmmoForEach, [4,1,2]]   
 		],
 		[// All items and quantity  
-			["G_Diving",[0,0,1]]
+			[ImFX_Food_Drink,[2,0,3]],
+			[ImFX_Crafting_Tools,[1,0,2]],
+			[ImFX_Food_Raw,[2,0,3]],
+			[ImFX_Crafting_Raw,[2,0,3]],
+			[CAMS_I_Meds,[2,0,3]],
+			[CAMS_Flares_Chemical,[2,0,1]],
+			[ImFX_Crafting_ALL,[0,0,2]]
 		],// All backpacks and quantity
 		[
-			//[FuMS_Packs_ALL, 2]
+			[CAMS_Packs_ALL, [4,0,1]]
 		]
 	]
  
