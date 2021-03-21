@@ -4,18 +4,82 @@
 ###### Read the information in the Docs folder, or you are missing out!
 ------------------------------------------------------------------------------------
 
-v0.50 (Final)
+v0.6
+****
+Playtesting Edition
+###### After many hours of playtesting, I have corrected a significant number of issues and added a ton of integration content.
+###### Enjoy
+
+System changes
+- Updated CAMS to 0.96
+	- Added support for Warfare Thai
+	- Added support for Unsung Vietnam
+	- Added support for Frith's Ruin
+	- Added support for Birds and Bees
+	- Added support for Ravage
+	- Added support for CUP Weapons
+	- Added support for CUP Vehicles
+	- Added support for CUP Uniforms (WIP)
+	- Added support for Extended Survival Pack
+	- Added support for NIARMS-AR15
+	- Added support for Foxcars
+	- Added support for Madmax
+	- Corrected Exile issues and added more content from mod
+	
+- MapReader system updated
+	- Automatically blacklists trader zones and bambi zones
+	- Can autodetect any map to find center and range
+	- Allows you to define your map including specific blacklist areas and default locations
+	- Added support for New York and Chernarus Redux
+	
+- New Mission(s) and changes
+	- Dynamic roadblocks (Cherno Redux)
+	- Cool Car Vehicle theft
+	- New AI classes and overhaul of AI settings
+	- Complete loot table overhaul
+	- Timers set to 30 minutes before clean up after a mission win
+	- PlayerWatch missions updated
+	- Added in a lot of randomization to things like mission times, number of men at random encounters, etc
+
+- Began porting in group functionalty from A3XAI to give groups finer control over actions
+	- No aggro area support
+
+	
+New Modules
+	- Map Immersion System
+		- System can swap out building on map for custom content buildings
+		- Allows you to retheme an existing map to utilize custom content
+		- Also allows you to correct map errors (Delete building at wrong height and put back at right height) 
+			- ex. ChernoRedux and the big blue door barn
+	- Asaayu's Abandoned Roads function added as option
+		- Populates server roads with junk to give map a war-torn look
+	- Time Xcellerator speeds up time 
+		- 4x between 6:00 AM to 6:00 PM
+		- 12x between 6:00 PM and 6:00 AM
+	- PLP Marker integration
+		- Mission's all support PLP markers by default
+		- Can be disabled with one setting
+
+Minor Changes
+	- Corrected unlimited ammo function to still require AI to reload
+		- This is more realistic and prevents ridiculous levels of supressive fire 
+	- Corrected addItem function to allow all AI loot to be added 
+	- Added debug opions to most major functions
+		- Generates additonal log file information to help troubleshoot
+	- Modified soldier AI logic to better balance the game
+	
+	
+
+v0.50d
 ****
 Developer's Edition
+###### This is nearly complete (updating documentation still) version with nearly all mission types turned back on
+###### This will be completed soon and all functions turned back on
 ****
 
 * I suck at updating the documentation but I do comment the code pretty heavily, and the missions do a pretty good job of showing you what options there are. *
 
 System Changes:
-
-- Map Immersion System (BETA)
-	- Allows you to easily swap buildings out for custom content buildings (Currently testing Unsung) 
-
 - ALIAS anomolies mission spawner working (Random anomoly will spawn looking like small bandit camp until the player gets close enough...)
 	- Anomolies supported:
 	- Farty
@@ -42,17 +106,7 @@ System Changes:
 
 Code changes:
 - Implemented CAMS (Common Asset Management System) for easy integration with custom content
-	- Includes full intregrations with:
-		- All Arma Vanilla content
-		- Marksmen
-		- Apex
-		- Helicopters
-		- Exile
-		- Unsung
-		- CUP Weapons
-		- CUP Vehicles
-		- CUP Units
-- All (Almost) mission themes updated for new CAMS system
+- All mission themes updated for new CAMS system
 - Added new trigger "TAKEVEHICLE" to monitor for stolen vehicles that have been moved a minimum distance
 - Created new LOITER logic so soldiers use ambient animation and new LOITER waypoints
 - Added ability to designate specific types of locations for individual missions, as opposed to one type for the whole theme (Missions can spawn in VILLAGES, MARINE, CITIES, ETC.)
@@ -63,8 +117,6 @@ Code changes:
 - Added in debug options in a lot of functions for development
 - Lot of reformatting to clean up code
 
-****
-****
 v0.49
 ****
 Mission FX Upgrade
@@ -341,4 +393,126 @@ v0.1 Initial Port
    for original development path under EPOCH mod.
 
 
-The complete users guide is available in the Docs folder of the download.  Please print and keep these directions handy, you're going to need them
+Installation: (see file in this distro, or read below)
+1. Headless Client Installation:
+
+2. See Exile Dedicated server installation here:
+3. http://www.exilemod.com/topic/12150-server-installationupgrade-guide-096-pomelo-namalsk/
+
+NOTE: Logs created by the HC will be located in the C:\Arma\Server\HCLogs folder.
+
+	e. See \Docs\Install Examples\mission.sqm
+	Modify your mpmissions\Exile.Altis.pbo 's  mission.sqm file
+	
+		i. Locate:
+		
+			Class Groups
+			
+			{
+				items = 1;
+				
+				class Item 0
+				
+				{
+				
+		ii. Change items =1; to items=2;
+		
+		iii. Add the following AFTER the closing }; for the 'class Item 0' definition
+		
+class Item1
+
+{
+
+	 side="LOGIC";
+	 
+	class Vehicles
+	
+            	{
+            	
+                	items=1;
+                	
+	                class Item0
+	                
+	                {
+	                
+	                    position[]={10720.502,12.714643,11356.243};
+	                    
+                	    id=100;
+                	    
+	                    side="LOGIC";
+	                    
+	                    vehicle="HeadlessClient_F";
+	                    
+	                    player="PLAY CDG";
+	                    
+                	    init="this enableSimulation false; this allowDamage false";
+                	    
+	                    leader=1;
+	                    
+	                    skill=0.60000002;
+	                    
+	                    text="HC_HAL";
+	                    
+                	};
+                	
+	};
+	
+ };
+
+	f. Save the mission.sqm file.
+
+## Your server is now ready to accept an HC!
+
+2) FuMS Installation 
+	a.   Copy the HC folder in the distribution to your mpmissions/Exile.Altis.pbo
+		Add []execVM "HC\init.sqf" to the TOP of the initPlayerLocal.sqf file.
+	
+	b.  Copy the @FuMS folder to your base server directory (C:\Arma\Server)
+		Do this on your SERVER. No need to put this folder on your HC!
+	c. Modify your server start parameters to include -servermods=@FuMS;
+	
+	d. Don't forget to repack your mpmissions pbo!
+
+3) Start your HC, feel free to leave it running.
+
+4) Start your Server.  You should see the HC connect as soon as the server unlocks. 
+Default FuMS distribution has some theme sets starting with no players. All others are defaulted to start when at least one player is logged in.
+
+5) Go read the \Docs\ Folder to learn how to customize the themes and missions to meet your server's needs!
+
+6) Still can't figure it out. Send me a PM, or post on the thread!
+
+************************************************
+Optional
+************************************************
+****Jurassic Raptor Addon Support **************
+http://makearmanotwar.com/entry/ec2EDrOCkM#.VT0zFfnF9EK
+
+1) Download the addon.
+
+2) Place the '@Jurassic Arma - Raptor Pack' folder in the base folder of your server. At the same folder level as the @Exile folder.
+
+3) Place this folder in the same location on your HC, IF your HC does not share the same source folder as your server.
+
+4) add @Jurrasic Arma - Raptor Pack to the -mod option of your server command line
+
+5) add this to the -mod option for your HC.
+
+6) add this to the -mod option for your client.
+
+7) Ensure your players download the mod, and add the proper @Jurassic.... to their start parameters.
+
+8) Enable the "Jurassic" theme in BaseServer.sqf.
+
+9) Learn to generate a bi-key for the mod and add it.
+
+   OR
+   
+   edit your config.cfg file and set 'verifySignatures = 0;'
+   
+10) repack and play!
+
+Note: Raptors use the same AI patrol logics as regular FuMS soldiers, so BoxPatrol, building searching, PatrolRoute, etc logics will all work with the "RaptorM", and "RaptorF" AI types.
+
+Note: Feel free to add Raptors to your own encounters!, see the Jurassic theme for examples.
+
