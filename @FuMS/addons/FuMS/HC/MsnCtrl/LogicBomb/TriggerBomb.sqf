@@ -193,8 +193,8 @@ _triggerList = _triggerList + [ ["OK", ["squirrel!"]]         ];
 
 
 			_obj = _vehicles select (_list select 0);
-			_obj setVariable ["FuMS_Taken", false, true];
-			_obj setVariable ["FuMS_Homepos", getpos _obj, true];
+			_obj setVariable ["FuMS_TAKEN", false, true];
+			//_obj setVariable ["FuMS_HOMEPOS", getpos _obj, true];
 			diag_log format ["<FuMS> TriggerBomb:TakeVehicle: Vehicle#%1 for %2_%3 set with distance of %4",_vehNum,_msnTag,_trigName,_distance];
 			_params = [_msnTag, _trigName, _obj, _distance]; 
 			[_params, _msnTag,"CHECKVEHICLE",_trigName] call FuMS_fnc_HC_MsnCtrl_LogicBomb_SpawnTrigger;                                                 
@@ -210,8 +210,8 @@ _triggerList = _triggerList + [ ["OK", ["squirrel!"]]         ];
             missionNamespace setVariable [format ["%1_%2_ObjectTotal",_msnTag,_trigName], _total];
             {
                 _obj = _vehicles select _x;
-                _obj setVariable ["FuMS_Taken", false, true];
-                _obj setVariable ["FuMS_Homepos", getpos _obj, true];
+                _obj setVariable ["FuMS_TAKEN", false, true];
+                _obj setVariable ["FuMS_HOMEPOS", getpos _obj, true];
                 diag_log format ["<FuMS> TriggerBomb:TakeVehicle: Vehicle#%1 for %2_%3 set at distance of %4",_x,_msnTag,_trigName,_distance];
             }foreach _list;
             _params = [_msnTag, _trigName, _distance]; 

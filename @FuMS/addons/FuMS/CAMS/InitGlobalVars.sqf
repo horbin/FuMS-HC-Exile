@@ -86,11 +86,10 @@ CAMS_W_Attachments_ALL = CAMS_W_Pointer + CAMS_W_Bipod + CAMS_W_Muzzle + CAMS_W_
 CAMS_B_Navigation = [];
 	
 // Backpacks
-CAMS_Packs_Lv1 = [];
-CAMS_Packs_Lv2 = [];
-CAMS_Packs_Lv3 = [];
+CAMS_Packs_W = [];
+CAMS_Packs_E = [];
 
-CAMS_Packs_ALL = CAMS_Packs_Lv1 + CAMS_Packs_Lv2 + CAMS_Packs_Lv3;
+CAMS_Packs_ALL = CAMS_Packs_W + CAMS_Packs_E;
 
 // Ammo
 CAMS_AmmoForEach = ["CAMS_AmmoForEach"];
@@ -111,17 +110,17 @@ CAMS_Smoke_3Rnd = [];
 CAMS_Smoke_ALL = CAMS_Smoke_Shell + CAMS_Smoke_1Rnd + CAMS_Smoke_3rnd;
 
 // Explosives
-CAMS_E_Grenade = [];
-CAMS_E_GrenadeIR =[];
-CAMS_E_GrenadeStun =[];
-CAMS_E_1Rnd = [];
-CAMS_E_3Rnd = [];
-CAMS_E_Mine =[];
-CAMS_E_IED = [];
+CAMS_Grenade_ALL = [];
+CAMS_Grenade_ALLIR =[];
+CAMS_Grenade_ALLStun =[];
+CAMS_Shells_1Rnd = [];
+CAMS_Shells_3Rnd = [];
+CAMS_Bombs_Mines =[];
+CAMS_Bombs_IED = [];
 
-CAMS_E_Grenade_ALL = CAMS_E_Grenade + CAMS_E_GrenadeIR + CAMS_E_GrenadeStun;
-CAMS_E_Shell_ALL = CAMS_E_1Rnd + CAMS_E_3Rnd;
-CAMS_E_ALL = CAMS_E_Grenade_ALL + CAMS_E_Shell_ALL + CAMS_E_Mine + CAMS_E_IED;
+CAMS_Grenade_ALL_ALL = CAMS_Grenade_ALL + CAMS_Grenade_ALLIR + CAMS_Grenade_ALLStun;
+CAMS_E_Shell_ALL = CAMS_Shells_1Rnd + CAMS_Shells_3Rnd;
+CAMS_Grenade_ALL = CAMS_Grenade_ALL_ALL + CAMS_E_Shell_ALL + CAMS_Bombs_Mines + CAMS_Bombs_IED;
 
 
 // ******* WEAPONS ********************

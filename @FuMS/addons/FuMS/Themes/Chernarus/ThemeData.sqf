@@ -13,12 +13,12 @@ _themeData =
 [
     [  											// *******Options*********
         "Chernarus", 								// Needs to match the folder name!
-        3,  									//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+        4,  									//Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
 												// 4=Static: All missions in 'Mission List' will be created at server start!
 												// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
 												// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
 												//  option 5 will let the mission only spawn once per 6 hours (ie server reset)
-        300, 									// Respawn delay in seconds
+        600, 									// Respawn delay in seconds
 		false, 									// use Global Loot Data (GlobalLootData.sqf)
 		true,  									// use Global Soldier Data file (GlobalSoldierData.sqf)
 		true, 									// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
@@ -30,8 +30,9 @@ _themeData =
 												// List of Missions. 
 												// The below missions MUST be in the same folder as this file!            
 
-		["AIBase1", [4129.35,11023]],  
-		["AIBase2", [5765.37,10368.9]]  
+		//["AIBase1", [4129.35,11023]],  
+		//["AIBase2", [5765.37,10368.9]] ,
+		["Skalisty",[13650.7,2853.51]]
 
     ],
     [   //***** Locations ***** !! 2D coords ONLY !!

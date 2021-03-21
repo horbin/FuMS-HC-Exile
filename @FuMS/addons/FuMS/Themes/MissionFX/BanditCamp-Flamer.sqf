@@ -12,7 +12,7 @@
 		false, 1,0,
 		false, 	// Notify players via global message
 		false,	// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30      // Lose delay: Time in seconds after a lose before mission cleanup is performed
 				// NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],

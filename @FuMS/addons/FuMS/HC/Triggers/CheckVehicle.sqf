@@ -10,15 +10,27 @@ _msnTag = _data select 0;
 _trigName = _data select 1;
 _obj = _data select 2;
 _distance = _data select 3;
-
+_debugCV = false;
 _result = false;
-_homePos = _obj getVariable "FuMS_Homepos";
+
+if (isNull _obj) exitWith {diag_log format ["<FuMS> CheckVehicle: Terminating for: %1",_msnTag];_result};
+
+
+if (_debugCV) then
+{
+	diag_log format ["<FuMS> CheckVehicle: _data: %1",_data];
+	diag_log format ["<FuMS> CheckVehicle: _msnTag: %1",_msnTag];
+	diag_log format ["<FuMS> CheckVehicle: _obj: %1",_obj];
+};
+
+
+_homePos = _obj getVariable "FuMS_HOMEPOS";
 _currPos = getpos _obj; //Get currPos of vehicle
 
-_vehicleTaken = _obj getVariable "FuMS_Taken";
+_vehicleTaken = _obj getVariable "FuMS_TAKEN";
 _distanceFromHome = _currPos distance _homePos;
 
-_debug = false;
+
 
 
 if (_vehicleTaken) then
@@ -29,7 +41,7 @@ if (_vehicleTaken) then
 	};
 };
 
-if (_debug) then
+if (_debugCV) then
 {
 	diag_log format ["<FuMS> CheckVehicle Trigger: Vehicle#%1 for %2_%3: _result: %7 | _distance:%4 | _distanceFromHome:%5 | _vehicleTaken:%6",_obj,_msnTag,_trigName,_distance,_distanceFromHome,_vehicleTaken,_result];
 };

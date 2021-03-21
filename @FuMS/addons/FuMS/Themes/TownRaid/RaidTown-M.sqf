@@ -8,16 +8,16 @@
 // 
 
 [
-	["RaidTownM", 200], // Mission Title NOSPACES!, and encounter radius
-	["City Raid","hd_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["RaidTownM", 300], // Mission Title NOSPACES!, and encounter radius
+	["City Raid","plp_mark_civ_townhall","ELLIPSE","ColorRed","FDiagonal",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		300       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
@@ -50,11 +50,11 @@
 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [2,"Rifleman_I"]  ],   	["Buildings",	[0,0],[0,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_I"]  ],   		["Buildings",	[0,0],[0,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,0],[0,0],[50]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [5,"CivCombat"]  ],   	["Buildings",	[0,0],[0,0],[100]  ]],
-		[["RESISTANCE","COMBAT","RED","COLUMN"],  	[  [5,"CivCombat"]  ],   	["Explore",		[0,0],[0,0],[75]   ]]
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [2,"Rifleman_I"]  ],   	["Buildings",	[0,0],[0,0],[75]   ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [4,"Hunter_I"]  ],   	["BOXPATROL",	[0,0],[0,0],[200]   ]],
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,0],[0,0],[50]   ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [5,"CivCombat"]  ],   	["SENTRY",		[0,0],[0,0],[100]  ]],
+		[["WEST","COMBAT","RED","COLUMN"],  	[  [5,"CivCombat"]  ],   	["Explore",		[0,0],[0,0],[75]   ]]
 
 	],
 
@@ -88,8 +88,8 @@
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","LINE"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Buildings",[0,-1000],[0,-25],[100]]], // [timer, radius]
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Explore",[0,-1050],[25,0],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","LINE"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Buildings",[0,-1000],[0,-25],[100]]], // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Explore",[0,-1050],[25,0],[100]]] // [timer, radius]
 			]
 		],
 
@@ -106,8 +106,8 @@
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Buildings",[-1000,0],[0,0],[100]]], // [timer, radius]
-				[["EAST","COMBAT","RED","DIAMOND"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Buildings",[-1050,0],[-10,0],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Buildings",[-1000,0],[0,0],[100]]], // [timer, radius]
+				[["EAST","COMBAT","RED","LINE"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Buildings",[-1050,0],[-10,0],[100]]] // [timer, radius]
 			]
 		]
 	],
@@ -125,7 +125,7 @@
 			//	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 			//	  ["Detect",["Detected","ALL","ALL"] ],
 			["BodyCount",	["BodyCount",40] ],
-			["Timer",		["TIMER", 1800] ], // 1800  
+			["Timer", 			["TimerNoPlayers", 		random [1400,1700,1800]]],	//30 minutes	
 			["TimerEvac", 	["TIMER", 1400] ] // 1400
 		  
 		],

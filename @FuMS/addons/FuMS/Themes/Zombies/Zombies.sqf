@@ -14,8 +14,8 @@
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, "ALL", 0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
-		false, // Notify players via global message
-		false,// Show encounter area on the map
+		true, // Notify players via global message
+		true,// Show encounter area on the map
 		30,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
@@ -48,9 +48,9 @@
 		["Land_BellTower_02_V2_F",[0,0],0,0,"SMOKE_BIG"]
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-	   [["WEST","COMBAT","RED","COLUMN"],   [  [5,"Zombie"],[5,"ZombieSpider"]  ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]],
-	   [["WEST","COMBAT","RED","COLUMN"],   [  [5,"Zombie"] ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]],
-	   [["WEST","COMBAT","RED","COLUMN"],   [  [4,"ZombieSoldier"] ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]]
+	   [["EAST","COMBAT","RED","COLUMN"],   [  [5,"Zombie"],[5,"ZombieSpider"]  ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]],
+	   [["EAST","COMBAT","RED","COLUMN"],   [  [5,"Zombie"] ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]],
+	   [["EAST","COMBAT","RED","COLUMN"],   [  [4,"ZombieSoldier"] ],   ["Zombie",[0,0],[0,0], [100,true,300]    ]]
 	 //   [["RESISTANCE","COMBAT","RED","LINE"],   [  [3,"Rifleman"]                                         ],   ["Sentry",[-20,10],[0,0],[70] ]],
 	 //  [["RESISTANCE","COMBAT","RED","LINE"],   [  [2,"Hunter"]                                              ],   ["Guard",[6,6],[0,0],[30]     ]]
 	],
@@ -135,7 +135,7 @@
 		  // NOTE: "OK" is a reserved trigger. Do not define it here.
 		  //  "OK" can be used in the actions section to force an action to occur at mission start!	 
 		 // ["PROX",["ProxPlayer",[0,0],300,1]  ],
-		  ["LUCNT",["LowUnitCount","WEST",1,0,[0,0]]  ]
+		  ["LUCNT",["LowUnitCount","EAST",1,0,[0,0]]  ]
 	//	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 	//	  ["Detect",["Detected","ALL","ALL"] ],
 	//	  ["BodyCount",["BodyCount",9] ]

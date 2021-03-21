@@ -44,27 +44,27 @@ _cartContents =
 	//////////////////////////////////// Uniforms - WEST
 	
 	[
-		"CAMS_U_Soldier_W",1,true,
+		"CAMS_U_Soldier_W",1,false,
 		[
 		]	
 	],
 	[
-		"CAMS_U_Guerilla_W",1,true,
+		"CAMS_U_Guerilla_W",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_U_Ghillie_W",1,true,
+		"CAMS_U_Ghillie_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Aviation_W",1,true,
+		"CAMS_U_Aviation_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Wetsuit_W",1,true,
+		"CAMS_U_Wetsuit_W",1,false,
 		[
 		]
 	],
@@ -78,27 +78,27 @@ _cartContents =
 	//////////////////////////////////////// Uniforms - EAST
 	
 	[
-		"CAMS_U_Soldier_E",1,true,
+		"CAMS_U_Soldier_E",1,false,
 		[
 		]	
 	],
 	[
-		"CAMS_U_Guerilla_E",1,true,
+		"CAMS_U_Guerilla_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Ghillie_E",1,true,
+		"CAMS_U_Ghillie_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Aviation_E",1,true,
+		"CAMS_U_Aviation_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Wetsuit_E",1,true,
+		"CAMS_U_Wetsuit_E",1,false,
 		[
 		]
 	],
@@ -112,27 +112,27 @@ _cartContents =
 	//////////////////////////////////////////// Uniforms - Independant
 	
 	[
-		"CAMS_U_Soldier_I",1,true,
+		"CAMS_U_Soldier_I",1,false,
 		[
 		]	
 	],
 	[
-		"CAMS_U_Guerilla_I",1,true,
+		"CAMS_U_Guerilla_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Ghillie_I",1,true,
+		"CAMS_U_Ghillie_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Aviation_I",1,true,
+		"CAMS_U_Aviation_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_U_Wetsuit_I",1,true,
+		"CAMS_U_Wetsuit_I",1,false,
 		[
 		]
 	],
@@ -147,24 +147,24 @@ _cartContents =
 	////////////////////////////////////////////////////// May have to be broken down by EAST, WEST, IND in future or expansion packs
 
 	[
-		"CAMS_V_Bandolliers",1,true,
+		"CAMS_V_Bandolliers",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_V_Chestrig",1,true,
+		"CAMS_V_Chestrig",1,false,
 		[
 		]
 	],
 
 	[
-		"CAMS_V_Vests_W",1,true,
+		"CAMS_V_Vests_W",1,false,
 		[
 			// West - CIV?
 		]
 	],
 	[
-		"CAMS_V_Vests_E",1,true,
+		"CAMS_V_Vests_E",1,false,
 		[			
 		]
 	],
@@ -176,17 +176,17 @@ _cartContents =
 	],
 	
 	[
-		"CAMS_V_Harness",1,true,
+		"CAMS_V_Harness",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_V_Plate",1,true,
+		"CAMS_V_Plate",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_V_Rebreather",1,true,
+		"CAMS_V_Rebreather",1,false,
 		[
 		]
 	],
@@ -198,12 +198,12 @@ _cartContents =
 	],
 		// Head/Hat items
 	[
-		"CAMS_H_Caps_W",1,true,
+		"CAMS_H_Caps_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_Caps_E",1,true,
+		"CAMS_H_Caps_E",1,false,
 		[
 		]
 	],	[
@@ -213,17 +213,17 @@ _cartContents =
 		]
 	],	
 	[
-		"CAMS_H_RegHelmet_W",1,true,////////////////////////////////////////////////////////
+		"CAMS_H_RegHelmet_W",1,false,////////////////////////////////////////////////////////
 		[			
 		]
 	],
 	[
-		"CAMS_H_LightHelmet_W",1,true,///////////////////////////////////////////////////////
+		"CAMS_H_LightHelmet_W",1,false,///////////////////////////////////////////////////////
 		[
 		]
 	],	
 	[
-		"CAMS_H_LightHelmet_E",1,true,///////////////////////////////////////////////////////
+		"CAMS_H_LightHelmet_E",1,false,///////////////////////////////////////////////////////
 		[
 		]
 	],
@@ -234,7 +234,7 @@ _cartContents =
 		]
 	],	
 	[
-		"CAMS_H_RegHelmet_E",1,true,/////////////////////////////////////////////////////////
+		"CAMS_H_RegHelmet_E",1,false,/////////////////////////////////////////////////////////
 		[
 			// East - NVA
 		]
@@ -247,12 +247,12 @@ _cartContents =
 	],
 	
 	[
-		"CAMS_H_Boonie_W",1,true,
+		"CAMS_H_Boonie_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_Boonie_E",1,true,
+		"CAMS_H_Boonie_E",1,false,
 		[	
 		]
 	],	[
@@ -262,33 +262,33 @@ _cartContents =
 		]
 	],	
 	[
-		"CAMS_H_Berets",1,true,
+		"CAMS_H_Berets",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_Shemags",1,true,
+		"CAMS_H_Shemags",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_SuperHelmet",1,true,
+		"CAMS_H_SuperHelmet",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_SpecOps",1,true,
+		"CAMS_H_SpecOps",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H_Aviation_W",1,true,
+		"CAMS_H_Aviation_W",1,false,
 		[
 		]
 	],
 
 	[
-		"CAMS_H_Aviation_E",1,true,
+		"CAMS_H_Aviation_E",1,false,
 		[
 		]
 	],
@@ -327,37 +327,37 @@ _cartContents =
 	],
 	///////////////////////////////////////////////////////////// Glasses
 	[
-		"CAMS_G_Regular",1,true,
+		"CAMS_G_Regular",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_G_Tactical",1,true,
+		"CAMS_G_Tactical",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_G_Sport",1,true,
+		"CAMS_G_Sport",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_G_Shades",1,true,
+		"CAMS_G_Shades",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_G_Lady",1,true,
+		"CAMS_G_Lady",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_G_Bandana",1,true,
+		"CAMS_G_Bandana",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_G_Balaclava",1,true,
+		"CAMS_G_Balaclava",1,false,
 		[
 		]
 	],
@@ -396,22 +396,22 @@ _cartContents =
 	
 	/////////////// EAST
 	[
-		"CAMS_AI_FIA_E",1,true,
+		"CAMS_AI_FIA_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_CSAT_SOLDIER",1,true,
+		"CAMS_AI_CSAT_SOLDIER",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_CSAT_URBAN",1,true,
+		"CAMS_AI_CSAT_URBAN",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_CSAT_SF",1,true,
+		"CAMS_AI_CSAT_SF",1,false,
 		[
 		]
 	],
@@ -426,17 +426,17 @@ _cartContents =
 	],				
 	//////////////// WEST
 	[
-		"CAMS_AI_FIA_W",1,true,
+		"CAMS_AI_FIA_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_NATO_SOLDIER",1,true,
+		"CAMS_AI_NATO_SOLDIER",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_NATO_SF",1,true,
+		"CAMS_AI_NATO_SF",1,false,
 		[
 		]
 	],
@@ -449,17 +449,17 @@ _cartContents =
 	
 	//////////////// IND
 	[
-		"CAMS_AI_FIA_I",1,true,
+		"CAMS_AI_FIA_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_AAF",1,true,
+		"CAMS_AI_AAF",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AI_AAF_SF",1,true,
+		"CAMS_AI_AAF_SF",1,false,
 		[
 		]
 	],
@@ -476,7 +476,7 @@ _cartContents =
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// Navigation and Belt Items
 	[
-		"CAMS_I_Navigation",1,true,
+		"CAMS_I_Navigation",1,false,
 		[
 			// West Radio
 			"ItemRadio",
@@ -484,14 +484,14 @@ _cartContents =
 	],
 	
 	[
-		"CAMS_I_Misc",1,true,
+		"CAMS_I_Misc",1,false,
 		[
 		]
 	],
 
 	// Meds - Has all vanilla stuff since its more for loot and random AI loot, but break up if you want or if your content has a lot of custom stuff here
 	[
-		"CAMS_I_Meds",1,true,
+		"CAMS_I_Meds",1,false,
 		[
 			"FirstAidKit","Medikit","ToolKit"
 		]
@@ -499,18 +499,19 @@ _cartContents =
 	
 	// Backpacks
 	[
-		"CAMS_Packs_W",1,true,
+		"CAMS_Packs_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Packs_E",1,true,
+		"CAMS_Packs_E",1,false,
 		[
 		]
 	],
 	[
 		"CAMS_Packs_ALL",0,true,
 		[
+			"CAMS_Packs_W","CAMS_Packs_E"
 		]
 	],
 	
@@ -518,28 +519,28 @@ _cartContents =
 	// Setting this in the 'magazine' section of loot configuration (LootData.sqf) will ensure ammo for each weapon specified in the weapon section is also part
 	//  of the loot definition.
 	/*  MAY REMOVE SINCE THIS IS CORE FUNCTION
-		"FuMS_AmmoForEach",1,true,
+		"FuMS_AmmoForEach",1,false,
 	[
 		"FuMS_AmmoForEach"];
 	*/
 	// Flares
 	[
-		"CAMS_Flares_Chemical",1,true,
+		"CAMS_Flares_Chemical",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Flares_Normal",1,true,
+		"CAMS_Flares_Normal",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Flares_1Rnd",1,true,
+		"CAMS_Flares_1Rnd",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Flares_3Rnd",1,true,
+		"CAMS_Flares_3Rnd",1,false,
 		[
 		]
 	],
@@ -552,18 +553,18 @@ _cartContents =
 
 	//Smokes
 	[
-		"CAMS_Smoke_Shell",1,true,
+		"CAMS_Smoke_Shell",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Smoke_W",1,true,
+		"CAMS_Smoke_W",1,false,
 		[
 
 		]
 	],
 	[
-		"CAMS_Smoke_E",1,true,
+		"CAMS_Smoke_E",1,false,
 		[
 		]
 	],
@@ -582,62 +583,62 @@ _cartContents =
 
 	// Grenades
 	[
-		"CAMS_E_Grenade_W",1,true,   ///////////////////////////////////////////////// FIX IN VANILLA
+		"CAMS_Grenade_W",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
 		[
 		]
 	],
 	[
-		"CAMS_E_Grenade_E",1,true,   ///////////////////////////////////////////////// FIX IN VANILLA
+		"CAMS_Grenade_E",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_W",1,true,
+		"CAMS_Grenade_IR_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_E",1,true,
+		"CAMS_Grenade_IR_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_I",1,true,
+		"CAMS_Grenade_IR_I",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_E_GrenadeIR_ALL",0,true,
+		"CAMS_Grenade_ALLIR_ALL",0,true,
 		[
-			"CAMS_E_GrenadeIR_W","CAMS_E_GrenadeIR_E","CAMS_E_GrenadeIR_I"
+			"CAMS_Grenade_IR_W","CAMS_Grenade_IR_E","CAMS_Grenade_IR_I"
 		]
 	],
 	// Explosive Shells
 	[
-		"CAMS_E_1Rnd",1,true,
+		"CAMS_Shells_1Rnd",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_3Rnd",1,true,
+		"CAMS_Shells_3Rnd",1,false,
 		[
 		]
 	],
 	// Mines
 	[
-		"CAMS_E_Mine",1,true,
+		"CAMS_Bombs_Mines",1,false,
 		[
 		]
 	],// IEDs
 	[
-		"CAMS_E_IED",1,true,
+		"CAMS_Bombs_IED",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_E_ALL",0,true,
+		"CAMS_Grenade_ALL",0,true,
 		[
-			"CAMS_E_Grenade", "CAMS_E_GrenadeIR_ALL", "CAMS_E_1Rnd", "CAMS_E_3Rnd", "CAMS_E_Mine", "CAMS_E_IED"
+			"CAMS_Grenade_ALL", "CAMS_Grenade_ALLIR_ALL", "CAMS_Shells_1Rnd", "CAMS_Shells_3Rnd", "CAMS_Bombs_Mines", "CAMS_Bombs_IED"
 		]
 	],
 
@@ -648,32 +649,32 @@ _cartContents =
 	
 	// Weapon attachments
 	[
-		"CAMS_W_Pointer",1,true,
+		"CAMS_W_Pointer",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_W_Bipod",1,true,
+		"CAMS_W_Bipod",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_W_Muzzle",1,true,
+		"CAMS_W_Muzzle",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_W_OpticsLv1",1,true,
+		"CAMS_W_OpticsLv1",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_W_OpticsLv2",1,true,
+		"CAMS_W_OpticsLv2",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_W_OpticsLv3",1,true,
+		"CAMS_W_OpticsLv3",1,false,
 		[
 		]
 	],
@@ -692,52 +693,52 @@ _cartContents =
 	
 	// ******* WEAPONS - WEST ********************	
 	[
-		"CAMS_Pistols_W",1,true,
+		"CAMS_Pistols_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SMG_W",1,true,
+		"CAMS_SMG_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Shotgun_W",1,true,   ///////// FIX IN VANILLA
+		"CAMS_Shotgun_W",1,false,   ///////// FIX IN VANILLA
 		[
 		]
 	],
 	[
-		"CAMS_GL_W",1,true,
+		"CAMS_GL_W",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_LMG_W",1,true,
+		"CAMS_LMG_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_MMG_W",1,true,
+		"CAMS_MMG_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AssaultRifles_W",1,true,
+		"CAMS_AssaultRifles_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SniperRifles_W",1,true,
+		"CAMS_SniperRifles_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AA_W",1,true,
+		"CAMS_AA_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AT_W",1,true,
+		"CAMS_AT_W",1,false,
 		[
 			"uns_M72","uns_m20_bazooka"
 		]
@@ -763,47 +764,47 @@ _cartContents =
 
 	// ******* WEAPONS - EAST ********************	
 	[
-		"CAMS_Pistols_E",1,true,
+		"CAMS_Pistols_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SMG_E",1,true,
+		"CAMS_SMG_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_LMG_E",1,true,
+		"CAMS_LMG_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_MMG_E",1,true,
+		"CAMS_MMG_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Shotgun_E",1,true,
+		"CAMS_Shotgun_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AssaultRifles_E",1,true,
+		"CAMS_AssaultRifles_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SniperRifles_E",1,true,
+		"CAMS_SniperRifles_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AA_E",1,true,
+		"CAMS_AA_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AT_E",1,true,
+		"CAMS_AT_E",1,false,
 		[
 		]
 	],
@@ -830,42 +831,42 @@ _cartContents =
 
 	// ******* WEAPONS - IND ********************	
 	[
-		"CAMS_Pistols_I",1,true,
+		"CAMS_Pistols_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SMG_I",1,true,
+		"CAMS_SMG_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_LMG_I",1,true,
+		"CAMS_LMG_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_MMG_I",1,true,
+		"CAMS_MMG_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AssaultRifles_I",1,true,
+		"CAMS_AssaultRifles_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_SniperRifles_I",1,true,
+		"CAMS_SniperRifles_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AA_I",1,true,
+		"CAMS_AA_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_AT_I",1,true,
+		"CAMS_AT_I",1,false,
 		[
 		]
 	],
@@ -892,17 +893,17 @@ _cartContents =
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 	//  Water vehicles - Civ / General
 	[
-		"CAMS_H20_Boats_C",1,true,
+		"CAMS_H20_Boats_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_RubberDucks_C",1,true,
+		"CAMS_H20_RubberDucks_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_Jetski_C",1,true,
+		"CAMS_H20_Jetski_C",1,false,
 		[
 		]
 	],
@@ -914,17 +915,17 @@ _cartContents =
 	],
 	///////////////////////////////// Water Vehicles - West
 	[
-		"CAMS_H20_Boats_W",1,true,
+		"CAMS_H20_Boats_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_RubberDucks_W",1,true,
+		"CAMS_H20_RubberDucks_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_SDV_W",1,true,
+		"CAMS_H20_SDV_W",1,false,
 		[
 		]
 	],
@@ -936,17 +937,17 @@ _cartContents =
 	],		
 	//////////////////////////////// Water Vehicles - East
 	[
-		"CAMS_H20_Boats_E",1,true,
+		"CAMS_H20_Boats_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_RubberDucks_E",1,true,
+		"CAMS_H20_RubberDucks_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_SDV_E",1,true,
+		"CAMS_H20_SDV_E",1,false,
 		[
 		]
 	],
@@ -958,17 +959,17 @@ _cartContents =
 	],	
 	//////////////////////////// Water Vehicles - Ind
 	[
-		"CAMS_H20_Boats_I",1,true,
+		"CAMS_H20_Boats_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_RubberDucks_I",1,true,
+		"CAMS_H20_RubberDucks_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_H20_SDV_I",1,true,
+		"CAMS_H20_SDV_I",1,false,
 		[
 		]
 	],
@@ -991,30 +992,30 @@ _cartContents =
 	
 	///////////////////////////////////////////////// Helicopters - Civ
 	[
-		"CAMS_Heli_Unarmed_C",1,true,
+		"CAMS_Heli_Unarmed_C",1,false,
 		[
 		]
 	],	
 	
 	///////////////////////////////////////////////// Helicopters - West
 	[
-		"CAMS_Heli_Unarmed_W",1,true,
+		"CAMS_Heli_Unarmed_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Heli_Armed_W",1,true,
+		"CAMS_Heli_Armed_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Heli_Transport_W",1,true,
+		"CAMS_Heli_Transport_W",1,false,
 		[
 		]
 	],
 	
 	[
-		"CAMS_Heli_ArmedTransport_W",1,true,
+		"CAMS_Heli_ArmedTransport_W",1,false,
 		[
 		]
 	],
@@ -1022,65 +1023,65 @@ _cartContents =
 	/////////////////////////////////// Helicopters - East 
 
 	[
-		"CAMS_Heli_ArmedTransport_E",1,true,
+		"CAMS_Heli_ArmedTransport_E",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_Heli_Transport_E",1,true,
+		"CAMS_Heli_Transport_E",1,false,
 		[
 		]
 	],
 
 	///////////////////////////////////////////////// Helicopters - Ind
 	[
-		"CAMS_Heli_Transport_I",1,true,
+		"CAMS_Heli_Transport_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Heli_ArmedTransport_I",1,true,
+		"CAMS_Heli_ArmedTransport_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Heli_Armed_I",1,true,
+		"CAMS_Heli_Armed_I",1,false,
 		[	
 		]
 	],
 	
 	[
-		"CAMS_Plane_CAS_C",1,true,
+		"CAMS_Plane_CAS_C",1,false,
 		[
 		]
 	],
 	/////////////////////////////////////// Aircraft - West
 	[
-		"CAMS_Plane_CAS_W",1,true,
+		"CAMS_Plane_CAS_W",1,false,
 		[
 		]
 	],
 
 	///////////////////////////////////// Aircraft - East
 	[
-		"CAMS_Plane_CAS_E",1,true,
+		"CAMS_Plane_CAS_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Plane_UAV_E",1,true,
+		"CAMS_Plane_UAV_E",1,false,
 		[
 		]
 	],
 	
 	///////////////////////////////////// Aircraft - Ind
 	[
-		"CAMS_Plane_CAS_I",1,true,
+		"CAMS_Plane_CAS_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Plane_UAV_I",1,true,
+		"CAMS_Plane_UAV_I",1,false,
 		[
 		]
 	],
@@ -1091,42 +1092,42 @@ _cartContents =
 
 	////////////////////////////////////// Civilian Vehicles
 	[
-		"CAMS_Land_Car_C",1,true,
+		"CAMS_Land_Car_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Offroad_C",1,true,
+		"CAMS_Land_Offroad_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Transport_C",1,true,
+		"CAMS_Land_Transport_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_SUV_C",1,true,
+		"CAMS_Land_SUV_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Van_C",1,true,
+		"CAMS_Land_Van_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Utility_C",1,true,
+		"CAMS_Land_Utility_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Quad_C",1,true,
+		"CAMS_Land_Quad_C",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Kart_C",1,true,
+		"CAMS_Land_Kart_C",1,false,
 		[
 		]
 	],
@@ -1151,57 +1152,57 @@ _cartContents =
 
 	////////////////////////////////////////////////////// West Vehicles
 	[
-		"CAMS_Land_ArmedOffroad_W",1,true,
+		"CAMS_Land_ArmedOffroad_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UnarmedOffroad_W",1,true,
+		"CAMS_Land_UnarmedOffroad_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UGV_Armed_W",1,true,
+		"CAMS_Land_UGV_Armed_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UGV_Unarmed_W",1,true,
+		"CAMS_Land_UGV_Unarmed_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Quad_W",1,true,
+		"CAMS_Land_Quad_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Transport_W",1,true,
+		"CAMS_Land_Transport_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UtilityVehicle_W",1,true,
+		"CAMS_Land_UtilityVehicle_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_ArmedTransport_W",1,true,
+		"CAMS_Land_ArmedTransport_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Tank_W",1,true,
+		"CAMS_Land_Tank_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Artillery_W",1,true,
+		"CAMS_Land_Artillery_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_AA_W",1,true,
+		"CAMS_Land_AA_W",1,false,
 		[
 		]
 	],		
@@ -1232,58 +1233,58 @@ _cartContents =
 
 	//////////////////////////////////////// EAST Vehicles
 	[
-		"CAMS_Land_ArmedOffroad_E",1,true,
+		"CAMS_Land_ArmedOffroad_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UnarmedOffroad_E",1,true,
+		"CAMS_Land_UnarmedOffroad_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UGV_Armed_E",1,true,
+		"CAMS_Land_UGV_Armed_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UGV_Unarmed_E",1,true,
+		"CAMS_Land_UGV_Unarmed_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Quad_E",1,true,
+		"CAMS_Land_Quad_E",1,false,
 		[
 		]
 	],
 
 	[
-		"CAMS_Land_Transport_E",1,true,
+		"CAMS_Land_Transport_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UtilityVehicle_E",1,true,
+		"CAMS_Land_UtilityVehicle_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_ArmedTransport_E",1,true,
+		"CAMS_Land_ArmedTransport_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Tank_E",1,true,
+		"CAMS_Land_Tank_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_AA_E",1,true,
+		"CAMS_Land_AA_E",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_Land_Artillery_E",1,true,
+		"CAMS_Land_Artillery_E",1,false,
 		[
 		]
 	],
@@ -1314,46 +1315,46 @@ _cartContents =
 
 	/////////////////////////////////////////////////////// Guerilla Vehicles
 	[
-		"CAMS_Land_ArmedOffroad_I",1,true,
+		"CAMS_Land_ArmedOffroad_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UnarmedOffroad_I",1,true,
+		"CAMS_Land_UnarmedOffroad_I",1,false,
 		[
 	],
 	[
-		"CAMS_Land_UGV_Armed_I",1,true,
-		[
-		]
-	],
-	[
-		"CAMS_Land_UGV_Unarmed_I",1,true,
+		"CAMS_Land_UGV_Armed_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Quad_I",1,true,
+		"CAMS_Land_UGV_Unarmed_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Transport_I",1,true,
+		"CAMS_Land_Quad_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_UtilityVehicle_I",1,true,
+		"CAMS_Land_Transport_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_ArmedTransport_I",1,true,
+		"CAMS_Land_UtilityVehicle_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Tank_I",1,true,
+		"CAMS_Land_ArmedTransport_I",1,false,
+		[
+		]
+	],
+	[
+		"CAMS_Land_Tank_I",1,false,
 		[
 		]
 	],
@@ -1383,82 +1384,82 @@ _cartContents =
 	],
 	//////////////////////////////////////////// Static Guns - West
 	[
-		"CAMS_Land_StaticGuns_W",1,true,
+		"CAMS_Land_StaticGuns_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticGL_W",1,true,
+		"CAMS_Land_StaticGL_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticAA_W",1,true,
+		"CAMS_Land_StaticAA_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticAT_W",1,true,
+		"CAMS_Land_StaticAT_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Mortar_W",1,true,
+		"CAMS_Land_Mortar_W",1,false,
 		[
 		]
 	],
 
 	//////////////////////////////////////////// Static Guns - East
 	[
-		"CAMS_Land_StaticGuns_E",1,true,
+		"CAMS_Land_StaticGuns_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticGL_E",1,true,
+		"CAMS_Land_StaticGL_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticAA_E",1,true,
+		"CAMS_Land_StaticAA_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticAT_E",1,true,
+		"CAMS_Land_StaticAT_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Mortar_E",1,true,
+		"CAMS_Land_Mortar_E",1,false,
 		[
 		]
 	],
 
 	//////////////////////////////////////////// Static Guns - Ind
 	[
-		"CAMS_Land_StaticGuns_I",1,true,
+		"CAMS_Land_StaticGuns_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticGL_I",1,true,
+		"CAMS_Land_StaticGL_I",1,false,
 		[
 		]
 	],
 			
 	[
-		"CAMS_Land_StaticAA_I",1,true,
+		"CAMS_Land_StaticAA_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_StaticAT_I",1,true,
+		"CAMS_Land_StaticAT_I",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Land_Mortar_I",1,true,
+		"CAMS_Land_Mortar_I",1,false,
 		[
 		]
 	],
@@ -1471,17 +1472,17 @@ _cartContents =
 	// but it doesn't really matter where they are unless you are going to distribute the files   //
 	////////////////////////////////////////////////////////////////////////////////////////////////
 	[
-		"CAMS_Wreck_Hist",1,true,
+		"CAMS_Wreck_Hist",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Wreck_Car",1,true,
+		"CAMS_Wreck_Car",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Wreck_Truck",1,true,
+		"CAMS_Wreck_Truck",1,false,
 		[
 		]
 	],
@@ -1491,16 +1492,16 @@ _cartContents =
 		]
 	],
 	[
-		"CAMS_Wreck_Tank",1,true,
+		"CAMS_Wreck_Tank",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_Wreck_Heli",1,true,
+		"CAMS_Wreck_Heli",1,false,
 		[
 	],
 	[
-		"CAMS_Wreck_Plane",1,true,
+		"CAMS_Wreck_Plane",1,false,
 		[
 		]
 	],

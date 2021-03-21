@@ -12,7 +12,7 @@
 		false, 1,0,
 		false, // Notify players via global message
 		false,// Show encounter area on the map
-		300,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,    // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		30       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 			  //NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -40,11 +40,15 @@
 		//[ ImFX_Land_Cars,					[-10,10],	(round random 360),		[.5,   1,     .5,         .5,         .5]],
 
 		// This line will spawn a single pool at this location in the mission
-		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
-		["Skeet_Clay_F",				[((round random 200)-100),((round random 200)-100)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
+		["Skeet_Clay_F",				[((round random 400)-200),((round random 400)-200)],	(round random 360),		0],  //type, offset, rotation, presist flag
 
 		// This line will spawn a toxic pool with (first item) or without (second item) an anomoly in the mission
 		["Land_GarbageBarrel_01_F",		[5,5],	0,		0],  //type, offset, rotation, presist flag

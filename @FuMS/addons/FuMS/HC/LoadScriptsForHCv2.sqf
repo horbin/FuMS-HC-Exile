@@ -15,8 +15,10 @@ diag_log format ["<FuMS> LoadScriptsForHC : Ryan's Zombies and Demons = %1", FuM
 if (FuMS_ZnDs) then
 {
 	FuMS_Zombie = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
-	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombiespider.sqf";
-	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombieboss.sqf";
+	FuMS_ZombieSpider =compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	FuMS_ZombieBoss = compile preprocessFileLineNumbers "\Ryanzombies\zombie.sqf";
+	diag_log format ["<FuMS> LoadScriptsForHC : Ryan's Zombies and Demons SCRIPT %1", FuMS_Zombie];
+	
 };
 
 //HC Root
@@ -72,32 +74,6 @@ _scripts =
 					"zJump.sqf",
 					"zombie.sqf"
 				]
-			],
-			[
-				"Group",
-				[
-					"GroupMonitor.sqf",
-					//"A3XAI_antistuck_air.sqf",
-					//"A3XAI_antistuck_aircustom.sqf",
-					//"A3XAI_antistuck_generic.sqf",
-					//"A3XAI_antistuck_land.sqf",
-					//"A3XAI_antistuck_uav.sqf",
-					//"A3XAI_antistuck_ugv.sqf",
-					//"A3XAI_checkAmmoFuel.sqf",
-					//"A3XAI_checkGroupUnits.sqf",
-					//"A3XAI_execEveryLoop_air.sqf",
-					//"A3XAI_execEveryLoop_infantry.sqf",
-					//"A3XAI_execEveryLoop_uav.sqf",
-					//"A3XAI_execEveryLoop_ugv.sqf",
-					//"A3XAI_execEveryLoop_vehicle.sqf",
-					//"A3XAI_generateGroupLoot.sqf",
-					//"A3XAI_generateLoadout.sqf",
-					//"A3XAI_generateLootOnDeath.sqf",
-					//"A3XAI_generateLootPool.sqf",
-					"GetAntistuckTime.sqf"
-					//"A3XAI_getLocalFunctions.sqf",
-					//"A3XAI_setLoadoutVariables.sqf"
-				]
 			]
 		],
 		[
@@ -109,7 +85,38 @@ _scripts =
 				"AIRadio.sqf", 
 				"BaseOps.sqf"
 			]
-		]	
+		],
+		[
+			"Group",
+			[
+				"checkInNoAggroArea.sqf",
+				"groupMonitor.sqf",
+				"forceBehavior.sqf",
+				"noAggroAreaToggle.sqf",
+				"getLocalFunctions.sqf",
+				"setNoAggroStatus.sqf",
+				//"A3XAI_antistuck_air.sqf",
+				//"A3XAI_antistuck_aircustom.sqf",
+				//"A3XAI_antistuck_generic.sqf",
+				//"A3XAI_antistuck_land.sqf",
+				//"A3XAI_antistuck_uav.sqf",
+				//"A3XAI_antistuck_ugv.sqf",
+				//"A3XAI_checkAmmoFuel.sqf",
+				//"A3XAI_checkGroupUnits.sqf",
+				//"A3XAI_execEveryLoop_air.sqf",
+				"execEveryLoop_infantry.sqf",
+				//"A3XAI_execEveryLoop_uav.sqf",
+				//"A3XAI_execEveryLoop_ugv.sqf",
+				//"A3XAI_execEveryLoop_vehicle.sqf",
+				//"A3XAI_generateGroupLoot.sqf",
+				//"A3XAI_generateLoadout.sqf",
+				//"A3XAI_generateLootOnDeath.sqf",
+				//"A3XAI_generateLootPool.sqf",
+				"getAntistuckTime.sqf"
+				//"getLocalFunctions.sqf"
+				//"A3XAI_setLoadoutVariables.sqf"
+			]
+		]
 	],
 	[
 		"Loot",
@@ -200,6 +207,7 @@ _scripts =
 	[
 		"Util",
 		[
+			"paramCheck.sqf",
 			"FindNearestLand.sqf", 
 			"FindNearestRoad.sqf", 
 			"FindNearestWater.sqf", 

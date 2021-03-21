@@ -8,31 +8,18 @@
 // When FuMS encounters one of these defined arrays, it will select one of the items from the array at random to use
 // in the particular application (ie AI Uniform, loot in a box, etc).
 
-FuMS_Crafting_Wood = ["Exile_Item_FortificationUpgrade","Exile_Item_WoodDoorwayKit","Exile_Item_WoodFloorKit","Exile_Item_WoodFloorPortKit",
-"Exile_Item_WoodGateKit","Exile_Item_WoodPlank","Exile_Item_WoodStairsKit","Exile_Item_WoodSupportKit",
-"Exile_Item_WoodWallKit","Exile_Item_WoodWallHalfKit","Exile_Item_WoodWindowKit"];
-FuMS_Crafting_Metal = ["Exile_Item_MetalBoard","Exile_Item_MetalPole"];
-FuMS_Crafting_Other = ["Exile_Item_FloodLightKit","Exile_Item_PortableGeneratorKit","Exile_Item_StorageCrateKit", 
-					"Exile_Item_CampFireKit","uns_ItemFuelcanEmpty","uns_ItemFuelcan","Exile_Item_CodeLock",
-					"Exile_Item_SafeKit","Exile_Item_CamoTentKit"];
-FuMS_Crafting_Tools = ["Exile_Item_CanOpener","Exile_Item_Handsaw","Exile_Item_Pliers","Exile_Item_Grinder","Exile_Item_Foolbox","Exile_Item_FireExtinguisher",
-						"Exile_Item_Hammer","Exile_Item_OilCanister","Exile_Item_Screwdriver","Exile_Item_Screwdriver","Exile_Item_Screwdriver","Exile_Item_Shovel","Exile_Item_SleepingMat",
-						"Exile_Item_ToiletPaper","Exile_Item_ZipTie","Exile_Item_BurlapSack","Exile_Item_WeaponParts","DDR_Item_Crowbar","DDR_Item_Pan","DDR_Item_Bucket",
-						"DDR_Item_Old_Pot","DDR_Item_Pickaxe","DDR_Item_Fishing_Net","Exile_Item_Wrench","Exile_Item_Wrench","Exile_Item_Wrench","DDR_Item_Crowbar","DDR_Item_Pan","DDR_Item_Bucket","DDR_Item_Old_Pot",
-						"DDR_Item_Pickaxe","DDR_Item_Fishing_Net","Exile_Item_WorkBenchKit","Exile_Item_CookingPot","Exile_Item_Matches","Exile_Item_InstaDoc","Exile_Item_Melee_Axe"
+FuMS_Crafting_Wood = [];
+FuMS_Crafting_Metal = [];
+FuMS_Crafting_Other = [];
+FuMS_Crafting_Tools = [
 						];
-FuMS_Crafting_Raw = ["Exile_Item_WoodLog","Exile_Item_LightBulb","Exile_Item_ExtensionCord","Exile_Item_JunkMetal",
-					"Exile_Item_Rope","Exile_Item_PlasticBottleEmpty","Exile_Item_FuelCanisterEmpty","Exile_Item_DuctTape"];
+FuMS_Crafting_Raw = [];
 FuMS_Crafting_ALL = FuMS_Crafting_Wood + FuMS_Crafting_Metal + FuMS_Crafting_Other + FuMS_Crafting_Tools + FuMS_Crafting_Raw;
 
-FuMS_Food_Cooked = ["DDR_Item_Tacticalbacon_Cooked","DDR_Item_Rice_Cooked","DDR_Item_Bakedbeans_Cooked","Exile_Item_BBQSandwich_Cooked","Exile_Item_Catfood_Cooked",
-				"Exile_Item_ChristmasTinner_Cooked","Exile_Item_GloriousKnakworst_Cooked","Exile_Item_SausageGravy_Cooked","Exile_Item_Surstromming_Cooked"];
-FuMS_Food_Raw = ["DDR_Item_Tacticalbacon","DDR_Item_Rice","DDR_Item_Bakedbeans","Exile_Item_GloriousKnakworst","Exile_Item_Surstromming","Exile_Item_SausageGravy",
-				"Exile_Item_ChristmasTinner","Exile_Item_BBQSandwich","Exile_Item_Catfood"];
+FuMS_Food_Cooked = [];
+FuMS_Food_Raw = [];
 FuMS_Food_ALL = FuMS_Food_Cooked + FuMS_Food_Raw;
-FuMS_Drink = ["DDR_Item_Canteen_Coffee","DDR_Item_Canteen_Fresh","DDR_Item_Canteen_Coffee_Milk","DDR_Item_Canteen_Dirty","DDR_Item_Canteen_Salt","DDR_Item_Canteen",
-			"DDR_Item_Coke","DDR_Item_Jackoff","DDR_Item_Franta","DDR_Item_Redgull","DDR_Item_Spirit","DDR_Item_Yummy_Juice","Exile_Item_PlasticBottleFreshWater",
-			"Exile_Item_PlasticBottleEmpty","Exile_Item_Beer","Exile_Item_Energydrink"];
+FuMS_Drink = [];
 
 // Uniforms
 FuMS_U_Civ = ["U_C_Journalist","U_C_Poloshirt_blue","U_C_Poloshirt_burgundy","U_C_Poloshirt_salmon",
@@ -157,12 +144,12 @@ FuMS_B_Navigation = ["ItemWatch","ItemGPS","ItemMap","ItemCompass","ItemRadio","
 	];
 	
 // Backpacks
-FuMS_Packs_Lv1 = ["uns_civ_r1","uns_civ_r2","uns_civ_r3"
+FuMS_Packs_Lv1 = [
 //	"B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_dgtl","B_AssaultPack_khk",
 //	"B_AssaultPack_mcamo","B_AssaultPack_rgr","B_AssaultPack_sgg","B_OutdoorPack_blk","B_OutdoorPack_blu",
 //	"B_OutdoorPack_tan"
 	];
-FuMS_Packs_Lv2 = ["UNS_TROP_R1","UNS_TROP_R2","UNS_TROP_R3"
+FuMS_Packs_Lv2 = [
 //	"B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_ocamo","B_FieldPack_oucamo",
 //	"B_TacticalPack_blk","B_TacticalPack_rgr","B_TacticalPack_ocamo","B_TacticalPack_mcamo",
 //	"B_TacticalPack_oli","B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg"
@@ -252,7 +239,7 @@ FuMS_AmmoForEach = ["FuMS_AmmoForEach"];
 
 // Flares
 FuMS_Flares_Chemical =["Chemlight_blue","Chemlight_green","Chemlight_red"];
-FuMS_Flares_Normal =["FlareGreen_F","FlareRed_F","FlareWhite_F","FlareYellow_F","uns_m127a1_flare"];
+FuMS_Flares_Normal =["FlareGreen_F","FlareRed_F","FlareWhite_F","FlareYellow_F",];
 FuMS_Flares_1Rnd = ["UGL_FlareGreen_F","UGL_FlareRed_F","UGL_FlareWhite_F","UGL_FlareYellow_F"];
 FuMS_Flares_3Rnd = ["3Rnd_UGL_FlareGreen_F","3Rnd_UGL_FlareRed_F","3Rnd_UGL_FlareWhite_F","3Rnd_UGL_FlareYellow_F"];
 FuMS_Flares_ALL = FuMS_Flares_Chemical + FuMS_Flares_Normal + FuMS_Flares_1Rnd + FuMS_Flares_3rnd;
@@ -277,17 +264,17 @@ FuMS_E_Grenade = ["uns_molotov_mag","uns_f1gren","uns_rg42gren","uns_t67gren","u
 FuMS_E_GrenadeIR =[
 	"B_IR_Grenade","O_IR_Grenade","I_IR_Grenade"
 	];
-FuMS_E_1Rnd = ["uns_1rnd_30mm_frag","uns_1rnd_22mm_frag","uns_1rnd_22mm_m1a2_frag"
+FuMS_E_1Rnd = [
 //				"1Rnd_HE_Grenade_shell"
 	];
 FuMS_E_3Rnd = [
 //	"3Rnd_HE_Grenade_shell"
 	];
-FuMS_E_Mine =["uns_mine_M14","uns_mine_M16","uns_mine_M18_remote","uns_mine_M18","uns_mine_md82","uns_mine_m64","uns_mine_AP"
+FuMS_E_Mine =[
 //	"APERSBoundingMine_Range_Mag","APERSMine_Range_Mag","APERSTripMine_Wire_Mag",
 //	"ClaymoreDirectionalMine_Remote_Mag","SLAMDirectionalMine_Wire_Mag"
 	];
-FuMS_E_IED = ["pipebomb","MineE","uns_mine_tm57","Mine ","uns_mine_t59"
+FuMS_E_IED = [
 //	"DemoCharge_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanBig_Remote_Mag",
 //	"IEDUrbanSmall_Remote_Mag","SatchelCharge_Remote_Mag"
 	];

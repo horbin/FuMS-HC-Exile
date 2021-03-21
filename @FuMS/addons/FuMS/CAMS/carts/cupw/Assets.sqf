@@ -118,62 +118,62 @@ _cartContents =
 
 	// Grenades
 	[
-		"CAMS_E_Grenade_W",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
+		"CAMS_Grenade_W",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
 		[
 		]
 	],
 	[
-		"CAMS_E_Grenade_E",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
+		"CAMS_Grenade_E",1,false,   ///////////////////////////////////////////////// FIX IN VANILLA
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_W",1,false,
+		"CAMS_Grenade_IR_W",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_E",1,false,
+		"CAMS_Grenade_IR_E",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_GrenadeIR_I",1,false,
+		"CAMS_Grenade_IR_I",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_E_GrenadeIR_ALL",0,true,
+		"CAMS_Grenade_ALLIR_ALL",0,true,
 		[
-			"CAMS_E_GrenadeIR_W","CAMS_E_GrenadeIR_E","CAMS_E_GrenadeIR_I"
+			"CAMS_Grenade_IR_W","CAMS_Grenade_IR_E","CAMS_Grenade_IR_I"
 		]
 	],
 	// Explosive Shells
 	[
-		"CAMS_E_1Rnd",1,false,
+		"CAMS_Shells_1Rnd",1,false,
 		[
 		]
 	],
 	[
-		"CAMS_E_3Rnd",1,false,
+		"CAMS_Shells_3Rnd",1,false,
 		[
 		]
 	],
 	// Mines
 	[
-		"CAMS_E_Mine",1,false,
+		"CAMS_Bombs_Mines",1,false,
 		[
 		]
 	],// IEDs
 	[
-		"CAMS_E_IED",1,false,
+		"CAMS_Bombs_IED",1,false,
 		[
 		]
 	],	
 	[
-		"CAMS_E_ALL",0,true,
+		"CAMS_Grenade_ALL",0,true,
 		[
-			"CAMS_E_Grenade", "CAMS_E_GrenadeIR_ALL", "CAMS_E_1Rnd", "CAMS_E_3Rnd", "CAMS_E_Mine", "CAMS_E_IED"
+			"CAMS_Grenade_ALL", "CAMS_Grenade_ALLIR_ALL", "CAMS_Shells_1Rnd", "CAMS_Shells_3Rnd", "CAMS_Bombs_Mines", "CAMS_Bombs_IED"
 		]
 	],
 

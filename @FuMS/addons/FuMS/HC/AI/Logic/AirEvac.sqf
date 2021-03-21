@@ -18,7 +18,7 @@ _leaderData = (leader _group) getVariable "FuMS_AILOGIC";
 _spawnLoc = _leaderData select 2;
 _pickupLoc set [2,500];
 
-_debug = true;
+_debug = false;
 
 if (_debug) then
 {

@@ -41,7 +41,7 @@
 		0,         //range from encounter center AI radio's can be heard (0=unlimited.)
 		true,  // Notify players via global message - hint screen on right of game display -
 		false,   // Show encounter area on the map
-		30,      // Win delay: Time in seconds after a WIN before mission cleanup is performed
+		1800,      // Win delay: Time in seconds after a WIN before mission cleanup is performed
 		10       // Lose delay: Time in seconds after a lose before mission cleanup is performed
 		//NOTE: the above delay must finish before the mission is considered 'complete' by the mission manager control loop.
 		// These two delays will also affect how much time will elapse from mission completion until living AI cleanup.
@@ -138,7 +138,7 @@
   
 		[  // Convoy #1                     
 			[         // Vehicle                     Offset         Crew (only 1 type!)   Cargo
-				["Exile_Car_Offroad_Rusty1",[100,100],[0,0],"none"]           
+				[ImFX_Land_Trucks,[200,200],[0,0],"none"]           
 				//["I_UAV_02_F",[125,100],[0,""],"none"],
 				//["I_UGV_01_F",[175,100],[0,""],"none"]
 			],
@@ -148,7 +148,7 @@
 			],
 			// Troops : These are distributed across all vehicles in this convoy.                                                         
 			[    
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Hunter_E"]  ],   ["BoxPatrol",[200,200],[0,0],[200]   ]]          
+				[["EAST","COMBAT","RED","COLUMN"],   [  [2, "Hunter_E"]  ],   ["BoxPatrol",[200,200],[0,0],[200]   ]]          
 
 			]
 		] 
@@ -177,7 +177,7 @@
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			// [["WIN"],["LUCNT","OR","DETECT","BODYCOUNT","OR","Zuppa", "OR", "Captive1"     ]],  // 
+			[["WIN"],["LUCNT"   ]],  // 
 			//  [["CHILD","Help_Helo",[0,0]],["OK"      ]],  // 
 			// [["Reinforce","Help_Vehicle","Trig4"]], 
 			//  [["LOSE"],["TIMER", "OR", "VehDmg1", "BldgDmg1"]   ],

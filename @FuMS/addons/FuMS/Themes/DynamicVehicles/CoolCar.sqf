@@ -1,16 +1,17 @@
-// 	FuMS_nedcar_mission.sqf
+// 	CoolCar.sqf
 // 	TheOneWhoKnocks
-// 	4/20/19
+// 	5/13/2020
 // 	Dynamic mission to spawn a Civilian vehicle with guards
-// 	This mission was ported from [CiC]red_ned's amazing collection of missions that he has developed for the DMS mission system
-//	ORIGINAL CREDITS (Variable difficulty not supported in FuMS......yet
-/*
-	Civilian Mission with new difficulty selection system
-	Mission gives % chance of persistent vehicle
-	based on work by Defent and eraser1
-	easy/mod/difficult/hardcore - reworked by [CiC]red_ned http://cic-gaming.co.uk
-	now with rocket and mine chance - mines cleaned on mission win - updated June 2018
-*/
+///////////////////////////////////////////////////////////////////////////////////
+//  THIS MISSION REQUIRES THE CAMS ARRAY ImFX_Land_CoolCars
+////////////////////////////////////////////////////////////////////////////////////
+//	Make sure you have this populated with whatever vehicles you want to be offered here.  
+//	This is used to offer specific vehicles from addon content (ex, Foxcars, MadMax, Unsung) 
+//  Make sure you update your ImmersionFX.bat file to populate this array or thsi mission will throw errors
+//
+//	10:56:37   Error Undefined variable in expression: imfx_land_coolcars
+//	10:56:37 File FuMS\Themes\StaticSpawns\LootVics.sqf..., line 56
+//
 //
 //	This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 //  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
@@ -18,26 +19,26 @@
 //  Be cautious when editing data.
 
 [
-	["CivilianMission", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Civilian Vehicle","hd_objective","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["CoolCar", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
+	["Cool car spotted","plp_mark_civ_carWorkshop","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		[
-			"Civilian Car Stopped",	// The first line is the title of the pop-up box
-			"Bandits with an old car have broken down. Go kill the bandits and steal their car"		// The second line is the actual text in the box
+			"Cool car spotted",	// The first line is the title of the pop-up box
+			"Bandits with a classic car have broken down. Go kill the bandits and steal their car"		// The second line is the actual text in the box
 		],
 		
 		// Mission Success Message
 		[
-			"Civilian Car captured",
-			"Convicts killed everyone and made off with the old car."
+			"Cool Car captured",
+			"Convicts killed everyone and made off with the cool car."
 		],
 	  
 		// Mission Failure Message
@@ -60,7 +61,7 @@
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5]				]  
 		// ["I_UGV_01_rcws_F",	[0,100],   	0, 			[.5,   1,     .5,         .5,         .5], "FIRE_SMALL"]   
 
-		[ImFX_Land_Cars,					[-10,10],				(round random 360),			[.5,   1,     .5,         .5,         .5]]
+		[ImFX_Land_CoolCars,					[-5,5],				(round random 360),			[.5,   1,     .5,         .5,         .5]]
 		// BUILDINGS: persist = 0: building deleted at event completion, 1= building remains until server reset.
 		// [classname        			[X offset,y offset],	rotation,	persist until restart (0:Flase, 1:True) ]
 		// ["CamoNet_INDP_big_F",        [-20, 10],				0,        			0]
@@ -69,15 +70,15 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   				["BoxPatrol",	[5,5],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_E"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [2,"Rifleman_I"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_I"]  ],   				["BoxPatrol",	[5,5],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_I"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
 		[  		// Static Guns  
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F",		[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
+				//[  "O_HMG_01_high_F",		[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
 				[  "O_HMG_01_high_F",		[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ] 
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
@@ -85,7 +86,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [1, "Rifleman_I"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn

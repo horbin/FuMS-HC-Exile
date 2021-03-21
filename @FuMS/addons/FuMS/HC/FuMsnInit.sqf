@@ -188,12 +188,134 @@ if !(hasInterface) then
    // diag_log format ["<FuMS> FuMsnInit: #%2:SOLDIERDATA:%1", FuMS_SOLDIERDATA, count FuMS_SOLDIERDATA];
             
     // Identify major areas on the map.
+	
+	FuMS_traderCityPositions = [];
+	
+	{
+		if ((markerType _x) isEqualTo "ExileTraderZone") then 
+		{
+			FuMS_traderCityPositions pushBack (getMarkerPos _x);
+		};
+	} forEach allMapMarkers;
+	
+	FuMS_bambiSpawnPos = [];
+	{
+		if ((markerType _x) isEqualTo "ExileSpawnZone") then {
+			FuMS_bambiSpawnPos pushBack (getMarkerPos _x);
+		};
+	} forEach allMapMarkers;
+	
     FuMS_VillageList = nearestLocations [FuMS_MapCenter, ["NameVillage"], 30000];
     FuMS_CityList =nearestLocations [FuMS_MapCenter, ["NameCity"], 30000];
     FuMS_CapitalList = nearestLocations [FuMS_MapCenter, ["NameCityCapital"], 30000];
     FuMS_MarineList = nearestLocations [FuMS_MapCenter, ["NameMarine"], 30000];
-    FuMS_DefinedMapLocations = FuMS_VillageList+FuMS_CityList+FuMS_CapitalList+FuMS_MarineList;
+	
+	diag_log format ["FuMSINIT: Old VList: %1",FuMS_VillageList];
 
+	_newVList = [];
+	{
+		_pos = locationPosition _x;
+		_blocked = false;
+		{
+			if ((_x distance _pos) < 100) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: TRADER FOUND - DROPPING: %1",_x];
+
+			};
+		} forEach FuMS_traderCityPositions;
+		
+		{
+			if ((_x distance _pos) < 300) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: SPAWN FOUND - DROPPING: %1",_x];
+			};
+		} forEach FuMS_bambiSpawnPos;
+		
+		if !(_blocked) then
+		{
+			_newVList pushback _x;
+		};	
+	} forEach FuMS_VillageList;
+	
+	FuMS_VillageList = _newVList;
+	diag_log format ["FuMSINIT: New VList: %1",FuMS_VillageList];
+	
+	
+	
+	
+	
+	diag_log format ["FuMSINIT: Old CList: %1",FuMS_CityList];
+	_newCList = [];
+	{
+		_pos = locationPosition _x;
+		_blocked = false;
+		{
+			if ((_x distance _pos) < 300) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: TRADER FOUND - DROPPING: %1",_x];
+			};
+		} forEach FuMS_traderCityPositions;
+		
+		{
+			if ((_x distance _pos) < 300) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: SPAWN FOUND - DROPPING: %1",_x];
+			};
+		} forEach FuMS_bambiSpawnPos;
+		
+		if !(_blocked) then
+		{
+			_newCList pushback _x;
+		};	
+	} forEach FuMS_CityList;
+	
+	FuMS_CityList = _newCList;
+
+	diag_log format ["FuMSINIT: New CList: %1",FuMS_CityList];
+	
+	
+	/*
+	
+	diag_log format ["FuMSINIT: Old CCList: %1",FuMS_CapitalList];
+	_newCCList = [];
+	{
+		_pos = locationPosition _x;
+		_blocked = false;
+		{
+			if ((_x distance _pos) < 100) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: TRADER FOUND - DROPPING: %1",_x];
+
+			};
+		} forEach FuMS_traderCityPositions;
+		
+		{
+			if ((_x distance _pos) < 100) then
+			{
+				_blocked = true;
+				diag_log format ["FuMSINIT: SPAWN FOUND - DROPPING: %1",_x];
+			};
+		} forEach FuMS_bambiSpawnPos;
+		
+		if !(_blocked) then
+		{
+			_newCCList pushback _x;
+		};	
+	} forEach FuMS_CapitalList;
+	
+	FuMS_CapitalList = _newCCList;
+
+	diag_log format ["FuMSINIT: New CCList: %1",FuMS_CapitalList];	
+	
+	*/
+	
+    FuMS_DefinedMapLocations = FuMS_VillageList+FuMS_CityList+FuMS_CapitalList+FuMS_MarineList;
+	
 	FuMS_HillList = nearestLocations [FuMS_MapCenter, ["Hill"], 30000];
 	FuMS_MountList = nearestLocations [FuMS_MapCenter, ["Mount"], 30000];
 	FuMS_NameLocalList = (nearestLocations [FuMS_MapCenter, ["NameLocal"], 30000]) - FuMS_DefinedMapLocations;

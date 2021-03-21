@@ -19,13 +19,13 @@
 
 [
 	["StriderSteal", 300], 	// Mission Title NOSPACES!, and encounter radius.  This example has no options
-	["Strider Steal","hd_objective","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["Strider Steal","plp_mark_as_vehicletraining","ELLIPSE","ColorKhaki","DiagGrid",300],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	[  
 		[					// NOTIFICATION Messages and Map display Control.
 			false, "ALL",0, // Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 			// Notify players via global toast message
 			true,			// Show encounter area on the map
-			900,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			1800,    		// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			10       		// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -77,8 +77,8 @@
 	[			// Vehicles	
 		[  		// Static Guns  
 			[   // Vehicle                     Offset     				Direction   CargoLoot (see Loot section below for more detail!)
-				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
-				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
+				//[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
+				//[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ],
 				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],							[(round random 360)],     	"None" ],
 				[  "O_HMG_01_high_F"       	,[((round random 100)-50),((round random 100)-50)],						[(round random 360)],     	"None" ]  
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
@@ -87,7 +87,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [4, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [2, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -139,7 +139,7 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
-			["Timer", 		["TimerNoPlayers", 		1800]],	//30 minutes
+			["Timer", 		["TimerNoPlayers", 		random [1400,1700,1900]]],	//30 minutes
 			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
 		],
 		[

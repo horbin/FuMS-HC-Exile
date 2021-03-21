@@ -14,10 +14,520 @@ private ["_immersionData","_cartName","_debugCart"];
 // CART config ////////////////////////////////////
 ///////////////////////////////////////////////////
 _cartName = "exile";
-_debugCart = false;
+_debugCart = false;	
 
 _immersionData = 
 [
+	/////////////////////////////////////// AI Models to use
+	[
+		"ImFX_AiModel_E",1,false,
+		[
+			"O_G_Soldier_F"
+		]
+	],
+	[
+		"ImFX_Air_Patrol",1,false,
+		[
+			// AN-2
+			"Exile_Plane_AN2_Green",
+			"Exile_Plane_AN2_White",
+			"Exile_Plane_AN2_Stripe",
+			"An2_tk",
+			"An2_af",
+			"An2_a2",	
+			// Cessna 185 Skymaster (armed)
+			"GNT_C185T"
+		]
+	],
+	[	
+		"ImFX_Air_Interceptor",1,false,
+		[
+		]
+	],
+	
+	// Heli Assets
+	[	
+		"ImFX_Heli_Rescue",1,false,
+		[
+
+		]
+	],
+	[
+		"ImFX_Heli_Airdrop",0,true,
+		[
+			"CAMS_Heli_Unarmed_W","CAMS_Heli_Transport_W"
+		]
+	],
+	[
+		"ImFX_Heli_Escort",0,true,
+		[
+			"CAMS_Heli_Armed_E"
+		]
+	],
+	[
+		"ImFX_Heli_Transport",0,true,
+		[
+			"CAMS_Heli_Transport_W"
+		]
+	],
+	[
+		"ImFX_Heli_Troops",0,true,
+		[
+			"CAMS_Heli_Unarmed_E","CAMS_Heli_Unarmed_I","CAMS_Heli_Unarmed_W"
+		]
+	],
+
+	/////////////////////////////////////// Land Assets
+
+	[
+		"ImFX_Land_Armed_Guard",0,true,
+		[
+			"CAMS_Mil_ArmedOffroad_E"
+		]
+	],	
+	[
+		"ImFX_Land_Armed_Transport",0,true,
+		[
+			"CAMS_Mil_ArmedTransport_W","CAMS_Mil_ArmedTransport_E","CAMS_Mil_ArmedTransport_I"
+		]
+	],	
+	[
+		"ImFX_Land_Unarmed_Transport",0,true,
+		[
+			"CAMS_Mil_Transport_W","CAMS_Mil_Transport_E","CAMS_Mil_Transport_I"
+		]
+	],	
+	[
+		"ImFX_Land_Civ_Truck",0,true,
+		[
+			"CAMS_Civ_SUV"
+		]
+	],	
+	[
+		"ImFX_Land_Medic",1,true,
+		[
+			"C_Van_02_medevac_F","O_Truck_02_medical_F","O_Truck_03_medical_F",
+			"I_E_Van_02_medevac_F","B_Truck_01_medical_F","I_Truck_02_medical_F"
+		]
+	],	
+
+	[
+		"ImFX_Land_Civ_Car",0,true,
+		[
+			"CAMS_Land_ALL_C"
+		]
+	],
+	
+	////////////////////////////////////////////////////////////////////////////////////
+	// Immersive AI uniforms
+	////////////////////////////////////////////////////////////////////////////////////
+	
+	[	// Uniforms that "Doctor" or "Scientist" AI can wear 
+		"ImFX_Uniform_Scientist",1,false,
+		[
+		]
+	],	
+	[	// Uniforms that "Bambi" class can wear 
+		"ImFX_Uniform_Bambi",1,false,
+		[
+			"Exile_Uniform_BambiOverall"
+		]
+	],
+
+	[	// Uniforms that "Survivor" class can wear (Other NPC's acting as "Players")
+		"ImFX_Uniform_Survivor",0,true,
+		[
+			"CAMS_U_Civ","CAMS_U_Guerilla_W","CAMS_U_Guerilla_E","CAMS_U_Guerilla_I"
+		]
+	],
+	[	// Uniforms that "Survivor" class can wear (Independant side)
+		"ImFX_Vest_Survivor",0,true,
+		[
+			"CAMS_V_Vests","CAMS_V_Harness","CAMS_V_Chestrig","CAMS_V_Bandolliers"
+		]
+	],
+	[	// Uniforms that "Survivor" class can wear (Independant side)
+		"ImFX_Helmet_Survivor",0,true,
+		[
+			"CAMS_H_Civ","CAMS_H_Hunter"
+		]
+	],
+	[	// Uniforms that "Survivor" class can wear (Independant side)
+		"ImFX_Pack_Survivor",0,true,
+		[
+			"CAMS_Packs_ALL"
+		]
+	],
+	[	// Uniforms that "Survivor" class can wear (Independant side)
+		"ImFX_Rifle_Survivor",0,true,
+		[
+			"CAMS_Rifles_ALL_I","CAMS_Rifles_ALL_E","CAMS_Rifles_ALL_W"
+		]
+	],
+	[	// Uniforms that "Survivor" class can wear (Independant side)
+		"ImFX_Pistol_Survivor",0,true,
+		[
+			"CAMS_Pistols_I","CAMS_Pistols_E","CAMS_Pistols_W"
+		]
+	],
+
+	// Use these if you want to give specific Exile assets but have not done a total conversion and the global variables include
+	// non Exile assets.
+	// Civilian Work Vehicles
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	[	
+		"ImFX_Work_RepairOffroads",1,false,
+		[
+			"Exile_Car_Offroad_Repair_Guerilla01", "Exile_Car_Offroad_Repair_Guerilla02", "Exile_Car_Offroad_Repair_Guerilla03",
+			"Exile_Car_Offroad_Repair_Guerilla04", "Exile_Car_Offroad_Repair_Guerilla05", "Exile_Car_Offroad_Repair_Guerilla06",
+			"Exile_Car_Offroad_Repair_Guerilla07", "Exile_Car_Offroad_Repair_Guerilla08", "Exile_Car_Offroad_Repair_Guerilla09",
+			"Exile_Car_Offroad_Repair_Guerilla10", "Exile_Car_Offroad_Repair_Guerilla11", "Exile_Car_Offroad_Repair_Guerilla12",
+			"Exile_Car_Offroad_Repair_Civillian", "Exile_Car_Offroad_Repair_Red", "Exile_Car_Offroad_Repair_Beige",
+			"Exile_Car_Offroad_Repair_White", "Exile_Car_Offroad_Repair_Blue", "Exile_Car_Offroad_Repair_DarkRed",
+			"Exile_Car_Offroad_Repair_BlueCustom" 
+		]
+	],
+	[
+		"ImFX_Work_BoxVans",1,false,
+		[
+			"Exile_Car_Van_Box_Guerilla01", "Exile_Car_Van_Box_Guerilla02", "Exile_Car_Van_Box_Guerilla03", "Exile_Car_Van_Box_Guerilla04", 
+			"Exile_Car_Van_Box_Guerilla05", "Exile_Car_Van_Box_Guerilla06",	"Exile_Car_Van_Box_Guerilla07", "Exile_Car_Van_Box_Guerilla08", 
+			"Exile_Car_Van_Box_Black", "Exile_Car_Van_Box_White","Exile_Car_Van_Box_Red"
+		]
+	],
+	[
+		"ImFX_Work_FuelVans",1,false,
+		[
+			"Exile_Car_Van_Fuel_Black", "Exile_Car_Van_Fuel_White", "Exile_Car_Van_Fuel_Red",
+			"Exile_Car_Van_Fuel_Guerilla01", "Exile_Car_Van_Fuel_Guerilla02", "Exile_Car_Van_Fuel_Guerilla03"
+		]
+	],
+	[
+		"ImFX_Work_All",0,true,
+		[
+			"ImFX_Work_RepairOffroads", "ImFX_Work_BoxVans", "ImFX_Work_FuelVans"
+		]
+	],
+
+	/////////////////////////// DAPE Loot Table
+	[	
+		"ImFX_DAPE_lootItems",1,false,
+		[
+			"Exile_Item_InstaDoc","Exile_Item_Vishpirin","Exile_Item_Bandage"
+		]
+	],
+	// Military Vehicles
+	[
+		"ImFX_Mil_ArmedOffroads",1,false,
+		[
+			"Exile_Car_Offroad_Armed_Guerilla01","Exile_Car_Offroad_Armed_Guerilla02","Exile_Car_Offroad_Armed_Guerilla03",
+			"Exile_Car_Offroad_Armed_Guerilla04","Exile_Car_Offroad_Armed_Guerilla05","Exile_Car_Offroad_Armed_Guerilla06",
+			"Exile_Car_Offroad_Armed_Guerilla07","Exile_Car_Offroad_Armed_Guerilla08","Exile_Car_Offroad_Armed_Guerilla09",
+			"Exile_Car_Offroad_Armed_Guerilla10","Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_Offroad_Armed_Guerilla12"
+		]
+	],
+	[
+		"ImFX_Mil_UnarmedOffroads",1,false,
+		[
+			"Exile_Car_Offroad_Guerilla01",	"Exile_Car_Offroad_Guerilla02",	"Exile_Car_Offroad_Guerilla03",	
+			"Exile_Car_Offroad_Guerilla04",	"Exile_Car_Offroad_Guerilla05",	"Exile_Car_Offroad_Guerilla06",	
+			"Exile_Car_Offroad_Guerilla07",	"Exile_Car_Offroad_Guerilla08",	"Exile_Car_Offroad_Guerilla09",
+			"Exile_Car_Offroad_Guerilla10",	"Exile_Car_Offroad_Guerilla11",	"Exile_Car_Offroad_Guerilla12"
+		]
+	],
+	[
+		"ImFX_Mil_HMMWV_Armed",1,false,
+		[
+			"Exile_Car_HMMWV_M134_Desert","Exile_Car_HMMWV_M134_Green","Exile_Car_HMMWV_M2_Desert",
+			"Exile_Car_HMMWV_M2_Green"
+		]
+	],
+	[
+		"ImFX_Mil_HMMWV_Unarmed",1,false,
+		[
+			"Exile_Car_HMMWV_MEV_Desert","Exile_Car_HMMWV_MEV_Green","Exile_Car_HMMWV_UNA_Desert",
+			"Exile_Car_HMMWV_UNA_Green"
+		]
+	],
+	[
+		"ImFX_Mil_HMMWV_ALL",1,false,
+		[
+			"ImFX_Mil_HMMWV_Armed", "ImFX_Mil_HMMWV_Unarmed"
+		]
+	],
+	[
+		"ImFX_Mil_SUV_Armed",1,false,
+		[
+			"Exile_Car_SUV_Armed_Black"
+		]
+	],
+	[
+
+		"ImFX_Mil_BTR_Armed",1,true,
+		[
+			"Exile_Car_BTR40_MG_Camo","Exile_Car_BTR40_MG_Green"
+		]
+	],
+	[
+		"ImFX_Mil_BTR_Unarmed",1,true,
+		[
+			"Exile_Car_BTR40_Camo","Exile_Car_BTR40_Green"
+		]
+	],
+	[
+		"ImFX_Mil_BTR_ALL",1,true,
+		[
+			"ImFX_Mil_BTR_Armed", "ImFX_Mil_BTR_Unarmed"
+		]
+	],
+	[
+		"ImFX_Mil_OpenUral",1,true,
+		[
+			"Exile_Car_Ural_Open_Worker","Exile_Car_Ural_Open_Yellow","Exile_Car_Ural_Open_Worker",
+			"Exile_Car_Ural_Open_Military"
+		]
+	],
+	[
+		"ImFX_Land_CoveredUral",1,true,
+		[
+			"Exile_Car_Ural_Covered_Worker","Exile_Car_Ural_Covered_Blue","Exile_Car_Ural_Covered_Yellow",
+			"Exile_Car_Ural_Covered_Military"
+		]
+	],
+	[
+		"ImFX_Mil_Ural_ALL",0,true,
+		[
+			"ImFX_Mil_OpenUral", "ImFX_Mil_CoveredUral"
+		]
+	],
+	[
+		"ImFX_Mil_Hemmts",1,true,
+		[
+			"Exile_Car_HEMMT"
+		]
+	],
+	[
+		"ImFX_Mil_Hunters",1,true,
+		[
+			"Exile_Car_Hunter"
+		]
+	],
+	[
+		"ImFX_Mil_Ifrits",1,true,
+		[
+			"Exile_Car_Ifrit"
+		]
+	],
+	[
+		"ImFX_Mil_Striders",1,true,
+		[
+			"Exile_Car_Strider"
+		]
+	],
+	[
+		"ImFX_Mil_Tempests",1,true,
+		[
+			"Exile_Car_Tempest"
+		]
+	],
+	[
+		"ImFX_Mil_Zamaks",1,true,
+		[
+			"Exile_Car_Zamak"
+		]
+	],
+	[
+		"ImFX_Mil_Prowler",1,true,
+		[
+			"Exile_Car_ProwlerLight","Exile_Car_ProwlerUnarmed"
+		]
+	],
+	[
+		"ImFX_Mil_BRDM",1,true,
+		[
+			"Exile_Car_BRDM2_HQ"
+		]
+	],
+	[
+
+		// CONFIRM UNARMED!
+		"ImFX_Mil_Unarmed",0,true,
+		[
+			"ImFX_Mil_BTR_Unarmed", "ImFX_Mil_HMMWV_Unarmed", "ImFX_Mil_Hemmts", "ImFX_Mil_Hunters", 
+			"ImFX_Mil_Ifrits", "ImFX_Mil_Striders", "ImFX_Mil_Tempests", "ImFX_Mil_Zamaks", "ImFX_Mil_Prowler"
+		]
+	],
+	[
+		"ImFX_Mil_Armed",0,true,
+		[
+			"ImFX_Mil_ArmedOffroads", "ImFX_Mil_HMMWV_Armed", "ImFX_Mil_BTR_Armed",	"ImFX_Mil_BRDM", 
+			"ImFX_Mil_SUV_Armed"
+		]
+	],
+	[
+		"ImFX_Mil_All",0,true,
+		[
+			"ImFX_Mil_Unarmed", "ImFX_Mil_Armed"
+		]
+	],
+
+// Crafting Loot
+	[
+		"ImFX_Crafting_Wood",1,false,
+		[
+			"Exile_Item_FortificationUpgrade","Exile_Item_WoodDoorwayKit","Exile_Item_WoodFloorKit","Exile_Item_WoodFloorPortKit",
+			"Exile_Item_WoodGateKit","Exile_Item_WoodPlank","Exile_Item_WoodStairsKit","Exile_Item_WoodSupportKit",
+			"Exile_Item_WoodWallKit","Exile_Item_WoodWallHalfKit","Exile_Item_WoodWindowKit",
+			"Exile_Item_WorkBenchKit"
+		]
+	],
+	[
+		"ImFX_Crafting_Metal",1,false,
+		[
+			"Exile_Item_MetalBoard","Exile_Item_MetalPole"
+		]
+	],
+	[
+		"ImFX_Crafting_Raw",1,false,
+		[
+			"Exile_Item_WoodLog","Exile_Item_LightBulb","Exile_Item_ExtensionCord","Exile_Item_JunkMetal",
+			"Exile_Item_Rope","Exile_Item_PlasticBottleEmpty","Exile_Item_FuelCanisterEmpty","Exile_Item_DuctTape"
+		]
+	],	[
+		"ImFX_Crafting_Kits",1,false,
+		[
+			"Exile_Item_FloodLightKit","Exile_Item_PortableGeneratorKit","Exile_Item_StorageCrateKit", 
+			"Exile_Item_CampFireKit","Exile_Item_CodeLock","Exile_Item_SafeKit","Exile_Item_CamoTentKit"
+		]
+	],
+	[
+		"ImFX_Crafting_ALL",0,true,
+		[
+			"ImFX_Crafting_Wood","ImFX_Crafting_Metal","ImFX_Crafting_Raw","ImFX_Crafting_Kits"
+		]
+	],
+	[
+		"ImFX_Crafting_Tools",1,false,
+		[
+			"Exile_Melee_Axe","Exile_Melee_Shovel","Exile_Melee_SledgeHammer","Exile_Item_Screwdriver","Exile_Item_Shovel",
+
+			"Exile_Item_CanOpener","Exile_Item_CookingPot","Exile_Item_Matches",
+			
+			"Exile_Item_Foolbox","Exile_Item_Grinder","Exile_Item_Handsaw","Exile_Item_Pliers","Exile_Item_FireExtinguisher",
+			"Exile_Item_CordlessScrewdriver","Exile_Item_Screwdriver","Exile_Item_Wrench","Exile_Item_Hammer",
+			"Exile_Item_OilCanister",
+			"Exile_Item_SleepingMat","Exile_Item_ToiletPaper","Exile_Item_ZipTie"
+			//,"Exile_Item_BurlapSack","Exile_Item_WeaponParts"
+			
+
+		]
+	],
+	[
+		"ImFX_Hunting_Tools",1,false,
+		[
+			"Exile_Item_Knife",
+			"Exile_Item_CanOpener",
+			"Exile_Item_CookingPot",
+			"Exile_Item_Matches",
+			"Exile_Item_Foolbox",
+			"Exile_Item_Grinder",
+			"Exile_Item_Handsaw",
+			"Exile_Item_Pliers",
+			"Exile_Item_FireExtinguisher",
+			"Exile_Item_CordlessScrewdriver",
+			"Exile_Item_Screwdriver",
+			"Exile_Item_Wrench",
+			"Exile_Item_Hammer",
+			"Exile_Item_OilCanister",
+			"Exile_Item_SleepingMat",
+			"Exile_Item_ToiletPaper",
+			"Exile_Item_ZipTie"
+			//,"Exile_Item_BurlapSack","Exile_Item_WeaponParts"
+			
+
+		]
+	],
+
+
+	[
+		"ImFX_Food_Drink",1,false,
+		[
+			"Exile_Item_PlasticBottleFreshWater","Exile_Item_PlasticBottleEmpty","Exile_Item_Beer","Exile_Item_Energydrink",
+			"Exile_Item_Beer","Exile_Item_ChocolateMilk","Exile_Item_EnergyDrink","Exile_Item_MountainDupe",
+			"Exile_Item_PlasticBottleCoffee","Exile_Item_PlasticBottleEmpty","Exile_Item_PlasticBottleFreshWater",
+			"Exile_Item_PowerDrink"
+			
+		]
+	],
+	[
+		"ImFX_Food_Raw",1,false,
+		[
+			"Exile_Item_GloriousKnakworst","Exile_Item_Surstromming","Exile_Item_SausageGravy",
+			"Exile_Item_ChristmasTinner","Exile_Item_BBQSandwich","Exile_Item_Catfood"
+		]
+	],
+	[
+		"ImFX_Food_Cooked",1,false,
+		[
+			"Exile_Item_BBQSandwich_Cooked","Exile_Item_Catfood_Cooked","Exile_Item_ChristmasTinner_Cooked",
+			"Exile_Item_GloriousKnakworst_Cooked","Exile_Item_SausageGravy_Cooked","Exile_Item_Surstromming_Cooked"
+		]
+	],
+	[
+		"ImFX_Food_MRE",1,false,
+		[
+			"Exile_Item_BeefParts","Exile_Item_Cheathas","Exile_Item_EMRE","Exile_Item_InstantCoffee",
+			"Exile_Item_MacasCheese","Exile_Item_Moobar","Exile_Item_Noodles","Exile_Item_Raisins",
+			"Exile_Item_SeedAstics"
+		]
+	],
+
+	[
+		"ImFX_Cosmetic",1,false,
+		[
+			"Exile_Cosmetic_Axe","Exile_Cosmetic_BBQSandwich","Exile_Cosmetic_BeefParts","Exile_Cosmetic_Beer",
+			"Exile_Cosmetic_CatFood","Exile_Cosmetic_Cheathas","Exile_Cosmetic_CockONut","Exile_Cosmetic_DogFood",
+			"Exile_Cosmetic_EMRE","Exile_Cosmetic_EnergyDrink","Exile_Cosmetic_Foolbox","Exile_Cosmetic_GasMask",
+			"Exile_Cosmetic_InstantCoffee","Exile_Cosmetic_Knife","Exile_Cosmetic_MacasCheese","Exile_Cosmetic_Magazine01",
+			"Exile_Cosmetic_Magazine02","Exile_Cosmetic_Magazine03","Exile_Cosmetic_Magazine04","Exile_Cosmetic_Moobar",
+			"Exile_Cosmetic_PopTabs","Exile_Cosmetic_PowerDrink","Exile_Cosmetic_Raisins","Exile_Cosmetic_Shovel",
+			"Exile_Cosmetic_SledgeHammer","Exile_Cosmetic_Surstromming",
+
+			"Exile_Cosmetic_MG","Exile_Cosmetic_UAV"
+
+
+		]
+	],
+
+	[
+		"ImFX_Loot",1,false,
+		[
+			"Exile_Loot_XmasPresent_Blue","Exile_Loot_XmasPresent_Gold","Exile_Loot_XmasPresent_Green","Exile_Loot_XmasPresent_Magenta",
+			"Exile_Loot_XmasPresent_Mint","Exile_Loot_XmasPresent_Pink","Exile_Loot_XmasPresent_Purple","Exile_Loot_XmasPresent_Red"
+
+		]
+	],
+	
+	[
+		"ImFX_Lootboxes",1,false,
+		[
+			"Exile_PopTabs","Exile_Container_Storagecrate",
+			"Exile_Container_SupplyBox","Exile_Container_OldChest","Exile_Container_CamoTent"
+
+		]
+	],
+////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+	// Exile Specific groups
+	//////////////////////////////////////////////////////////////////////////////////////////////////
 
 	[
 		"ImFX_Exile_Pistols",1,true,
@@ -139,11 +649,11 @@ _immersionData =
 	[
 		"ImFX_Exile_Heli_ArmedHueys",1,true,
 		[
-			"Exile_Chopper_Huey_Armed_Desert","Exile_Chopper_Huey_Armed_Green"
+			//"Exile_Chopper_Huey_Armed_Desert","Exile_Chopper_Huey_Armed_Green"
 		]
 	],
 	[
-		"ImFX_Heli_Hueys_ALL",0,false,
+		"ImFX_Heli_Hueys_ALL",1,true,
 		[
 			"ImFX_Exile_Heli_ArmedHueys", "ImFX_Exile_Heli_UnarmedHueys"
 		]
@@ -188,20 +698,20 @@ _immersionData =
 		]
 	],
 	[
-		"ImFX_Heli_Airdrop",0,false,
+		"ImFX_Heli_Airdrop",0,true,
 		[
 			"ImFX_Exile_Heli_Hellcats", "ImFX_Exile_Heli_UnarmedHueys"
 		]
 	],
 	[
-		"ImFX_Heli_Troops",0,false,
+		"ImFX_Heli_Troops",0,true,
 		[
 			"ImFX_Exile_Heli_UnarmedHueys", "ImFX_Exile_Heli_Hummingbirds", "ImFX_Exile_Heli_Hurons", "ImFX_Exile_Heli_Mohawks", 
 			"ImFX_Exile_Heli_Orcas"
 		]
 	],
 	[
-		"ImFX_Heli_ALL",0,false,
+		"ImFX_Heli_ALL",0,true,
 		[
 			"ImFX_Exile_Heli_Hellcats", "ImFX_Exile_Heli_Hueys_All", "ImFX_Exile_Heli_Hummingbirds", "ImFX_Heli_Hurons",
 			"ImFX_Exile_Heli_Mohawks", "ImFX_Exile_Heli_Orcas", "ImFX_Exile_Heli_Tarus"
@@ -234,7 +744,7 @@ _immersionData =
 		]
 	],
 	[
-		"ImFX_Plane_All",0,false,
+		"ImFX_Plane_All",0,true,
 		[
 			"ImFX_Exile_Plane_Cessnas", "ImFX_Exile_Plane_VTOL", "ImFX_Exile_Plane_Ceaser", "ImFX_Exile_Plane_AN2"
 		]
@@ -369,282 +879,75 @@ _immersionData =
 		]
 	],
 	[
-		"ImFX_Land_Work",0,false,
+		"ImFX_Land_Work",0,true,
 		[
 			"ImFX_Exile_Land_Tractors", "ImFX_Exile_Land_Ikarus", "ImFX_Exile_Land_Ambulance"
 		]
 	],
 	[
-		"ImFX_Land_Cars",0,false,
+		"ImFX_Land_Cars",0,true,
 		[
 			"ImFX_Exile_Land_Hatchbacks_ALL", "ImFX_Exile_Land_SUV", "ImFX_Exile_Land_Vans", "ImFX_Exile_Land_Octavius", 
 			"ImFX_Exile_Land_Ladas", "ImFX_Exile_Land_Volhas"
 		]
 	],
 	[
-		"ImFX_Land_Trucks",0,false,
+		"ImFX_Land_Trucks",0,true,
 		[
 			"ImFX_Exile_Land_Offroads", "ImFX_Exile_Land_MB4WD", "ImFX_Exile_Land_Quilin", "ImFX_Exile_Land_UAZs", "ImFX_Exile_Land_V3S", 
 			"ImFX_Exile_Land_LandRover"
 		]
 	],
 	[
-		"ImFX_Land_All",0,false,
+		"ImFX_Land_All",0,true,
 		[
 			"ImFX_Land_Work", "ImFX_Land_Cars", "ImFX_Land_Trucks"
 		]
-	],
-	// Civilian Work Vehicles
-	
-	//////////////////////////////////////////////////////////////////////////////////////////////////////////
-	[	
-		"ImFX_Work_RepairOffroads",1,true,
-		[
-			"Exile_Car_Offroad_Repair_Guerilla01", "Exile_Car_Offroad_Repair_Guerilla02", "Exile_Car_Offroad_Repair_Guerilla03",
-			"Exile_Car_Offroad_Repair_Guerilla04", "Exile_Car_Offroad_Repair_Guerilla05", "Exile_Car_Offroad_Repair_Guerilla06",
-			"Exile_Car_Offroad_Repair_Guerilla07", "Exile_Car_Offroad_Repair_Guerilla08", "Exile_Car_Offroad_Repair_Guerilla09",
-			"Exile_Car_Offroad_Repair_Guerilla10", "Exile_Car_Offroad_Repair_Guerilla11", "Exile_Car_Offroad_Repair_Guerilla12",
-			"Exile_Car_Offroad_Repair_Civillian", "Exile_Car_Offroad_Repair_Red", "Exile_Car_Offroad_Repair_Beige",
-			"Exile_Car_Offroad_Repair_White", "Exile_Car_Offroad_Repair_Blue", "Exile_Car_Offroad_Repair_DarkRed",
-			"Exile_Car_Offroad_Repair_BlueCustom" 
-		]
-	],
-	[
-		"ImFX_Work_BoxVans",1,true,
-		[
-			"Exile_Car_Van_Box_Guerilla01", "Exile_Car_Van_Box_Guerilla02", "Exile_Car_Van_Box_Guerilla03",
-			"Exile_Car_Van_Box_Guerilla04", "Exile_Car_Van_Box_Guerilla05", "Exile_Car_Van_Box_Guerilla06",
-			"Exile_Car_Van_Box_Guerilla07", "Exile_Car_Van_Box_Guerilla08", "Exile_Car_Van_Box_Black",
-			"Exile_Car_Van_Box_White","Exile_Car_Van_Box_Red"
-		]
-	],
-	[
-		"ImFX_Work_FuelVans",1,true,
-		[
-			"Exile_Car_Van_Fuel_Black", "Exile_Car_Van_Fuel_White", "Exile_Car_Van_Fuel_Red",
-			"Exile_Car_Van_Fuel_Guerilla01", "Exile_Car_Van_Fuel_Guerilla02", "Exile_Car_Van_Fuel_Guerilla03"
-		]
-	],
-	[
-		"ImFX_Work_All",0,true,
-		[
-			"ImFX_Work_RepairOffroads", "ImFX_Work_BoxVans", "ImFX_Work_FuelVans"
-		]
-	],
-
-	// Military Vehicles
-	[
-		"ImFX_Mil_ArmedOffroads",1,true,
-		[
-			"Exile_Car_Offroad_Armed_Guerilla01","Exile_Car_Offroad_Armed_Guerilla02","Exile_Car_Offroad_Armed_Guerilla03",
-			"Exile_Car_Offroad_Armed_Guerilla04","Exile_Car_Offroad_Armed_Guerilla05","Exile_Car_Offroad_Armed_Guerilla06",
-			"Exile_Car_Offroad_Armed_Guerilla07","Exile_Car_Offroad_Armed_Guerilla08","Exile_Car_Offroad_Armed_Guerilla09",
-			"Exile_Car_Offroad_Armed_Guerilla10","Exile_Car_Offroad_Armed_Guerilla11","Exile_Car_Offroad_Armed_Guerilla12"
-		]
-	],
-	[
-		"ImFX_Mil_UnarmedOffroads",1,true,
-		[
-			"Exile_Car_Offroad_Guerilla01",	"Exile_Car_Offroad_Guerilla02",	"Exile_Car_Offroad_Guerilla03",	
-			"Exile_Car_Offroad_Guerilla04",	"Exile_Car_Offroad_Guerilla05",	"Exile_Car_Offroad_Guerilla06",	
-			"Exile_Car_Offroad_Guerilla07",	"Exile_Car_Offroad_Guerilla08",	"Exile_Car_Offroad_Guerilla09",
-			"Exile_Car_Offroad_Guerilla10",	"Exile_Car_Offroad_Guerilla11",	"Exile_Car_Offroad_Guerilla12"
-		]
-	],
-	[
-		"ImFX_Mil_HMMWV_Armed",1,true,
-		[
-			"Exile_Car_HMMWV_M134_Desert","Exile_Car_HMMWV_M134_Green","Exile_Car_HMMWV_M2_Desert",
-			"Exile_Car_HMMWV_M2_Green"
-		]
-	],
-	[
-		"ImFX_Mil_HMMWV_Unarmed",1,true,
-		[
-			"Exile_Car_HMMWV_MEV_Desert","Exile_Car_HMMWV_MEV_Green","Exile_Car_HMMWV_UNA_Desert",
-			"Exile_Car_HMMWV_UNA_Green"
-		]
-	],
-	[
-		"ImFX_Mil_HMMWV_ALL",0,true,
-		[
-			"ImFX_Mil_HMMWV_Armed", "ImFX_Mil_HMMWV_Unarmed"
-		]
-	],
-	[
-		"ImFX_Mil_SUV_Armed",1,true,
-		[
-			"Exile_Car_SUV_Armed_Black"
-		]
-	],
-	[
-
-		"ImFX_Mil_BTR_Armed",1,true,
-		[
-			"Exile_Car_BTR40_MG_Camo","Exile_Car_BTR40_MG_Green"
-		]
-	],
-	[
-		"ImFX_Mil_BTR_Unarmed",1,true,
-		[
-			"Exile_Car_BTR40_Camo","Exile_Car_BTR40_Green"
-		]
-	],
-	[
-		"ImFX_Mil_BTR_ALL",0,true,
-		[
-			"ImFX_Mil_BTR_Armed", "ImFX_Mil_BTR_Unarmed"
-		]
-	],
-	[
-		"ImFX_Mil_OpenUral",1,true,
-		[
-			"Exile_Car_Ural_Open_Worker","Exile_Car_Ural_Open_Yellow","Exile_Car_Ural_Open_Worker",
-			"Exile_Car_Ural_Open_Military"
-		]
-	],
-	[
-		"ImFX_Land_CoveredUral",1,true,
-		[
-			"Exile_Car_Ural_Covered_Worker","Exile_Car_Ural_Covered_Blue","Exile_Car_Ural_Covered_Yellow",
-			"Exile_Car_Ural_Covered_Military"
-		]
-	],
-	[
-		"ImFX_Mil_Ural_ALL",0,true,
-		[
-			"ImFX_Mil_OpenUral", "ImFX_Mil_CoveredUral"
-		]
-	],
-	[
-		"ImFX_Mil_Hemmts",1,true,
-		[
-			"Exile_Car_HEMMT"
-		]
-	],
-	[
-		"ImFX_Mil_Hunters",1,true,
-		[
-			"Exile_Car_Hunter"
-		]
-	],
-	[
-		"ImFX_Mil_Ifrits",1,true,
-		[
-			"Exile_Car_Ifrit"
-		]
-	],
-	[
-		"ImFX_Mil_Striders",1,true,
-		[
-			"Exile_Car_Strider"
-		]
-	],
-	[
-		"ImFX_Mil_Tempests",1,true,
-		[
-			"Exile_Car_Tempest"
-		]
-	],
-	[
-		"ImFX_Mil_Zamaks",1,true,
-		[
-			"Exile_Car_Zamak"
-		]
-	],
-	[
-		"ImFX_Mil_Prowler",1,true,
-		[
-			"Exile_Car_ProwlerLight","Exile_Car_ProwlerUnarmed"
-		]
-	],
-	[
-		"ImFX_Mil_BRDM",1,true,
-		[
-			"Exile_Car_BRDM2_HQ"
-		]
-	],
-	[
-
-		// CONFIRM UNARMED!
-		"ImFX_Mil_Unarmed",0,true,
-		[
-			"ImFX_Mil_BTR_Unarmed", "ImFX_Mil_HMMWV_Unarmed", "ImFX_Mil_Hemmts", "ImFX_Mil_Hunters", 
-			"ImFX_Mil_Ifrits", "ImFX_Mil_Striders", "ImFX_Mil_Tempests", "ImFX_Mil_Zamaks", "ImFX_Mil_Prowler"
-		]
-	],
-	[
-		"ImFX_Mil_Armed",0,true,
-		[
-			"ImFX_Mil_ArmedOffroads", "ImFX_Mil_HMMWV_Armed", "ImFX_Mil_BTR_Armed",	"ImFX_Mil_BRDM", 
-			"ImFX_Mil_SUV_Armed"
-		]
-	],
-	[
-		"ImFX_Mil_All",0,true,
-		[
-			"ImFX_Mil_Unarmed", "ImFX_Mil_Armed"
-		]
-	],
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////////
-
-
-
-
-
-
-	[
-		"ImFX_Air_Patrol",1,false,
-		[
-			// AN-2
-			"Exile_Plane_AN2_Green",
-			"Exile_Plane_AN2_White",
-			"Exile_Plane_AN2_Stripe",
-			"An2_tk",
-			"An2_af",
-			"An2_a2",	
-			// Cessna 185 Skymaster (armed)
-			"GNT_C185T"
-		]
-	],
-	[	
-		"ImFX_Air_Interceptor",1,false,
-		[
-		]
-	],
-	[	
-		"ImFX_Air_Rescue_Heli",1,false,
-		[
-		]
-	],
-	/////////////////////////// DAPE Loot Table
-	[	
-		"ImFX_DAPE_lootItems",1,false,
-		[
-			"Exile_Item_InstaDoc","Exile_Item_Vishpirin","Exile_Item_Bandage"
-		]
-	],
-	[	// Uniforms that "Bambi" class can wear 
-		"ImFX_Uniform_Bambi",1,false,
-		[
-			"Exile_Uniform_BambiOverall"
-		]
 	]
+
 
 ];
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Map Immersion Data
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+_swapArray = 
+[
+
+	["Land_Ind_Pec_02","Land_Ind_Pec_02",0]
+];
+
+/////////////////////////////
+// Cart processing //////////
+/////////////////////////////
+_hold = [_cartName,_immersionData,_debugCart] spawn CAMS_fnc_loadCart;
+if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] Cart(%2): ImmersionFX.sqf: ERROR in cart loading function",CAMS_Version,_cartName];CAMS_isStable=false;};
+waitUntil { ScriptDone _hold};
+
+_oldSwapArray = missionNameSpace getvariable ["ImFX_BuildingSwap",[]];
+_newSwapArray = _oldSwapArray + _swapArray;
+missionNameSpace setVariable ["ImFX_BuildingSwap",_newSwapArray,true];
+
+
+
 /*
+"Exile_Effect_Flies",
+
+"Exile_Plant_BrownBush",
+"Exile_Plant_GreenBush",
+"Exile_Plant_GreenBush2",
+"Exile_Plant_GreenBush3",
+"Exile_Plant_GreenBush5",
+"Exile_Plant_GreenBush6",
+"Exile_Plant_GreenBush7",
+"Exile_Plant_GreenBush8",
+
+"Exile_Cosmetic_MG",
+"Exile_Cosmetic_UAV",
+
 Exile_Melee_Abstract
-Exile_Melee_Axe
-Exile_Melee_Shovel
-Exile_Melee_SledgeHammer
+
 Exile_Uniform_ExileCustoms
 Exile_Casino_TwinkleTwister
 Exile_ConcreteMixer
@@ -742,34 +1045,7 @@ Exile_Container_CamoTent
 Exile_Container_Safe
 Exile_Container_Storagecrate
 Exile_Container_SupplyBox
-Exile_Cosmetic_Axe
-Exile_Cosmetic_BBQSandwich
-Exile_Cosmetic_BeefParts
-Exile_Cosmetic_Beer
-Exile_Cosmetic_CatFood
-Exile_Cosmetic_Cheathas
-Exile_Cosmetic_CockONut
-Exile_Cosmetic_DogFood
-Exile_Cosmetic_EMRE
-Exile_Cosmetic_EnergyDrink
-Exile_Cosmetic_Foolbox
-Exile_Cosmetic_GasMask
-Exile_Cosmetic_InstantCoffee
-Exile_Cosmetic_Knife
-Exile_Cosmetic_MacasCheese
-Exile_Cosmetic_Magazine01
-Exile_Cosmetic_Magazine02
-Exile_Cosmetic_Magazine03
-Exile_Cosmetic_Magazine04
-Exile_Cosmetic_MG
-Exile_Cosmetic_Moobar
-Exile_Cosmetic_PopTabs
-Exile_Cosmetic_PowerDrink
-Exile_Cosmetic_Raisins
-Exile_Cosmetic_Shovel
-Exile_Cosmetic_SledgeHammer
-Exile_Cosmetic_Surstromming
-Exile_Cosmetic_UAV
+
 Exile_Guard_01
 Exile_Guard_02
 Exile_Guard_03
@@ -778,14 +1054,7 @@ Exile_Helper_175mSafeZone
 Exile_Helper_50mBox
 Exile_Locker
 Exile_Loot_XmasPresent_Abstract
-Exile_Loot_XmasPresent_Blue
-Exile_Loot_XmasPresent_Gold
-Exile_Loot_XmasPresent_Green
-Exile_Loot_XmasPresent_Magenta
-Exile_Loot_XmasPresent_Mint
-Exile_Loot_XmasPresent_Pink
-Exile_Loot_XmasPresent_Purple
-Exile_Loot_XmasPresent_Red
+
 Exile_Unit_Abstract
 Exile_Unit_ExileCustoms
 Exile_Unit_GhostPlayer
@@ -880,57 +1149,5 @@ Exile_Unit_Woodland
 	class Exile_Item_TurtleFilet_Cooked				{ quality = 4; price = 230; }; //100, 30
 	class Exile_Item_TurtleFilet_Raw				{ quality = 2; price = 115; }; //15, 30
 
-	///////////////////////////////////////////////////////////////////////////////
-	// Drinks
-	///////////////////////////////////////////////////////////////////////////////
-	class Exile_Item_Beer 							{ quality = 1; price = 50; }; //75, 30
-	class Exile_Item_ChocolateMilk					{ quality = 1; price = 25; }; //75, 20
-	class Exile_Item_EnergyDrink					{ quality = 1; price = 40; }; //75, 20
-	class Exile_Item_MountainDupe					{ quality = 1; price = 30; }; //50, 20
-	class Exile_Item_PlasticBottleCoffee	 		{ quality = 3; price = 70; sellPrice = 10; };//100, 60
-	class Exile_Item_PlasticBottleEmpty				{ quality = 1; price = 4; };
-	class Exile_Item_PlasticBottleFreshWater 		{ quality = 2; price = 50; sellPrice = 4; }; //80, 15
-	class Exile_Item_PowerDrink						{ quality = 3; price = 60; }; //95, 10
-
-	///////////////////////////////////////////////////////////////////////////////
-	// First Aid
-	///////////////////////////////////////////////////////////////////////////////
-						{ quality = 3; price = 300; };
-
-	//class Exile_Item_Defibrillator				{ quality = 1; price = 7500; };
-
-	///////////////////////////////////////////////////////////////////////////////
-	// Tools
-	///////////////////////////////////////////////////////////////////////////////
-	class Exile_Item_CanOpener						{ quality = 1; price = 80; };
-	class Exile_Item_CookingPot						{ quality = 2; price = 80; };
-	class Exile_Item_Foolbox						{ quality = 2; price = 4000; };
-	class Exile_Item_Grinder						{ quality = 2; price = 1250; };
-	class Exile_Item_Handsaw						{ quality = 2; price = 500; };
-	class Exile_Item_Matches 						{ quality = 1; price = 60; };
-	class Exile_Item_Pliers							{ quality = 2; price = 350; };
-	class Exile_Melee_Axe							{ quality = 2; price = 100; };
-	class Exile_Melee_SledgeHammmer					{ quality = 3; price = 500; };
-	//class Exile_Item_CordlessScrewdriver			{ quality = 1; price = 750; };
-	//class Exile_Item_FireExtinguisher				{ quality = 1; price = 650; };
-	//class Exile_Item_Hammer						{ quality = 1; price = 600; };
-	//class Exile_Item_OilCanister					{ quality = 1; price = 1750; };
-	//class Exile_Item_Screwdriver					{ quality = 1; price = 250; };
-	//class Exile_Item_Shovel						{ quality = 1; price = 700; };
-	//class Exile_Item_SleepingMat					{ quality = 1; price = 1250; };
-	//class Exile_Item_ToiletPaper					{ quality = 1; price = 5; };
-	//class Exile_Item_Wrench						{ quality = 1; price = 250; };
-	//class Exile_Item_ZipTie						{ quality = 1; price = 250; };
-
-
-
-
 
 */
-
-/////////////////////////////
-// Cart processing //////////
-/////////////////////////////
-_hold = [_cartName,_immersionData,_debugCart] spawn CAMS_fnc_loadCart;
-if (isNil "_hold") exitWith { diag_log format ["[CAMS:%1] Cart(%2): ImmersionFX.sqf: ERROR in cart loading function",CAMS_Version,_cartName];CAMS_isStable=false;};
-waitUntil { ScriptDone _hold};

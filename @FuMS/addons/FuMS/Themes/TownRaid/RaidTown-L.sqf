@@ -8,16 +8,16 @@
 // 
 
 [
-	["RaidTownL", 200], // Mission Title NOSPACES!, and encounter radius
-	["Capital Raid","hd_objective","ELLIPSE","ColorRed","FDiagonal",200],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
+	["RaidTownL", 400], // Mission Title NOSPACES!, and encounter radius
+	["Capital Raid","plp_mark_civ_townhall","ELLIPSE","ColorRed","FDiagonal",400],    // Map Markers ["MapText", "SHAPE", "COLOR", "FILL", size];
 	   // type is "mil_objective"
 	[  
 		[// NOTIFICATION Messages and Map display Control.
 		false, "ALL",0, 	// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 		true, 				// Notify players via global message
 		true,				// Show encounter area on the map
-		900,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
-		300       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
+		1800,    			// Win delay: Time in seconds after a WIN before mission cleanup is performed
+		30       			// Lose delay: Time in seconds after a lose before mission cleanup is performed
 							//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
 		// Spawn Mission Message
@@ -55,15 +55,15 @@
 
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[1,0],[0,10],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_I"]  ],   		["Buildings",	[0,2],[-10,0],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,10],[3,0],[50]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[-10,0],[0,4],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [4,"Hunter_I"]  ],   		["Buildings",	[-4,0],[0,-10],[75]   ]],
-		[["RESISTANCE","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,-3],[10,0],[50]   ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [10,"CivCombat"]  ],   	["Buildings",	[0,-10],[-2,0],[100]  ]],
-		[["RESISTANCE","COMBAT","RED","VEE"],   	[  [10,"CivCombat"]  ],   	["Buildings",	[10,0],[0,-1],[100]  ]],
-		[["RESISTANCE","COMBAT","RED","COLUMN"],  	[  [10,"CivCombat"]  ],   	["Explore",		[5,5],[-5,5],[75]   ]]
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[1,0],[0,10],[75]   ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [4,"Hunter_I"]  ],   		["Buildings",	[0,2],[-10,0],[75]   ]],
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,10],[3,0],[50]   ]],
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [4,"Rifleman_I"]  ],   	["Buildings",	[-10,0],[0,4],[75]   ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [4,"Hunter_I"]  ],   		["Buildings",	[-4,0],[0,-10],[75]   ]],
+		[["WEST","COMBAT","RED","WEDGE"],   	[  [6,"Pistolman_I"]  ],   	["Buildings",	[0,-3],[10,0],[50]   ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [10,"CivCombat"]  ],   	["Buildings",	[0,-10],[-2,0],[100]  ]],
+		[["WEST","COMBAT","RED","VEE"],   		[  [10,"CivCombat"]  ],   	["Buildings",	[10,0],[0,-1],[100]  ]],
+		[["WEST","COMBAT","RED","COLUMN"],  	[  [10,"CivCombat"]  ],   	["Explore",		[5,5],[-5,5],[75]   ]]
 
 	],
 
@@ -206,7 +206,7 @@
 			//	  ["HUCNT",["HighUnitCount","GUER",6,0,[0,0]] ],
 			//	  ["Detect",["Detected","ALL","ALL"] ],
 			["BodyCount",		["BodyCount",60] ],
-			["Timer",			["TIMER", 2000] ], // 1800  
+			["Timer", 			["TimerNoPlayers", 		random [1800,2000,2100]]],	//30 minutes	
 			["TimerEvac", 		["TIMER", 1600] ] // 1400  
 		],
 		[

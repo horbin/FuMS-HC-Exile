@@ -5,83 +5,84 @@ private ["_unitGroup", "_unitType", "_unitTypeRef", "_vehicle", "_stuckCheckTime
 "_unitMarker", "_lootPool", "_result", "_debugStartTime"];
 
 _unitGroup = _this select 0;
-/////////////////////////////////////_unitLevel = _this select 1;
-_debug = true;
+_unitLevel = _this select 1; // PATROLTYPE NOW
+_debug = false;
 
 
 if (_unitGroup getVariable ["isManaged",false]) exitWith {};
 _unitGroup setVariable ["isManaged",true];
-/*
+
 _unitType = (_unitGroup getVariable ["unitType",""]);
 _unitTypeRef = _unitType;
 _vehicle = if (_unitType in ["air","land","aircustom","landcustom","air_reinforce","uav","ugv"]) then {_unitGroup getVariable ["assignedVehicle",(assignedVehicle (leader _unitGroup))]} else {objNull};
 
-
-if (_debug) then
-{
-	diag_log format ["##FUMS (GroupManager)1: (1):%1 | (2):%2",_unitGroup,_unitType];
-	//diag_log format ["##FUMS (GroupManager)2: (1):%1 | (2):%2",_vehicle,_stuckCheckTime];
-	
-};
-
-/*
 _unitGroup setVariable ["antistuckPos",(getWPPos [_unitGroup,(currentWaypoint _unitGroup)])];
 if (isNil {_unitGroup getVariable "GroupSize"}) then {_unitGroup setVariable ["GroupSize",(count (units _unitGroup))]};
 _stuckCheckTime = _unitType call FuMS_fnc_HC_AI_Group_GetAntistuckTime;
 
-
-
-
+if (_debug) then
+{
+	diag_log format ["##FUMS (GroupManager)1: (1):%1 | (2):%2",_unitGroup,_unitType];
+	diag_log format ["##FUMS (GroupManager)2: (1):%1 | (2):%2",_vehicle,_stuckCheckTime];
+	diag_log format ["##FUMS (GroupManager)3: (1):%1",(count (units _unitGroup))];
+	
+};
 
 /*
-
-
 if (_debug) then
 {
 	diag_log format ["##FUMS (GroupManager): (1):%1 | (2):%2",];
 };
 */
 
-/*
-
-
 //set up debug variables
 _groupLeadMarker = "";
 _groupWPMarker = "";
+_enableDebugMarkers = false;
 
 //Set up local functions
-_fncArray = [_unitGroup,_unitType] call A3XAI_getLocalFunctions;
+_fncArray = [_unitGroup,_unitType] call FuMS_fnc_HC_AI_Group_getLocalFunctions;
 _fnc_execEveryLoop = _fncArray select 0;
 _fnc_checkUnits = _fncArray select 1;
 _fnc_generateLoot = _fncArray select 2;
 _fnc_vehicleAmmoFuelCheck = _fncArray select 3;
 _fnc_antistuck = _fncArray select 4;
 
+if (_debug) then
+{
+	//diag_log format ["##FUMS (GroupMonitor)4: (1):%1 | (2):%2",_fncArray,_stuckCheckTime];
+	
+};
+
 //Set up timer variables
 _currentTime = diag_tickTime;
 _managerStartTime = _currentTime;
-_unitGroup setVariable ["lastRearmTime",_currentTime];
-_unitGroup setVariable ["antistuckTime",_currentTime];
-_unitGroup setVariable ["lootGenTime",_currentTime];
+//////////_unitGroup setVariable ["lastRearmTime",_currentTime];
+//////////_unitGroup setVariable ["antistuckTime",_currentTime];
+//////////_unitGroup setVariable ["lootGenTime",_currentTime];
 
 //Setup loot variables
-_updateServerLoot = (A3XAI_enableHC && {!isDedicated});
-_pullRate = 30;
+//////////_updateServerLoot = (A3XAI_enableHC && {!isDedicated});
+//////////_pullRate = 30;
 
-if (isDedicated) then {
-	[_unitGroup,_unitType,_unitLevel] call A3XAI_setLoadoutVariables;
+//////////if (isDedicated) then 
+//////////{
+	//////////[_unitGroup,_unitType,_unitLevel] call FuMS_fnc_HC_AI_Group_setLoadoutVariables;
 	
-	if (A3XAI_enableDebugMarkers) then {
+	if (_enableDebugMarkers) then 
+	{
 		_groupLeadMarker = format ["%1_Lead",_unitGroup];
 		if (_groupLeadMarker in allMapMarkers) then {deleteMarker _groupLeadMarker; uiSleep 0.5};	//Delete the previous marker if it wasn't deleted for some reason.
 		_groupLeadMarker = createMarker [_groupLeadMarker,getPosATL (leader _unitGroup)];
 		_groupLeadMarker setMarkerType "mil_warning";
 		_groupLeadMarker setMarkerBrush "Solid";
 
-		if (isNull _vehicle) then {
-			_groupLeadMarker setMarkerText format ["%1 (AI L%2)",_unitGroup,_unitLevel];
-		} else {
-			_groupLeadMarker setMarkerText format ["%1 (AI L%2 %3)",_unitGroup,_unitLevel,(typeOf (vehicle (leader _unitGroup)))];
+		if (isNull _vehicle) then 
+		{
+			_groupLeadMarker setMarkerText format ["%1 (LOGIC:%2)",_unitGroup,_unitLevel];
+		} else 
+		{
+			_groupLeadMarker setMarkerText format ["%1 (LOGIC:%2 V:%3)",_unitGroup,_unitLevel,(typeOf (vehicle (leader _unitGroup)))];
 		};
 		
 		_groupWPMarker = (format ["%1_WP",_unitGroup]);
@@ -92,7 +93,8 @@ if (isDedicated) then {
 		_groupWPMarker setMarkerColor "ColorBlue";
 		_groupWPMarker setMarkerBrush "Solid";
 		
-		[_unitGroup] spawn {
+		[_unitGroup] spawn 
+		{
 			_unitGroup = _this select 0;
 			{
 				_markname = str(_x);
@@ -102,15 +104,20 @@ if (isDedicated) then {
 				_mark setMarkerType "Dot";
 				_mark setMarkerColor "ColorRed";
 				_mark setMarkerBrush "SolidBorder";
-				_nul = _x spawn {
+				_nul = _x spawn 
+				{
 					_markername = str (_this);
 					_unitGroup = group _this;
-					while {alive _this} do {
-						if (local _this) then {
+					while {alive _this} do 
+					{
+						if (local _this) then 
+						{
 							_unitPos = getPosATL _this;
-							if ((leader _unitGroup) isEqualTo _this) then {
+							if ((leader _unitGroup) isEqualTo _this) then 
+							{
 								(format ["%1_Lead",_unitGroup]) setMarkerPos _unitPos;
-								_color = call {
+								_color = call 
+								{
 									_combatMode = (combatMode _unitGroup);
 									if (_combatMode isEqualTo "YELLOW") exitWith {"ColorBlack"};
 									if (_combatMode isEqualTo "RED") exitWith {"ColorRed"};
@@ -129,23 +136,28 @@ if (isDedicated) then {
 			} forEach (units _unitGroup);
 		};
 	};
-	
+	/*
 } else {
 	waitUntil {uiSleep 0.25; (local _unitGroup)};
-	[_unitGroup,_unitType,_unitLevel] call A3XAI_setLoadoutVariables_HC;
+	[_unitGroup,_unitType,_unitLevel] call FuMS_fnc_HC_AI_Group_setLoadoutVariables_HC;
 	
-	if (A3XAI_enableDebugMarkers) then {
+	if (_enableDebugMarkers) then 
+	{
 		{
 			_nul = _x spawn {
 				waitUntil {sleep 5; ((local _this) or {!(alive _this)})};
 				_unitMarker = str (_this);
 				_unitGroup = group _this;
-				while {alive _this} do {
-					if (local _this) then {
+				while {alive _this} do 
+				{
+					if (local _this) then 
+					{
 						_unitPos = getPosATL _this;
-						if ((leader _unitGroup) isEqualTo _this) then {
+						if ((leader _unitGroup) isEqualTo _this) then 
+						{
 							(format ["%1_Lead",_unitGroup]) setMarkerPos _unitPos;
-							_color = call {
+							_color = call 
+							{
 								_combatMode = (combatMode _unitGroup);
 								if (_combatMode isEqualTo "YELLOW") exitWith {"ColorBlack"};
 								if (_combatMode isEqualTo "RED") exitWith {"ColorRed"};
@@ -163,31 +175,41 @@ if (isDedicated) then {
 		} forEach (units _unitGroup);
 	};
 
-	if (A3XAI_debugLevel > 1) then {
-		_lootPool = _unitGroup getVariable ["LootPool",[]];
+	if (_debug) then 
+	{
+		//////////_lootPool = _unitGroup getVariable ["LootPool",[]];
 		//diag_log format ["Debug: Found loot pool for group %1 from server: %2",_unitGroup,_lootPool];
 	};
+	
 };
-
+*/
 //Main loop
-while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} do {
+while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} do 
+{
+	//diag_log "##FUMS (GroupMonitor): Loop starting...";
+	//diag_log format ["##FUMS (GroupMonitor): _unitGroup:%1 | owner:%2",_unitGroup,groupOwner _unitGroup];
 	_unitType = (_unitGroup getVariable ["unitType",""]);
-	if !(_unitType isEqualTo _unitTypeRef) then {
-		_fncArray = [_unitGroup,_unitType] call A3XAI_getLocalFunctions;
+	if !(_unitType isEqualTo _unitTypeRef) then 
+	{
+		_fncArray = [_unitGroup,_unitType] call FuMS_fnc_HC_AI_Group_getLocalFunctions;
 		_fnc_execEveryLoop = _fncArray select 0;
 		_fnc_checkUnits = _fncArray select 1;
 		_fnc_generateLoot = _fncArray select 2;
 		_fnc_vehicleAmmoFuelCheck = _fncArray select 3;
 		_fnc_antistuck = _fncArray select 4;
-		_stuckCheckTime = _unitType call A3XAI_getAntistuckTime;
+		_stuckCheckTime = _unitType call FuMS_fnc_HC_AI_Group_getAntistuckTime;
 		
-		if (A3XAI_debugLevel > 1) then {diag_log format ["A3XAI Debug: Reassigned group %1 type from %2 to %3.",_unitGroup,_unitTypeRef,_unitType];};
+		if (_debug) then 
+		{
+			diag_log format ["##FUMS (GroupMonitor): Reassigned group %1 type from %2 to %3.",_unitGroup,_unitTypeRef,_unitType];
+		};
 		
 		_unitTypeRef = _unitType;
 	};
 
 	[_unitGroup,_vehicle] call _fnc_execEveryLoop;
 	
+	/*//////////////////////////////////////////////////////////////////////////////////////
 	[_unitGroup] call _fnc_checkUnits;
 
 	//Generate loot
@@ -204,17 +226,18 @@ while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} 
 	if ((diag_tickTime - (_unitGroup getVariable ["antistuckTime",diag_tickTime])) > _stuckCheckTime) then {
 		[_unitGroup,_vehicle,_stuckCheckTime] call _fnc_antistuck;
 	};
-
+	*/////////////////////////////////////////////////////////////////////////////////////
+	/*
 	if (A3XAI_HCIsConnected && {_unitGroup getVariable ["HC_Ready",false]} && {(diag_tickTime - _managerStartTime) > 30}) then {
 		private ["_result"];
-		_result = _unitGroup call A3XAI_transferGroupToHC;
+		_result = _unitGroup call FuMS_fnc_HC_AI_Group_transferGroupToHC;
 		if (_result) then {
 			waitUntil {sleep 1.5; (!(local _unitGroup) or {isNull _unitGroup})};
 			if (A3XAI_debugLevel > 0) then {diag_log format ["A3XAI Debug: Transferred ownership of %1 group %2 to HC %3.",_unitType,_unitGroup,A3XAI_HCObjectOwnerID];};
 			waitUntil {sleep 15; ((local _unitGroup) or {isNull _unitGroup})};
 			if ((_unitGroup getVariable ["GroupSize",-1]) > 0) then {
 				_currentTime = diag_tickTime;
-				_unitGroup call A3XAI_initNoAggroStatus;
+				_unitGroup call FuMS_fnc_HC_AI_Group_initNoAggroStatus;
 				_unitGroup setVariable ["lastRearmTime",_currentTime];
 				_unitGroup setVariable ["antistuckTime",_currentTime];
 				_unitGroup setVariable ["lootGenTime",_currentTime];
@@ -231,11 +254,12 @@ while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} 
 			diag_log format ["[A3XAI] Returned improperly transferred group %1 to server.",_unitGroup];
 		};
 	};
-
+	*/
 	//diag_log format ["DEBUG: Group Manager cycle time for group %1: %2 seconds.",_unitGroup,(diag_tickTime - _debugStartTime)];
 	if ((_unitGroup getVariable ["GroupSize",0]) > 0) then {uiSleep 15};
+	
 };
-
+/*
 if (A3XAI_enableDebugMarkers) then {
 	deleteMarker _groupLeadMarker;
 	deleteMarker _groupWPMarker;
@@ -258,7 +282,7 @@ if !(isNull _unitGroup) then {
 	if ((_unitGroup getVariable ["GroupSize",-1]) isEqualTo -1) then {	//GroupSize value of -1 marks group for deletion
 		if (!isNull _unitGroup) then {
 			if (A3XAI_debugLevel > 0) then {diag_log format ["A3XAI Debug: Deleting %2 group %1.",_unitGroup,(_unitGroup getVariable ["unitType","unknown"])]};
-			_unitGroup call A3XAI_deleteGroup;
+			_unitGroup call FuMS_fnc_HC_AI_Group_deleteGroup;
 		};
 	};
 } else {
@@ -267,7 +291,9 @@ if !(isNull _unitGroup) then {
 
 if ((local _vehicle) && {isEngineOn _vehicle}) then {
 	_vehicle engineOn false;
+	
+	
+	
 };
-
-
 */
+

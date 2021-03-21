@@ -12,7 +12,7 @@ while {true} do
 {
 	if (isNil "FuMS_ServerData") exitWith {_abort=true; _msg = format ["No ServerData passed to Headless Client"];};
     if (TypeName _dat != "ARRAY") exitWith{_abort = true;_msg = format ["Format error in ServerData.sqf found expected 7 sections"];};
-	if (count _dat != 7) exitWith{_abort = true;_msg = format ["Format error in ServerData.sqf found %1 expected 7 fields", count _dat];};
+	if (count _dat != 8) exitWith{_abort = true;_msg = format ["Format error in ServerData.sqf found %1 expected 7 fields", count _dat];};
     
     _dat2 = _dat select 0; //Map definition
 	_sec = "Map Definition:";

@@ -9,7 +9,7 @@ _themeData =
     [
         "SEM",   	// Needs to match the folder name!
         1,  		// Mission Selection: 1=Random, 2=In order, 3=Random, once only until all missions run
-        60, 		// Respawn delay in seconds
+        600, 		// Respawn delay in seconds
 		true, 		// global loot
 		true, 		// global soldier data
 		true,  		// autostart

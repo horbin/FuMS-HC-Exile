@@ -8,6 +8,16 @@ waitUntil {CAMS_isStable};
 _handle = [] execVM "\FuMS\Functions\LoadCommonData.sqf";
 waitUntil {ScriptDone _handle};
 
+Resistance setFriend [East, 0];
+East setFriend [Resistance, 0];
+
+Resistance setFriend [West, 0];
+West setFriend [Resistance, 0];
+/*
+Resistance setFriend [East, 0];
+East setFriend [Resistance, 0];
+*/
+
 if (!FuMS_isStable) exitwith
 {
     diag_log format ["************************************************************************"];
@@ -54,10 +64,35 @@ if (FuMS_ServerFuMSEnable) then
 _handle = [] execVM "\FuMS\Functions\MapImmersion.sqf";
 waitUntil {ScriptDone _handle};
 
-// Time Accelerator (TESTING)
-//_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
+// Time Xccel
+if (FuMS_UseTimeXcell) then
+{
+	_handle = [] execVM "\FuMS\Functions\TimeAccel.sqf";
+};
 
+if (FuMS_AddRoadClutter) then
+{
 
+	//Add this to initServer.sqf! YOU DO NOT WANT THIS RUNNING ON EVERY PLAYERS MACHINE!
+
+	/*
+		[
+		15, ======= 15% for trash
+		5, ======= 5% large trash
+		3, ======= 3% wrecks spawn
+		[ ======= Array containing a postion and range from postion
+			[
+			[0,0,0],0
+			],
+			[
+			[12,12,0],15
+			]
+		]
+		] execVM "AbandonedRoads\init.sqf"
+	*/
+	_handle = [50,20,10] execVM "\FuMS\Functions\abandonedRoads.sqf";
+	waitUntil {ScriptDone _handle};
+};
 
 FuMS_ServerIsClean = true;
 publicVariable "FuMS_ServerIsClean";

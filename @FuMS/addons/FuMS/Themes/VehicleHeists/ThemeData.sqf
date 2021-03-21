@@ -13,7 +13,7 @@ _themeData =
 							// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
 							// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
 							//  option 5 will let the mission only spawn once per 6 hours (ie server reset)
-        300, 				// Respawn delay in seconds
+        350, 				// Respawn delay in seconds
 		true, 				// use Global Loot Data (GlobalLootData.sqf)
 		true,  				// use Global Soldier Data file (GlobalSoldierData.sqf)
 		true, 				// ThemeAutoStart: Setting this to 'false' will prevent normal start-up of the Theme! See \Docs\AdminControls.txt
