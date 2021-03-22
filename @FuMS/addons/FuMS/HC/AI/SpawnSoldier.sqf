@@ -23,8 +23,8 @@ _AImodel = missionNamespace getVariable ["ImFX_AiModel_E",["O_G_Soldier_F"]] sel
 //_rockAT = missionNamespace getVariable ["CAMS_AT_E",["launch_RPG32_F"]];
 //_rockAA = missionNamespace getVariable ["CAMS_AA_E",["launch_RPG32_F"]];
 
-_rockAT = "Launch64mm_RPG18";
-_rockAA = "Launch72mm_9K38";
+_rockAT = "launch_RPG32_F";
+_rockAA = "launch_I_Titan_short_F";
 
 
 if (_debugSpawnSoldier) then

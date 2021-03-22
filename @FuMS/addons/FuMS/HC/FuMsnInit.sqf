@@ -27,7 +27,7 @@ if !(hasInterface) then
 		{
 			[_player, _playerID] spawn FuMS_fnc_HC_MsnCtrl_PlayerWatchControlLoop;
 		};
-		//diag_log format ["<FuMS> FuMsnInit: %1:%3:Launch PlayerMission = %2",_player, _player getVariable "FuMS_PlayerWatch",_playerID];
+		diag_log format ["<FuMS> FuMsnInit: %1:%3:Launch PlayerMission = %2",_player, _player getVariable "FuMS_PlayerWatch",_playerID];
 	};
 
     "FuMS_CaptiveAction" addpublicVariableEventHandler 
@@ -64,7 +64,7 @@ if !(hasInterface) then
     {
         FuMS_THEMEDATA = FuMS_BaseTHEMEDATA;
         FuMS_LOOTDATA = FuMS_BaseLOOTDATA;
-       FuMS_SOLDIERDATA = FuMS_BaseSOLDIERDATA;
+		FuMS_SOLDIERDATA = FuMS_BaseSOLDIERDATA;
         FuMS_ListofMissions = FuMS_BaseListofMissions;
         FuMS_ThemeControlID = FuMS_HCThemeControlID;
        // FuMS_BaseTHEMEDATA = [];

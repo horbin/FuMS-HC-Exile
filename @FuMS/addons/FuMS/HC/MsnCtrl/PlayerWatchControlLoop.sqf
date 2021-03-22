@@ -37,6 +37,8 @@ _nearTerritory = false;
 _nearMilitary = false;
 _inOwnTerritory = false;
 
+_debugPWC = true;
+
 
 // Used to find military locations
 // Find military locations
@@ -63,7 +65,7 @@ FuMS_Military_buildings = 	[	"Land_TentHangar_V1_F","Land_Hangar_F","Land_Airpor
                                 "Land_Cargo_Tower_V4_F"
                             ]; 
 /*
-							FuMS_MilitaryList = [];
+FuMS_MilitaryList = [];
 {
 	_currentBuilding = _x;
 	_foundBuilding = FuMS_MapCenter nearObjects [_currentBuilding, 30000];
@@ -104,23 +106,39 @@ if !(vehicle _player iskindof "Man") then {_inLandVehicle = true;};
 // this could be incorrect if player was in a car being carried by a helo...but ahhhh well.
 if (_inWater and _inLandVehicle) then {_inLandVehicle=false; _inWaterVehicle=true;};					
 
-//diag_log format ["<FuMS> PlayerWatchControlLoop trader zones:%1",exiletraderzonemarkerpositions];
-//diag_log format ["<FuMS> PlayerWatchControlLoop spawn zones:%1", exilespawnzonemarkerpositions];  
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop trader zones:%1",exiletraderzonemarkerpositions];
+	diag_log format ["<FuMS> PlayerWatchControlLoop spawn zones:%1", exilespawnzonemarkerpositions];  
+};
 
 //Is player in a territory
 _maximumTerritoryRadius = getNumber (missionConfigFile >> "CfgTerritories" >> "minimumDistanceToOtherTerritories");
-//diag_log format ["<FuMS> PlayerWatchControlLoop max Territory Radius:%1", _maximumTerritoryRadius];      
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop max Territory Radius:%1", _maximumTerritoryRadius];   
+};	
 _nearTerritory = [getPos _player, _maximumTerritoryRadius] call ExileClient_util_world_isTerritoryInRange;
-//diag_log format ["<FuMS> PlayerWatchControlLoop Near a Territory = %1", _nearTerritory];      
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop Near a Territory = %1", _nearTerritory];      
+};
 
 //Is player in his own territory!
 _flagList = _player nearObjects ["Exile_Construction_Flag_Static",_maximumTerritoryRadius];
-//diag_log format ["<FuMS> PlayerWatchControlLoop Flags within range of %2: %1", _flagList, _maximumTerritoryRadius];      
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop Flags within range of %2: %1", _flagList, _maximumTerritoryRadius];  
+};
+    
 {
     _buildRights = _x getVariable ["ExileTerritoryBuildRights",[]];
     if ((getplayerUID _player) in _buildRights) exitWith {_inOwnTerritory = true;};
 }foreach _flagList;
-//diag_log format ["<FuMS> PlayerWatchControlLoop _inOwnTerritory = %1",_inOwnTerritory];
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop _inOwnTerritory = %1",_inOwnTerritory];
+};
 
 //Is player in a spawn zone!
 {
@@ -136,16 +154,27 @@ _flagList = _player nearObjects ["Exile_Construction_Flag_Static",_maximumTerrit
 //Are zombies enabled
 //if (FuMS_ZnDs) then {//zombie mod installed};				
 
-//diag_log format ["<FuMS> PlayerWatchControlLoop Buildings within 50m: %1", _buildinglist];      
 _buildinglist = _player nearObjects ["House",50];
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop Buildings within 50m: %1", _buildinglist];      
+};
+
 //Is player near a town
 if (count _buildinglist > 6) then {_neartown = true;};					
-//diag_log format ["<FuMS> PlayerWatchControlLoop Buildings within 50m: %1", _buildinglist];      
-//diag_log format ["<FuMS> PlayerWatchControlLoop Number of Buildings: %1", count _buildinglist];      
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop Buildings within 50m: %1", _buildinglist];      
+	diag_log format ["<FuMS> PlayerWatchControlLoop Number of Buildings: %1", count _buildinglist];      
+};
 
 //Is player near a road					
 _roadList = _player nearRoads 50;
-//diag_log format ["<FuMS> PlayerWatchControlLoop : _roadList: #:%2 = %1",_roadList, count _roadList];
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop : _roadList: #:%2 = %1",_roadList, count _roadList];
+};
+
 if (!isNil "_roadList") then
 {
     if (count _roadList > 0) then 
@@ -170,13 +199,18 @@ while {true} do
     if (_nearRoads) exitWith {_msnOption = 9;};
     if (true) exitWith {_msnOption = 10;};	
 };
-
-//diag_log format ["<FuMS> PlayerWatchControlLoop: Player Missions:%1",FuMS_PlayerWatch_Configuration];
-//diag_log format ["<FuMS> PlayerWatchControlLoop: Player Mission Option:%1",_msnOption];
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop: Player Missions:%1",FuMS_PlayerWatch_Configuration];
+	diag_log format ["<FuMS> PlayerWatchControlLoop: Player Mission Option:%1",_msnOption];
+};
 _missionFileName = (FuMS_PlayerWatch_Configuration select _msnOption) call BIS_fnc_SelectRandom;
 
-//diag_log format ["<FuMS> PlayerWatchControlLoop: Mission List:%1",FuMS_PlayerWatch_Configuration select _msnOption];
-//diag_log format ["<FuMS> PlayerWatchControlLoop: Mission selected:%1",_missionFileName];
+if (_debugPWC) then
+{
+	diag_log format ["<FuMS> PlayerWatchControlLoop: Mission List:%1",FuMS_PlayerWatch_Configuration select _msnOption];
+	diag_log format ["<FuMS> PlayerWatchControlLoop: Mission selected:%1",_missionFileName];
+};
 
 if !(toupper _missionFileName == "NONE") then
 {
@@ -187,7 +221,10 @@ if !(toupper _missionFileName == "NONE") then
 	while {!(FuMS_ServerFPS > FuMS_FPSMinimum and !FuMS_Mission_is_Starting)} do
 	{
 		uisleep 5;
-	//  diag_log format ["<FuMS>: ControlLoop: waiting on server FPS: to become greater than :%2 and other missions to complete loading", FuMS_ServerFPS, FuMS_FPSMinimum];
+		if (_debugPWC) then
+		{
+			diag_log format ["<FuMS>: ControlLoop: waiting on server FPS: to become greater than :%2 and other missions to complete loading", FuMS_ServerFPS, FuMS_FPSMinimum];
+		};
 	};
 
 	FuMS_Mission_is_Starting = true;
@@ -207,7 +244,7 @@ if !(toupper _missionFileName == "NONE") then
     if ( !(count _dataFromServer > 0) ) exitWith
     { 
         FuMS_Mission_is_Starting = false;
-        diag_log format ["##ControlLoop: Theme: PLAYERWATCH : HC:%2 skipped mission %1 check your Server .rpt file.", _missionFileName, FuMS_ThemeControlID];
+        diag_log format ["##PlayerWatchControlLoop: Theme: PLAYERWATCH : HC:%2 skipped mission %1 check your Server .rpt file.", _missionFileName, FuMS_ThemeControlID];
     };    
     
     //get location for player mission
@@ -221,7 +258,10 @@ if !(toupper _missionFileName == "NONE") then
         // set spawn location to be 5 seconds in front of them.
         _newX = (_velocity select 0) * 8;
         _newY = (_velocity select 1) * 8 ;
-    //    diag_log format ["<FuMS> PlayerWatchControlLoop: Vehicle speed:%1, _newX:%2, _newY:%3",_velocity,_newX, _newY];
+		if (_debugPWC) then
+		{
+			diag_log format ["<FuMS> PlayerWatchControlLoop: Vehicle speed:%1, _newX:%2, _newY:%3",_velocity,_newX, _newY];
+		};
         // if vehicle is stationary or moving very slow
         
         if (_newX < 100 and _newY < 100) then {_newX = 100;_newY=100;};
@@ -231,8 +271,11 @@ if !(toupper _missionFileName == "NONE") then
 
         _pos set [0, _newX + (_pos select 0)];
         _pos set [1, _newY + (_pos select 1)];
-     //   diag_log format ["<FuMS> PlayerWatchControlLoop: _player pos:%1  Mission pos:%2",getPosATL _player, _pos];        
-    };
+		if (_debugPWC) then
+		{
+			diag_log format ["<FuMS> PlayerWatchControlLoop: _player pos:%1  Mission pos:%2",getPosATL _player, _pos];        
+		};
+	};
     
     [_dataFromServer,[_pos, ["PlayerWatch",-1], _themeIndex, ""], [0,"PARENT",0,"ROOT"]] spawn FuMS_fnc_HC_MsnCtrl_NewLogicBomb;
     
