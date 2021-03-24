@@ -11,10 +11,10 @@
 																		// type is "mil_objective"
 	[  
 		[																// NOTIFICATION Messages and Map display Control.
-			true, "ALL",1000, 												// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
+			true, "ALL",1000, 											// Notify players via Radio Message, radio channel, range from encounter center (0=unlimited.
 			true, 														// Notify players via global message
 			true,														// Show encounter area on the map
-			300,    														// Win delay: Time in seconds after a WIN before mission cleanup is performed
+			300,    													// Win delay: Time in seconds after a WIN before mission cleanup is performed
 			30       													// Lose delay: Time in seconds after a lose before mission cleanup is performed
 																		//NOTE: the above delay must occur before the mission is considered 'complete' by the mission manager control loop.
 		],
@@ -78,8 +78,8 @@
 																		// These troops will be dropped off just south of encounter center, then the convoy will return to their spawn location and despawn.
 			[         													// Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
 																		//[  "B_SDV_01_F",                    [0,10],[5,"Diver"],        "TruckJunk"      ], 
-				[CAMS_H20_Boats_I,			[10,0],	[3,"Diver_E"],     "TruckJunk"      ], 
-				[CAMS_H20_RubberDucks_I,	[0,0], 	[3,"Diver_E"],     "TruckJunk"      ]
+				[CAMS_H20_Boats_E,			[10,0],	[3,"Diver_E"],     "TruckJunk"      ], 
+				[CAMS_H20_RubberDucks_E,	[0,0], 	[3,"Diver_E"],     "TruckJunk"      ]
 
 																		// If driver-less vehicles are desired, place them at the bottom of the list. 
 																		// Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!

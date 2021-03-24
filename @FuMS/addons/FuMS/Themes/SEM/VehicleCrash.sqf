@@ -44,7 +44,7 @@
 		[CAMS_Wreck_Mil,	[-6,-6],	(round random 360),	0,	"SMOKE_MEDIUM"]  
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_I"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
+		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_E"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 	],
 
 	// Vehicles
@@ -59,11 +59,11 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",			["TimerNoPlayers", (random [1200, 2000, 1800]) ] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
-			//["TimerEvac", 	["Timer", 1400] ], // 1400		  
-			["LaunchScavengers",	["ProxPlayer",[0,0], 700, 1]],			// Player must be near event center to count as win
-			["PLAYERNEAR",			["ProxPlayer",[0,0], 100, 1]],			// Player must be near event center to count as win
-			["AllDead",				["LowUnitCount","EAST",0,500,[0,0]]  ]	// Always leaves one behind as a special surprise for players.
+			["Timer",				["TimerNoPlayers", (random [1200, 2000, 1800]) ] ],   	// Trigger true if the mission timer reaches 1200 - 1800 seconds and no players are withen 300 m
+			//["TimerEvac", 		["Timer", 1400] ], 										// 1400		  
+			["LaunchScavengers",	["ProxPlayer",[0,0], 700, 1]],							// Player must be near event center to count as win
+			["PLAYERNEAR",			["ProxPlayer",[0,0], 100, 1]],							// Player must be near event center to count as win
+			["AllDead",				["LowUnitCount","EAST",0,500,[0,0]]  ]					// Always leaves one behind as a special surprise for players.
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
@@ -71,7 +71,7 @@
 			//[["WIN"],["BodyCount"     ]],  // 
 			[["WIN"],	["AllDead" ,"PLAYERNEAR"   ]],
 			[["LOSE"],	["Timer"     ]],
-			//[["CHILD",	["EvacTownAir",[0,0],1,30]],["TimerEvac"      ]],  // 
+			[["CHILD",	["SpawnScavengers",[0,0],1,120]],["LaunchScavengers"     ]],  
 			[["END"],	["AllDead","OR","TIMER"    ]]  
 		]       
 	]

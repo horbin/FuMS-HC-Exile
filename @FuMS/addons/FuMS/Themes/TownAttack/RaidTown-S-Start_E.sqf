@@ -61,8 +61,8 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 \
-			["LowCount",["LowUnitCount","EAST",5,0,[0,0]]  ],
-			["AllDead",["LowUnitCount","EAST",0,0,[0,0]]  ]
+			//["LowCount",["LowUnitCount","EAST",5,0,[0,0]]  ],
+			//["AllDead",["LowUnitCount","EAST",0,0,[0,0]]  ]
 
 
 			//	  ["PROX",["ProxPlayer",[0,0],80,1]  ],
@@ -76,9 +76,9 @@
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
 			// [["Reinforce","Help_Vehicle","Trig4"]], 
-			[["CHILD",["HelpHelo_E",[0,0],1,2000]],["LowCount"     ]],  // 
+		//	[["CHILD",["HelpHelo_E",[0,0],1,2000]],["LowCount"     ]],  // 
 
-			[["END"],["AllDead"     ]]  
+			[["END"],["OK"     ]]  
 		]      
 	]
 ];

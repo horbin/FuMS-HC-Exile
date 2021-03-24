@@ -121,7 +121,7 @@ if (!isNil "_buildingData") then
 
 							
                             _buildings = _buildings + [_bldg];
-							diag_log format ["<FuMS:%1> SpawnBuildings:Building Spawned (2): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
+							//diag_log format ["<FuMS:%1> SpawnBuildings:Building Spawned (2): _type:%2 | _pos:%3",FuMS_Version,_type,_newPos];
                         };
                         _bldg setVariable ["LINEAGE",_msnTag, false];
                         

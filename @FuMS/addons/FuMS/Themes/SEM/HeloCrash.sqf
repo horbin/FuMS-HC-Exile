@@ -44,7 +44,7 @@
 		[CAMS_Wreck_Heli,[6,6],(round random 360),0,"FIRE_BIG"]   //type, offset, rotation, presist flag
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]]
+		[["EAST","STEALTH","RED","LINE"],   [  [2,"Sniper_E"]           	],   ["LOITER",[((round random 50)-100),((round random 50)-100)],[0,0],[10]     ]]
 		//[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 	
 	],

@@ -25,8 +25,9 @@ _themeData =
 		["Dump",		[5786.56,20082.1]],		// Used for Altis
 		["168154",		[16894.9,15475.3]],		// Used for Altis
 		["Ioannina",	[23337.7,19770.1]],		// Used for Altis
-		["HiddenBase"]						//Base spawns in random location with no marker.  This should always be the last mission in this file.
-		// Make sure no comma at end of last mission
+		
+		["HiddenBase"]							// Base spawns in random location with no marker.  This should always be the last mission in this file.
+												// Make sure no comma at end of last mission
 		
     ],
     [   

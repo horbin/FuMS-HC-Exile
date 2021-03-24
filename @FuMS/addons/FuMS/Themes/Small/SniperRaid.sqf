@@ -54,11 +54,11 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", random [1600,1800,2000]] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
-			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
-			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
-			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements
-			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
+			["Timer",		["TimerNoPlayers", random [1600,1800,2000]] ],   	// Trigger true if the mission timer reaches 1600 - 2000 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],						// Player must be near event center to count as win
+			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],						// Launches additionak mission AI
+			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],			// Triggers call for reinforcements
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]				// Always leaves one behind as a special surprise for players.
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true

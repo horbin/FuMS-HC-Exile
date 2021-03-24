@@ -52,7 +52,7 @@
 				[  ImFX_Land_Armed_Guard,[0,600],[1,"Rifleman_E"],        "TruckJunk"      ] 
 			],
 			[	// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_I"]  ],   ["Convoy",[0,600],[0,0],["FULL",true,false, true, "XFILL"]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["Convoy",[0,600],[0,0],["FULL",true,false, true, "XFILL"]   ]]
 			],
 			[   
 
@@ -60,10 +60,10 @@
 		],
 		[	// Convoy #2    North
 			[         // Vehicle                                 Offset     Crew (only 1 type!)   CargoLoot (see Loot section below for more detail!)
-				[  ImFX_Land_Unarmed_Transport,[0,600],[1,"Rifleman_I"],        "TruckJunk"      ] 
+				[  ImFX_Land_Unarmed_Transport,[0,600],[1,"Rifleman_E"],        "TruckJunk"      ] 
 			],
 			[	// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_I"]  ],   ["Convoy",[0,600],[0,0],["FULL",true,false, true,"XFILL"]   ]]
+				[["EAST","COMBAT","RED","COLUMN"],   [  [1, "Driver_E"]  ],   ["Convoy",[0,600],[0,0],["FULL",true,false, true,"XFILL"]   ]]
 			],
 			[   
 

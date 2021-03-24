@@ -8,7 +8,7 @@ _themeData =
 [
     [  // *******Options*********
         "DynamicVehicles", 	// Needs to match the folder name!
-        1,  				// Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
+        3,  				// Mission Selection: 1=Random, 2=In order, 3=Random:once only until all missions run
 							// 4=Static: All missions in 'Mission List' will be created at server start!
 							// 5=Static: with no respawn. Use option 5 for 'create once' type missions.
 							// Using option 4 will permit mission to run and re-spawn based upon the respawn delay below.
@@ -24,16 +24,19 @@ _themeData =
     [  //***** Mission List *****
     // List of Missions. 
         // The below missions MUST be in the same folder as this file! 
-		["FuMS_paul_littlebird_mission"],
+	
 		//["FuMS_nedhuey_mission"],
 		//["FuMS_paul_antiair"],
 		//["FuMS_nedural_mission"],
+	
+	
+		//["CoolCar"],		
+		["FuMS_paul_littlebird_mission"],
 		["FuMS_nedstrider_mission"],
 		["FuMS_nedoffroad_mission"],
 		["FuMS_nedifrit_mission"],
 		["FuMS_nedhunter_mission"],
 		["FuMS_nedhatchback_mission"]
-		//["CoolCar"]		
 		
     ],
     [   //***** Locations ***** !! 2D coords ONLY !!
