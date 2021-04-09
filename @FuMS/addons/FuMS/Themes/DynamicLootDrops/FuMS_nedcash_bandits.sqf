@@ -70,9 +70,9 @@
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG_I"]  ],   	["Loiter",		[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_I"]  ],	["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter_I"]  ],   ["Explore",		[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"LMG_E"]  ],   	["Loiter",		[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [3,"Rifleman_E"]  ],	["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [3,"Hunter_E"]  ],   ["Explore",		[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	

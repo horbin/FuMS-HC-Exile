@@ -40,7 +40,7 @@
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 		//[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["LOITER",[6,-6],[0,0],[10]     ]],
-		[["EAST","STEALTH","RED","LINE"],   [  [1,"Sniper_I"]           	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
+		[["EAST","STEALTH","RED","LINE"],   [  [2,"Sniper_E"]           	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 
 	],
 
@@ -60,7 +60,7 @@
 			["TimerEvac", 	["Timer", (random [1100,1300,1500]) ]], // 1400		  
 			["PLAYERNEAR",	["ProxPlayer",[0,0], 300, 1]],// Player must be near event center to count as win
 			["LaunchGuards",["ProxPlayer",[0,0], 700, 1]],				// Player must be near event center to count as win	
-			["LUCNT",		["LowUnitCount","EAST",2,250,[0,0]]  ],		// Triggers call for reinforcements
+			["LUCNT",		["LowUnitCount","EAST",1,250,[0,0]]  ],		// Triggers call for reinforcements
 			["AllDead",		["LowUnitCount","EAST",0,250,[0,0]]  ]		// All dead
 		],
 		[

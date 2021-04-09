@@ -65,9 +65,9 @@
 
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_I"]  ],   ["Loiter",	[0,0],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_I"]  ],   ["BoxPatrol",	[0,0],[0,0],[50]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_I"]  ],   ["Explore",	[0,0],[0,0],[100]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   ["Loiter",	[0,0],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [2,"Rifleman_E"]  ],   ["BoxPatrol",	[0,0],[0,0],[50]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [2,"Rifleman_E"]  ],   ["Explore",	[0,0],[0,0],[100]   ]]
 
 	],
 	[	// Vehicles	

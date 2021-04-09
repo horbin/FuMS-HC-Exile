@@ -45,7 +45,7 @@
 	],
 	[ // AI GROUPS. Only options marked 'Def:' implemented.
 		//[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_I"]	],   ["LOITER",	[((round random 50)-100),((round random 50)-100)],	[6,6],[5,"ANY"]	]],
-		[["EAST","STEALTH","RED","LINE"],	[  [1,"Sniper_I"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
+		[["EAST","STEALTH","RED","LINE"],	[  [2,"Sniper_E"]	],   ["TowerGuard",	[((round random 50)-100),((round random 50)-100)],	[0,0],[150,"ANY"]	]]
 	],
 
 	// Vehicles

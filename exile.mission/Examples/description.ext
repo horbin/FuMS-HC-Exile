@@ -1,0 +1,15 @@
+class CfgSounds
+{
+	#include "sound\sound_farty\sound.hpp"
+	#include "sound\sound_screamer\sound.hpp"
+	#include "sound\sound_sparky\sound.hpp"
+	#include "sound\sound_strigoi\sound.hpp"
+	#include "sound\sound_flamer\sound.hpp"
+	#include "sound\sound_crazy\sound.hpp"
+	#include "sound\sound_rads\sound.hpp"
+};
+
+class RscTitles
+{
+	#include "AL_protection\equipment_prot.hpp"
+};

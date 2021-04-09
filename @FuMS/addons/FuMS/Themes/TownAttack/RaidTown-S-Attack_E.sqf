@@ -56,13 +56,13 @@
 			],
 			[  
 				// Drivers                                                         # and type  |         Patrol     |    spawn   | dest  | 'Patrol' options
-				[["EAST","COMBAT","BLUE","COLUMN"],   [  [2, "Driver_E"]  ],   ["Convoy",[0,-600],[0,-50],["NORMAL",true,true, true]   ]]
+				[["EAST","COMBAT","BLUE","COLUMN"],   [  [1, "Driver_E"]  ],   ["Convoy",[0,-1050],[0,-50],["NORMAL",true,true, true]   ]]
 			],
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
 				//[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Buildings",[0,-1000],[0,-25],[100]]], // [timer, radius]
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Explore",[0,-1050],[25,0],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Explore",[0,-1050],[25,0],[100]]] // [timer, radius]
 			]
 		],
 		[  // Convoy #2    West
@@ -76,7 +76,7 @@
 			[   
 				// Troops : These are distributed across all vehicles in this convoy.                                                         
 				//  Troop behaviour and side options                        # and type of Troops     Patrol logic |  spawn     |dest |'Patrol' options
-				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[3, "Rifleman_E"]],["Buildings",[-1000,0],[-10,0],[100]]] // [timer, radius]
+				[["EAST","COMBAT","RED","COLUMN"],[[1,"SMG_E"] ,[2, "Rifleman_E"]],["Buildings",[-1000,0],[-10,0],[100]]] // [timer, radius]
 			]
 		]
 	],
