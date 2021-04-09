@@ -31,24 +31,24 @@ FuMS_ServerData =
 		
 		//["Admin",-1],				// Remove this theme if on a production server.
 		//["Test",-1], 				// Remove this theme if on a production server.
-		//["Zombies",-1], 			// NOT TESTED, NOT UPDATED Uncomment this if you have the Zombies add on installed  (NOT TESTED)
-		//["MissionFX",-1], 		// Random ALIAS anomoliesthat look like small camps      
+		////["Zombies",-1], 			// NOT TESTED, NOT UPDATED Uncomment this if you have the Zombies add on installed  (NOT TESTED)
+		["MissionFX",-1], 		// Random ALIAS anomolies that look like small random camps      
 		["HeloPatrols",-1], 		// 2 sets of 3 armed helo's patrol the skys!!!      
 		["SEM",-1], 				// basic old school Arma2 Epoch encounters
-		["Townraid",-1], 			// random town is raided and then attacked!
-		["TownAttack",-1], 			// random town is raided , with mutiple responses, based on player coming close!
+		////["Townraid",-1], 			// WIP - New multi layer village, town and capital 
+		["TownAttack",-1], 		// random town is raided , with mutiple responses, based on player coming close!
 		["Small",-1],  				// 6 man groups invade a random village
 		["Aquatic",-1], 			// 1 coastal areas w/ boats and ai   
-		//["Convoy",-1]				// DO NOT USE FOR NOW - 2 random convoys of 3 vehicles move across the map.
+		////["Convoy",-1]				// DO NOT USE FOR NOW - 2 random convoys of 3 vehicles move across the map.
 		["StaticSpawns",-1], 		// creates 10 Dayz style Helo crashes at random locations.
-		//["Jurassic",-1], 			// NOT TESTED, NOT UPDATED creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
-		//["Captive", -1], 			// Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
+		////["Jurassic",-1], 			// NOT TESTED, NOT UPDATED creates 3 encounters with wondering Raptors and some scattered loot. (NOT TESTED)
+		////["Captive", -1], 			// WIP - MINOR issues - Mission in which 7 hostages must be rescued from the humans within 30minutes while fending off paradropped reinforcemnets.
 		["VehicleHeists", -1],		// Missions that spawn vehicles with guards for any map
 		["DynamicVehicles", -1],	// Missions that spawn vehicles with guards for any map
 		["DynamicLootDrops", -1],	// Missions that spawn various loot drop missions with guards for any map
 		["DynamicAISpawns", -1],	// Missions that spawn AI groups with guards for any map
 		["Altis", 1], 				// Missions specific to Altis ported from Exile.Com
-		//["Chernarus", 1],			// Missions specific to Altis ported from Exile.Com
+		//["Chernarus", 1],			// Missions specific to Chernarus ported from Exile.Com
 		//["RoadBlock_ChernoRedux",1] // Roadblocks specific to ChernoRedux
 		["RoadBlock_Altis",1] 	// Roadblocks specific to Altis
 		//["RoadBlock_Tanoa",1] 	// Roadblocks specific to Tanoa

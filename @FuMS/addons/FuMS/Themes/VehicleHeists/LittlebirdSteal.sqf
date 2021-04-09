@@ -86,13 +86,11 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	
-			["SpawnGuards",	["ProxPlayer", 	[-50,-50], 700, 1]],
-			//["HeliBoarded",	["ProxPlayer", 	[0,0], 100, 1]],
+			["SpawnGuards",	["ProxPlayer", 	[0,0], 700, 1]],
 			["HeliStolen",	["TakeVehicle", 	"0", 50]],
-			["Timer", 		["TimerNoPlayers", 		(random [1200,1500,1400])]]	//30 minutes	
 			//["KillMost",	["BodyCount",6] ]
+			["Timer", 		["TimerNoPlayers", 		(random [1200,1500,1400])]]	//1200 - 1400 second mission timer
 			
-//			["LUCNT",		["LowUnitCount","EAST",1,0,[0,0]]  ]			
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true

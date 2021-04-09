@@ -17,7 +17,7 @@
 		//-----Notification Configuration-----
 		//--Map Marker Config.
 		"Free Gas",  // Name, set to "" for nothing
-		"hd_objective", // icon type:                                     https://community.bistudio.com/wiki/cfgMarkers for other options.
+		"mil_dot", // icon type:                                     https://community.bistudio.com/wiki/cfgMarkers for other options.
 						 // mil_triangle, mil_objective, mil_box, group1, loc_Power, etc.
 		"ELLIPSE", // "RECTANGLE". do not use "ICON", two markers are used in making each mission indicator.
 		"ColorYellow",//                                                  https://community.bistudio.com/wiki/setMarkerColor
@@ -66,12 +66,12 @@
 			// AND don't forget you can use these loot options to fill vehicles with loot too!(see vehicle section below)
 		],
 		[
-			"RoadBlock" ,        // WIN Loot
-			[0,0]                // Offset from mission center x,y, 3 coords [x,y,z] places loot at a specific map location!  
+			"RoadBlock" ,		// WIN Loot
+			[0,0]				// Offset from mission center x,y, 3 coords [x,y,z] places loot at a specific map location!  
 		],
 		[
-			"None" ,            // Lose Loot.
-			 [0,0]                // Offset from mission center.
+			"None" ,			// Lose Loot.
+			[0,0]				// Offset from mission center.
 		]
 	],
 		//---------------------------------------------------------------------------------

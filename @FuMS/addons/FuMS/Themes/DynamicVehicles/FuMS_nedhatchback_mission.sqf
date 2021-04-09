@@ -69,9 +69,9 @@
 	  
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
-		[["EAST","AWARE","RED","VEE"],   	[  [4,"Rifleman_I"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
-		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman_I"]  ],   				["BoxPatrol",	[5,5],[0,0],[100]   ]],
-		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_I"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
+		[["EAST","AWARE","RED","VEE"],   	[  [4,"Rifleman_E"]  ],   				["Loiter",		[2,2],[0,0],[10]   ]],
+		[["EAST","COMBAT","RED","VEE"],   	[  [4,"Rifleman_E"]  ],   				["BoxPatrol",	[5,5],[0,0],[100]   ]],
+		[["EAST","COMBAT","RED","COLUMN"],  [  [4,"Rifleman_E"]  ],   				["Explore",		[-5,-5],[0,0],[150]   ]]
 
 	],
 	[			// Vehicles	
@@ -87,7 +87,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [1, "Rifleman_I"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [1, "Rifleman_E"]  ],   ["Gunner",[0,0],[0,0],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -102,14 +102,14 @@
 		[
 		
 			[   // Vehicle                     	Offset     				Direction   CargoLoot (see Loot section below for more detail!)  
-				[  CAMS_Land_ArmedOffroad_I,		[-75,75],	[1,"Rifleman_I"],        "TruckJunk",[0]      ]
+				[  CAMS_Land_ArmedOffroad_E,		[-75,75],	[1,"Rifleman_E"],        "TruckJunk",[0]      ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
 			],
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_I"]  ],   ["BoxPatrol",[-75,75],[75,-75],[150]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [ [ 1, "Rifleman_E"]  ],   ["BoxPatrol",[-75,75],[75,-75],[150]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
@@ -119,7 +119,7 @@
 				// 'dest' for troops is where they will go to perform their 'Patrol Logic' once the disembark the convoy IF their vehicle's driver group is using the 'Convoy' patrol logic.
 				// otherwise troops will remain in vehicle unless it is engaged. Once vehicle destroyed, Troops will move onto their 'Patrol Logic'.
 				[
-					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_I"]]  ,   ["BoxPatrol",[-75,75],[75,-75],[150]  ]   
+					["EAST","COMBAT","RED","COLUMN"],    [[ 1, "Rifleman_E"]]  ,   ["BoxPatrol",[-75,75],[75,-75],[150]  ]   
 				]
 			]
 		]

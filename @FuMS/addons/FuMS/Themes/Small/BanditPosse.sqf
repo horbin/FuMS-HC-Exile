@@ -50,19 +50,19 @@
 			// NOTE: "FuMS_KillMe" is a reserved trigger word. Do not use!!!
 			// NOTE: "OK" is a reserved trigger. Do not define it here.
 			//  "OK" can be used in the actions section to force an action to occur at mission start!	 
-			["Timer",		["TimerNoPlayers", random [1400,1600,1700]] ],   				// Trigger true if the mission timer reaches 1800 seconds and no players are withen 300 m
-			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],// Player must be near event center to count as win
-			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],// Player must be near event center to count as win
-			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],		// Triggers call for reinforcements
-			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]		// Always leaves one behind as a special surprise for players.
+			["Timer",		["TimerNoPlayers", random [1400,1600,1700]] ],   	// Trigger true if the mission timer reaches 1400 -1700 seconds and no players are withen 300 m
+			["PLAYERNEAR",	["ProxPlayer",[0,0], 100, 1]],						// Player must be near event center to count as win
+			["LaunchAI",	["ProxPlayer",[0,0], 700, 1]],						// Player must be near event center to count as win
+			//["LUCNT",		["LowUnitCount","EAST",10,250,[0,0]]  ],			// Triggers call for reinforcements
+			["AllDead",		["LowUnitCount","EAST",1,250,[0,0]]  ]				// Always leaves one behind as a special surprise for players.
 		],
 		[
 			// Define what actions should occur when above trigger logics evaluate to true
 			// Note: a comma between two logics is interpreted as "AND"
-			[["WIN"],["AllDead" ,"PLAYERNEAR"   ]],
-			[["LOSE"],["TIMER"     ]],
-			[["CHILD",	["SpawnPosse",[0,0],1,10000]],["LaunchAI"     ]],  
-			[["END"],["AllDead","OR","TIMER"    ]]  
+			[["WIN"],		["AllDead" ,"PLAYERNEAR"   ]],
+			[["LOSE"],		["TIMER"     ]],
+			[["CHILD",		["SpawnPosse",[0,0],1,10000]],["LaunchAI"     ]],  
+			[["END"],		["AllDead","OR","TIMER"    ]]  
 		]
 	]
 ];

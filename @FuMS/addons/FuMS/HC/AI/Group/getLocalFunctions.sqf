@@ -9,7 +9,7 @@ _unitType = _this select 1;
 call {
 	if (_unitType isEqualTo "infantry") exitWith 
 	{
-		diag_log "##FUMS: (getLocalFunctions): INFANTRY TYPE";
+		//diag_log "##FUMS: (getLocalFunctions): INFANTRY TYPE";
 		_fnc_execEveryLoop = FuMS_fnc_HC_AI_Group_execEveryLoop_infantry;
 		_fnc_checkUnits = {};
 		_fnc_generateLoot = {};

@@ -48,8 +48,8 @@
 	],
 	[ 	// AI GROUPS. Only options marked 'Def:' implemented.
 		//[["EAST","AWARE","RED","VEE"],   	[  [3,"Rifleman_E"]  ],   			["Loiter",		[-13,-13],	[-13,-13],	[10] ]],
-		[["EAST","AWARE","YELLOW","LINE"],   	[  [3,"Rifleman_I"],[1,"LMG_I"]	],	["Explore",		[((round random 50)-100),((round random 50)-100)],		[0,0],		[50] ]],
-		[["EAST","CARELESS","YELLOW","VEE"],  	[  [4,"Rifleman_I"]  ],   			["BoxPatrol",	[((round random 50)-100),((round random 50)-100)],	[0,0],		[75] ]]
+		[["EAST","AWARE","YELLOW","LINE"],   	[  [3,"Rifleman_E"],[1,"LMG_E"]	],	["Explore",		[((round random 50)-100),((round random 50)-100)],		[0,0],		[50] ]],
+		[["EAST","CARELESS","YELLOW","VEE"],  	[  [4,"Rifleman_E"]  ],   			["BoxPatrol",	[((round random 50)-100),((round random 50)-100)],	[0,0],		[75] ]]
 
 	],
 
